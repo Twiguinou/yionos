@@ -1,0 +1,47 @@
+package vulkan;
+
+public record VkVideoEncodeH264SessionCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
+{
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET$sType = 0L;
+    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
+    public static final long OFFSET$pNext = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$useMaxLevelIdc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET$useMaxLevelIdc = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxLevelIdc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET$maxLevelIdc = 20L;
+
+    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT$sType,
+            java.lang.foreign.MemoryLayout.paddingLayout(4),
+            LAYOUT$pNext,
+            LAYOUT$useMaxLevelIdc,
+            LAYOUT$maxLevelIdc
+    ).withName("VkVideoEncodeH264SessionCreateInfoKHR");
+
+    public VkVideoEncodeH264SessionCreateInfoKHR(java.lang.foreign.SegmentAllocator allocator)
+    {
+        this(allocator.allocate(gStructLayout));
+    }
+
+    public static VkVideoEncodeH264SessionCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    {
+        return new VkVideoEncodeH264SessionCreateInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+    }
+
+    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
+    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
+    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+
+    public int useMaxLevelIdc() {return this.ptr.get(LAYOUT$useMaxLevelIdc, OFFSET$useMaxLevelIdc);}
+    public void useMaxLevelIdc(int value) {this.ptr.set(LAYOUT$useMaxLevelIdc, OFFSET$useMaxLevelIdc, value);}
+    public java.lang.foreign.MemorySegment useMaxLevelIdc_ptr() {return this.ptr.asSlice(OFFSET$useMaxLevelIdc, LAYOUT$useMaxLevelIdc);}
+
+    public int maxLevelIdc() {return this.ptr.get(LAYOUT$maxLevelIdc, OFFSET$maxLevelIdc);}
+    public void maxLevelIdc(int value) {this.ptr.set(LAYOUT$maxLevelIdc, OFFSET$maxLevelIdc, value);}
+    public java.lang.foreign.MemorySegment maxLevelIdc_ptr() {return this.ptr.asSlice(OFFSET$maxLevelIdc, LAYOUT$maxLevelIdc);}
+}
