@@ -1,7 +1,21 @@
 package yionos.demo.rendering;
 
+import vulkan.VkCommandBuffer;
+import vulkan.VkCommandBufferBeginInfo;
+import vulkan.VkDevice;
 import vulkan.VkPhysicalDeviceLimits;
 import vulkan.VkPhysicalDeviceProperties;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.ValueLayout;
+
+import static vulkan.VulkanCore.*;
+import static vulkan.VkStructureType.*;
 
 public final class VulkanHelpers
 {private VulkanHelpers() {}
@@ -21,5 +35,29 @@ public final class VulkanHelpers
         VkPhysicalDeviceLimits limits = properties.limits();
         int counts = limits.framebufferColorSampleCounts() & limits.framebufferDepthSampleCounts();
         return Integer.highestOneBit(counts);
+    }
+
+    public static ShaderModule loadShaderFromFile(VkDevice device, File file, int stage) throws VulkanException
+    {
+        try (Arena arena = Arena.ofConfined(); InputStream input = new FileInputStream(file))
+        {
+            byte[] bytes = input.readAllBytes();
+            MemorySegment data = arena.allocateArray(ValueLayout.JAVA_BYTE, bytes);
+            return new ShaderModule(device, stage, data, new ShaderModule.CompilationTask(file.getName(), "main", true));
+        }
+        catch (IOException e)
+        {
+            throw new VulkanException(e.toString());
+        }
+    }
+
+
+    public static void beginCommandBuffer(Arena arena, VkCommandBuffer commandBuffer, int flags) throws VulkanException
+    {
+        VkCommandBufferBeginInfo commandBufferBeginInfo = new VkCommandBufferBeginInfo(arena);
+        commandBufferBeginInfo.sType(VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO);
+        commandBufferBeginInfo.flags(flags);
+
+        VulkanException.check(vkBeginCommandBuffer(commandBuffer, commandBufferBeginInfo.ptr()));
     }
 }

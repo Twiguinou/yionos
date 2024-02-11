@@ -35,7 +35,7 @@ public class LogicalDevice implements Disposable
     private final MemorySegment m_allocator;
     private final Queue[] m_queues;
 
-    public LogicalDevice(VulkanContext.PhysicalDevice physicalDevice, QueueDescriptor[] queueDescriptors, String[] enabledLayers, String[] enabledExtensions, MemorySegment pEnabledFeatures) throws VulkanException
+    public LogicalDevice(VulkanContext.PhysicalDevice physicalDevice, QueueDescriptor[] queueDescriptors, String[] enabledLayers, String[] enabledExtensions, MemorySegment pNext, MemorySegment pEnabledFeatures) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
@@ -51,6 +51,7 @@ public class LogicalDevice implements Disposable
 
             VkDeviceCreateInfo deviceCreateInfo = new VkDeviceCreateInfo(arena);
             deviceCreateInfo.sType(VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
+            deviceCreateInfo.pNext(pNext);
             deviceCreateInfo.flags(0);
             deviceCreateInfo.queueCreateInfoCount(arrangedDescriptors.size());
             deviceCreateInfo.pQueueCreateInfos(queueCreateInfos);
@@ -160,6 +161,11 @@ public class LogicalDevice implements Disposable
     public VkDevice handle()
     {
         return this.m_device;
+    }
+
+    public MemorySegment allocator()
+    {
+        return this.m_allocator;
     }
 
     public Queue queue(int i)

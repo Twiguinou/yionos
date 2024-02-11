@@ -48,7 +48,7 @@ public class Swapchain implements Disposable
         this.device = device;
     }
 
-    private static SurfaceFormat selectSurfaceFormat(VkSurfaceFormatKHR[] surfaceFormats)
+    public static SurfaceFormat selectSurfaceFormat(VkSurfaceFormatKHR[] surfaceFormats)
     {
         for (VkSurfaceFormatKHR surfaceFormat : surfaceFormats)
         {
@@ -134,7 +134,7 @@ public class Swapchain implements Disposable
         this.m_images = new VulkanImage[swapchainImageCount];
         for (int i = 0; i < this.m_images.length; i++)
         {
-            MemorySegment image = pImages.get(ValueLayout.ADDRESS, i);
+            MemorySegment image = pImages.getAtIndex(ValueLayout.ADDRESS, i);
             imageViewCreateInfo.image(image);
             VulkanException.check(vkCreateImageView(this.device, imageViewCreateInfo.ptr(), NULL, pImageView), "Unable to create image view", initializer);
             MemorySegment imageView = pImageView.get(ValueLayout.ADDRESS, 0);
@@ -162,8 +162,8 @@ public class Swapchain implements Disposable
         {
             SequenceInitializer initializer = new SequenceInitializer();
 
-            int imageCount = Math.max(context.surfaceProperties().capabilities().minImageCount() + 1, context.surfaceProperties().capabilities().maxImageCount());
             this.m_surfaceFormat = selectSurfaceFormat(context.surfaceProperties().formats());
+            int minImageCount = Math.max(context.surfaceProperties().capabilities().minImageCount() + 1, context.surfaceProperties().capabilities().maxImageCount());
             int presentMode = selectPresentMode(context.surfaceProperties().presentModes(), vsync);
             VkExtent2D extent = selectExtent(arena, context.surfaceProperties().capabilities(), context.window.width(), context.window.height());
 
@@ -172,7 +172,7 @@ public class Swapchain implements Disposable
             swapchainCreateInfo.pNext(NULL);
             swapchainCreateInfo.flags(0);
             swapchainCreateInfo.surface(context.surface());
-            swapchainCreateInfo.minImageCount(imageCount);
+            swapchainCreateInfo.minImageCount(minImageCount);
             swapchainCreateInfo.imageFormat(this.m_surfaceFormat.format);
             swapchainCreateInfo.imageColorSpace(this.m_surfaceFormat.colorSpace);
             swapchainCreateInfo.imageExtent(extent);
@@ -199,6 +199,7 @@ public class Swapchain implements Disposable
 
             MemorySegment pSwapchain = arena.allocate(ValueLayout.ADDRESS);
             VulkanException.check(vkCreateSwapchainKHR(this.device, swapchainCreateInfo.ptr(), NULL, pSwapchain), "Unable to create Vulkan swapchain", initializer);
+            this.dispose();
             this.m_handle = pSwapchain.get(ValueLayout.ADDRESS, 0);
             initializer.push(this::destroyHandle);
 
@@ -239,26 +240,21 @@ public class Swapchain implements Disposable
         return vkAcquireNextImageKHR(this.device, this.m_handle, -1, semaphore, NULL, pImageIndex);
     }
 
-    private void destroyImages()
-    {
-        for (VulkanImage image : this.m_images)
-        {
-            vkDestroyImageView(this.device, image.view(), NULL);
-        }
-    }
-
     private void destroyHandle()
     {
         vkDestroySwapchainKHR(this.device, this.m_handle, NULL);
+        this.m_handle = NULL;
     }
 
     @Override
     public void dispose()
     {
-        this.destroyImages();
-        this.destroyHandle();
+        for (VulkanImage image : this.m_images)
+        {
+            vkDestroyImageView(this.device, image.view(), NULL);
+        }
+
         this.m_images = new VulkanImage[0];
-        this.m_handle = NULL;
-        this.m_surfaceFormat = null;
+        this.destroyHandle();
     }
 }

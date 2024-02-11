@@ -175,12 +175,9 @@ public class VulkanContext implements Disposable
 
             VkDebugUtilsMessengerCreateInfoEXT messengerCreateInfo = new VkDebugUtilsMessengerCreateInfoEXT(arena);
             messengerCreateInfo.sType(VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT);
-            messengerCreateInfo.pNext(NULL);
-            messengerCreateInfo.flags(0);
             messengerCreateInfo.messageSeverity(VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT);
-            messengerCreateInfo.messageType(VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT);
+            messengerCreateInfo.messageType(VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT);
             messengerCreateInfo.pfnUserCallback(callback.makeHandle(stubArena));
-            messengerCreateInfo.pUserData(NULL);
 
             MemorySegment pMessenger = arena.allocate(ValueLayout.ADDRESS);
             VulkanException.check(vkCreateDebugUtilsMessengerEXT(this.m_instance, messengerCreateInfo.ptr(), NULL, pMessenger), "Unable to create debug messenger");

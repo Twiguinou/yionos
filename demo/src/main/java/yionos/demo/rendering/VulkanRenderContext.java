@@ -8,7 +8,6 @@ import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
-import java.util.function.BinaryOperator;
 
 import static vulkan.VulkanCore.*;
 import static java.lang.foreign.MemorySegment.NULL;
@@ -88,13 +87,6 @@ public class VulkanRenderContext extends VulkanContext
 
             this.m_physicalDeviceSurfaceProperties = new PhysicalDeviceSurfaceProperties(capabilities, formats, presentModes);
         }
-    }
-
-    @Override
-    public void findSuitableDevice(BinaryOperator<PhysicalDevice> comparator) throws VulkanException
-    {
-        super.findSuitableDevice(comparator);
-        this.querySurfaceProperties();
     }
 
     @Override

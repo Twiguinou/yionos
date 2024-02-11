@@ -58,20 +58,23 @@ public class DescriptorPool implements Disposable
         return this.m_capacity;
     }
 
-    public MemorySegment allocateDescriptorSets(MemorySegment pSetLayouts, int count) throws VulkanException
+    public void allocateDescriptorSets(MemorySegment pSetLayouts, int descriptorSetCount, MemorySegment pDescriptorSets) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
             VkDescriptorSetAllocateInfo descriptorSetAllocateInfo = new VkDescriptorSetAllocateInfo(arena);
             descriptorSetAllocateInfo.sType(VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO);
             descriptorSetAllocateInfo.descriptorPool(this.m_handle);
-            descriptorSetAllocateInfo.descriptorSetCount(count);
+            descriptorSetAllocateInfo.descriptorSetCount(descriptorSetCount);
             descriptorSetAllocateInfo.pSetLayouts(pSetLayouts);
 
-            MemorySegment pDescriptorSets = arena.allocateArray(ValueLayout.ADDRESS, count);
             VulkanException.check(vkAllocateDescriptorSets(this.device, descriptorSetAllocateInfo.ptr(), pDescriptorSets), "Failed to allocate descriptor sets");
-            return pDescriptorSets;
         }
+    }
+
+    public void freeDescriptorSets(int descriptorSetCount, MemorySegment pDescriptorSets) throws VulkanException
+    {
+        VulkanException.check(vkFreeDescriptorSets(this.device, this.m_handle, descriptorSetCount, pDescriptorSets), "Failed to free descriptor sets");
     }
 
     @Override

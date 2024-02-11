@@ -99,8 +99,6 @@ public class GraphicsPipeline implements Disposable
 
             VkGraphicsPipelineCreateInfo pipelineCreateInfo = new VkGraphicsPipelineCreateInfo(arena);
             pipelineCreateInfo.sType(VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO);
-            pipelineCreateInfo.pNext(NULL);
-            pipelineCreateInfo.flags(0);
             pipelineCreateInfo.stageCount(0);
             pipelineCreateInfo.pStages(NULL);
             pipelineCreateInfo.pVertexInputState(vertexInputStateCreateInfo.ptr());
@@ -115,7 +113,6 @@ public class GraphicsPipeline implements Disposable
             pipelineCreateInfo.layout(NULL);
             pipelineCreateInfo.renderPass(NULL);
             pipelineCreateInfo.subpass(0);
-            pipelineCreateInfo.basePipelineHandle(NULL);
             pipelineCreateInfo.basePipelineIndex(-1);
 
             MemorySegment pPipeline = arena.allocate(ValueLayout.ADDRESS);
