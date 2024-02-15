@@ -40,14 +40,15 @@ public class Camera
 
     public void setProjection(double fov, double aspectRatio, double near, double far)
     {
-        double f = cot(fov * 0.5);
+        this.m_projectionMatrix.setPerspective(fov, aspectRatio, near, far, true);
+        /*double f = cot(fov * 0.5);
         double g = far / (near - far);
 
         this.m_projectionMatrix.zero()
                 .m00(f / aspectRatio)
                 .m11(f)
                 .m22(g).m23(-1.0)
-                .m32(g * near);
+                .m32(g * near);*/
     }
 
     public Matrix4d projectionMatrix()
@@ -67,18 +68,10 @@ public class Camera
 
         Vector3d uR = new Vector3d(sinTheta * sinPhi, cosTheta, sinTheta * cosPhi);
         Vector3d uTheta = new Vector3d(cosTheta * sinPhi, -sinTheta, cosTheta * cosPhi);
-        Vector3d uPhi = new Vector3d(cosPhi, 0.0, -sinPhi);
 
-        Vector3d eye = uR.mul(this.m_distance, new Vector3d()).add(this.m_target).negate();
+        Vector3d eye = uR.mul(this.m_distance, new Vector3d()).add(this.m_target);
 
-        Matrix4d viewMatrix = new Matrix4d(
-                uPhi.x, uTheta.x, uR.x, 0.0,
-                uPhi.y, uTheta.y, uR.y, 0.0,
-                uPhi.z, uTheta.z, uR.z, 0.0,
-                uPhi.dot(eye), uTheta.dot(eye), uR.dot(eye), 1.0
-        );
-
-        this.m_projectionMatrix.mul(viewMatrix, this.m_clippingMatrix);
+        this.m_projectionMatrix.lookAt(eye, this.m_target, uTheta.negate(), this.m_clippingMatrix);
     }
 
     public void translate(double offset)
@@ -90,6 +83,17 @@ public class Camera
     {
         this.m_yaw = (this.m_yaw + xOffset) % PIx2;
         this.m_pitch = clamp(this.m_pitch + yOffset, gMinCameraPitch, gMaxCameraPitch);
+    }
+
+    public void moveTarget(double x, double y)
+    {
+        double cosTheta = cos(this.m_pitch), cosPhi = cos(this.m_yaw);
+        double sinTheta = sin(this.m_pitch), sinPhi = sin(this.m_yaw);
+
+        Vector3d uTheta = new Vector3d(cosTheta * sinPhi, -sinTheta, cosTheta * cosPhi);
+        Vector3d uPhi = new Vector3d(cosPhi, 0.0, -sinPhi);
+
+        this.m_target.add(uPhi.mul(x).add(uTheta.mul(y)).mul(this.m_distance));
     }
 
     public void changeTarget(Vector3d target)

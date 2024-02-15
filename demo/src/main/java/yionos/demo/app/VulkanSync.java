@@ -28,14 +28,8 @@ public record VulkanSync(MemorySegment fences, MemorySegment imageAcquiredSemaph
             MemorySegment imageAcquiredSemaphores = globalArena.allocateArray(ValueLayout.ADDRESS, frameCount);
             MemorySegment renderCompleteSemaphores = globalArena.allocateArray(ValueLayout.ADDRESS, frameCount);
 
-            VkSemaphoreTypeCreateInfo semaphoreTypeCreateInfo = new VkSemaphoreTypeCreateInfo(arena);
-            semaphoreTypeCreateInfo.sType(VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO);
-            semaphoreTypeCreateInfo.semaphoreType(VK_SEMAPHORE_TYPE_BINARY);
-            semaphoreTypeCreateInfo.initialValue(0);
-
             VkSemaphoreCreateInfo semaphoreCreateInfo = new VkSemaphoreCreateInfo(arena);
             semaphoreCreateInfo.sType(VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO);
-            semaphoreCreateInfo.pNext(semaphoreTypeCreateInfo.ptr());
 
             VkFenceCreateInfo fenceCreateInfo = new VkFenceCreateInfo(arena);
             fenceCreateInfo.sType(VK_STRUCTURE_TYPE_FENCE_CREATE_INFO);

@@ -68,16 +68,21 @@ public class Swapchain implements Disposable
 
     private static int selectPresentMode(int[] presentModes, boolean vsync)
     {
-        int wish = vsync ? VK_PRESENT_MODE_FIFO_KHR : VK_PRESENT_MODE_MAILBOX_KHR;
-        int selection = wish;
+        if (vsync)
+        {
+            return VK_PRESENT_MODE_FIFO_KHR;
+        }
+
+        int selection = VK_PRESENT_MODE_FIFO_KHR;
         for (int presentMode : presentModes)
         {
-            if (presentMode == wish)
+            if (presentMode == VK_PRESENT_MODE_MAILBOX_KHR)
             {
-                return wish;
+                selection = VK_PRESENT_MODE_MAILBOX_KHR;
+                break;
             }
 
-            if (presentMode == VK_PRESENT_MODE_MAILBOX_KHR || presentMode == VK_PRESENT_MODE_IMMEDIATE_KHR)
+            if (presentMode == VK_PRESENT_MODE_IMMEDIATE_KHR)
             {
                 selection = presentMode;
             }

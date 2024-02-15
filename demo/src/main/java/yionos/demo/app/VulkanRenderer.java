@@ -2,26 +2,23 @@ package yionos.demo.app;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.joml.Matrix4d;
 import vulkan.*;
 import yionos.demo.WindowProcessor;
+import yionos.demo.app.scene.StaticGridRenderer;
+import yionos.demo.rendering.CommandPool;
 import yionos.demo.rendering.LogicalDevice;
-import yionos.demo.rendering.ShaderModule;
 import yionos.demo.rendering.Swapchain;
 import yionos.demo.rendering.VulkanContext;
 import yionos.demo.rendering.VulkanException;
-import yionos.demo.rendering.VulkanHelpers;
 import yionos.demo.rendering.VulkanImage;
 import yionos.demo.rendering.VulkanRenderContext;
 
-import java.io.File;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
-import java.net.URISyntaxException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import static vulkan.VulkanCore.*;
@@ -30,13 +27,13 @@ import static vulkan.VkValidationFeatureEnableEXT.*;
 import static yionos.demo.rendering.VulkanHelpers.*;
 import static vulkan.VkQueueFlagBits.*;
 import static vulkan.VkImageTiling.*;
-import static vulkan.VkShaderStageFlagBits.*;
 import static vulkan.VkResult.*;
 import static vulkan.VkFormat.*;
 import static vulkan.VkPipelineStageFlagBits.*;
 import static vulkan.VkImageUsageFlagBits.*;
 import static vulkan.VkImageAspectFlagBits.*;
 import static vulkan.VkComponentSwizzle.*;
+import static vulkan.VkPipelineBindPoint.*;
 import static vulkan.VkSubpassContents.*;
 import static vma.VmaMemoryUsage.*;
 import static java.lang.foreign.MemorySegment.NULL;
@@ -53,11 +50,16 @@ public class VulkanRenderer
     private final Swapchain m_swapchain;
     private final int m_sampleCount;
     private final RenderPass m_renderPass;
-    private final Map<String, ShaderModule> m_shaderModules = new HashMap<>();
     private final VulkanSync m_syncObjects;
     private final CommandBufferFlow m_renderingCommandBuffers;
     private int m_currentFrame = 0, m_vkFrameIndex = -1;
     private VkCommandBuffer m_frameCommandBuffer;
+    private final CommandPool m_uploadCommandPool;
+
+    private final Shaders m_shaders;
+    private final PipelineLayouts m_pipelineLayouts;
+    private final Pipelines m_pipelines;
+    private final StaticGridRenderer m_gridRenderer;
 
     public VulkanRenderer(WindowProcessor windowProc, int sampleCount, boolean debug)
     {
@@ -76,23 +78,13 @@ public class VulkanRenderer
 
         String[] deviceExtensions = new String[] {
                 "VK_KHR_swapchain",
-                "VK_KHR_timeline_semaphore"
+                "VK_KHR_maintenance1"
         };
 
         VulkanContext.AppInfo appInfo = new VulkanContext.AppInfo("yionos", VK_MAKE_API_VERSION(0, 1, 0, 0), "yionos-eng", VK_MAKE_API_VERSION(0, 1, 0, 0), VK_API_VERSION_1_3);
         this.m_context = new VulkanRenderContext(appInfo, instanceLayers, instanceExtensions.toArray(String[]::new), validationFeatures, windowProc);
         if (debug) this.m_context.attachDebugMessenger(VulkanContext::defaultDebugMessenger);
-        this.m_context.findSuitableDevice((first, second) ->
-        {
-            int i = 0;
-            if (first.isDedicated()) ++i;
-            if (second.isDedicated()) --i;
-            if (first.features().samplerAnisotropy() != VK_FALSE) ++i;
-            if (second.features().samplerAnisotropy() != VK_FALSE) --i;
-            i += Math.clamp(getMaxUsableSampleCount(first.properties()) - getMaxUsableSampleCount(second.properties()), -1, 1);
-
-            return i > 0 ? first : second;
-        });
+        this.m_context.findSuitableDevice((first, second) -> first.isDedicated() ? first : second);
         gRendererLogger.info(STR."Selected physical device : \{this.m_context.physicalDevice().name()}");
 
         try (Arena arena = Arena.ofConfined())
@@ -115,11 +107,9 @@ public class VulkanRenderer
             this.m_transferQueue = this.m_logicalDevice.queue(2);
         }
 
-        int maxMsaaSamples = VulkanHelpers.getMaxUsableSampleCount(this.m_logicalDevice.physicalDevice.properties());
+        int maxMsaaSamples = getMaxUsableSampleCount(this.m_logicalDevice.physicalDevice.properties());
         this.m_sampleCount = Math.min(sampleCount, maxMsaaSamples);
         gRendererLogger.info(STR."MSAA sample count: \{this.m_sampleCount} | Device supports: \{maxMsaaSamples}");
-
-        loadShaders(this.m_logicalDevice.handle(), this.m_shaderModules);
 
         this.m_swapchain = new Swapchain(this.m_logicalDevice.handle());
         this.initSwapchain();
@@ -129,6 +119,13 @@ public class VulkanRenderer
 
         this.m_renderingCommandBuffers = new CommandBufferFlow(this.m_logicalDevice.handle(), this.m_graphicsQueue.family(), gFrameCount);
         this.m_syncObjects = VulkanSync.create(this.m_logicalDevice.handle(), gFrameCount);
+        this.m_uploadCommandPool = new CommandPool(this.m_logicalDevice.handle(), 0, this.m_transferQueue.family());
+
+        this.m_shaders = Shaders.create(this.m_logicalDevice.handle());
+        this.m_pipelineLayouts = PipelineLayouts.create(this.m_logicalDevice.handle());
+        this.m_pipelines = Pipelines.create(this);
+
+        this.m_gridRenderer = new StaticGridRenderer(this);
     }
 
     private static LogicalDevice.QueueDescriptor[] selectQueueFamilies(VkPhysicalDevice physicalDevice, MemorySegment surface)
@@ -188,54 +185,6 @@ public class VulkanRenderer
         }
     }
 
-    private static void loadShaders(VkDevice device, Map<String, ShaderModule> shaders)
-    {
-        try
-        {
-            File[] shaderFiles = new File(Thread.currentThread().getContextClassLoader().getResource("shaders").toURI()).listFiles();
-            if (shaderFiles == null)
-            {
-                return;
-            }
-
-            for (File shaderCandidate : shaderFiles)
-            {
-                String filename = shaderCandidate.getName();
-                int extensionAt = filename.lastIndexOf('.');
-                if (extensionAt < 0 || !filename.substring(extensionAt + 1).equals("glsl"))
-                {
-                    continue;
-                }
-
-                String identifier = filename.substring(0, extensionAt);
-                String[] tokens = identifier.split("-");
-                if (tokens.length < 2)
-                {
-                    continue;
-                }
-
-                int shaderStage = switch (tokens[tokens.length - 1])
-                {
-                    case "vs" -> VK_SHADER_STAGE_VERTEX_BIT;
-                    case "fs" -> VK_SHADER_STAGE_FRAGMENT_BIT;
-                    case "tc" -> VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT;
-                    case "te" -> VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT;
-                    case "geom" -> VK_SHADER_STAGE_GEOMETRY_BIT;
-                    default -> -1;
-                };
-
-                if (shaderStage != -1)
-                {
-                    shaders.computeIfAbsent(identifier, _ -> loadShaderFromFile(device, shaderCandidate, shaderStage));
-                }
-            }
-        }
-        catch (URISyntaxException e)
-        {
-            throw new VulkanException(e.toString());
-        }
-    }
-
     private void resetSwapchainAndResources()
     {
         VulkanException.check(vkWaitForFences(this.m_logicalDevice.handle(), gFrameCount, this.m_syncObjects.fences(), VK_TRUE, Long.MAX_VALUE));
@@ -282,6 +231,51 @@ public class VulkanRenderer
         }
     }
 
+    public LogicalDevice logicalDevice()
+    {
+        return this.m_logicalDevice;
+    }
+
+    public LogicalDevice.Queue graphicsQueue()
+    {
+        return this.m_graphicsQueue;
+    }
+
+    public LogicalDevice.Queue transferQueue()
+    {
+        return this.m_transferQueue;
+    }
+
+    public CommandPool uploadCommandPool()
+    {
+        return this.m_uploadCommandPool;
+    }
+
+    public PipelineLayouts pipelineLayouts()
+    {
+        return this.m_pipelineLayouts;
+    }
+
+    public int sampleCount()
+    {
+        return this.m_sampleCount;
+    }
+
+    public RenderPass renderPass()
+    {
+        return this.m_renderPass;
+    }
+
+    public Shaders shaders()
+    {
+        return this.m_shaders;
+    }
+
+    public Pipelines pipelines()
+    {
+        return this.m_pipelines;
+    }
+
     public void beginRenderFrame()
     {
         try (Arena arena = Arena.ofConfined())
@@ -306,20 +300,19 @@ public class VulkanRenderer
             this.m_renderingCommandBuffers.reset(this.m_currentFrame);
 
             this.m_frameCommandBuffer = this.m_renderingCommandBuffers.pool(this.m_currentFrame);
-            beginCommandBuffer(arena, this.m_frameCommandBuffer, 0);
+            beginCommandBuffer(this.m_frameCommandBuffer, 0);
 
             MemorySegment pClearValues = arena.allocateArray(VkClearValue.gStructLayout, 2);
-
             VkClearValue.getAtIndex(pClearValues, 0).color(value ->
             {
-                value.float32(0, .2f);
-                value.float32(1, .5f);
-                value.float32(2, .4f);
-                value.float32(3, 1.f);
+                value.float32(0, 0.0f);
+                value.float32(1, 0.0f);
+                value.float32(2, 0.0f);
+                value.float32(3, 1.0f);
             });
             VkClearValue.getAtIndex(pClearValues, 1).depthStencil(value ->
             {
-                value.depth(1.f);
+                value.depth(1.0f);
                 value.stencil(0);
             });
 
@@ -338,12 +331,12 @@ public class VulkanRenderer
             vkCmdBeginRenderPass(this.m_frameCommandBuffer, renderPassBeginInfo.ptr(), VK_SUBPASS_CONTENTS_INLINE);
 
             VkViewport viewport = new VkViewport(arena);
-            viewport.x(0.f);
+            viewport.x(0.0f);
             viewport.y((float)this.m_swapchain.height());
             viewport.width((float)this.m_swapchain.width());
             viewport.height((float)-this.m_swapchain.height());
-            viewport.minDepth(0.f);
-            viewport.maxDepth(1.f);
+            viewport.minDepth(0.0f);
+            viewport.maxDepth(1.0f);
 
             VkRect2D scissor = new VkRect2D(arena);
             scissor.extent(extent ->
@@ -403,15 +396,27 @@ public class VulkanRenderer
         this.m_vkFrameIndex = -1;
     }
 
+    public void renderStaticGrid(Camera camera, Matrix4d transform)
+    {
+        this.assertRenderContext();
+        vkCmdBindPipeline(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, this.m_pipelines.staticGrid());
+        this.m_gridRenderer.render(this.m_frameCommandBuffer, camera, transform);
+    }
+
     public void destroy()
     {
         VulkanException.check(vkDeviceWaitIdle(this.m_logicalDevice.handle()));
 
+        this.m_gridRenderer.dispose();
+
+        this.m_pipelines.dispose();
+        this.m_pipelineLayouts.dispose();
+
+        this.m_uploadCommandPool.dispose();
         this.m_renderingCommandBuffers.dispose();
         this.m_syncObjects.dispose();
 
-        this.m_shaderModules.values().forEach(ShaderModule::dispose);
-        this.m_shaderModules.clear();
+        this.m_shaders.dispose();
 
         this.m_renderPass.dispose();
         this.m_colorImage.dispose();

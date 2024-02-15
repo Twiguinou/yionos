@@ -10,8 +10,15 @@ import static glfw3.GLFW3.*;
 
 public class WindowInputMap
 {
-    private final int[] m_keyInputs = new int[GLFW_KEY_MENU + 1], m_previousKeyInputs;
-    private final int[] m_mouseInputs = new int[3], m_previousMouseInputs;
+    /**
+     * The input information is stored as a single long acquired by concatenating the modifiers of the key with its action.
+     * The leftmost 32 bits contain the modifiers, while the rightmost 32 bits contain the action.
+     */
+
+    private static final long DEFAULT_INPUT_VALUE = ((long)0 << 32) | GLFW_RELEASE;
+
+    private final long[] m_keyInputs = new long[GLFW_KEY_MENU + 1], m_previousKeyInputs;
+    private final long[] m_mouseInputs = new long[3], m_previousMouseInputs;
     private final Queue<Integer> m_keysToTrace = new ArrayDeque<>();
     private final Queue<Integer> m_mouseInputsToTrace = new ArrayDeque<>();
     private double m_mousePosX = 0.d, m_mousePosY = 0.d;
@@ -19,18 +26,18 @@ public class WindowInputMap
 
     public WindowInputMap(WindowProcessor window)
     {
-        Arrays.fill(this.m_keyInputs, GLFW_RELEASE);
+        Arrays.fill(this.m_keyInputs, DEFAULT_INPUT_VALUE);
         this.m_previousKeyInputs = Arrays.copyOf(this.m_keyInputs, this.m_keyInputs.length);
 
-        Arrays.fill(this.m_mouseInputs, GLFW_RELEASE);
+        Arrays.fill(this.m_mouseInputs, DEFAULT_INPUT_VALUE);
         this.m_previousMouseInputs = Arrays.copyOf(this.m_mouseInputs, this.m_mouseInputs.length);
 
-        window.registerKeyInputCallback((key, _, action, _) ->
+        window.registerKeyInputCallback((key, _, action, mods) ->
         {
             if (key >= 0 && key < this.m_keyInputs.length)
             {
                 this.m_previousKeyInputs[key] = this.m_keyInputs[key];
-                this.m_keyInputs[key] = action;
+                this.m_keyInputs[key] = encodeInput(action, mods);
                 this.m_keysToTrace.offer(key);
             }
         });
@@ -43,15 +50,20 @@ public class WindowInputMap
             this.m_mousePosY = y;
         });
 
-        window.registerMouseButtonCallback((button, action, _) ->
+        window.registerMouseButtonCallback((button, action, mods) ->
         {
             if (button >= 0 && button < this.m_mouseInputs.length)
             {
                 this.m_previousMouseInputs[button] = this.m_mouseInputs[button];
-                this.m_mouseInputs[button] = action;
+                this.m_mouseInputs[button] = encodeInput(action, mods);
                 this.m_mouseInputsToTrace.offer(button);
             }
         });
+    }
+
+    private static long encodeInput(int action, int mods)
+    {
+        return ((long) mods << 32) | (long) action;
     }
 
     public void trace()
@@ -67,22 +79,85 @@ public class WindowInputMap
             int key = this.m_mouseInputsToTrace.poll();
             this.m_previousMouseInputs[key] = this.m_mouseInputs[key];
         }
+
+        this.m_previousMousePosX = this.m_mousePosX;
+        this.m_previousMousePosY = this.m_mousePosY;
     }
 
-    public int keyInput(int key) {return this.m_keyInputs[key];}
-    public int previousKeyInput(int key) {return this.m_previousKeyInputs[key];}
+    public int keyAction(int key)
+    {
+        return (int)this.m_keyInputs[key];
+    }
 
-    public int mouseInput(int button) {return this.m_mouseInputs[button];}
-    public int previousMouseInput(int button) {return this.m_previousMouseInputs[button];}
+    public int previousKeyAction(int key)
+    {
+        return (int)this.m_previousKeyInputs[key];
+    }
 
-    public double mouseX() {return this.m_mousePosX;}
-    public double previousMouseX() {return this.m_previousMousePosX;}
-    public double mouseY() {return this.m_mousePosY;}
-    public double previousMouseY() {return this.m_previousMousePosY;}
+    public int keyMods(int key)
+    {
+        return (int)(this.m_keyInputs[key] >> 32);
+    }
+
+    public int previousKeyMods(int key)
+    {
+        return (int)(this.m_previousKeyInputs[key] >> 32);
+    }
+
+    public int mouseAction(int button)
+    {
+        return (int)this.m_mouseInputs[button];
+    }
+
+    public int previousMouseAction(int button)
+    {
+        return (int)this.m_previousMouseInputs[button];
+    }
+
+    public int mouseMods(int button)
+    {
+        return (int)(this.m_mouseInputs[button] >> 32);
+    }
+
+    public int previousMouseMods(int button)
+    {
+        return (int)(this.m_previousMouseInputs[button] >> 32);
+    }
+
+    public double mouseX()
+    {
+        return this.m_mousePosX;
+    }
+
+    public double previousMouseX()
+    {
+        return this.m_previousMousePosX;
+    }
+
+    public double mouseY()
+    {
+        return this.m_mousePosY;
+    }
+
+    public double previousMouseY()
+    {
+        return this.m_previousMousePosY;
+    }
 
     public boolean keyToggled(int key)
     {
-        return this.m_keyInputs[key] == GLFW_PRESS && this.m_previousKeyInputs[key] == GLFW_RELEASE;
+        return this.keyAction(key) == GLFW_PRESS && this.previousKeyAction(key) == GLFW_RELEASE;
+    }
+
+    public boolean keyToggledWithMods(int key, int mods)
+    {
+        return this.keyToggled(key) && (this.keyMods(key) & mods) != 0;
+    }
+
+    public boolean keyDown(int key)
+    {
+        int action = this.keyAction(key);
+        return action == GLFW_PRESS || action == GLFW_REPEAT;
     }
 
     public double displacementX()

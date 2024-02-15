@@ -1,5 +1,13 @@
 plugins {
-    id("java-library")
+    id("java")
+    id("idea")
+}
+
+idea {
+    module {
+        isDownloadSources = true
+        isDownloadJavadoc = true
+    }
 }
 
 allprojects {
@@ -12,7 +20,7 @@ allprojects {
     }
 
     subprojects {
-        apply(plugin = "java-library")
+        apply(plugin = "java")
 
         java {
             sourceCompatibility = JavaVersion.VERSION_21

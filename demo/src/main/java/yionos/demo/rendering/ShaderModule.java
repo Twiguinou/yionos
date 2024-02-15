@@ -21,13 +21,14 @@ import static java.lang.foreign.MemorySegment.NULL;
 
 public class ShaderModule implements Disposable
 {
-    public record CompilationTask(String filename, String entryPoint, boolean optimize) {}
+    public record CompilationTask(String filename, boolean optimize) {}
 
     private final MemorySegment m_handle;
     private final int m_stage;
     public final VkDevice device;
+    private final String m_entryPoint;
 
-    public ShaderModule(VkDevice device, int stage, MemorySegment dataBytes, @Nullable CompilationTask compilation) throws VulkanException
+    public ShaderModule(VkDevice device, int stage, String entryPoint, MemorySegment dataBytes, @Nullable CompilationTask compilation) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
@@ -49,7 +50,7 @@ public class ShaderModule implements Disposable
                 }
 
                 shadercResult = shaderc_compile_into_spv(compiler, dataBytes, dataBytes.byteSize(), shaderc_stage, arena.allocateUtf8String(compilation.filename),
-                        arena.allocateUtf8String(compilation.entryPoint), options);
+                        arena.allocateUtf8String(entryPoint), options);
                 shaderc_compile_options_release(options);
                 shaderc_compiler_release(compiler);
                 if (shadercResult.equals(NULL))
@@ -89,6 +90,7 @@ public class ShaderModule implements Disposable
 
             this.m_stage = stage;
             this.device = device;
+            this.m_entryPoint = entryPoint;
         }
     }
 
@@ -114,6 +116,11 @@ public class ShaderModule implements Disposable
     public int stage()
     {
         return this.m_stage;
+    }
+
+    public String entryPoint()
+    {
+        return this.m_entryPoint;
     }
 
     @Override

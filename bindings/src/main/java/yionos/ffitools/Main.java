@@ -322,6 +322,108 @@ public class Main
         }
     }
 
+    private static void assimpBindings(File outputDirectory, String includeDirectory, String[] clangArgs)
+    {
+        File filesDest = new File(outputDirectory, "assimp");
+        try (SourceScopeScanner scanner = new SourceScopeScanner())
+        {
+            String[] additionalArgs = new String[] {
+                    STR."-I\{includeDirectory}"
+            };
+
+            scanner.process(STR."\{includeDirectory}/assimp/cimport.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/types.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/postprocess.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/aabb.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/camera.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/cexport.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/cfileio.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/color4.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/importerdesc.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/light.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/material.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/matrix3x3.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/matrix4x4.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/mesh.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/scene.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/texture.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/vector2.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/vector3.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/version.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+
+            if (filesDest.exists() || filesDest.mkdirs())
+            {
+                HeaderInformation headerInfo = new HeaderInformation("Assimp", "assimp", "gSystemLinker", "gLibLookup");
+                Map<Declaration<?>, String> typeNames = scanner.translateDeclarations();
+                TypeTranslation translation = new TypeTranslation()
+                {
+                    @Override
+                    public HeaderInformation headerInfo()
+                    {
+                        return headerInfo;
+                    }
+
+                    @Override
+                    public RecordInformation recordInfo(TypeManifold type)
+                    {
+                        return new RecordInformation(typeNames.get((RecordType)flattenType(type)), headerInfo.packageName(), "gStructLayout", "ptr");
+                    }
+                };
+
+                for (Declaration<?> declaration : scanner.gatherTypeDeclarations())
+                {
+                    String name = typeNames.get(declaration);
+                    Optional<String> code = switch (declaration)
+                    {
+                        case EnumType enumType -> Optional.of(generateEnum(enumType, translation, headerInfo.packageName(), name));
+                        case RecordType recordType ->
+                        {
+                            try
+                            {
+                                yield Optional.of(generateRecord(recordType, translation));
+                            }
+                            catch (Throwable _)
+                            {
+                                yield Optional.empty();
+                            }
+                        }
+                        case FunctionType.Callback callback -> Optional.of(generateCallback(callback, translation, headerInfo.packageName(), name, "gDescriptor", "gUpcallStub"));
+                        default -> Optional.empty();
+                    };
+
+                    code.ifPresent(codeString ->
+                    {
+                        File outputFile = new File(filesDest, STR."\{name}.java");
+                        try (FileOutputStream outputStream = new FileOutputStream(outputFile))
+                        {
+                            outputStream.write(codeString.getBytes(StandardCharsets.UTF_8));
+                        }
+                        catch (IOException e)
+                        {
+                            throw new RuntimeException(e);
+                        }
+                    });
+                }
+
+                File headerFile = new File(filesDest, STR."\{headerInfo.name()}.java");
+                try (FileOutputStream outputStream = new FileOutputStream(headerFile))
+                {
+                    List<FunctionImport> imports = new ArrayList<>();
+                    for (FunctionType.Declaration function : scanner.getDeclaredFunctions())
+                    {
+                        imports.add(() -> function);
+                    }
+
+                    outputStream.write(generateHeader(translation, "libassimp-5", imports, scanner.getMacroConstants()).getBytes(StandardCharsets.UTF_8));
+                }
+                catch (IOException e)
+                {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
     private static String[] getProgramClangArgs(ProgramArguments arguments)
     {
         int numArgs = arguments.getNumValuesOfArg("clang_args");
@@ -339,34 +441,47 @@ public class Main
         File outputDirectory = arguments.getArgValueIndexed("output_directory", 0, File::new)
                 .orElseThrow(() -> new IllegalStateException("Missing output_directory argument."));
         String[] clangArgs = getProgramClangArgs(arguments);
+
         String vulkanInclude = arguments.getArgValueIndexed("vulkan_include", 0, Function.identity()).orElse(null);
         boolean skipVulkan = arguments.getArgValueIndexed("vulkan_skip", 0, Boolean::parseBoolean).orElse(false);
+
         String glfwInclude = arguments.getArgValueIndexed("glfw_include", 0, Function.identity()).orElse(null);
         String vmaInclude = arguments.getArgValueIndexed("vma_include", 0, Function.identity()).orElse(null);
         String shadercInclude = arguments.getArgValueIndexed("shaderc_include", 0, Function.identity()).orElse(null);
+        String assimpInclude = arguments.getArgValueIndexed("assimp_include", 0, Function.identity()).orElse(null);
 
         SourceScopeScanner.configureLog4j();
         if (vulkanInclude != null)
         {
             if (!skipVulkan)
             {
+                System.out.println("Generating Vulkan bindings..");
                 vulkanBindings(outputDirectory, vulkanInclude, clangArgs);
             }
 
             if (glfwInclude != null)
             {
+                System.out.println("Generating GLFW bindings..");
                 glfwBindings(outputDirectory, glfwInclude, vulkanInclude, clangArgs);
             }
 
             if (vmaInclude != null)
             {
+                System.out.println("Generating VMA bindings..");
                 vmaBindings(outputDirectory, vmaInclude, vulkanInclude, clangArgs);
             }
         }
 
         if (shadercInclude != null)
         {
+            System.out.println("Generating Shaderc bindings..");
             shadercBindings(outputDirectory, shadercInclude, clangArgs);
+        }
+
+        if (assimpInclude != null)
+        {
+            System.out.println("Generating Vulkan bindings..");
+            assimpBindings(outputDirectory, assimpInclude, clangArgs);
         }
     }
 }

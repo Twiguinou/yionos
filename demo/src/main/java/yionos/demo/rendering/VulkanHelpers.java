@@ -43,7 +43,7 @@ public final class VulkanHelpers
         {
             byte[] bytes = input.readAllBytes();
             MemorySegment data = arena.allocateArray(ValueLayout.JAVA_BYTE, bytes);
-            return new ShaderModule(device, stage, data, new ShaderModule.CompilationTask(file.getName(), "main", true));
+            return new ShaderModule(device, stage, "main", data, new ShaderModule.CompilationTask(file.getName(), true));
         }
         catch (IOException e)
         {
@@ -51,13 +51,29 @@ public final class VulkanHelpers
         }
     }
 
-
-    public static void beginCommandBuffer(Arena arena, VkCommandBuffer commandBuffer, int flags) throws VulkanException
+    public static ShaderModule loadShaderFromStream(VkDevice device, String filename, InputStream inputStream, int stage) throws VulkanException
     {
-        VkCommandBufferBeginInfo commandBufferBeginInfo = new VkCommandBufferBeginInfo(arena);
-        commandBufferBeginInfo.sType(VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO);
-        commandBufferBeginInfo.flags(flags);
+        try (Arena arena = Arena.ofConfined())
+        {
+            byte[] bytes = inputStream.readAllBytes();
+            MemorySegment data = arena.allocateArray(ValueLayout.JAVA_BYTE, bytes);
+            return new ShaderModule(device, stage, "main", data, new ShaderModule.CompilationTask(filename, true));
+        }
+        catch (IOException e)
+        {
+            throw new VulkanException(e.toString());
+        }
+    }
 
-        VulkanException.check(vkBeginCommandBuffer(commandBuffer, commandBufferBeginInfo.ptr()));
+    public static void beginCommandBuffer(VkCommandBuffer commandBuffer, int flags) throws VulkanException
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            VkCommandBufferBeginInfo commandBufferBeginInfo = new VkCommandBufferBeginInfo(arena);
+            commandBufferBeginInfo.sType(VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO);
+            commandBufferBeginInfo.flags(flags);
+
+            VulkanException.check(vkBeginCommandBuffer(commandBuffer, commandBufferBeginInfo.ptr()));
+        }
     }
 }

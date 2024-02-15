@@ -2,6 +2,7 @@ package yionos.demo.app;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.joml.Matrix4d;
 import org.joml.Vector3d;
 import yionos.demo.WindowProcessor;
 
@@ -28,7 +29,7 @@ public class DemoApplication
         final Runtime runtime = Runtime.getRuntime();
         gDemoLogger.info("JVM maximum memory size: {} MBs", (long)(runtime.maxMemory() / 1e+6));
 
-        this.m_renderer = new VulkanRenderer(windowProc, sampleCount, false);
+        this.m_renderer = new VulkanRenderer(windowProc, sampleCount, true);
         this.m_camera = new Camera(new Vector3d(), new Vector3d(7.0, 3.0, 2.0));
         this.m_camera.setProjection(gFovRadians, windowProc.width() / (double) windowProc.height(), gNearPlaneDistance, gFarPlaneDistance);
 
@@ -41,12 +42,15 @@ public class DemoApplication
     private void handleInputs()
     {
         if (this.m_inputs.keyToggled(GLFW_KEY_ESCAPE)) this.m_running = false;
-        if (this.m_inputs.keyToggled(GLFW_KEY_F)) this.windowProc.toggleFullscreen();
+        if (this.m_inputs.keyToggled(GLFW_KEY_C)) this.m_camera.reset();
+        if (this.m_inputs.keyToggledWithMods(GLFW_KEY_ENTER, GLFW_MOD_ALT)) this.windowProc.toggleFullscreen();
 
         double mouseMoveX = this.m_inputs.displacementX(), mouseMoveY = this.m_inputs.displacementY();
         if (mouseMoveX != 0.0 || mouseMoveY != 0.0)
         {
-            if (this.m_inputs.mouseInput(0) == GLFW_PRESS) this.m_camera.rotate(mouseMoveX * 0.005, mouseMoveY * -0.005);
+            double interactionX = mouseMoveX * -0.001, interactionY = mouseMoveY * -0.001;
+            if (this.m_inputs.mouseAction(0) == GLFW_PRESS) this.m_camera.rotate(interactionX * 5.0, interactionY * 5.0);
+            else if (this.m_inputs.mouseAction(1) == GLFW_PRESS) this.m_camera.moveTarget(interactionX, interactionY);
         }
     }
 
@@ -94,7 +98,10 @@ public class DemoApplication
                     this.handleInputs();
                     this.m_inputs.trace();
 
+                    this.m_camera.updateViewMatrix();
                     this.m_renderer.beginRenderFrame();
+
+                    this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
 
                     this.m_renderer.endRenderFrame();
                 }
