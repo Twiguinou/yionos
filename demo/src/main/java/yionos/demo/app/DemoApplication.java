@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.joml.Matrix4d;
 import org.joml.Vector3d;
 import yionos.demo.WindowProcessor;
+import yionos.demo.app.scene.ObjectRenderer;
 
 import java.time.Duration;
 
@@ -101,6 +102,8 @@ public class DemoApplication
                     this.m_camera.updateViewMatrix();
                     this.m_renderer.beginRenderFrame();
 
+                    this.m_renderer.renderObject(this.m_camera, new Matrix4d().translate(0.0, 2.0, 0.0), ObjectRenderer.Type.SPHERE);
+                    this.m_renderer.renderObject(this.m_camera, new Matrix4d().translate(1.0, 4.0, 0.5), ObjectRenderer.Type.SPHERE);
                     this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
 
                     this.m_renderer.endRenderFrame();

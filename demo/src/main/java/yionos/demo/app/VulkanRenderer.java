@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.joml.Matrix4d;
 import vulkan.*;
 import yionos.demo.WindowProcessor;
+import yionos.demo.app.scene.ObjectRenderer;
 import yionos.demo.app.scene.StaticGridRenderer;
 import yionos.demo.rendering.CommandPool;
 import yionos.demo.rendering.LogicalDevice;
@@ -60,6 +61,8 @@ public class VulkanRenderer
     private final PipelineLayouts m_pipelineLayouts;
     private final Pipelines m_pipelines;
     private final StaticGridRenderer m_gridRenderer;
+    private final ObjectRenderer m_cubeRenderer;
+    private final ObjectRenderer m_sphereRenderer;
 
     public VulkanRenderer(WindowProcessor windowProc, int sampleCount, boolean debug)
     {
@@ -126,6 +129,8 @@ public class VulkanRenderer
         this.m_pipelines = Pipelines.create(this);
 
         this.m_gridRenderer = new StaticGridRenderer(this);
+        this.m_cubeRenderer = new ObjectRenderer(this, ObjectRenderer.Type.CUBE);
+        this.m_sphereRenderer = new ObjectRenderer(this, ObjectRenderer.Type.SPHERE);
     }
 
     private static LogicalDevice.QueueDescriptor[] selectQueueFamilies(VkPhysicalDevice physicalDevice, MemorySegment surface)
@@ -403,11 +408,25 @@ public class VulkanRenderer
         this.m_gridRenderer.render(this.m_frameCommandBuffer, camera, transform);
     }
 
+    public void renderObject(Camera camera, Matrix4d transform, ObjectRenderer.Type type)
+    {
+        this.assertRenderContext();
+        vkCmdBindPipeline(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, this.m_pipelines.objectDebug());
+        switch (type)
+        {
+            case CUBE -> this.m_cubeRenderer.render(this.m_frameCommandBuffer, camera, transform);
+            case SPHERE -> this.m_sphereRenderer.render(this.m_frameCommandBuffer, camera, transform);
+            default -> throw new IllegalArgumentException(STR."Unsupported object type: \{type.name()}");
+        }
+    }
+
     public void destroy()
     {
         VulkanException.check(vkDeviceWaitIdle(this.m_logicalDevice.handle()));
 
         this.m_gridRenderer.dispose();
+        this.m_cubeRenderer.dispose();
+        this.m_sphereRenderer.dispose();
 
         this.m_pipelines.dispose();
         this.m_pipelineLayouts.dispose();

@@ -5,45 +5,67 @@ import vulkan.VkCommandBuffer;
 import yionos.demo.Disposable;
 import yionos.demo.app.Camera;
 import yionos.demo.app.VulkanRenderer;
+import yionos.demo.app.data.OBJLoader;
+import yionos.demo.app.data.OBJModel;
 import yionos.demo.rendering.VulkanBuffer;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
+import java.util.Arrays;
 
-import static vma.VmaMemoryUsage.VMA_MEMORY_USAGE_GPU_ONLY;
-import static vulkan.VkBufferUsageFlagBits.VK_BUFFER_USAGE_INDEX_BUFFER_BIT;
-import static vulkan.VkBufferUsageFlagBits.VK_BUFFER_USAGE_TRANSFER_DST_BIT;
-import static vulkan.VkBufferUsageFlagBits.VK_BUFFER_USAGE_VERTEX_BUFFER_BIT;
-import static vulkan.VkIndexType.VK_INDEX_TYPE_UINT32;
-import static vulkan.VkShaderStageFlagBits.VK_SHADER_STAGE_VERTEX_BIT;
-import static vulkan.VulkanCore.vkCmdBindIndexBuffer;
-import static vulkan.VulkanCore.vkCmdBindVertexBuffers;
-import static vulkan.VulkanCore.vkCmdDrawIndexed;
-import static vulkan.VulkanCore.vkCmdPushConstants;
+import static vulkan.VulkanCore.*;
+import static vulkan.VkIndexType.*;
+import static vulkan.VkShaderStageFlagBits.*;
+import static vulkan.VkBufferUsageFlagBits.*;
+import static vma.VmaMemoryUsage.*;
 
 public class ObjectRenderer implements Disposable
 {
+    public enum Type
+    {
+        CUBE("cube.obj"),
+        SPHERE("sphere.obj");
+
+        private final String modelFile;
+
+        Type(String modelFile)
+        {
+            this.modelFile = modelFile;
+        }
+    }
+
     public final VulkanRenderer vulkanRenderer;
     private final VulkanBuffer m_vertexBuffer, m_indexBuffer;
+    private final int m_indexCount;
 
-    public ObjectRenderer(VulkanRenderer renderer)
+    public ObjectRenderer(VulkanRenderer renderer, Type type)
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment vertices = arena.allocateArray(ValueLayout.JAVA_FLOAT,
-                    -1.0f, -1.0f,
-                    1.0f, -1.0f,
-                    1.0f, 1.0f,
-                    -1.0f, 1.0f);
+            OBJLoader loader = new OBJLoader("models");
+            OBJModel.Mesh mainMesh = Arrays.stream(loader.parseGeometry(type.modelFile).meshes()).findAny().orElseThrow();
+
+            MemorySegment vertices = arena.allocateArray(ValueLayout.JAVA_FLOAT, (long) mainMesh.vertices().length * 3);
+            for (int i = 0; i < mainMesh.vertices().length; i++)
+            {
+                vertices.setAtIndex(ValueLayout.JAVA_FLOAT, (long) i * 3, mainMesh.vertices()[i].x);
+                vertices.setAtIndex(ValueLayout.JAVA_FLOAT, (long) i * 3 + 1, mainMesh.vertices()[i].y);
+                vertices.setAtIndex(ValueLayout.JAVA_FLOAT, (long) i * 3 + 2, mainMesh.vertices()[i].z);
+            }
+
             this.m_vertexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), vertices.byteSize(), VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
             this.m_vertexBuffer.upload(renderer.uploadCommandPool(), renderer.transferQueue(), vertices);
 
-            MemorySegment indices = arena.allocateArray(ValueLayout.JAVA_INT,
-                    0, 1, 2,
-                    0, 2, 3,
-                    2, 1, 0,
-                    3, 2, 0);
+            this.m_indexCount = mainMesh.faces().length * 3;
+            MemorySegment indices = arena.allocateArray(ValueLayout.JAVA_INT, this.m_indexCount);
+            for (int i = 0; i < mainMesh.faces().length; i++)
+            {
+                indices.setAtIndex(ValueLayout.JAVA_INT, (long) i * 3, mainMesh.faces()[i].x);
+                indices.setAtIndex(ValueLayout.JAVA_INT, (long) i * 3 + 1, mainMesh.faces()[i].y);
+                indices.setAtIndex(ValueLayout.JAVA_INT, (long) i * 3 + 2, mainMesh.faces()[i].z);
+            }
+
             this.m_indexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), indices.byteSize(), VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
             this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.transferQueue(), indices);
 
@@ -61,16 +83,12 @@ public class ObjectRenderer implements Disposable
             Matrix4d clippedTransform = new Matrix4d();
             camera.transformationMatrix(transform, clippedTransform);
 
-            MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 20);
+            MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
             clippedTransform.get(pushConstants.asByteBuffer().asFloatBuffer());
-            pushConstants.setAtIndex(ValueLayout.JAVA_FLOAT, 16, 0.267f);
-            pushConstants.setAtIndex(ValueLayout.JAVA_FLOAT, 17, 0.533f);
-            pushConstants.setAtIndex(ValueLayout.JAVA_FLOAT, 18, 0.749f);
-            pushConstants.setAtIndex(ValueLayout.JAVA_FLOAT, 19, 50.0f);
 
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().staticGrid(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
+            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
 
-            vkCmdDrawIndexed(commandBuffer, 12, 1, 0, 0, 0);
+            vkCmdDrawIndexed(commandBuffer, this.m_indexCount, 1, 0, 0, 0);
         }
     }
 

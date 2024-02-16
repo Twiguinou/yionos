@@ -25,7 +25,7 @@ import static vulkan.VkFormat.*;
 import static vulkan.VkVertexInputRate.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
-public record Pipelines(VkDevice device, MemorySegment staticGrid) implements Disposable
+public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug) implements Disposable
 {
     public static VkGraphicsPipelineCreateInfo makeGraphicsPrototype(Arena arena, MemorySegment layout, MemorySegment renderPass, int sampleCount, ShaderModule vertexShader, ShaderModule fragmentShader)
     {
@@ -87,7 +87,6 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid) implements Di
         colorBlendStateCreateInfo.sType(VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO);
         colorBlendStateCreateInfo.logicOpEnable(VK_FALSE);
         colorBlendStateCreateInfo.logicOp(VK_LOGIC_OP_COPY);
-        colorBlendStateCreateInfo.attachmentCount(1);
         colorBlendStateCreateInfo.blendConstants(0, 1.f);
         colorBlendStateCreateInfo.blendConstants(1, 1.f);
         colorBlendStateCreateInfo.blendConstants(2, 1.f);
@@ -178,12 +177,37 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid) implements Di
             staticGridPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
         }
 
-        return new Pipelines(device, staticGridPipeline);
+        MemorySegment objectDebugPipeline;
+        try (Arena arena = Arena.ofConfined())
+        {
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.staticGrid(), renderPass, sampleCount, shaders.objectDebugVertex(), shaders.objectDebugFragment());
+
+            VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
+            binding0.binding(0);
+            binding0.stride(3 * Float.BYTES);
+            binding0.inputRate(VK_VERTEX_INPUT_RATE_VERTEX);
+
+            VkVertexInputAttributeDescription attribute0 = new VkVertexInputAttributeDescription(arena);
+            attribute0.location(0);
+            attribute0.format(VK_FORMAT_R32G32B32_SFLOAT);
+            attribute0.offset(0);
+
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
+            vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
+            vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
+            vertexInputStateCreateInfo.pVertexAttributeDescriptions(attribute0.ptr());
+
+            objectDebugPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
+        }
+
+        return new Pipelines(device, staticGridPipeline, objectDebugPipeline);
     }
 
     @Override
     public void dispose()
     {
         vkDestroyPipeline(this.device, this.staticGrid, NULL);
+        vkDestroyPipeline(this.device, this.objectDebug, NULL);
     }
 }
