@@ -3,6 +3,7 @@ package yionos.demo.app.scene;
 import org.joml.Matrix4d;
 import vulkan.VkCommandBuffer;
 import yionos.demo.Disposable;
+import yionos.demo.StackAllocator;
 import yionos.demo.app.Camera;
 import yionos.demo.app.VulkanRenderer;
 import yionos.demo.rendering.VulkanBuffer;
@@ -48,7 +49,7 @@ public class StaticGridRenderer implements Disposable
 
     public void render(VkCommandBuffer commandBuffer, Camera camera, Matrix4d transform)
     {
-        try (Arena arena = Arena.ofConfined())
+        try (Arena arena = StackAllocator.stackPush())
         {
             vkCmdBindVertexBuffers(commandBuffer, 0, 1, arena.allocate(ValueLayout.ADDRESS, this.m_vertexBuffer.handle()), arena.allocate(ValueLayout.JAVA_LONG, 0));
             vkCmdBindIndexBuffer(commandBuffer, this.m_indexBuffer.handle(), 0, VK_INDEX_TYPE_UINT32);

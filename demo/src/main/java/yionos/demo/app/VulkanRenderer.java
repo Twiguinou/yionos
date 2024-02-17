@@ -4,10 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joml.Matrix4d;
 import vulkan.*;
+import yionos.demo.StackAllocator;
 import yionos.demo.WindowProcessor;
 import yionos.demo.app.scene.ObjectRenderer;
 import yionos.demo.app.scene.StaticGridRenderer;
 import yionos.demo.rendering.CommandPool;
+import yionos.demo.rendering.DescriptorPool;
 import yionos.demo.rendering.LogicalDevice;
 import yionos.demo.rendering.Swapchain;
 import yionos.demo.rendering.VulkanContext;
@@ -36,13 +38,14 @@ import static vulkan.VkImageAspectFlagBits.*;
 import static vulkan.VkComponentSwizzle.*;
 import static vulkan.VkPipelineBindPoint.*;
 import static vulkan.VkSubpassContents.*;
+import static vulkan.VkDescriptorType.*;
 import static vma.VmaMemoryUsage.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class VulkanRenderer
 {
     private static final Logger gRendererLogger = LogManager.getLogger("Vulkan Renderer");
-    private static final int gFrameCount = 2;
+    public static final int gFrameCount = 2;
 
     private final VulkanRenderContext m_context;
     private final LogicalDevice m_logicalDevice;
@@ -56,10 +59,14 @@ public class VulkanRenderer
     private int m_currentFrame = 0, m_vkFrameIndex = -1;
     private VkCommandBuffer m_frameCommandBuffer;
     private final CommandPool m_uploadCommandPool;
+    private final DescriptorPool m_descriptorPool;
 
     private final Shaders m_shaders;
     private final PipelineLayouts m_pipelineLayouts;
     private final Pipelines m_pipelines;
+    private final DescriptorSetLayouts m_descriptorSetLayouts;
+    private final DescriptorSets[] m_framesDescriptorSets = new DescriptorSets[gFrameCount];
+
     private final StaticGridRenderer m_gridRenderer;
     private final ObjectRenderer m_cubeRenderer;
     private final ObjectRenderer m_sphereRenderer;
@@ -94,8 +101,13 @@ public class VulkanRenderer
         {
             LogicalDevice.QueueDescriptor[] queueDescriptors = selectQueueFamilies(this.m_context.physicalDevice().handle(), this.m_context.surface());
 
+            VkPhysicalDeviceShaderDrawParametersFeatures shaderDrawParametersFeatures = new VkPhysicalDeviceShaderDrawParametersFeatures(arena);
+            shaderDrawParametersFeatures.sType(VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETERS_FEATURES);
+            shaderDrawParametersFeatures.shaderDrawParameters(VK_TRUE);
+
             VkPhysicalDeviceFeatures2 features2 = new VkPhysicalDeviceFeatures2(arena);
             features2.sType(VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2);
+            features2.pNext(shaderDrawParametersFeatures.ptr());
             features2.features(f ->
             {
                 f.samplerAnisotropy(VK_TRUE);
@@ -124,9 +136,20 @@ public class VulkanRenderer
         this.m_syncObjects = VulkanSync.create(this.m_logicalDevice.handle(), gFrameCount);
         this.m_uploadCommandPool = new CommandPool(this.m_logicalDevice.handle(), 0, this.m_transferQueue.family());
 
+        this.m_descriptorPool = new DescriptorPool(this.m_logicalDevice.handle(), 0, new DescriptorPool.Size[] {
+                new DescriptorPool.Size(VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 10)
+        }, gFrameCount);
+
         this.m_shaders = Shaders.create(this.m_logicalDevice.handle());
-        this.m_pipelineLayouts = PipelineLayouts.create(this.m_logicalDevice.handle());
-        this.m_pipelines = Pipelines.create(this);
+
+        this.m_descriptorSetLayouts = DescriptorSetLayouts.create(this.m_logicalDevice.handle());
+        this.m_pipelineLayouts = PipelineLayouts.create(this.m_logicalDevice.handle(), this.m_descriptorSetLayouts);
+        this.m_pipelines = Pipelines.create(this.m_logicalDevice.handle(), this.m_renderPass.handle(), this.m_pipelineLayouts, this.m_shaders, this.m_sampleCount);
+
+        for (int i = 0; i < this.m_framesDescriptorSets.length; i++)
+        {
+            this.m_framesDescriptorSets[i] = DescriptorSets.create(this.m_descriptorPool, this.m_descriptorSetLayouts);
+        }
 
         this.m_gridRenderer = new StaticGridRenderer(this);
         this.m_cubeRenderer = new ObjectRenderer(this, ObjectRenderer.Type.CUBE);
@@ -216,7 +239,7 @@ public class VulkanRenderer
         this.m_depthImage = new VulkanImage.Allocated(this.m_logicalDevice, this.m_swapchain.width(), this.m_swapchain.height(), VK_FORMAT_D32_SFLOAT, VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, false, 1, this.m_sampleCount, VK_IMAGE_ASPECT_DEPTH_BIT,
                 VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VMA_MEMORY_USAGE_GPU_ONLY);
 
-        try (Arena arena = Arena.ofConfined())
+        try (Arena arena = StackAllocator.stackPush())
         {
             MemorySegment pImageViews = arena.allocateArray(ValueLayout.ADDRESS, this.m_swapchain.images().length);
             for (int i = 0; i < this.m_swapchain.images().length; i++)
@@ -261,29 +284,34 @@ public class VulkanRenderer
         return this.m_pipelineLayouts;
     }
 
-    public int sampleCount()
-    {
-        return this.m_sampleCount;
-    }
-
-    public RenderPass renderPass()
-    {
-        return this.m_renderPass;
-    }
-
-    public Shaders shaders()
-    {
-        return this.m_shaders;
-    }
-
     public Pipelines pipelines()
     {
         return this.m_pipelines;
     }
 
+    public DescriptorSetLayouts descriptorSetLayouts()
+    {
+        return this.m_descriptorSetLayouts;
+    }
+
+    public DescriptorPool descriptorPool()
+    {
+        return this.m_descriptorPool;
+    }
+
+    public int currentFrame()
+    {
+        return this.m_currentFrame;
+    }
+
+    public DescriptorSets descriptorSets(int frame)
+    {
+        return this.m_framesDescriptorSets[frame];
+    }
+
     public void beginRenderFrame()
     {
-        try (Arena arena = Arena.ofConfined())
+        try (Arena arena = StackAllocator.stackPush())
         {
             MemorySegment pCurrentFence = arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.fence(this.m_currentFrame));
             VulkanException.check(vkWaitForFences(this.m_logicalDevice.handle(), 1, pCurrentFence, VK_TRUE, Long.MAX_VALUE));
@@ -358,7 +386,7 @@ public class VulkanRenderer
     public void endRenderFrame()
     {
         this.assertRenderContext();
-        try (Arena arena = Arena.ofConfined())
+        try (Arena arena = StackAllocator.stackPush())
         {
             vkCmdEndRenderPass(this.m_frameCommandBuffer);
             VulkanException.check(vkEndCommandBuffer(this.m_frameCommandBuffer));
@@ -401,17 +429,21 @@ public class VulkanRenderer
         this.m_vkFrameIndex = -1;
     }
 
+    public void bindGraphicsPipeline(MemorySegment pipeline)
+    {
+        this.assertRenderContext();
+        vkCmdBindPipeline(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline);
+    }
+
     public void renderStaticGrid(Camera camera, Matrix4d transform)
     {
         this.assertRenderContext();
-        vkCmdBindPipeline(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, this.m_pipelines.staticGrid());
         this.m_gridRenderer.render(this.m_frameCommandBuffer, camera, transform);
     }
 
     public void renderObject(Camera camera, Matrix4d transform, ObjectRenderer.Type type)
     {
         this.assertRenderContext();
-        vkCmdBindPipeline(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, this.m_pipelines.objectDebug());
         switch (type)
         {
             case CUBE -> this.m_cubeRenderer.render(this.m_frameCommandBuffer, camera, transform);
@@ -420,9 +452,25 @@ public class VulkanRenderer
         }
     }
 
-    public void destroy()
+    public void renderObjectsInstanced(Camera camera, int count, ObjectRenderer.Type type)
+    {
+        this.assertRenderContext();
+        switch (type)
+        {
+            case CUBE -> this.m_cubeRenderer.renderInstanced(this.m_frameCommandBuffer, camera, count);
+            case SPHERE -> this.m_sphereRenderer.renderInstanced(this.m_frameCommandBuffer, camera, count);
+            default -> throw new IllegalArgumentException(STR."Unsupported object type: \{type.name()}");
+        }
+    }
+
+    public void deviceWaitIdle() throws VulkanException
     {
         VulkanException.check(vkDeviceWaitIdle(this.m_logicalDevice.handle()));
+    }
+
+    public void destroy()
+    {
+        this.deviceWaitIdle();
 
         this.m_gridRenderer.dispose();
         this.m_cubeRenderer.dispose();
@@ -430,6 +478,9 @@ public class VulkanRenderer
 
         this.m_pipelines.dispose();
         this.m_pipelineLayouts.dispose();
+        this.m_descriptorSetLayouts.dispose();
+
+        this.m_descriptorPool.dispose();
 
         this.m_uploadCommandPool.dispose();
         this.m_renderingCommandBuffers.dispose();

@@ -3,7 +3,7 @@ package yionos.demo.app;
 import org.joml.Matrix4d;
 import org.joml.Vector3d;
 
-import static yionos.MathDefinitions.*;
+import static yionos.utils.MathDefinitions.*;
 
 public class Camera
 {
@@ -41,14 +41,6 @@ public class Camera
     public void setProjection(double fov, double aspectRatio, double near, double far)
     {
         this.m_projectionMatrix.setPerspective(fov, aspectRatio, near, far, true);
-        /*double f = cot(fov * 0.5);
-        double g = far / (near - far);
-
-        this.m_projectionMatrix.zero()
-                .m00(f / aspectRatio)
-                .m11(f)
-                .m22(g).m23(-1.0)
-                .m32(g * near);*/
     }
 
     public Matrix4d projectionMatrix()
@@ -72,6 +64,11 @@ public class Camera
         Vector3d eye = uR.mul(this.m_distance, new Vector3d()).add(this.m_target);
 
         this.m_projectionMatrix.lookAt(eye, this.m_target, uTheta.negate(), this.m_clippingMatrix);
+    }
+
+    public Matrix4d viewMatrix()
+    {
+        return this.m_clippingMatrix;
     }
 
     public void translate(double offset)

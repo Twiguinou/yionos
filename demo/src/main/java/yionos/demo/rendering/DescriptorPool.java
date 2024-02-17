@@ -22,7 +22,7 @@ public class DescriptorPool implements Disposable
     public final VkDevice device;
     private final int m_capacity;
 
-    public DescriptorPool(VkDevice device, DescriptorPool.Size[] sizes, int capacity) throws VulkanException
+    public DescriptorPool(VkDevice device, int flags, DescriptorPool.Size[] sizes, int capacity) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
@@ -36,6 +36,7 @@ public class DescriptorPool implements Disposable
 
             VkDescriptorPoolCreateInfo descriptorPoolCreateInfo = new VkDescriptorPoolCreateInfo(arena);
             descriptorPoolCreateInfo.sType(VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO);
+            descriptorPoolCreateInfo.flags(flags);
             descriptorPoolCreateInfo.pPoolSizes(poolSizes);
             descriptorPoolCreateInfo.maxSets(capacity);
 
@@ -58,7 +59,7 @@ public class DescriptorPool implements Disposable
         return this.m_capacity;
     }
 
-    public void allocateDescriptorSets(MemorySegment pSetLayouts, int descriptorSetCount, MemorySegment pDescriptorSets) throws VulkanException
+    public void allocateDescriptorSets(int descriptorSetCount, MemorySegment pSetLayouts, MemorySegment pDescriptorSets) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {

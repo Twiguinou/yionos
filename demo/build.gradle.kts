@@ -23,6 +23,7 @@ launch4j {
             "--enable-preview",
             "--enable-native-access=ALL-UNNAMED"
     ))
+    bundledJrePath = System.getProperty("java.home")
     requires64Bit = true
     headerType = "console"
 }

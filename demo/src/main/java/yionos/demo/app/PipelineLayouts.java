@@ -10,9 +10,9 @@ import static vulkan.VulkanCore.*;
 import static vulkan.VkShaderStageFlagBits.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
-public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug) implements Disposable
+public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug, MemorySegment objectDebugInstanced) implements Disposable
 {
-    public static PipelineLayouts create(VkDevice device)
+    public static PipelineLayouts create(VkDevice device, DescriptorSetLayouts descriptorSetLayouts)
     {
         MemorySegment staticGridLayout = new PipelineLayoutBuilder(0)
                 .addPushConstant(VK_SHADER_STAGE_VERTEX_BIT, 0, Float.BYTES * 20)
@@ -22,7 +22,12 @@ public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemoryS
                 .addPushConstant(VK_SHADER_STAGE_VERTEX_BIT, 0, Float.BYTES * 16)
                 .build(device);
 
-        return new PipelineLayouts(device, staticGridLayout, objectDebugLayout);
+        MemorySegment objectDebugInstancedLayout = new PipelineLayoutBuilder(0)
+                .addSetLayout(descriptorSetLayouts.objectBuffer())
+                .addPushConstant(VK_SHADER_STAGE_VERTEX_BIT, 0, Float.BYTES * 16)
+                .build(device);
+
+        return new PipelineLayouts(device, staticGridLayout, objectDebugLayout, objectDebugInstancedLayout);
     }
 
     @Override
@@ -30,5 +35,6 @@ public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemoryS
     {
         vkDestroyPipelineLayout(this.device, this.staticGrid, NULL);
         vkDestroyPipelineLayout(this.device, this.objectDebug, NULL);
+        vkDestroyPipelineLayout(this.device, this.objectDebugInstanced, NULL);
     }
 }

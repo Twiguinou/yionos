@@ -1,4 +1,4 @@
-package yionos;
+package yionos.utils;
 
 public final class MathDefinitions
 {private MathDefinitions() {}

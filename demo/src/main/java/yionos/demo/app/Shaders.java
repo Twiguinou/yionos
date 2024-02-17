@@ -11,8 +11,23 @@ import java.io.InputStream;
 import static vulkan.VkShaderStageFlagBits.*;
 import static yionos.demo.rendering.VulkanHelpers.*;
 
-public record Shaders(ShaderModule gridVertex, ShaderModule gridFragment, ShaderModule objectDebugVertex, ShaderModule objectDebugFragment) implements Disposable
+public record Shaders(Graphics grid, Graphics objectDebug, ShaderModule objectDebugInstanced) implements Disposable
 {
+    public record Graphics(ShaderModule vertex, ShaderModule fragment) implements Disposable
+    {
+        public Graphics(VkDevice device, String vertexPath, String fragmentPath)
+        {
+            this(loadShader(device, vertexPath, VK_SHADER_STAGE_VERTEX_BIT), loadShader(device, fragmentPath, VK_SHADER_STAGE_FRAGMENT_BIT));
+        }
+
+        @Override
+        public void dispose()
+        {
+            this.vertex.dispose();
+            this.fragment.dispose();
+        }
+    }
+
     private static ShaderModule loadShader(VkDevice device, String filename, int stage)
     {
         try(InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(STR."shaders/\{filename}"))
@@ -32,22 +47,19 @@ public record Shaders(ShaderModule gridVertex, ShaderModule gridFragment, Shader
 
     public static Shaders create(VkDevice device)
     {
-        ShaderModule gridVertex = loadShader(device, "grid-vs.glsl", VK_SHADER_STAGE_VERTEX_BIT);
-        ShaderModule gridFragment = loadShader(device, "grid-fs.glsl", VK_SHADER_STAGE_FRAGMENT_BIT);
+        Graphics gridShaders = new Graphics(device, "grid-vs.glsl", "grid-fs.glsl");
+        Graphics objectDebugShaders = new Graphics(device, "object-debug-vs.glsl", "object-debug-fs.glsl");
 
-        ShaderModule objectDebugVertex = loadShader(device, "object-debug-vs.glsl", VK_SHADER_STAGE_VERTEX_BIT);
-        ShaderModule objectDebugFragment = loadShader(device, "object-debug-fs.glsl", VK_SHADER_STAGE_FRAGMENT_BIT);
+        ShaderModule objectDebugInstancedShader = loadShader(device, "object-debug-instanced-vs.glsl", VK_SHADER_STAGE_VERTEX_BIT);
 
-        return new Shaders(gridVertex, gridFragment, objectDebugVertex, objectDebugFragment);
+        return new Shaders(gridShaders, objectDebugShaders, objectDebugInstancedShader);
     }
 
     @Override
     public void dispose()
     {
-        this.gridVertex.dispose();
-        this.gridFragment.dispose();
-
-        this.objectDebugVertex.dispose();
-        this.objectDebugFragment.dispose();
+        this.grid.dispose();
+        this.objectDebug.dispose();
+        this.objectDebugInstanced.dispose();
     }
 }

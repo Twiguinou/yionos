@@ -33,7 +33,7 @@ public class Main
     {
         configureLog4j();
 
-        WindowProcessor window = new WindowProcessor("hello", 2000, 1200);
+        WindowProcessor window = new WindowProcessor("hello", 2600, 1500);
         DemoApplication app = new DemoApplication(window, 2);
 
         app.run();

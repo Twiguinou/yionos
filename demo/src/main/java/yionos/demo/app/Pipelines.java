@@ -25,7 +25,7 @@ import static vulkan.VkFormat.*;
 import static vulkan.VkVertexInputRate.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
-public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug) implements Disposable
+public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug, MemorySegment objectDebugInstanced) implements Disposable
 {
     public static VkGraphicsPipelineCreateInfo makeGraphicsPrototype(Arena arena, MemorySegment layout, MemorySegment renderPass, int sampleCount, ShaderModule vertexShader, ShaderModule fragmentShader)
     {
@@ -145,18 +145,12 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
         return pPipeline.get(ValueLayout.ADDRESS, 0);
     }
 
-    public static Pipelines create(VulkanRenderer renderer)
+    public static Pipelines create(VkDevice device, MemorySegment renderPass, PipelineLayouts layouts, Shaders shaders, int sampleCount)
     {
-        VkDevice device = renderer.logicalDevice().handle();
-        MemorySegment renderPass = renderer.renderPass().handle();
-        PipelineLayouts layouts = renderer.pipelineLayouts();
-        Shaders shaders = renderer.shaders();
-        int sampleCount = renderer.sampleCount();
-
         MemorySegment staticGridPipeline;
         try (Arena arena = Arena.ofConfined())
         {
-            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.staticGrid(), renderPass, sampleCount, shaders.gridVertex(), shaders.gridFragment());
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.staticGrid(), renderPass, sampleCount, shaders.grid().vertex(), shaders.grid().fragment());
 
             VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
             binding0.binding(0);
@@ -180,7 +174,7 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
         MemorySegment objectDebugPipeline;
         try (Arena arena = Arena.ofConfined())
         {
-            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.staticGrid(), renderPass, sampleCount, shaders.objectDebugVertex(), shaders.objectDebugFragment());
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.objectDebug(), renderPass, sampleCount, shaders.objectDebug().vertex(), shaders.objectDebug().fragment());
 
             VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
             binding0.binding(0);
@@ -201,7 +195,31 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
             objectDebugPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
         }
 
-        return new Pipelines(device, staticGridPipeline, objectDebugPipeline);
+        MemorySegment objectDebugInstancedPipeline;
+        try (Arena arena = Arena.ofConfined())
+        {
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.objectDebugInstanced(), renderPass, sampleCount, shaders.objectDebugInstanced(), shaders.objectDebug().fragment());
+
+            VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
+            binding0.binding(0);
+            binding0.stride(3 * Float.BYTES);
+            binding0.inputRate(VK_VERTEX_INPUT_RATE_VERTEX);
+
+            VkVertexInputAttributeDescription attribute0 = new VkVertexInputAttributeDescription(arena);
+            attribute0.location(0);
+            attribute0.format(VK_FORMAT_R32G32B32_SFLOAT);
+            attribute0.offset(0);
+
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
+            vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
+            vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
+            vertexInputStateCreateInfo.pVertexAttributeDescriptions(attribute0.ptr());
+
+            objectDebugInstancedPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
+        }
+
+        return new Pipelines(device, staticGridPipeline, objectDebugPipeline, objectDebugInstancedPipeline);
     }
 
     @Override
@@ -209,5 +227,6 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
     {
         vkDestroyPipeline(this.device, this.staticGrid, NULL);
         vkDestroyPipeline(this.device, this.objectDebug, NULL);
+        vkDestroyPipeline(this.device, this.objectDebugInstanced, NULL);
     }
 }
