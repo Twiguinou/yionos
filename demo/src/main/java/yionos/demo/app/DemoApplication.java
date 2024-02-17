@@ -183,7 +183,7 @@ public class DemoApplication
                         {
                             for (int y = 0; y < 100; y++)
                             {
-                                transform.identity().translate(x - 50, Math.sin(theta + x * y) * 50, y - 50);
+                                transform.identity().translate(x - 50, Math.sin(theta + Math.cbrt((x + 1) * (y + 1))) * 50, y - 50);
                                 transform.get(pData.asSlice((x * 100 + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
                             }
                         }
