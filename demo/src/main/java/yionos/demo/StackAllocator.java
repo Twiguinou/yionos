@@ -74,6 +74,6 @@ public final class StackAllocator implements Arena
 
     public static Arena stackPush()
     {
-        return gStackMap.get().push();
+        return Thread.currentThread().isVirtual() ? Arena.ofConfined() : gStackMap.get().push();
     }
 }

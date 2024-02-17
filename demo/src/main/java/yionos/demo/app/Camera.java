@@ -10,7 +10,7 @@ public class Camera
     private static final double gMinCameraPitch = 0.005;
     private static final double gMaxCameraPitch = PI - gMinCameraPitch;
     private static final double gMinCameraDistance = 0.1;
-    private static final double gMaxCameraDistance = 500.0;
+    private static final double gMaxCameraDistance = 1000.0;
 
     private final Matrix4d m_projectionMatrix = new Matrix4d();
     private final Matrix4d m_clippingMatrix = new Matrix4d();

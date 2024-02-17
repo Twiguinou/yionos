@@ -15,6 +15,8 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 import java.time.Duration;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
@@ -69,7 +71,7 @@ public class DemoApplication
 
             for (int i = 0; i < this.m_objectBuffers.length; i++)
             {
-                this.m_objectBuffers[i] = new VulkanBuffer(this.m_renderer.logicalDevice().allocator(), 10000 * 16 * Float.BYTES, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, new int[] {this.m_renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_CPU_TO_GPU);
+                this.m_objectBuffers[i] = new VulkanBuffer(this.m_renderer.logicalDevice().allocator(), 1000000 * 16 * Float.BYTES, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, new int[] {this.m_renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_CPU_TO_GPU);
 
                 descriptorBufferInfo.buffer(this.m_objectBuffers[i].handle());
                 descriptorBufferInfo.offset(0);
@@ -78,29 +80,6 @@ public class DemoApplication
                 writeDescriptorSet.dstSet(this.m_renderer.descriptorSets(i).objectBuffer());
 
                 vkUpdateDescriptorSets(this.m_renderer.logicalDevice().handle(), 1, writeDescriptorSet.ptr(), 0, NULL);
-            }
-        }
-
-        try (Arena arena = Arena.ofConfined())
-        {
-            MemorySegment ppData = arena.allocate(ValueLayout.ADDRESS);
-
-            for (VulkanBuffer objectBuffer : this.m_objectBuffers)
-            {
-                objectBuffer.map(ppData);
-                MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(objectBuffer.size());
-
-                Matrix4d transform = new Matrix4d();
-                for (int x = 0; x < 100; x++)
-                {
-                    for (int y = 0; y < 100; y++)
-                    {
-                        transform.identity().translate(x - 50, 2.0, y - 50);
-                        transform.get(pData.asSlice((x * 100 + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
-                    }
-                }
-
-                objectBuffer.unmap();
             }
         }
     }
@@ -178,13 +157,22 @@ public class DemoApplication
                         this.m_objectBuffers[this.m_renderer.currentFrame()].map(ppData);
                         MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(this.m_objectBuffers[this.m_renderer.currentFrame()].size());
 
-                        Matrix4d transform = new Matrix4d();
-                        for (int x = 0; x < 100; x++)
+                        try (ExecutorService executors = Executors.newVirtualThreadPerTaskExecutor())
                         {
-                            for (int y = 0; y < 100; y++)
+                            for (int xd = 0; xd < 1000; xd++)
                             {
-                                transform.identity().translate(x - 50, Math.sin(theta + Math.cbrt((x + 1) * (y + 1))) * 50, y - 50);
-                                transform.get(pData.asSlice((x * 100 + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
+                                final int x = xd;
+                                executors.execute(() ->
+                                {
+                                    Matrix4d transform = new Matrix4d();
+                                    for (int y = 0; y < 1000; y++)
+                                    {
+                                        transform.m30(x * 1.2 - 500);
+                                        transform.m31(Math.sin(theta + Math.sqrt((x + 1) * (y + 1))) * 30);
+                                        transform.m32(y * 1.2 - 500);
+                                        transform.get(pData.asSlice((x * 1000 + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
+                                    }
+                                });
                             }
                         }
 
@@ -192,10 +180,10 @@ public class DemoApplication
                     }
 
                     this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().objectDebugInstanced());
-                    this.m_renderer.renderObjectsInstanced(this.m_camera, 10000, ObjectRenderer.Type.CUBE);
+                    this.m_renderer.renderObjectsInstanced(this.m_camera, 1000000, ObjectRenderer.Type.CUBE);
 
-                    this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().staticGrid());
-                    this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
+                    //this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().staticGrid());
+                    //this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
 
                     this.m_renderer.endRenderFrame();
                 }
