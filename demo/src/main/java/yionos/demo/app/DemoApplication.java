@@ -30,6 +30,7 @@ import static yionos.utils.MathDefinitions.*;
 public class DemoApplication
 {
     private static final Logger gDemoLogger = LogManager.getLogger("Demo Application");
+    private static final int gNumPerSide = 250;
     private static final double gUpdateRate = 60.0;
     private static final double gFovRadians = radians(75.0);
     private static final double gNearPlaneDistance = 0.01, gFarPlaneDistance = 1000.0;
@@ -80,6 +81,30 @@ public class DemoApplication
                 writeDescriptorSet.dstSet(this.m_renderer.descriptorSets(i).objectBuffer());
 
                 vkUpdateDescriptorSets(this.m_renderer.logicalDevice().handle(), 1, writeDescriptorSet.ptr(), 0, NULL);
+            }
+        }
+
+        try (Arena arena = Arena.ofConfined())
+        {
+            MemorySegment ppData = arena.allocate(ValueLayout.ADDRESS);
+
+            Matrix4d transform = new Matrix4d();
+            for (VulkanBuffer objectBuffer : this.m_objectBuffers)
+            {
+                objectBuffer.map(ppData);
+                MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(objectBuffer.size());
+
+                for (int x = 0; x < gNumPerSide; x++)
+                {
+                    for (int y = 0; y < gNumPerSide; y++)
+                    {
+                        transform.m30(x * 1.2 - (double)(gNumPerSide / 2));
+                        transform.m32(y * 1.2 - (double)(gNumPerSide / 2));
+                        transform.get(pData.asSlice((x * gNumPerSide + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
+                    }
+                }
+
+                objectBuffer.unmap();
             }
         }
     }
@@ -159,18 +184,14 @@ public class DemoApplication
 
                         try (ExecutorService executors = Executors.newVirtualThreadPerTaskExecutor())
                         {
-                            for (int xd = 0; xd < 1000; xd++)
+                            for (int xd = 0; xd < gNumPerSide; xd++)
                             {
                                 final int x = xd;
                                 executors.execute(() ->
                                 {
-                                    Matrix4d transform = new Matrix4d();
-                                    for (int y = 0; y < 1000; y++)
+                                    for (int y = 0; y < gNumPerSide; y++)
                                     {
-                                        transform.m30(x * 1.2 - 500);
-                                        transform.m31(Math.sin(theta + Math.sqrt((x + 1) * (y + 1))) * 30);
-                                        transform.m32(y * 1.2 - 500);
-                                        transform.get(pData.asSlice((x * 1000 + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
+                                        pData.setAtIndex(ValueLayout.JAVA_FLOAT, (x * gNumPerSide + y) * 16 + 13, (float) (Math.sin(theta + Math.cbrt((x + 1) * (y + 1))) * 30));
                                     }
                                 });
                             }
@@ -180,7 +201,7 @@ public class DemoApplication
                     }
 
                     this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().objectDebugInstanced());
-                    this.m_renderer.renderObjectsInstanced(this.m_camera, 1000000, ObjectRenderer.Type.CUBE);
+                    this.m_renderer.renderObjectsInstanced(this.m_camera, gNumPerSide * gNumPerSide, ObjectRenderer.Type.SPHERE);
 
                     //this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().staticGrid());
                     //this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
