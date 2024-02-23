@@ -3,6 +3,7 @@ package yionos.dynamics;
 import org.joml.Matrix3d;
 import org.joml.Vector3d;
 import yionos.dynamics.geometries.InfiniteGeometry;
+import yionos.dynamics.geometries.RigidGeometry;
 import yionos.utils.Transform;
 
 public class DynamicSolidObject extends SolidObject

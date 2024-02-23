@@ -10,13 +10,19 @@ import yionos.demo.StackAllocator;
 import yionos.demo.WindowProcessor;
 import yionos.demo.app.scene.ObjectRenderer;
 import yionos.demo.rendering.VulkanBuffer;
+import yionos.detection.IndexedCollisionDispatcher;
+import yionos.detection.HashtablePairStorage;
+import yionos.detection.SweepAndPruneBroadphase;
+import yionos.dynamics.DynamicSolidObject;
+import yionos.dynamics.PhysicsVerse;
+import yionos.dynamics.SolidObject;
+import yionos.dynamics.geometries.PlaneGeometry;
+import yionos.dynamics.geometries.SphereGeometry;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 import java.time.Duration;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
@@ -29,8 +35,14 @@ import static yionos.utils.MathDefinitions.*;
 
 public class DemoApplication
 {
+    private enum StepType
+    {
+        Single,
+        Auto,
+        None
+    }
+
     private static final Logger gDemoLogger = LogManager.getLogger("Demo Application");
-    private static final int gNumPerSide = 250;
     private static final double gUpdateRate = 60.0;
     private static final double gFovRadians = radians(75.0);
     private static final double gNearPlaneDistance = 0.01, gFarPlaneDistance = 1000.0;
@@ -43,7 +55,11 @@ public class DemoApplication
     private final WindowInputMap m_inputs;
     private final Camera m_camera;
 
+    private final MemorySegment m_frameObjectDescriptorSets;
     private final VulkanBuffer[] m_objectBuffers = new VulkanBuffer[VulkanRenderer.gFrameCount];
+
+    private StepType m_stepType = StepType.Auto;
+    private final PhysicsVerse m_physicsVerse;
 
     public DemoApplication(WindowProcessor windowProc, int sampleCount)
     {
@@ -51,13 +67,24 @@ public class DemoApplication
         gDemoLogger.info("JVM maximum memory size: {} MBs", (long)(runtime.maxMemory() / 1e+6));
 
         this.m_renderer = new VulkanRenderer(windowProc, sampleCount, true);
-        this.m_camera = new Camera(new Vector3d(), new Vector3d(-30.0, 30.0, -60.0));
-        this.m_camera.setProjection(gFovRadians, windowProc.width() / (double) windowProc.height(), gNearPlaneDistance, gFarPlaneDistance);
+        this.m_camera = new Camera(new Vector3d(), new Vector3d(-15.0, 15.0, -30.0));
+        this.setCameraProjection(windowProc.width(), windowProc.height());
 
         this.m_inputs = new WindowInputMap(windowProc);
         windowProc.registerMouseWheelCallback((_, y) -> this.m_camera.translate(-y));
+        windowProc.registerSizeCallback(this::setCameraProjection);
 
         this.windowProc = windowProc;
+
+        try (Arena arena = Arena.ofConfined())
+        {
+            MemorySegment pSetLayouts = arena.allocateArray(ValueLayout.ADDRESS, 2);
+            pSetLayouts.setAtIndex(ValueLayout.ADDRESS, 0, this.m_renderer.descriptorSetLayouts().objectBuffer());
+            pSetLayouts.setAtIndex(ValueLayout.ADDRESS, 1, this.m_renderer.descriptorSetLayouts().objectBuffer());
+
+            this.m_frameObjectDescriptorSets = Arena.ofAuto().allocateArray(ValueLayout.ADDRESS, 2);
+            this.m_renderer.descriptorPool().allocateDescriptorSets(2, pSetLayouts, this.m_frameObjectDescriptorSets);
+        }
 
         try (Arena arena = Arena.ofConfined())
         {
@@ -78,33 +105,64 @@ public class DemoApplication
                 descriptorBufferInfo.offset(0);
                 descriptorBufferInfo.range(this.m_objectBuffers[i].size());
 
-                writeDescriptorSet.dstSet(this.m_renderer.descriptorSets(i).objectBuffer());
+                writeDescriptorSet.dstSet(this.m_frameObjectDescriptorSets.getAtIndex(ValueLayout.ADDRESS, i));
 
                 vkUpdateDescriptorSets(this.m_renderer.logicalDevice().handle(), 1, writeDescriptorSet.ptr(), 0, NULL);
             }
         }
 
-        try (Arena arena = Arena.ofConfined())
+        //NaiveBroadphase broadphase = new NaiveBroadphase(new HashtablePairStorage())
+        SweepAndPruneBroadphase broadphase = new SweepAndPruneBroadphase(new HashtablePairStorage());
+        IndexedCollisionDispatcher collisionDispatcher = new IndexedCollisionDispatcher();
+        this.m_physicsVerse = new PhysicsVerse(broadphase, collisionDispatcher);
+        this.m_physicsVerse.gravity().set(0.0, -0.9, 0.0);
+
+        this.initSimulation();
+    }
+
+    private void setCameraProjection(int width, int height)
+    {
+        this.m_camera.setProjection(gFovRadians, width / (double) height, gNearPlaneDistance, gFarPlaneDistance);
+    }
+
+    private void initSimulation()
+    {
+        this.m_physicsVerse.clearScene();
+
+        SolidObject floor = new SolidObject();
+        floor.friction(0.8);
+        floor.restitution(0.5);
+
+        floor.setGeometry(new PlaneGeometry(new Vector3d(0.0, -1.0, 0.0), 0.0));
+
+        this.m_physicsVerse.addSolidObject(floor);
+
+        SphereGeometry sphere = new SphereGeometry(0.5);
+
+        for (int x = -4; x < 5; x++)
         {
-            MemorySegment ppData = arena.allocate(ValueLayout.ADDRESS);
-
-            Matrix4d transform = new Matrix4d();
-            for (VulkanBuffer objectBuffer : this.m_objectBuffers)
+            for (int y = -4; y < 5; y++)
             {
-                objectBuffer.map(ppData);
-                MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(objectBuffer.size());
-
-                for (int x = 0; x < gNumPerSide; x++)
+                for (int z = -4; z < 5; z++)
                 {
-                    for (int y = 0; y < gNumPerSide; y++)
-                    {
-                        transform.m30(x * 1.2 - (double)(gNumPerSide / 2));
-                        transform.m32(y * 1.2 - (double)(gNumPerSide / 2));
-                        transform.get(pData.asSlice((x * gNumPerSide + y) * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
-                    }
-                }
+                    DynamicSolidObject object = new DynamicSolidObject(1.0, sphere);
+                    object.worldTransform().position().set(x * 2, y + 6, z * 2);
 
-                objectBuffer.unmap();
+                    object.friction(0.7);
+                    object.restitution(0.3);
+
+                    this.m_physicsVerse.addSolidObject(object);
+
+                    DynamicSolidObject projectile = new DynamicSolidObject(10.0, sphere);
+                    projectile.worldTransform().position().set(x * 2 + Math.random() - 0.5, y + 20 + 6, z * 2 - Math.random() + 0.5);
+
+                    projectile.applyCentralImpulse(new Vector3d(0, -50, 0));
+
+                    projectile.friction(0.6);
+                    projectile.restitution(0.3);
+
+                    this.m_physicsVerse.addSolidObject(projectile);
+                }
             }
         }
     }
@@ -114,6 +172,9 @@ public class DemoApplication
         if (this.m_inputs.keyToggled(GLFW_KEY_ESCAPE)) this.m_running = false;
         if (this.m_inputs.keyToggled(GLFW_KEY_C)) this.m_camera.reset();
         if (this.m_inputs.keyToggledWithMods(GLFW_KEY_ENTER, GLFW_MOD_ALT)) this.windowProc.toggleFullscreen();
+        if (this.m_inputs.keyToggled(GLFW_KEY_S)) this.m_stepType = (this.m_stepType == StepType.Auto ? StepType.None : StepType.Auto);
+        if ((this.m_inputs.keyToggled(GLFW_KEY_T) || this.m_inputs.keyAction(GLFW_KEY_T) == GLFW_REPEAT) && this.m_stepType != StepType.Auto) this.m_stepType = StepType.Single;
+        if (this.m_inputs.keyToggled(GLFW_KEY_R)) this.initSimulation();
 
         double mouseMoveX = this.m_inputs.displacementX(), mouseMoveY = this.m_inputs.displacementY();
         if (mouseMoveX != 0.0 || mouseMoveY != 0.0)
@@ -123,8 +184,6 @@ public class DemoApplication
             else if (this.m_inputs.mouseAction(1) == GLFW_PRESS) this.m_camera.moveTarget(interactionX, interactionY);
         }
     }
-
-    double theta = 0;
 
     public void run()
     {
@@ -137,15 +196,15 @@ public class DemoApplication
 
         while (this.m_running)
         {
-            long frame = System.nanoTime();
-            if (frame - stamp < nrate)
+            long frame = System.nanoTime(), elapsed = frame - stamp;
+            if (elapsed < nrate)
             {
-                if (nrate - frame + stamp > nrate_epsilon)
+                if (nrate - elapsed > nrate_epsilon)
                 {
                     try
                     {
                         Thread.yield();
-                        Thread.sleep(Duration.ofNanos(1000L));
+                        Thread.sleep(Duration.ofNanos((nrate - elapsed) / 4));
                     }
                     catch (InterruptedException e)
                     {
@@ -153,6 +212,7 @@ public class DemoApplication
                     }
                 }
 
+                Thread.onSpinWait();
                 continue;
             }
 
@@ -161,6 +221,16 @@ public class DemoApplication
             Runtime runtime = Runtime.getRuntime();
             long usedMemory = (long) ((runtime.totalMemory() - runtime.freeMemory()) / (1e+6));
             this.windowProc.title(STR."yionos -- Current memory usage: \{usedMemory} MBs");
+
+            if (this.m_stepType == StepType.Auto)
+            {
+                this.m_physicsVerse.update(gPhysicsTimeStep, gPhysicsSubstepCount);
+            }
+            else if (this.m_stepType == StepType.Single)
+            {
+                this.m_physicsVerse.update(gPhysicsTimeStep, gPhysicsSubstepCount);
+                this.m_stepType = StepType.None;
+            }
 
             this.windowProc.beginRenderStage();
             if (!this.windowProc.shouldClose())
@@ -173,38 +243,32 @@ public class DemoApplication
                     this.m_camera.updateViewMatrix();
                     this.m_renderer.beginRenderFrame();
 
-                    theta = (theta + 0.01) % (Math.PI * 2);
-
-                    try (Arena arena = StackAllocator.stackPush())
+                    if (!this.m_physicsVerse.dynamicObjects().isEmpty())
                     {
-                        MemorySegment ppData = arena.allocate(ValueLayout.ADDRESS);
-
-                        this.m_objectBuffers[this.m_renderer.currentFrame()].map(ppData);
-                        MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(this.m_objectBuffers[this.m_renderer.currentFrame()].size());
-
-                        try (ExecutorService executors = Executors.newVirtualThreadPerTaskExecutor())
+                        try (Arena arena = StackAllocator.stackPush())
                         {
-                            for (int xd = 0; xd < gNumPerSide; xd++)
+                            MemorySegment ppData = arena.allocate(ValueLayout.ADDRESS);
+
+                            this.m_objectBuffers[this.m_renderer.currentFrame()].map(ppData);
+                            MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(this.m_objectBuffers[this.m_renderer.currentFrame()].size());
+
+                            Matrix4d transform = new Matrix4d();
+                            for (int i = 0; i < this.m_physicsVerse.dynamicObjects().size(); i++)
                             {
-                                final int x = xd;
-                                executors.execute(() ->
-                                {
-                                    for (int y = 0; y < gNumPerSide; y++)
-                                    {
-                                        pData.setAtIndex(ValueLayout.JAVA_FLOAT, (x * gNumPerSide + y) * 16 + 13, (float) (Math.sin(theta + Math.cbrt((x + 1) * (y + 1))) * 30));
-                                    }
-                                });
+                                this.m_physicsVerse.dynamicObjects().get(i).worldTransform().computeModelMatrix(transform);
+                                transform.get(pData.asSlice((long) i * Float.BYTES * 16).asByteBuffer().asFloatBuffer());
                             }
+
+                            this.m_objectBuffers[this.m_renderer.currentFrame()].unmap();
                         }
 
-                        this.m_objectBuffers[this.m_renderer.currentFrame()].unmap();
+                        this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().objectDebugInstanced());
+                        this.m_renderer.bindGraphicsDescriptorSets(this.m_renderer.pipelineLayouts().objectDebugInstanced(), 0, 1, this.pObjectDescriptorSet(this.m_renderer.currentFrame()), 0, NULL);
+                        this.m_renderer.renderObjectsInstanced(this.m_camera, this.m_physicsVerse.dynamicObjects().size(), ObjectRenderer.Type.SPHERE);
                     }
 
-                    this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().objectDebugInstanced());
-                    this.m_renderer.renderObjectsInstanced(this.m_camera, gNumPerSide * gNumPerSide, ObjectRenderer.Type.SPHERE);
-
-                    //this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().staticGrid());
-                    //this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
+                    this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().staticGrid());
+                    this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
 
                     this.m_renderer.endRenderFrame();
                 }
@@ -218,6 +282,11 @@ public class DemoApplication
         }
 
         this.destroy();
+    }
+
+    private MemorySegment pObjectDescriptorSet(int frame)
+    {
+        return this.m_frameObjectDescriptorSets.asSlice(ValueLayout.ADDRESS.byteSize() * frame);
     }
 
     public void destroy()

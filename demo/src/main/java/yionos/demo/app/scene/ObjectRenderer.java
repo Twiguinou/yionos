@@ -19,9 +19,7 @@ import static vulkan.VulkanCore.*;
 import static vulkan.VkIndexType.*;
 import static vulkan.VkShaderStageFlagBits.*;
 import static vulkan.VkBufferUsageFlagBits.*;
-import static vulkan.VkPipelineBindPoint.*;
 import static vma.VmaMemoryUsage.*;
-import static java.lang.foreign.MemorySegment.NULL;
 
 public class ObjectRenderer implements Disposable
 {
@@ -99,16 +97,13 @@ public class ObjectRenderer implements Disposable
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, this.vulkanRenderer.pipelineLayouts().objectDebugInstanced(),
-                    0, 1, arena.allocate(ValueLayout.ADDRESS, this.vulkanRenderer.descriptorSets(this.vulkanRenderer.currentFrame()).objectBuffer()), 0, NULL);
-
             vkCmdBindVertexBuffers(commandBuffer, 0, 1, arena.allocate(ValueLayout.ADDRESS, this.m_vertexBuffer.handle()), arena.allocate(ValueLayout.JAVA_LONG, 0));
             vkCmdBindIndexBuffer(commandBuffer, this.m_indexBuffer.handle(), 0, VK_INDEX_TYPE_UINT32);
 
             MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
             camera.viewMatrix().get(pushConstants.asByteBuffer().asFloatBuffer());
 
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
+            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebugInstanced(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
 
             vkCmdDrawIndexed(commandBuffer, this.m_indexCount, count, 0, 0, 0);
         }

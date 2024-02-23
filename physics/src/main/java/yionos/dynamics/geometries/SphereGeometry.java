@@ -3,7 +3,6 @@ package yionos.dynamics.geometries;
 import org.joml.Matrix3d;
 import org.joml.Quaterniond;
 import org.joml.Vector3d;
-import yionos.dynamics.RigidGeometry;
 
 public record SphereGeometry(double radius, double radiusSquared) implements RigidGeometry
 {
@@ -27,5 +26,11 @@ public record SphereGeometry(double radius, double radiusSquared) implements Rig
         inertiaTensor.m00 = i;
         inertiaTensor.m11 = i;
         inertiaTensor.m22 = i;
+    }
+
+    @Override
+    public int dispatcherIndex()
+    {
+        return 0;
     }
 }

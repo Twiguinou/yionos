@@ -65,7 +65,6 @@ public class VulkanRenderer
     private final PipelineLayouts m_pipelineLayouts;
     private final Pipelines m_pipelines;
     private final DescriptorSetLayouts m_descriptorSetLayouts;
-    private final DescriptorSets[] m_framesDescriptorSets = new DescriptorSets[gFrameCount];
 
     private final StaticGridRenderer m_gridRenderer;
     private final ObjectRenderer m_cubeRenderer;
@@ -145,11 +144,6 @@ public class VulkanRenderer
         this.m_descriptorSetLayouts = DescriptorSetLayouts.create(this.m_logicalDevice.handle());
         this.m_pipelineLayouts = PipelineLayouts.create(this.m_logicalDevice.handle(), this.m_descriptorSetLayouts);
         this.m_pipelines = Pipelines.create(this.m_logicalDevice.handle(), this.m_renderPass.handle(), this.m_pipelineLayouts, this.m_shaders, this.m_sampleCount);
-
-        for (int i = 0; i < this.m_framesDescriptorSets.length; i++)
-        {
-            this.m_framesDescriptorSets[i] = DescriptorSets.create(this.m_descriptorPool, this.m_descriptorSetLayouts);
-        }
 
         this.m_gridRenderer = new StaticGridRenderer(this);
         this.m_cubeRenderer = new ObjectRenderer(this, ObjectRenderer.Type.CUBE);
@@ -304,11 +298,6 @@ public class VulkanRenderer
         return this.m_currentFrame;
     }
 
-    public DescriptorSets descriptorSets(int frame)
-    {
-        return this.m_framesDescriptorSets[frame];
-    }
-
     public void beginRenderFrame()
     {
         try (Arena arena = StackAllocator.stackPush())
@@ -427,6 +416,11 @@ public class VulkanRenderer
 
         this.m_currentFrame = (this.m_currentFrame + 1) % gFrameCount;
         this.m_vkFrameIndex = -1;
+    }
+
+    public void bindGraphicsDescriptorSets(MemorySegment layout, int firstSet, int descriptorSetCount, MemorySegment pDescriptorSets, int dynamicOffsetCount, MemorySegment pDynamicOffsets)
+    {
+        vkCmdBindDescriptorSets(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, pDynamicOffsets);
     }
 
     public void bindGraphicsPipeline(MemorySegment pipeline)

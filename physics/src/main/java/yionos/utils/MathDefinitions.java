@@ -1,11 +1,13 @@
 package yionos.utils;
 
+import org.joml.Intersectiond;
+import org.joml.Vector3d;
+
 public final class MathDefinitions
 {private MathDefinitions() {}
 
-    public static final double PI = Math.PI;
-    public static final double PI_2 = PI * 0.5;
-    public static final double PIx2 = PI * 2.0;
+    public static final double PI = Math.PI, PI_2 = PI * 0.5, PIx2 = PI * 2.0;
+    public static final double EPSILON = 1e-8;
 
     public static double arccos(double x)
     {
@@ -60,5 +62,26 @@ public final class MathDefinitions
     public static double degrees(double x)
     {
         return Math.toDegrees(x);
+    }
+
+    public static double sqrt(double x)
+    {
+        return Math.sqrt(x);
+    }
+
+    public static boolean isValidVolume(Vector3d min, Vector3d max)
+    {
+        return (min.x <= max.x) && (min.y <= max.y) && (min.z <= max.z);
+    }
+
+    public static boolean volumesOverlap(Vector3d min1, Vector3d max1, Vector3d min2, Vector3d max2)
+    {
+        return Intersectiond.testAabAab(min1, max1, min2, max2);
+    }
+
+    public static void fattenVolume(Vector3d min, Vector3d max, double value)
+    {
+        min.sub(value, value, value);
+        max.add(value, value, value);
     }
 }
