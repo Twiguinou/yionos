@@ -22,7 +22,7 @@ public interface DemoSample
 
     void render(Camera camera);
 
-    boolean arrangeOverlay(NuklearContext context);
+    void arrangeOverlay(NuklearContext context);
 
     void dispose();
 }

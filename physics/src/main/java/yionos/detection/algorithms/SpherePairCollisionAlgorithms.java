@@ -28,12 +28,13 @@ public class SpherePairCollisionAlgorithms
         {
             CollisionManifold.ContactInfo contact = manifold.push();
 
-            //TODO
-            //contact.normal.set(0.0, 1.0, 0.0);
             contact.penetration = sphereA.radius();
 
             contact.posA.set(0.0, sphereA.radius(), 0.0);
             contact.posB.set(0.0, -sphereB.radius(), 0.0);
+
+            contact.normalA.set(0.0, 1.0, 0.0);
+            contact.normalB.set(0.0, -1.0, 0.0);
 
             return;
         }
@@ -41,10 +42,21 @@ public class SpherePairCollisionAlgorithms
         double distance = sqrt(distanceSquared);
         double penetration = sphereA.radius() + sphereB.radius() - distance;
 
-        if (penetration < EPSILON) return;
+        if (penetration < EPSILON)
+        {
+            return;
+        }
+
+        Quaterniond conjugate = relativePosB.rotation().conjugate(new Quaterniond());
 
         CollisionManifold.ContactInfo contact = manifold.push();
 
         contact.penetration = penetration;
+
+        relativePosB.position().div(distance, contact.normalA);
+        contact.normalA.mul(sphereA.radius(), contact.posA);
+
+        contact.normalA.negate(contact.normalB).rotate(conjugate);
+        contact.normalB.mul(sphereB.radius(), contact.posB);
     }
 }

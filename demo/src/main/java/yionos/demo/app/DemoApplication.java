@@ -97,14 +97,14 @@ public class DemoApplication
         this.m_runningSample.handleInputs(this.m_inputs);
     }
 
-    private boolean arrangeSamplesOverlay()
+    private void arrangeSamplesOverlay()
     {
         try (Arena arena = StackAllocator.stackPush())
         {
             if (nk_begin(this.m_overlayContext.pContext(), arena.allocateUtf8String("Available samples"), nk_rect(arena, 20, 20, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE) != 0)
             {
-                SegmentAllocator bufferAllocator = SegmentAllocator.prefixAllocator(arena.allocateArray(ValueLayout.JAVA_CHAR, 256));
+                SegmentAllocator bufferAllocator = SegmentAllocator.prefixAllocator(arena.allocateArray(ValueLayout.JAVA_CHAR, 128));
                 for (DemoSample.Supplier sampleSupplier : this.m_samples)
                 {
                     nk_layout_row_dynamic(this.m_overlayContext.pContext(), 25, 1);
@@ -117,11 +117,7 @@ public class DemoApplication
                 }
             }
 
-            boolean mouseHovering = nk_window_is_hovered(this.m_overlayContext.pContext()) != 0;
-
             nk_end(this.m_overlayContext.pContext());
-
-            return mouseHovering;
         }
     }
 
@@ -170,8 +166,9 @@ public class DemoApplication
                 if (this.windowProc.width() != 0 && this.windowProc.height() != 0)
                 {
                     this.m_overlayContext.updateInputs(this.m_inputs);
-                    this.m_silentMouseInputs = this.arrangeSamplesOverlay();
-                    this.m_silentMouseInputs |= this.m_runningSample.arrangeOverlay(this.m_overlayContext);
+                    this.arrangeSamplesOverlay();
+                    this.m_runningSample.arrangeOverlay(this.m_overlayContext);
+                    this.m_silentMouseInputs = nk_window_is_any_hovered(this.m_overlayContext.pContext()) != 0;
 
                     this.handleInputs();
                     this.m_inputs.trace();

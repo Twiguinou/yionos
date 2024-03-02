@@ -17,7 +17,6 @@ import yionos.dynamics.geometries.SphereGeometry;
 import yionos.utils.Transform;
 
 import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 
 import static glfw3.GLFW3.*;
@@ -35,6 +34,16 @@ public class CollisionDispatcherSample implements DemoSample
             new Vector4d(0.0, 1.0, 1.0, 1.0),
             new Vector4d(0.5, 0.8, 0.4, 1.0),
             new Vector4d(1.0, 0.0, 0.4, 1.0)
+    );
+    private static final ObjectRenderer.MeshColors CONTACT_POINT_COLORS = new ObjectRenderer.MeshColors(
+            new Vector4d(1.0, 1.0, 1.0, 1.0),
+            new Vector4d(0.5, 0.5, 0.8, 1.0),
+            new Vector4d(0.0, 0.7, 0.4, 1.0)
+    );
+    private static final ObjectRenderer.MeshColors CONTACT_POINT_COLORS_INV = new ObjectRenderer.MeshColors(
+            new Vector4d(1.0).sub(CONTACT_POINT_COLORS.lightColor()).setComponent(3, 1.0),
+            new Vector4d(1.0).sub(CONTACT_POINT_COLORS.darkColor()).setComponent(3, 1.0),
+            new Vector4d(1.0).sub(CONTACT_POINT_COLORS.borderColor()).setComponent(3, 1.0)
     );
 
     private final VulkanRenderer renderer;
@@ -58,7 +67,7 @@ public class CollisionDispatcherSample implements DemoSample
         sphereTransform.position().set(0.0, 3.0, -1.0);
         sphereTransform.rotation().identity();
 
-        cubeTransform.position().set(0.0, 3.0, 2);
+        cubeTransform.position().set(0.0, 3.0, 0.0);
         cubeTransform.rotation().identity();//.rotationXYZ(0.5, 0.9, 0.6);
     }
 
@@ -71,8 +80,8 @@ public class CollisionDispatcherSample implements DemoSample
         if (inputs.keyDown(GLFW_KEY_KP_4)) this.cubeTransform.position().add(-0.01, 0.0, 0.0);
         if (inputs.keyDown(GLFW_KEY_KP_SUBTRACT)) this.cubeTransform.position().add(0.0, 0.01, 0.0);
         if (inputs.keyDown(GLFW_KEY_KP_ADD)) this.cubeTransform.position().add(0.0, -0.01, 0.0);
-        if (inputs.keyDown(GLFW_KEY_KP_MULTIPLY)) this.cubeTransform.rotation().rotateXYZ(0.01, 0.02, 0.04).normalize();
-        if (inputs.keyDown(GLFW_KEY_KP_DIVIDE)) this.cubeTransform.rotation().rotateXYZ(-0.01, -0.02, -0.04).normalize();
+        if (inputs.keyDown(GLFW_KEY_KP_MULTIPLY)) this.cubeTransform.rotation().rotateXYZ(0.005, 0.01, 0.02).normalize();
+        if (inputs.keyDown(GLFW_KEY_KP_DIVIDE)) this.cubeTransform.rotation().rotateXYZ(-0.005, -0.01, -0.02).normalize();
         if (inputs.keyToggled(GLFW_KEY_H)) this.renderWireframes = !this.renderWireframes;
     }
 
@@ -82,16 +91,6 @@ public class CollisionDispatcherSample implements DemoSample
     @Override
     public void render(Camera camera)
     {
-        if (this.renderWireframes)
-        {
-            this.renderer.setLineWidth(2.0f);
-            this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebugWireframe());
-        }
-        else
-        {
-            this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebug());
-        }
-
         Transform rel = new Transform();
         Transform.computeRelative(this.cubeTransform, this.sphereTransform, rel);
 
@@ -103,6 +102,46 @@ public class CollisionDispatcherSample implements DemoSample
 
         if (collision)
         {
+            this.renderer.setLineWidth(2.0f);
+            this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebugWireframe());
+
+            Vector3d contactWorldPos = new Vector3d();
+            Matrix4d contactTransform = new Matrix4d();
+            for (int i = 0; i < this.collisionManifold.contactCount(); i++)
+            {
+                CollisionManifold.ContactInfo contact = this.collisionManifold.contact(i);
+
+                contact.posA.rotate(this.cubeTransform.rotation(), contactWorldPos);
+                contactWorldPos.add(this.cubeTransform.position());
+
+                contactTransform.identity();
+                contactTransform.translation(contactWorldPos);
+                contactTransform.scale(0.1);
+
+                this.renderer.renderObject(camera, contactTransform, CONTACT_POINT_COLORS, ObjectRenderer.Type.SPHERE);
+
+                contact.posB.rotate(this.sphereTransform.rotation(), contactWorldPos);
+                contactWorldPos.add(this.sphereTransform.position());
+
+                contactTransform.identity();
+                contactTransform.translation(contactWorldPos);
+                contactTransform.scale(0.1);
+
+                this.renderer.renderObject(camera, contactTransform, CONTACT_POINT_COLORS_INV, ObjectRenderer.Type.SPHERE);
+            }
+        }
+
+        if (this.renderWireframes)
+        {
+            if (!collision)
+            {
+                this.renderer.setLineWidth(2.0f);
+                this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebugWireframe());
+            }
+        }
+        else
+        {
+            this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebug());
         }
 
         Matrix4d modelMatrix = new Matrix4d();
@@ -115,26 +154,21 @@ public class CollisionDispatcherSample implements DemoSample
     }
 
     @Override
-    public boolean arrangeOverlay(NuklearContext context)
+    public void arrangeOverlay(NuklearContext context)
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            if (nk_begin(context.pContext(), arena.allocateUtf8String("yionos"), nk_rect(arena, 20, 300, 230, 250),
+            if (nk_begin(context.pContext(), arena.allocateUtf8String("Scene configuration"), nk_rect(arena, 20, 500, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE) != 0)
             {
                 nk_layout_row_static(context.pContext(), 30, 140, 1);
-                MemorySegment active = arena.allocate(ValueLayout.JAVA_INT, this.renderWireframes ? 0 : 1);
-                if (nk_checkbox_label(context.pContext(), arena.allocateUtf8String("Render wireframes"), active) != 0)
+                if (nk_checkbox_label(context.pContext(), arena.allocateUtf8String("Render wireframes"), arena.allocate(ValueLayout.JAVA_INT, this.renderWireframes ? 0 : 1)) != 0)
                 {
                     this.renderWireframes = !this.renderWireframes;
                 }
             }
 
-            boolean mouseHovering = nk_window_is_hovered(context.pContext()) != 0;
-
             nk_end(context.pContext());
-
-            return mouseHovering;
         }
     }
 

@@ -1,6 +1,5 @@
 package yionos.demo.app.samples;
 
-import jpgen.NativeTypes;
 import org.joml.Matrix4d;
 import vulkan.VkDescriptorBufferInfo;
 import vulkan.VkWriteDescriptorSet;
@@ -16,6 +15,9 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 
+import static nuklear.Nuklear.*;
+import static nuklear.nk_panel_flags.*;
+import static nuklear.nk_text_align.*;
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
 import static vulkan.VkBufferUsageFlagBits.*;
@@ -25,9 +27,12 @@ import static java.lang.foreign.MemorySegment.NULL;
 
 public class InstancingSample implements DemoSample
 {
+    private static final int MAX_DRAW_COUNT = 1000000;
+
     public final VulkanRenderer renderer;
     private final MemorySegment m_frameObjectDescriptorSets;
     private final VulkanBuffer[] m_objectBuffers = new VulkanBuffer[VulkanRenderer.gFrameCount];
+    private int m_drawCount = MAX_DRAW_COUNT;
 
     public InstancingSample(VulkanRenderer renderer)
     {
@@ -53,7 +58,7 @@ public class InstancingSample implements DemoSample
 
             for (int i = 0; i < this.m_objectBuffers.length; i++)
             {
-                this.m_objectBuffers[i] = new VulkanBuffer(renderer.logicalDevice().allocator(), 1000000 * 16 * Float.BYTES, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_CPU_TO_GPU);
+                this.m_objectBuffers[i] = new VulkanBuffer(renderer.logicalDevice().allocator(), MAX_DRAW_COUNT * 16 * Float.BYTES, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_CPU_TO_GPU);
 
                 descriptorBufferInfo.buffer(this.m_objectBuffers[i].handle());
                 descriptorBufferInfo.offset(0);
@@ -77,6 +82,8 @@ public class InstancingSample implements DemoSample
     @Override
     public void update() {}
 
+    double epsilon = 0;
+
     @Override
     public void render(Camera camera)
     {
@@ -91,14 +98,21 @@ public class InstancingSample implements DemoSample
 
             Matrix4d transform = new Matrix4d();
 
+            epsilon = (epsilon + 0.00001) % Math.PI;
+
             int objectIndex = 0;
-            for (int x = 0; x < 100; x++)
+            outer: for (int x = 0; x < 100; x++)
             {
                 for (int y = 0; y < 100; y++)
                 {
                     for (int z = 0; z < 100; z++)
                     {
-                        transform.translation(x * 2 - 100, y * 2 - 100, z * 2 - 100);
+                        if (objectIndex >= this.m_drawCount)
+                        {
+                            break outer;
+                        }
+
+                        transform.translation(x * 2 - 100, Math.sin(epsilon * x * z) + y * 2 - 100, z * 2 - 100);
 
                         transform.get(pData.asSlice((long) objectIndex * 16 * Float.BYTES).asByteBuffer().asFloatBuffer());
                         ++objectIndex;
@@ -111,13 +125,28 @@ public class InstancingSample implements DemoSample
 
         this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebugInstanced());
         this.renderer.bindGraphicsDescriptorSets(this.renderer.pipelineLayouts().objectDebugInstanced(), 0, 1, this.m_frameObjectDescriptorSets.asSlice(frame * ValueLayout.ADDRESS.byteSize()), 0, NULL);
-        this.renderer.renderObjectsInstanced(camera, 1000000, ObjectRenderer.Type.CUBE);
+        this.renderer.renderObjectsInstanced(camera, this.m_drawCount, ObjectRenderer.Type.CUBE);
     }
 
     @Override
-    public boolean arrangeOverlay(NuklearContext context)
+    public void arrangeOverlay(NuklearContext context)
     {
-        return false;
+        try (Arena arena = StackAllocator.stackPush())
+        {
+            if (nk_begin(context.pContext(), arena.allocateUtf8String("Scene configuration"), nk_rect(arena, 20, 300, 230, 250),
+                    NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE) != 0)
+            {
+                nk_layout_row_dynamic(context.pContext(), 20, 2);
+                nk_label(context.pContext(), arena.allocateUtf8String("Draw count:"), NK_TEXT_ALIGN_LEFT);
+                MemorySegment pCount = arena.allocate(ValueLayout.JAVA_INT, this.m_drawCount);
+                if (nk_slider_int(context.pContext(), 0, pCount, MAX_DRAW_COUNT, 100000) != 0)
+                {
+                    this.m_drawCount = pCount.get(ValueLayout.JAVA_INT, 0);
+                }
+            }
+
+            nk_end(context.pContext());
+        }
     }
 
     @Override

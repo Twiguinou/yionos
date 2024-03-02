@@ -15,7 +15,6 @@ public class DefaultCollisionDispatcher implements CollisionDispatcher
     {
         Transform inverse = new Transform();
         Transform.computeInverse(transform, inverse);
-
         return inverse;
     }
 

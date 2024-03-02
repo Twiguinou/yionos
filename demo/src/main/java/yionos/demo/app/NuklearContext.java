@@ -348,12 +348,10 @@ public class NuklearContext implements Disposable
 
             this.updateTexture(pUniformDescriptorSet.get(ValueLayout.ADDRESS, 0));
 
-            Matrix4d projectionMatrix = new Matrix4d(
-                    2.0 / (double) windowWidth, 0.0, 0.0, 0.0,
-                    0.0, -2.0 / (double) windowHeight, 0.0, 0.0,
-                    0.0, 0.0, -1.0, 0.0,
-                    -1.0, 1.0, 0.0, 1.0
-            );
+            double widthExtent = windowWidth / 2.0, heightExtent = windowHeight / 2.0;
+            Matrix4d projectionMatrix = new Matrix4d()
+                    .setOrtho2D(-widthExtent, widthExtent, heightExtent, -heightExtent)
+                    .translate(-widthExtent, -heightExtent, 0.0);
 
             MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
             projectionMatrix.get(pushConstants.asByteBuffer().asFloatBuffer());
