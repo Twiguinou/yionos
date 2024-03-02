@@ -82,7 +82,6 @@ public class CommandPool implements Disposable
                 pCommandBuffers.setAtIndex(ValueLayout.ADDRESS, i, commandBuffers[i].handle());
             }
 
-
             vkFreeCommandBuffers(this.device, this.m_handle, commandBuffers.length, pCommandBuffers);
         }
     }

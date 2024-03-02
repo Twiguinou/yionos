@@ -98,7 +98,7 @@ public class VulkanBuffer implements Disposable
         }
     }
 
-    public void upload(CommandPool commandPool, LogicalDevice.Queue queue, MemorySegment data)
+    public void upload(CommandPool commandPool, LogicalDevice.Queue queue, MemorySegment data) throws VulkanException
     {
         SequenceInitializer initializer = new SequenceInitializer();
         try (Arena arena = Arena.ofConfined())
@@ -112,7 +112,7 @@ public class VulkanBuffer implements Disposable
 
             VkCommandBuffer commandBuffer = commandPool.allocate(VK_COMMAND_BUFFER_LEVEL_PRIMARY, 1)[0];
             initializer.push(() -> commandPool.free(new VkCommandBuffer[] {commandBuffer}));
-            beginCommandBuffer(commandBuffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
+            beginCommandBuffer(arena, commandBuffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
 
             vkCmdCopyBuffer(commandBuffer, stagingBuffer.m_handle, this.m_handle, 1, region.ptr());
 

@@ -8,9 +8,12 @@ const float gridSize = 4.0;
 const float border = gridSize * 0.001;
 const float halfGridSize = gridSize * 0.5;
 
-const vec4 lightColor = vec4(1.0, 0.0, 0.0, 1.0);
-const vec4 darkColor = vec4(0.2, 0.4, 0.3, 1.0);
-const vec4 borderColor = vec4(0.43725, 0.9411, 0.741176, 1.0);
+layout(push_constant) uniform PushConstants
+{
+    layout(offset=64) vec4 lightColor;
+    vec4 darkColor;
+    vec4 borderColor;
+} pushConstants;
 
 bool atBorder(float pos)
 {
@@ -28,8 +31,8 @@ void main(void)
     pos.y += float(fract(float(int(pos.x * halfGridSize)) / halfGridSize));
     pos.z += float(fract(float(int(pos.x * halfGridSize)) / halfGridSize));
 
-    vec3 col = (vec3(fract(float(int(pos.z * halfGridSize)) / halfGridSize)) == vec3(0.0) ? lightColor : darkColor).rgb;
-    if (atBorder(pos.x) || atBorder(pos.y) || atBorder(pos.z)) col = borderColor.rgb;
+    vec3 col = (vec3(fract(float(int(pos.z * halfGridSize)) / halfGridSize)) == vec3(0.0) ? pushConstants.lightColor : pushConstants.darkColor).rgb;
+    if (atBorder(pos.x) || atBorder(pos.y) || atBorder(pos.z)) col = pushConstants.borderColor.rgb;
 
     outColor = vec4(col * 0.92, 1.0);
 }

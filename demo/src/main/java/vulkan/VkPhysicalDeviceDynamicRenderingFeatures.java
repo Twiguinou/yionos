@@ -1,6 +1,6 @@
 package vulkan;
 
-public record VkPhysicalDeviceDynamicRenderingFeatures(java.lang.foreign.MemorySegment ptr)
+public record  VkPhysicalDeviceDynamicRenderingFeatures(java.lang.foreign.MemorySegment ptr)
 {
     public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
     public static final long OFFSET$sType = 0L;

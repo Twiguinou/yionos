@@ -37,6 +37,7 @@ public class DescriptorPool implements Disposable
             VkDescriptorPoolCreateInfo descriptorPoolCreateInfo = new VkDescriptorPoolCreateInfo(arena);
             descriptorPoolCreateInfo.sType(VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO);
             descriptorPoolCreateInfo.flags(flags);
+            descriptorPoolCreateInfo.poolSizeCount(sizes.length);
             descriptorPoolCreateInfo.pPoolSizes(poolSizes);
             descriptorPoolCreateInfo.maxSets(capacity);
 

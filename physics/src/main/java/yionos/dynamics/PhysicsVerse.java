@@ -191,23 +191,23 @@ public class PhysicsVerse
                 Vector3d qr1 = new Vector3d(), qr2 = new Vector3d();
                 double deltaLagrange, w1, w2;
 
-                qr1.set(contact.pos);
-                contact.pos.add(transform1.position(), qr2).sub(transform2.position());
+                //qr1.set(contact.pos);
+                //contact.pos.add(transform1.position(), qr2).sub(transform2.position());
 
                 // initial non-penetration position constraint
                 updateObjectTensors(manifold.object1);
                 updateObjectTensors(manifold.object2);
 
-                w1 = computeGeneralizedInverseMass(manifold.object1, qr1, contact.normal);
-                w2 = computeGeneralizedInverseMass(manifold.object2, qr2, contact.normal);
+                //w1 = computeGeneralizedInverseMass(manifold.object1, qr1, contact.normal);
+                //w2 = computeGeneralizedInverseMass(manifold.object2, qr2, contact.normal);
 
-                deltaLagrange = computeLagrangeUpdate(0.0, contact.penetration, w1 + w2, 0.0, inv_dt);
+                //deltaLagrange = computeLagrangeUpdate(0.0, contact.penetration, w1 + w2, 0.0, inv_dt);
 
-                applyPositionalCorrection(manifold.object1, manifold.object2, deltaLagrange, contact.normal, qr1, qr2);
+                //applyPositionalCorrection(manifold.object1, manifold.object2, deltaLagrange, contact.normal, qr1, qr2);
 
                 // static friction position constraint
-                qr1.set(contact.pos);
-                contact.pos.add(transform1.position(), qr2).sub(transform2.position());
+                //qr1.set(contact.pos);
+                //contact.pos.add(transform1.position(), qr2).sub(transform2.position());
 
                 Vector3d v = new Vector3d();
 
@@ -215,18 +215,18 @@ public class PhysicsVerse
                 if (manifold.object1 instanceof DynamicSolidObject dynamicObject1)
                 {
                     Transform previousTransform1 = dynamicObject1.previousWorldTransform();
-                    transform1.position().sub(previousTransform1.position(), deltaP1).add(qr1).sub(contact.pos.add(transform1.position(), v).sub(previousTransform1.position()));
+                    //transform1.position().sub(previousTransform1.position(), deltaP1).add(qr1).sub(contact.pos.add(transform1.position(), v).sub(previousTransform1.position()));
                 }
 
                 Vector3d deltaP2 = new Vector3d();
                 if (manifold.object2 instanceof DynamicSolidObject dynamicObject2)
                 {
                     Transform previousTransform2 = dynamicObject2.previousWorldTransform();
-                    transform2.position().sub(previousTransform2.position(), deltaP2).add(qr2).sub(contact.pos.add(transform1.position(), v).sub(previousTransform2.position()));
+                    //transform2.position().sub(previousTransform2.position(), deltaP2).add(qr2).sub(contact.pos.add(transform1.position(), v).sub(previousTransform2.position()));
                 }
 
                 deltaP1.sub(deltaP2, v); // delta p
-                v.sub(contact.normal.mul(v.dot(contact.normal), new Vector3d())); // delta p tangent
+                //v.sub(contact.normal.mul(v.dot(contact.normal), new Vector3d())); // delta p tangent
 
                 double slidingLength = v.length();
                 if (slidingLength < EPSILON)
@@ -270,44 +270,6 @@ public class PhysicsVerse
 
     private void queryCollisionManifolds(List<CollisionManifold> manifolds)
     {
-        this.m_collisionDispatcher.allocateManifolds(
-                this.m_infiniteObjects.size() * this.m_dynamicObjects.size()
-                + this.m_broadphase.pairStorage().pairCount()
-        );
-
-        int manifoldIndex = 0;
-
-        for (SolidObject collider : this.m_infiniteObjects)
-        {
-            for (DynamicSolidObject dynamicObject : this.m_dynamicObjects)
-            {
-                CollisionManifold manifold = this.m_collisionDispatcher.getManifold(manifoldIndex);
-                if (this.m_collisionDispatcher.execute(collider, dynamicObject, manifold))
-                {
-                    ++manifoldIndex;
-                    manifolds.add(manifold);
-                }
-            }
-        }
-
-        for (Broadphase.Pair pair : this.m_broadphase.pairStorage())
-        {
-            SolidObject object1 = (SolidObject) pair.first().data(), object2 = (SolidObject) pair.second().data();
-
-            if (object1.geometry().dispatcherIndex() > object2.geometry().dispatcherIndex())
-            {
-                SolidObject t = object1;
-                object1 = object2;
-                object2 = t;
-            }
-
-            CollisionManifold manifold = this.m_collisionDispatcher.getManifold(manifoldIndex);
-            if (this.m_collisionDispatcher.execute(object1, object2, manifold))
-            {
-                ++manifoldIndex;
-                manifolds.add(manifold);
-            }
-        }
     }
 
     public void update(double epsilon, int substeps)

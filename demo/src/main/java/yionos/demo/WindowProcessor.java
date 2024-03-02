@@ -1,19 +1,14 @@
 package yionos.demo;
 
-import glfw3.GLFWcursorposfun;
-import glfw3.GLFWerrorfun;
-import glfw3.GLFWframebuffersizefun;
-import glfw3.GLFWkeyfun;
-import glfw3.GLFWmousebuttonfun;
-import glfw3.GLFWscrollfun;
-import glfw3.GLFWvidmode;
-import glfw3.GLFWwindowfocusfun;
+import glfw3.*;
 import jpgen.NativeTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yionos.demo.rendering.VulkanException;
 
 import javax.annotation.Nullable;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
@@ -21,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static glfw3.GLFW3.*;
+import static stbimage.StbImage.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class WindowProcessor implements Disposable
@@ -54,6 +50,8 @@ public class WindowProcessor implements Disposable
         {
             throw new IllegalStateException("GLFW initialization failed.");
         }
+
+        gWindowLogger.info(STR."GLFW version: \{glfwGetVersionString().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0)}");
 
         try (Arena arena = Arena.ofConfined())
         {
@@ -92,6 +90,28 @@ public class WindowProcessor implements Disposable
 
             this.m_width = width;
             this.m_height = height;
+
+            try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("icon.png"))
+            {
+                if (inputStream == null)
+                {
+                    gWindowLogger.warn("Could not find window icon file.");
+                }
+                else
+                {
+                    MemorySegment iconRawData = arena.allocateArray(ValueLayout.JAVA_BYTE, inputStream.readAllBytes());
+
+                    GLFWimage iconImage = new GLFWimage(arena);
+                    iconImage.pixels(stbi_load_from_memory(iconRawData, (int) iconRawData.byteSize(), iconImage.width_ptr(), iconImage.height_ptr(), NULL, 4));
+                    glfwSetWindowIcon(this.m_handle, 1, iconImage.ptr());
+
+                    stbi_image_free(iconImage.pixels());
+                }
+            }
+            catch (IOException e)
+            {
+                gWindowLogger.error(STR."Failed to load window icon: \{e}");
+            }
 
             MemorySegment monitor = glfwGetPrimaryMonitor();
             MemorySegment pVidMode = glfwGetVideoMode(monitor);

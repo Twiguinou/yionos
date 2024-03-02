@@ -95,17 +95,19 @@ public class VulkanContext implements Disposable
         pCallbackData = pCallbackData.reinterpret(VkDebugUtilsMessengerCallbackDataEXT.gStructLayout.byteSize());
         VkDebugUtilsMessengerCallbackDataEXT callbackData = new VkDebugUtilsMessengerCallbackDataEXT(pCallbackData);
 
+        MemorySegment pMessage = callbackData.pMessage().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize());
+
         if (messageSeverity >= VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT)
         {
-            gVulkanLogger.error(callbackData.pMessage().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0));
+            gVulkanLogger.error(pMessage.getUtf8String(0));
         }
         else if (messageSeverity >= VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT)
         {
-            gVulkanLogger.warn(callbackData.pMessage().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0));
+            gVulkanLogger.warn(pMessage.getUtf8String(0));
         }
-        else if ((messageTypes & VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT) == 0)
+        else
         {
-            gVulkanLogger.info(callbackData.pMessage().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0));
+            gVulkanLogger.info(pMessage.getUtf8String(0));
         }
 
         return VK_FALSE;

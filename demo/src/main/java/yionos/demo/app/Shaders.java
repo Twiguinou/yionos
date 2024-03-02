@@ -11,7 +11,7 @@ import java.io.InputStream;
 import static vulkan.VkShaderStageFlagBits.*;
 import static yionos.demo.rendering.VulkanHelpers.*;
 
-public record Shaders(Graphics grid, Graphics objectDebug, ShaderModule objectDebugInstanced) implements Disposable
+public record Shaders(Graphics grid, Graphics objectDebug, Graphics objectDebugInstanced, Graphics nuklearOverlay) implements Disposable
 {
     public record Graphics(ShaderModule vertex, ShaderModule fragment) implements Disposable
     {
@@ -49,10 +49,10 @@ public record Shaders(Graphics grid, Graphics objectDebug, ShaderModule objectDe
     {
         Graphics gridShaders = new Graphics(device, "grid-vs.glsl", "grid-fs.glsl");
         Graphics objectDebugShaders = new Graphics(device, "object-debug-vs.glsl", "object-debug-fs.glsl");
+        Graphics objectDebugInstancedShaders = new Graphics(device, "object-debug-instanced-vs.glsl", "object-debug-instanced-fs.glsl");
+        Graphics nuklearOverlayShaders = new Graphics(device, "nuklear-overlay-vs.glsl", "nuklear-overlay-fs.glsl");
 
-        ShaderModule objectDebugInstancedShader = loadShader(device, "object-debug-instanced-vs.glsl", VK_SHADER_STAGE_VERTEX_BIT);
-
-        return new Shaders(gridShaders, objectDebugShaders, objectDebugInstancedShader);
+        return new Shaders(gridShaders, objectDebugShaders, objectDebugInstancedShaders, nuklearOverlayShaders);
     }
 
     @Override
@@ -61,5 +61,6 @@ public record Shaders(Graphics grid, Graphics objectDebug, ShaderModule objectDe
         this.grid.dispose();
         this.objectDebug.dispose();
         this.objectDebugInstanced.dispose();
+        this.nuklearOverlay.dispose();
     }
 }

@@ -2,7 +2,7 @@ package yionos.demo.app;
 
 import vulkan.*;
 import yionos.demo.Disposable;
-import yionos.demo.rendering.ShaderModule;
+import yionos.demo.rendering.LogicalDevice;
 import yionos.demo.rendering.VulkanException;
 
 import java.lang.foreign.Arena;
@@ -25,9 +25,9 @@ import static vulkan.VkFormat.*;
 import static vulkan.VkVertexInputRate.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
-public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug, MemorySegment objectDebugInstanced) implements Disposable
+public record Pipelines(LogicalDevice logicalDevice, MemorySegment staticGrid, MemorySegment objectDebug, MemorySegment objectDebugWireframe, MemorySegment objectDebugInstanced, MemorySegment nuklearOverlay) implements Disposable
 {
-    public static VkGraphicsPipelineCreateInfo makeGraphicsPrototype(Arena arena, MemorySegment layout, MemorySegment renderPass, int sampleCount, ShaderModule vertexShader, ShaderModule fragmentShader)
+    public static VkGraphicsPipelineCreateInfo makeGraphicsPrototype(Arena arena, MemorySegment layout, MemorySegment renderPass, int sampleCount, Shaders.Graphics shaders)
     {
         VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(arena);
         vertexInputStateCreateInfo.sType(VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO);
@@ -53,13 +53,13 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
         rasterizationStateCreateInfo.cullMode(VK_CULL_MODE_BACK_BIT);
         rasterizationStateCreateInfo.frontFace(VK_FRONT_FACE_COUNTER_CLOCKWISE);
         rasterizationStateCreateInfo.depthBiasEnable(VK_FALSE);
-        rasterizationStateCreateInfo.lineWidth(1.f);
+        rasterizationStateCreateInfo.lineWidth(1.0f);
 
         VkPipelineMultisampleStateCreateInfo multisampleStateCreateInfo = new VkPipelineMultisampleStateCreateInfo(arena);
         multisampleStateCreateInfo.sType(VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO);
         multisampleStateCreateInfo.rasterizationSamples(1);
         multisampleStateCreateInfo.sampleShadingEnable(VK_TRUE);
-        multisampleStateCreateInfo.minSampleShading(1.f);
+        multisampleStateCreateInfo.minSampleShading(1.0f);
         multisampleStateCreateInfo.rasterizationSamples(sampleCount);
         multisampleStateCreateInfo.alphaToCoverageEnable(VK_FALSE);
         multisampleStateCreateInfo.alphaToOneEnable(VK_FALSE);
@@ -70,8 +70,8 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
         depthStencilStateCreateInfo.depthWriteEnable(VK_TRUE);
         depthStencilStateCreateInfo.depthCompareOp(VK_COMPARE_OP_LESS_OR_EQUAL);
         depthStencilStateCreateInfo.depthBoundsTestEnable(VK_FALSE);
-        depthStencilStateCreateInfo.minDepthBounds(0.f);
-        depthStencilStateCreateInfo.maxDepthBounds(1.f);
+        depthStencilStateCreateInfo.minDepthBounds(0.0f);
+        depthStencilStateCreateInfo.maxDepthBounds(1.0f);
 
         VkPipelineColorBlendAttachmentState colorBlendAttachmentState = new VkPipelineColorBlendAttachmentState(arena);
         colorBlendAttachmentState.colorWriteMask(VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT);
@@ -87,10 +87,10 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
         colorBlendStateCreateInfo.sType(VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO);
         colorBlendStateCreateInfo.logicOpEnable(VK_FALSE);
         colorBlendStateCreateInfo.logicOp(VK_LOGIC_OP_COPY);
-        colorBlendStateCreateInfo.blendConstants(0, 1.f);
-        colorBlendStateCreateInfo.blendConstants(1, 1.f);
-        colorBlendStateCreateInfo.blendConstants(2, 1.f);
-        colorBlendStateCreateInfo.blendConstants(3, 1.f);
+        colorBlendStateCreateInfo.blendConstants(0, 1.0f);
+        colorBlendStateCreateInfo.blendConstants(1, 1.0f);
+        colorBlendStateCreateInfo.blendConstants(2, 1.0f);
+        colorBlendStateCreateInfo.blendConstants(3, 1.0f);
         colorBlendStateCreateInfo.attachmentCount(1);
         colorBlendStateCreateInfo.pAttachments(colorBlendAttachmentState.ptr());
 
@@ -122,15 +122,15 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
 
         VkPipelineShaderStageCreateInfo vertexShaderStage = VkPipelineShaderStageCreateInfo.getAtIndex(pStages, 0);
         vertexShaderStage.sType(VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO);
-        vertexShaderStage.stage(vertexShader.stage());
-        vertexShaderStage.module(vertexShader.handle());
-        vertexShaderStage.pName(arena.allocateUtf8String(vertexShader.entryPoint()));
+        vertexShaderStage.stage(shaders.vertex().stage());
+        vertexShaderStage.module(shaders.vertex().handle());
+        vertexShaderStage.pName(arena.allocateUtf8String(shaders.vertex().entryPoint()));
 
         VkPipelineShaderStageCreateInfo fragmentShaderStage = VkPipelineShaderStageCreateInfo.getAtIndex(pStages, 1);
         fragmentShaderStage.sType(VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO);
-        fragmentShaderStage.stage(fragmentShader.stage());
-        fragmentShaderStage.module(fragmentShader.handle());
-        fragmentShaderStage.pName(arena.allocateUtf8String(fragmentShader.entryPoint()));
+        fragmentShaderStage.stage(shaders.fragment().stage());
+        fragmentShaderStage.module(shaders.fragment().handle());
+        fragmentShaderStage.pName(arena.allocateUtf8String(shaders.fragment().entryPoint()));
 
         pipelineCreateInfo.stageCount(2);
         pipelineCreateInfo.pStages(pStages);
@@ -145,12 +145,15 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
         return pPipeline.get(ValueLayout.ADDRESS, 0);
     }
 
-    public static Pipelines create(VkDevice device, MemorySegment renderPass, PipelineLayouts layouts, Shaders shaders, int sampleCount)
+    public static Pipelines create(LogicalDevice logicalDevice, MemorySegment renderPass, PipelineLayouts layouts, Shaders shaders, int sampleCount)
     {
+        boolean hasWireframes = logicalDevice.physicalDevice.features().fillModeNonSolid() != VK_FALSE;
+        boolean wideLines = logicalDevice.physicalDevice.features().wideLines() != VK_FALSE;
+
         MemorySegment staticGridPipeline;
         try (Arena arena = Arena.ofConfined())
         {
-            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.staticGrid(), renderPass, sampleCount, shaders.grid().vertex(), shaders.grid().fragment());
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.staticGrid(), renderPass, sampleCount, shaders.grid());
 
             VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
             binding0.binding(0);
@@ -168,13 +171,13 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexAttributeDescriptions(attribute0.ptr());
 
-            staticGridPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
+            staticGridPipeline = buildGraphicsPipeline(arena, logicalDevice.handle(), pipelineCreateInfo.ptr());
         }
 
-        MemorySegment objectDebugPipeline;
+        MemorySegment objectDebugPipeline, objectDebugWireframePipeline;
         try (Arena arena = Arena.ofConfined())
         {
-            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.objectDebug(), renderPass, sampleCount, shaders.objectDebug().vertex(), shaders.objectDebug().fragment());
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.objectDebug(), renderPass, sampleCount, shaders.objectDebug());
 
             VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
             binding0.binding(0);
@@ -192,13 +195,53 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexAttributeDescriptions(attribute0.ptr());
 
-            objectDebugPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
+            objectDebugPipeline = buildGraphicsPipeline(arena, logicalDevice.handle(), pipelineCreateInfo.ptr());
+
+            if (hasWireframes)
+            {
+                VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo(pipelineCreateInfo.pRasterizationState().reinterpret(VkPipelineRasterizationStateCreateInfo.gStructLayout.byteSize()));
+                rasterizationStateCreateInfo.polygonMode(VK_POLYGON_MODE_LINE);
+                rasterizationStateCreateInfo.cullMode(VK_CULL_MODE_NONE);
+
+                if (wideLines)
+                {
+                    VkPipelineDynamicStateCreateInfo dynamicStateCreateInfo = new VkPipelineDynamicStateCreateInfo(pipelineCreateInfo.pDynamicState().reinterpret(VkPipelineDynamicStateCreateInfo.gStructLayout.byteSize()));
+
+                    MemorySegment oldDynamicStates = dynamicStateCreateInfo.pDynamicStates().reinterpret(ValueLayout.JAVA_INT.byteSize() * dynamicStateCreateInfo.dynamicStateCount());
+
+                    boolean hasDynamicLineWidth = false;
+                    for (int i = 0; i < dynamicStateCreateInfo.dynamicStateCount(); i++)
+                    {
+                        if (oldDynamicStates.getAtIndex(ValueLayout.JAVA_INT, i) == VK_DYNAMIC_STATE_LINE_WIDTH)
+                        {
+                            hasDynamicLineWidth = true;
+                            break;
+                        }
+                    }
+
+                    if (!hasDynamicLineWidth)
+                    {
+                        MemorySegment dynamicStates = arena.allocateArray(ValueLayout.JAVA_INT, dynamicStateCreateInfo.dynamicStateCount() + 1);
+                        dynamicStates.copyFrom(oldDynamicStates);
+                        dynamicStates.setAtIndex(ValueLayout.JAVA_INT, dynamicStateCreateInfo.dynamicStateCount(), VK_DYNAMIC_STATE_LINE_WIDTH);
+
+                        dynamicStateCreateInfo.dynamicStateCount(dynamicStateCreateInfo.dynamicStateCount() + 1);
+                        dynamicStateCreateInfo.pDynamicStates(dynamicStates);
+                    }
+                }
+
+                objectDebugWireframePipeline = buildGraphicsPipeline(arena, logicalDevice.handle(), pipelineCreateInfo.ptr());
+            }
+            else
+            {
+                objectDebugWireframePipeline = objectDebugPipeline;
+            }
         }
 
         MemorySegment objectDebugInstancedPipeline;
         try (Arena arena = Arena.ofConfined())
         {
-            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.objectDebugInstanced(), renderPass, sampleCount, shaders.objectDebugInstanced(), shaders.objectDebug().fragment());
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.objectDebugInstanced(), renderPass, sampleCount, shaders.objectDebugInstanced());
 
             VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
             binding0.binding(0);
@@ -216,17 +259,65 @@ public record Pipelines(VkDevice device, MemorySegment staticGrid, MemorySegment
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexAttributeDescriptions(attribute0.ptr());
 
-            objectDebugInstancedPipeline = buildGraphicsPipeline(arena, device, pipelineCreateInfo.ptr());
+            objectDebugInstancedPipeline = buildGraphicsPipeline(arena, logicalDevice.handle(), pipelineCreateInfo.ptr());
         }
 
-        return new Pipelines(device, staticGridPipeline, objectDebugPipeline, objectDebugInstancedPipeline);
+        MemorySegment nuklearOverlayPipeline;
+        try (Arena arena = Arena.ofConfined())
+        {
+            VkGraphicsPipelineCreateInfo pipelineCreateInfo = makeGraphicsPrototype(arena, layouts.nuklearOverlay(), renderPass, sampleCount, shaders.nuklearOverlay());
+
+            VkVertexInputBindingDescription binding0 = new VkVertexInputBindingDescription(arena);
+            binding0.binding(0);
+            binding0.stride(4 * Float.BYTES + 4);
+            binding0.inputRate(VK_VERTEX_INPUT_RATE_VERTEX);
+
+            MemorySegment attributes = arena.allocateArray(VkVertexInputAttributeDescription.gStructLayout, 3);
+            VkVertexInputAttributeDescription attribute;
+
+            attribute = VkVertexInputAttributeDescription.getAtIndex(attributes, 0);
+            attribute.location(0);
+            attribute.format(VK_FORMAT_R32G32_SFLOAT);
+            attribute.offset(0);
+
+            attribute = VkVertexInputAttributeDescription.getAtIndex(attributes, 1);
+            attribute.location(1);
+            attribute.format(VK_FORMAT_R32G32_SFLOAT);
+            attribute.offset(2 * Float.BYTES);
+
+            attribute = VkVertexInputAttributeDescription.getAtIndex(attributes, 2);
+            attribute.location(2);
+            attribute.format(VK_FORMAT_R8G8B8A8_UINT);
+            attribute.offset(4 * Float.BYTES);
+
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
+            vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
+            vertexInputStateCreateInfo.vertexAttributeDescriptionCount(3);
+            vertexInputStateCreateInfo.pVertexAttributeDescriptions(attributes);
+
+            VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo(pipelineCreateInfo.pRasterizationState().reinterpret(VkPipelineRasterizationStateCreateInfo.gStructLayout.byteSize()));
+            rasterizationStateCreateInfo.depthClampEnable(VK_FALSE);
+            rasterizationStateCreateInfo.cullMode(VK_CULL_MODE_FRONT_BIT);
+
+            nuklearOverlayPipeline = buildGraphicsPipeline(arena, logicalDevice.handle(), pipelineCreateInfo.ptr());
+        }
+
+        return new Pipelines(logicalDevice, staticGridPipeline, objectDebugPipeline, objectDebugWireframePipeline, objectDebugInstancedPipeline, nuklearOverlayPipeline);
     }
 
     @Override
     public void dispose()
     {
-        vkDestroyPipeline(this.device, this.staticGrid, NULL);
-        vkDestroyPipeline(this.device, this.objectDebug, NULL);
-        vkDestroyPipeline(this.device, this.objectDebugInstanced, NULL);
+        vkDestroyPipeline(this.logicalDevice.handle(), this.staticGrid, NULL);
+
+        vkDestroyPipeline(this.logicalDevice.handle(), this.objectDebug, NULL);
+        if (this.logicalDevice.physicalDevice.features().fillModeNonSolid() != VK_FALSE)
+        {
+            vkDestroyPipeline(this.logicalDevice.handle(), this.objectDebugWireframe, NULL);
+        }
+
+        vkDestroyPipeline(this.logicalDevice.handle(), this.objectDebugInstanced, NULL);
+        vkDestroyPipeline(this.logicalDevice.handle(), this.nuklearOverlay, NULL);
     }
 }

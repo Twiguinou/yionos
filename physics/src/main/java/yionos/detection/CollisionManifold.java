@@ -7,8 +7,8 @@ public class CollisionManifold
 {
     public static final class ContactInfo
     {
-        public final Vector3d pos = new Vector3d();
-        public final Vector3d normal = new Vector3d();
+        public final Vector3d posA = new Vector3d(), posB = new Vector3d();
+        public final Vector3d normalA = new Vector3d(), normalB = new Vector3d();
         public double penetration = 0.0;
     }
 
@@ -16,7 +16,6 @@ public class CollisionManifold
 
     private final ContactInfo[] m_contacts = new ContactInfo[gMaxContactInfoCount];
     private int m_nextIndex = 0;
-    public final Vector3d colliderPos = new Vector3d();
     public SolidObject object1, object2;
 
     public CollisionManifold()

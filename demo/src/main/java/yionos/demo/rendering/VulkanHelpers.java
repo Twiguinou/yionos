@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
@@ -65,15 +66,12 @@ public final class VulkanHelpers
         }
     }
 
-    public static void beginCommandBuffer(VkCommandBuffer commandBuffer, int flags) throws VulkanException
+    public static void beginCommandBuffer(SegmentAllocator allocator, VkCommandBuffer commandBuffer, int flags) throws VulkanException
     {
-        try (Arena arena = Arena.ofConfined())
-        {
-            VkCommandBufferBeginInfo commandBufferBeginInfo = new VkCommandBufferBeginInfo(arena);
-            commandBufferBeginInfo.sType(VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO);
-            commandBufferBeginInfo.flags(flags);
+        VkCommandBufferBeginInfo commandBufferBeginInfo = new VkCommandBufferBeginInfo(allocator);
+        commandBufferBeginInfo.sType(VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO);
+        commandBufferBeginInfo.flags(flags);
 
-            VulkanException.check(vkBeginCommandBuffer(commandBuffer, commandBufferBeginInfo.ptr()));
-        }
+        VulkanException.check(vkBeginCommandBuffer(commandBuffer, commandBufferBeginInfo.ptr()));
     }
 }

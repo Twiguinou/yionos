@@ -1,6 +1,7 @@
 package yionos.demo.app.scene;
 
 import org.joml.Matrix4d;
+import org.joml.Vector4d;
 import vulkan.VkCommandBuffer;
 import yionos.demo.Disposable;
 import yionos.demo.StackAllocator;
@@ -26,7 +27,7 @@ public class ObjectRenderer implements Disposable
     public enum Type
     {
         CUBE("cube.obj"),
-        SPHERE("sphere.obj");
+        SPHERE("icosphere.obj");
 
         private final String modelFile;
 
@@ -35,6 +36,8 @@ public class ObjectRenderer implements Disposable
             this.modelFile = modelFile;
         }
     }
+
+    public record MeshColors(Vector4d lightColor, Vector4d darkColor, Vector4d borderColor) {}
 
     public final VulkanRenderer vulkanRenderer;
     private final VulkanBuffer m_vertexBuffer, m_indexBuffer;
@@ -56,7 +59,7 @@ public class ObjectRenderer implements Disposable
             }
 
             this.m_vertexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), vertices.byteSize(), VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
-            this.m_vertexBuffer.upload(renderer.uploadCommandPool(), renderer.transferQueue(), vertices);
+            this.m_vertexBuffer.upload(renderer.uploadCommandPool(), renderer.graphicsQueue(), vertices);
 
             this.m_indexCount = mainMesh.faces().length * 3;
             MemorySegment indices = arena.allocateArray(ValueLayout.JAVA_INT, this.m_indexCount);
@@ -68,13 +71,13 @@ public class ObjectRenderer implements Disposable
             }
 
             this.m_indexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), indices.byteSize(), VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
-            this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.transferQueue(), indices);
+            this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.graphicsQueue(), indices);
 
             this.vulkanRenderer = renderer;
         }
     }
 
-    public void render(VkCommandBuffer commandBuffer, Camera camera, Matrix4d transform)
+    public void render(VkCommandBuffer commandBuffer, Camera camera, Matrix4d transform, MeshColors colors)
     {
         try (Arena arena = StackAllocator.stackPush())
         {
@@ -84,10 +87,16 @@ public class ObjectRenderer implements Disposable
             Matrix4d clippedTransform = new Matrix4d();
             camera.transformationMatrix(transform, clippedTransform);
 
-            MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
-            clippedTransform.get(pushConstants.asByteBuffer().asFloatBuffer());
+            MemorySegment vertexPushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
+            clippedTransform.get(vertexPushConstants.asByteBuffer().asFloatBuffer());
 
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
+            MemorySegment fragmentPushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 12);
+            colors.lightColor.get(fragmentPushConstants.asByteBuffer().asFloatBuffer());
+            colors.darkColor.get(fragmentPushConstants.asSlice(4 * Float.BYTES).asByteBuffer().asFloatBuffer());
+            colors.borderColor.get(fragmentPushConstants.asSlice(8 * Float.BYTES).asByteBuffer().asFloatBuffer());
+
+            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) vertexPushConstants.byteSize(), vertexPushConstants);
+            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_FRAGMENT_BIT, (int) vertexPushConstants.byteSize(), (int) fragmentPushConstants.byteSize(), fragmentPushConstants);
 
             vkCmdDrawIndexed(commandBuffer, this.m_indexCount, 1, 0, 0, 0);
         }

@@ -36,10 +36,16 @@ public class ShaderModule implements Disposable
             if (compilation != null)
             {
                 MemorySegment compiler = shaderc_compiler_initialize();
-                MemorySegment options = shaderc_compile_options_initialize();
-                if (compiler.equals(NULL) || options.equals(NULL))
+                if (compiler.equals(NULL))
                 {
-                    throw new VulkanException("Failed to create shaderc context");
+                    throw new VulkanException("Failed to create shaderc compiler");
+                }
+
+                MemorySegment options = shaderc_compile_options_initialize();
+                if (options.equals(NULL))
+                {
+                    shaderc_compiler_release(compiler);
+                    throw new VulkanException("Failed to create shaderc options");
                 }
 
                 int shaderc_stage = mapShaderStage(stage);

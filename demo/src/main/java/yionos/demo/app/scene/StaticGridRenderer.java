@@ -33,7 +33,7 @@ public class StaticGridRenderer implements Disposable
                     1.0f, 1.0f,
                     -1.0f, 1.0f);
             this.m_vertexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), vertices.byteSize(), VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
-            this.m_vertexBuffer.upload(renderer.uploadCommandPool(), renderer.transferQueue(), vertices);
+            this.m_vertexBuffer.upload(renderer.uploadCommandPool(), renderer.graphicsQueue(), vertices);
 
             MemorySegment indices = arena.allocateArray(ValueLayout.JAVA_INT,
                     0, 1, 2,
@@ -41,7 +41,7 @@ public class StaticGridRenderer implements Disposable
                     2, 1, 0,
                     3, 2, 0);
             this.m_indexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), indices.byteSize(), VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
-            this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.transferQueue(), indices);
+            this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.graphicsQueue(), indices);
 
             this.vulkanRenderer = renderer;
         }

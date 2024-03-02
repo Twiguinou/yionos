@@ -10,7 +10,7 @@ import static vulkan.VulkanCore.*;
 import static vulkan.VkShaderStageFlagBits.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
-public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug, MemorySegment objectDebugInstanced) implements Disposable
+public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemorySegment objectDebug, MemorySegment objectDebugInstanced, MemorySegment nuklearOverlay) implements Disposable
 {
     public static PipelineLayouts create(VkDevice device, DescriptorSetLayouts descriptorSetLayouts)
     {
@@ -20,6 +20,7 @@ public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemoryS
 
         MemorySegment objectDebugLayout = new PipelineLayoutBuilder(0)
                 .addPushConstant(VK_SHADER_STAGE_VERTEX_BIT, 0, Float.BYTES * 16)
+                .addPushConstant(VK_SHADER_STAGE_FRAGMENT_BIT, 16 * Float.BYTES, 12 * Float.BYTES)
                 .build(device);
 
         MemorySegment objectDebugInstancedLayout = new PipelineLayoutBuilder(0)
@@ -27,7 +28,12 @@ public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemoryS
                 .addPushConstant(VK_SHADER_STAGE_VERTEX_BIT, 0, Float.BYTES * 16)
                 .build(device);
 
-        return new PipelineLayouts(device, staticGridLayout, objectDebugLayout, objectDebugInstancedLayout);
+        MemorySegment nuklearOverlayLayout = new PipelineLayoutBuilder(0)
+                .addSetLayout(descriptorSetLayouts.singleSampler())
+                .addPushConstant(VK_SHADER_STAGE_VERTEX_BIT, 0, Float.BYTES * 16)
+                .build(device);
+
+        return new PipelineLayouts(device, staticGridLayout, objectDebugLayout, objectDebugInstancedLayout, nuklearOverlayLayout);
     }
 
     @Override
@@ -36,5 +42,6 @@ public record PipelineLayouts(VkDevice device, MemorySegment staticGrid, MemoryS
         vkDestroyPipelineLayout(this.device, this.staticGrid, NULL);
         vkDestroyPipelineLayout(this.device, this.objectDebug, NULL);
         vkDestroyPipelineLayout(this.device, this.objectDebugInstanced, NULL);
+        vkDestroyPipelineLayout(this.device, this.nuklearOverlay, NULL);
     }
 }

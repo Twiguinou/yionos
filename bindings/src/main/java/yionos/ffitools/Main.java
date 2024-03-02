@@ -327,29 +327,27 @@ public class Main
         File filesDest = new File(outputDirectory, "assimp");
         try (SourceScopeScanner scanner = new SourceScopeScanner())
         {
-            String[] additionalArgs = new String[] {
-                    STR."-I\{includeDirectory}"
-            };
+            String[] allArgs = mergeArrays(clangArgs, new String[] {STR."-I\{includeDirectory}"}, String[]::new);
 
-            scanner.process(STR."\{includeDirectory}/assimp/cimport.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/types.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/postprocess.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/aabb.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/camera.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/cexport.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/cfileio.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/color4.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/importerdesc.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/light.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/material.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/matrix3x3.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/matrix4x4.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/mesh.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/scene.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/texture.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/vector2.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/vector3.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
-            scanner.process(STR."\{includeDirectory}/assimp/version.h", mergeArrays(clangArgs, additionalArgs, String[]::new));
+            scanner.process(STR."\{includeDirectory}/assimp/cimport.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/types.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/postprocess.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/aabb.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/camera.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/cexport.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/cfileio.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/color4.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/importerdesc.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/light.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/material.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/matrix3x3.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/matrix4x4.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/mesh.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/scene.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/texture.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/vector2.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/vector3.h", allArgs);
+            scanner.process(STR."\{includeDirectory}/assimp/version.h", allArgs);
 
             if (filesDest.exists() || filesDest.mkdirs())
             {
@@ -424,6 +422,185 @@ public class Main
         }
     }
 
+    private static void nuklearBindings(File outputDirectory, String includeDirectory, String[] clangArgs)
+    {
+        File filesDest = new File(outputDirectory, "nuklear");
+        try (SourceScopeScanner scanner = new SourceScopeScanner())
+        {
+            scanner.process(STR."\{includeDirectory}/nuklear.h", mergeArrays(clangArgs, new String[] {
+                    "-DNK_INCLUDE_FIXED_TYPES",
+                    "-DNK_INCLUDE_DEFAULT_ALLOCATOR",
+                    "-DNK_INCLUDE_STANDARD_IO",
+                    "-DNK_INCLUDE_VERTEX_BUFFER_OUTPUT",
+                    "-DNK_INCLUDE_FONT_BAKING",
+                    "-DNK_INCLUDE_DEFAULT_FONT"
+            }, String[]::new));
+
+            if (filesDest.exists() || filesDest.mkdirs())
+            {
+                HeaderInformation headerInfo = new HeaderInformation("Nuklear", "nuklear", "gSystemLinker", "gLibLookup");
+                Map<Declaration<?>, String> typeNames = scanner.translateDeclarations();
+                TypeTranslation translation = new TypeTranslation()
+                {
+                    @Override
+                    public HeaderInformation headerInfo()
+                    {
+                        return headerInfo;
+                    }
+
+                    @Override
+                    public RecordInformation recordInfo(TypeManifold type)
+                    {
+                        return new RecordInformation(typeNames.get((RecordType)flattenType(type)), headerInfo.packageName(), "gStructLayout", "_ptr");
+                    }
+                };
+
+                for (Declaration<?> declaration : scanner.gatherTypeDeclarations())
+                {
+                    String name = typeNames.get(declaration);
+                    Optional<String> code = switch (declaration)
+                    {
+                        case EnumType enumType -> Optional.of(generateEnum(enumType, translation, headerInfo.packageName(), name));
+                        case RecordType recordType ->
+                        {
+                            try
+                            {
+                                yield Optional.of(generateRecord(recordType, translation));
+                            }
+                            catch (Throwable _)
+                            {
+                                yield Optional.empty();
+                            }
+                        }
+                        case FunctionType.Callback callback -> Optional.of(generateCallback(callback, translation, headerInfo.packageName(), name, "gDescriptor", "gUpcallStub"));
+                        default -> Optional.empty();
+                    };
+
+                    code.ifPresent(codeString ->
+                    {
+                        File outputFile = new File(filesDest, STR."\{name}.java");
+                        try (FileOutputStream outputStream = new FileOutputStream(outputFile))
+                        {
+                            outputStream.write(codeString.getBytes(StandardCharsets.UTF_8));
+                        }
+                        catch (IOException e)
+                        {
+                            throw new RuntimeException(e);
+                        }
+                    });
+                }
+
+                File headerFile = new File(filesDest, STR."\{headerInfo.name()}.java");
+                try (FileOutputStream outputStream = new FileOutputStream(headerFile))
+                {
+                    List<FunctionImport> imports = new ArrayList<>();
+                    for (FunctionType.Declaration function : scanner.getDeclaredFunctions())
+                    {
+                        // small hack
+                        if (function.fname().equals("nk_font_atlas_init_custom"))
+                        {
+                            function.argNames()[2] = "_transient";
+                        }
+
+                        imports.add(() -> function);
+                    }
+
+                    outputStream.write(generateHeader(translation, "libnuklear", imports, scanner.getMacroConstants()).getBytes(StandardCharsets.UTF_8));
+                }
+                catch (IOException e)
+                {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
+    private static void stbImageBindings(File outputDirectory, String includeDirectory, String[] clangArgs)
+    {
+        File filesDest = new File(outputDirectory, "stbimage");
+        try (SourceScopeScanner scanner = new SourceScopeScanner())
+        {
+            scanner.process(STR."\{includeDirectory}/stb_image.h", clangArgs);
+
+            if (filesDest.exists() || filesDest.mkdirs())
+            {
+                HeaderInformation headerInfo = new HeaderInformation("StbImage", "stbimage", "gSystemLinker", "gLibLookup");
+                Map<Declaration<?>, String> typeNames = scanner.translateDeclarations();
+                TypeTranslation translation = new TypeTranslation()
+                {
+                    @Override
+                    public HeaderInformation headerInfo()
+                    {
+                        return headerInfo;
+                    }
+
+                    @Override
+                    public RecordInformation recordInfo(TypeManifold type)
+                    {
+                        return new RecordInformation(typeNames.get((RecordType)flattenType(type)), headerInfo.packageName(), "gStructLayout", "ptr");
+                    }
+                };
+
+                for (Declaration<?> declaration : scanner.gatherTypeDeclarations())
+                {
+                    String name = typeNames.get(declaration);
+                    Optional<String> code = switch (declaration)
+                    {
+                        case EnumType enumType -> Optional.of(generateEnum(enumType, translation, headerInfo.packageName(), name));
+                        case RecordType recordType ->
+                        {
+                            try
+                            {
+                                yield Optional.of(generateRecord(recordType, translation));
+                            }
+                            catch (Throwable _)
+                            {
+                                yield Optional.empty();
+                            }
+                        }
+                        case FunctionType.Callback callback -> Optional.of(generateCallback(callback, translation, headerInfo.packageName(), name, "gDescriptor", "gUpcallStub"));
+                        default -> Optional.empty();
+                    };
+
+                    code.ifPresent(codeString ->
+                    {
+                        File outputFile = new File(filesDest, STR."\{name}.java");
+                        try (FileOutputStream outputStream = new FileOutputStream(outputFile))
+                        {
+                            outputStream.write(codeString.getBytes(StandardCharsets.UTF_8));
+                        }
+                        catch (IOException e)
+                        {
+                            throw new RuntimeException(e);
+                        }
+                    });
+                }
+
+                File headerFile = new File(filesDest, STR."\{headerInfo.name()}.java");
+                try (FileOutputStream outputStream = new FileOutputStream(headerFile))
+                {
+                    List<FunctionImport> imports = new ArrayList<>();
+                    for (FunctionType.Declaration function : scanner.getDeclaredFunctions())
+                    {
+                        // small hack
+                        if (function.fname().equals("nk_font_atlas_init_custom"))
+                        {
+                            function.argNames()[2] = "_transient";
+                        }
+
+                        imports.add(() -> function);
+                    }
+
+                    outputStream.write(generateHeader(translation, "libstbimage", imports, scanner.getMacroConstants()).getBytes(StandardCharsets.UTF_8));
+                }
+                catch (IOException e)
+                {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
     private static String[] getProgramClangArgs(ProgramArguments arguments)
     {
         int numArgs = arguments.getNumValuesOfArg("clang_args");
@@ -449,6 +626,8 @@ public class Main
         String vmaInclude = arguments.getArgValueIndexed("vma_include", 0, Function.identity()).orElse(null);
         String shadercInclude = arguments.getArgValueIndexed("shaderc_include", 0, Function.identity()).orElse(null);
         String assimpInclude = arguments.getArgValueIndexed("assimp_include", 0, Function.identity()).orElse(null);
+        String nuklearInclude = arguments.getArgValueIndexed("nuklear_include", 0, Function.identity()).orElse(null);
+        String stbImageInclude = arguments.getArgValueIndexed("stbimage_include", 0, Function.identity()).orElse(null);
 
         SourceScopeScanner.configureLog4j();
         if (vulkanInclude != null)
@@ -480,8 +659,20 @@ public class Main
 
         if (assimpInclude != null)
         {
-            System.out.println("Generating Vulkan bindings..");
+            System.out.println("Generating Assimp bindings..");
             assimpBindings(outputDirectory, assimpInclude, clangArgs);
+        }
+
+        if (nuklearInclude != null)
+        {
+            System.out.println("Generating Nuklear bindings..");
+            nuklearBindings(outputDirectory, nuklearInclude, clangArgs);
+        }
+
+        if (stbImageInclude != null)
+        {
+            System.out.println("Generating stbimage bindings..");
+            stbImageBindings(outputDirectory, stbImageInclude, clangArgs);
         }
     }
 }

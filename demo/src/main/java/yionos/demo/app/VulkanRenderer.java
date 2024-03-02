@@ -31,10 +31,15 @@ import static yionos.demo.rendering.VulkanHelpers.*;
 import static vulkan.VkQueueFlagBits.*;
 import static vulkan.VkImageTiling.*;
 import static vulkan.VkResult.*;
+import static vulkan.VkImageType.*;
+import static vulkan.VkImageLayout.*;
+import static vulkan.VkSharingMode.*;
+import static vulkan.VkImageViewType.*;
 import static vulkan.VkFormat.*;
 import static vulkan.VkPipelineStageFlagBits.*;
 import static vulkan.VkImageUsageFlagBits.*;
 import static vulkan.VkImageAspectFlagBits.*;
+import static vulkan.VkDescriptorPoolCreateFlagBits.*;
 import static vulkan.VkComponentSwizzle.*;
 import static vulkan.VkPipelineBindPoint.*;
 import static vulkan.VkSubpassContents.*;
@@ -49,8 +54,8 @@ public class VulkanRenderer
 
     private final VulkanRenderContext m_context;
     private final LogicalDevice m_logicalDevice;
-    private final LogicalDevice.Queue m_graphicsQueue, m_presentQueue, m_transferQueue;
-    private VulkanImage.Allocated m_colorImage, m_depthImage;
+    private final LogicalDevice.Queue m_graphicsQueue, m_presentQueue;
+    private VulkanImage m_colorImage, m_depthImage;
     private final Swapchain m_swapchain;
     private final int m_sampleCount;
     private final RenderPass m_renderPass;
@@ -73,6 +78,7 @@ public class VulkanRenderer
     public VulkanRenderer(WindowProcessor windowProc, int sampleCount, boolean debug)
     {
         Set<String> instanceExtensions = new HashSet<>(Arrays.asList(WindowProcessor.getVulkanExtensions()));
+        instanceExtensions.add("VK_KHR_get_physical_device_properties2");
         if (debug) instanceExtensions.add("VK_EXT_debug_utils");
 
         String[] instanceLayers = debug ? new String[] {
@@ -109,6 +115,8 @@ public class VulkanRenderer
             features2.pNext(shaderDrawParametersFeatures.ptr());
             features2.features(f ->
             {
+                f.fillModeNonSolid(this.m_context.physicalDevice().features().fillModeNonSolid());
+                f.wideLines(this.m_context.physicalDevice().features().wideLines());
                 f.samplerAnisotropy(VK_TRUE);
                 f.sampleRateShading(VK_TRUE);
                 f.depthClamp(VK_TRUE);
@@ -118,7 +126,6 @@ public class VulkanRenderer
 
             this.m_graphicsQueue = this.m_logicalDevice.queue(0);
             this.m_presentQueue = this.m_logicalDevice.queue(1);
-            this.m_transferQueue = this.m_logicalDevice.queue(2);
         }
 
         int maxMsaaSamples = getMaxUsableSampleCount(this.m_logicalDevice.physicalDevice.properties());
@@ -133,21 +140,114 @@ public class VulkanRenderer
 
         this.m_renderingCommandBuffers = new CommandBufferFlow(this.m_logicalDevice.handle(), this.m_graphicsQueue.family(), gFrameCount);
         this.m_syncObjects = VulkanSync.create(this.m_logicalDevice.handle(), gFrameCount);
-        this.m_uploadCommandPool = new CommandPool(this.m_logicalDevice.handle(), 0, this.m_transferQueue.family());
+        this.m_uploadCommandPool = new CommandPool(this.m_logicalDevice.handle(), 0, this.m_graphicsQueue.family());
 
-        this.m_descriptorPool = new DescriptorPool(this.m_logicalDevice.handle(), 0, new DescriptorPool.Size[] {
-                new DescriptorPool.Size(VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 10)
-        }, gFrameCount);
+        this.m_descriptorPool = new DescriptorPool(this.m_logicalDevice.handle(), VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT, new DescriptorPool.Size[] {
+                new DescriptorPool.Size(VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 10),
+                new DescriptorPool.Size(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 10)
+        }, 100);
 
         this.m_shaders = Shaders.create(this.m_logicalDevice.handle());
 
         this.m_descriptorSetLayouts = DescriptorSetLayouts.create(this.m_logicalDevice.handle());
         this.m_pipelineLayouts = PipelineLayouts.create(this.m_logicalDevice.handle(), this.m_descriptorSetLayouts);
-        this.m_pipelines = Pipelines.create(this.m_logicalDevice.handle(), this.m_renderPass.handle(), this.m_pipelineLayouts, this.m_shaders, this.m_sampleCount);
+        this.m_pipelines = Pipelines.create(this.m_logicalDevice, this.m_renderPass.handle(), this.m_pipelineLayouts, this.m_shaders, this.m_sampleCount);
 
         this.m_gridRenderer = new StaticGridRenderer(this);
         this.m_cubeRenderer = new ObjectRenderer(this, ObjectRenderer.Type.CUBE);
         this.m_sphereRenderer = new ObjectRenderer(this, ObjectRenderer.Type.SPHERE);
+    }
+
+    private VulkanImage createColorImage() throws VulkanException
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            VkImageCreateInfo imageCreateInfo = new VkImageCreateInfo(arena);
+            imageCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO);
+            imageCreateInfo.imageType(VK_IMAGE_TYPE_2D);
+            imageCreateInfo.extent(e ->
+            {
+                e.width(this.m_swapchain.width());
+                e.height(this.m_swapchain.height());
+                e.depth(1);
+            });
+            imageCreateInfo.mipLevels(1);
+            imageCreateInfo.format(this.m_swapchain.surfaceFormat().format());
+            imageCreateInfo.tiling(VK_IMAGE_TILING_OPTIMAL);
+            imageCreateInfo.initialLayout(VK_IMAGE_LAYOUT_UNDEFINED);
+            imageCreateInfo.usage(VK_IMAGE_USAGE_TRANSIENT_ATTACHMENT_BIT | VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT);
+            imageCreateInfo.sharingMode(VK_SHARING_MODE_EXCLUSIVE);
+            imageCreateInfo.samples(this.m_sampleCount);
+            imageCreateInfo.arrayLayers(1);
+
+            VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(arena);
+            imageViewCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
+            imageViewCreateInfo.format(this.m_swapchain.surfaceFormat().format());
+            imageViewCreateInfo.components(c ->
+            {
+                c.r(VK_COMPONENT_SWIZZLE_IDENTITY);
+                c.g(VK_COMPONENT_SWIZZLE_IDENTITY);
+                c.b(VK_COMPONENT_SWIZZLE_IDENTITY);
+                c.a(VK_COMPONENT_SWIZZLE_IDENTITY);
+            });
+            imageViewCreateInfo.subresourceRange(r ->
+            {
+                r.aspectMask(VK_IMAGE_ASPECT_COLOR_BIT);
+                r.baseMipLevel(0);
+                r.levelCount(1);
+                r.baseArrayLayer(0);
+            });
+            imageViewCreateInfo.viewType(VK_IMAGE_VIEW_TYPE_2D);
+            imageViewCreateInfo.subresourceRange().layerCount(1);
+
+            return VulkanImage.allocate(this.m_logicalDevice.handle(), this.m_logicalDevice.allocator(), imageCreateInfo, imageViewCreateInfo, VMA_MEMORY_USAGE_GPU_ONLY);
+        }
+    }
+
+    private VulkanImage createDepthImage() throws VulkanException
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            VkImageCreateInfo imageCreateInfo = new VkImageCreateInfo(arena);
+            imageCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO);
+            imageCreateInfo.imageType(VK_IMAGE_TYPE_2D);
+            imageCreateInfo.extent(e ->
+            {
+                e.width(this.m_swapchain.width());
+                e.height(this.m_swapchain.height());
+                e.depth(1);
+            });
+            imageCreateInfo.mipLevels(1);
+            imageCreateInfo.format(VK_FORMAT_D32_SFLOAT);
+            imageCreateInfo.tiling(VK_IMAGE_TILING_OPTIMAL);
+            imageCreateInfo.initialLayout(VK_IMAGE_LAYOUT_UNDEFINED);
+            imageCreateInfo.usage(VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT);
+            imageCreateInfo.sharingMode(VK_SHARING_MODE_EXCLUSIVE);
+            imageCreateInfo.samples(this.m_sampleCount);
+            imageCreateInfo.arrayLayers(1);
+
+            VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(arena);
+            imageViewCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
+            imageViewCreateInfo.format(VK_FORMAT_D32_SFLOAT);
+            imageViewCreateInfo.components(c ->
+            {
+                c.r(VK_COMPONENT_SWIZZLE_IDENTITY);
+                c.g(VK_COMPONENT_SWIZZLE_IDENTITY);
+                c.b(VK_COMPONENT_SWIZZLE_IDENTITY);
+                c.a(VK_COMPONENT_SWIZZLE_IDENTITY);
+            });
+            imageViewCreateInfo.subresourceRange(r ->
+            {
+                r.aspectMask(VK_IMAGE_ASPECT_DEPTH_BIT);
+                r.baseMipLevel(0);
+                r.levelCount(1);
+                r.baseArrayLayer(0);
+            });
+            imageViewCreateInfo.viewType(VK_IMAGE_VIEW_TYPE_2D);
+            imageViewCreateInfo.subresourceRange().layerCount(1);
+
+            return VulkanImage.allocate(this.m_logicalDevice.handle(), this.m_logicalDevice.allocator(), imageCreateInfo, imageViewCreateInfo, VMA_MEMORY_USAGE_GPU_ONLY);
+        }
     }
 
     private static LogicalDevice.QueueDescriptor[] selectQueueFamilies(VkPhysicalDevice physicalDevice, MemorySegment surface)
@@ -161,7 +261,7 @@ public class VulkanRenderer
             vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, pFamilyCount, pFamilyProperties);
 
             MemorySegment pSupported = arena.allocate(ValueLayout.JAVA_INT);
-            LogicalDevice.QueueDescriptor graphicsQueueDescriptor = null, presentQueueDescriptor = null, transferQueueDescriptor = null;
+            LogicalDevice.QueueDescriptor graphicsQueueDescriptor = null, presentQueueDescriptor = null;
             int lastPresentQueueFamily = -1;
             for (int i = 0; i < familyCount; i++)
             {
@@ -190,10 +290,6 @@ public class VulkanRenderer
                         graphicsQueueDescriptor = new LogicalDevice.QueueDescriptor(i, 1.0f);
                     }
                 }
-                else if ((properties.queueFlags() & VK_QUEUE_TRANSFER_BIT) != 0 && transferQueueDescriptor == null)
-                {
-                    transferQueueDescriptor = new LogicalDevice.QueueDescriptor(i, 1.0f);
-                }
             }
 
             if (presentQueueDescriptor == null)
@@ -202,7 +298,7 @@ public class VulkanRenderer
             }
 
             return new LogicalDevice.QueueDescriptor[] {
-                    graphicsQueueDescriptor, presentQueueDescriptor, transferQueueDescriptor
+                    graphicsQueueDescriptor, presentQueueDescriptor
             };
         }
     }
@@ -227,11 +323,8 @@ public class VulkanRenderer
 
     private void initRenderingResources()
     {
-        this.m_colorImage = new VulkanImage.Allocated(this.m_logicalDevice, this.m_swapchain.width(), this.m_swapchain.height(), this.m_swapchain.surfaceFormat().format(), VK_IMAGE_TILING_OPTIMAL,
-                VK_IMAGE_USAGE_TRANSIENT_ATTACHMENT_BIT | VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT, false, 1, this.m_sampleCount, VK_IMAGE_ASPECT_COLOR_BIT,
-                VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VMA_MEMORY_USAGE_GPU_ONLY);
-        this.m_depthImage = new VulkanImage.Allocated(this.m_logicalDevice, this.m_swapchain.width(), this.m_swapchain.height(), VK_FORMAT_D32_SFLOAT, VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, false, 1, this.m_sampleCount, VK_IMAGE_ASPECT_DEPTH_BIT,
-                VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VK_COMPONENT_SWIZZLE_IDENTITY, VMA_MEMORY_USAGE_GPU_ONLY);
+        this.m_colorImage = this.createColorImage();
+        this.m_depthImage = this.createDepthImage();
 
         try (Arena arena = StackAllocator.stackPush())
         {
@@ -261,11 +354,6 @@ public class VulkanRenderer
     public LogicalDevice.Queue graphicsQueue()
     {
         return this.m_graphicsQueue;
-    }
-
-    public LogicalDevice.Queue transferQueue()
-    {
-        return this.m_transferQueue;
     }
 
     public CommandPool uploadCommandPool()
@@ -322,7 +410,7 @@ public class VulkanRenderer
             this.m_renderingCommandBuffers.reset(this.m_currentFrame);
 
             this.m_frameCommandBuffer = this.m_renderingCommandBuffers.pool(this.m_currentFrame);
-            beginCommandBuffer(this.m_frameCommandBuffer, 0);
+            beginCommandBuffer(arena, this.m_frameCommandBuffer, 0);
 
             MemorySegment pClearValues = arena.allocateArray(VkClearValue.gStructLayout, 2);
             VkClearValue.getAtIndex(pClearValues, 0).color(value ->
@@ -420,7 +508,17 @@ public class VulkanRenderer
 
     public void bindGraphicsDescriptorSets(MemorySegment layout, int firstSet, int descriptorSetCount, MemorySegment pDescriptorSets, int dynamicOffsetCount, MemorySegment pDynamicOffsets)
     {
+        this.assertRenderContext();
         vkCmdBindDescriptorSets(this.m_frameCommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, pDynamicOffsets);
+    }
+
+    public void setLineWidth(float lineWidth)
+    {
+        this.assertRenderContext();
+        if (this.m_logicalDevice.physicalDevice.features().wideLines() != VK_FALSE)
+        {
+            vkCmdSetLineWidth(this.m_frameCommandBuffer, lineWidth);
+        }
     }
 
     public void bindGraphicsPipeline(MemorySegment pipeline)
@@ -435,13 +533,13 @@ public class VulkanRenderer
         this.m_gridRenderer.render(this.m_frameCommandBuffer, camera, transform);
     }
 
-    public void renderObject(Camera camera, Matrix4d transform, ObjectRenderer.Type type)
+    public void renderObject(Camera camera, Matrix4d transform, ObjectRenderer.MeshColors colors, ObjectRenderer.Type type)
     {
         this.assertRenderContext();
         switch (type)
         {
-            case CUBE -> this.m_cubeRenderer.render(this.m_frameCommandBuffer, camera, transform);
-            case SPHERE -> this.m_sphereRenderer.render(this.m_frameCommandBuffer, camera, transform);
+            case CUBE -> this.m_cubeRenderer.render(this.m_frameCommandBuffer, camera, transform, colors);
+            case SPHERE -> this.m_sphereRenderer.render(this.m_frameCommandBuffer, camera, transform, colors);
             default -> throw new IllegalArgumentException(STR."Unsupported object type: \{type.name()}");
         }
     }
@@ -455,6 +553,11 @@ public class VulkanRenderer
             case SPHERE -> this.m_sphereRenderer.renderInstanced(this.m_frameCommandBuffer, camera, count);
             default -> throw new IllegalArgumentException(STR."Unsupported object type: \{type.name()}");
         }
+    }
+
+    public VkCommandBuffer frameCommandBuffer()
+    {
+        return this.m_frameCommandBuffer;
     }
 
     public void deviceWaitIdle() throws VulkanException

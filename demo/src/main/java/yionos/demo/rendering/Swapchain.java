@@ -156,8 +156,14 @@ public class Swapchain implements Disposable
                 {
                     return imageView;
                 }
+
+                @Override
+                public void dispose()
+                {
+                    vkDestroyImageView(Swapchain.this.device, this.view(), NULL);
+                }
             };
-            initializer.push(() -> vkDestroyImageView(this.device, imageView, NULL));
+            initializer.push(this.m_images[i]);
         }
     }
 
@@ -256,7 +262,7 @@ public class Swapchain implements Disposable
     {
         for (VulkanImage image : this.m_images)
         {
-            vkDestroyImageView(this.device, image.view(), NULL);
+            image.dispose();
         }
 
         this.m_images = new VulkanImage[0];
