@@ -76,13 +76,6 @@ public class DemoApplication
         if (this.m_inputs.keyToggledWithMods(GLFW_KEY_ENTER, GLFW_MOD_ALT)) this.windowProc.toggleFullscreen();
         if (this.m_inputs.keyToggled(GLFW_KEY_R)) this.m_runningSample.initSimulation();
 
-        if (this.m_inputs.keyDown(GLFW_KEY_UP)) this.m_camera.rotate(0.0, -0.03);
-        if (this.m_inputs.keyDown(GLFW_KEY_DOWN)) this.m_camera.rotate(0.0, 0.03);
-        if (this.m_inputs.keyDown(GLFW_KEY_LEFT)) this.m_camera.rotate(-0.03, 0.0);
-        if (this.m_inputs.keyDown(GLFW_KEY_RIGHT)) this.m_camera.rotate(0.03, 0.0);
-        if (this.m_inputs.keyDown(GLFW_KEY_W)) this.m_camera.translate(-0.3);
-        if (this.m_inputs.keyDown(GLFW_KEY_S)) this.m_camera.translate(0.3);
-
         if (!this.m_silentMouseInputs)
         {
             double mouseMoveX = this.m_inputs.displacementX(), mouseMoveY = this.m_inputs.displacementY();

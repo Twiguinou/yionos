@@ -48,6 +48,7 @@ public class DefaultCollisionDispatcher implements CollisionDispatcher
                 switch (geometryB)
                 {
                     case SphereGeometry sphereB -> SpherePairCollisionAlgorithms.manifold(sphereA, sphereB, relativeTransformB, manifold);
+                    case CuboidGeometry cuboidB -> CuboidSphereCollisionAlgorithms.manifold(cuboidB, sphereA, inverseTransform(relativeTransformB), manifold, true);
                     default -> throw new UnsupportedGeometryException(STR."Could not match geometry \{geometryA} with \{geometryB}");
                 }
             }
@@ -55,7 +56,7 @@ public class DefaultCollisionDispatcher implements CollisionDispatcher
             {
                 switch (geometryB)
                 {
-                    case SphereGeometry sphereB -> CuboidSphereCollisionAlgorithms.manifold(cuboidA, sphereB, relativeTransformB, manifold);
+                    case SphereGeometry sphereB -> CuboidSphereCollisionAlgorithms.manifold(cuboidA, sphereB, relativeTransformB, manifold, false);
                     default -> throw new UnsupportedGeometryException(STR."Could not match geometry \{geometryA} with \{geometryB}");
                 }
             }

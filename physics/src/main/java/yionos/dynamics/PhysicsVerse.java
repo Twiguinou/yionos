@@ -36,12 +36,12 @@ public class PhysicsVerse
         }
     }
 
-    private static double computeGeneralizedInverseMass(SolidObject object, Vector3d point, Vector3d dir)
+    private static double computeGeneralizedInverseMass(SolidObject object, Vector3d r, Vector3d n)
     {
         if (object instanceof DynamicSolidObject dynamicObject)
         {
-            Vector3d c = point.cross(dir, new Vector3d());
-            return dynamicObject.inverseMass() + c.dot(dynamicObject.dynamicInverseInertiaTensor().transform(c, new Vector3d()));
+            Vector3d r_c_n = r.cross(n, new Vector3d());
+            return dynamicObject.inverseMass() + r_c_n.dot(dynamicObject.dynamicInverseInertiaTensor().transform(r_c_n, new Vector3d()));
         }
 
         return 0.0;
@@ -52,7 +52,6 @@ public class PhysicsVerse
         if (w < EPSILON) return 0.0;
 
         double tildeCompliance = compliance * inv_dt * inv_dt;
-
         return -(c + tildeCompliance * lambda) / (w + tildeCompliance);
     }
 
@@ -95,15 +94,10 @@ public class PhysicsVerse
         }
     }
 
-    private static void computeKineticFriction(Vector3d tangentVelocity, double coefficient, double normalLagrange, double inv_dt, Vector3d friction)
+    private static double computeKineticFriction(double tangentVelocity, double w, double coefficient, double normalLagrange, double inv_dt)
     {
-        double tangentMagnitude = tangentVelocity.lengthSquared();
-        if (tangentMagnitude < 1e-8)
-        {
-            friction.zero();
-        }
-
-        tangentVelocity.mul(-coefficient * Math.abs(normalLagrange) * inv_dt / Math.sqrt(tangentMagnitude), friction);
+        double normalImpulse = normalLagrange * inv_dt;
+        return Math.min(-coefficient * Math.abs(normalImpulse), tangentVelocity / w);
     }
 
     private static void computeRestitution(Vector3d normal, double normalVelocity, double preNormalVelocity, double coefficient, double threshold, double inv_dt, Vector3d restitution)
@@ -186,76 +180,148 @@ public class PhysicsVerse
             {
                 CollisionManifold.ContactInfo contact = manifold.contact(i);
 
-                Transform transform1 = manifold.object1.worldTransform(), transform2 = manifold.object2.worldTransform();
+                Vector3d normal = contact.normalA.rotate(manifold.object1.worldTransform().rotation(), new Vector3d());
 
-                Vector3d qr1 = new Vector3d(), qr2 = new Vector3d();
-                double deltaLagrange, w1, w2;
-
-                //qr1.set(contact.pos);
-                //contact.pos.add(transform1.position(), qr2).sub(transform2.position());
+                Vector3d r1 = contact.posA.rotate(manifold.object1.worldTransform().rotation(), new Vector3d());
+                Vector3d r2 = contact.posB.rotate(manifold.object2.worldTransform().rotation(), new Vector3d());
 
                 // initial non-penetration position constraint
                 updateObjectTensors(manifold.object1);
                 updateObjectTensors(manifold.object2);
 
-                //w1 = computeGeneralizedInverseMass(manifold.object1, qr1, contact.normal);
-                //w2 = computeGeneralizedInverseMass(manifold.object2, qr2, contact.normal);
+                double w1 = computeGeneralizedInverseMass(manifold.object1, r1, normal);
+                double w2 = computeGeneralizedInverseMass(manifold.object2, r2, normal);
 
-                //deltaLagrange = computeLagrangeUpdate(0.0, contact.penetration, w1 + w2, 0.0, inv_dt);
+                double deltaLagrange = computeLagrangeUpdate(manifold.normalLagrange, contact.penetration, w1 + w2, 0.0, inv_dt);
+                manifold.normalLagrange += deltaLagrange;
 
-                //applyPositionalCorrection(manifold.object1, manifold.object2, deltaLagrange, contact.normal, qr1, qr2);
+                applyPositionalCorrection(manifold.object1, manifold.object2, deltaLagrange, normal, r1, r2);
 
-                // static friction position constraint
-                //qr1.set(contact.pos);
-                //contact.pos.add(transform1.position(), qr2).sub(transform2.position());
+                // additional position constraint for friction
+                contact.normalA.rotate(manifold.object1.worldTransform().rotation(), normal);
 
-                Vector3d v = new Vector3d();
+                contact.posA.rotate(manifold.object1.worldTransform().rotation(), r1);
+                contact.posB.rotate(manifold.object2.worldTransform().rotation(), r2);
 
                 Vector3d deltaP1 = new Vector3d();
                 if (manifold.object1 instanceof DynamicSolidObject dynamicObject1)
                 {
-                    Transform previousTransform1 = dynamicObject1.previousWorldTransform();
-                    //transform1.position().sub(previousTransform1.position(), deltaP1).add(qr1).sub(contact.pos.add(transform1.position(), v).sub(previousTransform1.position()));
+                    dynamicObject1.relativePointVelocity(r1, deltaP1);
                 }
 
                 Vector3d deltaP2 = new Vector3d();
                 if (manifold.object2 instanceof DynamicSolidObject dynamicObject2)
                 {
-                    Transform previousTransform2 = dynamicObject2.previousWorldTransform();
-                    //transform2.position().sub(previousTransform2.position(), deltaP2).add(qr2).sub(contact.pos.add(transform1.position(), v).sub(previousTransform2.position()));
+                    dynamicObject2.relativePointVelocity(r2, deltaP2);
                 }
 
-                deltaP1.sub(deltaP2, v); // delta p
-                //v.sub(contact.normal.mul(v.dot(contact.normal), new Vector3d())); // delta p tangent
+                Vector3d deltaP = deltaP1.sub(deltaP2, new Vector3d());
+                Vector3d deltaPTangent = normal.mul(-deltaP.dot(normal), new Vector3d()).add(deltaP);
 
-                double slidingLength = v.length();
-                if (slidingLength < EPSILON)
+                double slidingLengthSquared = deltaPTangent.lengthSquared();
+                if (slidingLengthSquared < EPSILON)
                 {
                     continue;
                 }
 
-                double staticCoefficient = manifold.object1.friction() * manifold.object2.friction();
-
-                if (slidingLength < staticCoefficient * contact.penetration)
+                double slidingLength = sqrt(slidingLengthSquared);
+                if (slidingLength > (manifold.object1.friction() + manifold.object2.friction()) * contact.penetration)
                 {
-                    v.div(slidingLength); // tangent
-
-                    updateObjectTensors(manifold.object1);
-                    updateObjectTensors(manifold.object2);
-
-                    w1 = computeGeneralizedInverseMass(manifold.object1, qr1, v);
-                    w2 = computeGeneralizedInverseMass(manifold.object2, qr2, v);
-
-                    deltaLagrange = computeLagrangeUpdate(0.0, slidingLength, w1 + w2, 0.0, inv_dt);
-
-                    applyPositionalCorrection(manifold.object1, manifold.object2, deltaLagrange, v, qr1, qr2);
+                    continue;
                 }
+
+                Vector3d tangent = deltaPTangent.div(slidingLength, new Vector3d());
+
+                updateObjectTensors(manifold.object1);
+                updateObjectTensors(manifold.object2);
+
+                w1 = computeGeneralizedInverseMass(manifold.object1, r1, normal);
+                w2 = computeGeneralizedInverseMass(manifold.object2, r2, normal);
+
+                deltaLagrange = computeLagrangeUpdate(manifold.tangentLagrange, slidingLength, w1 + w2, 0.0, inv_dt);
+                manifold.tangentLagrange += deltaLagrange;
+
+                applyPositionalCorrection(manifold.object1, manifold.object2, deltaLagrange, tangent, r1, r2);
             }
         }
     }
 
     private void solveVelocities(List<CollisionManifold> manifolds, double inv_dt)
     {
+        for (CollisionManifold manifold : manifolds)
+        {
+            if (manifold.normalLagrange < EPSILON)
+            {
+                continue;
+            }
+
+            for (int i = 0; i < manifold.contactCount(); i++)
+            {
+                CollisionManifold.ContactInfo contact = manifold.contact(i);
+
+                Vector3d normal = contact.normalA.rotate(manifold.object1.worldTransform().rotation(), new Vector3d());
+
+                Vector3d r1 = contact.posA.rotate(manifold.object1.worldTransform().rotation(), new Vector3d());
+                Vector3d r2 = contact.posB.rotate(manifold.object2.worldTransform().rotation(), new Vector3d());
+
+                Vector3d previousContactVelocity1 = new Vector3d(), contactVelocity1 = new Vector3d();
+                if (manifold.object1 instanceof DynamicSolidObject dynamicObject1)
+                {
+                    dynamicObject1.relativePointPreviousVelocity(r1, previousContactVelocity1);
+                    dynamicObject1.relativePointVelocity(r1, contactVelocity1);
+                }
+
+                Vector3d previousContactVelocity2 = new Vector3d(), contactVelocity2 = new Vector3d();
+                if (manifold.object2 instanceof DynamicSolidObject dynamicObject2)
+                {
+                    dynamicObject2.relativePointPreviousVelocity(r2, previousContactVelocity2);
+                    dynamicObject2.relativePointVelocity(r2, contactVelocity2);
+                }
+
+                Vector3d previousRelativeVelocity = previousContactVelocity1.sub(previousContactVelocity2, new Vector3d());
+                Vector3d relativeVelocity = contactVelocity1.sub(contactVelocity2, new Vector3d());
+                double previousNormalVelocity = normal.dot(previousRelativeVelocity);
+                double normalVelocity = normal.dot(relativeVelocity);
+
+                Vector3d tangentVelocity = normal.mul(-normalVelocity, new Vector3d()).add(relativeVelocity);
+                double tangentSpeedSquared = tangentVelocity.lengthSquared();
+
+                updateObjectTensors(manifold.object1);
+                updateObjectTensors(manifold.object2);
+
+                Vector3d p = new Vector3d();
+
+                Vector3d restitution = new Vector3d();
+                computeRestitution(normal, normalVelocity, previousNormalVelocity, manifold.object1.restitution() * manifold.object2.restitution(), this.m_gravity.lengthSquared(), inv_dt, restitution);
+                if (restitution.lengthSquared() > EPSILON)
+                {
+                    double w1 = computeGeneralizedInverseMass(manifold.object1, r1, normal);
+                    double w2 = computeGeneralizedInverseMass(manifold.object2, r2, normal);
+                    p.add(restitution.div(w1 + w2));
+                }
+
+                if (tangentSpeedSquared > EPSILON)
+                {
+                    double tangentSpeed = sqrt(tangentSpeedSquared);
+                    Vector3d tangent = tangentVelocity.div(tangentSpeed, new Vector3d());
+                    double w1 = computeGeneralizedInverseMass(manifold.object1, r1, tangent);
+                    double w2 = computeGeneralizedInverseMass(manifold.object2, r2, tangent);
+
+                    double frictionImpulse = computeKineticFriction(tangentSpeed, w1 + w2, manifold.object1.friction() + manifold.object2.friction(), manifold.normalLagrange, inv_dt);
+                    p.add(tangent.mul(frictionImpulse));
+                }
+
+                if (manifold.object1 instanceof DynamicSolidObject dynamicObject1)
+                {
+                    dynamicObject1.applyImpulse(p, r1);
+                }
+
+                if (manifold.object2 instanceof DynamicSolidObject dynamicObject2)
+                {
+                    dynamicObject2.applyImpulse(p.negate(), r2);
+                }
+            }
+        }
     }
 
     public Broadphase broadphase()
@@ -270,6 +336,25 @@ public class PhysicsVerse
 
     private void queryCollisionManifolds(List<CollisionManifold> manifolds)
     {
+        for (Broadphase.Pair pair : this.m_broadphase.pairStorage())
+        {
+            SolidObject A = (SolidObject) pair.first().data(), B = (SolidObject) pair.second().data();
+
+            if (A instanceof DynamicSolidObject || B instanceof DynamicSolidObject)
+            {
+                CollisionManifold manifold = new CollisionManifold();
+                Transform relativeTransformB = new Transform();
+                Transform.computeRelative(A.worldTransform(), B.worldTransform(), relativeTransformB);
+
+                this.m_collisionDispatcher.execute(A.geometry(), B.geometry(), relativeTransformB, manifold);
+                if (manifold.contactCount() > 0)
+                {
+                    manifold.object1 = A;
+                    manifold.object2 = B;
+                    manifolds.add(manifold);
+                }
+            }
+        }
     }
 
     public void update(double epsilon, int substeps)
@@ -346,6 +431,8 @@ public class PhysicsVerse
             fattenVolume(min, max, 0.1);
 
             dynamicObject.broadphaseHandle = this.m_broadphase.createHandle(min, max, dynamicObject);
+
+            return;
         }
         else if (object.geometry() instanceof InfiniteGeometry)
         {
@@ -353,18 +440,18 @@ public class PhysicsVerse
             this.m_infiniteObjects.add(object);
 
             object.broadphaseHandle = null;
-        }
-        else
-        {
-            object.worldId = this.m_staticObjects.size();
-            this.m_staticObjects.add(object);
 
-            Vector3d min = new Vector3d(), max = new Vector3d();
-            object.computeVolume(min, max);
-            fattenVolume(min, max, 0.1);
-
-            object.broadphaseHandle = this.m_broadphase.createHandle(min, max, object);
+            return;
         }
+
+        object.worldId = this.m_staticObjects.size();
+        this.m_staticObjects.add(object);
+
+        Vector3d min = new Vector3d(), max = new Vector3d();
+        object.computeVolume(min, max);
+        fattenVolume(min, max, 0.1);
+
+        object.broadphaseHandle = this.m_broadphase.createHandle(min, max, object);
     }
 
     public void removeSolidObject(SolidObject object)
@@ -388,6 +475,8 @@ public class PhysicsVerse
             dynamicObject.worldId = -1;
             this.m_broadphase.deleteHandle(dynamicObject.broadphaseHandle);
             dynamicObject.broadphaseHandle = null;
+
+            return;
         }
         else if (object.geometry() instanceof InfiniteGeometry)
         {
@@ -406,27 +495,27 @@ public class PhysicsVerse
             }
 
             object.worldId = -1;
+
+            return;
+        }
+
+        assert (object.worldId < this.m_staticObjects.size()) && (object.worldId >= 0) && (object.broadphaseHandle != null);
+
+        if (this.m_staticObjects.size() > 1)
+        {
+            SolidObject newObject = this.m_staticObjects.removeLast();
+
+            newObject.worldId = object.worldId;
+            this.m_staticObjects.set(object.worldId, newObject);
         }
         else
         {
-            assert (object.worldId < this.m_staticObjects.size()) && (object.worldId >= 0) && (object.broadphaseHandle != null);
-
-            if (this.m_staticObjects.size() > 1)
-            {
-                SolidObject newObject = this.m_staticObjects.removeLast();
-
-                newObject.worldId = object.worldId;
-                this.m_staticObjects.set(object.worldId, newObject);
-            }
-            else
-            {
-                this.m_staticObjects.removeLast();
-            }
-
-            object.worldId = -1;
-            this.m_broadphase.deleteHandle(object.broadphaseHandle);
-            object.broadphaseHandle = null;
+            this.m_staticObjects.removeLast();
         }
+
+        object.worldId = -1;
+        this.m_broadphase.deleteHandle(object.broadphaseHandle);
+        object.broadphaseHandle = null;
     }
 
     public void clearScene()

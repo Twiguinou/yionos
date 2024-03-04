@@ -8,9 +8,8 @@ import yionos.utils.Transform;
 
 import static yionos.utils.MathDefinitions.*;
 
-public class SpherePairCollisionAlgorithms
-{
-    public SpherePairCollisionAlgorithms() {}
+public final class SpherePairCollisionAlgorithms
+{private SpherePairCollisionAlgorithms() {}
 
     public static boolean test(SphereGeometry sphereA, SphereGeometry sphereB, Vector3d relativePosB)
     {

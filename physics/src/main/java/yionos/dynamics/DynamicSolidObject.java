@@ -87,6 +87,11 @@ public class DynamicSolidObject extends SolidObject
         this.m_angularVelocity.cross(point, velocity).add(this.m_linearVelocity);
     }
 
+    public void relativePointPreviousVelocity(Vector3d point, Vector3d velocity)
+    {
+        this.m_previousAngularVelocity.cross(point, velocity).add(this.m_previousLinearVelocity);
+    }
+
     public Transform previousWorldTransform()
     {
         return this.m_previousTransform;

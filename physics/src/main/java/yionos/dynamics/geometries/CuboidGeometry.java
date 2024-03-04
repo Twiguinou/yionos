@@ -33,10 +33,4 @@ public record CuboidGeometry(Vector3d halfExtents) implements RigidGeometry
         inertiaTensor.m11 = i / (he2_x + he2_z);
         inertiaTensor.m22 = i / (he2_x + he2_y);
     }
-
-    @Override
-    public int dispatcherIndex()
-    {
-        return 1;
-    }
 }

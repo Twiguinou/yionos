@@ -27,10 +27,4 @@ public record SphereGeometry(double radius, double radiusSquared) implements Rig
         inertiaTensor.m11 = i;
         inertiaTensor.m22 = i;
     }
-
-    @Override
-    public int dispatcherIndex()
-    {
-        return 0;
-    }
 }

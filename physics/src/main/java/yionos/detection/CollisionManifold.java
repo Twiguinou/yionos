@@ -17,6 +17,7 @@ public class CollisionManifold
     private final ContactInfo[] m_contacts = new ContactInfo[gMaxContactInfoCount];
     private int m_nextIndex = 0;
     public SolidObject object1, object2;
+    public double normalLagrange = 0.0, tangentLagrange = 0.0;
 
     public CollisionManifold()
     {

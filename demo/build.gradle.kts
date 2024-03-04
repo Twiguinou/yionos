@@ -4,7 +4,7 @@ plugins {
     id("edu.sc.seis.launch4j") version("3.0.5")
 }
 
-val log4jVersion by extra("2.22.1")
+val log4jVersion by extra("2.23.0")
 dependencies {
     implementation(project(":physics"))
     implementation("jpgen:api:0")

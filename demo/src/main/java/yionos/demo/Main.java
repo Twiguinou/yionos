@@ -8,9 +8,7 @@ import org.apache.logging.log4j.core.config.builder.api.ConfigurationBuilderFact
 import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
 import yionos.demo.app.DemoApplication;
 import yionos.demo.app.VulkanRenderer;
-import yionos.demo.app.samples.CollisionDispatcherSample;
-import yionos.demo.app.samples.DemoSample;
-import yionos.demo.app.samples.InstancingSample;
+import yionos.demo.app.samples.*;
 
 import java.util.function.Function;
 
@@ -66,6 +64,8 @@ public final class Main
         int sampleCount = parsedArgs.getArgValueIndexed("sample_count", 0).map(Integer::parseUnsignedInt).orElse(2);
 
         DemoSample.Supplier[] samples = new DemoSample.Supplier[] {
+                makeSampleSupplier("MPR test", MPRSample::new),
+                makeSampleSupplier("Sphere stack", SphereStackSample::new),
                 makeSampleSupplier("Collision dispatcher", CollisionDispatcherSample::new),
                 makeSampleSupplier("Instancing test", InstancingSample::new)
         };

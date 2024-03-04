@@ -13,7 +13,7 @@ layout(push_constant) uniform PushConstants
     mat4 projectionMatrix;
 } pushConstants;
 
-void main()
+void main(void)
 {
     gl_Position = pushConstants.projectionMatrix * vec4(inPosition, 0.0, 1.0);
 

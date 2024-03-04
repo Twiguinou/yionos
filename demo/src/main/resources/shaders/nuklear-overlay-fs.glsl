@@ -8,7 +8,7 @@ layout(location=0) out vec4 outColor;
 
 layout(binding=0,set=0) uniform sampler2D overlay;
 
-void main()
+void main(void)
 {
     vec4 texColor = texture(overlay, inUv);
     outColor = inColor * texColor;
