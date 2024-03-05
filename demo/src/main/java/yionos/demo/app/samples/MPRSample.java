@@ -34,6 +34,16 @@ public class MPRSample implements DemoSample
             new Vector4d(0.5, 0.8, 0.4, 1.0),
             new Vector4d(1.0, 0.0, 0.4, 1.0)
     );
+    private static final ObjectRenderer.MeshColors CONTACT_POINT_COLORS = new ObjectRenderer.MeshColors(
+            new Vector4d(1.0, 1.0, 1.0, 1.0),
+            new Vector4d(0.5, 0.5, 0.8, 1.0),
+            new Vector4d(0.0, 0.7, 0.4, 1.0)
+    );
+    private static final ObjectRenderer.MeshColors CONTACT_POINT_COLORS_INV = new ObjectRenderer.MeshColors(
+            new Vector4d(1.0).sub(CONTACT_POINT_COLORS.lightColor()).setComponent(3, 1.0),
+            new Vector4d(1.0).sub(CONTACT_POINT_COLORS.darkColor()).setComponent(3, 1.0),
+            new Vector4d(1.0).sub(CONTACT_POINT_COLORS.borderColor()).setComponent(3, 1.0)
+    );
 
     private final VulkanRenderer renderer;
     private boolean m_renderWireframes = true;
@@ -50,6 +60,16 @@ public class MPRSample implements DemoSample
             new Vector3d(-0.5, 0.5, 0.5),
             new Vector3d(0.5, 0.5, 0.5)
     });
+    private final ConvexHullGeometry cubeGeometryFloor = new ConvexHullGeometry(new Vector3d[] {
+            new Vector3d(-5.5, -0.5, -0.5),
+            new Vector3d(5.5, -0.5, -5.5),
+            new Vector3d(-5.5, -0.5, 5.5),
+            new Vector3d(5.5, -0.5, 5.5),
+            new Vector3d(-5.5, 0.5, -5.5),
+            new Vector3d(5.5, 0.5, -5.5),
+            new Vector3d(-5.5, 0.5, 5.5),
+            new Vector3d(5.5, 0.5, 5.5)
+    });
 
     public MPRSample(VulkanRenderer renderer)
     {
@@ -59,10 +79,10 @@ public class MPRSample implements DemoSample
     @Override
     public void initSimulation()
     {
-        this.cubeTransformA.position().set(0.0, 2.0, -1.0);
+        this.cubeTransformA.position().set(0.0, 0.0, 0.0);
         this.cubeTransformA.rotation().identity();
 
-        this.cubeTransformB.position().set(0.0, 2.0, 0.5);
+        this.cubeTransformB.position().set(0.0, 2.0, 0.0);
         this.cubeTransformB.rotation().identity();
     }
 
@@ -85,8 +105,40 @@ public class MPRSample implements DemoSample
     @Override
     public void render(Camera camera)
     {
-        boolean collision = MinkowskiPortalRefinement.manifold(this.cubeGeometry, this.cubeTransformA, this.cubeGeometry, this.cubeTransformB, new CollisionManifold.ContactInfo());
+        CollisionManifold.ContactInfo contact = new CollisionManifold.ContactInfo();
+
+        boolean collision = MinkowskiPortalRefinement.manifold(this.cubeGeometry, this.cubeTransformA, this.cubeGeometry, this.cubeTransformB, contact);
         ObjectRenderer.MeshColors colors = collision ? OVERLAP_COLORS : NO_COLLISION_COLORS;
+
+        if (collision)
+        {
+            this.renderer.setLineWidth(2.0f);
+            this.renderer.bindGraphicsPipeline(this.renderer.pipelines().objectDebugWireframe());
+
+            Matrix4d pointTransform = new Matrix4d();
+            pointTransform.translation(contact.posA);
+            pointTransform.scale(0.1);
+
+            this.renderer.renderObject(camera, pointTransform, CONTACT_POINT_COLORS, ObjectRenderer.Type.SPHERE);
+
+            pointTransform.translation(contact.posB);
+            pointTransform.scale(0.1);
+
+            this.renderer.renderObject(camera, pointTransform, CONTACT_POINT_COLORS_INV, ObjectRenderer.Type.SPHERE);
+
+            /*Matrix4d normalTransform = new Matrix4d();
+            normalTransform.translation(contact.posA);
+            normalTransform.scale(0.1);
+
+            this.renderer.renderObject(camera, normalTransform, CONTACT_POINT_COLORS, ObjectRenderer.Type.CUBE);
+
+            normalTransform.identity();
+            normalTransform.translation(contact.posA);
+            normalTransform.translate(contact.normalA.mul(0.2, new Vector3d()));
+            normalTransform.scale(0.1);
+
+            this.renderer.renderObject(camera, normalTransform, CONTACT_POINT_COLORS, ObjectRenderer.Type.CUBE);*/
+        }
 
         if (this.m_renderWireframes)
         {

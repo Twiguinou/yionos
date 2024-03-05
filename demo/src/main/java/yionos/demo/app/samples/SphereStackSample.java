@@ -13,6 +13,7 @@ import yionos.detection.*;
 import yionos.dynamics.DynamicSolidObject;
 import yionos.dynamics.PhysicsVerse;
 import yionos.dynamics.SolidObject;
+import yionos.dynamics.geometries.ConvexHullGeometry;
 import yionos.dynamics.geometries.CuboidGeometry;
 import yionos.dynamics.geometries.SphereGeometry;
 
@@ -29,6 +30,11 @@ public class SphereStackSample implements DemoSample
             new Vector4d(1.0, 0.0, 0.0, 1.0),
             new Vector4d(0.5, 0.3, 0.7, 1.0),
             new Vector4d(1.0, 1.0, 0.0, 1.0)
+    );
+    private static final ObjectRenderer.MeshColors CONTACT_POINT_COLORS = new ObjectRenderer.MeshColors(
+            new Vector4d(1.0, 1.0, 1.0, 1.0),
+            new Vector4d(0.5, 0.5, 0.8, 1.0),
+            new Vector4d(0.0, 0.7, 0.4, 1.0)
     );
 
     private static final double gPhysicsTimeStep = 1.0 / 60.0;
@@ -50,53 +56,45 @@ public class SphereStackSample implements DemoSample
     public void initSimulation()
     {
         this.m_verse.clearScene();
+        this.m_verse.gravity().set(0.0, -3.801, 0.0);
 
-        SphereGeometry sphereGeometry = new SphereGeometry(0.5);
+        ConvexHullGeometry cubeGeometry = new ConvexHullGeometry(new Vector3d[] {
+                new Vector3d(-0.5, -0.5, -0.5),
+                new Vector3d(0.5, -0.5, -0.5),
+                new Vector3d(-0.5, -0.5, 0.5),
+                new Vector3d(0.5, -0.5, 0.5),
+                new Vector3d(-0.5, 0.5, -0.5),
+                new Vector3d(0.5, 0.5, -0.5),
+                new Vector3d(-0.5, 0.5, 0.5),
+                new Vector3d(0.5, 0.5, 0.5)
+        });
 
-        // WALL 1
+        for (int y = 0; y < 10; y++)
         {
-            for (int x = 2; x < 3; x++)
-            {
-                for (int y = 0; y < 1; y++)
-                {
-                    DynamicSolidObject collider = new DynamicSolidObject(5.0, sphereGeometry);
-                    collider.worldTransform().position().set(x * 1.2, y * 1.2, 0.0);
+            DynamicSolidObject collider1 = new DynamicSolidObject(1.0, cubeGeometry);
+            collider1.worldTransform().position().set(0.0, 3.0 * y + 1, 0.0);
+            //collider1.worldTransform().rotation().rotateXYZ(0.1, 0.2, 0.3).normalize();
 
-                    collider.applyCentralImpulse(new Vector3d(0.0, 0.0, 20.0));
+            collider1.applyCentralImpulse(new Vector3d(0.0, -1.0, 0.0));
 
-                    collider.friction(0.6);
-                    collider.restitution(0.6);
-                    this.m_verse.addSolidObject(collider);
-                }
-            }
+            collider1.friction(0.6);
+            collider1.restitution(0.2);
+            this.m_verse.addSolidObject(collider1);
         }
 
-        // WALL 2
+        for (int x = -6; x < 7; x++)
         {
-            for (int x = 0; x < 5; x++)
+            for (int z = -6; z < 7; z++)
             {
-                for (int y = 0; y < 5; y++)
-                {
-                    DynamicSolidObject collider = new DynamicSolidObject(1.0, sphereGeometry);
-                    collider.worldTransform().position().set(x * 1.1, y * 1.1, 5.0);
+                SolidObject floor = new SolidObject();
+                floor.worldTransform().position().set(x, -0.5, z);
+                floor.setGeometry(cubeGeometry);
 
-                    collider.friction(0.6);
-                    collider.restitution(0.6);
-                    //this.m_verse.addSolidObject(collider);
-                }
+                floor.friction(0.6);
+                floor.restitution(0.2);
+                this.m_verse.addSolidObject(floor);
             }
         }
-
-        // WALL 3
-        SolidObject solidObject = new SolidObject();
-        solidObject.setGeometry(new CuboidGeometry(new Vector3d(10.0, 10.0, 1.0)));
-        solidObject.worldTransform().position().set(0.0, 0.0, 15.0);
-        solidObject.worldTransform().rotation().rotateXYZ(0.5, 0.2, 0.3).normalize();
-
-        solidObject.friction(0.7);
-        solidObject.restitution(0.4);
-
-        this.m_verse.addSolidObject(solidObject);
     }
 
     @Override
@@ -130,7 +128,7 @@ public class SphereStackSample implements DemoSample
                     modelMatrix.scale(cuboid.halfExtents().mul(2.0, new Vector3d()));
                     this.renderer.renderObject(camera, modelMatrix, MESH_COLORS, ObjectRenderer.Type.CUBE);
                 }
-                default -> {}
+                default -> this.renderer.renderObject(camera, modelMatrix, MESH_COLORS, ObjectRenderer.Type.CUBE);
             }
         });
 
@@ -145,7 +143,7 @@ public class SphereStackSample implements DemoSample
                     modelMatrix.scale(cuboid.halfExtents().mul(2.0, new Vector3d()));
                     this.renderer.renderObject(camera, modelMatrix, MESH_COLORS, ObjectRenderer.Type.CUBE);
                 }
-                default -> {}
+                default -> this.renderer.renderObject(camera, modelMatrix, CONTACT_POINT_COLORS, ObjectRenderer.Type.CUBE);
             }
         });
     }

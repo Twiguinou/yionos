@@ -1,0 +1,15 @@
+[submodule "bindings/dependencies/glfw"]
+	path = bindings/dependencies/glfw
+	url = https://github.com/glfw/glfw
+[submodule "bindings/dependencies/vma"]
+	path = bindings/dependencies/vma
+	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+[submodule "bindings/dependencies/nuklear"]
+	path = bindings/dependencies/nuklear
+	url = https://github.com/Immediate-Mode-UI/Nuklear.git
+[submodule "bindings/dependencies/stb"]
+	path = bindings/dependencies/stb
+	url = https://github.com/nothings/stb.git
+[submodule "bindings/dependencies/assimp"]
+	path = bindings/dependencies/assimp
+	url = https://github.com/assimp/assimp.git

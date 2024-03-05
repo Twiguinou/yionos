@@ -5,6 +5,8 @@ import org.joml.Vector3d;
 import yionos.detection.Broadphase;
 import yionos.detection.CollisionDispatcher;
 import yionos.detection.CollisionManifold;
+import yionos.detection.algorithms.MinkowskiPortalRefinement;
+import yionos.dynamics.geometries.ConvexHullGeometry;
 import yionos.dynamics.geometries.InfiniteGeometry;
 import yionos.utils.Transform;
 
@@ -343,14 +345,28 @@ public class PhysicsVerse
             if (A instanceof DynamicSolidObject || B instanceof DynamicSolidObject)
             {
                 CollisionManifold manifold = new CollisionManifold();
-                Transform relativeTransformB = new Transform();
-                Transform.computeRelative(A.worldTransform(), B.worldTransform(), relativeTransformB);
 
-                this.m_collisionDispatcher.execute(A.geometry(), B.geometry(), relativeTransformB, manifold);
+                this.m_collisionDispatcher.execute(A.geometry(), A.worldTransform(), B.geometry(), B.worldTransform(), manifold);
                 if (manifold.contactCount() > 0)
                 {
                     manifold.object1 = A;
                     manifold.object2 = B;
+                    for (int i = 0; i < manifold.contactCount(); i++)
+                    {
+                        CollisionManifold.ContactInfo contact = manifold.contact(i);
+
+                        Vector3d s1 = MinkowskiPortalRefinement.supportPoint((ConvexHullGeometry) A.geometry(), A.worldTransform(), contact.normalA.negate(new Vector3d()));
+                        Vector3d s2 = MinkowskiPortalRefinement.supportPoint((ConvexHullGeometry) B.geometry(), B.worldTransform(), contact.normalA);
+
+                        Vector3d pp1 = contact.normalA.mul(s1.sub(contact.posA, new Vector3d()).dot(contact.normalA), new Vector3d()).add(contact.posA);
+                        Vector3d pp2 = contact.normalA.mul(s2.sub(contact.posB, new Vector3d()).dot(contact.normalA), new Vector3d()).add(contact.posB);
+
+                        contact.normalA.rotate(A.worldTransform().rotation().conjugate(new Quaterniond()));
+                        contact.penetration = -pp1.distance(pp2);
+                        pp1.sub(A.worldTransform().position(), contact.posA).rotate(A.worldTransform().rotation().conjugate(new Quaterniond()));
+                        pp2.sub(B.worldTransform().position(), contact.posB).rotate(B.worldTransform().rotation().conjugate(new Quaterniond()));
+                    }
+
                     manifolds.add(manifold);
                 }
             }

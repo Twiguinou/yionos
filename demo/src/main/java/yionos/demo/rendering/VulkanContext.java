@@ -12,6 +12,7 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BinaryOperator;
 
@@ -24,7 +25,7 @@ import static java.lang.foreign.MemorySegment.NULL;
 
 public class VulkanContext implements Disposable
 {
-    public static final Logger gVulkanLogger = LogManager.getLogger("Vulkan Renderer");
+    static final Logger gVulkanLogger = LogManager.getLogger("Vulkan Renderer");
 
     public record AppInfo(String appName, int appVersion, String engineName, int engineVersion, int apiVersion) {}
 
@@ -51,6 +52,9 @@ public class VulkanContext implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
+            enabledLayers = filterLayers(enabledLayers);
+            enabledExtensions = filterExtensions(enabledExtensions);
+
             VkApplicationInfo applicationInfo = new VkApplicationInfo(arena);
             applicationInfo.sType(VK_STRUCTURE_TYPE_APPLICATION_INFO);
             applicationInfo.pNext(NULL);
@@ -87,6 +91,64 @@ public class VulkanContext implements Disposable
             MemorySegment pInstance = arena.allocate(ValueLayout.ADDRESS);
             VulkanException.check(vkCreateInstance(instanceCreateInfo.ptr(), NULL, pInstance), "Unable to create vulkan instance");
             this.m_instance = new VkInstance(pInstance.get(ValueLayout.ADDRESS, 0));
+        }
+    }
+
+    private static String[] filterLayers(String[] layers) throws VulkanException
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            MemorySegment pLayerCount = arena.allocate(ValueLayout.JAVA_INT, 0);
+            VulkanException.check(vkEnumerateInstanceLayerProperties(pLayerCount, NULL));
+            int layerCount = pLayerCount.get(ValueLayout.JAVA_INT, 0);
+            MemorySegment pAvailableLayers = arena.allocateArray(VkLayerProperties.gStructLayout, layerCount);
+            VulkanException.check(vkEnumerateInstanceLayerProperties(pLayerCount, pAvailableLayers));
+
+            return Arrays.stream(layers).filter(candidate ->
+            {
+                for (int i = 0; i < layerCount; i++)
+                {
+                    VkLayerProperties properties = VkLayerProperties.getAtIndex(pAvailableLayers, i);
+                    String name = properties.layerName().getUtf8String(0);
+
+                    if (name.equals(candidate))
+                    {
+                        return true;
+                    }
+                }
+
+                gVulkanLogger.warn(STR."Layer not present: \{candidate}");
+                return false;
+            }).toArray(String[]::new);
+        }
+    }
+
+    private static String[] filterExtensions(String[] extensions)
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            MemorySegment pExtensionCount = arena.allocate(ValueLayout.JAVA_INT, 0);
+            VulkanException.check(vkEnumerateInstanceExtensionProperties(NULL, pExtensionCount, NULL));
+            int extensionCount = pExtensionCount.get(ValueLayout.JAVA_INT, 0);
+            MemorySegment pAvailableExtensions = arena.allocateArray(VkExtensionProperties.gStructLayout, extensionCount);
+            VulkanException.check(vkEnumerateInstanceExtensionProperties(NULL, pExtensionCount, pAvailableExtensions));
+
+            return Arrays.stream(extensions).filter(candidate ->
+            {
+                for (int i = 0; i < extensionCount; i++)
+                {
+                    VkExtensionProperties properties = VkExtensionProperties.getAtIndex(pAvailableExtensions, i);
+                    String name = properties.extensionName().getUtf8String(0);
+
+                    if (name.equals(candidate))
+                    {
+                        return true;
+                    }
+                }
+
+                gVulkanLogger.warn(STR."Extension not present: \{candidate}");
+                return false;
+            }).toArray(String[]::new);
         }
     }
 

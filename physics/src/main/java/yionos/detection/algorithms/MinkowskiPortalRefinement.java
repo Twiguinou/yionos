@@ -12,7 +12,7 @@ public final class MinkowskiPortalRefinement
 
     private static final Vector3d VEC3D_ZERO = new Vector3d();
 
-    private static Vector3d supportPoint(ConvexHullGeometry hull, Transform transform, Vector3d direction)
+    public static Vector3d supportPoint(ConvexHullGeometry hull, Transform transform, Vector3d direction)
     {
         Vector3d v = new Vector3d();
 

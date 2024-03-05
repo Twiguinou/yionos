@@ -3,26 +3,20 @@ package yionos.demo.rendering;
 import jpgen.ForeignUtils;
 import vma.VmaAllocatorCreateInfo;
 import vma.VmaVulkanFunctions;
-import vulkan.VkDevice;
-import vulkan.VkDeviceCreateInfo;
-import vulkan.VkDeviceQueueCreateInfo;
-import vulkan.VkPhysicalDevice;
-import vulkan.VkQueue;
+import vulkan.*;
 import yionos.demo.Disposable;
 import yionos.demo.SequenceInitializer;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
 import static vma.VMA.*;
 import static java.lang.foreign.MemorySegment.NULL;
+import static yionos.demo.rendering.VulkanContext.gVulkanLogger;
 
 public class LogicalDevice implements Disposable
 {
@@ -39,6 +33,9 @@ public class LogicalDevice implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
+            enabledLayers = filterDeviceLayers(physicalDevice.handle(), enabledLayers);
+            enabledExtensions = filterDeviceExtensions(physicalDevice.handle(), enabledExtensions);
+
             SequenceInitializer initializer = new SequenceInitializer();
 
             Map<Integer, List<Integer>> arrangedDescriptors = new HashMap<>();
@@ -82,6 +79,64 @@ public class LogicalDevice implements Disposable
             }
 
             this.physicalDevice = physicalDevice;
+        }
+    }
+
+    private static String[] filterDeviceLayers(VkPhysicalDevice physicalDevice, String[] layers) throws VulkanException
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            MemorySegment pLayerCount = arena.allocate(ValueLayout.JAVA_INT, 0);
+            VulkanException.check(vkEnumerateDeviceLayerProperties(physicalDevice, pLayerCount, NULL));
+            int layerCount = pLayerCount.get(ValueLayout.JAVA_INT, 0);
+            MemorySegment pAvailableLayers = arena.allocateArray(VkLayerProperties.gStructLayout, layerCount);
+            VulkanException.check(vkEnumerateDeviceLayerProperties(physicalDevice, pLayerCount, pAvailableLayers));
+
+            return Arrays.stream(layers).filter(candidate ->
+            {
+                for (int i = 0; i < layerCount; i++)
+                {
+                    VkLayerProperties properties = VkLayerProperties.getAtIndex(pAvailableLayers, i);
+                    String name = properties.layerName().getUtf8String(0);
+
+                    if (name.equals(candidate))
+                    {
+                        return true;
+                    }
+                }
+
+                gVulkanLogger.warn(STR."Device layer not present: \{candidate}");
+                return false;
+            }).toArray(String[]::new);
+        }
+    }
+
+    private static String[] filterDeviceExtensions(VkPhysicalDevice physicalDevice, String[] extensions)
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            MemorySegment pExtensionCount = arena.allocate(ValueLayout.JAVA_INT, 0);
+            VulkanException.check(vkEnumerateDeviceExtensionProperties(physicalDevice, NULL, pExtensionCount, NULL));
+            int extensionCount = pExtensionCount.get(ValueLayout.JAVA_INT, 0);
+            MemorySegment pAvailableExtensions = arena.allocateArray(VkExtensionProperties.gStructLayout, extensionCount);
+            VulkanException.check(vkEnumerateDeviceExtensionProperties(physicalDevice, NULL, pExtensionCount, pAvailableExtensions));
+
+            return Arrays.stream(extensions).filter(candidate ->
+            {
+                for (int i = 0; i < extensionCount; i++)
+                {
+                    VkExtensionProperties properties = VkExtensionProperties.getAtIndex(pAvailableExtensions, i);
+                    String name = properties.extensionName().getUtf8String(0);
+
+                    if (name.equals(candidate))
+                    {
+                        return true;
+                    }
+                }
+
+                gVulkanLogger.warn(STR."Device extension not present: \{candidate}");
+                return false;
+            }).toArray(String[]::new);
         }
     }
 

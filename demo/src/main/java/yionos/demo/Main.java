@@ -64,8 +64,8 @@ public final class Main
         int sampleCount = parsedArgs.getArgValueIndexed("sample_count", 0).map(Integer::parseUnsignedInt).orElse(2);
 
         DemoSample.Supplier[] samples = new DemoSample.Supplier[] {
-                makeSampleSupplier("MPR test", MPRSample::new),
                 makeSampleSupplier("Sphere stack", SphereStackSample::new),
+                makeSampleSupplier("MPR test", MPRSample::new),
                 makeSampleSupplier("Collision dispatcher", CollisionDispatcherSample::new),
                 makeSampleSupplier("Instancing test", InstancingSample::new)
         };

@@ -5,3 +5,5 @@ build/
 out/
 generated-bindings
 *.dll
+*.so
+*.dylib
