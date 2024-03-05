@@ -33,7 +33,7 @@ public record VulkanSync(MemorySegment fences, MemorySegment imageAcquiredSemaph
 
             VkFenceCreateInfo fenceCreateInfo = new VkFenceCreateInfo(arena);
             fenceCreateInfo.sType(VK_STRUCTURE_TYPE_FENCE_CREATE_INFO);
-            fenceCreateInfo.flags(VK_FENCE_CREATE_SIGNALED_BIT);
+            //fenceCreateInfo.flags(VK_FENCE_CREATE_SIGNALED_BIT);
 
             for (int i = 0; i < frameCount; i++)
             {

@@ -174,6 +174,7 @@ public class DemoApplication
                     this.m_renderer.bindGraphicsPipeline(this.m_renderer.pipelines().staticGrid());
                     this.m_renderer.renderStaticGrid(this.m_camera, new Matrix4d());
 
+                    // Don't miss this!
                     this.m_overlayContext.render(this.windowProc.width(), this.windowProc.height());
 
                     this.m_renderer.endRenderFrame();

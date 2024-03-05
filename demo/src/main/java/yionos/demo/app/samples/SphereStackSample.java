@@ -56,7 +56,7 @@ public class SphereStackSample implements DemoSample
     public void initSimulation()
     {
         this.m_verse.clearScene();
-        this.m_verse.gravity().set(0.0, -3.801, 0.0);
+        this.m_verse.gravity().set(0.0, -9.801, 0.0);
 
         ConvexHullGeometry cubeGeometry = new ConvexHullGeometry(new Vector3d[] {
                 new Vector3d(-0.5, -0.5, -0.5),
@@ -72,27 +72,43 @@ public class SphereStackSample implements DemoSample
         for (int y = 0; y < 10; y++)
         {
             DynamicSolidObject collider1 = new DynamicSolidObject(1.0, cubeGeometry);
-            collider1.worldTransform().position().set(0.0, 3.0 * y + 1, 0.0);
+            collider1.worldTransform().position().set(0.0, 1.5 * y + 1, 0.1 * y - 3);
             //collider1.worldTransform().rotation().rotateXYZ(0.1, 0.2, 0.3).normalize();
 
             collider1.applyCentralImpulse(new Vector3d(0.0, -1.0, 0.0));
 
-            collider1.friction(0.6);
-            collider1.restitution(0.2);
+            collider1.friction(0.5);
+            collider1.restitution(0.0);
             this.m_verse.addSolidObject(collider1);
         }
 
-        for (int x = -6; x < 7; x++)
+        for (int x = -7; x < 8; x++)
         {
-            for (int z = -6; z < 7; z++)
+            for (int y = 0; y < 5; y++)
             {
-                SolidObject floor = new SolidObject();
-                floor.worldTransform().position().set(x, -0.5, z);
-                floor.setGeometry(cubeGeometry);
+                for (int z = -7; z < 8; z++)
+                {
+                    if (y == 0)
+                    {
+                        SolidObject floor = new SolidObject();
+                        floor.worldTransform().position().set(x, -0.5, z);
+                        floor.setGeometry(cubeGeometry);
 
-                floor.friction(0.6);
-                floor.restitution(0.2);
-                this.m_verse.addSolidObject(floor);
+                        floor.friction(0.5);
+                        floor.restitution(0.0);
+                        this.m_verse.addSolidObject(floor);
+                    }
+                    else if (Math.abs(x) == 7 || Math.abs(z) == 7)
+                    {
+                        SolidObject floor = new SolidObject();
+                        floor.worldTransform().position().set(x, y - 0.5, z);
+                        floor.setGeometry(cubeGeometry);
+
+                        floor.friction(0.5);
+                        floor.restitution(0.0);
+                        this.m_verse.addSolidObject(floor);
+                    }
+                }
             }
         }
     }

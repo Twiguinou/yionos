@@ -17,6 +17,7 @@ import yionos.demo.rendering.VulkanException;
 import yionos.demo.rendering.VulkanImage;
 import yionos.demo.rendering.VulkanRenderContext;
 
+import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
@@ -35,15 +36,18 @@ import static vulkan.VkImageType.*;
 import static vulkan.VkImageLayout.*;
 import static vulkan.VkSharingMode.*;
 import static vulkan.VkImageViewType.*;
+import static vulkan.VkSampleCountFlagBits.*;
 import static vulkan.VkFormat.*;
 import static vulkan.VkPipelineStageFlagBits.*;
 import static vulkan.VkImageUsageFlagBits.*;
+import static vulkan.VkFormatFeatureFlagBits.*;
 import static vulkan.VkImageAspectFlagBits.*;
 import static vulkan.VkDescriptorPoolCreateFlagBits.*;
 import static vulkan.VkComponentSwizzle.*;
 import static vulkan.VkPipelineBindPoint.*;
 import static vulkan.VkSubpassContents.*;
 import static vulkan.VkDescriptorType.*;
+import static vulkan.VkAccessFlagBits.*;
 import static vma.VmaMemoryUsage.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
@@ -55,7 +59,9 @@ public class VulkanRenderer
     private final VulkanRenderContext m_context;
     private final LogicalDevice m_logicalDevice;
     private final LogicalDevice.Queue m_graphicsQueue, m_presentQueue;
-    private VulkanImage m_colorImage, m_depthImage;
+    private @Nullable VulkanImage m_msaaImage;
+    private VulkanImage m_depthImage;
+    private final int m_depthFormat;
     private final Swapchain m_swapchain;
     private final int m_sampleCount;
     private final RenderPass m_renderPass;
@@ -102,6 +108,8 @@ public class VulkanRenderer
         this.m_context.findSuitableDevice((first, second) -> first.isDedicated() ? first : second);
         gRendererLogger.info(STR."Selected physical device : \{this.m_context.physicalDevice().name()}");
 
+        this.m_depthFormat = selectDepthFormat(this.m_context.physicalDevice().handle());
+
         try (Arena arena = Arena.ofConfined())
         {
             LogicalDevice.QueueDescriptor[] queueDescriptors = selectQueueFamilies(this.m_context.physicalDevice().handle(), this.m_context.surface());
@@ -117,6 +125,7 @@ public class VulkanRenderer
             {
                 f.fillModeNonSolid(this.m_context.physicalDevice().features().fillModeNonSolid());
                 f.wideLines(this.m_context.physicalDevice().features().wideLines());
+                f.shaderStorageImageMultisample(VK_TRUE);
                 f.samplerAnisotropy(VK_TRUE);
                 f.sampleRateShading(VK_TRUE);
                 f.depthClamp(VK_TRUE);
@@ -135,7 +144,7 @@ public class VulkanRenderer
         this.m_swapchain = new Swapchain(this.m_logicalDevice.handle());
         this.initSwapchain();
 
-        this.m_renderPass = new RenderPass(this.m_logicalDevice.handle(), this.m_swapchain.surfaceFormat().format(), this.m_sampleCount);
+        this.m_renderPass = new RenderPass(this.m_logicalDevice.handle(), this.m_swapchain.surfaceFormat().format(), this.m_depthFormat, this.m_sampleCount);
         this.initRenderingResources();
 
         this.m_renderingCommandBuffers = new CommandBufferFlow(this.m_logicalDevice.handle(), this.m_graphicsQueue.family(), gFrameCount);
@@ -158,8 +167,13 @@ public class VulkanRenderer
         this.m_sphereRenderer = new ObjectRenderer(this, ObjectRenderer.Type.SPHERE);
     }
 
-    private VulkanImage createColorImage() throws VulkanException
+    private @Nullable VulkanImage createMsaaImage() throws VulkanException
     {
+        if (this.m_sampleCount == VK_SAMPLE_COUNT_1_BIT)
+        {
+            return null;
+        }
+
         try (Arena arena = Arena.ofConfined())
         {
             VkImageCreateInfo imageCreateInfo = new VkImageCreateInfo(arena);
@@ -175,7 +189,7 @@ public class VulkanRenderer
             imageCreateInfo.format(this.m_swapchain.surfaceFormat().format());
             imageCreateInfo.tiling(VK_IMAGE_TILING_OPTIMAL);
             imageCreateInfo.initialLayout(VK_IMAGE_LAYOUT_UNDEFINED);
-            imageCreateInfo.usage(VK_IMAGE_USAGE_TRANSIENT_ATTACHMENT_BIT | VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT);
+            imageCreateInfo.usage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_STORAGE_BIT);
             imageCreateInfo.sharingMode(VK_SHARING_MODE_EXCLUSIVE);
             imageCreateInfo.samples(this.m_sampleCount);
             imageCreateInfo.arrayLayers(1);
@@ -196,11 +210,35 @@ public class VulkanRenderer
                 r.baseMipLevel(0);
                 r.levelCount(1);
                 r.baseArrayLayer(0);
+                r.layerCount(1);
             });
             imageViewCreateInfo.viewType(VK_IMAGE_VIEW_TYPE_2D);
-            imageViewCreateInfo.subresourceRange().layerCount(1);
 
             return VulkanImage.allocate(this.m_logicalDevice.handle(), this.m_logicalDevice.allocator(), imageCreateInfo, imageViewCreateInfo, VMA_MEMORY_USAGE_GPU_ONLY);
+        }
+    }
+
+    private static int selectDepthFormat(VkPhysicalDevice physicalDevice)
+    {
+        try (Arena arena = Arena.ofConfined())
+        {
+            int[] formats = new int[] {
+                    VK_FORMAT_D32_SFLOAT_S8_UINT,
+                    VK_FORMAT_D24_UNORM_S8_UINT
+            };
+
+            VkFormatProperties properties = new VkFormatProperties(arena);
+            for (int format : formats)
+            {
+                vkGetPhysicalDeviceFormatProperties(physicalDevice, format, properties.ptr());
+                if ((properties.optimalTilingFeatures() & VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT) != 0)
+                {
+                    return format;
+                }
+            }
+
+            gRendererLogger.error("Unable to find suitable depth format.");
+            return VK_FORMAT_UNDEFINED;
         }
     }
 
@@ -218,17 +256,17 @@ public class VulkanRenderer
                 e.depth(1);
             });
             imageCreateInfo.mipLevels(1);
-            imageCreateInfo.format(VK_FORMAT_D32_SFLOAT);
+            imageCreateInfo.format(this.m_depthFormat);
             imageCreateInfo.tiling(VK_IMAGE_TILING_OPTIMAL);
             imageCreateInfo.initialLayout(VK_IMAGE_LAYOUT_UNDEFINED);
-            imageCreateInfo.usage(VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT);
+            imageCreateInfo.usage(VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT);
             imageCreateInfo.sharingMode(VK_SHARING_MODE_EXCLUSIVE);
             imageCreateInfo.samples(this.m_sampleCount);
             imageCreateInfo.arrayLayers(1);
 
             VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(arena);
             imageViewCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
-            imageViewCreateInfo.format(VK_FORMAT_D32_SFLOAT);
+            imageViewCreateInfo.format(this.m_depthFormat);
             imageViewCreateInfo.components(c ->
             {
                 c.r(VK_COMPONENT_SWIZZLE_IDENTITY);
@@ -238,13 +276,13 @@ public class VulkanRenderer
             });
             imageViewCreateInfo.subresourceRange(r ->
             {
-                r.aspectMask(VK_IMAGE_ASPECT_DEPTH_BIT);
+                r.aspectMask(VK_IMAGE_ASPECT_DEPTH_BIT | VK_IMAGE_ASPECT_STENCIL_BIT);
                 r.baseMipLevel(0);
                 r.levelCount(1);
                 r.baseArrayLayer(0);
+                r.layerCount(1);
             });
             imageViewCreateInfo.viewType(VK_IMAGE_VIEW_TYPE_2D);
-            imageViewCreateInfo.subresourceRange().layerCount(1);
 
             return VulkanImage.allocate(this.m_logicalDevice.handle(), this.m_logicalDevice.allocator(), imageCreateInfo, imageViewCreateInfo, VMA_MEMORY_USAGE_GPU_ONLY);
         }
@@ -305,11 +343,12 @@ public class VulkanRenderer
 
     private void resetSwapchainAndResources()
     {
-        VulkanException.check(vkWaitForFences(this.m_logicalDevice.handle(), gFrameCount, this.m_syncObjects.fences(), VK_TRUE, Long.MAX_VALUE));
-
         this.m_renderPass.destroyFramebuffers();
         this.m_depthImage.dispose();
-        this.m_colorImage.dispose();
+        if (this.m_msaaImage != null)
+        {
+            this.m_msaaImage.dispose();
+        }
 
         this.initSwapchain();
         this.initRenderingResources();
@@ -323,7 +362,7 @@ public class VulkanRenderer
 
     private void initRenderingResources()
     {
-        this.m_colorImage = this.createColorImage();
+        this.m_msaaImage = this.createMsaaImage();
         this.m_depthImage = this.createDepthImage();
 
         try (Arena arena = StackAllocator.stackPush())
@@ -334,7 +373,9 @@ public class VulkanRenderer
                 pImageViews.setAtIndex(ValueLayout.ADDRESS, i, this.m_swapchain.images()[i].view());
             }
 
-            this.m_renderPass.createFramebuffers(this.m_swapchain.images().length, pImageViews, this.m_swapchain.width(), this.m_swapchain.height(), this.m_colorImage.view(), this.m_depthImage.view());
+            MemorySegment msaaImageView = this.m_msaaImage == null ? NULL : this.m_msaaImage.view();
+
+            this.m_renderPass.createFramebuffers(this.m_swapchain.images().length, pImageViews, this.m_swapchain.width(), this.m_swapchain.height(), msaaImageView, this.m_depthImage.view());
         }
     }
 
@@ -390,10 +431,6 @@ public class VulkanRenderer
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            MemorySegment pCurrentFence = arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.fence(this.m_currentFrame));
-            VulkanException.check(vkWaitForFences(this.m_logicalDevice.handle(), 1, pCurrentFence, VK_TRUE, Long.MAX_VALUE));
-            VulkanException.check(vkResetFences(this.m_logicalDevice.handle(), 1, pCurrentFence));
-
             MemorySegment pFrameIndex = arena.allocate(ValueLayout.JAVA_INT);
             int swapchainMessage = this.m_swapchain.acquireNextImage(this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame), pFrameIndex);
             if (swapchainMessage == VK_ERROR_OUT_OF_DATE_KHR || swapchainMessage == VK_SUBOPTIMAL_KHR)
@@ -466,22 +503,51 @@ public class VulkanRenderer
         try (Arena arena = StackAllocator.stackPush())
         {
             vkCmdEndRenderPass(this.m_frameCommandBuffer);
+
+            VkImageMemoryBarrier memoryBarrier = new VkImageMemoryBarrier(arena);
+            memoryBarrier.sType(VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER);
+            memoryBarrier.srcQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);
+            memoryBarrier.dstQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);
+            memoryBarrier.image(this.m_swapchain.images()[this.m_vkFrameIndex].handle());
+            memoryBarrier.subresourceRange(r ->
+            {
+                r.aspectMask(VK_IMAGE_ASPECT_COLOR_BIT);
+                r.baseMipLevel(0);
+                r.levelCount(1);
+                r.baseArrayLayer(0);
+                r.layerCount(1);
+            });
+            memoryBarrier.oldLayout(VK_IMAGE_LAYOUT_GENERAL);
+            memoryBarrier.newLayout(VK_IMAGE_LAYOUT_PRESENT_SRC_KHR);
+            memoryBarrier.srcAccessMask(VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT);
+            memoryBarrier.dstAccessMask(0);
+
+            vkCmdPipelineBarrier(this.m_frameCommandBuffer, VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT, 0, 0, NULL, 0, NULL, 1, memoryBarrier.ptr());
+
             VulkanException.check(vkEndCommandBuffer(this.m_frameCommandBuffer));
 
+            MemorySegment commandBufferFence = this.m_syncObjects.fence(this.m_currentFrame);
+
+            MemorySegment pImageAcquiredSemaphore = arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame));
             MemorySegment pRenderCompleteSemaphore = arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.renderCompleteSemaphore(this.m_currentFrame));
 
             VkSubmitInfo submitInfo = new VkSubmitInfo(arena);
             submitInfo.sType(VK_STRUCTURE_TYPE_SUBMIT_INFO);
             submitInfo.waitSemaphoreCount(1);
-            submitInfo.pWaitSemaphores(arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame)));
+            submitInfo.pWaitSemaphores(pImageAcquiredSemaphore);
             submitInfo.pWaitDstStageMask(arena.allocate(ValueLayout.JAVA_INT, VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT));
             submitInfo.commandBufferCount(1);
             submitInfo.pCommandBuffers(arena.allocate(ValueLayout.ADDRESS, this.m_frameCommandBuffer.handle()));
             submitInfo.signalSemaphoreCount(1);
             submitInfo.pSignalSemaphores(pRenderCompleteSemaphore);
 
-            VulkanException.check(vkQueueSubmit(this.m_graphicsQueue.handle(), 1, submitInfo.ptr(), this.m_syncObjects.fence(this.m_currentFrame)));
+            VulkanException.check(vkQueueSubmit(this.m_graphicsQueue.handle(), 1, submitInfo.ptr(), commandBufferFence));
+
             this.m_renderingCommandBuffers.offer(this.m_currentFrame, this.m_frameCommandBuffer);
+            MemorySegment pCommandBufferFence = arena.allocate(ValueLayout.ADDRESS, commandBufferFence);
+
+            VulkanException.check(vkWaitForFences(this.m_logicalDevice.handle(), 1, pCommandBufferFence, VK_TRUE, -1));
+            VulkanException.check(vkResetFences(this.m_logicalDevice.handle(), 1, pCommandBufferFence));
 
             VkPresentInfoKHR presentInfo = new VkPresentInfoKHR(arena);
             presentInfo.sType(VK_STRUCTURE_TYPE_PRESENT_INFO_KHR);
@@ -586,7 +652,11 @@ public class VulkanRenderer
         this.m_shaders.dispose();
 
         this.m_renderPass.dispose();
-        this.m_colorImage.dispose();
+        if (this.m_msaaImage != null)
+        {
+            this.m_msaaImage.dispose();
+        }
+
         this.m_depthImage.dispose();
         this.m_swapchain.dispose();
 

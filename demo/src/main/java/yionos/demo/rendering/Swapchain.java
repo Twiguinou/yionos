@@ -23,6 +23,7 @@ import static vulkan.VkImageUsageFlagBits.*;
 import static vulkan.VkCompositeAlphaFlagBitsKHR.*;
 import static vulkan.VkSharingMode.*;
 import static vulkan.VkImageViewType.*;
+import static vulkan.VkSurfaceTransformFlagBitsKHR.*;
 import static vulkan.VkComponentSwizzle.*;
 import static vulkan.VkImageAspectFlagBits.*;
 import static java.lang.foreign.MemorySegment.NULL;
@@ -50,9 +51,11 @@ public class Swapchain implements Disposable
 
     public static SurfaceFormat selectSurfaceFormat(VkSurfaceFormatKHR[] surfaceFormats)
     {
+        assert surfaceFormats.length > 0;
+
         for (VkSurfaceFormatKHR surfaceFormat : surfaceFormats)
         {
-            if (surfaceFormat.format() == VK_FORMAT_B8G8R8A8_SRGB && surfaceFormat.colorSpace() == VK_COLORSPACE_SRGB_NONLINEAR_KHR)
+            if (surfaceFormat.format() == VK_FORMAT_B8G8R8A8_UNORM && surfaceFormat.colorSpace() == VK_COLORSPACE_SRGB_NONLINEAR_KHR)
             {
                 return new SurfaceFormat(surfaceFormat);
             }
@@ -68,23 +71,21 @@ public class Swapchain implements Disposable
 
     private static int selectPresentMode(int[] presentModes, boolean vsync)
     {
-        if (vsync)
-        {
-            return VK_PRESENT_MODE_FIFO_KHR;
-        }
-
         int selection = VK_PRESENT_MODE_FIFO_KHR;
-        for (int presentMode : presentModes)
+        if (!vsync)
         {
-            if (presentMode == VK_PRESENT_MODE_MAILBOX_KHR)
+            for (int presentMode : presentModes)
             {
-                selection = VK_PRESENT_MODE_MAILBOX_KHR;
-                break;
-            }
+                if (presentMode == VK_PRESENT_MODE_MAILBOX_KHR)
+                {
+                    selection = VK_PRESENT_MODE_MAILBOX_KHR;
+                    break;
+                }
 
-            if (presentMode == VK_PRESENT_MODE_IMMEDIATE_KHR)
-            {
-                selection = presentMode;
+                if (presentMode == VK_PRESENT_MODE_IMMEDIATE_KHR)
+                {
+                    selection = presentMode;
+                }
             }
         }
 
@@ -180,16 +181,14 @@ public class Swapchain implements Disposable
 
             VkSwapchainCreateInfoKHR swapchainCreateInfo = new VkSwapchainCreateInfoKHR(arena);
             swapchainCreateInfo.sType(VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR);
-            swapchainCreateInfo.pNext(NULL);
-            swapchainCreateInfo.flags(0);
             swapchainCreateInfo.surface(context.surface());
             swapchainCreateInfo.minImageCount(minImageCount);
             swapchainCreateInfo.imageFormat(this.m_surfaceFormat.format);
             swapchainCreateInfo.imageColorSpace(this.m_surfaceFormat.colorSpace);
             swapchainCreateInfo.imageExtent(extent);
             swapchainCreateInfo.imageArrayLayers(1);
-            swapchainCreateInfo.imageUsage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT);
-            swapchainCreateInfo.preTransform(context.surfaceProperties().capabilities().currentTransform());
+            swapchainCreateInfo.imageUsage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT);
+            swapchainCreateInfo.preTransform(VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR);
             swapchainCreateInfo.compositeAlpha(VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR);
             swapchainCreateInfo.presentMode(presentMode);
             swapchainCreateInfo.clipped(VK_TRUE);
@@ -198,8 +197,6 @@ public class Swapchain implements Disposable
             if (graphicsQueueFamily == presentQueueFamily)
             {
                 swapchainCreateInfo.imageSharingMode(VK_SHARING_MODE_EXCLUSIVE);
-                swapchainCreateInfo.queueFamilyIndexCount(0);
-                swapchainCreateInfo.pQueueFamilyIndices(NULL);
             }
             else
             {

@@ -111,7 +111,7 @@ public class LogicalDevice implements Disposable
         }
     }
 
-    private static String[] filterDeviceExtensions(VkPhysicalDevice physicalDevice, String[] extensions)
+    private static String[] filterDeviceExtensions(VkPhysicalDevice physicalDevice, String[] extensions) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {

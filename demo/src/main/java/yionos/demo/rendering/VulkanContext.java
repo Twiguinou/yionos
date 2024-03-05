@@ -123,7 +123,7 @@ public class VulkanContext implements Disposable
         }
     }
 
-    private static String[] filterExtensions(String[] extensions)
+    private static String[] filterExtensions(String[] extensions) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
