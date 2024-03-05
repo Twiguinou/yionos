@@ -3,7 +3,7 @@
 - Before compiling every dependent library, here is a list of what you need depending on your system:
     - CMake, any recent distribution will work.
     - On 64-bit Windows, you will need a working MinGW distribution, along with clang, clang++ and mingw32-make.
-    - Os OSX, clang, clang++ and make.
+    - On OSX, clang, clang++ and make.
 - You will also need `vulkan-1.dll`, which is available in lots of places, MinGW is one of them.
 - shaderc cannot be compiled following this section, you will need to get it somewhere else.
 - Then, some gradle tasks are available under the `bindings` project, for that you need every submodule cloned and then run one of the tasks going by `generateXXXXSharedLibs`.

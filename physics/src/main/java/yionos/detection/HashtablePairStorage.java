@@ -1,15 +1,14 @@
 package yionos.detection;
 
-import speiger.src.collections.longs.maps.impl.hash.Long2ObjectOpenHashMap;
-import speiger.src.collections.longs.maps.interfaces.Long2ObjectMap;
-
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class HashtablePairStorage implements PairStorage
 {
     private record SimplePair(Broadphase.Handle first, Broadphase.Handle second) implements Broadphase.Pair {}
 
-    private final Long2ObjectMap<Broadphase.Pair> m_storage = new Long2ObjectOpenHashMap<>();
+    private final Map<Long, Broadphase.Pair> m_storage = new HashMap<>();
 
     public HashtablePairStorage() {}
 

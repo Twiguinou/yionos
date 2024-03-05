@@ -2,8 +2,6 @@ package yionos.detection;
 
 import com.zaxxer.sparsebits.SparseBitSet;
 import org.joml.Vector3d;
-import speiger.src.collections.objects.lists.ObjectArrayList;
-import speiger.src.collections.objects.lists.ObjectList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,7 @@ public class SweepAndPruneBroadphase implements Broadphase
             void accept(int id1, int id2);
         }
 
-        private final ObjectList<Endpoint> m_endpoints = new ObjectArrayList<>();
+        private final List<Endpoint> m_endpoints = new ArrayList<>();
         private final SparseBitSet m_overlapping = new SparseBitSet();
         private final SparseBitSet m_searchBits = new SparseBitSet();
 
