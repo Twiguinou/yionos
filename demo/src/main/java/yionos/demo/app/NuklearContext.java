@@ -58,7 +58,7 @@ public class NuklearContext implements Disposable
     private final nk_context m_ctx;
     private final nk_font_atlas m_atlas;
     private final VulkanImage m_atlasImage;
-    public final VulkanRenderer renderer;
+    private final VulkanRenderer renderer;
     private final nk_draw_null_texture m_texNull;
     private final MemorySegment m_uniformDescriptorSets;
     private final nk_buffer m_cmds;

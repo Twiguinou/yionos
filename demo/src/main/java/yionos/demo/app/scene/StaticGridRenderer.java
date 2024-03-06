@@ -5,6 +5,7 @@ import vulkan.VkCommandBuffer;
 import yionos.demo.Disposable;
 import yionos.demo.StackAllocator;
 import yionos.demo.app.Camera;
+import yionos.demo.app.PipelineLayouts;
 import yionos.demo.app.VulkanRenderer;
 import yionos.demo.rendering.VulkanBuffer;
 
@@ -20,7 +21,7 @@ import static vma.VmaMemoryUsage.*;
 
 public class StaticGridRenderer implements Disposable
 {
-    public final VulkanRenderer vulkanRenderer;
+    private final PipelineLayouts pipelineLayouts;
     private final VulkanBuffer m_vertexBuffer, m_indexBuffer;
 
     public StaticGridRenderer(VulkanRenderer renderer)
@@ -43,7 +44,7 @@ public class StaticGridRenderer implements Disposable
             this.m_indexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), indices.byteSize(), VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
             this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.graphicsQueue(), indices);
 
-            this.vulkanRenderer = renderer;
+            this.pipelineLayouts = renderer.pipelineLayouts();
         }
     }
 
@@ -64,7 +65,7 @@ public class StaticGridRenderer implements Disposable
             pushConstants.setAtIndex(ValueLayout.JAVA_FLOAT, 18, 0.749f);
             pushConstants.setAtIndex(ValueLayout.JAVA_FLOAT, 19, 50.0f);
 
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().staticGrid(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
+            vkCmdPushConstants(commandBuffer, this.pipelineLayouts.staticGrid(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
 
             vkCmdDrawIndexed(commandBuffer, 12, 1, 0, 0, 0);
         }

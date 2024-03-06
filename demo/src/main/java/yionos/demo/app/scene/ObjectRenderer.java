@@ -6,9 +6,10 @@ import vulkan.VkCommandBuffer;
 import yionos.demo.Disposable;
 import yionos.demo.StackAllocator;
 import yionos.demo.app.Camera;
+import yionos.demo.app.PipelineLayouts;
 import yionos.demo.app.VulkanRenderer;
-import yionos.demo.app.data.OBJLoader;
 import yionos.demo.app.data.OBJModel;
+import yionos.demo.app.data.ParsedModels;
 import yionos.demo.rendering.VulkanBuffer;
 
 import java.lang.foreign.Arena;
@@ -26,20 +27,20 @@ public class ObjectRenderer implements Disposable
 {
     public enum Type
     {
-        CUBE("cube.obj"),
-        SPHERE("icosphere.obj");
+        CUBE(ParsedModels.gCubeModel),
+        SPHERE(ParsedModels.gIcosphereModel);
 
-        private final String modelFile;
+        private final OBJModel.Mesh modelMesh;
 
-        Type(String modelFile)
+        Type(OBJModel model)
         {
-            this.modelFile = modelFile;
+            this.modelMesh = Arrays.stream(model.meshes()).findAny().orElseThrow();
         }
     }
 
     public record MeshColors(Vector4d lightColor, Vector4d darkColor, Vector4d borderColor) {}
 
-    public final VulkanRenderer vulkanRenderer;
+    public final PipelineLayouts pipelineLayouts;
     private final VulkanBuffer m_vertexBuffer, m_indexBuffer;
     private final int m_indexCount;
 
@@ -47,8 +48,7 @@ public class ObjectRenderer implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            OBJLoader loader = new OBJLoader("models");
-            OBJModel.Mesh mainMesh = Arrays.stream(loader.parseGeometry(type.modelFile).meshes()).findAny().orElseThrow();
+            OBJModel.Mesh mainMesh = type.modelMesh;
 
             MemorySegment vertices = arena.allocateArray(ValueLayout.JAVA_FLOAT, (long) mainMesh.vertices().length * 3);
             for (int i = 0; i < mainMesh.vertices().length; i++)
@@ -73,7 +73,7 @@ public class ObjectRenderer implements Disposable
             this.m_indexBuffer = new VulkanBuffer(renderer.logicalDevice().allocator(), indices.byteSize(), VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT, new int[] {renderer.graphicsQueue().family()}, VMA_MEMORY_USAGE_GPU_ONLY);
             this.m_indexBuffer.upload(renderer.uploadCommandPool(), renderer.graphicsQueue(), indices);
 
-            this.vulkanRenderer = renderer;
+            this.pipelineLayouts = renderer.pipelineLayouts();
         }
     }
 
@@ -95,8 +95,8 @@ public class ObjectRenderer implements Disposable
             colors.darkColor.get(fragmentPushConstants.asSlice(4 * Float.BYTES).asByteBuffer().asFloatBuffer());
             colors.borderColor.get(fragmentPushConstants.asSlice(8 * Float.BYTES).asByteBuffer().asFloatBuffer());
 
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) vertexPushConstants.byteSize(), vertexPushConstants);
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebug(), VK_SHADER_STAGE_FRAGMENT_BIT, (int) vertexPushConstants.byteSize(), (int) fragmentPushConstants.byteSize(), fragmentPushConstants);
+            vkCmdPushConstants(commandBuffer, this.pipelineLayouts.objectDebug(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) vertexPushConstants.byteSize(), vertexPushConstants);
+            vkCmdPushConstants(commandBuffer, this.pipelineLayouts.objectDebug(), VK_SHADER_STAGE_FRAGMENT_BIT, (int) vertexPushConstants.byteSize(), (int) fragmentPushConstants.byteSize(), fragmentPushConstants);
 
             vkCmdDrawIndexed(commandBuffer, this.m_indexCount, 1, 0, 0, 0);
         }
@@ -112,7 +112,7 @@ public class ObjectRenderer implements Disposable
             MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
             camera.viewMatrix().get(pushConstants.asByteBuffer().asFloatBuffer());
 
-            vkCmdPushConstants(commandBuffer, this.vulkanRenderer.pipelineLayouts().objectDebugInstanced(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
+            vkCmdPushConstants(commandBuffer, this.pipelineLayouts.objectDebugInstanced(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
 
             vkCmdDrawIndexed(commandBuffer, this.m_indexCount, count, 0, 0, 0);
         }

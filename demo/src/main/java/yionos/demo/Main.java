@@ -61,7 +61,7 @@ public final class Main
         int windowWidth = parsedArgs.getArgValueIndexed("wnd_dimensions", 0).map(Integer::parseUnsignedInt).orElse(1706);
         int windowHeight = parsedArgs.getArgValueIndexed("wnd_dimensions", 1).map(Integer::parseUnsignedInt).orElse(960);
 
-        int sampleCount = parsedArgs.getArgValueIndexed("sample_count", 0).map(Integer::parseUnsignedInt).orElse(2);
+        int sampleCount = parsedArgs.getArgValueIndexed("sample_count", 0).map(Integer::parseUnsignedInt).orElse(1);
 
         DemoSample.Supplier[] samples = new DemoSample.Supplier[] {
                 makeSampleSupplier("Sphere stack", SphereStackSample::new),

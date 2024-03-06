@@ -8,6 +8,8 @@ import yionos.demo.app.Camera;
 import yionos.demo.app.NuklearContext;
 import yionos.demo.app.VulkanRenderer;
 import yionos.demo.app.WindowInputMap;
+import yionos.demo.app.data.OBJModel;
+import yionos.demo.app.data.ParsedModels;
 import yionos.demo.app.scene.ObjectRenderer;
 import yionos.detection.*;
 import yionos.dynamics.DynamicSolidObject;
@@ -20,6 +22,7 @@ import yionos.dynamics.geometries.SphereGeometry;
 import java.lang.foreign.Arena;
 import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
+import java.util.Arrays;
 
 import static nuklear.Nuklear.*;
 import static nuklear.nk_panel_flags.*;
@@ -58,22 +61,18 @@ public class SphereStackSample implements DemoSample
         this.m_verse.clearScene();
         this.m_verse.gravity().set(0.0, -9.801, 0.0);
 
-        ConvexHullGeometry cubeGeometry = new ConvexHullGeometry(new Vector3d[] {
-                new Vector3d(-0.5, -0.5, -0.5),
-                new Vector3d(0.5, -0.5, -0.5),
-                new Vector3d(-0.5, -0.5, 0.5),
-                new Vector3d(0.5, -0.5, 0.5),
-                new Vector3d(-0.5, 0.5, -0.5),
-                new Vector3d(0.5, 0.5, -0.5),
-                new Vector3d(-0.5, 0.5, 0.5),
-                new Vector3d(0.5, 0.5, 0.5)
-        });
+        OBJModel.Mesh cubeGeometryMesh = Arrays.stream(ParsedModels.gCubeModel.meshes()).findAny().orElseThrow();
+        ConvexHullGeometry cubeGeometry = new ConvexHullGeometry(
+                Arrays.stream(cubeGeometryMesh.vertices())
+                        .map(Vector3d::new)
+                        .toArray(Vector3d[]::new)
+        );
 
-        for (int y = 0; y < 10; y++)
+        for (int y = 0; y < 20; y++)
         {
             DynamicSolidObject collider1 = new DynamicSolidObject(1.0, cubeGeometry);
-            collider1.worldTransform().position().set(0.0, 1.5 * y + 1, 0.1 * y - 3);
-            //collider1.worldTransform().rotation().rotateXYZ(0.1, 0.2, 0.3).normalize();
+            collider1.worldTransform().position().set(0.0, 1.2 * y + 1, 0.0);
+            collider1.worldTransform().rotation().rotateXYZ(0.1, 0.2, 0.3).normalize();
 
             collider1.applyCentralImpulse(new Vector3d(0.0, -1.0, 0.0));
 

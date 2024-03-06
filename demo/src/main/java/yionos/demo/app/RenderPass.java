@@ -34,6 +34,8 @@ public class RenderPass implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
+            boolean resolve = sampleCount > VK_SAMPLE_COUNT_1_BIT;
+
             MemorySegment pAttachments = arena.allocateArray(VkAttachmentDescription.gStructLayout, 3);
             VkAttachmentDescription description;
 
@@ -41,7 +43,7 @@ public class RenderPass implements Disposable
             description = VkAttachmentDescription.getAtIndex(pAttachments, 0);
             description.format(swapchainFormat);
             description.samples(VK_SAMPLE_COUNT_1_BIT);
-            description.loadOp(VK_ATTACHMENT_LOAD_OP_CLEAR);
+            description.loadOp(resolve ? VK_ATTACHMENT_LOAD_OP_DONT_CARE : VK_ATTACHMENT_LOAD_OP_CLEAR);
             description.storeOp(VK_ATTACHMENT_STORE_OP_STORE);
             description.stencilLoadOp(VK_ATTACHMENT_LOAD_OP_LOAD);
             description.stencilStoreOp(VK_ATTACHMENT_STORE_OP_STORE);
@@ -63,7 +65,7 @@ public class RenderPass implements Disposable
             description = VkAttachmentDescription.getAtIndex(pAttachments, 2);
             description.format(swapchainFormat);
             description.samples(sampleCount);
-            description.loadOp(VK_ATTACHMENT_LOAD_OP_DONT_CARE);
+            description.loadOp(VK_ATTACHMENT_LOAD_OP_CLEAR);
             description.storeOp(VK_ATTACHMENT_STORE_OP_STORE);
             description.stencilLoadOp(VK_ATTACHMENT_LOAD_OP_LOAD);
             description.stencilStoreOp(VK_ATTACHMENT_STORE_OP_STORE);
@@ -71,7 +73,7 @@ public class RenderPass implements Disposable
             description.finalLayout(VK_IMAGE_LAYOUT_GENERAL);
 
             VkAttachmentReference colorAttachmentReference = new VkAttachmentReference(arena);
-            colorAttachmentReference.attachment(sampleCount > VK_SAMPLE_COUNT_1_BIT ? 2 : 0);
+            colorAttachmentReference.attachment(resolve ? 2 : 0);
             colorAttachmentReference.layout(VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL);
 
             VkAttachmentReference depthAttachmentReference = new VkAttachmentReference(arena);
@@ -87,14 +89,14 @@ public class RenderPass implements Disposable
             subpass.colorAttachmentCount(1);
             subpass.pColorAttachments(colorAttachmentReference.ptr());
             subpass.pDepthStencilAttachment(depthAttachmentReference.ptr());
-            if (sampleCount > VK_SAMPLE_COUNT_1_BIT)
+            if (resolve)
             {
                 subpass.pResolveAttachments(resolveAttachmentReference.ptr());
             }
 
             VkRenderPassCreateInfo renderPassCreateInfo = new VkRenderPassCreateInfo(arena);
             renderPassCreateInfo.sType(VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO);
-            renderPassCreateInfo.attachmentCount(sampleCount > VK_SAMPLE_COUNT_1_BIT ? 3 : 2);
+            renderPassCreateInfo.attachmentCount(resolve ? 3 : 2);
             renderPassCreateInfo.pAttachments(pAttachments);
             renderPassCreateInfo.subpassCount(1);
             renderPassCreateInfo.pSubpasses(subpass.ptr());

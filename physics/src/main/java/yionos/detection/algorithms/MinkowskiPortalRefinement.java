@@ -1,5 +1,6 @@
 package yionos.detection.algorithms;
 
+import org.joml.Quaterniond;
 import org.joml.Vector3d;
 import yionos.detection.CollisionManifold;
 import yionos.dynamics.geometries.ConvexHullGeometry;
@@ -14,7 +15,16 @@ public final class MinkowskiPortalRefinement
 
     public static Vector3d supportPoint(ConvexHullGeometry hull, Transform transform, Vector3d direction)
     {
-        Vector3d v = new Vector3d();
+        Vector3d v = direction.rotate(transform.rotation().conjugate(new Quaterniond()), new Vector3d());
+        Vector3d extents = new Vector3d(0.5);
+
+        extents.mul(Math.signum(v.x), Math.signum(v.y), Math.signum(v.z));
+
+        extents.rotate(transform.rotation());
+
+        return extents.add(transform.position());
+
+        /*Vector3d v = new Vector3d();
 
         double maxDot = Double.NEGATIVE_INFINITY;
         Vector3d selected = new Vector3d();
@@ -28,7 +38,7 @@ public final class MinkowskiPortalRefinement
             }
         }
 
-        return selected;
+        return selected;*/
     }
 
     private static Vector3d supportPointOfMinkowskiDifference(ConvexHullGeometry hullA, Transform transformA, ConvexHullGeometry hullB, Transform transformB, Vector3d direction)
@@ -39,8 +49,14 @@ public final class MinkowskiPortalRefinement
         return supportA.sub(supportB);
     }
 
+    public static boolean manifold2(ConvexHullGeometry hullA, Transform transformA, ConvexHullGeometry hullB, Transform transformB, CollisionManifold.ContactInfo contact)
+    {
+        return false;
+    }
+
     public static boolean manifold(ConvexHullGeometry hullA, Transform transformA, ConvexHullGeometry hullB, Transform transformB, CollisionManifold.ContactInfo contact)
     {
+        // find origin ray
         Vector3d v0 = transformB.position().sub(transformA.position(), new Vector3d());
 
         if (v0.equals(VEC3D_ZERO, EPSILON))
@@ -48,6 +64,7 @@ public final class MinkowskiPortalRefinement
             v0.set(EPSILON, 0.0, 0.0);
         }
 
+        // find candidate portal
         Vector3d n = v0.negate(new Vector3d());
         Vector3d v11 = supportPoint(hullA, transformA, n.negate(new Vector3d()));
         Vector3d v12 = supportPoint(hullB, transformB, n);
@@ -136,7 +153,6 @@ public final class MinkowskiPortalRefinement
 
             for (int j = 0; j < 300; j++)
             {
-
                 v2.sub(v1, n).cross(v3.sub(v1, new Vector3d()));
                 if (n.equals(VEC3D_ZERO, EPSILON))
                 {

@@ -471,7 +471,7 @@ public class VulkanRenderer
                 extent.width(this.m_swapchain.width());
                 extent.height(this.m_swapchain.height());
             });
-            renderPassBeginInfo.clearValueCount(2);
+            renderPassBeginInfo.clearValueCount(3);
             renderPassBeginInfo.pClearValues(pClearValues);
             renderPassBeginInfo.framebuffer(this.m_renderPass.framebuffer(this.m_vkFrameIndex));
 
