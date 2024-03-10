@@ -13,3 +13,6 @@
 [submodule "bindings/dependencies/assimp"]
 	path = bindings/dependencies/assimp
 	url = https://github.com/assimp/assimp.git
+[submodule "physics/native/libs/highway"]
+	path = physics/native/libs/highway
+	url = https://github.com/google/highway.git

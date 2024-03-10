@@ -7,3 +7,4 @@ generated-bindings
 *.dll
 *.so
 *.dylib
+physics/native/cmake-build-debug

@@ -1,7 +1,15 @@
 import org.apache.tools.ant.taskdefs.condition.Os
 
 plugins {
+    id("java")
     id("edu.sc.seis.launch4j") version("3.0.5")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
+    withSourcesJar()
 }
 
 val log4jVersion by extra("2.23.0")
@@ -30,7 +38,6 @@ launch4j {
 
 tasks.withType<JavaExec> {
     jvmArgs(listOf(
-            "--enable-preview",
             "--enable-native-access=ALL-UNNAMED",
             "-ea"
     ))

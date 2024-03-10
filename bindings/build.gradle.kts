@@ -1,19 +1,29 @@
 import org.gradle.internal.os.OperatingSystem
 import java.lang.IllegalStateException
 
+plugins {
+    id("java")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
+    withSourcesJar()
+}
+
 dependencies {
     implementation("jpgen:generator:0")
 }
 
 tasks.withType<JavaExec> {
     jvmArgs(listOf(
-            "--enable-preview",
             "--enable-native-access=ALL-UNNAMED",
             "-ea"
     ))
 }
 
-val vulkanSdkDirectory = System.getenv("VULKAN_SDK")
+val vulkanSdkDirectory: String? = System.getenv("VULKAN_SDK")
 if (vulkanSdkDirectory == null) {
     throw IllegalStateException("Vulkan SDK is either not installed or its path is missing from environment variables.")
 }
