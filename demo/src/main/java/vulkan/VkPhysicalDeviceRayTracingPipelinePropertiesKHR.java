@@ -2,88 +2,93 @@ package vulkan;
 
 public record VkPhysicalDeviceRayTracingPipelinePropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderGroupHandleSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderGroupHandleSize = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxRayRecursionDepth = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxRayRecursionDepth = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxShaderGroupStride = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxShaderGroupStride = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderGroupBaseAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderGroupBaseAlignment = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderGroupHandleCaptureReplaySize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderGroupHandleCaptureReplaySize = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxRayDispatchInvocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxRayDispatchInvocationCount = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderGroupHandleAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderGroupHandleAlignment = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxRayHitAttributeSize = 44L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderGroupHandleSize = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayRecursionDepth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxRayRecursionDepth = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxShaderGroupStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxShaderGroupStride = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupBaseAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderGroupBaseAlignment = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleCaptureReplaySize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderGroupHandleCaptureReplaySize = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayDispatchInvocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxRayDispatchInvocationCount = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderGroupHandleAlignment = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxRayHitAttributeSize = 44;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$shaderGroupHandleSize,
-            LAYOUT$maxRayRecursionDepth,
-            LAYOUT$maxShaderGroupStride,
-            LAYOUT$shaderGroupBaseAlignment,
-            LAYOUT$shaderGroupHandleCaptureReplaySize,
-            LAYOUT$maxRayDispatchInvocationCount,
-            LAYOUT$shaderGroupHandleAlignment,
-            LAYOUT$maxRayHitAttributeSize
-    ).withName("VkPhysicalDeviceRayTracingPipelinePropertiesKHR");
+            LAYOUT__pNext,
+            LAYOUT__shaderGroupHandleSize,
+            LAYOUT__maxRayRecursionDepth,
+            LAYOUT__maxShaderGroupStride,
+            LAYOUT__shaderGroupBaseAlignment,
+            LAYOUT__shaderGroupHandleCaptureReplaySize,
+            LAYOUT__maxRayDispatchInvocationCount,
+            LAYOUT__shaderGroupHandleAlignment,
+            LAYOUT__maxRayHitAttributeSize
+    ).withByteAlignment(8).withName("VkPhysicalDeviceRayTracingPipelinePropertiesKHR");
 
     public VkPhysicalDeviceRayTracingPipelinePropertiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceRayTracingPipelinePropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceRayTracingPipelinePropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceRayTracingPipelinePropertiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceRayTracingPipelinePropertiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceRayTracingPipelinePropertiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int shaderGroupHandleSize() {return this.ptr.get(LAYOUT$shaderGroupHandleSize, OFFSET$shaderGroupHandleSize);}
-    public void shaderGroupHandleSize(int value) {this.ptr.set(LAYOUT$shaderGroupHandleSize, OFFSET$shaderGroupHandleSize, value);}
-    public java.lang.foreign.MemorySegment shaderGroupHandleSize_ptr() {return this.ptr.asSlice(OFFSET$shaderGroupHandleSize, LAYOUT$shaderGroupHandleSize);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int maxRayRecursionDepth() {return this.ptr.get(LAYOUT$maxRayRecursionDepth, OFFSET$maxRayRecursionDepth);}
-    public void maxRayRecursionDepth(int value) {this.ptr.set(LAYOUT$maxRayRecursionDepth, OFFSET$maxRayRecursionDepth, value);}
-    public java.lang.foreign.MemorySegment maxRayRecursionDepth_ptr() {return this.ptr.asSlice(OFFSET$maxRayRecursionDepth, LAYOUT$maxRayRecursionDepth);}
+    public int shaderGroupHandleSize() {return this.ptr.get(LAYOUT__shaderGroupHandleSize, OFFSET__shaderGroupHandleSize);}
+    public void shaderGroupHandleSize(int value) {this.ptr.set(LAYOUT__shaderGroupHandleSize, OFFSET__shaderGroupHandleSize, value);}
+    public java.lang.foreign.MemorySegment $shaderGroupHandleSize() {return this.ptr.asSlice(OFFSET__shaderGroupHandleSize, LAYOUT__shaderGroupHandleSize);}
 
-    public int maxShaderGroupStride() {return this.ptr.get(LAYOUT$maxShaderGroupStride, OFFSET$maxShaderGroupStride);}
-    public void maxShaderGroupStride(int value) {this.ptr.set(LAYOUT$maxShaderGroupStride, OFFSET$maxShaderGroupStride, value);}
-    public java.lang.foreign.MemorySegment maxShaderGroupStride_ptr() {return this.ptr.asSlice(OFFSET$maxShaderGroupStride, LAYOUT$maxShaderGroupStride);}
+    public int maxRayRecursionDepth() {return this.ptr.get(LAYOUT__maxRayRecursionDepth, OFFSET__maxRayRecursionDepth);}
+    public void maxRayRecursionDepth(int value) {this.ptr.set(LAYOUT__maxRayRecursionDepth, OFFSET__maxRayRecursionDepth, value);}
+    public java.lang.foreign.MemorySegment $maxRayRecursionDepth() {return this.ptr.asSlice(OFFSET__maxRayRecursionDepth, LAYOUT__maxRayRecursionDepth);}
 
-    public int shaderGroupBaseAlignment() {return this.ptr.get(LAYOUT$shaderGroupBaseAlignment, OFFSET$shaderGroupBaseAlignment);}
-    public void shaderGroupBaseAlignment(int value) {this.ptr.set(LAYOUT$shaderGroupBaseAlignment, OFFSET$shaderGroupBaseAlignment, value);}
-    public java.lang.foreign.MemorySegment shaderGroupBaseAlignment_ptr() {return this.ptr.asSlice(OFFSET$shaderGroupBaseAlignment, LAYOUT$shaderGroupBaseAlignment);}
+    public int maxShaderGroupStride() {return this.ptr.get(LAYOUT__maxShaderGroupStride, OFFSET__maxShaderGroupStride);}
+    public void maxShaderGroupStride(int value) {this.ptr.set(LAYOUT__maxShaderGroupStride, OFFSET__maxShaderGroupStride, value);}
+    public java.lang.foreign.MemorySegment $maxShaderGroupStride() {return this.ptr.asSlice(OFFSET__maxShaderGroupStride, LAYOUT__maxShaderGroupStride);}
 
-    public int shaderGroupHandleCaptureReplaySize() {return this.ptr.get(LAYOUT$shaderGroupHandleCaptureReplaySize, OFFSET$shaderGroupHandleCaptureReplaySize);}
-    public void shaderGroupHandleCaptureReplaySize(int value) {this.ptr.set(LAYOUT$shaderGroupHandleCaptureReplaySize, OFFSET$shaderGroupHandleCaptureReplaySize, value);}
-    public java.lang.foreign.MemorySegment shaderGroupHandleCaptureReplaySize_ptr() {return this.ptr.asSlice(OFFSET$shaderGroupHandleCaptureReplaySize, LAYOUT$shaderGroupHandleCaptureReplaySize);}
+    public int shaderGroupBaseAlignment() {return this.ptr.get(LAYOUT__shaderGroupBaseAlignment, OFFSET__shaderGroupBaseAlignment);}
+    public void shaderGroupBaseAlignment(int value) {this.ptr.set(LAYOUT__shaderGroupBaseAlignment, OFFSET__shaderGroupBaseAlignment, value);}
+    public java.lang.foreign.MemorySegment $shaderGroupBaseAlignment() {return this.ptr.asSlice(OFFSET__shaderGroupBaseAlignment, LAYOUT__shaderGroupBaseAlignment);}
 
-    public int maxRayDispatchInvocationCount() {return this.ptr.get(LAYOUT$maxRayDispatchInvocationCount, OFFSET$maxRayDispatchInvocationCount);}
-    public void maxRayDispatchInvocationCount(int value) {this.ptr.set(LAYOUT$maxRayDispatchInvocationCount, OFFSET$maxRayDispatchInvocationCount, value);}
-    public java.lang.foreign.MemorySegment maxRayDispatchInvocationCount_ptr() {return this.ptr.asSlice(OFFSET$maxRayDispatchInvocationCount, LAYOUT$maxRayDispatchInvocationCount);}
+    public int shaderGroupHandleCaptureReplaySize() {return this.ptr.get(LAYOUT__shaderGroupHandleCaptureReplaySize, OFFSET__shaderGroupHandleCaptureReplaySize);}
+    public void shaderGroupHandleCaptureReplaySize(int value) {this.ptr.set(LAYOUT__shaderGroupHandleCaptureReplaySize, OFFSET__shaderGroupHandleCaptureReplaySize, value);}
+    public java.lang.foreign.MemorySegment $shaderGroupHandleCaptureReplaySize() {return this.ptr.asSlice(OFFSET__shaderGroupHandleCaptureReplaySize, LAYOUT__shaderGroupHandleCaptureReplaySize);}
 
-    public int shaderGroupHandleAlignment() {return this.ptr.get(LAYOUT$shaderGroupHandleAlignment, OFFSET$shaderGroupHandleAlignment);}
-    public void shaderGroupHandleAlignment(int value) {this.ptr.set(LAYOUT$shaderGroupHandleAlignment, OFFSET$shaderGroupHandleAlignment, value);}
-    public java.lang.foreign.MemorySegment shaderGroupHandleAlignment_ptr() {return this.ptr.asSlice(OFFSET$shaderGroupHandleAlignment, LAYOUT$shaderGroupHandleAlignment);}
+    public int maxRayDispatchInvocationCount() {return this.ptr.get(LAYOUT__maxRayDispatchInvocationCount, OFFSET__maxRayDispatchInvocationCount);}
+    public void maxRayDispatchInvocationCount(int value) {this.ptr.set(LAYOUT__maxRayDispatchInvocationCount, OFFSET__maxRayDispatchInvocationCount, value);}
+    public java.lang.foreign.MemorySegment $maxRayDispatchInvocationCount() {return this.ptr.asSlice(OFFSET__maxRayDispatchInvocationCount, LAYOUT__maxRayDispatchInvocationCount);}
 
-    public int maxRayHitAttributeSize() {return this.ptr.get(LAYOUT$maxRayHitAttributeSize, OFFSET$maxRayHitAttributeSize);}
-    public void maxRayHitAttributeSize(int value) {this.ptr.set(LAYOUT$maxRayHitAttributeSize, OFFSET$maxRayHitAttributeSize, value);}
-    public java.lang.foreign.MemorySegment maxRayHitAttributeSize_ptr() {return this.ptr.asSlice(OFFSET$maxRayHitAttributeSize, LAYOUT$maxRayHitAttributeSize);}
+    public int shaderGroupHandleAlignment() {return this.ptr.get(LAYOUT__shaderGroupHandleAlignment, OFFSET__shaderGroupHandleAlignment);}
+    public void shaderGroupHandleAlignment(int value) {this.ptr.set(LAYOUT__shaderGroupHandleAlignment, OFFSET__shaderGroupHandleAlignment, value);}
+    public java.lang.foreign.MemorySegment $shaderGroupHandleAlignment() {return this.ptr.asSlice(OFFSET__shaderGroupHandleAlignment, LAYOUT__shaderGroupHandleAlignment);}
+
+    public int maxRayHitAttributeSize() {return this.ptr.get(LAYOUT__maxRayHitAttributeSize, OFFSET__maxRayHitAttributeSize);}
+    public void maxRayHitAttributeSize(int value) {this.ptr.set(LAYOUT__maxRayHitAttributeSize, OFFSET__maxRayHitAttributeSize, value);}
+    public java.lang.foreign.MemorySegment $maxRayHitAttributeSize() {return this.ptr.asSlice(OFFSET__maxRayHitAttributeSize, LAYOUT__maxRayHitAttributeSize);}
 }

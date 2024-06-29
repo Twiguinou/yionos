@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkDepthBiasInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$depthBiasConstantFactor = 16L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$depthBiasClamp = 20L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$depthBiasSlopeFactor = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__depthBiasConstantFactor = 16;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__depthBiasClamp = 20;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__depthBiasSlopeFactor = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$depthBiasConstantFactor,
-            LAYOUT$depthBiasClamp,
-            LAYOUT$depthBiasSlopeFactor,
+            LAYOUT__pNext,
+            LAYOUT__depthBiasConstantFactor,
+            LAYOUT__depthBiasClamp,
+            LAYOUT__depthBiasSlopeFactor,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDepthBiasInfoEXT");
+    ).withByteAlignment(8).withName("VkDepthBiasInfoEXT");
 
     public VkDepthBiasInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDepthBiasInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDepthBiasInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDepthBiasInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDepthBiasInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDepthBiasInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public float depthBiasConstantFactor() {return this.ptr.get(LAYOUT$depthBiasConstantFactor, OFFSET$depthBiasConstantFactor);}
-    public void depthBiasConstantFactor(float value) {this.ptr.set(LAYOUT$depthBiasConstantFactor, OFFSET$depthBiasConstantFactor, value);}
-    public java.lang.foreign.MemorySegment depthBiasConstantFactor_ptr() {return this.ptr.asSlice(OFFSET$depthBiasConstantFactor, LAYOUT$depthBiasConstantFactor);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public float depthBiasClamp() {return this.ptr.get(LAYOUT$depthBiasClamp, OFFSET$depthBiasClamp);}
-    public void depthBiasClamp(float value) {this.ptr.set(LAYOUT$depthBiasClamp, OFFSET$depthBiasClamp, value);}
-    public java.lang.foreign.MemorySegment depthBiasClamp_ptr() {return this.ptr.asSlice(OFFSET$depthBiasClamp, LAYOUT$depthBiasClamp);}
+    public float depthBiasConstantFactor() {return this.ptr.get(LAYOUT__depthBiasConstantFactor, OFFSET__depthBiasConstantFactor);}
+    public void depthBiasConstantFactor(float value) {this.ptr.set(LAYOUT__depthBiasConstantFactor, OFFSET__depthBiasConstantFactor, value);}
+    public java.lang.foreign.MemorySegment $depthBiasConstantFactor() {return this.ptr.asSlice(OFFSET__depthBiasConstantFactor, LAYOUT__depthBiasConstantFactor);}
 
-    public float depthBiasSlopeFactor() {return this.ptr.get(LAYOUT$depthBiasSlopeFactor, OFFSET$depthBiasSlopeFactor);}
-    public void depthBiasSlopeFactor(float value) {this.ptr.set(LAYOUT$depthBiasSlopeFactor, OFFSET$depthBiasSlopeFactor, value);}
-    public java.lang.foreign.MemorySegment depthBiasSlopeFactor_ptr() {return this.ptr.asSlice(OFFSET$depthBiasSlopeFactor, LAYOUT$depthBiasSlopeFactor);}
+    public float depthBiasClamp() {return this.ptr.get(LAYOUT__depthBiasClamp, OFFSET__depthBiasClamp);}
+    public void depthBiasClamp(float value) {this.ptr.set(LAYOUT__depthBiasClamp, OFFSET__depthBiasClamp, value);}
+    public java.lang.foreign.MemorySegment $depthBiasClamp() {return this.ptr.asSlice(OFFSET__depthBiasClamp, LAYOUT__depthBiasClamp);}
+
+    public float depthBiasSlopeFactor() {return this.ptr.get(LAYOUT__depthBiasSlopeFactor, OFFSET__depthBiasSlopeFactor);}
+    public void depthBiasSlopeFactor(float value) {this.ptr.set(LAYOUT__depthBiasSlopeFactor, OFFSET__depthBiasSlopeFactor, value);}
+    public java.lang.foreign.MemorySegment $depthBiasSlopeFactor() {return this.ptr.asSlice(OFFSET__depthBiasSlopeFactor, LAYOUT__depthBiasSlopeFactor);}
 }

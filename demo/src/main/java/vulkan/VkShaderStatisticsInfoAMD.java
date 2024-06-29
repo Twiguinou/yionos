@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkShaderStatisticsInfoAMD(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStageMask = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$resourceUsage = vulkan.VkShaderResourceUsageAMD.gStructLayout;
-    public static final long OFFSET$resourceUsage = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$numPhysicalVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$numPhysicalVgprs = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$numPhysicalSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$numPhysicalSgprs = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$numAvailableVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$numAvailableVgprs = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$numAvailableSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$numAvailableSgprs = 52L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$computeWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$computeWorkGroupSize = 56L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStageMask = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__resourceUsage = vulkan.VkShaderResourceUsageAMD.gRecordLayout;
+    public static final long OFFSET__resourceUsage = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numPhysicalVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__numPhysicalVgprs = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numPhysicalSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__numPhysicalSgprs = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numAvailableVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__numAvailableVgprs = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numAvailableSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__numAvailableSgprs = 52;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__computeWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__computeWorkGroupSize = 56;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$shaderStageMask,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__shaderStageMask,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$resourceUsage,
-            LAYOUT$numPhysicalVgprs,
-            LAYOUT$numPhysicalSgprs,
-            LAYOUT$numAvailableVgprs,
-            LAYOUT$numAvailableSgprs,
-            LAYOUT$computeWorkGroupSize,
+            LAYOUT__resourceUsage,
+            LAYOUT__numPhysicalVgprs,
+            LAYOUT__numPhysicalSgprs,
+            LAYOUT__numAvailableVgprs,
+            LAYOUT__numAvailableSgprs,
+            LAYOUT__computeWorkGroupSize,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkShaderStatisticsInfoAMD");
+    ).withByteAlignment(8).withName("VkShaderStatisticsInfoAMD");
 
     public VkShaderStatisticsInfoAMD(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkShaderStatisticsInfoAMD getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkShaderStatisticsInfoAMD getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkShaderStatisticsInfoAMD(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkShaderStatisticsInfoAMD(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int shaderStageMask() {return this.ptr.get(LAYOUT$shaderStageMask, OFFSET$shaderStageMask);}
-    public void shaderStageMask(int value) {this.ptr.set(LAYOUT$shaderStageMask, OFFSET$shaderStageMask, value);}
-    public java.lang.foreign.MemorySegment shaderStageMask_ptr() {return this.ptr.asSlice(OFFSET$shaderStageMask, LAYOUT$shaderStageMask);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkShaderStatisticsInfoAMD value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public vulkan.VkShaderResourceUsageAMD resourceUsage() {return new vulkan.VkShaderResourceUsageAMD(this.ptr.asSlice(OFFSET$resourceUsage, LAYOUT$resourceUsage));}
+    public int shaderStageMask() {return this.ptr.get(LAYOUT__shaderStageMask, OFFSET__shaderStageMask);}
+    public void shaderStageMask(int value) {this.ptr.set(LAYOUT__shaderStageMask, OFFSET__shaderStageMask, value);}
+    public java.lang.foreign.MemorySegment $shaderStageMask() {return this.ptr.asSlice(OFFSET__shaderStageMask, LAYOUT__shaderStageMask);}
+
+    public vulkan.VkShaderResourceUsageAMD resourceUsage() {return new vulkan.VkShaderResourceUsageAMD(this.ptr.asSlice(OFFSET__resourceUsage, LAYOUT__resourceUsage));}
     public void resourceUsage(java.util.function.Consumer<vulkan.VkShaderResourceUsageAMD> consumer) {consumer.accept(this.resourceUsage());}
-    public void resourceUsage(vulkan.VkShaderResourceUsageAMD value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$resourceUsage, LAYOUT$resourceUsage.byteSize());}
+    public void resourceUsage(vulkan.VkShaderResourceUsageAMD value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__resourceUsage, LAYOUT__resourceUsage.byteSize());}
 
-    public int numPhysicalVgprs() {return this.ptr.get(LAYOUT$numPhysicalVgprs, OFFSET$numPhysicalVgprs);}
-    public void numPhysicalVgprs(int value) {this.ptr.set(LAYOUT$numPhysicalVgprs, OFFSET$numPhysicalVgprs, value);}
-    public java.lang.foreign.MemorySegment numPhysicalVgprs_ptr() {return this.ptr.asSlice(OFFSET$numPhysicalVgprs, LAYOUT$numPhysicalVgprs);}
+    public int numPhysicalVgprs() {return this.ptr.get(LAYOUT__numPhysicalVgprs, OFFSET__numPhysicalVgprs);}
+    public void numPhysicalVgprs(int value) {this.ptr.set(LAYOUT__numPhysicalVgprs, OFFSET__numPhysicalVgprs, value);}
+    public java.lang.foreign.MemorySegment $numPhysicalVgprs() {return this.ptr.asSlice(OFFSET__numPhysicalVgprs, LAYOUT__numPhysicalVgprs);}
 
-    public int numPhysicalSgprs() {return this.ptr.get(LAYOUT$numPhysicalSgprs, OFFSET$numPhysicalSgprs);}
-    public void numPhysicalSgprs(int value) {this.ptr.set(LAYOUT$numPhysicalSgprs, OFFSET$numPhysicalSgprs, value);}
-    public java.lang.foreign.MemorySegment numPhysicalSgprs_ptr() {return this.ptr.asSlice(OFFSET$numPhysicalSgprs, LAYOUT$numPhysicalSgprs);}
+    public int numPhysicalSgprs() {return this.ptr.get(LAYOUT__numPhysicalSgprs, OFFSET__numPhysicalSgprs);}
+    public void numPhysicalSgprs(int value) {this.ptr.set(LAYOUT__numPhysicalSgprs, OFFSET__numPhysicalSgprs, value);}
+    public java.lang.foreign.MemorySegment $numPhysicalSgprs() {return this.ptr.asSlice(OFFSET__numPhysicalSgprs, LAYOUT__numPhysicalSgprs);}
 
-    public int numAvailableVgprs() {return this.ptr.get(LAYOUT$numAvailableVgprs, OFFSET$numAvailableVgprs);}
-    public void numAvailableVgprs(int value) {this.ptr.set(LAYOUT$numAvailableVgprs, OFFSET$numAvailableVgprs, value);}
-    public java.lang.foreign.MemorySegment numAvailableVgprs_ptr() {return this.ptr.asSlice(OFFSET$numAvailableVgprs, LAYOUT$numAvailableVgprs);}
+    public int numAvailableVgprs() {return this.ptr.get(LAYOUT__numAvailableVgprs, OFFSET__numAvailableVgprs);}
+    public void numAvailableVgprs(int value) {this.ptr.set(LAYOUT__numAvailableVgprs, OFFSET__numAvailableVgprs, value);}
+    public java.lang.foreign.MemorySegment $numAvailableVgprs() {return this.ptr.asSlice(OFFSET__numAvailableVgprs, LAYOUT__numAvailableVgprs);}
 
-    public int numAvailableSgprs() {return this.ptr.get(LAYOUT$numAvailableSgprs, OFFSET$numAvailableSgprs);}
-    public void numAvailableSgprs(int value) {this.ptr.set(LAYOUT$numAvailableSgprs, OFFSET$numAvailableSgprs, value);}
-    public java.lang.foreign.MemorySegment numAvailableSgprs_ptr() {return this.ptr.asSlice(OFFSET$numAvailableSgprs, LAYOUT$numAvailableSgprs);}
+    public int numAvailableSgprs() {return this.ptr.get(LAYOUT__numAvailableSgprs, OFFSET__numAvailableSgprs);}
+    public void numAvailableSgprs(int value) {this.ptr.set(LAYOUT__numAvailableSgprs, OFFSET__numAvailableSgprs, value);}
+    public java.lang.foreign.MemorySegment $numAvailableSgprs() {return this.ptr.asSlice(OFFSET__numAvailableSgprs, LAYOUT__numAvailableSgprs);}
 
-    public java.lang.foreign.MemorySegment computeWorkGroupSize() {return this.ptr.asSlice(OFFSET$computeWorkGroupSize, LAYOUT$computeWorkGroupSize);}
-    public int computeWorkGroupSize(int i) {return this.computeWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void computeWorkGroupSize(int i, int value) {this.computeWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public java.lang.foreign.MemorySegment computeWorkGroupSize() {return this.ptr.asSlice(OFFSET__computeWorkGroupSize, LAYOUT__computeWorkGroupSize);}
+    public int computeWorkGroupSize(int index) {return this.computeWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void computeWorkGroupSize(int index, int value) {this.computeWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 }

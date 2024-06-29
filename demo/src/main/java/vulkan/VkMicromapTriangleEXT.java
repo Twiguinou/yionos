@@ -2,38 +2,43 @@ package vulkan;
 
 public record VkMicromapTriangleEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dataOffset = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dataOffset = 0L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$subdivisionLevel = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$subdivisionLevel = 4L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$format = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$format = 6L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dataOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dataOffset = 0;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__subdivisionLevel = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__subdivisionLevel = 4;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__format = 6;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$dataOffset,
-            LAYOUT$subdivisionLevel,
-            LAYOUT$format
-    ).withName("VkMicromapTriangleEXT");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__dataOffset,
+            LAYOUT__subdivisionLevel,
+            LAYOUT__format
+    ).withByteAlignment(4).withName("VkMicromapTriangleEXT");
 
     public VkMicromapTriangleEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkMicromapTriangleEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkMicromapTriangleEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkMicromapTriangleEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkMicromapTriangleEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int dataOffset() {return this.ptr.get(LAYOUT$dataOffset, OFFSET$dataOffset);}
-    public void dataOffset(int value) {this.ptr.set(LAYOUT$dataOffset, OFFSET$dataOffset, value);}
-    public java.lang.foreign.MemorySegment dataOffset_ptr() {return this.ptr.asSlice(OFFSET$dataOffset, LAYOUT$dataOffset);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkMicromapTriangleEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public short subdivisionLevel() {return this.ptr.get(LAYOUT$subdivisionLevel, OFFSET$subdivisionLevel);}
-    public void subdivisionLevel(short value) {this.ptr.set(LAYOUT$subdivisionLevel, OFFSET$subdivisionLevel, value);}
-    public java.lang.foreign.MemorySegment subdivisionLevel_ptr() {return this.ptr.asSlice(OFFSET$subdivisionLevel, LAYOUT$subdivisionLevel);}
+    public int dataOffset() {return this.ptr.get(LAYOUT__dataOffset, OFFSET__dataOffset);}
+    public void dataOffset(int value) {this.ptr.set(LAYOUT__dataOffset, OFFSET__dataOffset, value);}
+    public java.lang.foreign.MemorySegment $dataOffset() {return this.ptr.asSlice(OFFSET__dataOffset, LAYOUT__dataOffset);}
 
-    public short format() {return this.ptr.get(LAYOUT$format, OFFSET$format);}
-    public void format(short value) {this.ptr.set(LAYOUT$format, OFFSET$format, value);}
-    public java.lang.foreign.MemorySegment format_ptr() {return this.ptr.asSlice(OFFSET$format, LAYOUT$format);}
+    public short subdivisionLevel() {return this.ptr.get(LAYOUT__subdivisionLevel, OFFSET__subdivisionLevel);}
+    public void subdivisionLevel(short value) {this.ptr.set(LAYOUT__subdivisionLevel, OFFSET__subdivisionLevel, value);}
+    public java.lang.foreign.MemorySegment $subdivisionLevel() {return this.ptr.asSlice(OFFSET__subdivisionLevel, LAYOUT__subdivisionLevel);}
+
+    public short format() {return this.ptr.get(LAYOUT__format, OFFSET__format);}
+    public void format(short value) {this.ptr.set(LAYOUT__format, OFFSET__format, value);}
+    public java.lang.foreign.MemorySegment $format() {return this.ptr.asSlice(OFFSET__format, LAYOUT__format);}
 }

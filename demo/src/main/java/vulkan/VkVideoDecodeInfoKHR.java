@@ -2,90 +2,95 @@ package vulkan;
 
 public record VkVideoDecodeInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$srcBuffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$srcBuffer = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$srcBufferOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$srcBufferOffset = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$srcBufferRange = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$srcBufferRange = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$dstPictureResource = vulkan.VkVideoPictureResourceInfoKHR.gStructLayout;
-    public static final long OFFSET$dstPictureResource = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSetupReferenceSlot = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSetupReferenceSlot = 96L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$referenceSlotCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$referenceSlotCount = 104L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pReferenceSlots = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pReferenceSlots = 112L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__srcBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__srcBuffer = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcBufferOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__srcBufferOffset = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcBufferRange = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__srcBufferRange = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstPictureResource = vulkan.VkVideoPictureResourceInfoKHR.gRecordLayout;
+    public static final long OFFSET__dstPictureResource = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSetupReferenceSlot = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSetupReferenceSlot = 96;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__referenceSlotCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__referenceSlotCount = 104;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pReferenceSlots = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pReferenceSlots = 112;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
+            LAYOUT__pNext,
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$srcBuffer,
-            LAYOUT$srcBufferOffset,
-            LAYOUT$srcBufferRange,
-            LAYOUT$dstPictureResource,
-            LAYOUT$pSetupReferenceSlot,
-            LAYOUT$referenceSlotCount,
+            LAYOUT__srcBuffer,
+            LAYOUT__srcBufferOffset,
+            LAYOUT__srcBufferRange,
+            LAYOUT__dstPictureResource,
+            LAYOUT__pSetupReferenceSlot,
+            LAYOUT__referenceSlotCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pReferenceSlots
-    ).withName("VkVideoDecodeInfoKHR");
+            LAYOUT__pReferenceSlots
+    ).withByteAlignment(8).withName("VkVideoDecodeInfoKHR");
 
     public VkVideoDecodeInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoDecodeInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoDecodeInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoDecodeInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoDecodeInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoDecodeInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment srcBuffer() {return this.ptr.get(LAYOUT$srcBuffer, OFFSET$srcBuffer);}
-    public void srcBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$srcBuffer, OFFSET$srcBuffer, value);}
-    public java.lang.foreign.MemorySegment srcBuffer_ptr() {return this.ptr.asSlice(OFFSET$srcBuffer, LAYOUT$srcBuffer);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public long srcBufferOffset() {return this.ptr.get(LAYOUT$srcBufferOffset, OFFSET$srcBufferOffset);}
-    public void srcBufferOffset(long value) {this.ptr.set(LAYOUT$srcBufferOffset, OFFSET$srcBufferOffset, value);}
-    public java.lang.foreign.MemorySegment srcBufferOffset_ptr() {return this.ptr.asSlice(OFFSET$srcBufferOffset, LAYOUT$srcBufferOffset);}
+    public java.lang.foreign.MemorySegment srcBuffer() {return this.ptr.get(LAYOUT__srcBuffer, OFFSET__srcBuffer);}
+    public void srcBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__srcBuffer, OFFSET__srcBuffer, value);}
+    public java.lang.foreign.MemorySegment $srcBuffer() {return this.ptr.asSlice(OFFSET__srcBuffer, LAYOUT__srcBuffer);}
 
-    public long srcBufferRange() {return this.ptr.get(LAYOUT$srcBufferRange, OFFSET$srcBufferRange);}
-    public void srcBufferRange(long value) {this.ptr.set(LAYOUT$srcBufferRange, OFFSET$srcBufferRange, value);}
-    public java.lang.foreign.MemorySegment srcBufferRange_ptr() {return this.ptr.asSlice(OFFSET$srcBufferRange, LAYOUT$srcBufferRange);}
+    public long srcBufferOffset() {return this.ptr.get(LAYOUT__srcBufferOffset, OFFSET__srcBufferOffset);}
+    public void srcBufferOffset(long value) {this.ptr.set(LAYOUT__srcBufferOffset, OFFSET__srcBufferOffset, value);}
+    public java.lang.foreign.MemorySegment $srcBufferOffset() {return this.ptr.asSlice(OFFSET__srcBufferOffset, LAYOUT__srcBufferOffset);}
 
-    public vulkan.VkVideoPictureResourceInfoKHR dstPictureResource() {return new vulkan.VkVideoPictureResourceInfoKHR(this.ptr.asSlice(OFFSET$dstPictureResource, LAYOUT$dstPictureResource));}
+    public long srcBufferRange() {return this.ptr.get(LAYOUT__srcBufferRange, OFFSET__srcBufferRange);}
+    public void srcBufferRange(long value) {this.ptr.set(LAYOUT__srcBufferRange, OFFSET__srcBufferRange, value);}
+    public java.lang.foreign.MemorySegment $srcBufferRange() {return this.ptr.asSlice(OFFSET__srcBufferRange, LAYOUT__srcBufferRange);}
+
+    public vulkan.VkVideoPictureResourceInfoKHR dstPictureResource() {return new vulkan.VkVideoPictureResourceInfoKHR(this.ptr.asSlice(OFFSET__dstPictureResource, LAYOUT__dstPictureResource));}
     public void dstPictureResource(java.util.function.Consumer<vulkan.VkVideoPictureResourceInfoKHR> consumer) {consumer.accept(this.dstPictureResource());}
-    public void dstPictureResource(vulkan.VkVideoPictureResourceInfoKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$dstPictureResource, LAYOUT$dstPictureResource.byteSize());}
+    public void dstPictureResource(vulkan.VkVideoPictureResourceInfoKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__dstPictureResource, LAYOUT__dstPictureResource.byteSize());}
 
-    public java.lang.foreign.MemorySegment pSetupReferenceSlot() {return this.ptr.get(LAYOUT$pSetupReferenceSlot, OFFSET$pSetupReferenceSlot);}
-    public void pSetupReferenceSlot(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSetupReferenceSlot, OFFSET$pSetupReferenceSlot, value);}
-    public java.lang.foreign.MemorySegment pSetupReferenceSlot_ptr() {return this.ptr.asSlice(OFFSET$pSetupReferenceSlot, LAYOUT$pSetupReferenceSlot);}
+    public java.lang.foreign.MemorySegment pSetupReferenceSlot() {return this.ptr.get(LAYOUT__pSetupReferenceSlot, OFFSET__pSetupReferenceSlot);}
+    public void pSetupReferenceSlot(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSetupReferenceSlot, OFFSET__pSetupReferenceSlot, value);}
+    public java.lang.foreign.MemorySegment $pSetupReferenceSlot() {return this.ptr.asSlice(OFFSET__pSetupReferenceSlot, LAYOUT__pSetupReferenceSlot);}
 
-    public int referenceSlotCount() {return this.ptr.get(LAYOUT$referenceSlotCount, OFFSET$referenceSlotCount);}
-    public void referenceSlotCount(int value) {this.ptr.set(LAYOUT$referenceSlotCount, OFFSET$referenceSlotCount, value);}
-    public java.lang.foreign.MemorySegment referenceSlotCount_ptr() {return this.ptr.asSlice(OFFSET$referenceSlotCount, LAYOUT$referenceSlotCount);}
+    public int referenceSlotCount() {return this.ptr.get(LAYOUT__referenceSlotCount, OFFSET__referenceSlotCount);}
+    public void referenceSlotCount(int value) {this.ptr.set(LAYOUT__referenceSlotCount, OFFSET__referenceSlotCount, value);}
+    public java.lang.foreign.MemorySegment $referenceSlotCount() {return this.ptr.asSlice(OFFSET__referenceSlotCount, LAYOUT__referenceSlotCount);}
 
-    public java.lang.foreign.MemorySegment pReferenceSlots() {return this.ptr.get(LAYOUT$pReferenceSlots, OFFSET$pReferenceSlots);}
-    public void pReferenceSlots(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pReferenceSlots, OFFSET$pReferenceSlots, value);}
-    public java.lang.foreign.MemorySegment pReferenceSlots_ptr() {return this.ptr.asSlice(OFFSET$pReferenceSlots, LAYOUT$pReferenceSlots);}
+    public java.lang.foreign.MemorySegment pReferenceSlots() {return this.ptr.get(LAYOUT__pReferenceSlots, OFFSET__pReferenceSlots);}
+    public void pReferenceSlots(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pReferenceSlots, OFFSET__pReferenceSlots, value);}
+    public java.lang.foreign.MemorySegment $pReferenceSlots() {return this.ptr.asSlice(OFFSET__pReferenceSlots, LAYOUT__pReferenceSlots);}
 }

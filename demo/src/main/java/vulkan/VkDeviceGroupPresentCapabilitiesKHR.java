@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkDeviceGroupPresentCapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$presentMask = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$presentMask = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$modes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$modes = 144L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__presentMask = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__presentMask = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__modes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__modes = 144;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$presentMask,
-            LAYOUT$modes,
+            LAYOUT__pNext,
+            LAYOUT__presentMask,
+            LAYOUT__modes,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDeviceGroupPresentCapabilitiesKHR");
+    ).withByteAlignment(8).withName("VkDeviceGroupPresentCapabilitiesKHR");
 
     public VkDeviceGroupPresentCapabilitiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceGroupPresentCapabilitiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceGroupPresentCapabilitiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceGroupPresentCapabilitiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceGroupPresentCapabilitiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceGroupPresentCapabilitiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment presentMask() {return this.ptr.asSlice(OFFSET$presentMask, LAYOUT$presentMask);}
-    public int presentMask(int i) {return this.presentMask().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void presentMask(int i, int value) {this.presentMask().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int modes() {return this.ptr.get(LAYOUT$modes, OFFSET$modes);}
-    public void modes(int value) {this.ptr.set(LAYOUT$modes, OFFSET$modes, value);}
-    public java.lang.foreign.MemorySegment modes_ptr() {return this.ptr.asSlice(OFFSET$modes, LAYOUT$modes);}
+    public java.lang.foreign.MemorySegment presentMask() {return this.ptr.asSlice(OFFSET__presentMask, LAYOUT__presentMask);}
+    public int presentMask(int index) {return this.presentMask().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void presentMask(int index, int value) {this.presentMask().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
+
+    public int modes() {return this.ptr.get(LAYOUT__modes, OFFSET__modes);}
+    public void modes(int value) {this.ptr.set(LAYOUT__modes, OFFSET__modes, value);}
+    public java.lang.foreign.MemorySegment $modes() {return this.ptr.asSlice(OFFSET__modes, LAYOUT__modes);}
 }

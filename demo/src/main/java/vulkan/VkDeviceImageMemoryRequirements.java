@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkDeviceImageMemoryRequirements(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pCreateInfo = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pCreateInfo = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$planeAspect = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$planeAspect = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCreateInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pCreateInfo = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeAspect = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__planeAspect = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$pCreateInfo,
-            LAYOUT$planeAspect,
+            LAYOUT__pNext,
+            LAYOUT__pCreateInfo,
+            LAYOUT__planeAspect,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDeviceImageMemoryRequirements");
+    ).withByteAlignment(8).withName("VkDeviceImageMemoryRequirements");
 
     public VkDeviceImageMemoryRequirements(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceImageMemoryRequirements getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceImageMemoryRequirements getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceImageMemoryRequirements(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceImageMemoryRequirements(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceImageMemoryRequirements value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment pCreateInfo() {return this.ptr.get(LAYOUT$pCreateInfo, OFFSET$pCreateInfo);}
-    public void pCreateInfo(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pCreateInfo, OFFSET$pCreateInfo, value);}
-    public java.lang.foreign.MemorySegment pCreateInfo_ptr() {return this.ptr.asSlice(OFFSET$pCreateInfo, LAYOUT$pCreateInfo);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int planeAspect() {return this.ptr.get(LAYOUT$planeAspect, OFFSET$planeAspect);}
-    public void planeAspect(int value) {this.ptr.set(LAYOUT$planeAspect, OFFSET$planeAspect, value);}
-    public java.lang.foreign.MemorySegment planeAspect_ptr() {return this.ptr.asSlice(OFFSET$planeAspect, LAYOUT$planeAspect);}
+    public java.lang.foreign.MemorySegment pCreateInfo() {return this.ptr.get(LAYOUT__pCreateInfo, OFFSET__pCreateInfo);}
+    public void pCreateInfo(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pCreateInfo, OFFSET__pCreateInfo, value);}
+    public java.lang.foreign.MemorySegment $pCreateInfo() {return this.ptr.asSlice(OFFSET__pCreateInfo, LAYOUT__pCreateInfo);}
+
+    public int planeAspect() {return this.ptr.get(LAYOUT__planeAspect, OFFSET__planeAspect);}
+    public void planeAspect(int value) {this.ptr.set(LAYOUT__planeAspect, OFFSET__planeAspect, value);}
+    public java.lang.foreign.MemorySegment $planeAspect() {return this.ptr.asSlice(OFFSET__planeAspect, LAYOUT__planeAspect);}
 }

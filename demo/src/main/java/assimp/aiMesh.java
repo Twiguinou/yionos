@@ -2,161 +2,166 @@ package assimp;
 
 public record aiMesh(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mPrimitiveTypes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mPrimitiveTypes = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mNumVertices = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mNumVertices = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mNumFaces = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mNumFaces = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mVertices = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mVertices = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mNormals = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mNormals = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mTangents = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mTangents = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mBitangents = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mBitangents = 40L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$mColors = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.ADDRESS);
-    public static final long OFFSET$mColors = 48L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$mTextureCoords = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.ADDRESS);
-    public static final long OFFSET$mTextureCoords = 112L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$mNumUVComponents = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$mNumUVComponents = 176L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mFaces = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mFaces = 208L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mNumBones = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mNumBones = 216L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mBones = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mBones = 224L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mMaterialIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mMaterialIndex = 232L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mName = assimp.aiString.gStructLayout;
-    public static final long OFFSET$mName = 236L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mNumAnimMeshes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mNumAnimMeshes = 1264L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mAnimMeshes = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mAnimMeshes = 1272L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mMethod = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mMethod = 1280L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mAABB = assimp.aiAABB.gStructLayout;
-    public static final long OFFSET$mAABB = 1284L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mTextureCoordsNames = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mTextureCoordsNames = 1312L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mPrimitiveTypes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mPrimitiveTypes = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumVertices = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mNumVertices = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumFaces = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mNumFaces = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mVertices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mVertices = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mNormals = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mNormals = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mTangents = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mTangents = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mBitangents = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mBitangents = 40;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__mColors = java.lang.foreign.MemoryLayout.sequenceLayout(8, jpgen.NativeTypes.UNBOUNDED_POINTER);
+    public static final long OFFSET__mColors = 48;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__mTextureCoords = java.lang.foreign.MemoryLayout.sequenceLayout(8, jpgen.NativeTypes.UNBOUNDED_POINTER);
+    public static final long OFFSET__mTextureCoords = 112;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__mNumUVComponents = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__mNumUVComponents = 176;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mFaces = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mFaces = 208;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumBones = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mNumBones = 216;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mBones = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mBones = 224;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMaterialIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mMaterialIndex = 232;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final long OFFSET__mName = 236;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumAnimMeshes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mNumAnimMeshes = 1264;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mAnimMeshes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mAnimMeshes = 1272;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMethod = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mMethod = 1280;
+    public static final java.lang.foreign.StructLayout LAYOUT__mAABB = assimp.aiAABB.gRecordLayout;
+    public static final long OFFSET__mAABB = 1284;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mTextureCoordsNames = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mTextureCoordsNames = 1312;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$mPrimitiveTypes,
-            LAYOUT$mNumVertices,
-            LAYOUT$mNumFaces,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__mPrimitiveTypes,
+            LAYOUT__mNumVertices,
+            LAYOUT__mNumFaces,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mVertices,
-            LAYOUT$mNormals,
-            LAYOUT$mTangents,
-            LAYOUT$mBitangents,
-            LAYOUT$mColors,
-            LAYOUT$mTextureCoords,
-            LAYOUT$mNumUVComponents,
-            LAYOUT$mFaces,
-            LAYOUT$mNumBones,
+            LAYOUT__mVertices,
+            LAYOUT__mNormals,
+            LAYOUT__mTangents,
+            LAYOUT__mBitangents,
+            LAYOUT__mColors,
+            LAYOUT__mTextureCoords,
+            LAYOUT__mNumUVComponents,
+            LAYOUT__mFaces,
+            LAYOUT__mNumBones,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mBones,
-            LAYOUT$mMaterialIndex,
-            LAYOUT$mName,
-            LAYOUT$mNumAnimMeshes,
+            LAYOUT__mBones,
+            LAYOUT__mMaterialIndex,
+            LAYOUT__mName,
+            LAYOUT__mNumAnimMeshes,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mAnimMeshes,
-            LAYOUT$mMethod,
-            LAYOUT$mAABB,
+            LAYOUT__mAnimMeshes,
+            LAYOUT__mMethod,
+            LAYOUT__mAABB,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mTextureCoordsNames
-    ).withName("aiMesh");
+            LAYOUT__mTextureCoordsNames
+    ).withByteAlignment(8).withName("aiMesh");
 
     public aiMesh(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiMesh getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiMesh getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiMesh(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiMesh(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int mPrimitiveTypes() {return this.ptr.get(LAYOUT$mPrimitiveTypes, OFFSET$mPrimitiveTypes);}
-    public void mPrimitiveTypes(int value) {this.ptr.set(LAYOUT$mPrimitiveTypes, OFFSET$mPrimitiveTypes, value);}
-    public java.lang.foreign.MemorySegment mPrimitiveTypes_ptr() {return this.ptr.asSlice(OFFSET$mPrimitiveTypes, LAYOUT$mPrimitiveTypes);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiMesh value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int mNumVertices() {return this.ptr.get(LAYOUT$mNumVertices, OFFSET$mNumVertices);}
-    public void mNumVertices(int value) {this.ptr.set(LAYOUT$mNumVertices, OFFSET$mNumVertices, value);}
-    public java.lang.foreign.MemorySegment mNumVertices_ptr() {return this.ptr.asSlice(OFFSET$mNumVertices, LAYOUT$mNumVertices);}
+    public int mPrimitiveTypes() {return this.ptr.get(LAYOUT__mPrimitiveTypes, OFFSET__mPrimitiveTypes);}
+    public void mPrimitiveTypes(int value) {this.ptr.set(LAYOUT__mPrimitiveTypes, OFFSET__mPrimitiveTypes, value);}
+    public java.lang.foreign.MemorySegment $mPrimitiveTypes() {return this.ptr.asSlice(OFFSET__mPrimitiveTypes, LAYOUT__mPrimitiveTypes);}
 
-    public int mNumFaces() {return this.ptr.get(LAYOUT$mNumFaces, OFFSET$mNumFaces);}
-    public void mNumFaces(int value) {this.ptr.set(LAYOUT$mNumFaces, OFFSET$mNumFaces, value);}
-    public java.lang.foreign.MemorySegment mNumFaces_ptr() {return this.ptr.asSlice(OFFSET$mNumFaces, LAYOUT$mNumFaces);}
+    public int mNumVertices() {return this.ptr.get(LAYOUT__mNumVertices, OFFSET__mNumVertices);}
+    public void mNumVertices(int value) {this.ptr.set(LAYOUT__mNumVertices, OFFSET__mNumVertices, value);}
+    public java.lang.foreign.MemorySegment $mNumVertices() {return this.ptr.asSlice(OFFSET__mNumVertices, LAYOUT__mNumVertices);}
 
-    public java.lang.foreign.MemorySegment mVertices() {return this.ptr.get(LAYOUT$mVertices, OFFSET$mVertices);}
-    public void mVertices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mVertices, OFFSET$mVertices, value);}
-    public java.lang.foreign.MemorySegment mVertices_ptr() {return this.ptr.asSlice(OFFSET$mVertices, LAYOUT$mVertices);}
+    public int mNumFaces() {return this.ptr.get(LAYOUT__mNumFaces, OFFSET__mNumFaces);}
+    public void mNumFaces(int value) {this.ptr.set(LAYOUT__mNumFaces, OFFSET__mNumFaces, value);}
+    public java.lang.foreign.MemorySegment $mNumFaces() {return this.ptr.asSlice(OFFSET__mNumFaces, LAYOUT__mNumFaces);}
 
-    public java.lang.foreign.MemorySegment mNormals() {return this.ptr.get(LAYOUT$mNormals, OFFSET$mNormals);}
-    public void mNormals(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mNormals, OFFSET$mNormals, value);}
-    public java.lang.foreign.MemorySegment mNormals_ptr() {return this.ptr.asSlice(OFFSET$mNormals, LAYOUT$mNormals);}
+    public java.lang.foreign.MemorySegment mVertices() {return this.ptr.get(LAYOUT__mVertices, OFFSET__mVertices);}
+    public void mVertices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mVertices, OFFSET__mVertices, value);}
+    public java.lang.foreign.MemorySegment $mVertices() {return this.ptr.asSlice(OFFSET__mVertices, LAYOUT__mVertices);}
 
-    public java.lang.foreign.MemorySegment mTangents() {return this.ptr.get(LAYOUT$mTangents, OFFSET$mTangents);}
-    public void mTangents(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mTangents, OFFSET$mTangents, value);}
-    public java.lang.foreign.MemorySegment mTangents_ptr() {return this.ptr.asSlice(OFFSET$mTangents, LAYOUT$mTangents);}
+    public java.lang.foreign.MemorySegment mNormals() {return this.ptr.get(LAYOUT__mNormals, OFFSET__mNormals);}
+    public void mNormals(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mNormals, OFFSET__mNormals, value);}
+    public java.lang.foreign.MemorySegment $mNormals() {return this.ptr.asSlice(OFFSET__mNormals, LAYOUT__mNormals);}
 
-    public java.lang.foreign.MemorySegment mBitangents() {return this.ptr.get(LAYOUT$mBitangents, OFFSET$mBitangents);}
-    public void mBitangents(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mBitangents, OFFSET$mBitangents, value);}
-    public java.lang.foreign.MemorySegment mBitangents_ptr() {return this.ptr.asSlice(OFFSET$mBitangents, LAYOUT$mBitangents);}
+    public java.lang.foreign.MemorySegment mTangents() {return this.ptr.get(LAYOUT__mTangents, OFFSET__mTangents);}
+    public void mTangents(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mTangents, OFFSET__mTangents, value);}
+    public java.lang.foreign.MemorySegment $mTangents() {return this.ptr.asSlice(OFFSET__mTangents, LAYOUT__mTangents);}
 
-    public java.lang.foreign.MemorySegment mColors() {return this.ptr.asSlice(OFFSET$mColors, LAYOUT$mColors);}
-    public java.lang.foreign.MemorySegment mColors(int i) {return this.mColors().getAtIndex(java.lang.foreign.ValueLayout.ADDRESS, i);}
-    public void mColors(int i, java.lang.foreign.MemorySegment value) {this.mColors().setAtIndex(java.lang.foreign.ValueLayout.ADDRESS, i, value);}
+    public java.lang.foreign.MemorySegment mBitangents() {return this.ptr.get(LAYOUT__mBitangents, OFFSET__mBitangents);}
+    public void mBitangents(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mBitangents, OFFSET__mBitangents, value);}
+    public java.lang.foreign.MemorySegment $mBitangents() {return this.ptr.asSlice(OFFSET__mBitangents, LAYOUT__mBitangents);}
 
-    public java.lang.foreign.MemorySegment mTextureCoords() {return this.ptr.asSlice(OFFSET$mTextureCoords, LAYOUT$mTextureCoords);}
-    public java.lang.foreign.MemorySegment mTextureCoords(int i) {return this.mTextureCoords().getAtIndex(java.lang.foreign.ValueLayout.ADDRESS, i);}
-    public void mTextureCoords(int i, java.lang.foreign.MemorySegment value) {this.mTextureCoords().setAtIndex(java.lang.foreign.ValueLayout.ADDRESS, i, value);}
+    public java.lang.foreign.MemorySegment mColors() {return this.ptr.asSlice(OFFSET__mColors, LAYOUT__mColors);}
+    public java.lang.foreign.MemorySegment mColors(int index) {return this.mColors().getAtIndex(jpgen.NativeTypes.UNBOUNDED_POINTER, index);}
+    public void mColors(int index, java.lang.foreign.MemorySegment value) {this.mColors().setAtIndex(jpgen.NativeTypes.UNBOUNDED_POINTER, index, value);}
 
-    public java.lang.foreign.MemorySegment mNumUVComponents() {return this.ptr.asSlice(OFFSET$mNumUVComponents, LAYOUT$mNumUVComponents);}
-    public int mNumUVComponents(int i) {return this.mNumUVComponents().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void mNumUVComponents(int i, int value) {this.mNumUVComponents().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public java.lang.foreign.MemorySegment mTextureCoords() {return this.ptr.asSlice(OFFSET__mTextureCoords, LAYOUT__mTextureCoords);}
+    public java.lang.foreign.MemorySegment mTextureCoords(int index) {return this.mTextureCoords().getAtIndex(jpgen.NativeTypes.UNBOUNDED_POINTER, index);}
+    public void mTextureCoords(int index, java.lang.foreign.MemorySegment value) {this.mTextureCoords().setAtIndex(jpgen.NativeTypes.UNBOUNDED_POINTER, index, value);}
 
-    public java.lang.foreign.MemorySegment mFaces() {return this.ptr.get(LAYOUT$mFaces, OFFSET$mFaces);}
-    public void mFaces(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mFaces, OFFSET$mFaces, value);}
-    public java.lang.foreign.MemorySegment mFaces_ptr() {return this.ptr.asSlice(OFFSET$mFaces, LAYOUT$mFaces);}
+    public java.lang.foreign.MemorySegment mNumUVComponents() {return this.ptr.asSlice(OFFSET__mNumUVComponents, LAYOUT__mNumUVComponents);}
+    public int mNumUVComponents(int index) {return this.mNumUVComponents().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void mNumUVComponents(int index, int value) {this.mNumUVComponents().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 
-    public int mNumBones() {return this.ptr.get(LAYOUT$mNumBones, OFFSET$mNumBones);}
-    public void mNumBones(int value) {this.ptr.set(LAYOUT$mNumBones, OFFSET$mNumBones, value);}
-    public java.lang.foreign.MemorySegment mNumBones_ptr() {return this.ptr.asSlice(OFFSET$mNumBones, LAYOUT$mNumBones);}
+    public java.lang.foreign.MemorySegment mFaces() {return this.ptr.get(LAYOUT__mFaces, OFFSET__mFaces);}
+    public void mFaces(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mFaces, OFFSET__mFaces, value);}
+    public java.lang.foreign.MemorySegment $mFaces() {return this.ptr.asSlice(OFFSET__mFaces, LAYOUT__mFaces);}
 
-    public java.lang.foreign.MemorySegment mBones() {return this.ptr.get(LAYOUT$mBones, OFFSET$mBones);}
-    public void mBones(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mBones, OFFSET$mBones, value);}
-    public java.lang.foreign.MemorySegment mBones_ptr() {return this.ptr.asSlice(OFFSET$mBones, LAYOUT$mBones);}
+    public int mNumBones() {return this.ptr.get(LAYOUT__mNumBones, OFFSET__mNumBones);}
+    public void mNumBones(int value) {this.ptr.set(LAYOUT__mNumBones, OFFSET__mNumBones, value);}
+    public java.lang.foreign.MemorySegment $mNumBones() {return this.ptr.asSlice(OFFSET__mNumBones, LAYOUT__mNumBones);}
 
-    public int mMaterialIndex() {return this.ptr.get(LAYOUT$mMaterialIndex, OFFSET$mMaterialIndex);}
-    public void mMaterialIndex(int value) {this.ptr.set(LAYOUT$mMaterialIndex, OFFSET$mMaterialIndex, value);}
-    public java.lang.foreign.MemorySegment mMaterialIndex_ptr() {return this.ptr.asSlice(OFFSET$mMaterialIndex, LAYOUT$mMaterialIndex);}
+    public java.lang.foreign.MemorySegment mBones() {return this.ptr.get(LAYOUT__mBones, OFFSET__mBones);}
+    public void mBones(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mBones, OFFSET__mBones, value);}
+    public java.lang.foreign.MemorySegment $mBones() {return this.ptr.asSlice(OFFSET__mBones, LAYOUT__mBones);}
 
-    public assimp.aiString mName() {return new assimp.aiString(this.ptr.asSlice(OFFSET$mName, LAYOUT$mName));}
+    public int mMaterialIndex() {return this.ptr.get(LAYOUT__mMaterialIndex, OFFSET__mMaterialIndex);}
+    public void mMaterialIndex(int value) {this.ptr.set(LAYOUT__mMaterialIndex, OFFSET__mMaterialIndex, value);}
+    public java.lang.foreign.MemorySegment $mMaterialIndex() {return this.ptr.asSlice(OFFSET__mMaterialIndex, LAYOUT__mMaterialIndex);}
+
+    public assimp.aiString mName() {return new assimp.aiString(this.ptr.asSlice(OFFSET__mName, LAYOUT__mName));}
     public void mName(java.util.function.Consumer<assimp.aiString> consumer) {consumer.accept(this.mName());}
-    public void mName(assimp.aiString value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mName, LAYOUT$mName.byteSize());}
+    public void mName(assimp.aiString value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mName, LAYOUT__mName.byteSize());}
 
-    public int mNumAnimMeshes() {return this.ptr.get(LAYOUT$mNumAnimMeshes, OFFSET$mNumAnimMeshes);}
-    public void mNumAnimMeshes(int value) {this.ptr.set(LAYOUT$mNumAnimMeshes, OFFSET$mNumAnimMeshes, value);}
-    public java.lang.foreign.MemorySegment mNumAnimMeshes_ptr() {return this.ptr.asSlice(OFFSET$mNumAnimMeshes, LAYOUT$mNumAnimMeshes);}
+    public int mNumAnimMeshes() {return this.ptr.get(LAYOUT__mNumAnimMeshes, OFFSET__mNumAnimMeshes);}
+    public void mNumAnimMeshes(int value) {this.ptr.set(LAYOUT__mNumAnimMeshes, OFFSET__mNumAnimMeshes, value);}
+    public java.lang.foreign.MemorySegment $mNumAnimMeshes() {return this.ptr.asSlice(OFFSET__mNumAnimMeshes, LAYOUT__mNumAnimMeshes);}
 
-    public java.lang.foreign.MemorySegment mAnimMeshes() {return this.ptr.get(LAYOUT$mAnimMeshes, OFFSET$mAnimMeshes);}
-    public void mAnimMeshes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mAnimMeshes, OFFSET$mAnimMeshes, value);}
-    public java.lang.foreign.MemorySegment mAnimMeshes_ptr() {return this.ptr.asSlice(OFFSET$mAnimMeshes, LAYOUT$mAnimMeshes);}
+    public java.lang.foreign.MemorySegment mAnimMeshes() {return this.ptr.get(LAYOUT__mAnimMeshes, OFFSET__mAnimMeshes);}
+    public void mAnimMeshes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mAnimMeshes, OFFSET__mAnimMeshes, value);}
+    public java.lang.foreign.MemorySegment $mAnimMeshes() {return this.ptr.asSlice(OFFSET__mAnimMeshes, LAYOUT__mAnimMeshes);}
 
-    public int mMethod() {return this.ptr.get(LAYOUT$mMethod, OFFSET$mMethod);}
-    public void mMethod(int value) {this.ptr.set(LAYOUT$mMethod, OFFSET$mMethod, value);}
-    public java.lang.foreign.MemorySegment mMethod_ptr() {return this.ptr.asSlice(OFFSET$mMethod, LAYOUT$mMethod);}
+    public int mMethod() {return this.ptr.get(LAYOUT__mMethod, OFFSET__mMethod);}
+    public void mMethod(int value) {this.ptr.set(LAYOUT__mMethod, OFFSET__mMethod, value);}
+    public java.lang.foreign.MemorySegment $mMethod() {return this.ptr.asSlice(OFFSET__mMethod, LAYOUT__mMethod);}
 
-    public assimp.aiAABB mAABB() {return new assimp.aiAABB(this.ptr.asSlice(OFFSET$mAABB, LAYOUT$mAABB));}
+    public assimp.aiAABB mAABB() {return new assimp.aiAABB(this.ptr.asSlice(OFFSET__mAABB, LAYOUT__mAABB));}
     public void mAABB(java.util.function.Consumer<assimp.aiAABB> consumer) {consumer.accept(this.mAABB());}
-    public void mAABB(assimp.aiAABB value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mAABB, LAYOUT$mAABB.byteSize());}
+    public void mAABB(assimp.aiAABB value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mAABB, LAYOUT__mAABB.byteSize());}
 
-    public java.lang.foreign.MemorySegment mTextureCoordsNames() {return this.ptr.get(LAYOUT$mTextureCoordsNames, OFFSET$mTextureCoordsNames);}
-    public void mTextureCoordsNames(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mTextureCoordsNames, OFFSET$mTextureCoordsNames, value);}
-    public java.lang.foreign.MemorySegment mTextureCoordsNames_ptr() {return this.ptr.asSlice(OFFSET$mTextureCoordsNames, LAYOUT$mTextureCoordsNames);}
+    public java.lang.foreign.MemorySegment mTextureCoordsNames() {return this.ptr.get(LAYOUT__mTextureCoordsNames, OFFSET__mTextureCoordsNames);}
+    public void mTextureCoordsNames(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mTextureCoordsNames, OFFSET__mTextureCoordsNames, value);}
+    public java.lang.foreign.MemorySegment $mTextureCoordsNames() {return this.ptr.asSlice(OFFSET__mTextureCoordsNames, LAYOUT__mTextureCoordsNames);}
 }

@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkAttachmentDescriptionStencilLayout(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stencilInitialLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stencilInitialLayout = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stencilFinalLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stencilFinalLayout = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilInitialLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stencilInitialLayout = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilFinalLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stencilFinalLayout = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$stencilInitialLayout,
-            LAYOUT$stencilFinalLayout
-    ).withName("VkAttachmentDescriptionStencilLayout");
+            LAYOUT__pNext,
+            LAYOUT__stencilInitialLayout,
+            LAYOUT__stencilFinalLayout
+    ).withByteAlignment(8).withName("VkAttachmentDescriptionStencilLayout");
 
     public VkAttachmentDescriptionStencilLayout(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkAttachmentDescriptionStencilLayout getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkAttachmentDescriptionStencilLayout getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkAttachmentDescriptionStencilLayout(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkAttachmentDescriptionStencilLayout(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkAttachmentDescriptionStencilLayout value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int stencilInitialLayout() {return this.ptr.get(LAYOUT$stencilInitialLayout, OFFSET$stencilInitialLayout);}
-    public void stencilInitialLayout(int value) {this.ptr.set(LAYOUT$stencilInitialLayout, OFFSET$stencilInitialLayout, value);}
-    public java.lang.foreign.MemorySegment stencilInitialLayout_ptr() {return this.ptr.asSlice(OFFSET$stencilInitialLayout, LAYOUT$stencilInitialLayout);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int stencilFinalLayout() {return this.ptr.get(LAYOUT$stencilFinalLayout, OFFSET$stencilFinalLayout);}
-    public void stencilFinalLayout(int value) {this.ptr.set(LAYOUT$stencilFinalLayout, OFFSET$stencilFinalLayout, value);}
-    public java.lang.foreign.MemorySegment stencilFinalLayout_ptr() {return this.ptr.asSlice(OFFSET$stencilFinalLayout, LAYOUT$stencilFinalLayout);}
+    public int stencilInitialLayout() {return this.ptr.get(LAYOUT__stencilInitialLayout, OFFSET__stencilInitialLayout);}
+    public void stencilInitialLayout(int value) {this.ptr.set(LAYOUT__stencilInitialLayout, OFFSET__stencilInitialLayout, value);}
+    public java.lang.foreign.MemorySegment $stencilInitialLayout() {return this.ptr.asSlice(OFFSET__stencilInitialLayout, LAYOUT__stencilInitialLayout);}
+
+    public int stencilFinalLayout() {return this.ptr.get(LAYOUT__stencilFinalLayout, OFFSET__stencilFinalLayout);}
+    public void stencilFinalLayout(int value) {this.ptr.set(LAYOUT__stencilFinalLayout, OFFSET__stencilFinalLayout, value);}
+    public java.lang.foreign.MemorySegment $stencilFinalLayout() {return this.ptr.asSlice(OFFSET__stencilFinalLayout, LAYOUT__stencilFinalLayout);}
 }

@@ -2,74 +2,79 @@ package vulkan;
 
 public record VkPhysicalDeviceMaintenance5PropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$earlyFragmentMultisampleCoverageAfterSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$earlyFragmentMultisampleCoverageAfterSampleCounting = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$earlyFragmentSampleMaskTestBeforeSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$earlyFragmentSampleMaskTestBeforeSampleCounting = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthStencilSwizzleOneSupport = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthStencilSwizzleOneSupport = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$polygonModePointSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$polygonModePointSize = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$nonStrictSinglePixelWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$nonStrictSinglePixelWideLinesUseParallelogram = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$nonStrictWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$nonStrictWideLinesUseParallelogram = 36L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__earlyFragmentMultisampleCoverageAfterSampleCounting = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__earlyFragmentSampleMaskTestBeforeSampleCounting = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilSwizzleOneSupport = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthStencilSwizzleOneSupport = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__polygonModePointSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__polygonModePointSize = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__nonStrictSinglePixelWideLinesUseParallelogram = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nonStrictWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__nonStrictWideLinesUseParallelogram = 36;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$earlyFragmentMultisampleCoverageAfterSampleCounting,
-            LAYOUT$earlyFragmentSampleMaskTestBeforeSampleCounting,
-            LAYOUT$depthStencilSwizzleOneSupport,
-            LAYOUT$polygonModePointSize,
-            LAYOUT$nonStrictSinglePixelWideLinesUseParallelogram,
-            LAYOUT$nonStrictWideLinesUseParallelogram
-    ).withName("VkPhysicalDeviceMaintenance5PropertiesKHR");
+            LAYOUT__pNext,
+            LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting,
+            LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting,
+            LAYOUT__depthStencilSwizzleOneSupport,
+            LAYOUT__polygonModePointSize,
+            LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram,
+            LAYOUT__nonStrictWideLinesUseParallelogram
+    ).withByteAlignment(8).withName("VkPhysicalDeviceMaintenance5PropertiesKHR");
 
     public VkPhysicalDeviceMaintenance5PropertiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceMaintenance5PropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceMaintenance5PropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceMaintenance5PropertiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceMaintenance5PropertiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceMaintenance5PropertiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int earlyFragmentMultisampleCoverageAfterSampleCounting() {return this.ptr.get(LAYOUT$earlyFragmentMultisampleCoverageAfterSampleCounting, OFFSET$earlyFragmentMultisampleCoverageAfterSampleCounting);}
-    public void earlyFragmentMultisampleCoverageAfterSampleCounting(int value) {this.ptr.set(LAYOUT$earlyFragmentMultisampleCoverageAfterSampleCounting, OFFSET$earlyFragmentMultisampleCoverageAfterSampleCounting, value);}
-    public java.lang.foreign.MemorySegment earlyFragmentMultisampleCoverageAfterSampleCounting_ptr() {return this.ptr.asSlice(OFFSET$earlyFragmentMultisampleCoverageAfterSampleCounting, LAYOUT$earlyFragmentMultisampleCoverageAfterSampleCounting);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int earlyFragmentSampleMaskTestBeforeSampleCounting() {return this.ptr.get(LAYOUT$earlyFragmentSampleMaskTestBeforeSampleCounting, OFFSET$earlyFragmentSampleMaskTestBeforeSampleCounting);}
-    public void earlyFragmentSampleMaskTestBeforeSampleCounting(int value) {this.ptr.set(LAYOUT$earlyFragmentSampleMaskTestBeforeSampleCounting, OFFSET$earlyFragmentSampleMaskTestBeforeSampleCounting, value);}
-    public java.lang.foreign.MemorySegment earlyFragmentSampleMaskTestBeforeSampleCounting_ptr() {return this.ptr.asSlice(OFFSET$earlyFragmentSampleMaskTestBeforeSampleCounting, LAYOUT$earlyFragmentSampleMaskTestBeforeSampleCounting);}
+    public int earlyFragmentMultisampleCoverageAfterSampleCounting() {return this.ptr.get(LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting, OFFSET__earlyFragmentMultisampleCoverageAfterSampleCounting);}
+    public void earlyFragmentMultisampleCoverageAfterSampleCounting(int value) {this.ptr.set(LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting, OFFSET__earlyFragmentMultisampleCoverageAfterSampleCounting, value);}
+    public java.lang.foreign.MemorySegment $earlyFragmentMultisampleCoverageAfterSampleCounting() {return this.ptr.asSlice(OFFSET__earlyFragmentMultisampleCoverageAfterSampleCounting, LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting);}
 
-    public int depthStencilSwizzleOneSupport() {return this.ptr.get(LAYOUT$depthStencilSwizzleOneSupport, OFFSET$depthStencilSwizzleOneSupport);}
-    public void depthStencilSwizzleOneSupport(int value) {this.ptr.set(LAYOUT$depthStencilSwizzleOneSupport, OFFSET$depthStencilSwizzleOneSupport, value);}
-    public java.lang.foreign.MemorySegment depthStencilSwizzleOneSupport_ptr() {return this.ptr.asSlice(OFFSET$depthStencilSwizzleOneSupport, LAYOUT$depthStencilSwizzleOneSupport);}
+    public int earlyFragmentSampleMaskTestBeforeSampleCounting() {return this.ptr.get(LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting, OFFSET__earlyFragmentSampleMaskTestBeforeSampleCounting);}
+    public void earlyFragmentSampleMaskTestBeforeSampleCounting(int value) {this.ptr.set(LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting, OFFSET__earlyFragmentSampleMaskTestBeforeSampleCounting, value);}
+    public java.lang.foreign.MemorySegment $earlyFragmentSampleMaskTestBeforeSampleCounting() {return this.ptr.asSlice(OFFSET__earlyFragmentSampleMaskTestBeforeSampleCounting, LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting);}
 
-    public int polygonModePointSize() {return this.ptr.get(LAYOUT$polygonModePointSize, OFFSET$polygonModePointSize);}
-    public void polygonModePointSize(int value) {this.ptr.set(LAYOUT$polygonModePointSize, OFFSET$polygonModePointSize, value);}
-    public java.lang.foreign.MemorySegment polygonModePointSize_ptr() {return this.ptr.asSlice(OFFSET$polygonModePointSize, LAYOUT$polygonModePointSize);}
+    public int depthStencilSwizzleOneSupport() {return this.ptr.get(LAYOUT__depthStencilSwizzleOneSupport, OFFSET__depthStencilSwizzleOneSupport);}
+    public void depthStencilSwizzleOneSupport(int value) {this.ptr.set(LAYOUT__depthStencilSwizzleOneSupport, OFFSET__depthStencilSwizzleOneSupport, value);}
+    public java.lang.foreign.MemorySegment $depthStencilSwizzleOneSupport() {return this.ptr.asSlice(OFFSET__depthStencilSwizzleOneSupport, LAYOUT__depthStencilSwizzleOneSupport);}
 
-    public int nonStrictSinglePixelWideLinesUseParallelogram() {return this.ptr.get(LAYOUT$nonStrictSinglePixelWideLinesUseParallelogram, OFFSET$nonStrictSinglePixelWideLinesUseParallelogram);}
-    public void nonStrictSinglePixelWideLinesUseParallelogram(int value) {this.ptr.set(LAYOUT$nonStrictSinglePixelWideLinesUseParallelogram, OFFSET$nonStrictSinglePixelWideLinesUseParallelogram, value);}
-    public java.lang.foreign.MemorySegment nonStrictSinglePixelWideLinesUseParallelogram_ptr() {return this.ptr.asSlice(OFFSET$nonStrictSinglePixelWideLinesUseParallelogram, LAYOUT$nonStrictSinglePixelWideLinesUseParallelogram);}
+    public int polygonModePointSize() {return this.ptr.get(LAYOUT__polygonModePointSize, OFFSET__polygonModePointSize);}
+    public void polygonModePointSize(int value) {this.ptr.set(LAYOUT__polygonModePointSize, OFFSET__polygonModePointSize, value);}
+    public java.lang.foreign.MemorySegment $polygonModePointSize() {return this.ptr.asSlice(OFFSET__polygonModePointSize, LAYOUT__polygonModePointSize);}
 
-    public int nonStrictWideLinesUseParallelogram() {return this.ptr.get(LAYOUT$nonStrictWideLinesUseParallelogram, OFFSET$nonStrictWideLinesUseParallelogram);}
-    public void nonStrictWideLinesUseParallelogram(int value) {this.ptr.set(LAYOUT$nonStrictWideLinesUseParallelogram, OFFSET$nonStrictWideLinesUseParallelogram, value);}
-    public java.lang.foreign.MemorySegment nonStrictWideLinesUseParallelogram_ptr() {return this.ptr.asSlice(OFFSET$nonStrictWideLinesUseParallelogram, LAYOUT$nonStrictWideLinesUseParallelogram);}
+    public int nonStrictSinglePixelWideLinesUseParallelogram() {return this.ptr.get(LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram, OFFSET__nonStrictSinglePixelWideLinesUseParallelogram);}
+    public void nonStrictSinglePixelWideLinesUseParallelogram(int value) {this.ptr.set(LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram, OFFSET__nonStrictSinglePixelWideLinesUseParallelogram, value);}
+    public java.lang.foreign.MemorySegment $nonStrictSinglePixelWideLinesUseParallelogram() {return this.ptr.asSlice(OFFSET__nonStrictSinglePixelWideLinesUseParallelogram, LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram);}
+
+    public int nonStrictWideLinesUseParallelogram() {return this.ptr.get(LAYOUT__nonStrictWideLinesUseParallelogram, OFFSET__nonStrictWideLinesUseParallelogram);}
+    public void nonStrictWideLinesUseParallelogram(int value) {this.ptr.set(LAYOUT__nonStrictWideLinesUseParallelogram, OFFSET__nonStrictWideLinesUseParallelogram, value);}
+    public java.lang.foreign.MemorySegment $nonStrictWideLinesUseParallelogram() {return this.ptr.asSlice(OFFSET__nonStrictWideLinesUseParallelogram, LAYOUT__nonStrictWideLinesUseParallelogram);}
 }

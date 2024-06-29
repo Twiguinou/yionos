@@ -2,122 +2,127 @@ package vulkan;
 
 public record StdVideoH265HrdParameters(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$flags = vulkan.StdVideoH265HrdFlags.gStructLayout;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$tick_divisor_minus2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$tick_divisor_minus2 = 4L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$du_cpb_removal_delay_increment_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$du_cpb_removal_delay_increment_length_minus1 = 5L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$dpb_output_delay_du_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$dpb_output_delay_du_length_minus1 = 6L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$bit_rate_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$bit_rate_scale = 7L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$cpb_size_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$cpb_size_scale = 8L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$cpb_size_du_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$cpb_size_du_scale = 9L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$initial_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$initial_cpb_removal_delay_length_minus1 = 10L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$au_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$au_cpb_removal_delay_length_minus1 = 11L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$dpb_output_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$dpb_output_delay_length_minus1 = 12L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$cpb_cnt_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$cpb_cnt_minus1 = 13L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$elemental_duration_in_tc_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_SHORT);
-    public static final long OFFSET$elemental_duration_in_tc_minus1 = 20L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$reserved = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_SHORT);
-    public static final long OFFSET$reserved = 34L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSubLayerHrdParametersNal = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSubLayerHrdParametersNal = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSubLayerHrdParametersVcl = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSubLayerHrdParametersVcl = 48L;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265HrdFlags.gRecordLayout;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__tick_divisor_minus2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__tick_divisor_minus2 = 4;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__du_cpb_removal_delay_increment_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__du_cpb_removal_delay_increment_length_minus1 = 5;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__dpb_output_delay_du_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__dpb_output_delay_du_length_minus1 = 6;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__bit_rate_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__bit_rate_scale = 7;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__cpb_size_scale = 8;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_du_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__cpb_size_du_scale = 9;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__initial_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__initial_cpb_removal_delay_length_minus1 = 10;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__au_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__au_cpb_removal_delay_length_minus1 = 11;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__dpb_output_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__dpb_output_delay_length_minus1 = 12;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_cnt_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__cpb_cnt_minus1 = 13;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__elemental_duration_in_tc_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final long OFFSET__elemental_duration_in_tc_minus1 = 20;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final long OFFSET__reserved = 34;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSubLayerHrdParametersNal = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSubLayerHrdParametersNal = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSubLayerHrdParametersVcl = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSubLayerHrdParametersVcl = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
-            LAYOUT$tick_divisor_minus2,
-            LAYOUT$du_cpb_removal_delay_increment_length_minus1,
-            LAYOUT$dpb_output_delay_du_length_minus1,
-            LAYOUT$bit_rate_scale,
-            LAYOUT$cpb_size_scale,
-            LAYOUT$cpb_size_du_scale,
-            LAYOUT$initial_cpb_removal_delay_length_minus1,
-            LAYOUT$au_cpb_removal_delay_length_minus1,
-            LAYOUT$dpb_output_delay_length_minus1,
-            LAYOUT$cpb_cnt_minus1,
-            LAYOUT$elemental_duration_in_tc_minus1,
-            LAYOUT$reserved,
-            LAYOUT$pSubLayerHrdParametersNal,
-            LAYOUT$pSubLayerHrdParametersVcl
-    ).withName("StdVideoH265HrdParameters");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
+            LAYOUT__tick_divisor_minus2,
+            LAYOUT__du_cpb_removal_delay_increment_length_minus1,
+            LAYOUT__dpb_output_delay_du_length_minus1,
+            LAYOUT__bit_rate_scale,
+            LAYOUT__cpb_size_scale,
+            LAYOUT__cpb_size_du_scale,
+            LAYOUT__initial_cpb_removal_delay_length_minus1,
+            LAYOUT__au_cpb_removal_delay_length_minus1,
+            LAYOUT__dpb_output_delay_length_minus1,
+            LAYOUT__cpb_cnt_minus1,
+            LAYOUT__elemental_duration_in_tc_minus1,
+            LAYOUT__reserved,
+            LAYOUT__pSubLayerHrdParametersNal,
+            LAYOUT__pSubLayerHrdParametersVcl
+    ).withByteAlignment(8).withName("StdVideoH265HrdParameters");
 
     public StdVideoH265HrdParameters(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static StdVideoH265HrdParameters getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static StdVideoH265HrdParameters getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new StdVideoH265HrdParameters(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new StdVideoH265HrdParameters(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.StdVideoH265HrdFlags flags() {return new vulkan.StdVideoH265HrdFlags(this.ptr.asSlice(OFFSET$flags, LAYOUT$flags));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, StdVideoH265HrdParameters value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public vulkan.StdVideoH265HrdFlags flags() {return new vulkan.StdVideoH265HrdFlags(this.ptr.asSlice(OFFSET__flags, LAYOUT__flags));}
     public void flags(java.util.function.Consumer<vulkan.StdVideoH265HrdFlags> consumer) {consumer.accept(this.flags());}
-    public void flags(vulkan.StdVideoH265HrdFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$flags, LAYOUT$flags.byteSize());}
+    public void flags(vulkan.StdVideoH265HrdFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__flags, LAYOUT__flags.byteSize());}
 
-    public char tick_divisor_minus2() {return (char)this.ptr.get(LAYOUT$tick_divisor_minus2, OFFSET$tick_divisor_minus2);}
-    public void tick_divisor_minus2(char value) {this.ptr.set(LAYOUT$tick_divisor_minus2, OFFSET$tick_divisor_minus2, (byte)value);}
-    public java.lang.foreign.MemorySegment tick_divisor_minus2_ptr() {return this.ptr.asSlice(OFFSET$tick_divisor_minus2, LAYOUT$tick_divisor_minus2);}
+    public byte tick_divisor_minus2() {return this.ptr.get(LAYOUT__tick_divisor_minus2, OFFSET__tick_divisor_minus2);}
+    public void tick_divisor_minus2(byte value) {this.ptr.set(LAYOUT__tick_divisor_minus2, OFFSET__tick_divisor_minus2, value);}
+    public java.lang.foreign.MemorySegment $tick_divisor_minus2() {return this.ptr.asSlice(OFFSET__tick_divisor_minus2, LAYOUT__tick_divisor_minus2);}
 
-    public char du_cpb_removal_delay_increment_length_minus1() {return (char)this.ptr.get(LAYOUT$du_cpb_removal_delay_increment_length_minus1, OFFSET$du_cpb_removal_delay_increment_length_minus1);}
-    public void du_cpb_removal_delay_increment_length_minus1(char value) {this.ptr.set(LAYOUT$du_cpb_removal_delay_increment_length_minus1, OFFSET$du_cpb_removal_delay_increment_length_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment du_cpb_removal_delay_increment_length_minus1_ptr() {return this.ptr.asSlice(OFFSET$du_cpb_removal_delay_increment_length_minus1, LAYOUT$du_cpb_removal_delay_increment_length_minus1);}
+    public byte du_cpb_removal_delay_increment_length_minus1() {return this.ptr.get(LAYOUT__du_cpb_removal_delay_increment_length_minus1, OFFSET__du_cpb_removal_delay_increment_length_minus1);}
+    public void du_cpb_removal_delay_increment_length_minus1(byte value) {this.ptr.set(LAYOUT__du_cpb_removal_delay_increment_length_minus1, OFFSET__du_cpb_removal_delay_increment_length_minus1, value);}
+    public java.lang.foreign.MemorySegment $du_cpb_removal_delay_increment_length_minus1() {return this.ptr.asSlice(OFFSET__du_cpb_removal_delay_increment_length_minus1, LAYOUT__du_cpb_removal_delay_increment_length_minus1);}
 
-    public char dpb_output_delay_du_length_minus1() {return (char)this.ptr.get(LAYOUT$dpb_output_delay_du_length_minus1, OFFSET$dpb_output_delay_du_length_minus1);}
-    public void dpb_output_delay_du_length_minus1(char value) {this.ptr.set(LAYOUT$dpb_output_delay_du_length_minus1, OFFSET$dpb_output_delay_du_length_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment dpb_output_delay_du_length_minus1_ptr() {return this.ptr.asSlice(OFFSET$dpb_output_delay_du_length_minus1, LAYOUT$dpb_output_delay_du_length_minus1);}
+    public byte dpb_output_delay_du_length_minus1() {return this.ptr.get(LAYOUT__dpb_output_delay_du_length_minus1, OFFSET__dpb_output_delay_du_length_minus1);}
+    public void dpb_output_delay_du_length_minus1(byte value) {this.ptr.set(LAYOUT__dpb_output_delay_du_length_minus1, OFFSET__dpb_output_delay_du_length_minus1, value);}
+    public java.lang.foreign.MemorySegment $dpb_output_delay_du_length_minus1() {return this.ptr.asSlice(OFFSET__dpb_output_delay_du_length_minus1, LAYOUT__dpb_output_delay_du_length_minus1);}
 
-    public char bit_rate_scale() {return (char)this.ptr.get(LAYOUT$bit_rate_scale, OFFSET$bit_rate_scale);}
-    public void bit_rate_scale(char value) {this.ptr.set(LAYOUT$bit_rate_scale, OFFSET$bit_rate_scale, (byte)value);}
-    public java.lang.foreign.MemorySegment bit_rate_scale_ptr() {return this.ptr.asSlice(OFFSET$bit_rate_scale, LAYOUT$bit_rate_scale);}
+    public byte bit_rate_scale() {return this.ptr.get(LAYOUT__bit_rate_scale, OFFSET__bit_rate_scale);}
+    public void bit_rate_scale(byte value) {this.ptr.set(LAYOUT__bit_rate_scale, OFFSET__bit_rate_scale, value);}
+    public java.lang.foreign.MemorySegment $bit_rate_scale() {return this.ptr.asSlice(OFFSET__bit_rate_scale, LAYOUT__bit_rate_scale);}
 
-    public char cpb_size_scale() {return (char)this.ptr.get(LAYOUT$cpb_size_scale, OFFSET$cpb_size_scale);}
-    public void cpb_size_scale(char value) {this.ptr.set(LAYOUT$cpb_size_scale, OFFSET$cpb_size_scale, (byte)value);}
-    public java.lang.foreign.MemorySegment cpb_size_scale_ptr() {return this.ptr.asSlice(OFFSET$cpb_size_scale, LAYOUT$cpb_size_scale);}
+    public byte cpb_size_scale() {return this.ptr.get(LAYOUT__cpb_size_scale, OFFSET__cpb_size_scale);}
+    public void cpb_size_scale(byte value) {this.ptr.set(LAYOUT__cpb_size_scale, OFFSET__cpb_size_scale, value);}
+    public java.lang.foreign.MemorySegment $cpb_size_scale() {return this.ptr.asSlice(OFFSET__cpb_size_scale, LAYOUT__cpb_size_scale);}
 
-    public char cpb_size_du_scale() {return (char)this.ptr.get(LAYOUT$cpb_size_du_scale, OFFSET$cpb_size_du_scale);}
-    public void cpb_size_du_scale(char value) {this.ptr.set(LAYOUT$cpb_size_du_scale, OFFSET$cpb_size_du_scale, (byte)value);}
-    public java.lang.foreign.MemorySegment cpb_size_du_scale_ptr() {return this.ptr.asSlice(OFFSET$cpb_size_du_scale, LAYOUT$cpb_size_du_scale);}
+    public byte cpb_size_du_scale() {return this.ptr.get(LAYOUT__cpb_size_du_scale, OFFSET__cpb_size_du_scale);}
+    public void cpb_size_du_scale(byte value) {this.ptr.set(LAYOUT__cpb_size_du_scale, OFFSET__cpb_size_du_scale, value);}
+    public java.lang.foreign.MemorySegment $cpb_size_du_scale() {return this.ptr.asSlice(OFFSET__cpb_size_du_scale, LAYOUT__cpb_size_du_scale);}
 
-    public char initial_cpb_removal_delay_length_minus1() {return (char)this.ptr.get(LAYOUT$initial_cpb_removal_delay_length_minus1, OFFSET$initial_cpb_removal_delay_length_minus1);}
-    public void initial_cpb_removal_delay_length_minus1(char value) {this.ptr.set(LAYOUT$initial_cpb_removal_delay_length_minus1, OFFSET$initial_cpb_removal_delay_length_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment initial_cpb_removal_delay_length_minus1_ptr() {return this.ptr.asSlice(OFFSET$initial_cpb_removal_delay_length_minus1, LAYOUT$initial_cpb_removal_delay_length_minus1);}
+    public byte initial_cpb_removal_delay_length_minus1() {return this.ptr.get(LAYOUT__initial_cpb_removal_delay_length_minus1, OFFSET__initial_cpb_removal_delay_length_minus1);}
+    public void initial_cpb_removal_delay_length_minus1(byte value) {this.ptr.set(LAYOUT__initial_cpb_removal_delay_length_minus1, OFFSET__initial_cpb_removal_delay_length_minus1, value);}
+    public java.lang.foreign.MemorySegment $initial_cpb_removal_delay_length_minus1() {return this.ptr.asSlice(OFFSET__initial_cpb_removal_delay_length_minus1, LAYOUT__initial_cpb_removal_delay_length_minus1);}
 
-    public char au_cpb_removal_delay_length_minus1() {return (char)this.ptr.get(LAYOUT$au_cpb_removal_delay_length_minus1, OFFSET$au_cpb_removal_delay_length_minus1);}
-    public void au_cpb_removal_delay_length_minus1(char value) {this.ptr.set(LAYOUT$au_cpb_removal_delay_length_minus1, OFFSET$au_cpb_removal_delay_length_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment au_cpb_removal_delay_length_minus1_ptr() {return this.ptr.asSlice(OFFSET$au_cpb_removal_delay_length_minus1, LAYOUT$au_cpb_removal_delay_length_minus1);}
+    public byte au_cpb_removal_delay_length_minus1() {return this.ptr.get(LAYOUT__au_cpb_removal_delay_length_minus1, OFFSET__au_cpb_removal_delay_length_minus1);}
+    public void au_cpb_removal_delay_length_minus1(byte value) {this.ptr.set(LAYOUT__au_cpb_removal_delay_length_minus1, OFFSET__au_cpb_removal_delay_length_minus1, value);}
+    public java.lang.foreign.MemorySegment $au_cpb_removal_delay_length_minus1() {return this.ptr.asSlice(OFFSET__au_cpb_removal_delay_length_minus1, LAYOUT__au_cpb_removal_delay_length_minus1);}
 
-    public char dpb_output_delay_length_minus1() {return (char)this.ptr.get(LAYOUT$dpb_output_delay_length_minus1, OFFSET$dpb_output_delay_length_minus1);}
-    public void dpb_output_delay_length_minus1(char value) {this.ptr.set(LAYOUT$dpb_output_delay_length_minus1, OFFSET$dpb_output_delay_length_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment dpb_output_delay_length_minus1_ptr() {return this.ptr.asSlice(OFFSET$dpb_output_delay_length_minus1, LAYOUT$dpb_output_delay_length_minus1);}
+    public byte dpb_output_delay_length_minus1() {return this.ptr.get(LAYOUT__dpb_output_delay_length_minus1, OFFSET__dpb_output_delay_length_minus1);}
+    public void dpb_output_delay_length_minus1(byte value) {this.ptr.set(LAYOUT__dpb_output_delay_length_minus1, OFFSET__dpb_output_delay_length_minus1, value);}
+    public java.lang.foreign.MemorySegment $dpb_output_delay_length_minus1() {return this.ptr.asSlice(OFFSET__dpb_output_delay_length_minus1, LAYOUT__dpb_output_delay_length_minus1);}
 
-    public java.lang.foreign.MemorySegment cpb_cnt_minus1() {return this.ptr.asSlice(OFFSET$cpb_cnt_minus1, LAYOUT$cpb_cnt_minus1);}
-    public char cpb_cnt_minus1(int i) {return (char)this.cpb_cnt_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void cpb_cnt_minus1(int i, char value) {this.cpb_cnt_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment cpb_cnt_minus1() {return this.ptr.asSlice(OFFSET__cpb_cnt_minus1, LAYOUT__cpb_cnt_minus1);}
+    public byte cpb_cnt_minus1(int index) {return this.cpb_cnt_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void cpb_cnt_minus1(int index, byte value) {this.cpb_cnt_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public java.lang.foreign.MemorySegment elemental_duration_in_tc_minus1() {return this.ptr.asSlice(OFFSET$elemental_duration_in_tc_minus1, LAYOUT$elemental_duration_in_tc_minus1);}
-    public short elemental_duration_in_tc_minus1(int i) {return this.elemental_duration_in_tc_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i);}
-    public void elemental_duration_in_tc_minus1(int i, short value) {this.elemental_duration_in_tc_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i, value);}
+    public java.lang.foreign.MemorySegment elemental_duration_in_tc_minus1() {return this.ptr.asSlice(OFFSET__elemental_duration_in_tc_minus1, LAYOUT__elemental_duration_in_tc_minus1);}
+    public short elemental_duration_in_tc_minus1(int index) {return this.elemental_duration_in_tc_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index);}
+    public void elemental_duration_in_tc_minus1(int index, short value) {this.elemental_duration_in_tc_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index, value);}
 
-    public java.lang.foreign.MemorySegment reserved() {return this.ptr.asSlice(OFFSET$reserved, LAYOUT$reserved);}
-    public short reserved(int i) {return this.reserved().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i);}
-    public void reserved(int i, short value) {this.reserved().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i, value);}
+    public java.lang.foreign.MemorySegment reserved() {return this.ptr.asSlice(OFFSET__reserved, LAYOUT__reserved);}
+    public short reserved(int index) {return this.reserved().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index);}
+    public void reserved(int index, short value) {this.reserved().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index, value);}
 
-    public java.lang.foreign.MemorySegment pSubLayerHrdParametersNal() {return this.ptr.get(LAYOUT$pSubLayerHrdParametersNal, OFFSET$pSubLayerHrdParametersNal);}
-    public void pSubLayerHrdParametersNal(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSubLayerHrdParametersNal, OFFSET$pSubLayerHrdParametersNal, value);}
-    public java.lang.foreign.MemorySegment pSubLayerHrdParametersNal_ptr() {return this.ptr.asSlice(OFFSET$pSubLayerHrdParametersNal, LAYOUT$pSubLayerHrdParametersNal);}
+    public java.lang.foreign.MemorySegment pSubLayerHrdParametersNal() {return this.ptr.get(LAYOUT__pSubLayerHrdParametersNal, OFFSET__pSubLayerHrdParametersNal);}
+    public void pSubLayerHrdParametersNal(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSubLayerHrdParametersNal, OFFSET__pSubLayerHrdParametersNal, value);}
+    public java.lang.foreign.MemorySegment $pSubLayerHrdParametersNal() {return this.ptr.asSlice(OFFSET__pSubLayerHrdParametersNal, LAYOUT__pSubLayerHrdParametersNal);}
 
-    public java.lang.foreign.MemorySegment pSubLayerHrdParametersVcl() {return this.ptr.get(LAYOUT$pSubLayerHrdParametersVcl, OFFSET$pSubLayerHrdParametersVcl);}
-    public void pSubLayerHrdParametersVcl(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSubLayerHrdParametersVcl, OFFSET$pSubLayerHrdParametersVcl, value);}
-    public java.lang.foreign.MemorySegment pSubLayerHrdParametersVcl_ptr() {return this.ptr.asSlice(OFFSET$pSubLayerHrdParametersVcl, LAYOUT$pSubLayerHrdParametersVcl);}
+    public java.lang.foreign.MemorySegment pSubLayerHrdParametersVcl() {return this.ptr.get(LAYOUT__pSubLayerHrdParametersVcl, OFFSET__pSubLayerHrdParametersVcl);}
+    public void pSubLayerHrdParametersVcl(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSubLayerHrdParametersVcl, OFFSET__pSubLayerHrdParametersVcl, value);}
+    public java.lang.foreign.MemorySegment $pSubLayerHrdParametersVcl() {return this.ptr.asSlice(OFFSET__pSubLayerHrdParametersVcl, LAYOUT__pSubLayerHrdParametersVcl);}
 }

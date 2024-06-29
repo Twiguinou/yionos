@@ -10,7 +10,6 @@ import yionos.demo.SequenceInitializer;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
@@ -21,6 +20,7 @@ import static vulkan.VkCommandBufferLevel.*;
 import static vma.VMA.*;
 import static vma.VmaMemoryUsage.*;
 import static yionos.demo.rendering.VulkanHelpers.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class VulkanBuffer implements Disposable
@@ -43,7 +43,7 @@ public class VulkanBuffer implements Disposable
             {
                 bufferCreateInfo.sharingMode(VK_SHARING_MODE_CONCURRENT);
                 bufferCreateInfo.queueFamilyIndexCount(queueFamilies.length);
-                bufferCreateInfo.pQueueFamilyIndices(arena.allocateArray(ValueLayout.JAVA_INT, queueFamilies));
+                bufferCreateInfo.pQueueFamilyIndices(arena.allocateFrom(JAVA_INT, queueFamilies));
             }
             else
             {
@@ -53,11 +53,11 @@ public class VulkanBuffer implements Disposable
             VmaAllocationCreateInfo allocationCreateInfo = new VmaAllocationCreateInfo(arena);
             allocationCreateInfo.usage(memoryUsage);
 
-            MemorySegment pBuffer = arena.allocate(ValueLayout.ADDRESS);
-            MemorySegment pAllocation = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pBuffer = arena.allocate(ADDRESS);
+            MemorySegment pAllocation = arena.allocate(ADDRESS);
             VulkanException.check(vmaCreateBuffer(allocator, bufferCreateInfo.ptr(), allocationCreateInfo.ptr(), pBuffer, pAllocation, NULL), "Vma buffer allocation failed");
-            this.m_handle = pBuffer.get(ValueLayout.ADDRESS, 0);
-            this.m_allocation = pAllocation.get(ValueLayout.ADDRESS, 0);
+            this.m_handle = pBuffer.get(ADDRESS, 0);
+            this.m_allocation = pAllocation.get(ADDRESS, 0);
 
             this.allocator = allocator;
             this.m_size = size;
@@ -88,10 +88,10 @@ public class VulkanBuffer implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment ppData = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment ppData = arena.allocate(ADDRESS);
             this.map(ppData);
 
-            MemorySegment pData = ppData.get(ValueLayout.ADDRESS, 0).reinterpret(data.byteSize());
+            MemorySegment pData = ppData.get(ADDRESS, 0).reinterpret(data.byteSize());
             pData.copyFrom(data);
 
             this.unmap();
@@ -121,7 +121,7 @@ public class VulkanBuffer implements Disposable
             VkSubmitInfo submitInfo = new VkSubmitInfo(arena);
             submitInfo.sType(VK_STRUCTURE_TYPE_SUBMIT_INFO);
             submitInfo.commandBufferCount(1);
-            submitInfo.pCommandBuffers(arena.allocate(ValueLayout.ADDRESS, commandBuffer.handle()));
+            submitInfo.pCommandBuffers(arena.allocateFrom(ADDRESS, commandBuffer.handle()));
 
             VulkanException.check(vkQueueSubmit(queue.handle(), 1, submitInfo.ptr(), NULL));
             VulkanException.check(vkQueueWaitIdle(queue.handle()));

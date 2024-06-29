@@ -2,111 +2,116 @@ package nuklear;
 
 public record nk_font_atlas(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT$pixel = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pixel = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$tex_width = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$tex_width = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$tex_height = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$tex_height = 12L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$permanent = nuklear.nk_allocator.gStructLayout;
-    public static final long OFFSET$permanent = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$temporary = nuklear.nk_allocator.gStructLayout;
-    public static final long OFFSET$temporary = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$custom = nuklear.nk_recti.gStructLayout;
-    public static final long OFFSET$custom = 64L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$cursors = java.lang.foreign.MemoryLayout.sequenceLayout(7, nuklear.nk_cursor.gStructLayout);
-    public static final long OFFSET$cursors = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$glyph_count = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$glyph_count = 352L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$glyphs = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$glyphs = 360L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$default_font = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$default_font = 368L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$fonts = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$fonts = 376L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$config = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$config = 384L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$font_num = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$font_num = 392L;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pixel = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pixel = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tex_width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__tex_width = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tex_height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__tex_height = 12;
+    public static final java.lang.foreign.StructLayout LAYOUT__permanent = nuklear.nk_allocator.gRecordLayout;
+    public static final long OFFSET__permanent = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__temporary = nuklear.nk_allocator.gRecordLayout;
+    public static final long OFFSET__temporary = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__custom = nuklear.nk_recti.gRecordLayout;
+    public static final long OFFSET__custom = 64;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cursors = java.lang.foreign.MemoryLayout.sequenceLayout(7, nuklear.nk_cursor.gRecordLayout);
+    public static final long OFFSET__cursors = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__glyph_count = 352;
+    public static final java.lang.foreign.AddressLayout LAYOUT__glyphs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__glyphs = 360;
+    public static final java.lang.foreign.AddressLayout LAYOUT__default_font = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__default_font = 368;
+    public static final java.lang.foreign.AddressLayout LAYOUT__fonts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__fonts = 376;
+    public static final java.lang.foreign.AddressLayout LAYOUT__config = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__config = 384;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__font_num = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__font_num = 392;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$pixel,
-            LAYOUT$tex_width,
-            LAYOUT$tex_height,
-            LAYOUT$permanent,
-            LAYOUT$temporary,
-            LAYOUT$custom,
-            LAYOUT$cursors,
-            LAYOUT$glyph_count,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__pixel,
+            LAYOUT__tex_width,
+            LAYOUT__tex_height,
+            LAYOUT__permanent,
+            LAYOUT__temporary,
+            LAYOUT__custom,
+            LAYOUT__cursors,
+            LAYOUT__glyph_count,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$glyphs,
-            LAYOUT$default_font,
-            LAYOUT$fonts,
-            LAYOUT$config,
-            LAYOUT$font_num,
+            LAYOUT__glyphs,
+            LAYOUT__default_font,
+            LAYOUT__fonts,
+            LAYOUT__config,
+            LAYOUT__font_num,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_font_atlas");
+    ).withByteAlignment(8).withName("nk_font_atlas");
 
     public nk_font_atlas(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_font_atlas getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_font_atlas getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_font_atlas(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_font_atlas(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment pixel() {return this._ptr.get(LAYOUT$pixel, OFFSET$pixel);}
-    public void pixel(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$pixel, OFFSET$pixel, value);}
-    public java.lang.foreign.MemorySegment pixel_ptr() {return this._ptr.asSlice(OFFSET$pixel, LAYOUT$pixel);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_font_atlas value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int tex_width() {return this._ptr.get(LAYOUT$tex_width, OFFSET$tex_width);}
-    public void tex_width(int value) {this._ptr.set(LAYOUT$tex_width, OFFSET$tex_width, value);}
-    public java.lang.foreign.MemorySegment tex_width_ptr() {return this._ptr.asSlice(OFFSET$tex_width, LAYOUT$tex_width);}
+    public java.lang.foreign.MemorySegment pixel() {return this._ptr.get(LAYOUT__pixel, OFFSET__pixel);}
+    public void pixel(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__pixel, OFFSET__pixel, value);}
+    public java.lang.foreign.MemorySegment $pixel() {return this._ptr.asSlice(OFFSET__pixel, LAYOUT__pixel);}
 
-    public int tex_height() {return this._ptr.get(LAYOUT$tex_height, OFFSET$tex_height);}
-    public void tex_height(int value) {this._ptr.set(LAYOUT$tex_height, OFFSET$tex_height, value);}
-    public java.lang.foreign.MemorySegment tex_height_ptr() {return this._ptr.asSlice(OFFSET$tex_height, LAYOUT$tex_height);}
+    public int tex_width() {return this._ptr.get(LAYOUT__tex_width, OFFSET__tex_width);}
+    public void tex_width(int value) {this._ptr.set(LAYOUT__tex_width, OFFSET__tex_width, value);}
+    public java.lang.foreign.MemorySegment $tex_width() {return this._ptr.asSlice(OFFSET__tex_width, LAYOUT__tex_width);}
 
-    public nuklear.nk_allocator permanent() {return new nuklear.nk_allocator(this._ptr.asSlice(OFFSET$permanent, LAYOUT$permanent));}
+    public int tex_height() {return this._ptr.get(LAYOUT__tex_height, OFFSET__tex_height);}
+    public void tex_height(int value) {this._ptr.set(LAYOUT__tex_height, OFFSET__tex_height, value);}
+    public java.lang.foreign.MemorySegment $tex_height() {return this._ptr.asSlice(OFFSET__tex_height, LAYOUT__tex_height);}
+
+    public nuklear.nk_allocator permanent() {return new nuklear.nk_allocator(this._ptr.asSlice(OFFSET__permanent, LAYOUT__permanent));}
     public void permanent(java.util.function.Consumer<nuklear.nk_allocator> consumer) {consumer.accept(this.permanent());}
-    public void permanent(nuklear.nk_allocator value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$permanent, LAYOUT$permanent.byteSize());}
+    public void permanent(nuklear.nk_allocator value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__permanent, LAYOUT__permanent.byteSize());}
 
-    public nuklear.nk_allocator temporary() {return new nuklear.nk_allocator(this._ptr.asSlice(OFFSET$temporary, LAYOUT$temporary));}
+    public nuklear.nk_allocator temporary() {return new nuklear.nk_allocator(this._ptr.asSlice(OFFSET__temporary, LAYOUT__temporary));}
     public void temporary(java.util.function.Consumer<nuklear.nk_allocator> consumer) {consumer.accept(this.temporary());}
-    public void temporary(nuklear.nk_allocator value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$temporary, LAYOUT$temporary.byteSize());}
+    public void temporary(nuklear.nk_allocator value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__temporary, LAYOUT__temporary.byteSize());}
 
-    public nuklear.nk_recti custom() {return new nuklear.nk_recti(this._ptr.asSlice(OFFSET$custom, LAYOUT$custom));}
+    public nuklear.nk_recti custom() {return new nuklear.nk_recti(this._ptr.asSlice(OFFSET__custom, LAYOUT__custom));}
     public void custom(java.util.function.Consumer<nuklear.nk_recti> consumer) {consumer.accept(this.custom());}
-    public void custom(nuklear.nk_recti value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$custom, LAYOUT$custom.byteSize());}
+    public void custom(nuklear.nk_recti value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__custom, LAYOUT__custom.byteSize());}
 
-    public java.lang.foreign.MemorySegment cursors() {return this._ptr.asSlice(OFFSET$cursors, LAYOUT$cursors);}
-    public nuklear.nk_cursor cursors(int i) {return new nuklear.nk_cursor(this._ptr.asSlice(OFFSET$cursors + i * LAYOUT$cursors.byteSize(), LAYOUT$cursors));}
-    public void cursors(int i, java.util.function.Consumer<nuklear.nk_cursor> consumer) {consumer.accept(this.cursors(i));}
-    public void cursors(int i, nuklear.nk_cursor value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$cursors + i * LAYOUT$cursors.byteSize(), LAYOUT$cursors.byteSize());}
+    public java.lang.foreign.MemorySegment cursors() {return this._ptr.asSlice(OFFSET__cursors, LAYOUT__cursors);}
+    public nuklear.nk_cursor cursors(int index) {return nuklear.nk_cursor.getAtIndex(this.cursors(), index);}
+    public void cursors(int index, java.util.function.Consumer<nuklear.nk_cursor> consumer) {consumer.accept(this.cursors(index));}
+    public void cursors(int index, nuklear.nk_cursor value) {nuklear.nk_cursor.setAtIndex(this.cursors(), index, value);}
 
-    public int glyph_count() {return this._ptr.get(LAYOUT$glyph_count, OFFSET$glyph_count);}
-    public void glyph_count(int value) {this._ptr.set(LAYOUT$glyph_count, OFFSET$glyph_count, value);}
-    public java.lang.foreign.MemorySegment glyph_count_ptr() {return this._ptr.asSlice(OFFSET$glyph_count, LAYOUT$glyph_count);}
+    public int glyph_count() {return this._ptr.get(LAYOUT__glyph_count, OFFSET__glyph_count);}
+    public void glyph_count(int value) {this._ptr.set(LAYOUT__glyph_count, OFFSET__glyph_count, value);}
+    public java.lang.foreign.MemorySegment $glyph_count() {return this._ptr.asSlice(OFFSET__glyph_count, LAYOUT__glyph_count);}
 
-    public java.lang.foreign.MemorySegment glyphs() {return this._ptr.get(LAYOUT$glyphs, OFFSET$glyphs);}
-    public void glyphs(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$glyphs, OFFSET$glyphs, value);}
-    public java.lang.foreign.MemorySegment glyphs_ptr() {return this._ptr.asSlice(OFFSET$glyphs, LAYOUT$glyphs);}
+    public java.lang.foreign.MemorySegment glyphs() {return this._ptr.get(LAYOUT__glyphs, OFFSET__glyphs);}
+    public void glyphs(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__glyphs, OFFSET__glyphs, value);}
+    public java.lang.foreign.MemorySegment $glyphs() {return this._ptr.asSlice(OFFSET__glyphs, LAYOUT__glyphs);}
 
-    public java.lang.foreign.MemorySegment default_font() {return this._ptr.get(LAYOUT$default_font, OFFSET$default_font);}
-    public void default_font(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$default_font, OFFSET$default_font, value);}
-    public java.lang.foreign.MemorySegment default_font_ptr() {return this._ptr.asSlice(OFFSET$default_font, LAYOUT$default_font);}
+    public java.lang.foreign.MemorySegment default_font() {return this._ptr.get(LAYOUT__default_font, OFFSET__default_font);}
+    public void default_font(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__default_font, OFFSET__default_font, value);}
+    public java.lang.foreign.MemorySegment $default_font() {return this._ptr.asSlice(OFFSET__default_font, LAYOUT__default_font);}
 
-    public java.lang.foreign.MemorySegment fonts() {return this._ptr.get(LAYOUT$fonts, OFFSET$fonts);}
-    public void fonts(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$fonts, OFFSET$fonts, value);}
-    public java.lang.foreign.MemorySegment fonts_ptr() {return this._ptr.asSlice(OFFSET$fonts, LAYOUT$fonts);}
+    public java.lang.foreign.MemorySegment fonts() {return this._ptr.get(LAYOUT__fonts, OFFSET__fonts);}
+    public void fonts(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__fonts, OFFSET__fonts, value);}
+    public java.lang.foreign.MemorySegment $fonts() {return this._ptr.asSlice(OFFSET__fonts, LAYOUT__fonts);}
 
-    public java.lang.foreign.MemorySegment config() {return this._ptr.get(LAYOUT$config, OFFSET$config);}
-    public void config(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$config, OFFSET$config, value);}
-    public java.lang.foreign.MemorySegment config_ptr() {return this._ptr.asSlice(OFFSET$config, LAYOUT$config);}
+    public java.lang.foreign.MemorySegment config() {return this._ptr.get(LAYOUT__config, OFFSET__config);}
+    public void config(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__config, OFFSET__config, value);}
+    public java.lang.foreign.MemorySegment $config() {return this._ptr.asSlice(OFFSET__config, LAYOUT__config);}
 
-    public int font_num() {return this._ptr.get(LAYOUT$font_num, OFFSET$font_num);}
-    public void font_num(int value) {this._ptr.set(LAYOUT$font_num, OFFSET$font_num, value);}
-    public java.lang.foreign.MemorySegment font_num_ptr() {return this._ptr.asSlice(OFFSET$font_num, LAYOUT$font_num);}
+    public int font_num() {return this._ptr.get(LAYOUT__font_num, OFFSET__font_num);}
+    public void font_num(int value) {this._ptr.set(LAYOUT__font_num, OFFSET__font_num, value);}
+    public java.lang.foreign.MemorySegment $font_num() {return this._ptr.asSlice(OFFSET__font_num, LAYOUT__font_num);}
 }

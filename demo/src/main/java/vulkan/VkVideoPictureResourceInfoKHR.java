@@ -2,61 +2,66 @@ package vulkan;
 
 public record VkVideoPictureResourceInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$codedOffset = vulkan.VkOffset2D.gStructLayout;
-    public static final long OFFSET$codedOffset = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$codedExtent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$codedExtent = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$baseArrayLayer = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$imageViewBinding = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$imageViewBinding = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__codedOffset = vulkan.VkOffset2D.gRecordLayout;
+    public static final long OFFSET__codedOffset = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__codedExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__codedExtent = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__baseArrayLayer = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__imageViewBinding = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__imageViewBinding = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$codedOffset,
-            LAYOUT$codedExtent,
-            LAYOUT$baseArrayLayer,
+            LAYOUT__pNext,
+            LAYOUT__codedOffset,
+            LAYOUT__codedExtent,
+            LAYOUT__baseArrayLayer,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$imageViewBinding
-    ).withName("VkVideoPictureResourceInfoKHR");
+            LAYOUT__imageViewBinding
+    ).withByteAlignment(8).withName("VkVideoPictureResourceInfoKHR");
 
     public VkVideoPictureResourceInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoPictureResourceInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoPictureResourceInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoPictureResourceInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoPictureResourceInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoPictureResourceInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkOffset2D codedOffset() {return new vulkan.VkOffset2D(this.ptr.asSlice(OFFSET$codedOffset, LAYOUT$codedOffset));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkOffset2D codedOffset() {return new vulkan.VkOffset2D(this.ptr.asSlice(OFFSET__codedOffset, LAYOUT__codedOffset));}
     public void codedOffset(java.util.function.Consumer<vulkan.VkOffset2D> consumer) {consumer.accept(this.codedOffset());}
-    public void codedOffset(vulkan.VkOffset2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$codedOffset, LAYOUT$codedOffset.byteSize());}
+    public void codedOffset(vulkan.VkOffset2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__codedOffset, LAYOUT__codedOffset.byteSize());}
 
-    public vulkan.VkExtent2D codedExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$codedExtent, LAYOUT$codedExtent));}
+    public vulkan.VkExtent2D codedExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__codedExtent, LAYOUT__codedExtent));}
     public void codedExtent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.codedExtent());}
-    public void codedExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$codedExtent, LAYOUT$codedExtent.byteSize());}
+    public void codedExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__codedExtent, LAYOUT__codedExtent.byteSize());}
 
-    public int baseArrayLayer() {return this.ptr.get(LAYOUT$baseArrayLayer, OFFSET$baseArrayLayer);}
-    public void baseArrayLayer(int value) {this.ptr.set(LAYOUT$baseArrayLayer, OFFSET$baseArrayLayer, value);}
-    public java.lang.foreign.MemorySegment baseArrayLayer_ptr() {return this.ptr.asSlice(OFFSET$baseArrayLayer, LAYOUT$baseArrayLayer);}
+    public int baseArrayLayer() {return this.ptr.get(LAYOUT__baseArrayLayer, OFFSET__baseArrayLayer);}
+    public void baseArrayLayer(int value) {this.ptr.set(LAYOUT__baseArrayLayer, OFFSET__baseArrayLayer, value);}
+    public java.lang.foreign.MemorySegment $baseArrayLayer() {return this.ptr.asSlice(OFFSET__baseArrayLayer, LAYOUT__baseArrayLayer);}
 
-    public java.lang.foreign.MemorySegment imageViewBinding() {return this.ptr.get(LAYOUT$imageViewBinding, OFFSET$imageViewBinding);}
-    public void imageViewBinding(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$imageViewBinding, OFFSET$imageViewBinding, value);}
-    public java.lang.foreign.MemorySegment imageViewBinding_ptr() {return this.ptr.asSlice(OFFSET$imageViewBinding, LAYOUT$imageViewBinding);}
+    public java.lang.foreign.MemorySegment imageViewBinding() {return this.ptr.get(LAYOUT__imageViewBinding, OFFSET__imageViewBinding);}
+    public void imageViewBinding(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__imageViewBinding, OFFSET__imageViewBinding, value);}
+    public java.lang.foreign.MemorySegment $imageViewBinding() {return this.ptr.asSlice(OFFSET__imageViewBinding, LAYOUT__imageViewBinding);}
 }

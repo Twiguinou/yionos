@@ -2,31 +2,36 @@ package vulkan;
 
 public record VkDisplayModeParametersKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$visibleRegion = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$visibleRegion = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$refreshRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$refreshRate = 8L;
+    public static final java.lang.foreign.StructLayout LAYOUT__visibleRegion = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__visibleRegion = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__refreshRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__refreshRate = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$visibleRegion,
-            LAYOUT$refreshRate
-    ).withName("VkDisplayModeParametersKHR");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__visibleRegion,
+            LAYOUT__refreshRate
+    ).withByteAlignment(4).withName("VkDisplayModeParametersKHR");
 
     public VkDisplayModeParametersKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDisplayModeParametersKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDisplayModeParametersKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDisplayModeParametersKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDisplayModeParametersKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.VkExtent2D visibleRegion() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$visibleRegion, LAYOUT$visibleRegion));}
-    public void visibleRegion(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.visibleRegion());}
-    public void visibleRegion(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$visibleRegion, LAYOUT$visibleRegion.byteSize());}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDisplayModeParametersKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int refreshRate() {return this.ptr.get(LAYOUT$refreshRate, OFFSET$refreshRate);}
-    public void refreshRate(int value) {this.ptr.set(LAYOUT$refreshRate, OFFSET$refreshRate, value);}
-    public java.lang.foreign.MemorySegment refreshRate_ptr() {return this.ptr.asSlice(OFFSET$refreshRate, LAYOUT$refreshRate);}
+    public vulkan.VkExtent2D visibleRegion() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__visibleRegion, LAYOUT__visibleRegion));}
+    public void visibleRegion(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.visibleRegion());}
+    public void visibleRegion(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__visibleRegion, LAYOUT__visibleRegion.byteSize());}
+
+    public int refreshRate() {return this.ptr.get(LAYOUT__refreshRate, OFFSET__refreshRate);}
+    public void refreshRate(int value) {this.ptr.set(LAYOUT__refreshRate, OFFSET__refreshRate, value);}
+    public java.lang.foreign.MemorySegment $refreshRate() {return this.ptr.asSlice(OFFSET__refreshRate, LAYOUT__refreshRate);}
 }

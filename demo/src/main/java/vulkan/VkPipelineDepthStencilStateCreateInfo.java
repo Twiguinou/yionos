@@ -2,102 +2,107 @@ package vulkan;
 
 public record VkPipelineDepthStencilStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthTestEnable = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthWriteEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthWriteEnable = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthCompareOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthCompareOp = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthBoundsTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthBoundsTestEnable = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stencilTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stencilTestEnable = 36L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$front = vulkan.VkStencilOpState.gStructLayout;
-    public static final long OFFSET$front = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$back = vulkan.VkStencilOpState.gStructLayout;
-    public static final long OFFSET$back = 68L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$minDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$minDepthBounds = 96L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$maxDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$maxDepthBounds = 100L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthTestEnable = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthWriteEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthWriteEnable = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthCompareOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthCompareOp = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBoundsTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthBoundsTestEnable = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stencilTestEnable = 36;
+    public static final java.lang.foreign.StructLayout LAYOUT__front = vulkan.VkStencilOpState.gRecordLayout;
+    public static final long OFFSET__front = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__back = vulkan.VkStencilOpState.gRecordLayout;
+    public static final long OFFSET__back = 68;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__minDepthBounds = 96;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__maxDepthBounds = 100;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$depthTestEnable,
-            LAYOUT$depthWriteEnable,
-            LAYOUT$depthCompareOp,
-            LAYOUT$depthBoundsTestEnable,
-            LAYOUT$stencilTestEnable,
-            LAYOUT$front,
-            LAYOUT$back,
-            LAYOUT$minDepthBounds,
-            LAYOUT$maxDepthBounds
-    ).withName("VkPipelineDepthStencilStateCreateInfo");
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__depthTestEnable,
+            LAYOUT__depthWriteEnable,
+            LAYOUT__depthCompareOp,
+            LAYOUT__depthBoundsTestEnable,
+            LAYOUT__stencilTestEnable,
+            LAYOUT__front,
+            LAYOUT__back,
+            LAYOUT__minDepthBounds,
+            LAYOUT__maxDepthBounds
+    ).withByteAlignment(8).withName("VkPipelineDepthStencilStateCreateInfo");
 
     public VkPipelineDepthStencilStateCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineDepthStencilStateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineDepthStencilStateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineDepthStencilStateCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineDepthStencilStateCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineDepthStencilStateCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int depthTestEnable() {return this.ptr.get(LAYOUT$depthTestEnable, OFFSET$depthTestEnable);}
-    public void depthTestEnable(int value) {this.ptr.set(LAYOUT$depthTestEnable, OFFSET$depthTestEnable, value);}
-    public java.lang.foreign.MemorySegment depthTestEnable_ptr() {return this.ptr.asSlice(OFFSET$depthTestEnable, LAYOUT$depthTestEnable);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int depthWriteEnable() {return this.ptr.get(LAYOUT$depthWriteEnable, OFFSET$depthWriteEnable);}
-    public void depthWriteEnable(int value) {this.ptr.set(LAYOUT$depthWriteEnable, OFFSET$depthWriteEnable, value);}
-    public java.lang.foreign.MemorySegment depthWriteEnable_ptr() {return this.ptr.asSlice(OFFSET$depthWriteEnable, LAYOUT$depthWriteEnable);}
+    public int depthTestEnable() {return this.ptr.get(LAYOUT__depthTestEnable, OFFSET__depthTestEnable);}
+    public void depthTestEnable(int value) {this.ptr.set(LAYOUT__depthTestEnable, OFFSET__depthTestEnable, value);}
+    public java.lang.foreign.MemorySegment $depthTestEnable() {return this.ptr.asSlice(OFFSET__depthTestEnable, LAYOUT__depthTestEnable);}
 
-    public int depthCompareOp() {return this.ptr.get(LAYOUT$depthCompareOp, OFFSET$depthCompareOp);}
-    public void depthCompareOp(int value) {this.ptr.set(LAYOUT$depthCompareOp, OFFSET$depthCompareOp, value);}
-    public java.lang.foreign.MemorySegment depthCompareOp_ptr() {return this.ptr.asSlice(OFFSET$depthCompareOp, LAYOUT$depthCompareOp);}
+    public int depthWriteEnable() {return this.ptr.get(LAYOUT__depthWriteEnable, OFFSET__depthWriteEnable);}
+    public void depthWriteEnable(int value) {this.ptr.set(LAYOUT__depthWriteEnable, OFFSET__depthWriteEnable, value);}
+    public java.lang.foreign.MemorySegment $depthWriteEnable() {return this.ptr.asSlice(OFFSET__depthWriteEnable, LAYOUT__depthWriteEnable);}
 
-    public int depthBoundsTestEnable() {return this.ptr.get(LAYOUT$depthBoundsTestEnable, OFFSET$depthBoundsTestEnable);}
-    public void depthBoundsTestEnable(int value) {this.ptr.set(LAYOUT$depthBoundsTestEnable, OFFSET$depthBoundsTestEnable, value);}
-    public java.lang.foreign.MemorySegment depthBoundsTestEnable_ptr() {return this.ptr.asSlice(OFFSET$depthBoundsTestEnable, LAYOUT$depthBoundsTestEnable);}
+    public int depthCompareOp() {return this.ptr.get(LAYOUT__depthCompareOp, OFFSET__depthCompareOp);}
+    public void depthCompareOp(int value) {this.ptr.set(LAYOUT__depthCompareOp, OFFSET__depthCompareOp, value);}
+    public java.lang.foreign.MemorySegment $depthCompareOp() {return this.ptr.asSlice(OFFSET__depthCompareOp, LAYOUT__depthCompareOp);}
 
-    public int stencilTestEnable() {return this.ptr.get(LAYOUT$stencilTestEnable, OFFSET$stencilTestEnable);}
-    public void stencilTestEnable(int value) {this.ptr.set(LAYOUT$stencilTestEnable, OFFSET$stencilTestEnable, value);}
-    public java.lang.foreign.MemorySegment stencilTestEnable_ptr() {return this.ptr.asSlice(OFFSET$stencilTestEnable, LAYOUT$stencilTestEnable);}
+    public int depthBoundsTestEnable() {return this.ptr.get(LAYOUT__depthBoundsTestEnable, OFFSET__depthBoundsTestEnable);}
+    public void depthBoundsTestEnable(int value) {this.ptr.set(LAYOUT__depthBoundsTestEnable, OFFSET__depthBoundsTestEnable, value);}
+    public java.lang.foreign.MemorySegment $depthBoundsTestEnable() {return this.ptr.asSlice(OFFSET__depthBoundsTestEnable, LAYOUT__depthBoundsTestEnable);}
 
-    public vulkan.VkStencilOpState front() {return new vulkan.VkStencilOpState(this.ptr.asSlice(OFFSET$front, LAYOUT$front));}
+    public int stencilTestEnable() {return this.ptr.get(LAYOUT__stencilTestEnable, OFFSET__stencilTestEnable);}
+    public void stencilTestEnable(int value) {this.ptr.set(LAYOUT__stencilTestEnable, OFFSET__stencilTestEnable, value);}
+    public java.lang.foreign.MemorySegment $stencilTestEnable() {return this.ptr.asSlice(OFFSET__stencilTestEnable, LAYOUT__stencilTestEnable);}
+
+    public vulkan.VkStencilOpState front() {return new vulkan.VkStencilOpState(this.ptr.asSlice(OFFSET__front, LAYOUT__front));}
     public void front(java.util.function.Consumer<vulkan.VkStencilOpState> consumer) {consumer.accept(this.front());}
-    public void front(vulkan.VkStencilOpState value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$front, LAYOUT$front.byteSize());}
+    public void front(vulkan.VkStencilOpState value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__front, LAYOUT__front.byteSize());}
 
-    public vulkan.VkStencilOpState back() {return new vulkan.VkStencilOpState(this.ptr.asSlice(OFFSET$back, LAYOUT$back));}
+    public vulkan.VkStencilOpState back() {return new vulkan.VkStencilOpState(this.ptr.asSlice(OFFSET__back, LAYOUT__back));}
     public void back(java.util.function.Consumer<vulkan.VkStencilOpState> consumer) {consumer.accept(this.back());}
-    public void back(vulkan.VkStencilOpState value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$back, LAYOUT$back.byteSize());}
+    public void back(vulkan.VkStencilOpState value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__back, LAYOUT__back.byteSize());}
 
-    public float minDepthBounds() {return this.ptr.get(LAYOUT$minDepthBounds, OFFSET$minDepthBounds);}
-    public void minDepthBounds(float value) {this.ptr.set(LAYOUT$minDepthBounds, OFFSET$minDepthBounds, value);}
-    public java.lang.foreign.MemorySegment minDepthBounds_ptr() {return this.ptr.asSlice(OFFSET$minDepthBounds, LAYOUT$minDepthBounds);}
+    public float minDepthBounds() {return this.ptr.get(LAYOUT__minDepthBounds, OFFSET__minDepthBounds);}
+    public void minDepthBounds(float value) {this.ptr.set(LAYOUT__minDepthBounds, OFFSET__minDepthBounds, value);}
+    public java.lang.foreign.MemorySegment $minDepthBounds() {return this.ptr.asSlice(OFFSET__minDepthBounds, LAYOUT__minDepthBounds);}
 
-    public float maxDepthBounds() {return this.ptr.get(LAYOUT$maxDepthBounds, OFFSET$maxDepthBounds);}
-    public void maxDepthBounds(float value) {this.ptr.set(LAYOUT$maxDepthBounds, OFFSET$maxDepthBounds, value);}
-    public java.lang.foreign.MemorySegment maxDepthBounds_ptr() {return this.ptr.asSlice(OFFSET$maxDepthBounds, LAYOUT$maxDepthBounds);}
+    public float maxDepthBounds() {return this.ptr.get(LAYOUT__maxDepthBounds, OFFSET__maxDepthBounds);}
+    public void maxDepthBounds(float value) {this.ptr.set(LAYOUT__maxDepthBounds, OFFSET__maxDepthBounds, value);}
+    public java.lang.foreign.MemorySegment $maxDepthBounds() {return this.ptr.asSlice(OFFSET__maxDepthBounds, LAYOUT__maxDepthBounds);}
 }

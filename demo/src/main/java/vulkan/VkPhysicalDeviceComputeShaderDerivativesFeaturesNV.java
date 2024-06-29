@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$computeDerivativeGroupQuads = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$computeDerivativeGroupQuads = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$computeDerivativeGroupLinear = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$computeDerivativeGroupLinear = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeDerivativeGroupQuads = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__computeDerivativeGroupQuads = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeDerivativeGroupLinear = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__computeDerivativeGroupLinear = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$computeDerivativeGroupQuads,
-            LAYOUT$computeDerivativeGroupLinear
-    ).withName("VkPhysicalDeviceComputeShaderDerivativesFeaturesNV");
+            LAYOUT__pNext,
+            LAYOUT__computeDerivativeGroupQuads,
+            LAYOUT__computeDerivativeGroupLinear
+    ).withByteAlignment(8).withName("VkPhysicalDeviceComputeShaderDerivativesFeaturesNV");
 
     public VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceComputeShaderDerivativesFeaturesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceComputeShaderDerivativesFeaturesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceComputeShaderDerivativesFeaturesNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int computeDerivativeGroupQuads() {return this.ptr.get(LAYOUT$computeDerivativeGroupQuads, OFFSET$computeDerivativeGroupQuads);}
-    public void computeDerivativeGroupQuads(int value) {this.ptr.set(LAYOUT$computeDerivativeGroupQuads, OFFSET$computeDerivativeGroupQuads, value);}
-    public java.lang.foreign.MemorySegment computeDerivativeGroupQuads_ptr() {return this.ptr.asSlice(OFFSET$computeDerivativeGroupQuads, LAYOUT$computeDerivativeGroupQuads);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int computeDerivativeGroupLinear() {return this.ptr.get(LAYOUT$computeDerivativeGroupLinear, OFFSET$computeDerivativeGroupLinear);}
-    public void computeDerivativeGroupLinear(int value) {this.ptr.set(LAYOUT$computeDerivativeGroupLinear, OFFSET$computeDerivativeGroupLinear, value);}
-    public java.lang.foreign.MemorySegment computeDerivativeGroupLinear_ptr() {return this.ptr.asSlice(OFFSET$computeDerivativeGroupLinear, LAYOUT$computeDerivativeGroupLinear);}
+    public int computeDerivativeGroupQuads() {return this.ptr.get(LAYOUT__computeDerivativeGroupQuads, OFFSET__computeDerivativeGroupQuads);}
+    public void computeDerivativeGroupQuads(int value) {this.ptr.set(LAYOUT__computeDerivativeGroupQuads, OFFSET__computeDerivativeGroupQuads, value);}
+    public java.lang.foreign.MemorySegment $computeDerivativeGroupQuads() {return this.ptr.asSlice(OFFSET__computeDerivativeGroupQuads, LAYOUT__computeDerivativeGroupQuads);}
+
+    public int computeDerivativeGroupLinear() {return this.ptr.get(LAYOUT__computeDerivativeGroupLinear, OFFSET__computeDerivativeGroupLinear);}
+    public void computeDerivativeGroupLinear(int value) {this.ptr.set(LAYOUT__computeDerivativeGroupLinear, OFFSET__computeDerivativeGroupLinear, value);}
+    public java.lang.foreign.MemorySegment $computeDerivativeGroupLinear() {return this.ptr.asSlice(OFFSET__computeDerivativeGroupLinear, LAYOUT__computeDerivativeGroupLinear);}
 }

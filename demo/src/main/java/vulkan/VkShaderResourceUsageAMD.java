@@ -2,53 +2,58 @@ package vulkan;
 
 public record VkShaderResourceUsageAMD(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$numUsedVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$numUsedVgprs = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$numUsedSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$numUsedSgprs = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$ldsSizePerLocalWorkGroup = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$ldsSizePerLocalWorkGroup = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$ldsUsageSizeInBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$ldsUsageSizeInBytes = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$scratchMemUsageInBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$scratchMemUsageInBytes = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numUsedVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__numUsedVgprs = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numUsedSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__numUsedSgprs = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ldsSizePerLocalWorkGroup = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__ldsSizePerLocalWorkGroup = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__ldsUsageSizeInBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__ldsUsageSizeInBytes = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__scratchMemUsageInBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__scratchMemUsageInBytes = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$numUsedVgprs,
-            LAYOUT$numUsedSgprs,
-            LAYOUT$ldsSizePerLocalWorkGroup,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__numUsedVgprs,
+            LAYOUT__numUsedSgprs,
+            LAYOUT__ldsSizePerLocalWorkGroup,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$ldsUsageSizeInBytes,
-            LAYOUT$scratchMemUsageInBytes
-    ).withName("VkShaderResourceUsageAMD");
+            LAYOUT__ldsUsageSizeInBytes,
+            LAYOUT__scratchMemUsageInBytes
+    ).withByteAlignment(8).withName("VkShaderResourceUsageAMD");
 
     public VkShaderResourceUsageAMD(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkShaderResourceUsageAMD getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkShaderResourceUsageAMD getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkShaderResourceUsageAMD(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkShaderResourceUsageAMD(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int numUsedVgprs() {return this.ptr.get(LAYOUT$numUsedVgprs, OFFSET$numUsedVgprs);}
-    public void numUsedVgprs(int value) {this.ptr.set(LAYOUT$numUsedVgprs, OFFSET$numUsedVgprs, value);}
-    public java.lang.foreign.MemorySegment numUsedVgprs_ptr() {return this.ptr.asSlice(OFFSET$numUsedVgprs, LAYOUT$numUsedVgprs);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkShaderResourceUsageAMD value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int numUsedSgprs() {return this.ptr.get(LAYOUT$numUsedSgprs, OFFSET$numUsedSgprs);}
-    public void numUsedSgprs(int value) {this.ptr.set(LAYOUT$numUsedSgprs, OFFSET$numUsedSgprs, value);}
-    public java.lang.foreign.MemorySegment numUsedSgprs_ptr() {return this.ptr.asSlice(OFFSET$numUsedSgprs, LAYOUT$numUsedSgprs);}
+    public int numUsedVgprs() {return this.ptr.get(LAYOUT__numUsedVgprs, OFFSET__numUsedVgprs);}
+    public void numUsedVgprs(int value) {this.ptr.set(LAYOUT__numUsedVgprs, OFFSET__numUsedVgprs, value);}
+    public java.lang.foreign.MemorySegment $numUsedVgprs() {return this.ptr.asSlice(OFFSET__numUsedVgprs, LAYOUT__numUsedVgprs);}
 
-    public int ldsSizePerLocalWorkGroup() {return this.ptr.get(LAYOUT$ldsSizePerLocalWorkGroup, OFFSET$ldsSizePerLocalWorkGroup);}
-    public void ldsSizePerLocalWorkGroup(int value) {this.ptr.set(LAYOUT$ldsSizePerLocalWorkGroup, OFFSET$ldsSizePerLocalWorkGroup, value);}
-    public java.lang.foreign.MemorySegment ldsSizePerLocalWorkGroup_ptr() {return this.ptr.asSlice(OFFSET$ldsSizePerLocalWorkGroup, LAYOUT$ldsSizePerLocalWorkGroup);}
+    public int numUsedSgprs() {return this.ptr.get(LAYOUT__numUsedSgprs, OFFSET__numUsedSgprs);}
+    public void numUsedSgprs(int value) {this.ptr.set(LAYOUT__numUsedSgprs, OFFSET__numUsedSgprs, value);}
+    public java.lang.foreign.MemorySegment $numUsedSgprs() {return this.ptr.asSlice(OFFSET__numUsedSgprs, LAYOUT__numUsedSgprs);}
 
-    public long ldsUsageSizeInBytes() {return this.ptr.get(LAYOUT$ldsUsageSizeInBytes, OFFSET$ldsUsageSizeInBytes);}
-    public void ldsUsageSizeInBytes(long value) {this.ptr.set(LAYOUT$ldsUsageSizeInBytes, OFFSET$ldsUsageSizeInBytes, value);}
-    public java.lang.foreign.MemorySegment ldsUsageSizeInBytes_ptr() {return this.ptr.asSlice(OFFSET$ldsUsageSizeInBytes, LAYOUT$ldsUsageSizeInBytes);}
+    public int ldsSizePerLocalWorkGroup() {return this.ptr.get(LAYOUT__ldsSizePerLocalWorkGroup, OFFSET__ldsSizePerLocalWorkGroup);}
+    public void ldsSizePerLocalWorkGroup(int value) {this.ptr.set(LAYOUT__ldsSizePerLocalWorkGroup, OFFSET__ldsSizePerLocalWorkGroup, value);}
+    public java.lang.foreign.MemorySegment $ldsSizePerLocalWorkGroup() {return this.ptr.asSlice(OFFSET__ldsSizePerLocalWorkGroup, LAYOUT__ldsSizePerLocalWorkGroup);}
 
-    public long scratchMemUsageInBytes() {return this.ptr.get(LAYOUT$scratchMemUsageInBytes, OFFSET$scratchMemUsageInBytes);}
-    public void scratchMemUsageInBytes(long value) {this.ptr.set(LAYOUT$scratchMemUsageInBytes, OFFSET$scratchMemUsageInBytes, value);}
-    public java.lang.foreign.MemorySegment scratchMemUsageInBytes_ptr() {return this.ptr.asSlice(OFFSET$scratchMemUsageInBytes, LAYOUT$scratchMemUsageInBytes);}
+    public long ldsUsageSizeInBytes() {return this.ptr.get(LAYOUT__ldsUsageSizeInBytes, OFFSET__ldsUsageSizeInBytes);}
+    public void ldsUsageSizeInBytes(long value) {this.ptr.set(LAYOUT__ldsUsageSizeInBytes, OFFSET__ldsUsageSizeInBytes, value);}
+    public java.lang.foreign.MemorySegment $ldsUsageSizeInBytes() {return this.ptr.asSlice(OFFSET__ldsUsageSizeInBytes, LAYOUT__ldsUsageSizeInBytes);}
+
+    public long scratchMemUsageInBytes() {return this.ptr.get(LAYOUT__scratchMemUsageInBytes, OFFSET__scratchMemUsageInBytes);}
+    public void scratchMemUsageInBytes(long value) {this.ptr.set(LAYOUT__scratchMemUsageInBytes, OFFSET__scratchMemUsageInBytes, value);}
+    public java.lang.foreign.MemorySegment $scratchMemUsageInBytes() {return this.ptr.asSlice(OFFSET__scratchMemUsageInBytes, LAYOUT__scratchMemUsageInBytes);}
 }

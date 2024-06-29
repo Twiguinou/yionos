@@ -2,81 +2,92 @@ package nuklear;
 
 public record nk_style_chart(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$background = nuklear.nk_style_item.gStructLayout;
-    public static final long OFFSET$background = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$border_color = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$border_color = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$selected_color = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$selected_color = 44L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$color = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$color = 48L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$border = 52L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$rounding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$rounding = 56L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$padding = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$padding = 60L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$color_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$color_factor = 68L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$disabled_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$disabled_factor = 72L;
+    public static final java.lang.foreign.StructLayout LAYOUT__background = nuklear.nk_style_item.gRecordLayout;
+    public static final long OFFSET__background = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__border_color = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__border_color = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__selected_color = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__selected_color = 44;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__color = 48;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__border = 52;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__rounding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__rounding = 56;
+    public static final java.lang.foreign.StructLayout LAYOUT__padding = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__padding = 60;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__color_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__color_factor = 68;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__disabled_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__disabled_factor = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__show_markers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__show_markers = 76;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$background,
-            LAYOUT$border_color,
-            LAYOUT$selected_color,
-            LAYOUT$color,
-            LAYOUT$border,
-            LAYOUT$rounding,
-            LAYOUT$padding,
-            LAYOUT$color_factor,
-            LAYOUT$disabled_factor,
-            java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_style_chart");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__background,
+            LAYOUT__border_color,
+            LAYOUT__selected_color,
+            LAYOUT__color,
+            LAYOUT__border,
+            LAYOUT__rounding,
+            LAYOUT__padding,
+            LAYOUT__color_factor,
+            LAYOUT__disabled_factor,
+            LAYOUT__show_markers
+    ).withByteAlignment(8).withName("nk_style_chart");
 
     public nk_style_chart(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_style_chart getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_style_chart getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_style_chart(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_style_chart(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_style_item background() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET$background, LAYOUT$background));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_style_chart value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_style_item background() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET__background, LAYOUT__background));}
     public void background(java.util.function.Consumer<nuklear.nk_style_item> consumer) {consumer.accept(this.background());}
-    public void background(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$background, LAYOUT$background.byteSize());}
+    public void background(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__background, LAYOUT__background.byteSize());}
 
-    public nuklear.nk_color border_color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$border_color, LAYOUT$border_color));}
+    public nuklear.nk_color border_color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__border_color, LAYOUT__border_color));}
     public void border_color(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.border_color());}
-    public void border_color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$border_color, LAYOUT$border_color.byteSize());}
+    public void border_color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__border_color, LAYOUT__border_color.byteSize());}
 
-    public nuklear.nk_color selected_color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$selected_color, LAYOUT$selected_color));}
+    public nuklear.nk_color selected_color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__selected_color, LAYOUT__selected_color));}
     public void selected_color(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.selected_color());}
-    public void selected_color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$selected_color, LAYOUT$selected_color.byteSize());}
+    public void selected_color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__selected_color, LAYOUT__selected_color.byteSize());}
 
-    public nuklear.nk_color color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$color, LAYOUT$color));}
+    public nuklear.nk_color color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__color, LAYOUT__color));}
     public void color(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.color());}
-    public void color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$color, LAYOUT$color.byteSize());}
+    public void color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__color, LAYOUT__color.byteSize());}
 
-    public float border() {return this._ptr.get(LAYOUT$border, OFFSET$border);}
-    public void border(float value) {this._ptr.set(LAYOUT$border, OFFSET$border, value);}
-    public java.lang.foreign.MemorySegment border_ptr() {return this._ptr.asSlice(OFFSET$border, LAYOUT$border);}
+    public float border() {return this._ptr.get(LAYOUT__border, OFFSET__border);}
+    public void border(float value) {this._ptr.set(LAYOUT__border, OFFSET__border, value);}
+    public java.lang.foreign.MemorySegment $border() {return this._ptr.asSlice(OFFSET__border, LAYOUT__border);}
 
-    public float rounding() {return this._ptr.get(LAYOUT$rounding, OFFSET$rounding);}
-    public void rounding(float value) {this._ptr.set(LAYOUT$rounding, OFFSET$rounding, value);}
-    public java.lang.foreign.MemorySegment rounding_ptr() {return this._ptr.asSlice(OFFSET$rounding, LAYOUT$rounding);}
+    public float rounding() {return this._ptr.get(LAYOUT__rounding, OFFSET__rounding);}
+    public void rounding(float value) {this._ptr.set(LAYOUT__rounding, OFFSET__rounding, value);}
+    public java.lang.foreign.MemorySegment $rounding() {return this._ptr.asSlice(OFFSET__rounding, LAYOUT__rounding);}
 
-    public nuklear.nk_vec2 padding() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$padding, LAYOUT$padding));}
+    public nuklear.nk_vec2 padding() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__padding, LAYOUT__padding));}
     public void padding(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.padding());}
-    public void padding(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$padding, LAYOUT$padding.byteSize());}
+    public void padding(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__padding, LAYOUT__padding.byteSize());}
 
-    public float color_factor() {return this._ptr.get(LAYOUT$color_factor, OFFSET$color_factor);}
-    public void color_factor(float value) {this._ptr.set(LAYOUT$color_factor, OFFSET$color_factor, value);}
-    public java.lang.foreign.MemorySegment color_factor_ptr() {return this._ptr.asSlice(OFFSET$color_factor, LAYOUT$color_factor);}
+    public float color_factor() {return this._ptr.get(LAYOUT__color_factor, OFFSET__color_factor);}
+    public void color_factor(float value) {this._ptr.set(LAYOUT__color_factor, OFFSET__color_factor, value);}
+    public java.lang.foreign.MemorySegment $color_factor() {return this._ptr.asSlice(OFFSET__color_factor, LAYOUT__color_factor);}
 
-    public float disabled_factor() {return this._ptr.get(LAYOUT$disabled_factor, OFFSET$disabled_factor);}
-    public void disabled_factor(float value) {this._ptr.set(LAYOUT$disabled_factor, OFFSET$disabled_factor, value);}
-    public java.lang.foreign.MemorySegment disabled_factor_ptr() {return this._ptr.asSlice(OFFSET$disabled_factor, LAYOUT$disabled_factor);}
+    public float disabled_factor() {return this._ptr.get(LAYOUT__disabled_factor, OFFSET__disabled_factor);}
+    public void disabled_factor(float value) {this._ptr.set(LAYOUT__disabled_factor, OFFSET__disabled_factor, value);}
+    public java.lang.foreign.MemorySegment $disabled_factor() {return this._ptr.asSlice(OFFSET__disabled_factor, LAYOUT__disabled_factor);}
+
+    public int show_markers() {return this._ptr.get(LAYOUT__show_markers, OFFSET__show_markers);}
+    public void show_markers(int value) {this._ptr.set(LAYOUT__show_markers, OFFSET__show_markers, value);}
+    public java.lang.foreign.MemorySegment $show_markers() {return this._ptr.asSlice(OFFSET__show_markers, LAYOUT__show_markers);}
 }

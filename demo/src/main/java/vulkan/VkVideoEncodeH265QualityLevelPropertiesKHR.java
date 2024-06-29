@@ -2,88 +2,93 @@ package vulkan;
 
 public record VkVideoEncodeH265QualityLevelPropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredRateControlFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredRateControlFlags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredGopFrameCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredGopFrameCount = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredIdrPeriod = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredIdrPeriod = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredConsecutiveBFrameCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredConsecutiveBFrameCount = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredSubLayerCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredSubLayerCount = 32L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$preferredConstantQp = vulkan.VkVideoEncodeH265QpKHR.gStructLayout;
-    public static final long OFFSET$preferredConstantQp = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredMaxL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredMaxL0ReferenceCount = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preferredMaxL1ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preferredMaxL1ReferenceCount = 52L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredRateControlFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredRateControlFlags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredGopFrameCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredGopFrameCount = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredIdrPeriod = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredIdrPeriod = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredConsecutiveBFrameCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredConsecutiveBFrameCount = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredSubLayerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredSubLayerCount = 32;
+    public static final java.lang.foreign.StructLayout LAYOUT__preferredConstantQp = vulkan.VkVideoEncodeH265QpKHR.gRecordLayout;
+    public static final long OFFSET__preferredConstantQp = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredMaxL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredMaxL0ReferenceCount = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredMaxL1ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preferredMaxL1ReferenceCount = 52;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$preferredRateControlFlags,
-            LAYOUT$preferredGopFrameCount,
-            LAYOUT$preferredIdrPeriod,
-            LAYOUT$preferredConsecutiveBFrameCount,
-            LAYOUT$preferredSubLayerCount,
-            LAYOUT$preferredConstantQp,
-            LAYOUT$preferredMaxL0ReferenceCount,
-            LAYOUT$preferredMaxL1ReferenceCount
-    ).withName("VkVideoEncodeH265QualityLevelPropertiesKHR");
+            LAYOUT__pNext,
+            LAYOUT__preferredRateControlFlags,
+            LAYOUT__preferredGopFrameCount,
+            LAYOUT__preferredIdrPeriod,
+            LAYOUT__preferredConsecutiveBFrameCount,
+            LAYOUT__preferredSubLayerCount,
+            LAYOUT__preferredConstantQp,
+            LAYOUT__preferredMaxL0ReferenceCount,
+            LAYOUT__preferredMaxL1ReferenceCount
+    ).withByteAlignment(8).withName("VkVideoEncodeH265QualityLevelPropertiesKHR");
 
     public VkVideoEncodeH265QualityLevelPropertiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoEncodeH265QualityLevelPropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoEncodeH265QualityLevelPropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoEncodeH265QualityLevelPropertiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoEncodeH265QualityLevelPropertiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoEncodeH265QualityLevelPropertiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int preferredRateControlFlags() {return this.ptr.get(LAYOUT$preferredRateControlFlags, OFFSET$preferredRateControlFlags);}
-    public void preferredRateControlFlags(int value) {this.ptr.set(LAYOUT$preferredRateControlFlags, OFFSET$preferredRateControlFlags, value);}
-    public java.lang.foreign.MemorySegment preferredRateControlFlags_ptr() {return this.ptr.asSlice(OFFSET$preferredRateControlFlags, LAYOUT$preferredRateControlFlags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int preferredGopFrameCount() {return this.ptr.get(LAYOUT$preferredGopFrameCount, OFFSET$preferredGopFrameCount);}
-    public void preferredGopFrameCount(int value) {this.ptr.set(LAYOUT$preferredGopFrameCount, OFFSET$preferredGopFrameCount, value);}
-    public java.lang.foreign.MemorySegment preferredGopFrameCount_ptr() {return this.ptr.asSlice(OFFSET$preferredGopFrameCount, LAYOUT$preferredGopFrameCount);}
+    public int preferredRateControlFlags() {return this.ptr.get(LAYOUT__preferredRateControlFlags, OFFSET__preferredRateControlFlags);}
+    public void preferredRateControlFlags(int value) {this.ptr.set(LAYOUT__preferredRateControlFlags, OFFSET__preferredRateControlFlags, value);}
+    public java.lang.foreign.MemorySegment $preferredRateControlFlags() {return this.ptr.asSlice(OFFSET__preferredRateControlFlags, LAYOUT__preferredRateControlFlags);}
 
-    public int preferredIdrPeriod() {return this.ptr.get(LAYOUT$preferredIdrPeriod, OFFSET$preferredIdrPeriod);}
-    public void preferredIdrPeriod(int value) {this.ptr.set(LAYOUT$preferredIdrPeriod, OFFSET$preferredIdrPeriod, value);}
-    public java.lang.foreign.MemorySegment preferredIdrPeriod_ptr() {return this.ptr.asSlice(OFFSET$preferredIdrPeriod, LAYOUT$preferredIdrPeriod);}
+    public int preferredGopFrameCount() {return this.ptr.get(LAYOUT__preferredGopFrameCount, OFFSET__preferredGopFrameCount);}
+    public void preferredGopFrameCount(int value) {this.ptr.set(LAYOUT__preferredGopFrameCount, OFFSET__preferredGopFrameCount, value);}
+    public java.lang.foreign.MemorySegment $preferredGopFrameCount() {return this.ptr.asSlice(OFFSET__preferredGopFrameCount, LAYOUT__preferredGopFrameCount);}
 
-    public int preferredConsecutiveBFrameCount() {return this.ptr.get(LAYOUT$preferredConsecutiveBFrameCount, OFFSET$preferredConsecutiveBFrameCount);}
-    public void preferredConsecutiveBFrameCount(int value) {this.ptr.set(LAYOUT$preferredConsecutiveBFrameCount, OFFSET$preferredConsecutiveBFrameCount, value);}
-    public java.lang.foreign.MemorySegment preferredConsecutiveBFrameCount_ptr() {return this.ptr.asSlice(OFFSET$preferredConsecutiveBFrameCount, LAYOUT$preferredConsecutiveBFrameCount);}
+    public int preferredIdrPeriod() {return this.ptr.get(LAYOUT__preferredIdrPeriod, OFFSET__preferredIdrPeriod);}
+    public void preferredIdrPeriod(int value) {this.ptr.set(LAYOUT__preferredIdrPeriod, OFFSET__preferredIdrPeriod, value);}
+    public java.lang.foreign.MemorySegment $preferredIdrPeriod() {return this.ptr.asSlice(OFFSET__preferredIdrPeriod, LAYOUT__preferredIdrPeriod);}
 
-    public int preferredSubLayerCount() {return this.ptr.get(LAYOUT$preferredSubLayerCount, OFFSET$preferredSubLayerCount);}
-    public void preferredSubLayerCount(int value) {this.ptr.set(LAYOUT$preferredSubLayerCount, OFFSET$preferredSubLayerCount, value);}
-    public java.lang.foreign.MemorySegment preferredSubLayerCount_ptr() {return this.ptr.asSlice(OFFSET$preferredSubLayerCount, LAYOUT$preferredSubLayerCount);}
+    public int preferredConsecutiveBFrameCount() {return this.ptr.get(LAYOUT__preferredConsecutiveBFrameCount, OFFSET__preferredConsecutiveBFrameCount);}
+    public void preferredConsecutiveBFrameCount(int value) {this.ptr.set(LAYOUT__preferredConsecutiveBFrameCount, OFFSET__preferredConsecutiveBFrameCount, value);}
+    public java.lang.foreign.MemorySegment $preferredConsecutiveBFrameCount() {return this.ptr.asSlice(OFFSET__preferredConsecutiveBFrameCount, LAYOUT__preferredConsecutiveBFrameCount);}
 
-    public vulkan.VkVideoEncodeH265QpKHR preferredConstantQp() {return new vulkan.VkVideoEncodeH265QpKHR(this.ptr.asSlice(OFFSET$preferredConstantQp, LAYOUT$preferredConstantQp));}
+    public int preferredSubLayerCount() {return this.ptr.get(LAYOUT__preferredSubLayerCount, OFFSET__preferredSubLayerCount);}
+    public void preferredSubLayerCount(int value) {this.ptr.set(LAYOUT__preferredSubLayerCount, OFFSET__preferredSubLayerCount, value);}
+    public java.lang.foreign.MemorySegment $preferredSubLayerCount() {return this.ptr.asSlice(OFFSET__preferredSubLayerCount, LAYOUT__preferredSubLayerCount);}
+
+    public vulkan.VkVideoEncodeH265QpKHR preferredConstantQp() {return new vulkan.VkVideoEncodeH265QpKHR(this.ptr.asSlice(OFFSET__preferredConstantQp, LAYOUT__preferredConstantQp));}
     public void preferredConstantQp(java.util.function.Consumer<vulkan.VkVideoEncodeH265QpKHR> consumer) {consumer.accept(this.preferredConstantQp());}
-    public void preferredConstantQp(vulkan.VkVideoEncodeH265QpKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$preferredConstantQp, LAYOUT$preferredConstantQp.byteSize());}
+    public void preferredConstantQp(vulkan.VkVideoEncodeH265QpKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__preferredConstantQp, LAYOUT__preferredConstantQp.byteSize());}
 
-    public int preferredMaxL0ReferenceCount() {return this.ptr.get(LAYOUT$preferredMaxL0ReferenceCount, OFFSET$preferredMaxL0ReferenceCount);}
-    public void preferredMaxL0ReferenceCount(int value) {this.ptr.set(LAYOUT$preferredMaxL0ReferenceCount, OFFSET$preferredMaxL0ReferenceCount, value);}
-    public java.lang.foreign.MemorySegment preferredMaxL0ReferenceCount_ptr() {return this.ptr.asSlice(OFFSET$preferredMaxL0ReferenceCount, LAYOUT$preferredMaxL0ReferenceCount);}
+    public int preferredMaxL0ReferenceCount() {return this.ptr.get(LAYOUT__preferredMaxL0ReferenceCount, OFFSET__preferredMaxL0ReferenceCount);}
+    public void preferredMaxL0ReferenceCount(int value) {this.ptr.set(LAYOUT__preferredMaxL0ReferenceCount, OFFSET__preferredMaxL0ReferenceCount, value);}
+    public java.lang.foreign.MemorySegment $preferredMaxL0ReferenceCount() {return this.ptr.asSlice(OFFSET__preferredMaxL0ReferenceCount, LAYOUT__preferredMaxL0ReferenceCount);}
 
-    public int preferredMaxL1ReferenceCount() {return this.ptr.get(LAYOUT$preferredMaxL1ReferenceCount, OFFSET$preferredMaxL1ReferenceCount);}
-    public void preferredMaxL1ReferenceCount(int value) {this.ptr.set(LAYOUT$preferredMaxL1ReferenceCount, OFFSET$preferredMaxL1ReferenceCount, value);}
-    public java.lang.foreign.MemorySegment preferredMaxL1ReferenceCount_ptr() {return this.ptr.asSlice(OFFSET$preferredMaxL1ReferenceCount, LAYOUT$preferredMaxL1ReferenceCount);}
+    public int preferredMaxL1ReferenceCount() {return this.ptr.get(LAYOUT__preferredMaxL1ReferenceCount, OFFSET__preferredMaxL1ReferenceCount);}
+    public void preferredMaxL1ReferenceCount(int value) {this.ptr.set(LAYOUT__preferredMaxL1ReferenceCount, OFFSET__preferredMaxL1ReferenceCount, value);}
+    public java.lang.foreign.MemorySegment $preferredMaxL1ReferenceCount() {return this.ptr.asSlice(OFFSET__preferredMaxL1ReferenceCount, LAYOUT__preferredMaxL1ReferenceCount);}
 }

@@ -2,39 +2,44 @@ package vulkan;
 
 public record VkDeviceFaultAddressInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$addressType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$addressType = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$reportedAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$reportedAddress = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$addressPrecision = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$addressPrecision = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__addressType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__addressType = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__reportedAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__reportedAddress = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__addressPrecision = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__addressPrecision = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$addressType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__addressType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$reportedAddress,
-            LAYOUT$addressPrecision
-    ).withName("VkDeviceFaultAddressInfoEXT");
+            LAYOUT__reportedAddress,
+            LAYOUT__addressPrecision
+    ).withByteAlignment(8).withName("VkDeviceFaultAddressInfoEXT");
 
     public VkDeviceFaultAddressInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceFaultAddressInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceFaultAddressInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceFaultAddressInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceFaultAddressInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int addressType() {return this.ptr.get(LAYOUT$addressType, OFFSET$addressType);}
-    public void addressType(int value) {this.ptr.set(LAYOUT$addressType, OFFSET$addressType, value);}
-    public java.lang.foreign.MemorySegment addressType_ptr() {return this.ptr.asSlice(OFFSET$addressType, LAYOUT$addressType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceFaultAddressInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long reportedAddress() {return this.ptr.get(LAYOUT$reportedAddress, OFFSET$reportedAddress);}
-    public void reportedAddress(long value) {this.ptr.set(LAYOUT$reportedAddress, OFFSET$reportedAddress, value);}
-    public java.lang.foreign.MemorySegment reportedAddress_ptr() {return this.ptr.asSlice(OFFSET$reportedAddress, LAYOUT$reportedAddress);}
+    public int addressType() {return this.ptr.get(LAYOUT__addressType, OFFSET__addressType);}
+    public void addressType(int value) {this.ptr.set(LAYOUT__addressType, OFFSET__addressType, value);}
+    public java.lang.foreign.MemorySegment $addressType() {return this.ptr.asSlice(OFFSET__addressType, LAYOUT__addressType);}
 
-    public long addressPrecision() {return this.ptr.get(LAYOUT$addressPrecision, OFFSET$addressPrecision);}
-    public void addressPrecision(long value) {this.ptr.set(LAYOUT$addressPrecision, OFFSET$addressPrecision, value);}
-    public java.lang.foreign.MemorySegment addressPrecision_ptr() {return this.ptr.asSlice(OFFSET$addressPrecision, LAYOUT$addressPrecision);}
+    public long reportedAddress() {return this.ptr.get(LAYOUT__reportedAddress, OFFSET__reportedAddress);}
+    public void reportedAddress(long value) {this.ptr.set(LAYOUT__reportedAddress, OFFSET__reportedAddress, value);}
+    public java.lang.foreign.MemorySegment $reportedAddress() {return this.ptr.asSlice(OFFSET__reportedAddress, LAYOUT__reportedAddress);}
+
+    public long addressPrecision() {return this.ptr.get(LAYOUT__addressPrecision, OFFSET__addressPrecision);}
+    public void addressPrecision(long value) {this.ptr.set(LAYOUT__addressPrecision, OFFSET__addressPrecision, value);}
+    public java.lang.foreign.MemorySegment $addressPrecision() {return this.ptr.asSlice(OFFSET__addressPrecision, LAYOUT__addressPrecision);}
 }

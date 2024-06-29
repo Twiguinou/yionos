@@ -2,40 +2,45 @@ package vulkan;
 
 public record VkPhysicalDeviceCubicWeightsFeaturesQCOM(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$selectableCubicWeights = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$selectableCubicWeights = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__selectableCubicWeights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__selectableCubicWeights = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$selectableCubicWeights,
+            LAYOUT__pNext,
+            LAYOUT__selectableCubicWeights,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceCubicWeightsFeaturesQCOM");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceCubicWeightsFeaturesQCOM");
 
     public VkPhysicalDeviceCubicWeightsFeaturesQCOM(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceCubicWeightsFeaturesQCOM getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceCubicWeightsFeaturesQCOM getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceCubicWeightsFeaturesQCOM(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceCubicWeightsFeaturesQCOM(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceCubicWeightsFeaturesQCOM value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int selectableCubicWeights() {return this.ptr.get(LAYOUT$selectableCubicWeights, OFFSET$selectableCubicWeights);}
-    public void selectableCubicWeights(int value) {this.ptr.set(LAYOUT$selectableCubicWeights, OFFSET$selectableCubicWeights, value);}
-    public java.lang.foreign.MemorySegment selectableCubicWeights_ptr() {return this.ptr.asSlice(OFFSET$selectableCubicWeights, LAYOUT$selectableCubicWeights);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public int selectableCubicWeights() {return this.ptr.get(LAYOUT__selectableCubicWeights, OFFSET__selectableCubicWeights);}
+    public void selectableCubicWeights(int value) {this.ptr.set(LAYOUT__selectableCubicWeights, OFFSET__selectableCubicWeights, value);}
+    public java.lang.foreign.MemorySegment $selectableCubicWeights() {return this.ptr.asSlice(OFFSET__selectableCubicWeights, LAYOUT__selectableCubicWeights);}
 }

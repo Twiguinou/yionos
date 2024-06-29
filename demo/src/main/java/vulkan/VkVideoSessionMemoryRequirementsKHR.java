@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkVideoSessionMemoryRequirementsKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$memoryBindIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$memoryBindIndex = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$memoryRequirements = vulkan.VkMemoryRequirements.gStructLayout;
-    public static final long OFFSET$memoryRequirements = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryBindIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__memoryBindIndex = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__memoryRequirements = vulkan.VkMemoryRequirements.gRecordLayout;
+    public static final long OFFSET__memoryRequirements = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$memoryBindIndex,
+            LAYOUT__pNext,
+            LAYOUT__memoryBindIndex,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$memoryRequirements
-    ).withName("VkVideoSessionMemoryRequirementsKHR");
+            LAYOUT__memoryRequirements
+    ).withByteAlignment(8).withName("VkVideoSessionMemoryRequirementsKHR");
 
     public VkVideoSessionMemoryRequirementsKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoSessionMemoryRequirementsKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoSessionMemoryRequirementsKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoSessionMemoryRequirementsKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoSessionMemoryRequirementsKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoSessionMemoryRequirementsKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int memoryBindIndex() {return this.ptr.get(LAYOUT$memoryBindIndex, OFFSET$memoryBindIndex);}
-    public void memoryBindIndex(int value) {this.ptr.set(LAYOUT$memoryBindIndex, OFFSET$memoryBindIndex, value);}
-    public java.lang.foreign.MemorySegment memoryBindIndex_ptr() {return this.ptr.asSlice(OFFSET$memoryBindIndex, LAYOUT$memoryBindIndex);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public vulkan.VkMemoryRequirements memoryRequirements() {return new vulkan.VkMemoryRequirements(this.ptr.asSlice(OFFSET$memoryRequirements, LAYOUT$memoryRequirements));}
+    public int memoryBindIndex() {return this.ptr.get(LAYOUT__memoryBindIndex, OFFSET__memoryBindIndex);}
+    public void memoryBindIndex(int value) {this.ptr.set(LAYOUT__memoryBindIndex, OFFSET__memoryBindIndex, value);}
+    public java.lang.foreign.MemorySegment $memoryBindIndex() {return this.ptr.asSlice(OFFSET__memoryBindIndex, LAYOUT__memoryBindIndex);}
+
+    public vulkan.VkMemoryRequirements memoryRequirements() {return new vulkan.VkMemoryRequirements(this.ptr.asSlice(OFFSET__memoryRequirements, LAYOUT__memoryRequirements));}
     public void memoryRequirements(java.util.function.Consumer<vulkan.VkMemoryRequirements> consumer) {consumer.accept(this.memoryRequirements());}
-    public void memoryRequirements(vulkan.VkMemoryRequirements value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$memoryRequirements, LAYOUT$memoryRequirements.byteSize());}
+    public void memoryRequirements(vulkan.VkMemoryRequirements value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__memoryRequirements, LAYOUT__memoryRequirements.byteSize());}
 }

@@ -2,118 +2,123 @@ package vulkan;
 
 public record VkShaderCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stage = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stage = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$nextStage = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$nextStage = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$codeType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$codeType = 28L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$codeSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$codeSize = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pCode = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pCode = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pName = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pName = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$setLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$setLayoutCount = 56L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSetLayouts = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSetLayouts = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pushConstantRangeCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pushConstantRangeCount = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pPushConstantRanges = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pPushConstantRanges = 80L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSpecializationInfo = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSpecializationInfo = 88L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stage = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nextStage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__nextStage = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__codeType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__codeType = 28;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__codeSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__codeSize = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pCode = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pName = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__setLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__setLayoutCount = 56;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSetLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSetLayouts = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushConstantRangeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pushConstantRangeCount = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPushConstantRanges = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pPushConstantRanges = 80;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSpecializationInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSpecializationInfo = 88;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$stage,
-            LAYOUT$nextStage,
-            LAYOUT$codeType,
-            LAYOUT$codeSize,
-            LAYOUT$pCode,
-            LAYOUT$pName,
-            LAYOUT$setLayoutCount,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__stage,
+            LAYOUT__nextStage,
+            LAYOUT__codeType,
+            LAYOUT__codeSize,
+            LAYOUT__pCode,
+            LAYOUT__pName,
+            LAYOUT__setLayoutCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pSetLayouts,
-            LAYOUT$pushConstantRangeCount,
+            LAYOUT__pSetLayouts,
+            LAYOUT__pushConstantRangeCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pPushConstantRanges,
-            LAYOUT$pSpecializationInfo
-    ).withName("VkShaderCreateInfoEXT");
+            LAYOUT__pPushConstantRanges,
+            LAYOUT__pSpecializationInfo
+    ).withByteAlignment(8).withName("VkShaderCreateInfoEXT");
 
     public VkShaderCreateInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkShaderCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkShaderCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkShaderCreateInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkShaderCreateInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkShaderCreateInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int stage() {return this.ptr.get(LAYOUT$stage, OFFSET$stage);}
-    public void stage(int value) {this.ptr.set(LAYOUT$stage, OFFSET$stage, value);}
-    public java.lang.foreign.MemorySegment stage_ptr() {return this.ptr.asSlice(OFFSET$stage, LAYOUT$stage);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int nextStage() {return this.ptr.get(LAYOUT$nextStage, OFFSET$nextStage);}
-    public void nextStage(int value) {this.ptr.set(LAYOUT$nextStage, OFFSET$nextStage, value);}
-    public java.lang.foreign.MemorySegment nextStage_ptr() {return this.ptr.asSlice(OFFSET$nextStage, LAYOUT$nextStage);}
+    public int stage() {return this.ptr.get(LAYOUT__stage, OFFSET__stage);}
+    public void stage(int value) {this.ptr.set(LAYOUT__stage, OFFSET__stage, value);}
+    public java.lang.foreign.MemorySegment $stage() {return this.ptr.asSlice(OFFSET__stage, LAYOUT__stage);}
 
-    public int codeType() {return this.ptr.get(LAYOUT$codeType, OFFSET$codeType);}
-    public void codeType(int value) {this.ptr.set(LAYOUT$codeType, OFFSET$codeType, value);}
-    public java.lang.foreign.MemorySegment codeType_ptr() {return this.ptr.asSlice(OFFSET$codeType, LAYOUT$codeType);}
+    public int nextStage() {return this.ptr.get(LAYOUT__nextStage, OFFSET__nextStage);}
+    public void nextStage(int value) {this.ptr.set(LAYOUT__nextStage, OFFSET__nextStage, value);}
+    public java.lang.foreign.MemorySegment $nextStage() {return this.ptr.asSlice(OFFSET__nextStage, LAYOUT__nextStage);}
 
-    public long codeSize() {return this.ptr.get(LAYOUT$codeSize, OFFSET$codeSize);}
-    public void codeSize(long value) {this.ptr.set(LAYOUT$codeSize, OFFSET$codeSize, value);}
-    public java.lang.foreign.MemorySegment codeSize_ptr() {return this.ptr.asSlice(OFFSET$codeSize, LAYOUT$codeSize);}
+    public int codeType() {return this.ptr.get(LAYOUT__codeType, OFFSET__codeType);}
+    public void codeType(int value) {this.ptr.set(LAYOUT__codeType, OFFSET__codeType, value);}
+    public java.lang.foreign.MemorySegment $codeType() {return this.ptr.asSlice(OFFSET__codeType, LAYOUT__codeType);}
 
-    public java.lang.foreign.MemorySegment pCode() {return this.ptr.get(LAYOUT$pCode, OFFSET$pCode);}
-    public void pCode(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pCode, OFFSET$pCode, value);}
-    public java.lang.foreign.MemorySegment pCode_ptr() {return this.ptr.asSlice(OFFSET$pCode, LAYOUT$pCode);}
+    public long codeSize() {return this.ptr.get(LAYOUT__codeSize, OFFSET__codeSize);}
+    public void codeSize(long value) {this.ptr.set(LAYOUT__codeSize, OFFSET__codeSize, value);}
+    public java.lang.foreign.MemorySegment $codeSize() {return this.ptr.asSlice(OFFSET__codeSize, LAYOUT__codeSize);}
 
-    public java.lang.foreign.MemorySegment pName() {return this.ptr.get(LAYOUT$pName, OFFSET$pName);}
-    public void pName(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pName, OFFSET$pName, value);}
-    public java.lang.foreign.MemorySegment pName_ptr() {return this.ptr.asSlice(OFFSET$pName, LAYOUT$pName);}
+    public java.lang.foreign.MemorySegment pCode() {return this.ptr.get(LAYOUT__pCode, OFFSET__pCode);}
+    public void pCode(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pCode, OFFSET__pCode, value);}
+    public java.lang.foreign.MemorySegment $pCode() {return this.ptr.asSlice(OFFSET__pCode, LAYOUT__pCode);}
 
-    public int setLayoutCount() {return this.ptr.get(LAYOUT$setLayoutCount, OFFSET$setLayoutCount);}
-    public void setLayoutCount(int value) {this.ptr.set(LAYOUT$setLayoutCount, OFFSET$setLayoutCount, value);}
-    public java.lang.foreign.MemorySegment setLayoutCount_ptr() {return this.ptr.asSlice(OFFSET$setLayoutCount, LAYOUT$setLayoutCount);}
+    public java.lang.foreign.MemorySegment pName() {return this.ptr.get(LAYOUT__pName, OFFSET__pName);}
+    public void pName(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pName, OFFSET__pName, value);}
+    public java.lang.foreign.MemorySegment $pName() {return this.ptr.asSlice(OFFSET__pName, LAYOUT__pName);}
 
-    public java.lang.foreign.MemorySegment pSetLayouts() {return this.ptr.get(LAYOUT$pSetLayouts, OFFSET$pSetLayouts);}
-    public void pSetLayouts(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSetLayouts, OFFSET$pSetLayouts, value);}
-    public java.lang.foreign.MemorySegment pSetLayouts_ptr() {return this.ptr.asSlice(OFFSET$pSetLayouts, LAYOUT$pSetLayouts);}
+    public int setLayoutCount() {return this.ptr.get(LAYOUT__setLayoutCount, OFFSET__setLayoutCount);}
+    public void setLayoutCount(int value) {this.ptr.set(LAYOUT__setLayoutCount, OFFSET__setLayoutCount, value);}
+    public java.lang.foreign.MemorySegment $setLayoutCount() {return this.ptr.asSlice(OFFSET__setLayoutCount, LAYOUT__setLayoutCount);}
 
-    public int pushConstantRangeCount() {return this.ptr.get(LAYOUT$pushConstantRangeCount, OFFSET$pushConstantRangeCount);}
-    public void pushConstantRangeCount(int value) {this.ptr.set(LAYOUT$pushConstantRangeCount, OFFSET$pushConstantRangeCount, value);}
-    public java.lang.foreign.MemorySegment pushConstantRangeCount_ptr() {return this.ptr.asSlice(OFFSET$pushConstantRangeCount, LAYOUT$pushConstantRangeCount);}
+    public java.lang.foreign.MemorySegment pSetLayouts() {return this.ptr.get(LAYOUT__pSetLayouts, OFFSET__pSetLayouts);}
+    public void pSetLayouts(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSetLayouts, OFFSET__pSetLayouts, value);}
+    public java.lang.foreign.MemorySegment $pSetLayouts() {return this.ptr.asSlice(OFFSET__pSetLayouts, LAYOUT__pSetLayouts);}
 
-    public java.lang.foreign.MemorySegment pPushConstantRanges() {return this.ptr.get(LAYOUT$pPushConstantRanges, OFFSET$pPushConstantRanges);}
-    public void pPushConstantRanges(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pPushConstantRanges, OFFSET$pPushConstantRanges, value);}
-    public java.lang.foreign.MemorySegment pPushConstantRanges_ptr() {return this.ptr.asSlice(OFFSET$pPushConstantRanges, LAYOUT$pPushConstantRanges);}
+    public int pushConstantRangeCount() {return this.ptr.get(LAYOUT__pushConstantRangeCount, OFFSET__pushConstantRangeCount);}
+    public void pushConstantRangeCount(int value) {this.ptr.set(LAYOUT__pushConstantRangeCount, OFFSET__pushConstantRangeCount, value);}
+    public java.lang.foreign.MemorySegment $pushConstantRangeCount() {return this.ptr.asSlice(OFFSET__pushConstantRangeCount, LAYOUT__pushConstantRangeCount);}
 
-    public java.lang.foreign.MemorySegment pSpecializationInfo() {return this.ptr.get(LAYOUT$pSpecializationInfo, OFFSET$pSpecializationInfo);}
-    public void pSpecializationInfo(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSpecializationInfo, OFFSET$pSpecializationInfo, value);}
-    public java.lang.foreign.MemorySegment pSpecializationInfo_ptr() {return this.ptr.asSlice(OFFSET$pSpecializationInfo, LAYOUT$pSpecializationInfo);}
+    public java.lang.foreign.MemorySegment pPushConstantRanges() {return this.ptr.get(LAYOUT__pPushConstantRanges, OFFSET__pPushConstantRanges);}
+    public void pPushConstantRanges(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pPushConstantRanges, OFFSET__pPushConstantRanges, value);}
+    public java.lang.foreign.MemorySegment $pPushConstantRanges() {return this.ptr.asSlice(OFFSET__pPushConstantRanges, LAYOUT__pPushConstantRanges);}
+
+    public java.lang.foreign.MemorySegment pSpecializationInfo() {return this.ptr.get(LAYOUT__pSpecializationInfo, OFFSET__pSpecializationInfo);}
+    public void pSpecializationInfo(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSpecializationInfo, OFFSET__pSpecializationInfo, value);}
+    public java.lang.foreign.MemorySegment $pSpecializationInfo() {return this.ptr.asSlice(OFFSET__pSpecializationInfo, LAYOUT__pSpecializationInfo);}
 }

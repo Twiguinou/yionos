@@ -2,109 +2,114 @@ package vulkan;
 
 public record VkSurfaceCapabilities2EXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$minImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$minImageCount = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxImageCount = 20L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$currentExtent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$currentExtent = 24L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$minImageExtent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$minImageExtent = 32L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxImageExtent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$maxImageExtent = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxImageArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxImageArrayLayers = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedTransforms = 52L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$currentTransform = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$currentTransform = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedCompositeAlpha = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedCompositeAlpha = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedUsageFlags = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedSurfaceCounters = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedSurfaceCounters = 68L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__minImageCount = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxImageCount = 20;
+    public static final java.lang.foreign.StructLayout LAYOUT__currentExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__currentExtent = 24;
+    public static final java.lang.foreign.StructLayout LAYOUT__minImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__minImageExtent = 32;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__maxImageExtent = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxImageArrayLayers = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedTransforms = 52;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentTransform = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__currentTransform = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedCompositeAlpha = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedCompositeAlpha = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedUsageFlags = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedSurfaceCounters = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedSurfaceCounters = 68;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$minImageCount,
-            LAYOUT$maxImageCount,
-            LAYOUT$currentExtent,
-            LAYOUT$minImageExtent,
-            LAYOUT$maxImageExtent,
-            LAYOUT$maxImageArrayLayers,
-            LAYOUT$supportedTransforms,
-            LAYOUT$currentTransform,
-            LAYOUT$supportedCompositeAlpha,
-            LAYOUT$supportedUsageFlags,
-            LAYOUT$supportedSurfaceCounters
-    ).withName("VkSurfaceCapabilities2EXT");
+            LAYOUT__pNext,
+            LAYOUT__minImageCount,
+            LAYOUT__maxImageCount,
+            LAYOUT__currentExtent,
+            LAYOUT__minImageExtent,
+            LAYOUT__maxImageExtent,
+            LAYOUT__maxImageArrayLayers,
+            LAYOUT__supportedTransforms,
+            LAYOUT__currentTransform,
+            LAYOUT__supportedCompositeAlpha,
+            LAYOUT__supportedUsageFlags,
+            LAYOUT__supportedSurfaceCounters
+    ).withByteAlignment(8).withName("VkSurfaceCapabilities2EXT");
 
     public VkSurfaceCapabilities2EXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSurfaceCapabilities2EXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSurfaceCapabilities2EXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSurfaceCapabilities2EXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSurfaceCapabilities2EXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSurfaceCapabilities2EXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int minImageCount() {return this.ptr.get(LAYOUT$minImageCount, OFFSET$minImageCount);}
-    public void minImageCount(int value) {this.ptr.set(LAYOUT$minImageCount, OFFSET$minImageCount, value);}
-    public java.lang.foreign.MemorySegment minImageCount_ptr() {return this.ptr.asSlice(OFFSET$minImageCount, LAYOUT$minImageCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int maxImageCount() {return this.ptr.get(LAYOUT$maxImageCount, OFFSET$maxImageCount);}
-    public void maxImageCount(int value) {this.ptr.set(LAYOUT$maxImageCount, OFFSET$maxImageCount, value);}
-    public java.lang.foreign.MemorySegment maxImageCount_ptr() {return this.ptr.asSlice(OFFSET$maxImageCount, LAYOUT$maxImageCount);}
+    public int minImageCount() {return this.ptr.get(LAYOUT__minImageCount, OFFSET__minImageCount);}
+    public void minImageCount(int value) {this.ptr.set(LAYOUT__minImageCount, OFFSET__minImageCount, value);}
+    public java.lang.foreign.MemorySegment $minImageCount() {return this.ptr.asSlice(OFFSET__minImageCount, LAYOUT__minImageCount);}
 
-    public vulkan.VkExtent2D currentExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$currentExtent, LAYOUT$currentExtent));}
+    public int maxImageCount() {return this.ptr.get(LAYOUT__maxImageCount, OFFSET__maxImageCount);}
+    public void maxImageCount(int value) {this.ptr.set(LAYOUT__maxImageCount, OFFSET__maxImageCount, value);}
+    public java.lang.foreign.MemorySegment $maxImageCount() {return this.ptr.asSlice(OFFSET__maxImageCount, LAYOUT__maxImageCount);}
+
+    public vulkan.VkExtent2D currentExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__currentExtent, LAYOUT__currentExtent));}
     public void currentExtent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.currentExtent());}
-    public void currentExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$currentExtent, LAYOUT$currentExtent.byteSize());}
+    public void currentExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__currentExtent, LAYOUT__currentExtent.byteSize());}
 
-    public vulkan.VkExtent2D minImageExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$minImageExtent, LAYOUT$minImageExtent));}
+    public vulkan.VkExtent2D minImageExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__minImageExtent, LAYOUT__minImageExtent));}
     public void minImageExtent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.minImageExtent());}
-    public void minImageExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$minImageExtent, LAYOUT$minImageExtent.byteSize());}
+    public void minImageExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__minImageExtent, LAYOUT__minImageExtent.byteSize());}
 
-    public vulkan.VkExtent2D maxImageExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$maxImageExtent, LAYOUT$maxImageExtent));}
+    public vulkan.VkExtent2D maxImageExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__maxImageExtent, LAYOUT__maxImageExtent));}
     public void maxImageExtent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.maxImageExtent());}
-    public void maxImageExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxImageExtent, LAYOUT$maxImageExtent.byteSize());}
+    public void maxImageExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxImageExtent, LAYOUT__maxImageExtent.byteSize());}
 
-    public int maxImageArrayLayers() {return this.ptr.get(LAYOUT$maxImageArrayLayers, OFFSET$maxImageArrayLayers);}
-    public void maxImageArrayLayers(int value) {this.ptr.set(LAYOUT$maxImageArrayLayers, OFFSET$maxImageArrayLayers, value);}
-    public java.lang.foreign.MemorySegment maxImageArrayLayers_ptr() {return this.ptr.asSlice(OFFSET$maxImageArrayLayers, LAYOUT$maxImageArrayLayers);}
+    public int maxImageArrayLayers() {return this.ptr.get(LAYOUT__maxImageArrayLayers, OFFSET__maxImageArrayLayers);}
+    public void maxImageArrayLayers(int value) {this.ptr.set(LAYOUT__maxImageArrayLayers, OFFSET__maxImageArrayLayers, value);}
+    public java.lang.foreign.MemorySegment $maxImageArrayLayers() {return this.ptr.asSlice(OFFSET__maxImageArrayLayers, LAYOUT__maxImageArrayLayers);}
 
-    public int supportedTransforms() {return this.ptr.get(LAYOUT$supportedTransforms, OFFSET$supportedTransforms);}
-    public void supportedTransforms(int value) {this.ptr.set(LAYOUT$supportedTransforms, OFFSET$supportedTransforms, value);}
-    public java.lang.foreign.MemorySegment supportedTransforms_ptr() {return this.ptr.asSlice(OFFSET$supportedTransforms, LAYOUT$supportedTransforms);}
+    public int supportedTransforms() {return this.ptr.get(LAYOUT__supportedTransforms, OFFSET__supportedTransforms);}
+    public void supportedTransforms(int value) {this.ptr.set(LAYOUT__supportedTransforms, OFFSET__supportedTransforms, value);}
+    public java.lang.foreign.MemorySegment $supportedTransforms() {return this.ptr.asSlice(OFFSET__supportedTransforms, LAYOUT__supportedTransforms);}
 
-    public int currentTransform() {return this.ptr.get(LAYOUT$currentTransform, OFFSET$currentTransform);}
-    public void currentTransform(int value) {this.ptr.set(LAYOUT$currentTransform, OFFSET$currentTransform, value);}
-    public java.lang.foreign.MemorySegment currentTransform_ptr() {return this.ptr.asSlice(OFFSET$currentTransform, LAYOUT$currentTransform);}
+    public int currentTransform() {return this.ptr.get(LAYOUT__currentTransform, OFFSET__currentTransform);}
+    public void currentTransform(int value) {this.ptr.set(LAYOUT__currentTransform, OFFSET__currentTransform, value);}
+    public java.lang.foreign.MemorySegment $currentTransform() {return this.ptr.asSlice(OFFSET__currentTransform, LAYOUT__currentTransform);}
 
-    public int supportedCompositeAlpha() {return this.ptr.get(LAYOUT$supportedCompositeAlpha, OFFSET$supportedCompositeAlpha);}
-    public void supportedCompositeAlpha(int value) {this.ptr.set(LAYOUT$supportedCompositeAlpha, OFFSET$supportedCompositeAlpha, value);}
-    public java.lang.foreign.MemorySegment supportedCompositeAlpha_ptr() {return this.ptr.asSlice(OFFSET$supportedCompositeAlpha, LAYOUT$supportedCompositeAlpha);}
+    public int supportedCompositeAlpha() {return this.ptr.get(LAYOUT__supportedCompositeAlpha, OFFSET__supportedCompositeAlpha);}
+    public void supportedCompositeAlpha(int value) {this.ptr.set(LAYOUT__supportedCompositeAlpha, OFFSET__supportedCompositeAlpha, value);}
+    public java.lang.foreign.MemorySegment $supportedCompositeAlpha() {return this.ptr.asSlice(OFFSET__supportedCompositeAlpha, LAYOUT__supportedCompositeAlpha);}
 
-    public int supportedUsageFlags() {return this.ptr.get(LAYOUT$supportedUsageFlags, OFFSET$supportedUsageFlags);}
-    public void supportedUsageFlags(int value) {this.ptr.set(LAYOUT$supportedUsageFlags, OFFSET$supportedUsageFlags, value);}
-    public java.lang.foreign.MemorySegment supportedUsageFlags_ptr() {return this.ptr.asSlice(OFFSET$supportedUsageFlags, LAYOUT$supportedUsageFlags);}
+    public int supportedUsageFlags() {return this.ptr.get(LAYOUT__supportedUsageFlags, OFFSET__supportedUsageFlags);}
+    public void supportedUsageFlags(int value) {this.ptr.set(LAYOUT__supportedUsageFlags, OFFSET__supportedUsageFlags, value);}
+    public java.lang.foreign.MemorySegment $supportedUsageFlags() {return this.ptr.asSlice(OFFSET__supportedUsageFlags, LAYOUT__supportedUsageFlags);}
 
-    public int supportedSurfaceCounters() {return this.ptr.get(LAYOUT$supportedSurfaceCounters, OFFSET$supportedSurfaceCounters);}
-    public void supportedSurfaceCounters(int value) {this.ptr.set(LAYOUT$supportedSurfaceCounters, OFFSET$supportedSurfaceCounters, value);}
-    public java.lang.foreign.MemorySegment supportedSurfaceCounters_ptr() {return this.ptr.asSlice(OFFSET$supportedSurfaceCounters, LAYOUT$supportedSurfaceCounters);}
+    public int supportedSurfaceCounters() {return this.ptr.get(LAYOUT__supportedSurfaceCounters, OFFSET__supportedSurfaceCounters);}
+    public void supportedSurfaceCounters(int value) {this.ptr.set(LAYOUT__supportedSurfaceCounters, OFFSET__supportedSurfaceCounters, value);}
+    public java.lang.foreign.MemorySegment $supportedSurfaceCounters() {return this.ptr.asSlice(OFFSET__supportedSurfaceCounters, LAYOUT__supportedSurfaceCounters);}
 }

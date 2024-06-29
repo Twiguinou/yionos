@@ -2,38 +2,43 @@ package nuklear;
 
 public record nk_page_element(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$data = nuklear.nk_page_data.gStructLayout;
-    public static final long OFFSET$data = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$next = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$next = 504L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$prev = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$prev = 512L;
+    public static final java.lang.foreign.UnionLayout LAYOUT__data = nuklear.nk_page_data.gRecordLayout;
+    public static final long OFFSET__data = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__next = 504;
+    public static final java.lang.foreign.AddressLayout LAYOUT__prev = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__prev = 512;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$data,
-            LAYOUT$next,
-            LAYOUT$prev
-    ).withName("nk_page_element");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__data,
+            LAYOUT__next,
+            LAYOUT__prev
+    ).withByteAlignment(8).withName("nk_page_element");
 
     public nk_page_element(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_page_element getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_page_element getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_page_element(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_page_element(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_page_data data() {return new nuklear.nk_page_data(this._ptr.asSlice(OFFSET$data, LAYOUT$data));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_page_element value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_page_data data() {return new nuklear.nk_page_data(this._ptr.asSlice(OFFSET__data, LAYOUT__data));}
     public void data(java.util.function.Consumer<nuklear.nk_page_data> consumer) {consumer.accept(this.data());}
-    public void data(nuklear.nk_page_data value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$data, LAYOUT$data.byteSize());}
+    public void data(nuklear.nk_page_data value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__data, LAYOUT__data.byteSize());}
 
-    public java.lang.foreign.MemorySegment next() {return this._ptr.get(LAYOUT$next, OFFSET$next);}
-    public void next(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$next, OFFSET$next, value);}
-    public java.lang.foreign.MemorySegment next_ptr() {return this._ptr.asSlice(OFFSET$next, LAYOUT$next);}
+    public java.lang.foreign.MemorySegment next() {return this._ptr.get(LAYOUT__next, OFFSET__next);}
+    public void next(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__next, OFFSET__next, value);}
+    public java.lang.foreign.MemorySegment $next() {return this._ptr.asSlice(OFFSET__next, LAYOUT__next);}
 
-    public java.lang.foreign.MemorySegment prev() {return this._ptr.get(LAYOUT$prev, OFFSET$prev);}
-    public void prev(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$prev, OFFSET$prev, value);}
-    public java.lang.foreign.MemorySegment prev_ptr() {return this._ptr.asSlice(OFFSET$prev, LAYOUT$prev);}
+    public java.lang.foreign.MemorySegment prev() {return this._ptr.get(LAYOUT__prev, OFFSET__prev);}
+    public void prev(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__prev, OFFSET__prev, value);}
+    public java.lang.foreign.MemorySegment $prev() {return this._ptr.asSlice(OFFSET__prev, LAYOUT__prev);}
 }

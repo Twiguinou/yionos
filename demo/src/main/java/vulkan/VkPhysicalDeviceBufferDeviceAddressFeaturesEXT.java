@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceBufferDeviceAddressFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferDeviceAddress = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferDeviceAddress = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferDeviceAddressCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferDeviceAddressCaptureReplay = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferDeviceAddressMultiDevice = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferDeviceAddressMultiDevice = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddress = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferDeviceAddress = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferDeviceAddressCaptureReplay = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressMultiDevice = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferDeviceAddressMultiDevice = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$bufferDeviceAddress,
-            LAYOUT$bufferDeviceAddressCaptureReplay,
-            LAYOUT$bufferDeviceAddressMultiDevice,
+            LAYOUT__pNext,
+            LAYOUT__bufferDeviceAddress,
+            LAYOUT__bufferDeviceAddressCaptureReplay,
+            LAYOUT__bufferDeviceAddressMultiDevice,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceBufferDeviceAddressFeaturesEXT");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceBufferDeviceAddressFeaturesEXT");
 
     public VkPhysicalDeviceBufferDeviceAddressFeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceBufferDeviceAddressFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceBufferDeviceAddressFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceBufferDeviceAddressFeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceBufferDeviceAddressFeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceBufferDeviceAddressFeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int bufferDeviceAddress() {return this.ptr.get(LAYOUT$bufferDeviceAddress, OFFSET$bufferDeviceAddress);}
-    public void bufferDeviceAddress(int value) {this.ptr.set(LAYOUT$bufferDeviceAddress, OFFSET$bufferDeviceAddress, value);}
-    public java.lang.foreign.MemorySegment bufferDeviceAddress_ptr() {return this.ptr.asSlice(OFFSET$bufferDeviceAddress, LAYOUT$bufferDeviceAddress);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int bufferDeviceAddressCaptureReplay() {return this.ptr.get(LAYOUT$bufferDeviceAddressCaptureReplay, OFFSET$bufferDeviceAddressCaptureReplay);}
-    public void bufferDeviceAddressCaptureReplay(int value) {this.ptr.set(LAYOUT$bufferDeviceAddressCaptureReplay, OFFSET$bufferDeviceAddressCaptureReplay, value);}
-    public java.lang.foreign.MemorySegment bufferDeviceAddressCaptureReplay_ptr() {return this.ptr.asSlice(OFFSET$bufferDeviceAddressCaptureReplay, LAYOUT$bufferDeviceAddressCaptureReplay);}
+    public int bufferDeviceAddress() {return this.ptr.get(LAYOUT__bufferDeviceAddress, OFFSET__bufferDeviceAddress);}
+    public void bufferDeviceAddress(int value) {this.ptr.set(LAYOUT__bufferDeviceAddress, OFFSET__bufferDeviceAddress, value);}
+    public java.lang.foreign.MemorySegment $bufferDeviceAddress() {return this.ptr.asSlice(OFFSET__bufferDeviceAddress, LAYOUT__bufferDeviceAddress);}
 
-    public int bufferDeviceAddressMultiDevice() {return this.ptr.get(LAYOUT$bufferDeviceAddressMultiDevice, OFFSET$bufferDeviceAddressMultiDevice);}
-    public void bufferDeviceAddressMultiDevice(int value) {this.ptr.set(LAYOUT$bufferDeviceAddressMultiDevice, OFFSET$bufferDeviceAddressMultiDevice, value);}
-    public java.lang.foreign.MemorySegment bufferDeviceAddressMultiDevice_ptr() {return this.ptr.asSlice(OFFSET$bufferDeviceAddressMultiDevice, LAYOUT$bufferDeviceAddressMultiDevice);}
+    public int bufferDeviceAddressCaptureReplay() {return this.ptr.get(LAYOUT__bufferDeviceAddressCaptureReplay, OFFSET__bufferDeviceAddressCaptureReplay);}
+    public void bufferDeviceAddressCaptureReplay(int value) {this.ptr.set(LAYOUT__bufferDeviceAddressCaptureReplay, OFFSET__bufferDeviceAddressCaptureReplay, value);}
+    public java.lang.foreign.MemorySegment $bufferDeviceAddressCaptureReplay() {return this.ptr.asSlice(OFFSET__bufferDeviceAddressCaptureReplay, LAYOUT__bufferDeviceAddressCaptureReplay);}
+
+    public int bufferDeviceAddressMultiDevice() {return this.ptr.get(LAYOUT__bufferDeviceAddressMultiDevice, OFFSET__bufferDeviceAddressMultiDevice);}
+    public void bufferDeviceAddressMultiDevice(int value) {this.ptr.set(LAYOUT__bufferDeviceAddressMultiDevice, OFFSET__bufferDeviceAddressMultiDevice, value);}
+    public java.lang.foreign.MemorySegment $bufferDeviceAddressMultiDevice() {return this.ptr.asSlice(OFFSET__bufferDeviceAddressMultiDevice, LAYOUT__bufferDeviceAddressMultiDevice);}
 }

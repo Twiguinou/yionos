@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
@@ -20,6 +19,7 @@ import static assimp.Assimp.*;
 import static assimp.aiOrigin.*;
 import static assimp.aiReturn.*;
 import static assimp.aiPostProcessSteps.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public record OBJLoader(String workingDirectory, int flags)
@@ -40,10 +40,10 @@ public record OBJLoader(String workingDirectory, int flags)
         ioProvider.OpenProc(((aiFileOpenProc) (_, cPath, _) ->
         {
             Arena fileArena = Arena.ofConfined();
-            String path = cPath.reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0);
-            try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STR."\{this.workingDirectory}/\{path}"))
+            String path = cPath.getString(0);
+            try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(String.format("%s/%s", this.workingDirectory, path)))
             {
-                MemorySegment data = fileArena.allocateArray(ValueLayout.JAVA_BYTE, inputStream.readAllBytes());
+                MemorySegment data = fileArena.allocateFrom(JAVA_BYTE, inputStream.readAllBytes());
                 AtomicLong filePosition = new AtomicLong(0);
 
                 aiFile file = new aiFile(fileArena);
@@ -96,7 +96,7 @@ public record OBJLoader(String workingDirectory, int flags)
 
         ioProvider.CloseProc(((aiFileCloseProc) (_, pFile) ->
         {
-            aiFile file = new aiFile(pFile.reinterpret(aiFile.gStructLayout.byteSize()));
+            aiFile file = new aiFile(pFile);
             fileArenas.get(file.UserData().address()).close();
         }).makeHandle(arena));
 
@@ -109,27 +109,27 @@ public record OBJLoader(String workingDirectory, int flags)
         {
             aiFileIO ioProvider = createIoReadingProvider(arena);
 
-            aiScene scene = new aiScene(aiImportFileEx(arena.allocateUtf8String(mainFile), this.flags, ioProvider.ptr()).reinterpret(aiScene.gStructLayout.byteSize()));
+            aiScene scene = new aiScene(aiImportFileEx(arena.allocateFrom(mainFile), this.flags, ioProvider.ptr()));
             if (scene.ptr().equals(NULL) || (scene.mFlags() & AI_SCENE_FLAGS_INCOMPLETE) != 0 || scene.mRootNode().equals(NULL))
             {
-                String error = aiGetErrorString().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0);
-                throw new IllegalStateException(STR."Failed to load model properly using Assimp: \{error}");
+                String error = aiGetErrorString().getString(0);
+                throw new IllegalStateException(String.format("Failed to load model properly using Assimp: %s", error));
             }
 
             OBJModel.Mesh[] meshes = new OBJModel.Mesh[scene.mNumMeshes()];
 
-            MemorySegment pMeshes = scene.mMeshes().reinterpret(ValueLayout.ADDRESS.byteSize() * meshes.length);
+            MemorySegment pMeshes = scene.mMeshes();
             for (int i = 0; i < meshes.length; i++)
             {
-                aiMesh mesh = new aiMesh(pMeshes.getAtIndex(ValueLayout.ADDRESS, i).reinterpret(aiMesh.gStructLayout.byteSize()));
+                aiMesh mesh = new aiMesh(pMeshes.getAtIndex(NativeTypes.UNBOUNDED_POINTER, i));
 
                 Vector3f[] vertices = new Vector3f[mesh.mNumVertices()];
                 Vector3f[] normals = new Vector3f[mesh.mNumVertices()];
                 Vector3i[] faces = new Vector3i[mesh.mNumFaces()];
 
-                MemorySegment pVertices = mesh.mVertices().reinterpret(aiVector3D.gStructLayout.byteSize() * vertices.length);
-                MemorySegment pNormals = mesh.mNormals().reinterpret(aiVector3D.gStructLayout.byteSize() * normals.length);
-                MemorySegment pFaces = mesh.mFaces().reinterpret(aiFace.gStructLayout.byteSize() * faces.length);
+                MemorySegment pVertices = mesh.mVertices();
+                MemorySegment pNormals = mesh.mNormals();
+                MemorySegment pFaces = mesh.mFaces();
 
                 for (int j = 0; j < vertices.length; j++)
                 {
@@ -144,9 +144,9 @@ public record OBJLoader(String workingDirectory, int flags)
                 {
                     aiFace face = aiFace.getAtIndex(pFaces, j);
                     assert face.mNumIndices() == 3;
-                    MemorySegment pIndices = face.mIndices().reinterpret(ValueLayout.JAVA_INT.byteSize() * 3);
+                    MemorySegment pIndices = face.mIndices().reinterpret(JAVA_INT.byteSize() * 3);
 
-                    faces[j] = new Vector3i(pIndices.getAtIndex(ValueLayout.JAVA_INT, 0), pIndices.getAtIndex(ValueLayout.JAVA_INT, 1), pIndices.getAtIndex(ValueLayout.JAVA_INT, 2));
+                    faces[j] = new Vector3i(pIndices.getAtIndex(JAVA_INT, 0), pIndices.getAtIndex(JAVA_INT, 1), pIndices.getAtIndex(JAVA_INT, 2));
                 }
 
                 meshes[i] = new OBJModel.Mesh(vertices, normals, faces);

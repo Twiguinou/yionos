@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPipelineFragmentShadingRateStateCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$fragmentSize = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$fragmentSize = 16L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$combinerOps = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$combinerOps = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__fragmentSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__fragmentSize = 16;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__combinerOps = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__combinerOps = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$fragmentSize,
-            LAYOUT$combinerOps
-    ).withName("VkPipelineFragmentShadingRateStateCreateInfoKHR");
+            LAYOUT__pNext,
+            LAYOUT__fragmentSize,
+            LAYOUT__combinerOps
+    ).withByteAlignment(8).withName("VkPipelineFragmentShadingRateStateCreateInfoKHR");
 
     public VkPipelineFragmentShadingRateStateCreateInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineFragmentShadingRateStateCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineFragmentShadingRateStateCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineFragmentShadingRateStateCreateInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineFragmentShadingRateStateCreateInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineFragmentShadingRateStateCreateInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkExtent2D fragmentSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$fragmentSize, LAYOUT$fragmentSize));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkExtent2D fragmentSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__fragmentSize, LAYOUT__fragmentSize));}
     public void fragmentSize(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.fragmentSize());}
-    public void fragmentSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$fragmentSize, LAYOUT$fragmentSize.byteSize());}
+    public void fragmentSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__fragmentSize, LAYOUT__fragmentSize.byteSize());}
 
-    public java.lang.foreign.MemorySegment combinerOps() {return this.ptr.asSlice(OFFSET$combinerOps, LAYOUT$combinerOps);}
-    public int combinerOps(int i) {return this.combinerOps().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void combinerOps(int i, int value) {this.combinerOps().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public java.lang.foreign.MemorySegment combinerOps() {return this.ptr.asSlice(OFFSET__combinerOps, LAYOUT__combinerOps);}
+    public int combinerOps(int index) {return this.combinerOps().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void combinerOps(int index, int value) {this.combinerOps().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 }

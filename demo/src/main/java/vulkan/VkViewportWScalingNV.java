@@ -2,31 +2,36 @@ package vulkan;
 
 public record VkViewportWScalingNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$xcoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$xcoeff = 0L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$ycoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$ycoeff = 4L;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__xcoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__xcoeff = 0;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__ycoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__ycoeff = 4;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$xcoeff,
-            LAYOUT$ycoeff
-    ).withName("VkViewportWScalingNV");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__xcoeff,
+            LAYOUT__ycoeff
+    ).withByteAlignment(4).withName("VkViewportWScalingNV");
 
     public VkViewportWScalingNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkViewportWScalingNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkViewportWScalingNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkViewportWScalingNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkViewportWScalingNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public float xcoeff() {return this.ptr.get(LAYOUT$xcoeff, OFFSET$xcoeff);}
-    public void xcoeff(float value) {this.ptr.set(LAYOUT$xcoeff, OFFSET$xcoeff, value);}
-    public java.lang.foreign.MemorySegment xcoeff_ptr() {return this.ptr.asSlice(OFFSET$xcoeff, LAYOUT$xcoeff);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkViewportWScalingNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public float ycoeff() {return this.ptr.get(LAYOUT$ycoeff, OFFSET$ycoeff);}
-    public void ycoeff(float value) {this.ptr.set(LAYOUT$ycoeff, OFFSET$ycoeff, value);}
-    public java.lang.foreign.MemorySegment ycoeff_ptr() {return this.ptr.asSlice(OFFSET$ycoeff, LAYOUT$ycoeff);}
+    public float xcoeff() {return this.ptr.get(LAYOUT__xcoeff, OFFSET__xcoeff);}
+    public void xcoeff(float value) {this.ptr.set(LAYOUT__xcoeff, OFFSET__xcoeff, value);}
+    public java.lang.foreign.MemorySegment $xcoeff() {return this.ptr.asSlice(OFFSET__xcoeff, LAYOUT__xcoeff);}
+
+    public float ycoeff() {return this.ptr.get(LAYOUT__ycoeff, OFFSET__ycoeff);}
+    public void ycoeff(float value) {this.ptr.set(LAYOUT__ycoeff, OFFSET__ycoeff, value);}
+    public java.lang.foreign.MemorySegment $ycoeff() {return this.ptr.asSlice(OFFSET__ycoeff, LAYOUT__ycoeff);}
 }

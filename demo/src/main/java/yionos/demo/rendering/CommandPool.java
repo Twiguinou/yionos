@@ -8,10 +8,10 @@ import yionos.demo.Disposable;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class CommandPool implements Disposable
@@ -25,13 +25,12 @@ public class CommandPool implements Disposable
         {
             VkCommandPoolCreateInfo commandPoolCreateInfo = new VkCommandPoolCreateInfo(arena);
             commandPoolCreateInfo.sType(VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO);
-            commandPoolCreateInfo.pNext(NULL);
             commandPoolCreateInfo.flags(flags);
             commandPoolCreateInfo.queueFamilyIndex(queueFamily);
 
-            MemorySegment pCommandPool = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pCommandPool = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateCommandPool(device, commandPoolCreateInfo.ptr(), NULL, pCommandPool), "Vulkan command pool creation failed");
-            this.m_handle = pCommandPool.get(ValueLayout.ADDRESS, 0);
+            this.m_handle = pCommandPool.get(ADDRESS, 0);
 
             this.device = device;
         }
@@ -51,11 +50,10 @@ public class CommandPool implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pCommandBuffers = arena.allocateArray(ValueLayout.ADDRESS, commandBufferCount);
+            MemorySegment pCommandBuffers = arena.allocate(ADDRESS, commandBufferCount);
 
             VkCommandBufferAllocateInfo commandBufferAllocateInfo = new VkCommandBufferAllocateInfo(arena);
             commandBufferAllocateInfo.sType(VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO);
-            commandBufferAllocateInfo.pNext(NULL);
             commandBufferAllocateInfo.commandPool(this.m_handle);
             commandBufferAllocateInfo.level(level);
             commandBufferAllocateInfo.commandBufferCount(commandBufferCount);
@@ -65,7 +63,7 @@ public class CommandPool implements Disposable
             VkCommandBuffer[] commandBuffers = new VkCommandBuffer[commandBufferCount];
             for (int i = 0; i < commandBufferCount; i++)
             {
-                commandBuffers[i] = new VkCommandBuffer(pCommandBuffers.getAtIndex(ValueLayout.ADDRESS, i), this.device);
+                commandBuffers[i] = new VkCommandBuffer(pCommandBuffers.getAtIndex(ADDRESS, i), this.device);
             }
 
             return commandBuffers;
@@ -76,10 +74,10 @@ public class CommandPool implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pCommandBuffers = arena.allocateArray(ValueLayout.ADDRESS, commandBuffers.length);
+            MemorySegment pCommandBuffers = arena.allocate(ADDRESS, commandBuffers.length);
             for (int i = 0; i < commandBuffers.length; i++)
             {
-                pCommandBuffers.setAtIndex(ValueLayout.ADDRESS, i, commandBuffers[i].handle());
+                pCommandBuffers.setAtIndex(ADDRESS, i, commandBuffers[i].handle());
             }
 
             vkFreeCommandBuffers(this.device, this.m_handle, commandBuffers.length, pCommandBuffers);

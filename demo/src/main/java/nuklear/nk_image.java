@@ -2,46 +2,51 @@ package nuklear;
 
 public record nk_image(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$handle = nuklear.nk_handle.gStructLayout;
-    public static final long OFFSET$handle = 0L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$w = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$w = 8L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$h = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$h = 10L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$region = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_SHORT);
-    public static final long OFFSET$region = 12L;
+    public static final java.lang.foreign.UnionLayout LAYOUT__handle = nuklear.nk_handle.gRecordLayout;
+    public static final long OFFSET__handle = 0;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__w = 8;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__h = 10;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__region = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final long OFFSET__region = 12;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$handle,
-            LAYOUT$w,
-            LAYOUT$h,
-            LAYOUT$region,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__handle,
+            LAYOUT__w,
+            LAYOUT__h,
+            LAYOUT__region,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_image");
+    ).withByteAlignment(8).withName("nk_image");
 
     public nk_image(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_image getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_image getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_image(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_image(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_handle handle() {return new nuklear.nk_handle(this._ptr.asSlice(OFFSET$handle, LAYOUT$handle));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_image value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_handle handle() {return new nuklear.nk_handle(this._ptr.asSlice(OFFSET__handle, LAYOUT__handle));}
     public void handle(java.util.function.Consumer<nuklear.nk_handle> consumer) {consumer.accept(this.handle());}
-    public void handle(nuklear.nk_handle value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$handle, LAYOUT$handle.byteSize());}
+    public void handle(nuklear.nk_handle value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__handle, LAYOUT__handle.byteSize());}
 
-    public short w() {return this._ptr.get(LAYOUT$w, OFFSET$w);}
-    public void w(short value) {this._ptr.set(LAYOUT$w, OFFSET$w, value);}
-    public java.lang.foreign.MemorySegment w_ptr() {return this._ptr.asSlice(OFFSET$w, LAYOUT$w);}
+    public short w() {return this._ptr.get(LAYOUT__w, OFFSET__w);}
+    public void w(short value) {this._ptr.set(LAYOUT__w, OFFSET__w, value);}
+    public java.lang.foreign.MemorySegment $w() {return this._ptr.asSlice(OFFSET__w, LAYOUT__w);}
 
-    public short h() {return this._ptr.get(LAYOUT$h, OFFSET$h);}
-    public void h(short value) {this._ptr.set(LAYOUT$h, OFFSET$h, value);}
-    public java.lang.foreign.MemorySegment h_ptr() {return this._ptr.asSlice(OFFSET$h, LAYOUT$h);}
+    public short h() {return this._ptr.get(LAYOUT__h, OFFSET__h);}
+    public void h(short value) {this._ptr.set(LAYOUT__h, OFFSET__h, value);}
+    public java.lang.foreign.MemorySegment $h() {return this._ptr.asSlice(OFFSET__h, LAYOUT__h);}
 
-    public java.lang.foreign.MemorySegment region() {return this._ptr.asSlice(OFFSET$region, LAYOUT$region);}
-    public short region(int i) {return this.region().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i);}
-    public void region(int i, short value) {this.region().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i, value);}
+    public java.lang.foreign.MemorySegment region() {return this._ptr.asSlice(OFFSET__region, LAYOUT__region);}
+    public short region(int index) {return this.region().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index);}
+    public void region(int index, short value) {this.region().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index, value);}
 }

@@ -2,40 +2,45 @@ package vulkan;
 
 public record VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$invocationMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$invocationMask = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__invocationMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__invocationMask = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$invocationMask,
+            LAYOUT__pNext,
+            LAYOUT__invocationMask,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceInvocationMaskFeaturesHUAWEI");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceInvocationMaskFeaturesHUAWEI");
 
     public VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceInvocationMaskFeaturesHUAWEI getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceInvocationMaskFeaturesHUAWEI getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceInvocationMaskFeaturesHUAWEI value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int invocationMask() {return this.ptr.get(LAYOUT$invocationMask, OFFSET$invocationMask);}
-    public void invocationMask(int value) {this.ptr.set(LAYOUT$invocationMask, OFFSET$invocationMask, value);}
-    public java.lang.foreign.MemorySegment invocationMask_ptr() {return this.ptr.asSlice(OFFSET$invocationMask, LAYOUT$invocationMask);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public int invocationMask() {return this.ptr.get(LAYOUT__invocationMask, OFFSET__invocationMask);}
+    public void invocationMask(int value) {this.ptr.set(LAYOUT__invocationMask, OFFSET__invocationMask, value);}
+    public java.lang.foreign.MemorySegment $invocationMask() {return this.ptr.asSlice(OFFSET__invocationMask, LAYOUT__invocationMask);}
 }

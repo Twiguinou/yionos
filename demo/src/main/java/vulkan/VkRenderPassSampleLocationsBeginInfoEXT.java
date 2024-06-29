@@ -2,62 +2,67 @@ package vulkan;
 
 public record VkRenderPassSampleLocationsBeginInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$attachmentInitialSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$attachmentInitialSampleLocationsCount = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pAttachmentInitialSampleLocations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pAttachmentInitialSampleLocations = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$postSubpassSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$postSubpassSampleLocationsCount = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pPostSubpassSampleLocations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pPostSubpassSampleLocations = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentInitialSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__attachmentInitialSampleLocationsCount = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachmentInitialSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pAttachmentInitialSampleLocations = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postSubpassSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__postSubpassSampleLocationsCount = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPostSubpassSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pPostSubpassSampleLocations = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$attachmentInitialSampleLocationsCount,
+            LAYOUT__pNext,
+            LAYOUT__attachmentInitialSampleLocationsCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pAttachmentInitialSampleLocations,
-            LAYOUT$postSubpassSampleLocationsCount,
+            LAYOUT__pAttachmentInitialSampleLocations,
+            LAYOUT__postSubpassSampleLocationsCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pPostSubpassSampleLocations
-    ).withName("VkRenderPassSampleLocationsBeginInfoEXT");
+            LAYOUT__pPostSubpassSampleLocations
+    ).withByteAlignment(8).withName("VkRenderPassSampleLocationsBeginInfoEXT");
 
     public VkRenderPassSampleLocationsBeginInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkRenderPassSampleLocationsBeginInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkRenderPassSampleLocationsBeginInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkRenderPassSampleLocationsBeginInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkRenderPassSampleLocationsBeginInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkRenderPassSampleLocationsBeginInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int attachmentInitialSampleLocationsCount() {return this.ptr.get(LAYOUT$attachmentInitialSampleLocationsCount, OFFSET$attachmentInitialSampleLocationsCount);}
-    public void attachmentInitialSampleLocationsCount(int value) {this.ptr.set(LAYOUT$attachmentInitialSampleLocationsCount, OFFSET$attachmentInitialSampleLocationsCount, value);}
-    public java.lang.foreign.MemorySegment attachmentInitialSampleLocationsCount_ptr() {return this.ptr.asSlice(OFFSET$attachmentInitialSampleLocationsCount, LAYOUT$attachmentInitialSampleLocationsCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pAttachmentInitialSampleLocations() {return this.ptr.get(LAYOUT$pAttachmentInitialSampleLocations, OFFSET$pAttachmentInitialSampleLocations);}
-    public void pAttachmentInitialSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pAttachmentInitialSampleLocations, OFFSET$pAttachmentInitialSampleLocations, value);}
-    public java.lang.foreign.MemorySegment pAttachmentInitialSampleLocations_ptr() {return this.ptr.asSlice(OFFSET$pAttachmentInitialSampleLocations, LAYOUT$pAttachmentInitialSampleLocations);}
+    public int attachmentInitialSampleLocationsCount() {return this.ptr.get(LAYOUT__attachmentInitialSampleLocationsCount, OFFSET__attachmentInitialSampleLocationsCount);}
+    public void attachmentInitialSampleLocationsCount(int value) {this.ptr.set(LAYOUT__attachmentInitialSampleLocationsCount, OFFSET__attachmentInitialSampleLocationsCount, value);}
+    public java.lang.foreign.MemorySegment $attachmentInitialSampleLocationsCount() {return this.ptr.asSlice(OFFSET__attachmentInitialSampleLocationsCount, LAYOUT__attachmentInitialSampleLocationsCount);}
 
-    public int postSubpassSampleLocationsCount() {return this.ptr.get(LAYOUT$postSubpassSampleLocationsCount, OFFSET$postSubpassSampleLocationsCount);}
-    public void postSubpassSampleLocationsCount(int value) {this.ptr.set(LAYOUT$postSubpassSampleLocationsCount, OFFSET$postSubpassSampleLocationsCount, value);}
-    public java.lang.foreign.MemorySegment postSubpassSampleLocationsCount_ptr() {return this.ptr.asSlice(OFFSET$postSubpassSampleLocationsCount, LAYOUT$postSubpassSampleLocationsCount);}
+    public java.lang.foreign.MemorySegment pAttachmentInitialSampleLocations() {return this.ptr.get(LAYOUT__pAttachmentInitialSampleLocations, OFFSET__pAttachmentInitialSampleLocations);}
+    public void pAttachmentInitialSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pAttachmentInitialSampleLocations, OFFSET__pAttachmentInitialSampleLocations, value);}
+    public java.lang.foreign.MemorySegment $pAttachmentInitialSampleLocations() {return this.ptr.asSlice(OFFSET__pAttachmentInitialSampleLocations, LAYOUT__pAttachmentInitialSampleLocations);}
 
-    public java.lang.foreign.MemorySegment pPostSubpassSampleLocations() {return this.ptr.get(LAYOUT$pPostSubpassSampleLocations, OFFSET$pPostSubpassSampleLocations);}
-    public void pPostSubpassSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pPostSubpassSampleLocations, OFFSET$pPostSubpassSampleLocations, value);}
-    public java.lang.foreign.MemorySegment pPostSubpassSampleLocations_ptr() {return this.ptr.asSlice(OFFSET$pPostSubpassSampleLocations, LAYOUT$pPostSubpassSampleLocations);}
+    public int postSubpassSampleLocationsCount() {return this.ptr.get(LAYOUT__postSubpassSampleLocationsCount, OFFSET__postSubpassSampleLocationsCount);}
+    public void postSubpassSampleLocationsCount(int value) {this.ptr.set(LAYOUT__postSubpassSampleLocationsCount, OFFSET__postSubpassSampleLocationsCount, value);}
+    public java.lang.foreign.MemorySegment $postSubpassSampleLocationsCount() {return this.ptr.asSlice(OFFSET__postSubpassSampleLocationsCount, LAYOUT__postSubpassSampleLocationsCount);}
+
+    public java.lang.foreign.MemorySegment pPostSubpassSampleLocations() {return this.ptr.get(LAYOUT__pPostSubpassSampleLocations, OFFSET__pPostSubpassSampleLocations);}
+    public void pPostSubpassSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pPostSubpassSampleLocations, OFFSET__pPostSubpassSampleLocations, value);}
+    public java.lang.foreign.MemorySegment $pPostSubpassSampleLocations() {return this.ptr.asSlice(OFFSET__pPostSubpassSampleLocations, LAYOUT__pPostSubpassSampleLocations);}
 }

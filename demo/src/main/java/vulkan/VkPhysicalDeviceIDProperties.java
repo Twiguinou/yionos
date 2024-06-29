@@ -2,67 +2,72 @@ package vulkan;
 
 public record VkPhysicalDeviceIDProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$deviceUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$deviceUUID = 16L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$driverUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$driverUUID = 32L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$deviceLUID = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$deviceLUID = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceNodeMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceNodeMask = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceLUIDValid = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceLUIDValid = 60L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__deviceUUID = 16;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__driverUUID = 32;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceLUID = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__deviceLUID = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceNodeMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceNodeMask = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceLUIDValid = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceLUIDValid = 60;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$deviceUUID,
-            LAYOUT$driverUUID,
-            LAYOUT$deviceLUID,
-            LAYOUT$deviceNodeMask,
-            LAYOUT$deviceLUIDValid
-    ).withName("VkPhysicalDeviceIDProperties");
+            LAYOUT__pNext,
+            LAYOUT__deviceUUID,
+            LAYOUT__driverUUID,
+            LAYOUT__deviceLUID,
+            LAYOUT__deviceNodeMask,
+            LAYOUT__deviceLUIDValid
+    ).withByteAlignment(8).withName("VkPhysicalDeviceIDProperties");
 
     public VkPhysicalDeviceIDProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceIDProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceIDProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceIDProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceIDProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceIDProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment deviceUUID() {return this.ptr.asSlice(OFFSET$deviceUUID, LAYOUT$deviceUUID);}
-    public char deviceUUID(int i) {return (char)this.deviceUUID().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void deviceUUID(int i, char value) {this.deviceUUID().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment driverUUID() {return this.ptr.asSlice(OFFSET$driverUUID, LAYOUT$driverUUID);}
-    public char driverUUID(int i) {return (char)this.driverUUID().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void driverUUID(int i, char value) {this.driverUUID().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment deviceUUID() {return this.ptr.asSlice(OFFSET__deviceUUID, LAYOUT__deviceUUID);}
+    public byte deviceUUID(int index) {return this.deviceUUID().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void deviceUUID(int index, byte value) {this.deviceUUID().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public java.lang.foreign.MemorySegment deviceLUID() {return this.ptr.asSlice(OFFSET$deviceLUID, LAYOUT$deviceLUID);}
-    public char deviceLUID(int i) {return (char)this.deviceLUID().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void deviceLUID(int i, char value) {this.deviceLUID().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment driverUUID() {return this.ptr.asSlice(OFFSET__driverUUID, LAYOUT__driverUUID);}
+    public byte driverUUID(int index) {return this.driverUUID().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void driverUUID(int index, byte value) {this.driverUUID().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public int deviceNodeMask() {return this.ptr.get(LAYOUT$deviceNodeMask, OFFSET$deviceNodeMask);}
-    public void deviceNodeMask(int value) {this.ptr.set(LAYOUT$deviceNodeMask, OFFSET$deviceNodeMask, value);}
-    public java.lang.foreign.MemorySegment deviceNodeMask_ptr() {return this.ptr.asSlice(OFFSET$deviceNodeMask, LAYOUT$deviceNodeMask);}
+    public java.lang.foreign.MemorySegment deviceLUID() {return this.ptr.asSlice(OFFSET__deviceLUID, LAYOUT__deviceLUID);}
+    public byte deviceLUID(int index) {return this.deviceLUID().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void deviceLUID(int index, byte value) {this.deviceLUID().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public int deviceLUIDValid() {return this.ptr.get(LAYOUT$deviceLUIDValid, OFFSET$deviceLUIDValid);}
-    public void deviceLUIDValid(int value) {this.ptr.set(LAYOUT$deviceLUIDValid, OFFSET$deviceLUIDValid, value);}
-    public java.lang.foreign.MemorySegment deviceLUIDValid_ptr() {return this.ptr.asSlice(OFFSET$deviceLUIDValid, LAYOUT$deviceLUIDValid);}
+    public int deviceNodeMask() {return this.ptr.get(LAYOUT__deviceNodeMask, OFFSET__deviceNodeMask);}
+    public void deviceNodeMask(int value) {this.ptr.set(LAYOUT__deviceNodeMask, OFFSET__deviceNodeMask, value);}
+    public java.lang.foreign.MemorySegment $deviceNodeMask() {return this.ptr.asSlice(OFFSET__deviceNodeMask, LAYOUT__deviceNodeMask);}
+
+    public int deviceLUIDValid() {return this.ptr.get(LAYOUT__deviceLUIDValid, OFFSET__deviceLUIDValid);}
+    public void deviceLUIDValid(int value) {this.ptr.set(LAYOUT__deviceLUIDValid, OFFSET__deviceLUIDValid, value);}
+    public java.lang.foreign.MemorySegment $deviceLUIDValid() {return this.ptr.asSlice(OFFSET__deviceLUIDValid, LAYOUT__deviceLUIDValid);}
 }

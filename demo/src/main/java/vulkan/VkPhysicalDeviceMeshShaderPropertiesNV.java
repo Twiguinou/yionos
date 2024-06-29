@@ -2,124 +2,129 @@ package vulkan;
 
 public record VkPhysicalDeviceMeshShaderPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDrawMeshTasksCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDrawMeshTasksCount = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxTaskWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxTaskWorkGroupInvocations = 20L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$maxTaskWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$maxTaskWorkGroupSize = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxTaskTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxTaskTotalMemorySize = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxTaskOutputCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxTaskOutputCount = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxMeshWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxMeshWorkGroupInvocations = 44L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$maxMeshWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$maxMeshWorkGroupSize = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxMeshTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxMeshTotalMemorySize = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxMeshOutputVertices = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxMeshOutputVertices = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxMeshOutputPrimitives = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxMeshOutputPrimitives = 68L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxMeshMultiviewViewCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxMeshMultiviewViewCount = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$meshOutputPerVertexGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$meshOutputPerVertexGranularity = 76L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$meshOutputPerPrimitiveGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$meshOutputPerPrimitiveGranularity = 80L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDrawMeshTasksCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDrawMeshTasksCount = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxTaskWorkGroupInvocations = 20;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxTaskWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__maxTaskWorkGroupSize = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxTaskTotalMemorySize = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskOutputCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxTaskOutputCount = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxMeshWorkGroupInvocations = 44;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxMeshWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__maxMeshWorkGroupSize = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxMeshTotalMemorySize = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshOutputVertices = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxMeshOutputVertices = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshOutputPrimitives = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxMeshOutputPrimitives = 68;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshMultiviewViewCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxMeshMultiviewViewCount = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshOutputPerVertexGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__meshOutputPerVertexGranularity = 76;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshOutputPerPrimitiveGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__meshOutputPerPrimitiveGranularity = 80;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$maxDrawMeshTasksCount,
-            LAYOUT$maxTaskWorkGroupInvocations,
-            LAYOUT$maxTaskWorkGroupSize,
-            LAYOUT$maxTaskTotalMemorySize,
-            LAYOUT$maxTaskOutputCount,
-            LAYOUT$maxMeshWorkGroupInvocations,
-            LAYOUT$maxMeshWorkGroupSize,
-            LAYOUT$maxMeshTotalMemorySize,
-            LAYOUT$maxMeshOutputVertices,
-            LAYOUT$maxMeshOutputPrimitives,
-            LAYOUT$maxMeshMultiviewViewCount,
-            LAYOUT$meshOutputPerVertexGranularity,
-            LAYOUT$meshOutputPerPrimitiveGranularity,
+            LAYOUT__pNext,
+            LAYOUT__maxDrawMeshTasksCount,
+            LAYOUT__maxTaskWorkGroupInvocations,
+            LAYOUT__maxTaskWorkGroupSize,
+            LAYOUT__maxTaskTotalMemorySize,
+            LAYOUT__maxTaskOutputCount,
+            LAYOUT__maxMeshWorkGroupInvocations,
+            LAYOUT__maxMeshWorkGroupSize,
+            LAYOUT__maxMeshTotalMemorySize,
+            LAYOUT__maxMeshOutputVertices,
+            LAYOUT__maxMeshOutputPrimitives,
+            LAYOUT__maxMeshMultiviewViewCount,
+            LAYOUT__meshOutputPerVertexGranularity,
+            LAYOUT__meshOutputPerPrimitiveGranularity,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceMeshShaderPropertiesNV");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceMeshShaderPropertiesNV");
 
     public VkPhysicalDeviceMeshShaderPropertiesNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceMeshShaderPropertiesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceMeshShaderPropertiesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceMeshShaderPropertiesNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceMeshShaderPropertiesNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceMeshShaderPropertiesNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int maxDrawMeshTasksCount() {return this.ptr.get(LAYOUT$maxDrawMeshTasksCount, OFFSET$maxDrawMeshTasksCount);}
-    public void maxDrawMeshTasksCount(int value) {this.ptr.set(LAYOUT$maxDrawMeshTasksCount, OFFSET$maxDrawMeshTasksCount, value);}
-    public java.lang.foreign.MemorySegment maxDrawMeshTasksCount_ptr() {return this.ptr.asSlice(OFFSET$maxDrawMeshTasksCount, LAYOUT$maxDrawMeshTasksCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int maxTaskWorkGroupInvocations() {return this.ptr.get(LAYOUT$maxTaskWorkGroupInvocations, OFFSET$maxTaskWorkGroupInvocations);}
-    public void maxTaskWorkGroupInvocations(int value) {this.ptr.set(LAYOUT$maxTaskWorkGroupInvocations, OFFSET$maxTaskWorkGroupInvocations, value);}
-    public java.lang.foreign.MemorySegment maxTaskWorkGroupInvocations_ptr() {return this.ptr.asSlice(OFFSET$maxTaskWorkGroupInvocations, LAYOUT$maxTaskWorkGroupInvocations);}
+    public int maxDrawMeshTasksCount() {return this.ptr.get(LAYOUT__maxDrawMeshTasksCount, OFFSET__maxDrawMeshTasksCount);}
+    public void maxDrawMeshTasksCount(int value) {this.ptr.set(LAYOUT__maxDrawMeshTasksCount, OFFSET__maxDrawMeshTasksCount, value);}
+    public java.lang.foreign.MemorySegment $maxDrawMeshTasksCount() {return this.ptr.asSlice(OFFSET__maxDrawMeshTasksCount, LAYOUT__maxDrawMeshTasksCount);}
 
-    public java.lang.foreign.MemorySegment maxTaskWorkGroupSize() {return this.ptr.asSlice(OFFSET$maxTaskWorkGroupSize, LAYOUT$maxTaskWorkGroupSize);}
-    public int maxTaskWorkGroupSize(int i) {return this.maxTaskWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void maxTaskWorkGroupSize(int i, int value) {this.maxTaskWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public int maxTaskWorkGroupInvocations() {return this.ptr.get(LAYOUT__maxTaskWorkGroupInvocations, OFFSET__maxTaskWorkGroupInvocations);}
+    public void maxTaskWorkGroupInvocations(int value) {this.ptr.set(LAYOUT__maxTaskWorkGroupInvocations, OFFSET__maxTaskWorkGroupInvocations, value);}
+    public java.lang.foreign.MemorySegment $maxTaskWorkGroupInvocations() {return this.ptr.asSlice(OFFSET__maxTaskWorkGroupInvocations, LAYOUT__maxTaskWorkGroupInvocations);}
 
-    public int maxTaskTotalMemorySize() {return this.ptr.get(LAYOUT$maxTaskTotalMemorySize, OFFSET$maxTaskTotalMemorySize);}
-    public void maxTaskTotalMemorySize(int value) {this.ptr.set(LAYOUT$maxTaskTotalMemorySize, OFFSET$maxTaskTotalMemorySize, value);}
-    public java.lang.foreign.MemorySegment maxTaskTotalMemorySize_ptr() {return this.ptr.asSlice(OFFSET$maxTaskTotalMemorySize, LAYOUT$maxTaskTotalMemorySize);}
+    public java.lang.foreign.MemorySegment maxTaskWorkGroupSize() {return this.ptr.asSlice(OFFSET__maxTaskWorkGroupSize, LAYOUT__maxTaskWorkGroupSize);}
+    public int maxTaskWorkGroupSize(int index) {return this.maxTaskWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void maxTaskWorkGroupSize(int index, int value) {this.maxTaskWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 
-    public int maxTaskOutputCount() {return this.ptr.get(LAYOUT$maxTaskOutputCount, OFFSET$maxTaskOutputCount);}
-    public void maxTaskOutputCount(int value) {this.ptr.set(LAYOUT$maxTaskOutputCount, OFFSET$maxTaskOutputCount, value);}
-    public java.lang.foreign.MemorySegment maxTaskOutputCount_ptr() {return this.ptr.asSlice(OFFSET$maxTaskOutputCount, LAYOUT$maxTaskOutputCount);}
+    public int maxTaskTotalMemorySize() {return this.ptr.get(LAYOUT__maxTaskTotalMemorySize, OFFSET__maxTaskTotalMemorySize);}
+    public void maxTaskTotalMemorySize(int value) {this.ptr.set(LAYOUT__maxTaskTotalMemorySize, OFFSET__maxTaskTotalMemorySize, value);}
+    public java.lang.foreign.MemorySegment $maxTaskTotalMemorySize() {return this.ptr.asSlice(OFFSET__maxTaskTotalMemorySize, LAYOUT__maxTaskTotalMemorySize);}
 
-    public int maxMeshWorkGroupInvocations() {return this.ptr.get(LAYOUT$maxMeshWorkGroupInvocations, OFFSET$maxMeshWorkGroupInvocations);}
-    public void maxMeshWorkGroupInvocations(int value) {this.ptr.set(LAYOUT$maxMeshWorkGroupInvocations, OFFSET$maxMeshWorkGroupInvocations, value);}
-    public java.lang.foreign.MemorySegment maxMeshWorkGroupInvocations_ptr() {return this.ptr.asSlice(OFFSET$maxMeshWorkGroupInvocations, LAYOUT$maxMeshWorkGroupInvocations);}
+    public int maxTaskOutputCount() {return this.ptr.get(LAYOUT__maxTaskOutputCount, OFFSET__maxTaskOutputCount);}
+    public void maxTaskOutputCount(int value) {this.ptr.set(LAYOUT__maxTaskOutputCount, OFFSET__maxTaskOutputCount, value);}
+    public java.lang.foreign.MemorySegment $maxTaskOutputCount() {return this.ptr.asSlice(OFFSET__maxTaskOutputCount, LAYOUT__maxTaskOutputCount);}
 
-    public java.lang.foreign.MemorySegment maxMeshWorkGroupSize() {return this.ptr.asSlice(OFFSET$maxMeshWorkGroupSize, LAYOUT$maxMeshWorkGroupSize);}
-    public int maxMeshWorkGroupSize(int i) {return this.maxMeshWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void maxMeshWorkGroupSize(int i, int value) {this.maxMeshWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public int maxMeshWorkGroupInvocations() {return this.ptr.get(LAYOUT__maxMeshWorkGroupInvocations, OFFSET__maxMeshWorkGroupInvocations);}
+    public void maxMeshWorkGroupInvocations(int value) {this.ptr.set(LAYOUT__maxMeshWorkGroupInvocations, OFFSET__maxMeshWorkGroupInvocations, value);}
+    public java.lang.foreign.MemorySegment $maxMeshWorkGroupInvocations() {return this.ptr.asSlice(OFFSET__maxMeshWorkGroupInvocations, LAYOUT__maxMeshWorkGroupInvocations);}
 
-    public int maxMeshTotalMemorySize() {return this.ptr.get(LAYOUT$maxMeshTotalMemorySize, OFFSET$maxMeshTotalMemorySize);}
-    public void maxMeshTotalMemorySize(int value) {this.ptr.set(LAYOUT$maxMeshTotalMemorySize, OFFSET$maxMeshTotalMemorySize, value);}
-    public java.lang.foreign.MemorySegment maxMeshTotalMemorySize_ptr() {return this.ptr.asSlice(OFFSET$maxMeshTotalMemorySize, LAYOUT$maxMeshTotalMemorySize);}
+    public java.lang.foreign.MemorySegment maxMeshWorkGroupSize() {return this.ptr.asSlice(OFFSET__maxMeshWorkGroupSize, LAYOUT__maxMeshWorkGroupSize);}
+    public int maxMeshWorkGroupSize(int index) {return this.maxMeshWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void maxMeshWorkGroupSize(int index, int value) {this.maxMeshWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 
-    public int maxMeshOutputVertices() {return this.ptr.get(LAYOUT$maxMeshOutputVertices, OFFSET$maxMeshOutputVertices);}
-    public void maxMeshOutputVertices(int value) {this.ptr.set(LAYOUT$maxMeshOutputVertices, OFFSET$maxMeshOutputVertices, value);}
-    public java.lang.foreign.MemorySegment maxMeshOutputVertices_ptr() {return this.ptr.asSlice(OFFSET$maxMeshOutputVertices, LAYOUT$maxMeshOutputVertices);}
+    public int maxMeshTotalMemorySize() {return this.ptr.get(LAYOUT__maxMeshTotalMemorySize, OFFSET__maxMeshTotalMemorySize);}
+    public void maxMeshTotalMemorySize(int value) {this.ptr.set(LAYOUT__maxMeshTotalMemorySize, OFFSET__maxMeshTotalMemorySize, value);}
+    public java.lang.foreign.MemorySegment $maxMeshTotalMemorySize() {return this.ptr.asSlice(OFFSET__maxMeshTotalMemorySize, LAYOUT__maxMeshTotalMemorySize);}
 
-    public int maxMeshOutputPrimitives() {return this.ptr.get(LAYOUT$maxMeshOutputPrimitives, OFFSET$maxMeshOutputPrimitives);}
-    public void maxMeshOutputPrimitives(int value) {this.ptr.set(LAYOUT$maxMeshOutputPrimitives, OFFSET$maxMeshOutputPrimitives, value);}
-    public java.lang.foreign.MemorySegment maxMeshOutputPrimitives_ptr() {return this.ptr.asSlice(OFFSET$maxMeshOutputPrimitives, LAYOUT$maxMeshOutputPrimitives);}
+    public int maxMeshOutputVertices() {return this.ptr.get(LAYOUT__maxMeshOutputVertices, OFFSET__maxMeshOutputVertices);}
+    public void maxMeshOutputVertices(int value) {this.ptr.set(LAYOUT__maxMeshOutputVertices, OFFSET__maxMeshOutputVertices, value);}
+    public java.lang.foreign.MemorySegment $maxMeshOutputVertices() {return this.ptr.asSlice(OFFSET__maxMeshOutputVertices, LAYOUT__maxMeshOutputVertices);}
 
-    public int maxMeshMultiviewViewCount() {return this.ptr.get(LAYOUT$maxMeshMultiviewViewCount, OFFSET$maxMeshMultiviewViewCount);}
-    public void maxMeshMultiviewViewCount(int value) {this.ptr.set(LAYOUT$maxMeshMultiviewViewCount, OFFSET$maxMeshMultiviewViewCount, value);}
-    public java.lang.foreign.MemorySegment maxMeshMultiviewViewCount_ptr() {return this.ptr.asSlice(OFFSET$maxMeshMultiviewViewCount, LAYOUT$maxMeshMultiviewViewCount);}
+    public int maxMeshOutputPrimitives() {return this.ptr.get(LAYOUT__maxMeshOutputPrimitives, OFFSET__maxMeshOutputPrimitives);}
+    public void maxMeshOutputPrimitives(int value) {this.ptr.set(LAYOUT__maxMeshOutputPrimitives, OFFSET__maxMeshOutputPrimitives, value);}
+    public java.lang.foreign.MemorySegment $maxMeshOutputPrimitives() {return this.ptr.asSlice(OFFSET__maxMeshOutputPrimitives, LAYOUT__maxMeshOutputPrimitives);}
 
-    public int meshOutputPerVertexGranularity() {return this.ptr.get(LAYOUT$meshOutputPerVertexGranularity, OFFSET$meshOutputPerVertexGranularity);}
-    public void meshOutputPerVertexGranularity(int value) {this.ptr.set(LAYOUT$meshOutputPerVertexGranularity, OFFSET$meshOutputPerVertexGranularity, value);}
-    public java.lang.foreign.MemorySegment meshOutputPerVertexGranularity_ptr() {return this.ptr.asSlice(OFFSET$meshOutputPerVertexGranularity, LAYOUT$meshOutputPerVertexGranularity);}
+    public int maxMeshMultiviewViewCount() {return this.ptr.get(LAYOUT__maxMeshMultiviewViewCount, OFFSET__maxMeshMultiviewViewCount);}
+    public void maxMeshMultiviewViewCount(int value) {this.ptr.set(LAYOUT__maxMeshMultiviewViewCount, OFFSET__maxMeshMultiviewViewCount, value);}
+    public java.lang.foreign.MemorySegment $maxMeshMultiviewViewCount() {return this.ptr.asSlice(OFFSET__maxMeshMultiviewViewCount, LAYOUT__maxMeshMultiviewViewCount);}
 
-    public int meshOutputPerPrimitiveGranularity() {return this.ptr.get(LAYOUT$meshOutputPerPrimitiveGranularity, OFFSET$meshOutputPerPrimitiveGranularity);}
-    public void meshOutputPerPrimitiveGranularity(int value) {this.ptr.set(LAYOUT$meshOutputPerPrimitiveGranularity, OFFSET$meshOutputPerPrimitiveGranularity, value);}
-    public java.lang.foreign.MemorySegment meshOutputPerPrimitiveGranularity_ptr() {return this.ptr.asSlice(OFFSET$meshOutputPerPrimitiveGranularity, LAYOUT$meshOutputPerPrimitiveGranularity);}
+    public int meshOutputPerVertexGranularity() {return this.ptr.get(LAYOUT__meshOutputPerVertexGranularity, OFFSET__meshOutputPerVertexGranularity);}
+    public void meshOutputPerVertexGranularity(int value) {this.ptr.set(LAYOUT__meshOutputPerVertexGranularity, OFFSET__meshOutputPerVertexGranularity, value);}
+    public java.lang.foreign.MemorySegment $meshOutputPerVertexGranularity() {return this.ptr.asSlice(OFFSET__meshOutputPerVertexGranularity, LAYOUT__meshOutputPerVertexGranularity);}
+
+    public int meshOutputPerPrimitiveGranularity() {return this.ptr.get(LAYOUT__meshOutputPerPrimitiveGranularity, OFFSET__meshOutputPerPrimitiveGranularity);}
+    public void meshOutputPerPrimitiveGranularity(int value) {this.ptr.set(LAYOUT__meshOutputPerPrimitiveGranularity, OFFSET__meshOutputPerPrimitiveGranularity, value);}
+    public java.lang.foreign.MemorySegment $meshOutputPerPrimitiveGranularity() {return this.ptr.asSlice(OFFSET__meshOutputPerPrimitiveGranularity, LAYOUT__meshOutputPerPrimitiveGranularity);}
 }

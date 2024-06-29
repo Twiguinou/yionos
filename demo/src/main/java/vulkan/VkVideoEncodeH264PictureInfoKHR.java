@@ -2,62 +2,67 @@ package vulkan;
 
 public record VkVideoEncodeH264PictureInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$naluSliceEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$naluSliceEntryCount = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNaluSliceEntries = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNaluSliceEntries = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pStdPictureInfo = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pStdPictureInfo = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$generatePrefixNalu = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$generatePrefixNalu = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__naluSliceEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__naluSliceEntryCount = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNaluSliceEntries = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNaluSliceEntries = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pStdPictureInfo = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__generatePrefixNalu = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__generatePrefixNalu = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$naluSliceEntryCount,
+            LAYOUT__pNext,
+            LAYOUT__naluSliceEntryCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNaluSliceEntries,
-            LAYOUT$pStdPictureInfo,
-            LAYOUT$generatePrefixNalu,
+            LAYOUT__pNaluSliceEntries,
+            LAYOUT__pStdPictureInfo,
+            LAYOUT__generatePrefixNalu,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkVideoEncodeH264PictureInfoKHR");
+    ).withByteAlignment(8).withName("VkVideoEncodeH264PictureInfoKHR");
 
     public VkVideoEncodeH264PictureInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoEncodeH264PictureInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoEncodeH264PictureInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoEncodeH264PictureInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoEncodeH264PictureInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoEncodeH264PictureInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int naluSliceEntryCount() {return this.ptr.get(LAYOUT$naluSliceEntryCount, OFFSET$naluSliceEntryCount);}
-    public void naluSliceEntryCount(int value) {this.ptr.set(LAYOUT$naluSliceEntryCount, OFFSET$naluSliceEntryCount, value);}
-    public java.lang.foreign.MemorySegment naluSliceEntryCount_ptr() {return this.ptr.asSlice(OFFSET$naluSliceEntryCount, LAYOUT$naluSliceEntryCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pNaluSliceEntries() {return this.ptr.get(LAYOUT$pNaluSliceEntries, OFFSET$pNaluSliceEntries);}
-    public void pNaluSliceEntries(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNaluSliceEntries, OFFSET$pNaluSliceEntries, value);}
-    public java.lang.foreign.MemorySegment pNaluSliceEntries_ptr() {return this.ptr.asSlice(OFFSET$pNaluSliceEntries, LAYOUT$pNaluSliceEntries);}
+    public int naluSliceEntryCount() {return this.ptr.get(LAYOUT__naluSliceEntryCount, OFFSET__naluSliceEntryCount);}
+    public void naluSliceEntryCount(int value) {this.ptr.set(LAYOUT__naluSliceEntryCount, OFFSET__naluSliceEntryCount, value);}
+    public java.lang.foreign.MemorySegment $naluSliceEntryCount() {return this.ptr.asSlice(OFFSET__naluSliceEntryCount, LAYOUT__naluSliceEntryCount);}
 
-    public java.lang.foreign.MemorySegment pStdPictureInfo() {return this.ptr.get(LAYOUT$pStdPictureInfo, OFFSET$pStdPictureInfo);}
-    public void pStdPictureInfo(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pStdPictureInfo, OFFSET$pStdPictureInfo, value);}
-    public java.lang.foreign.MemorySegment pStdPictureInfo_ptr() {return this.ptr.asSlice(OFFSET$pStdPictureInfo, LAYOUT$pStdPictureInfo);}
+    public java.lang.foreign.MemorySegment pNaluSliceEntries() {return this.ptr.get(LAYOUT__pNaluSliceEntries, OFFSET__pNaluSliceEntries);}
+    public void pNaluSliceEntries(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNaluSliceEntries, OFFSET__pNaluSliceEntries, value);}
+    public java.lang.foreign.MemorySegment $pNaluSliceEntries() {return this.ptr.asSlice(OFFSET__pNaluSliceEntries, LAYOUT__pNaluSliceEntries);}
 
-    public int generatePrefixNalu() {return this.ptr.get(LAYOUT$generatePrefixNalu, OFFSET$generatePrefixNalu);}
-    public void generatePrefixNalu(int value) {this.ptr.set(LAYOUT$generatePrefixNalu, OFFSET$generatePrefixNalu, value);}
-    public java.lang.foreign.MemorySegment generatePrefixNalu_ptr() {return this.ptr.asSlice(OFFSET$generatePrefixNalu, LAYOUT$generatePrefixNalu);}
+    public java.lang.foreign.MemorySegment pStdPictureInfo() {return this.ptr.get(LAYOUT__pStdPictureInfo, OFFSET__pStdPictureInfo);}
+    public void pStdPictureInfo(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pStdPictureInfo, OFFSET__pStdPictureInfo, value);}
+    public java.lang.foreign.MemorySegment $pStdPictureInfo() {return this.ptr.asSlice(OFFSET__pStdPictureInfo, LAYOUT__pStdPictureInfo);}
+
+    public int generatePrefixNalu() {return this.ptr.get(LAYOUT__generatePrefixNalu, OFFSET__generatePrefixNalu);}
+    public void generatePrefixNalu(int value) {this.ptr.set(LAYOUT__generatePrefixNalu, OFFSET__generatePrefixNalu, value);}
+    public java.lang.foreign.MemorySegment $generatePrefixNalu() {return this.ptr.asSlice(OFFSET__generatePrefixNalu, LAYOUT__generatePrefixNalu);}
 }

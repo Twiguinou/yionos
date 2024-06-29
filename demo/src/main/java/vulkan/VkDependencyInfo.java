@@ -2,83 +2,88 @@ package vulkan;
 
 public record VkDependencyInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dependencyFlags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$memoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$memoryBarrierCount = 20L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pMemoryBarriers = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pMemoryBarriers = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferMemoryBarrierCount = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pBufferMemoryBarriers = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pBufferMemoryBarriers = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imageMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imageMemoryBarrierCount = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pImageMemoryBarriers = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pImageMemoryBarriers = 56L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dependencyFlags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__memoryBarrierCount = 20;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pMemoryBarriers = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferMemoryBarrierCount = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pBufferMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pBufferMemoryBarriers = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imageMemoryBarrierCount = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pImageMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pImageMemoryBarriers = 56;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$dependencyFlags,
-            LAYOUT$memoryBarrierCount,
-            LAYOUT$pMemoryBarriers,
-            LAYOUT$bufferMemoryBarrierCount,
+            LAYOUT__pNext,
+            LAYOUT__dependencyFlags,
+            LAYOUT__memoryBarrierCount,
+            LAYOUT__pMemoryBarriers,
+            LAYOUT__bufferMemoryBarrierCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pBufferMemoryBarriers,
-            LAYOUT$imageMemoryBarrierCount,
+            LAYOUT__pBufferMemoryBarriers,
+            LAYOUT__imageMemoryBarrierCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pImageMemoryBarriers
-    ).withName("VkDependencyInfo");
+            LAYOUT__pImageMemoryBarriers
+    ).withByteAlignment(8).withName("VkDependencyInfo");
 
     public VkDependencyInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDependencyInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDependencyInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDependencyInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDependencyInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDependencyInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int dependencyFlags() {return this.ptr.get(LAYOUT$dependencyFlags, OFFSET$dependencyFlags);}
-    public void dependencyFlags(int value) {this.ptr.set(LAYOUT$dependencyFlags, OFFSET$dependencyFlags, value);}
-    public java.lang.foreign.MemorySegment dependencyFlags_ptr() {return this.ptr.asSlice(OFFSET$dependencyFlags, LAYOUT$dependencyFlags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int memoryBarrierCount() {return this.ptr.get(LAYOUT$memoryBarrierCount, OFFSET$memoryBarrierCount);}
-    public void memoryBarrierCount(int value) {this.ptr.set(LAYOUT$memoryBarrierCount, OFFSET$memoryBarrierCount, value);}
-    public java.lang.foreign.MemorySegment memoryBarrierCount_ptr() {return this.ptr.asSlice(OFFSET$memoryBarrierCount, LAYOUT$memoryBarrierCount);}
+    public int dependencyFlags() {return this.ptr.get(LAYOUT__dependencyFlags, OFFSET__dependencyFlags);}
+    public void dependencyFlags(int value) {this.ptr.set(LAYOUT__dependencyFlags, OFFSET__dependencyFlags, value);}
+    public java.lang.foreign.MemorySegment $dependencyFlags() {return this.ptr.asSlice(OFFSET__dependencyFlags, LAYOUT__dependencyFlags);}
 
-    public java.lang.foreign.MemorySegment pMemoryBarriers() {return this.ptr.get(LAYOUT$pMemoryBarriers, OFFSET$pMemoryBarriers);}
-    public void pMemoryBarriers(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pMemoryBarriers, OFFSET$pMemoryBarriers, value);}
-    public java.lang.foreign.MemorySegment pMemoryBarriers_ptr() {return this.ptr.asSlice(OFFSET$pMemoryBarriers, LAYOUT$pMemoryBarriers);}
+    public int memoryBarrierCount() {return this.ptr.get(LAYOUT__memoryBarrierCount, OFFSET__memoryBarrierCount);}
+    public void memoryBarrierCount(int value) {this.ptr.set(LAYOUT__memoryBarrierCount, OFFSET__memoryBarrierCount, value);}
+    public java.lang.foreign.MemorySegment $memoryBarrierCount() {return this.ptr.asSlice(OFFSET__memoryBarrierCount, LAYOUT__memoryBarrierCount);}
 
-    public int bufferMemoryBarrierCount() {return this.ptr.get(LAYOUT$bufferMemoryBarrierCount, OFFSET$bufferMemoryBarrierCount);}
-    public void bufferMemoryBarrierCount(int value) {this.ptr.set(LAYOUT$bufferMemoryBarrierCount, OFFSET$bufferMemoryBarrierCount, value);}
-    public java.lang.foreign.MemorySegment bufferMemoryBarrierCount_ptr() {return this.ptr.asSlice(OFFSET$bufferMemoryBarrierCount, LAYOUT$bufferMemoryBarrierCount);}
+    public java.lang.foreign.MemorySegment pMemoryBarriers() {return this.ptr.get(LAYOUT__pMemoryBarriers, OFFSET__pMemoryBarriers);}
+    public void pMemoryBarriers(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pMemoryBarriers, OFFSET__pMemoryBarriers, value);}
+    public java.lang.foreign.MemorySegment $pMemoryBarriers() {return this.ptr.asSlice(OFFSET__pMemoryBarriers, LAYOUT__pMemoryBarriers);}
 
-    public java.lang.foreign.MemorySegment pBufferMemoryBarriers() {return this.ptr.get(LAYOUT$pBufferMemoryBarriers, OFFSET$pBufferMemoryBarriers);}
-    public void pBufferMemoryBarriers(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pBufferMemoryBarriers, OFFSET$pBufferMemoryBarriers, value);}
-    public java.lang.foreign.MemorySegment pBufferMemoryBarriers_ptr() {return this.ptr.asSlice(OFFSET$pBufferMemoryBarriers, LAYOUT$pBufferMemoryBarriers);}
+    public int bufferMemoryBarrierCount() {return this.ptr.get(LAYOUT__bufferMemoryBarrierCount, OFFSET__bufferMemoryBarrierCount);}
+    public void bufferMemoryBarrierCount(int value) {this.ptr.set(LAYOUT__bufferMemoryBarrierCount, OFFSET__bufferMemoryBarrierCount, value);}
+    public java.lang.foreign.MemorySegment $bufferMemoryBarrierCount() {return this.ptr.asSlice(OFFSET__bufferMemoryBarrierCount, LAYOUT__bufferMemoryBarrierCount);}
 
-    public int imageMemoryBarrierCount() {return this.ptr.get(LAYOUT$imageMemoryBarrierCount, OFFSET$imageMemoryBarrierCount);}
-    public void imageMemoryBarrierCount(int value) {this.ptr.set(LAYOUT$imageMemoryBarrierCount, OFFSET$imageMemoryBarrierCount, value);}
-    public java.lang.foreign.MemorySegment imageMemoryBarrierCount_ptr() {return this.ptr.asSlice(OFFSET$imageMemoryBarrierCount, LAYOUT$imageMemoryBarrierCount);}
+    public java.lang.foreign.MemorySegment pBufferMemoryBarriers() {return this.ptr.get(LAYOUT__pBufferMemoryBarriers, OFFSET__pBufferMemoryBarriers);}
+    public void pBufferMemoryBarriers(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pBufferMemoryBarriers, OFFSET__pBufferMemoryBarriers, value);}
+    public java.lang.foreign.MemorySegment $pBufferMemoryBarriers() {return this.ptr.asSlice(OFFSET__pBufferMemoryBarriers, LAYOUT__pBufferMemoryBarriers);}
 
-    public java.lang.foreign.MemorySegment pImageMemoryBarriers() {return this.ptr.get(LAYOUT$pImageMemoryBarriers, OFFSET$pImageMemoryBarriers);}
-    public void pImageMemoryBarriers(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pImageMemoryBarriers, OFFSET$pImageMemoryBarriers, value);}
-    public java.lang.foreign.MemorySegment pImageMemoryBarriers_ptr() {return this.ptr.asSlice(OFFSET$pImageMemoryBarriers, LAYOUT$pImageMemoryBarriers);}
+    public int imageMemoryBarrierCount() {return this.ptr.get(LAYOUT__imageMemoryBarrierCount, OFFSET__imageMemoryBarrierCount);}
+    public void imageMemoryBarrierCount(int value) {this.ptr.set(LAYOUT__imageMemoryBarrierCount, OFFSET__imageMemoryBarrierCount, value);}
+    public java.lang.foreign.MemorySegment $imageMemoryBarrierCount() {return this.ptr.asSlice(OFFSET__imageMemoryBarrierCount, LAYOUT__imageMemoryBarrierCount);}
+
+    public java.lang.foreign.MemorySegment pImageMemoryBarriers() {return this.ptr.get(LAYOUT__pImageMemoryBarriers, OFFSET__pImageMemoryBarriers);}
+    public void pImageMemoryBarriers(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pImageMemoryBarriers, OFFSET__pImageMemoryBarriers, value);}
+    public java.lang.foreign.MemorySegment $pImageMemoryBarriers() {return this.ptr.asSlice(OFFSET__pImageMemoryBarriers, LAYOUT__pImageMemoryBarriers);}
 }

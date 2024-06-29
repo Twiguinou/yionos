@@ -2,39 +2,44 @@ package vulkan;
 
 public record VkQueueFamilyProperties2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$queueFamilyProperties = vulkan.VkQueueFamilyProperties.gStructLayout;
-    public static final long OFFSET$queueFamilyProperties = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__queueFamilyProperties = vulkan.VkQueueFamilyProperties.gRecordLayout;
+    public static final long OFFSET__queueFamilyProperties = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$queueFamilyProperties
-    ).withName("VkQueueFamilyProperties2");
+            LAYOUT__pNext,
+            LAYOUT__queueFamilyProperties
+    ).withByteAlignment(8).withName("VkQueueFamilyProperties2");
 
     public VkQueueFamilyProperties2(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkQueueFamilyProperties2 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkQueueFamilyProperties2 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkQueueFamilyProperties2(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkQueueFamilyProperties2(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkQueueFamilyProperties2 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkQueueFamilyProperties queueFamilyProperties() {return new vulkan.VkQueueFamilyProperties(this.ptr.asSlice(OFFSET$queueFamilyProperties, LAYOUT$queueFamilyProperties));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkQueueFamilyProperties queueFamilyProperties() {return new vulkan.VkQueueFamilyProperties(this.ptr.asSlice(OFFSET__queueFamilyProperties, LAYOUT__queueFamilyProperties));}
     public void queueFamilyProperties(java.util.function.Consumer<vulkan.VkQueueFamilyProperties> consumer) {consumer.accept(this.queueFamilyProperties());}
-    public void queueFamilyProperties(vulkan.VkQueueFamilyProperties value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$queueFamilyProperties, LAYOUT$queueFamilyProperties.byteSize());}
+    public void queueFamilyProperties(vulkan.VkQueueFamilyProperties value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__queueFamilyProperties, LAYOUT__queueFamilyProperties.byteSize());}
 }

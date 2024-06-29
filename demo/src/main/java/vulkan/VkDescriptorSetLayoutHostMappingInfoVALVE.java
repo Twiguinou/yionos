@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkDescriptorSetLayoutHostMappingInfoVALVE(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$descriptorOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$descriptorOffset = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorSize = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__descriptorOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__descriptorOffset = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorSize = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$descriptorOffset,
-            LAYOUT$descriptorSize,
+            LAYOUT__pNext,
+            LAYOUT__descriptorOffset,
+            LAYOUT__descriptorSize,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDescriptorSetLayoutHostMappingInfoVALVE");
+    ).withByteAlignment(8).withName("VkDescriptorSetLayoutHostMappingInfoVALVE");
 
     public VkDescriptorSetLayoutHostMappingInfoVALVE(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDescriptorSetLayoutHostMappingInfoVALVE getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDescriptorSetLayoutHostMappingInfoVALVE getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDescriptorSetLayoutHostMappingInfoVALVE(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDescriptorSetLayoutHostMappingInfoVALVE(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDescriptorSetLayoutHostMappingInfoVALVE value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public long descriptorOffset() {return this.ptr.get(LAYOUT$descriptorOffset, OFFSET$descriptorOffset);}
-    public void descriptorOffset(long value) {this.ptr.set(LAYOUT$descriptorOffset, OFFSET$descriptorOffset, value);}
-    public java.lang.foreign.MemorySegment descriptorOffset_ptr() {return this.ptr.asSlice(OFFSET$descriptorOffset, LAYOUT$descriptorOffset);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int descriptorSize() {return this.ptr.get(LAYOUT$descriptorSize, OFFSET$descriptorSize);}
-    public void descriptorSize(int value) {this.ptr.set(LAYOUT$descriptorSize, OFFSET$descriptorSize, value);}
-    public java.lang.foreign.MemorySegment descriptorSize_ptr() {return this.ptr.asSlice(OFFSET$descriptorSize, LAYOUT$descriptorSize);}
+    public long descriptorOffset() {return this.ptr.get(LAYOUT__descriptorOffset, OFFSET__descriptorOffset);}
+    public void descriptorOffset(long value) {this.ptr.set(LAYOUT__descriptorOffset, OFFSET__descriptorOffset, value);}
+    public java.lang.foreign.MemorySegment $descriptorOffset() {return this.ptr.asSlice(OFFSET__descriptorOffset, LAYOUT__descriptorOffset);}
+
+    public int descriptorSize() {return this.ptr.get(LAYOUT__descriptorSize, OFFSET__descriptorSize);}
+    public void descriptorSize(int value) {this.ptr.set(LAYOUT__descriptorSize, OFFSET__descriptorSize, value);}
+    public java.lang.foreign.MemorySegment $descriptorSize() {return this.ptr.asSlice(OFFSET__descriptorSize, LAYOUT__descriptorSize);}
 }

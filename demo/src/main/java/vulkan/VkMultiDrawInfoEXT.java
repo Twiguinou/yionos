@@ -2,31 +2,36 @@ package vulkan;
 
 public record VkMultiDrawInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$firstVertex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$firstVertex = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexCount = 4L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstVertex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__firstVertex = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexCount = 4;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$firstVertex,
-            LAYOUT$vertexCount
-    ).withName("VkMultiDrawInfoEXT");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__firstVertex,
+            LAYOUT__vertexCount
+    ).withByteAlignment(4).withName("VkMultiDrawInfoEXT");
 
     public VkMultiDrawInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkMultiDrawInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkMultiDrawInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkMultiDrawInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkMultiDrawInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int firstVertex() {return this.ptr.get(LAYOUT$firstVertex, OFFSET$firstVertex);}
-    public void firstVertex(int value) {this.ptr.set(LAYOUT$firstVertex, OFFSET$firstVertex, value);}
-    public java.lang.foreign.MemorySegment firstVertex_ptr() {return this.ptr.asSlice(OFFSET$firstVertex, LAYOUT$firstVertex);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkMultiDrawInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int vertexCount() {return this.ptr.get(LAYOUT$vertexCount, OFFSET$vertexCount);}
-    public void vertexCount(int value) {this.ptr.set(LAYOUT$vertexCount, OFFSET$vertexCount, value);}
-    public java.lang.foreign.MemorySegment vertexCount_ptr() {return this.ptr.asSlice(OFFSET$vertexCount, LAYOUT$vertexCount);}
+    public int firstVertex() {return this.ptr.get(LAYOUT__firstVertex, OFFSET__firstVertex);}
+    public void firstVertex(int value) {this.ptr.set(LAYOUT__firstVertex, OFFSET__firstVertex, value);}
+    public java.lang.foreign.MemorySegment $firstVertex() {return this.ptr.asSlice(OFFSET__firstVertex, LAYOUT__firstVertex);}
+
+    public int vertexCount() {return this.ptr.get(LAYOUT__vertexCount, OFFSET__vertexCount);}
+    public void vertexCount(int value) {this.ptr.set(LAYOUT__vertexCount, OFFSET__vertexCount, value);}
+    public java.lang.foreign.MemorySegment $vertexCount() {return this.ptr.asSlice(OFFSET__vertexCount, LAYOUT__vertexCount);}
 }

@@ -2,125 +2,130 @@ package vulkan;
 
 public record VkIndirectCommandsLayoutTokenNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$tokenType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$tokenType = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stream = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stream = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$offset = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$offset = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexBindingUnit = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexBindingUnit = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexDynamicStride = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexDynamicStride = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pushconstantPipelineLayout = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pushconstantPipelineLayout = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pushconstantShaderStageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pushconstantShaderStageFlags = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pushconstantOffset = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pushconstantOffset = 52L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pushconstantSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pushconstantSize = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$indirectStateFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$indirectStateFlags = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$indexTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$indexTypeCount = 64L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pIndexTypes = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pIndexTypes = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pIndexTypeValues = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pIndexTypeValues = 80L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tokenType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__tokenType = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stream = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stream = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__offset = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexBindingUnit = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexBindingUnit = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexDynamicStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexDynamicStride = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pushconstantPipelineLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pushconstantPipelineLayout = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantShaderStageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pushconstantShaderStageFlags = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pushconstantOffset = 52;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pushconstantSize = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indirectStateFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__indirectStateFlags = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__indexTypeCount = 64;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pIndexTypes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pIndexTypes = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pIndexTypeValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pIndexTypeValues = 80;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$tokenType,
-            LAYOUT$stream,
-            LAYOUT$offset,
-            LAYOUT$vertexBindingUnit,
-            LAYOUT$vertexDynamicStride,
+            LAYOUT__pNext,
+            LAYOUT__tokenType,
+            LAYOUT__stream,
+            LAYOUT__offset,
+            LAYOUT__vertexBindingUnit,
+            LAYOUT__vertexDynamicStride,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pushconstantPipelineLayout,
-            LAYOUT$pushconstantShaderStageFlags,
-            LAYOUT$pushconstantOffset,
-            LAYOUT$pushconstantSize,
-            LAYOUT$indirectStateFlags,
-            LAYOUT$indexTypeCount,
+            LAYOUT__pushconstantPipelineLayout,
+            LAYOUT__pushconstantShaderStageFlags,
+            LAYOUT__pushconstantOffset,
+            LAYOUT__pushconstantSize,
+            LAYOUT__indirectStateFlags,
+            LAYOUT__indexTypeCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pIndexTypes,
-            LAYOUT$pIndexTypeValues
-    ).withName("VkIndirectCommandsLayoutTokenNV");
+            LAYOUT__pIndexTypes,
+            LAYOUT__pIndexTypeValues
+    ).withByteAlignment(8).withName("VkIndirectCommandsLayoutTokenNV");
 
     public VkIndirectCommandsLayoutTokenNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkIndirectCommandsLayoutTokenNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkIndirectCommandsLayoutTokenNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkIndirectCommandsLayoutTokenNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkIndirectCommandsLayoutTokenNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkIndirectCommandsLayoutTokenNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int tokenType() {return this.ptr.get(LAYOUT$tokenType, OFFSET$tokenType);}
-    public void tokenType(int value) {this.ptr.set(LAYOUT$tokenType, OFFSET$tokenType, value);}
-    public java.lang.foreign.MemorySegment tokenType_ptr() {return this.ptr.asSlice(OFFSET$tokenType, LAYOUT$tokenType);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int stream() {return this.ptr.get(LAYOUT$stream, OFFSET$stream);}
-    public void stream(int value) {this.ptr.set(LAYOUT$stream, OFFSET$stream, value);}
-    public java.lang.foreign.MemorySegment stream_ptr() {return this.ptr.asSlice(OFFSET$stream, LAYOUT$stream);}
+    public int tokenType() {return this.ptr.get(LAYOUT__tokenType, OFFSET__tokenType);}
+    public void tokenType(int value) {this.ptr.set(LAYOUT__tokenType, OFFSET__tokenType, value);}
+    public java.lang.foreign.MemorySegment $tokenType() {return this.ptr.asSlice(OFFSET__tokenType, LAYOUT__tokenType);}
 
-    public int offset() {return this.ptr.get(LAYOUT$offset, OFFSET$offset);}
-    public void offset(int value) {this.ptr.set(LAYOUT$offset, OFFSET$offset, value);}
-    public java.lang.foreign.MemorySegment offset_ptr() {return this.ptr.asSlice(OFFSET$offset, LAYOUT$offset);}
+    public int stream() {return this.ptr.get(LAYOUT__stream, OFFSET__stream);}
+    public void stream(int value) {this.ptr.set(LAYOUT__stream, OFFSET__stream, value);}
+    public java.lang.foreign.MemorySegment $stream() {return this.ptr.asSlice(OFFSET__stream, LAYOUT__stream);}
 
-    public int vertexBindingUnit() {return this.ptr.get(LAYOUT$vertexBindingUnit, OFFSET$vertexBindingUnit);}
-    public void vertexBindingUnit(int value) {this.ptr.set(LAYOUT$vertexBindingUnit, OFFSET$vertexBindingUnit, value);}
-    public java.lang.foreign.MemorySegment vertexBindingUnit_ptr() {return this.ptr.asSlice(OFFSET$vertexBindingUnit, LAYOUT$vertexBindingUnit);}
+    public int offset() {return this.ptr.get(LAYOUT__offset, OFFSET__offset);}
+    public void offset(int value) {this.ptr.set(LAYOUT__offset, OFFSET__offset, value);}
+    public java.lang.foreign.MemorySegment $offset() {return this.ptr.asSlice(OFFSET__offset, LAYOUT__offset);}
 
-    public int vertexDynamicStride() {return this.ptr.get(LAYOUT$vertexDynamicStride, OFFSET$vertexDynamicStride);}
-    public void vertexDynamicStride(int value) {this.ptr.set(LAYOUT$vertexDynamicStride, OFFSET$vertexDynamicStride, value);}
-    public java.lang.foreign.MemorySegment vertexDynamicStride_ptr() {return this.ptr.asSlice(OFFSET$vertexDynamicStride, LAYOUT$vertexDynamicStride);}
+    public int vertexBindingUnit() {return this.ptr.get(LAYOUT__vertexBindingUnit, OFFSET__vertexBindingUnit);}
+    public void vertexBindingUnit(int value) {this.ptr.set(LAYOUT__vertexBindingUnit, OFFSET__vertexBindingUnit, value);}
+    public java.lang.foreign.MemorySegment $vertexBindingUnit() {return this.ptr.asSlice(OFFSET__vertexBindingUnit, LAYOUT__vertexBindingUnit);}
 
-    public java.lang.foreign.MemorySegment pushconstantPipelineLayout() {return this.ptr.get(LAYOUT$pushconstantPipelineLayout, OFFSET$pushconstantPipelineLayout);}
-    public void pushconstantPipelineLayout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pushconstantPipelineLayout, OFFSET$pushconstantPipelineLayout, value);}
-    public java.lang.foreign.MemorySegment pushconstantPipelineLayout_ptr() {return this.ptr.asSlice(OFFSET$pushconstantPipelineLayout, LAYOUT$pushconstantPipelineLayout);}
+    public int vertexDynamicStride() {return this.ptr.get(LAYOUT__vertexDynamicStride, OFFSET__vertexDynamicStride);}
+    public void vertexDynamicStride(int value) {this.ptr.set(LAYOUT__vertexDynamicStride, OFFSET__vertexDynamicStride, value);}
+    public java.lang.foreign.MemorySegment $vertexDynamicStride() {return this.ptr.asSlice(OFFSET__vertexDynamicStride, LAYOUT__vertexDynamicStride);}
 
-    public int pushconstantShaderStageFlags() {return this.ptr.get(LAYOUT$pushconstantShaderStageFlags, OFFSET$pushconstantShaderStageFlags);}
-    public void pushconstantShaderStageFlags(int value) {this.ptr.set(LAYOUT$pushconstantShaderStageFlags, OFFSET$pushconstantShaderStageFlags, value);}
-    public java.lang.foreign.MemorySegment pushconstantShaderStageFlags_ptr() {return this.ptr.asSlice(OFFSET$pushconstantShaderStageFlags, LAYOUT$pushconstantShaderStageFlags);}
+    public java.lang.foreign.MemorySegment pushconstantPipelineLayout() {return this.ptr.get(LAYOUT__pushconstantPipelineLayout, OFFSET__pushconstantPipelineLayout);}
+    public void pushconstantPipelineLayout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pushconstantPipelineLayout, OFFSET__pushconstantPipelineLayout, value);}
+    public java.lang.foreign.MemorySegment $pushconstantPipelineLayout() {return this.ptr.asSlice(OFFSET__pushconstantPipelineLayout, LAYOUT__pushconstantPipelineLayout);}
 
-    public int pushconstantOffset() {return this.ptr.get(LAYOUT$pushconstantOffset, OFFSET$pushconstantOffset);}
-    public void pushconstantOffset(int value) {this.ptr.set(LAYOUT$pushconstantOffset, OFFSET$pushconstantOffset, value);}
-    public java.lang.foreign.MemorySegment pushconstantOffset_ptr() {return this.ptr.asSlice(OFFSET$pushconstantOffset, LAYOUT$pushconstantOffset);}
+    public int pushconstantShaderStageFlags() {return this.ptr.get(LAYOUT__pushconstantShaderStageFlags, OFFSET__pushconstantShaderStageFlags);}
+    public void pushconstantShaderStageFlags(int value) {this.ptr.set(LAYOUT__pushconstantShaderStageFlags, OFFSET__pushconstantShaderStageFlags, value);}
+    public java.lang.foreign.MemorySegment $pushconstantShaderStageFlags() {return this.ptr.asSlice(OFFSET__pushconstantShaderStageFlags, LAYOUT__pushconstantShaderStageFlags);}
 
-    public int pushconstantSize() {return this.ptr.get(LAYOUT$pushconstantSize, OFFSET$pushconstantSize);}
-    public void pushconstantSize(int value) {this.ptr.set(LAYOUT$pushconstantSize, OFFSET$pushconstantSize, value);}
-    public java.lang.foreign.MemorySegment pushconstantSize_ptr() {return this.ptr.asSlice(OFFSET$pushconstantSize, LAYOUT$pushconstantSize);}
+    public int pushconstantOffset() {return this.ptr.get(LAYOUT__pushconstantOffset, OFFSET__pushconstantOffset);}
+    public void pushconstantOffset(int value) {this.ptr.set(LAYOUT__pushconstantOffset, OFFSET__pushconstantOffset, value);}
+    public java.lang.foreign.MemorySegment $pushconstantOffset() {return this.ptr.asSlice(OFFSET__pushconstantOffset, LAYOUT__pushconstantOffset);}
 
-    public int indirectStateFlags() {return this.ptr.get(LAYOUT$indirectStateFlags, OFFSET$indirectStateFlags);}
-    public void indirectStateFlags(int value) {this.ptr.set(LAYOUT$indirectStateFlags, OFFSET$indirectStateFlags, value);}
-    public java.lang.foreign.MemorySegment indirectStateFlags_ptr() {return this.ptr.asSlice(OFFSET$indirectStateFlags, LAYOUT$indirectStateFlags);}
+    public int pushconstantSize() {return this.ptr.get(LAYOUT__pushconstantSize, OFFSET__pushconstantSize);}
+    public void pushconstantSize(int value) {this.ptr.set(LAYOUT__pushconstantSize, OFFSET__pushconstantSize, value);}
+    public java.lang.foreign.MemorySegment $pushconstantSize() {return this.ptr.asSlice(OFFSET__pushconstantSize, LAYOUT__pushconstantSize);}
 
-    public int indexTypeCount() {return this.ptr.get(LAYOUT$indexTypeCount, OFFSET$indexTypeCount);}
-    public void indexTypeCount(int value) {this.ptr.set(LAYOUT$indexTypeCount, OFFSET$indexTypeCount, value);}
-    public java.lang.foreign.MemorySegment indexTypeCount_ptr() {return this.ptr.asSlice(OFFSET$indexTypeCount, LAYOUT$indexTypeCount);}
+    public int indirectStateFlags() {return this.ptr.get(LAYOUT__indirectStateFlags, OFFSET__indirectStateFlags);}
+    public void indirectStateFlags(int value) {this.ptr.set(LAYOUT__indirectStateFlags, OFFSET__indirectStateFlags, value);}
+    public java.lang.foreign.MemorySegment $indirectStateFlags() {return this.ptr.asSlice(OFFSET__indirectStateFlags, LAYOUT__indirectStateFlags);}
 
-    public java.lang.foreign.MemorySegment pIndexTypes() {return this.ptr.get(LAYOUT$pIndexTypes, OFFSET$pIndexTypes);}
-    public void pIndexTypes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pIndexTypes, OFFSET$pIndexTypes, value);}
-    public java.lang.foreign.MemorySegment pIndexTypes_ptr() {return this.ptr.asSlice(OFFSET$pIndexTypes, LAYOUT$pIndexTypes);}
+    public int indexTypeCount() {return this.ptr.get(LAYOUT__indexTypeCount, OFFSET__indexTypeCount);}
+    public void indexTypeCount(int value) {this.ptr.set(LAYOUT__indexTypeCount, OFFSET__indexTypeCount, value);}
+    public java.lang.foreign.MemorySegment $indexTypeCount() {return this.ptr.asSlice(OFFSET__indexTypeCount, LAYOUT__indexTypeCount);}
 
-    public java.lang.foreign.MemorySegment pIndexTypeValues() {return this.ptr.get(LAYOUT$pIndexTypeValues, OFFSET$pIndexTypeValues);}
-    public void pIndexTypeValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pIndexTypeValues, OFFSET$pIndexTypeValues, value);}
-    public java.lang.foreign.MemorySegment pIndexTypeValues_ptr() {return this.ptr.asSlice(OFFSET$pIndexTypeValues, LAYOUT$pIndexTypeValues);}
+    public java.lang.foreign.MemorySegment pIndexTypes() {return this.ptr.get(LAYOUT__pIndexTypes, OFFSET__pIndexTypes);}
+    public void pIndexTypes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pIndexTypes, OFFSET__pIndexTypes, value);}
+    public java.lang.foreign.MemorySegment $pIndexTypes() {return this.ptr.asSlice(OFFSET__pIndexTypes, LAYOUT__pIndexTypes);}
+
+    public java.lang.foreign.MemorySegment pIndexTypeValues() {return this.ptr.get(LAYOUT__pIndexTypeValues, OFFSET__pIndexTypeValues);}
+    public void pIndexTypeValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pIndexTypeValues, OFFSET__pIndexTypeValues, value);}
+    public java.lang.foreign.MemorySegment $pIndexTypeValues() {return this.ptr.asSlice(OFFSET__pIndexTypeValues, LAYOUT__pIndexTypeValues);}
 }

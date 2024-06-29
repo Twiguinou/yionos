@@ -2,59 +2,64 @@ package glfw3;
 
 public record GLFWvidmode(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$width = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$width = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$height = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$height = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$redBits = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$redBits = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$greenBits = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$greenBits = 12L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$blueBits = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$blueBits = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$refreshRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$refreshRate = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__width = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__height = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__redBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__redBits = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__greenBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__greenBits = 12;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blueBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__blueBits = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__refreshRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__refreshRate = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$width,
-            LAYOUT$height,
-            LAYOUT$redBits,
-            LAYOUT$greenBits,
-            LAYOUT$blueBits,
-            LAYOUT$refreshRate
-    ).withName("GLFWvidmode");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__width,
+            LAYOUT__height,
+            LAYOUT__redBits,
+            LAYOUT__greenBits,
+            LAYOUT__blueBits,
+            LAYOUT__refreshRate
+    ).withByteAlignment(4).withName("GLFWvidmode");
 
     public GLFWvidmode(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static GLFWvidmode getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static GLFWvidmode getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new GLFWvidmode(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new GLFWvidmode(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int width() {return this.ptr.get(LAYOUT$width, OFFSET$width);}
-    public void width(int value) {this.ptr.set(LAYOUT$width, OFFSET$width, value);}
-    public java.lang.foreign.MemorySegment width_ptr() {return this.ptr.asSlice(OFFSET$width, LAYOUT$width);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, GLFWvidmode value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int height() {return this.ptr.get(LAYOUT$height, OFFSET$height);}
-    public void height(int value) {this.ptr.set(LAYOUT$height, OFFSET$height, value);}
-    public java.lang.foreign.MemorySegment height_ptr() {return this.ptr.asSlice(OFFSET$height, LAYOUT$height);}
+    public int width() {return this.ptr.get(LAYOUT__width, OFFSET__width);}
+    public void width(int value) {this.ptr.set(LAYOUT__width, OFFSET__width, value);}
+    public java.lang.foreign.MemorySegment $width() {return this.ptr.asSlice(OFFSET__width, LAYOUT__width);}
 
-    public int redBits() {return this.ptr.get(LAYOUT$redBits, OFFSET$redBits);}
-    public void redBits(int value) {this.ptr.set(LAYOUT$redBits, OFFSET$redBits, value);}
-    public java.lang.foreign.MemorySegment redBits_ptr() {return this.ptr.asSlice(OFFSET$redBits, LAYOUT$redBits);}
+    public int height() {return this.ptr.get(LAYOUT__height, OFFSET__height);}
+    public void height(int value) {this.ptr.set(LAYOUT__height, OFFSET__height, value);}
+    public java.lang.foreign.MemorySegment $height() {return this.ptr.asSlice(OFFSET__height, LAYOUT__height);}
 
-    public int greenBits() {return this.ptr.get(LAYOUT$greenBits, OFFSET$greenBits);}
-    public void greenBits(int value) {this.ptr.set(LAYOUT$greenBits, OFFSET$greenBits, value);}
-    public java.lang.foreign.MemorySegment greenBits_ptr() {return this.ptr.asSlice(OFFSET$greenBits, LAYOUT$greenBits);}
+    public int redBits() {return this.ptr.get(LAYOUT__redBits, OFFSET__redBits);}
+    public void redBits(int value) {this.ptr.set(LAYOUT__redBits, OFFSET__redBits, value);}
+    public java.lang.foreign.MemorySegment $redBits() {return this.ptr.asSlice(OFFSET__redBits, LAYOUT__redBits);}
 
-    public int blueBits() {return this.ptr.get(LAYOUT$blueBits, OFFSET$blueBits);}
-    public void blueBits(int value) {this.ptr.set(LAYOUT$blueBits, OFFSET$blueBits, value);}
-    public java.lang.foreign.MemorySegment blueBits_ptr() {return this.ptr.asSlice(OFFSET$blueBits, LAYOUT$blueBits);}
+    public int greenBits() {return this.ptr.get(LAYOUT__greenBits, OFFSET__greenBits);}
+    public void greenBits(int value) {this.ptr.set(LAYOUT__greenBits, OFFSET__greenBits, value);}
+    public java.lang.foreign.MemorySegment $greenBits() {return this.ptr.asSlice(OFFSET__greenBits, LAYOUT__greenBits);}
 
-    public int refreshRate() {return this.ptr.get(LAYOUT$refreshRate, OFFSET$refreshRate);}
-    public void refreshRate(int value) {this.ptr.set(LAYOUT$refreshRate, OFFSET$refreshRate, value);}
-    public java.lang.foreign.MemorySegment refreshRate_ptr() {return this.ptr.asSlice(OFFSET$refreshRate, LAYOUT$refreshRate);}
+    public int blueBits() {return this.ptr.get(LAYOUT__blueBits, OFFSET__blueBits);}
+    public void blueBits(int value) {this.ptr.set(LAYOUT__blueBits, OFFSET__blueBits, value);}
+    public java.lang.foreign.MemorySegment $blueBits() {return this.ptr.asSlice(OFFSET__blueBits, LAYOUT__blueBits);}
+
+    public int refreshRate() {return this.ptr.get(LAYOUT__refreshRate, OFFSET__refreshRate);}
+    public void refreshRate(int value) {this.ptr.set(LAYOUT__refreshRate, OFFSET__refreshRate, value);}
+    public java.lang.foreign.MemorySegment $refreshRate() {return this.ptr.asSlice(OFFSET__refreshRate, LAYOUT__refreshRate);}
 }

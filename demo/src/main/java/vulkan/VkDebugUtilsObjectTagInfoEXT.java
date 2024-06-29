@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkDebugUtilsObjectTagInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$objectType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$objectType = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$objectHandle = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$objectHandle = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$tagName = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$tagName = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$tagSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$tagSize = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pTag = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pTag = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__objectType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__objectType = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__objectHandle = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__objectHandle = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__tagName = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__tagName = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__tagSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__tagSize = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTag = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pTag = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$objectType,
+            LAYOUT__pNext,
+            LAYOUT__objectType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$objectHandle,
-            LAYOUT$tagName,
-            LAYOUT$tagSize,
-            LAYOUT$pTag
-    ).withName("VkDebugUtilsObjectTagInfoEXT");
+            LAYOUT__objectHandle,
+            LAYOUT__tagName,
+            LAYOUT__tagSize,
+            LAYOUT__pTag
+    ).withByteAlignment(8).withName("VkDebugUtilsObjectTagInfoEXT");
 
     public VkDebugUtilsObjectTagInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDebugUtilsObjectTagInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDebugUtilsObjectTagInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDebugUtilsObjectTagInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDebugUtilsObjectTagInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDebugUtilsObjectTagInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int objectType() {return this.ptr.get(LAYOUT$objectType, OFFSET$objectType);}
-    public void objectType(int value) {this.ptr.set(LAYOUT$objectType, OFFSET$objectType, value);}
-    public java.lang.foreign.MemorySegment objectType_ptr() {return this.ptr.asSlice(OFFSET$objectType, LAYOUT$objectType);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long objectHandle() {return this.ptr.get(LAYOUT$objectHandle, OFFSET$objectHandle);}
-    public void objectHandle(long value) {this.ptr.set(LAYOUT$objectHandle, OFFSET$objectHandle, value);}
-    public java.lang.foreign.MemorySegment objectHandle_ptr() {return this.ptr.asSlice(OFFSET$objectHandle, LAYOUT$objectHandle);}
+    public int objectType() {return this.ptr.get(LAYOUT__objectType, OFFSET__objectType);}
+    public void objectType(int value) {this.ptr.set(LAYOUT__objectType, OFFSET__objectType, value);}
+    public java.lang.foreign.MemorySegment $objectType() {return this.ptr.asSlice(OFFSET__objectType, LAYOUT__objectType);}
 
-    public long tagName() {return this.ptr.get(LAYOUT$tagName, OFFSET$tagName);}
-    public void tagName(long value) {this.ptr.set(LAYOUT$tagName, OFFSET$tagName, value);}
-    public java.lang.foreign.MemorySegment tagName_ptr() {return this.ptr.asSlice(OFFSET$tagName, LAYOUT$tagName);}
+    public long objectHandle() {return this.ptr.get(LAYOUT__objectHandle, OFFSET__objectHandle);}
+    public void objectHandle(long value) {this.ptr.set(LAYOUT__objectHandle, OFFSET__objectHandle, value);}
+    public java.lang.foreign.MemorySegment $objectHandle() {return this.ptr.asSlice(OFFSET__objectHandle, LAYOUT__objectHandle);}
 
-    public long tagSize() {return this.ptr.get(LAYOUT$tagSize, OFFSET$tagSize);}
-    public void tagSize(long value) {this.ptr.set(LAYOUT$tagSize, OFFSET$tagSize, value);}
-    public java.lang.foreign.MemorySegment tagSize_ptr() {return this.ptr.asSlice(OFFSET$tagSize, LAYOUT$tagSize);}
+    public long tagName() {return this.ptr.get(LAYOUT__tagName, OFFSET__tagName);}
+    public void tagName(long value) {this.ptr.set(LAYOUT__tagName, OFFSET__tagName, value);}
+    public java.lang.foreign.MemorySegment $tagName() {return this.ptr.asSlice(OFFSET__tagName, LAYOUT__tagName);}
 
-    public java.lang.foreign.MemorySegment pTag() {return this.ptr.get(LAYOUT$pTag, OFFSET$pTag);}
-    public void pTag(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pTag, OFFSET$pTag, value);}
-    public java.lang.foreign.MemorySegment pTag_ptr() {return this.ptr.asSlice(OFFSET$pTag, LAYOUT$pTag);}
+    public long tagSize() {return this.ptr.get(LAYOUT__tagSize, OFFSET__tagSize);}
+    public void tagSize(long value) {this.ptr.set(LAYOUT__tagSize, OFFSET__tagSize, value);}
+    public java.lang.foreign.MemorySegment $tagSize() {return this.ptr.asSlice(OFFSET__tagSize, LAYOUT__tagSize);}
+
+    public java.lang.foreign.MemorySegment pTag() {return this.ptr.get(LAYOUT__pTag, OFFSET__pTag);}
+    public void pTag(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pTag, OFFSET__pTag, value);}
+    public java.lang.foreign.MemorySegment $pTag() {return this.ptr.asSlice(OFFSET__pTag, LAYOUT__pTag);}
 }

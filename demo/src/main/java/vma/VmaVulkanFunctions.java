@@ -2,199 +2,204 @@ package vma;
 
 public record VmaVulkanFunctions(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetInstanceProcAddr = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetInstanceProcAddr = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetDeviceProcAddr = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetDeviceProcAddr = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetPhysicalDeviceProperties = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetPhysicalDeviceProperties = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetPhysicalDeviceMemoryProperties = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetPhysicalDeviceMemoryProperties = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkAllocateMemory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkAllocateMemory = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkFreeMemory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkFreeMemory = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkMapMemory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkMapMemory = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkUnmapMemory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkUnmapMemory = 56L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkFlushMappedMemoryRanges = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkFlushMappedMemoryRanges = 64L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkInvalidateMappedMemoryRanges = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkInvalidateMappedMemoryRanges = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkBindBufferMemory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkBindBufferMemory = 80L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkBindImageMemory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkBindImageMemory = 88L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetBufferMemoryRequirements = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetBufferMemoryRequirements = 96L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetImageMemoryRequirements = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetImageMemoryRequirements = 104L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkCreateBuffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkCreateBuffer = 112L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkDestroyBuffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkDestroyBuffer = 120L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkCreateImage = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkCreateImage = 128L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkDestroyImage = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkDestroyImage = 136L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkCmdCopyBuffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkCmdCopyBuffer = 144L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetBufferMemoryRequirements2KHR = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetBufferMemoryRequirements2KHR = 152L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetImageMemoryRequirements2KHR = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetImageMemoryRequirements2KHR = 160L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkBindBufferMemory2KHR = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkBindBufferMemory2KHR = 168L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkBindImageMemory2KHR = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkBindImageMemory2KHR = 176L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetPhysicalDeviceMemoryProperties2KHR = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetPhysicalDeviceMemoryProperties2KHR = 184L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetDeviceBufferMemoryRequirements = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetDeviceBufferMemoryRequirements = 192L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$vkGetDeviceImageMemoryRequirements = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$vkGetDeviceImageMemoryRequirements = 200L;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetInstanceProcAddr = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetInstanceProcAddr = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetDeviceProcAddr = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetDeviceProcAddr = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetPhysicalDeviceProperties = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetPhysicalDeviceProperties = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetPhysicalDeviceMemoryProperties = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetPhysicalDeviceMemoryProperties = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkAllocateMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkAllocateMemory = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkFreeMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkFreeMemory = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkMapMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkMapMemory = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkUnmapMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkUnmapMemory = 56;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkFlushMappedMemoryRanges = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkFlushMappedMemoryRanges = 64;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkInvalidateMappedMemoryRanges = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkInvalidateMappedMemoryRanges = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkBindBufferMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkBindBufferMemory = 80;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkBindImageMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkBindImageMemory = 88;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetBufferMemoryRequirements = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetBufferMemoryRequirements = 96;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetImageMemoryRequirements = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetImageMemoryRequirements = 104;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkCreateBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkCreateBuffer = 112;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkDestroyBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkDestroyBuffer = 120;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkCreateImage = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkCreateImage = 128;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkDestroyImage = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkDestroyImage = 136;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkCmdCopyBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkCmdCopyBuffer = 144;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetBufferMemoryRequirements2KHR = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetBufferMemoryRequirements2KHR = 152;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetImageMemoryRequirements2KHR = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetImageMemoryRequirements2KHR = 160;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkBindBufferMemory2KHR = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkBindBufferMemory2KHR = 168;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkBindImageMemory2KHR = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkBindImageMemory2KHR = 176;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetPhysicalDeviceMemoryProperties2KHR = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetPhysicalDeviceMemoryProperties2KHR = 184;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetDeviceBufferMemoryRequirements = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetDeviceBufferMemoryRequirements = 192;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vkGetDeviceImageMemoryRequirements = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__vkGetDeviceImageMemoryRequirements = 200;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$vkGetInstanceProcAddr,
-            LAYOUT$vkGetDeviceProcAddr,
-            LAYOUT$vkGetPhysicalDeviceProperties,
-            LAYOUT$vkGetPhysicalDeviceMemoryProperties,
-            LAYOUT$vkAllocateMemory,
-            LAYOUT$vkFreeMemory,
-            LAYOUT$vkMapMemory,
-            LAYOUT$vkUnmapMemory,
-            LAYOUT$vkFlushMappedMemoryRanges,
-            LAYOUT$vkInvalidateMappedMemoryRanges,
-            LAYOUT$vkBindBufferMemory,
-            LAYOUT$vkBindImageMemory,
-            LAYOUT$vkGetBufferMemoryRequirements,
-            LAYOUT$vkGetImageMemoryRequirements,
-            LAYOUT$vkCreateBuffer,
-            LAYOUT$vkDestroyBuffer,
-            LAYOUT$vkCreateImage,
-            LAYOUT$vkDestroyImage,
-            LAYOUT$vkCmdCopyBuffer,
-            LAYOUT$vkGetBufferMemoryRequirements2KHR,
-            LAYOUT$vkGetImageMemoryRequirements2KHR,
-            LAYOUT$vkBindBufferMemory2KHR,
-            LAYOUT$vkBindImageMemory2KHR,
-            LAYOUT$vkGetPhysicalDeviceMemoryProperties2KHR,
-            LAYOUT$vkGetDeviceBufferMemoryRequirements,
-            LAYOUT$vkGetDeviceImageMemoryRequirements
-    ).withName("VmaVulkanFunctions");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__vkGetInstanceProcAddr,
+            LAYOUT__vkGetDeviceProcAddr,
+            LAYOUT__vkGetPhysicalDeviceProperties,
+            LAYOUT__vkGetPhysicalDeviceMemoryProperties,
+            LAYOUT__vkAllocateMemory,
+            LAYOUT__vkFreeMemory,
+            LAYOUT__vkMapMemory,
+            LAYOUT__vkUnmapMemory,
+            LAYOUT__vkFlushMappedMemoryRanges,
+            LAYOUT__vkInvalidateMappedMemoryRanges,
+            LAYOUT__vkBindBufferMemory,
+            LAYOUT__vkBindImageMemory,
+            LAYOUT__vkGetBufferMemoryRequirements,
+            LAYOUT__vkGetImageMemoryRequirements,
+            LAYOUT__vkCreateBuffer,
+            LAYOUT__vkDestroyBuffer,
+            LAYOUT__vkCreateImage,
+            LAYOUT__vkDestroyImage,
+            LAYOUT__vkCmdCopyBuffer,
+            LAYOUT__vkGetBufferMemoryRequirements2KHR,
+            LAYOUT__vkGetImageMemoryRequirements2KHR,
+            LAYOUT__vkBindBufferMemory2KHR,
+            LAYOUT__vkBindImageMemory2KHR,
+            LAYOUT__vkGetPhysicalDeviceMemoryProperties2KHR,
+            LAYOUT__vkGetDeviceBufferMemoryRequirements,
+            LAYOUT__vkGetDeviceImageMemoryRequirements
+    ).withByteAlignment(8).withName("VmaVulkanFunctions");
 
     public VmaVulkanFunctions(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VmaVulkanFunctions getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VmaVulkanFunctions getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VmaVulkanFunctions(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VmaVulkanFunctions(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment vkGetInstanceProcAddr() {return this.ptr.get(LAYOUT$vkGetInstanceProcAddr, OFFSET$vkGetInstanceProcAddr);}
-    public void vkGetInstanceProcAddr(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetInstanceProcAddr, OFFSET$vkGetInstanceProcAddr, value);}
-    public java.lang.foreign.MemorySegment vkGetInstanceProcAddr_ptr() {return this.ptr.asSlice(OFFSET$vkGetInstanceProcAddr, LAYOUT$vkGetInstanceProcAddr);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VmaVulkanFunctions value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment vkGetDeviceProcAddr() {return this.ptr.get(LAYOUT$vkGetDeviceProcAddr, OFFSET$vkGetDeviceProcAddr);}
-    public void vkGetDeviceProcAddr(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetDeviceProcAddr, OFFSET$vkGetDeviceProcAddr, value);}
-    public java.lang.foreign.MemorySegment vkGetDeviceProcAddr_ptr() {return this.ptr.asSlice(OFFSET$vkGetDeviceProcAddr, LAYOUT$vkGetDeviceProcAddr);}
+    public java.lang.foreign.MemorySegment vkGetInstanceProcAddr() {return this.ptr.get(LAYOUT__vkGetInstanceProcAddr, OFFSET__vkGetInstanceProcAddr);}
+    public void vkGetInstanceProcAddr(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetInstanceProcAddr, OFFSET__vkGetInstanceProcAddr, value);}
+    public java.lang.foreign.MemorySegment $vkGetInstanceProcAddr() {return this.ptr.asSlice(OFFSET__vkGetInstanceProcAddr, LAYOUT__vkGetInstanceProcAddr);}
 
-    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceProperties() {return this.ptr.get(LAYOUT$vkGetPhysicalDeviceProperties, OFFSET$vkGetPhysicalDeviceProperties);}
-    public void vkGetPhysicalDeviceProperties(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetPhysicalDeviceProperties, OFFSET$vkGetPhysicalDeviceProperties, value);}
-    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceProperties_ptr() {return this.ptr.asSlice(OFFSET$vkGetPhysicalDeviceProperties, LAYOUT$vkGetPhysicalDeviceProperties);}
+    public java.lang.foreign.MemorySegment vkGetDeviceProcAddr() {return this.ptr.get(LAYOUT__vkGetDeviceProcAddr, OFFSET__vkGetDeviceProcAddr);}
+    public void vkGetDeviceProcAddr(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetDeviceProcAddr, OFFSET__vkGetDeviceProcAddr, value);}
+    public java.lang.foreign.MemorySegment $vkGetDeviceProcAddr() {return this.ptr.asSlice(OFFSET__vkGetDeviceProcAddr, LAYOUT__vkGetDeviceProcAddr);}
 
-    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceMemoryProperties() {return this.ptr.get(LAYOUT$vkGetPhysicalDeviceMemoryProperties, OFFSET$vkGetPhysicalDeviceMemoryProperties);}
-    public void vkGetPhysicalDeviceMemoryProperties(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetPhysicalDeviceMemoryProperties, OFFSET$vkGetPhysicalDeviceMemoryProperties, value);}
-    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceMemoryProperties_ptr() {return this.ptr.asSlice(OFFSET$vkGetPhysicalDeviceMemoryProperties, LAYOUT$vkGetPhysicalDeviceMemoryProperties);}
+    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceProperties() {return this.ptr.get(LAYOUT__vkGetPhysicalDeviceProperties, OFFSET__vkGetPhysicalDeviceProperties);}
+    public void vkGetPhysicalDeviceProperties(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetPhysicalDeviceProperties, OFFSET__vkGetPhysicalDeviceProperties, value);}
+    public java.lang.foreign.MemorySegment $vkGetPhysicalDeviceProperties() {return this.ptr.asSlice(OFFSET__vkGetPhysicalDeviceProperties, LAYOUT__vkGetPhysicalDeviceProperties);}
 
-    public java.lang.foreign.MemorySegment vkAllocateMemory() {return this.ptr.get(LAYOUT$vkAllocateMemory, OFFSET$vkAllocateMemory);}
-    public void vkAllocateMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkAllocateMemory, OFFSET$vkAllocateMemory, value);}
-    public java.lang.foreign.MemorySegment vkAllocateMemory_ptr() {return this.ptr.asSlice(OFFSET$vkAllocateMemory, LAYOUT$vkAllocateMemory);}
+    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceMemoryProperties() {return this.ptr.get(LAYOUT__vkGetPhysicalDeviceMemoryProperties, OFFSET__vkGetPhysicalDeviceMemoryProperties);}
+    public void vkGetPhysicalDeviceMemoryProperties(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetPhysicalDeviceMemoryProperties, OFFSET__vkGetPhysicalDeviceMemoryProperties, value);}
+    public java.lang.foreign.MemorySegment $vkGetPhysicalDeviceMemoryProperties() {return this.ptr.asSlice(OFFSET__vkGetPhysicalDeviceMemoryProperties, LAYOUT__vkGetPhysicalDeviceMemoryProperties);}
 
-    public java.lang.foreign.MemorySegment vkFreeMemory() {return this.ptr.get(LAYOUT$vkFreeMemory, OFFSET$vkFreeMemory);}
-    public void vkFreeMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkFreeMemory, OFFSET$vkFreeMemory, value);}
-    public java.lang.foreign.MemorySegment vkFreeMemory_ptr() {return this.ptr.asSlice(OFFSET$vkFreeMemory, LAYOUT$vkFreeMemory);}
+    public java.lang.foreign.MemorySegment vkAllocateMemory() {return this.ptr.get(LAYOUT__vkAllocateMemory, OFFSET__vkAllocateMemory);}
+    public void vkAllocateMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkAllocateMemory, OFFSET__vkAllocateMemory, value);}
+    public java.lang.foreign.MemorySegment $vkAllocateMemory() {return this.ptr.asSlice(OFFSET__vkAllocateMemory, LAYOUT__vkAllocateMemory);}
 
-    public java.lang.foreign.MemorySegment vkMapMemory() {return this.ptr.get(LAYOUT$vkMapMemory, OFFSET$vkMapMemory);}
-    public void vkMapMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkMapMemory, OFFSET$vkMapMemory, value);}
-    public java.lang.foreign.MemorySegment vkMapMemory_ptr() {return this.ptr.asSlice(OFFSET$vkMapMemory, LAYOUT$vkMapMemory);}
+    public java.lang.foreign.MemorySegment vkFreeMemory() {return this.ptr.get(LAYOUT__vkFreeMemory, OFFSET__vkFreeMemory);}
+    public void vkFreeMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkFreeMemory, OFFSET__vkFreeMemory, value);}
+    public java.lang.foreign.MemorySegment $vkFreeMemory() {return this.ptr.asSlice(OFFSET__vkFreeMemory, LAYOUT__vkFreeMemory);}
 
-    public java.lang.foreign.MemorySegment vkUnmapMemory() {return this.ptr.get(LAYOUT$vkUnmapMemory, OFFSET$vkUnmapMemory);}
-    public void vkUnmapMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkUnmapMemory, OFFSET$vkUnmapMemory, value);}
-    public java.lang.foreign.MemorySegment vkUnmapMemory_ptr() {return this.ptr.asSlice(OFFSET$vkUnmapMemory, LAYOUT$vkUnmapMemory);}
+    public java.lang.foreign.MemorySegment vkMapMemory() {return this.ptr.get(LAYOUT__vkMapMemory, OFFSET__vkMapMemory);}
+    public void vkMapMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkMapMemory, OFFSET__vkMapMemory, value);}
+    public java.lang.foreign.MemorySegment $vkMapMemory() {return this.ptr.asSlice(OFFSET__vkMapMemory, LAYOUT__vkMapMemory);}
 
-    public java.lang.foreign.MemorySegment vkFlushMappedMemoryRanges() {return this.ptr.get(LAYOUT$vkFlushMappedMemoryRanges, OFFSET$vkFlushMappedMemoryRanges);}
-    public void vkFlushMappedMemoryRanges(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkFlushMappedMemoryRanges, OFFSET$vkFlushMappedMemoryRanges, value);}
-    public java.lang.foreign.MemorySegment vkFlushMappedMemoryRanges_ptr() {return this.ptr.asSlice(OFFSET$vkFlushMappedMemoryRanges, LAYOUT$vkFlushMappedMemoryRanges);}
+    public java.lang.foreign.MemorySegment vkUnmapMemory() {return this.ptr.get(LAYOUT__vkUnmapMemory, OFFSET__vkUnmapMemory);}
+    public void vkUnmapMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkUnmapMemory, OFFSET__vkUnmapMemory, value);}
+    public java.lang.foreign.MemorySegment $vkUnmapMemory() {return this.ptr.asSlice(OFFSET__vkUnmapMemory, LAYOUT__vkUnmapMemory);}
 
-    public java.lang.foreign.MemorySegment vkInvalidateMappedMemoryRanges() {return this.ptr.get(LAYOUT$vkInvalidateMappedMemoryRanges, OFFSET$vkInvalidateMappedMemoryRanges);}
-    public void vkInvalidateMappedMemoryRanges(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkInvalidateMappedMemoryRanges, OFFSET$vkInvalidateMappedMemoryRanges, value);}
-    public java.lang.foreign.MemorySegment vkInvalidateMappedMemoryRanges_ptr() {return this.ptr.asSlice(OFFSET$vkInvalidateMappedMemoryRanges, LAYOUT$vkInvalidateMappedMemoryRanges);}
+    public java.lang.foreign.MemorySegment vkFlushMappedMemoryRanges() {return this.ptr.get(LAYOUT__vkFlushMappedMemoryRanges, OFFSET__vkFlushMappedMemoryRanges);}
+    public void vkFlushMappedMemoryRanges(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkFlushMappedMemoryRanges, OFFSET__vkFlushMappedMemoryRanges, value);}
+    public java.lang.foreign.MemorySegment $vkFlushMappedMemoryRanges() {return this.ptr.asSlice(OFFSET__vkFlushMappedMemoryRanges, LAYOUT__vkFlushMappedMemoryRanges);}
 
-    public java.lang.foreign.MemorySegment vkBindBufferMemory() {return this.ptr.get(LAYOUT$vkBindBufferMemory, OFFSET$vkBindBufferMemory);}
-    public void vkBindBufferMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkBindBufferMemory, OFFSET$vkBindBufferMemory, value);}
-    public java.lang.foreign.MemorySegment vkBindBufferMemory_ptr() {return this.ptr.asSlice(OFFSET$vkBindBufferMemory, LAYOUT$vkBindBufferMemory);}
+    public java.lang.foreign.MemorySegment vkInvalidateMappedMemoryRanges() {return this.ptr.get(LAYOUT__vkInvalidateMappedMemoryRanges, OFFSET__vkInvalidateMappedMemoryRanges);}
+    public void vkInvalidateMappedMemoryRanges(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkInvalidateMappedMemoryRanges, OFFSET__vkInvalidateMappedMemoryRanges, value);}
+    public java.lang.foreign.MemorySegment $vkInvalidateMappedMemoryRanges() {return this.ptr.asSlice(OFFSET__vkInvalidateMappedMemoryRanges, LAYOUT__vkInvalidateMappedMemoryRanges);}
 
-    public java.lang.foreign.MemorySegment vkBindImageMemory() {return this.ptr.get(LAYOUT$vkBindImageMemory, OFFSET$vkBindImageMemory);}
-    public void vkBindImageMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkBindImageMemory, OFFSET$vkBindImageMemory, value);}
-    public java.lang.foreign.MemorySegment vkBindImageMemory_ptr() {return this.ptr.asSlice(OFFSET$vkBindImageMemory, LAYOUT$vkBindImageMemory);}
+    public java.lang.foreign.MemorySegment vkBindBufferMemory() {return this.ptr.get(LAYOUT__vkBindBufferMemory, OFFSET__vkBindBufferMemory);}
+    public void vkBindBufferMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkBindBufferMemory, OFFSET__vkBindBufferMemory, value);}
+    public java.lang.foreign.MemorySegment $vkBindBufferMemory() {return this.ptr.asSlice(OFFSET__vkBindBufferMemory, LAYOUT__vkBindBufferMemory);}
 
-    public java.lang.foreign.MemorySegment vkGetBufferMemoryRequirements() {return this.ptr.get(LAYOUT$vkGetBufferMemoryRequirements, OFFSET$vkGetBufferMemoryRequirements);}
-    public void vkGetBufferMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetBufferMemoryRequirements, OFFSET$vkGetBufferMemoryRequirements, value);}
-    public java.lang.foreign.MemorySegment vkGetBufferMemoryRequirements_ptr() {return this.ptr.asSlice(OFFSET$vkGetBufferMemoryRequirements, LAYOUT$vkGetBufferMemoryRequirements);}
+    public java.lang.foreign.MemorySegment vkBindImageMemory() {return this.ptr.get(LAYOUT__vkBindImageMemory, OFFSET__vkBindImageMemory);}
+    public void vkBindImageMemory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkBindImageMemory, OFFSET__vkBindImageMemory, value);}
+    public java.lang.foreign.MemorySegment $vkBindImageMemory() {return this.ptr.asSlice(OFFSET__vkBindImageMemory, LAYOUT__vkBindImageMemory);}
 
-    public java.lang.foreign.MemorySegment vkGetImageMemoryRequirements() {return this.ptr.get(LAYOUT$vkGetImageMemoryRequirements, OFFSET$vkGetImageMemoryRequirements);}
-    public void vkGetImageMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetImageMemoryRequirements, OFFSET$vkGetImageMemoryRequirements, value);}
-    public java.lang.foreign.MemorySegment vkGetImageMemoryRequirements_ptr() {return this.ptr.asSlice(OFFSET$vkGetImageMemoryRequirements, LAYOUT$vkGetImageMemoryRequirements);}
+    public java.lang.foreign.MemorySegment vkGetBufferMemoryRequirements() {return this.ptr.get(LAYOUT__vkGetBufferMemoryRequirements, OFFSET__vkGetBufferMemoryRequirements);}
+    public void vkGetBufferMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetBufferMemoryRequirements, OFFSET__vkGetBufferMemoryRequirements, value);}
+    public java.lang.foreign.MemorySegment $vkGetBufferMemoryRequirements() {return this.ptr.asSlice(OFFSET__vkGetBufferMemoryRequirements, LAYOUT__vkGetBufferMemoryRequirements);}
 
-    public java.lang.foreign.MemorySegment vkCreateBuffer() {return this.ptr.get(LAYOUT$vkCreateBuffer, OFFSET$vkCreateBuffer);}
-    public void vkCreateBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkCreateBuffer, OFFSET$vkCreateBuffer, value);}
-    public java.lang.foreign.MemorySegment vkCreateBuffer_ptr() {return this.ptr.asSlice(OFFSET$vkCreateBuffer, LAYOUT$vkCreateBuffer);}
+    public java.lang.foreign.MemorySegment vkGetImageMemoryRequirements() {return this.ptr.get(LAYOUT__vkGetImageMemoryRequirements, OFFSET__vkGetImageMemoryRequirements);}
+    public void vkGetImageMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetImageMemoryRequirements, OFFSET__vkGetImageMemoryRequirements, value);}
+    public java.lang.foreign.MemorySegment $vkGetImageMemoryRequirements() {return this.ptr.asSlice(OFFSET__vkGetImageMemoryRequirements, LAYOUT__vkGetImageMemoryRequirements);}
 
-    public java.lang.foreign.MemorySegment vkDestroyBuffer() {return this.ptr.get(LAYOUT$vkDestroyBuffer, OFFSET$vkDestroyBuffer);}
-    public void vkDestroyBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkDestroyBuffer, OFFSET$vkDestroyBuffer, value);}
-    public java.lang.foreign.MemorySegment vkDestroyBuffer_ptr() {return this.ptr.asSlice(OFFSET$vkDestroyBuffer, LAYOUT$vkDestroyBuffer);}
+    public java.lang.foreign.MemorySegment vkCreateBuffer() {return this.ptr.get(LAYOUT__vkCreateBuffer, OFFSET__vkCreateBuffer);}
+    public void vkCreateBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkCreateBuffer, OFFSET__vkCreateBuffer, value);}
+    public java.lang.foreign.MemorySegment $vkCreateBuffer() {return this.ptr.asSlice(OFFSET__vkCreateBuffer, LAYOUT__vkCreateBuffer);}
 
-    public java.lang.foreign.MemorySegment vkCreateImage() {return this.ptr.get(LAYOUT$vkCreateImage, OFFSET$vkCreateImage);}
-    public void vkCreateImage(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkCreateImage, OFFSET$vkCreateImage, value);}
-    public java.lang.foreign.MemorySegment vkCreateImage_ptr() {return this.ptr.asSlice(OFFSET$vkCreateImage, LAYOUT$vkCreateImage);}
+    public java.lang.foreign.MemorySegment vkDestroyBuffer() {return this.ptr.get(LAYOUT__vkDestroyBuffer, OFFSET__vkDestroyBuffer);}
+    public void vkDestroyBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkDestroyBuffer, OFFSET__vkDestroyBuffer, value);}
+    public java.lang.foreign.MemorySegment $vkDestroyBuffer() {return this.ptr.asSlice(OFFSET__vkDestroyBuffer, LAYOUT__vkDestroyBuffer);}
 
-    public java.lang.foreign.MemorySegment vkDestroyImage() {return this.ptr.get(LAYOUT$vkDestroyImage, OFFSET$vkDestroyImage);}
-    public void vkDestroyImage(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkDestroyImage, OFFSET$vkDestroyImage, value);}
-    public java.lang.foreign.MemorySegment vkDestroyImage_ptr() {return this.ptr.asSlice(OFFSET$vkDestroyImage, LAYOUT$vkDestroyImage);}
+    public java.lang.foreign.MemorySegment vkCreateImage() {return this.ptr.get(LAYOUT__vkCreateImage, OFFSET__vkCreateImage);}
+    public void vkCreateImage(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkCreateImage, OFFSET__vkCreateImage, value);}
+    public java.lang.foreign.MemorySegment $vkCreateImage() {return this.ptr.asSlice(OFFSET__vkCreateImage, LAYOUT__vkCreateImage);}
 
-    public java.lang.foreign.MemorySegment vkCmdCopyBuffer() {return this.ptr.get(LAYOUT$vkCmdCopyBuffer, OFFSET$vkCmdCopyBuffer);}
-    public void vkCmdCopyBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkCmdCopyBuffer, OFFSET$vkCmdCopyBuffer, value);}
-    public java.lang.foreign.MemorySegment vkCmdCopyBuffer_ptr() {return this.ptr.asSlice(OFFSET$vkCmdCopyBuffer, LAYOUT$vkCmdCopyBuffer);}
+    public java.lang.foreign.MemorySegment vkDestroyImage() {return this.ptr.get(LAYOUT__vkDestroyImage, OFFSET__vkDestroyImage);}
+    public void vkDestroyImage(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkDestroyImage, OFFSET__vkDestroyImage, value);}
+    public java.lang.foreign.MemorySegment $vkDestroyImage() {return this.ptr.asSlice(OFFSET__vkDestroyImage, LAYOUT__vkDestroyImage);}
 
-    public java.lang.foreign.MemorySegment vkGetBufferMemoryRequirements2KHR() {return this.ptr.get(LAYOUT$vkGetBufferMemoryRequirements2KHR, OFFSET$vkGetBufferMemoryRequirements2KHR);}
-    public void vkGetBufferMemoryRequirements2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetBufferMemoryRequirements2KHR, OFFSET$vkGetBufferMemoryRequirements2KHR, value);}
-    public java.lang.foreign.MemorySegment vkGetBufferMemoryRequirements2KHR_ptr() {return this.ptr.asSlice(OFFSET$vkGetBufferMemoryRequirements2KHR, LAYOUT$vkGetBufferMemoryRequirements2KHR);}
+    public java.lang.foreign.MemorySegment vkCmdCopyBuffer() {return this.ptr.get(LAYOUT__vkCmdCopyBuffer, OFFSET__vkCmdCopyBuffer);}
+    public void vkCmdCopyBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkCmdCopyBuffer, OFFSET__vkCmdCopyBuffer, value);}
+    public java.lang.foreign.MemorySegment $vkCmdCopyBuffer() {return this.ptr.asSlice(OFFSET__vkCmdCopyBuffer, LAYOUT__vkCmdCopyBuffer);}
 
-    public java.lang.foreign.MemorySegment vkGetImageMemoryRequirements2KHR() {return this.ptr.get(LAYOUT$vkGetImageMemoryRequirements2KHR, OFFSET$vkGetImageMemoryRequirements2KHR);}
-    public void vkGetImageMemoryRequirements2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetImageMemoryRequirements2KHR, OFFSET$vkGetImageMemoryRequirements2KHR, value);}
-    public java.lang.foreign.MemorySegment vkGetImageMemoryRequirements2KHR_ptr() {return this.ptr.asSlice(OFFSET$vkGetImageMemoryRequirements2KHR, LAYOUT$vkGetImageMemoryRequirements2KHR);}
+    public java.lang.foreign.MemorySegment vkGetBufferMemoryRequirements2KHR() {return this.ptr.get(LAYOUT__vkGetBufferMemoryRequirements2KHR, OFFSET__vkGetBufferMemoryRequirements2KHR);}
+    public void vkGetBufferMemoryRequirements2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetBufferMemoryRequirements2KHR, OFFSET__vkGetBufferMemoryRequirements2KHR, value);}
+    public java.lang.foreign.MemorySegment $vkGetBufferMemoryRequirements2KHR() {return this.ptr.asSlice(OFFSET__vkGetBufferMemoryRequirements2KHR, LAYOUT__vkGetBufferMemoryRequirements2KHR);}
 
-    public java.lang.foreign.MemorySegment vkBindBufferMemory2KHR() {return this.ptr.get(LAYOUT$vkBindBufferMemory2KHR, OFFSET$vkBindBufferMemory2KHR);}
-    public void vkBindBufferMemory2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkBindBufferMemory2KHR, OFFSET$vkBindBufferMemory2KHR, value);}
-    public java.lang.foreign.MemorySegment vkBindBufferMemory2KHR_ptr() {return this.ptr.asSlice(OFFSET$vkBindBufferMemory2KHR, LAYOUT$vkBindBufferMemory2KHR);}
+    public java.lang.foreign.MemorySegment vkGetImageMemoryRequirements2KHR() {return this.ptr.get(LAYOUT__vkGetImageMemoryRequirements2KHR, OFFSET__vkGetImageMemoryRequirements2KHR);}
+    public void vkGetImageMemoryRequirements2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetImageMemoryRequirements2KHR, OFFSET__vkGetImageMemoryRequirements2KHR, value);}
+    public java.lang.foreign.MemorySegment $vkGetImageMemoryRequirements2KHR() {return this.ptr.asSlice(OFFSET__vkGetImageMemoryRequirements2KHR, LAYOUT__vkGetImageMemoryRequirements2KHR);}
 
-    public java.lang.foreign.MemorySegment vkBindImageMemory2KHR() {return this.ptr.get(LAYOUT$vkBindImageMemory2KHR, OFFSET$vkBindImageMemory2KHR);}
-    public void vkBindImageMemory2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkBindImageMemory2KHR, OFFSET$vkBindImageMemory2KHR, value);}
-    public java.lang.foreign.MemorySegment vkBindImageMemory2KHR_ptr() {return this.ptr.asSlice(OFFSET$vkBindImageMemory2KHR, LAYOUT$vkBindImageMemory2KHR);}
+    public java.lang.foreign.MemorySegment vkBindBufferMemory2KHR() {return this.ptr.get(LAYOUT__vkBindBufferMemory2KHR, OFFSET__vkBindBufferMemory2KHR);}
+    public void vkBindBufferMemory2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkBindBufferMemory2KHR, OFFSET__vkBindBufferMemory2KHR, value);}
+    public java.lang.foreign.MemorySegment $vkBindBufferMemory2KHR() {return this.ptr.asSlice(OFFSET__vkBindBufferMemory2KHR, LAYOUT__vkBindBufferMemory2KHR);}
 
-    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceMemoryProperties2KHR() {return this.ptr.get(LAYOUT$vkGetPhysicalDeviceMemoryProperties2KHR, OFFSET$vkGetPhysicalDeviceMemoryProperties2KHR);}
-    public void vkGetPhysicalDeviceMemoryProperties2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetPhysicalDeviceMemoryProperties2KHR, OFFSET$vkGetPhysicalDeviceMemoryProperties2KHR, value);}
-    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceMemoryProperties2KHR_ptr() {return this.ptr.asSlice(OFFSET$vkGetPhysicalDeviceMemoryProperties2KHR, LAYOUT$vkGetPhysicalDeviceMemoryProperties2KHR);}
+    public java.lang.foreign.MemorySegment vkBindImageMemory2KHR() {return this.ptr.get(LAYOUT__vkBindImageMemory2KHR, OFFSET__vkBindImageMemory2KHR);}
+    public void vkBindImageMemory2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkBindImageMemory2KHR, OFFSET__vkBindImageMemory2KHR, value);}
+    public java.lang.foreign.MemorySegment $vkBindImageMemory2KHR() {return this.ptr.asSlice(OFFSET__vkBindImageMemory2KHR, LAYOUT__vkBindImageMemory2KHR);}
 
-    public java.lang.foreign.MemorySegment vkGetDeviceBufferMemoryRequirements() {return this.ptr.get(LAYOUT$vkGetDeviceBufferMemoryRequirements, OFFSET$vkGetDeviceBufferMemoryRequirements);}
-    public void vkGetDeviceBufferMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetDeviceBufferMemoryRequirements, OFFSET$vkGetDeviceBufferMemoryRequirements, value);}
-    public java.lang.foreign.MemorySegment vkGetDeviceBufferMemoryRequirements_ptr() {return this.ptr.asSlice(OFFSET$vkGetDeviceBufferMemoryRequirements, LAYOUT$vkGetDeviceBufferMemoryRequirements);}
+    public java.lang.foreign.MemorySegment vkGetPhysicalDeviceMemoryProperties2KHR() {return this.ptr.get(LAYOUT__vkGetPhysicalDeviceMemoryProperties2KHR, OFFSET__vkGetPhysicalDeviceMemoryProperties2KHR);}
+    public void vkGetPhysicalDeviceMemoryProperties2KHR(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetPhysicalDeviceMemoryProperties2KHR, OFFSET__vkGetPhysicalDeviceMemoryProperties2KHR, value);}
+    public java.lang.foreign.MemorySegment $vkGetPhysicalDeviceMemoryProperties2KHR() {return this.ptr.asSlice(OFFSET__vkGetPhysicalDeviceMemoryProperties2KHR, LAYOUT__vkGetPhysicalDeviceMemoryProperties2KHR);}
 
-    public java.lang.foreign.MemorySegment vkGetDeviceImageMemoryRequirements() {return this.ptr.get(LAYOUT$vkGetDeviceImageMemoryRequirements, OFFSET$vkGetDeviceImageMemoryRequirements);}
-    public void vkGetDeviceImageMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$vkGetDeviceImageMemoryRequirements, OFFSET$vkGetDeviceImageMemoryRequirements, value);}
-    public java.lang.foreign.MemorySegment vkGetDeviceImageMemoryRequirements_ptr() {return this.ptr.asSlice(OFFSET$vkGetDeviceImageMemoryRequirements, LAYOUT$vkGetDeviceImageMemoryRequirements);}
+    public java.lang.foreign.MemorySegment vkGetDeviceBufferMemoryRequirements() {return this.ptr.get(LAYOUT__vkGetDeviceBufferMemoryRequirements, OFFSET__vkGetDeviceBufferMemoryRequirements);}
+    public void vkGetDeviceBufferMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetDeviceBufferMemoryRequirements, OFFSET__vkGetDeviceBufferMemoryRequirements, value);}
+    public java.lang.foreign.MemorySegment $vkGetDeviceBufferMemoryRequirements() {return this.ptr.asSlice(OFFSET__vkGetDeviceBufferMemoryRequirements, LAYOUT__vkGetDeviceBufferMemoryRequirements);}
+
+    public java.lang.foreign.MemorySegment vkGetDeviceImageMemoryRequirements() {return this.ptr.get(LAYOUT__vkGetDeviceImageMemoryRequirements, OFFSET__vkGetDeviceImageMemoryRequirements);}
+    public void vkGetDeviceImageMemoryRequirements(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__vkGetDeviceImageMemoryRequirements, OFFSET__vkGetDeviceImageMemoryRequirements, value);}
+    public java.lang.foreign.MemorySegment $vkGetDeviceImageMemoryRequirements() {return this.ptr.asSlice(OFFSET__vkGetDeviceImageMemoryRequirements, LAYOUT__vkGetDeviceImageMemoryRequirements);}
 }

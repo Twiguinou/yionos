@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkAccelerationStructureCaptureDescriptorDataInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$accelerationStructure = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$accelerationStructure = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$accelerationStructureNV = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$accelerationStructureNV = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__accelerationStructure = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__accelerationStructure = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__accelerationStructureNV = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__accelerationStructureNV = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$accelerationStructure,
-            LAYOUT$accelerationStructureNV
-    ).withName("VkAccelerationStructureCaptureDescriptorDataInfoEXT");
+            LAYOUT__pNext,
+            LAYOUT__accelerationStructure,
+            LAYOUT__accelerationStructureNV
+    ).withByteAlignment(8).withName("VkAccelerationStructureCaptureDescriptorDataInfoEXT");
 
     public VkAccelerationStructureCaptureDescriptorDataInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkAccelerationStructureCaptureDescriptorDataInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkAccelerationStructureCaptureDescriptorDataInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkAccelerationStructureCaptureDescriptorDataInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkAccelerationStructureCaptureDescriptorDataInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkAccelerationStructureCaptureDescriptorDataInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment accelerationStructure() {return this.ptr.get(LAYOUT$accelerationStructure, OFFSET$accelerationStructure);}
-    public void accelerationStructure(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$accelerationStructure, OFFSET$accelerationStructure, value);}
-    public java.lang.foreign.MemorySegment accelerationStructure_ptr() {return this.ptr.asSlice(OFFSET$accelerationStructure, LAYOUT$accelerationStructure);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment accelerationStructureNV() {return this.ptr.get(LAYOUT$accelerationStructureNV, OFFSET$accelerationStructureNV);}
-    public void accelerationStructureNV(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$accelerationStructureNV, OFFSET$accelerationStructureNV, value);}
-    public java.lang.foreign.MemorySegment accelerationStructureNV_ptr() {return this.ptr.asSlice(OFFSET$accelerationStructureNV, LAYOUT$accelerationStructureNV);}
+    public java.lang.foreign.MemorySegment accelerationStructure() {return this.ptr.get(LAYOUT__accelerationStructure, OFFSET__accelerationStructure);}
+    public void accelerationStructure(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__accelerationStructure, OFFSET__accelerationStructure, value);}
+    public java.lang.foreign.MemorySegment $accelerationStructure() {return this.ptr.asSlice(OFFSET__accelerationStructure, LAYOUT__accelerationStructure);}
+
+    public java.lang.foreign.MemorySegment accelerationStructureNV() {return this.ptr.get(LAYOUT__accelerationStructureNV, OFFSET__accelerationStructureNV);}
+    public void accelerationStructureNV(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__accelerationStructureNV, OFFSET__accelerationStructureNV, value);}
+    public java.lang.foreign.MemorySegment $accelerationStructureNV() {return this.ptr.asSlice(OFFSET__accelerationStructureNV, LAYOUT__accelerationStructureNV);}
 }

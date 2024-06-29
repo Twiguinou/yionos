@@ -12,7 +12,6 @@ import yionos.demo.rendering.VulkanImage;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkFormat.*;
@@ -48,6 +47,7 @@ import static nuklear.nk_keys.*;
 import static nuklear.nk_buttons.*;
 import static glfw3.GLFW3.*;
 import static yionos.demo.rendering.VulkanHelpers.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class NuklearContext implements Disposable
@@ -62,6 +62,7 @@ public class NuklearContext implements Disposable
     private final nk_draw_null_texture m_texNull;
     private final MemorySegment m_uniformDescriptorSets;
     private final nk_buffer m_cmds;
+    private final Arena m_contextArena = Arena.ofConfined();
 
     private final VulkanBuffer m_vertexBuffer;
     private final VulkanBuffer m_indexBuffer;
@@ -69,12 +70,10 @@ public class NuklearContext implements Disposable
 
     public NuklearContext(VulkanRenderer renderer)
     {
-        Arena contextArena = Arena.ofAuto();
-
-        this.m_ctx = new nk_context(contextArena);
-        this.m_atlas = new nk_font_atlas(contextArena);
-        this.m_cmds = new nk_buffer(contextArena);
-        this.m_texNull = new nk_draw_null_texture(contextArena);
+        this.m_ctx = new nk_context(this.m_contextArena);
+        this.m_atlas = new nk_font_atlas(this.m_contextArena);
+        this.m_cmds = new nk_buffer(this.m_contextArena);
+        this.m_texNull = new nk_draw_null_texture(this.m_contextArena);
 
         this.m_sampler = createSampler(renderer.logicalDevice().handle());
 
@@ -86,24 +85,24 @@ public class NuklearContext implements Disposable
             nk_font_atlas_init_default(this.m_atlas._ptr());
             nk_font_atlas_begin(this.m_atlas._ptr());
 
-            MemorySegment width = arena.allocate(ValueLayout.JAVA_INT), height = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment width = arena.allocate(JAVA_INT), height = arena.allocate(JAVA_INT);
             MemorySegment imageData = nk_font_atlas_bake(this.m_atlas._ptr(), width, height, NK_FONT_ATLAS_RGBA32);
 
-            this.m_atlasImage = createAtlas(renderer, imageData, width.get(ValueLayout.JAVA_INT, 0), height.get(ValueLayout.JAVA_INT, 0));
+            this.m_atlasImage = createAtlas(renderer, imageData, width.get(JAVA_INT, 0), height.get(JAVA_INT, 0));
 
             nk_font_atlas_end(this.m_atlas._ptr(), nk_handle_ptr(arena, this.m_atlasImage.view()), this.m_texNull._ptr());
 
-            nk_font defaultFont = new nk_font(this.m_atlas.default_font().reinterpret(nk_font.gStructLayout.byteSize()));
+            nk_font defaultFont = new nk_font(this.m_atlas.default_font());
             if (!defaultFont._ptr().equals(NULL))
             {
                 nk_style_set_font(this.m_ctx._ptr(), defaultFont.handle()._ptr());
             }
 
-            MemorySegment pSetLayouts = arena.allocateArray(ValueLayout.ADDRESS, VulkanRenderer.gFrameCount);
-            pSetLayouts.setAtIndex(ValueLayout.ADDRESS, 0, renderer.descriptorSetLayouts().singleSampler());
-            pSetLayouts.setAtIndex(ValueLayout.ADDRESS, 1, renderer.descriptorSetLayouts().singleSampler());
+            MemorySegment pSetLayouts = arena.allocate(ADDRESS, VulkanRenderer.gFrameCount);
+            pSetLayouts.setAtIndex(ADDRESS, 0, renderer.descriptorSetLayouts().singleSampler());
+            pSetLayouts.setAtIndex(ADDRESS, 1, renderer.descriptorSetLayouts().singleSampler());
 
-            this.m_uniformDescriptorSets = contextArena.allocateArray(ValueLayout.ADDRESS, VulkanRenderer.gFrameCount);
+            this.m_uniformDescriptorSets = this.m_contextArena.allocate(ADDRESS, VulkanRenderer.gFrameCount);
             renderer.descriptorPool().allocateDescriptorSets(VulkanRenderer.gFrameCount, pSetLayouts, this.m_uniformDescriptorSets);
 
             this.renderer = renderer;
@@ -212,7 +211,7 @@ public class NuklearContext implements Disposable
             VkSubmitInfo submitInfo = new VkSubmitInfo(arena);
             submitInfo.sType(VK_STRUCTURE_TYPE_SUBMIT_INFO);
             submitInfo.commandBufferCount(1);
-            submitInfo.pCommandBuffers(arena.allocate(ValueLayout.ADDRESS, commandBuffer.handle()));
+            submitInfo.pCommandBuffers(arena.allocateFrom(ADDRESS, commandBuffer.handle()));
 
             VulkanException.check(vkQueueSubmit(renderer.graphicsQueue().handle(), 1, submitInfo.ptr(), NULL));
             VulkanException.check(vkQueueWaitIdle(renderer.graphicsQueue().handle()));
@@ -244,16 +243,16 @@ public class NuklearContext implements Disposable
             samplerCreateInfo.maxLod(0.0f);
             samplerCreateInfo.borderColor(VK_BORDER_COLOR_FLOAT_OPAQUE_BLACK);
 
-            MemorySegment pSampler = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pSampler = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateSampler(device, samplerCreateInfo.ptr(), NULL, pSampler));
 
-            return pSampler.get(ValueLayout.ADDRESS, 0);
+            return pSampler.get(ADDRESS, 0);
         }
     }
 
     private nk_convert_config createConfig(SegmentAllocator allocator)
     {
-        MemorySegment vertexLayout = allocator.allocateArray(nk_draw_vertex_layout_element.gStructLayout, 4);
+        MemorySegment vertexLayout = allocator.allocate(nk_draw_vertex_layout_element.gRecordLayout, 4);
         nk_draw_vertex_layout_element layout;
 
         layout = nk_draw_vertex_layout_element.getAtIndex(vertexLayout, 0);
@@ -322,13 +321,13 @@ public class NuklearContext implements Disposable
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            MemorySegment ppVertexData = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment ppVertexData = arena.allocate(ADDRESS);
             this.m_vertexBuffer.map(ppVertexData);
-            MemorySegment pVertexData = ppVertexData.get(ValueLayout.ADDRESS, 0);
+            MemorySegment pVertexData = ppVertexData.get(ADDRESS, 0);
 
-            MemorySegment ppIndexData = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment ppIndexData = arena.allocate(ADDRESS);
             this.m_indexBuffer.map(ppIndexData);
-            MemorySegment pIndexData = ppIndexData.get(ValueLayout.ADDRESS, 0);
+            MemorySegment pIndexData = ppIndexData.get(ADDRESS, 0);
 
             nk_buffer nkVertexBuffer = new nk_buffer(arena), nkIndexBuffer = new nk_buffer(arena);
 
@@ -343,21 +342,21 @@ public class NuklearContext implements Disposable
 
             this.renderer.bindGraphicsPipeline(this.renderer.pipelines().nuklearOverlay());
 
-            MemorySegment pUniformDescriptorSet = this.m_uniformDescriptorSets.asSlice(this.renderer.currentFrame() * ValueLayout.ADDRESS.byteSize(), ValueLayout.ADDRESS);
+            MemorySegment pUniformDescriptorSet = this.m_uniformDescriptorSets.asSlice(this.renderer.currentFrame() * ADDRESS.byteSize(), ADDRESS);
             this.renderer.bindGraphicsDescriptorSets(this.renderer.pipelineLayouts().nuklearOverlay(), 0, 1, pUniformDescriptorSet, 0, NULL);
 
-            this.updateTexture(pUniformDescriptorSet.get(ValueLayout.ADDRESS, 0));
+            this.updateTexture(pUniformDescriptorSet.get(ADDRESS, 0));
 
             double widthExtent = windowWidth / 2.0, heightExtent = windowHeight / 2.0;
             Matrix4d projectionMatrix = new Matrix4d()
                     .setOrtho2D(-widthExtent, widthExtent, heightExtent, -heightExtent)
                     .translate(-widthExtent, -heightExtent, 0.0);
 
-            MemorySegment pushConstants = arena.allocateArray(ValueLayout.JAVA_FLOAT, 16);
-            projectionMatrix.get(pushConstants.asByteBuffer().asFloatBuffer());
+            MemorySegment pushConstants = arena.allocate(JAVA_FLOAT, 16);
+            MemoryUtil.getMatrix4dFloats(projectionMatrix, pushConstants);
             vkCmdPushConstants(this.renderer.frameCommandBuffer(), this.renderer.pipelineLayouts().nuklearOverlay(), VK_SHADER_STAGE_VERTEX_BIT, 0, (int) pushConstants.byteSize(), pushConstants);
 
-            vkCmdBindVertexBuffers(this.renderer.frameCommandBuffer(), 0, 1, arena.allocate(ValueLayout.ADDRESS, this.m_vertexBuffer.handle()), arena.allocate(ValueLayout.JAVA_LONG, 0));
+            vkCmdBindVertexBuffers(this.renderer.frameCommandBuffer(), 0, 1, arena.allocateFrom(ADDRESS, this.m_vertexBuffer.handle()), arena.allocateFrom(JAVA_LONG, 0));
             vkCmdBindIndexBuffer(this.renderer.frameCommandBuffer(), this.m_indexBuffer.handle(), 0, VK_INDEX_TYPE_UINT16);
 
             VkRect2D scissor = new VkRect2D(arena);
@@ -365,7 +364,7 @@ public class NuklearContext implements Disposable
             int indexOffset = 0;
             for (MemorySegment cmd = nk__draw_begin(this.m_ctx._ptr(), this.m_cmds._ptr()); !cmd.equals(NULL); cmd = nk__draw_next(cmd, this.m_cmds._ptr(), this.m_ctx._ptr()))
             {
-                nk_draw_command command = new nk_draw_command(cmd.reinterpret(nk_draw_command.gStructLayout.byteSize()));
+                nk_draw_command command = new nk_draw_command(cmd.reinterpret(nk_draw_command.gRecordLayout.byteSize()));
 
                 if (command.elem_count() == 0)
                 {
@@ -435,5 +434,6 @@ public class NuklearContext implements Disposable
         this.m_indexBuffer.dispose();
 
         vkDestroySampler(this.renderer.logicalDevice().handle(), this.m_sampler, NULL);
+        this.m_contextArena.close();
     }
 }

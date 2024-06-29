@@ -2,32 +2,37 @@ package vulkan;
 
 public record VkPresentRegionKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$rectangleCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$rectangleCount = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRectangles = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRectangles = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rectangleCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__rectangleCount = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRectangles = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRectangles = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$rectangleCount,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__rectangleCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pRectangles
-    ).withName("VkPresentRegionKHR");
+            LAYOUT__pRectangles
+    ).withByteAlignment(8).withName("VkPresentRegionKHR");
 
     public VkPresentRegionKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPresentRegionKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPresentRegionKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPresentRegionKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPresentRegionKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int rectangleCount() {return this.ptr.get(LAYOUT$rectangleCount, OFFSET$rectangleCount);}
-    public void rectangleCount(int value) {this.ptr.set(LAYOUT$rectangleCount, OFFSET$rectangleCount, value);}
-    public java.lang.foreign.MemorySegment rectangleCount_ptr() {return this.ptr.asSlice(OFFSET$rectangleCount, LAYOUT$rectangleCount);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPresentRegionKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pRectangles() {return this.ptr.get(LAYOUT$pRectangles, OFFSET$pRectangles);}
-    public void pRectangles(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRectangles, OFFSET$pRectangles, value);}
-    public java.lang.foreign.MemorySegment pRectangles_ptr() {return this.ptr.asSlice(OFFSET$pRectangles, LAYOUT$pRectangles);}
+    public int rectangleCount() {return this.ptr.get(LAYOUT__rectangleCount, OFFSET__rectangleCount);}
+    public void rectangleCount(int value) {this.ptr.set(LAYOUT__rectangleCount, OFFSET__rectangleCount, value);}
+    public java.lang.foreign.MemorySegment $rectangleCount() {return this.ptr.asSlice(OFFSET__rectangleCount, LAYOUT__rectangleCount);}
+
+    public java.lang.foreign.MemorySegment pRectangles() {return this.ptr.get(LAYOUT__pRectangles, OFFSET__pRectangles);}
+    public void pRectangles(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRectangles, OFFSET__pRectangles, value);}
+    public java.lang.foreign.MemorySegment $pRectangles() {return this.ptr.asSlice(OFFSET__pRectangles, LAYOUT__pRectangles);}
 }

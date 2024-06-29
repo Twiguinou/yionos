@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceMultiviewFeatures(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$multiview = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$multiview = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$multiviewGeometryShader = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$multiviewGeometryShader = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$multiviewTessellationShader = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$multiviewTessellationShader = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiview = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__multiview = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewGeometryShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__multiviewGeometryShader = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewTessellationShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__multiviewTessellationShader = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$multiview,
-            LAYOUT$multiviewGeometryShader,
-            LAYOUT$multiviewTessellationShader,
+            LAYOUT__pNext,
+            LAYOUT__multiview,
+            LAYOUT__multiviewGeometryShader,
+            LAYOUT__multiviewTessellationShader,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceMultiviewFeatures");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceMultiviewFeatures");
 
     public VkPhysicalDeviceMultiviewFeatures(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceMultiviewFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceMultiviewFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceMultiviewFeatures(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceMultiviewFeatures(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceMultiviewFeatures value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int multiview() {return this.ptr.get(LAYOUT$multiview, OFFSET$multiview);}
-    public void multiview(int value) {this.ptr.set(LAYOUT$multiview, OFFSET$multiview, value);}
-    public java.lang.foreign.MemorySegment multiview_ptr() {return this.ptr.asSlice(OFFSET$multiview, LAYOUT$multiview);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int multiviewGeometryShader() {return this.ptr.get(LAYOUT$multiviewGeometryShader, OFFSET$multiviewGeometryShader);}
-    public void multiviewGeometryShader(int value) {this.ptr.set(LAYOUT$multiviewGeometryShader, OFFSET$multiviewGeometryShader, value);}
-    public java.lang.foreign.MemorySegment multiviewGeometryShader_ptr() {return this.ptr.asSlice(OFFSET$multiviewGeometryShader, LAYOUT$multiviewGeometryShader);}
+    public int multiview() {return this.ptr.get(LAYOUT__multiview, OFFSET__multiview);}
+    public void multiview(int value) {this.ptr.set(LAYOUT__multiview, OFFSET__multiview, value);}
+    public java.lang.foreign.MemorySegment $multiview() {return this.ptr.asSlice(OFFSET__multiview, LAYOUT__multiview);}
 
-    public int multiviewTessellationShader() {return this.ptr.get(LAYOUT$multiviewTessellationShader, OFFSET$multiviewTessellationShader);}
-    public void multiviewTessellationShader(int value) {this.ptr.set(LAYOUT$multiviewTessellationShader, OFFSET$multiviewTessellationShader, value);}
-    public java.lang.foreign.MemorySegment multiviewTessellationShader_ptr() {return this.ptr.asSlice(OFFSET$multiviewTessellationShader, LAYOUT$multiviewTessellationShader);}
+    public int multiviewGeometryShader() {return this.ptr.get(LAYOUT__multiviewGeometryShader, OFFSET__multiviewGeometryShader);}
+    public void multiviewGeometryShader(int value) {this.ptr.set(LAYOUT__multiviewGeometryShader, OFFSET__multiviewGeometryShader, value);}
+    public java.lang.foreign.MemorySegment $multiviewGeometryShader() {return this.ptr.asSlice(OFFSET__multiviewGeometryShader, LAYOUT__multiviewGeometryShader);}
+
+    public int multiviewTessellationShader() {return this.ptr.get(LAYOUT__multiviewTessellationShader, OFFSET__multiviewTessellationShader);}
+    public void multiviewTessellationShader(int value) {this.ptr.set(LAYOUT__multiviewTessellationShader, OFFSET__multiviewTessellationShader, value);}
+    public java.lang.foreign.MemorySegment $multiviewTessellationShader() {return this.ptr.asSlice(OFFSET__multiviewTessellationShader, LAYOUT__multiviewTessellationShader);}
 }

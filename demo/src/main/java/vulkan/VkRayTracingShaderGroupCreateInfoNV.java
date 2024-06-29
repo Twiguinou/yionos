@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkRayTracingShaderGroupCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$type = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$type = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$generalShader = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$generalShader = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$closestHitShader = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$closestHitShader = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$anyHitShader = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$anyHitShader = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$intersectionShader = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$intersectionShader = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__type = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__generalShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__generalShader = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__closestHitShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__closestHitShader = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__anyHitShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__anyHitShader = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__intersectionShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__intersectionShader = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$type,
-            LAYOUT$generalShader,
-            LAYOUT$closestHitShader,
-            LAYOUT$anyHitShader,
-            LAYOUT$intersectionShader,
+            LAYOUT__pNext,
+            LAYOUT__type,
+            LAYOUT__generalShader,
+            LAYOUT__closestHitShader,
+            LAYOUT__anyHitShader,
+            LAYOUT__intersectionShader,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkRayTracingShaderGroupCreateInfoNV");
+    ).withByteAlignment(8).withName("VkRayTracingShaderGroupCreateInfoNV");
 
     public VkRayTracingShaderGroupCreateInfoNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkRayTracingShaderGroupCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkRayTracingShaderGroupCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkRayTracingShaderGroupCreateInfoNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkRayTracingShaderGroupCreateInfoNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkRayTracingShaderGroupCreateInfoNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int type() {return this.ptr.get(LAYOUT$type, OFFSET$type);}
-    public void type(int value) {this.ptr.set(LAYOUT$type, OFFSET$type, value);}
-    public java.lang.foreign.MemorySegment type_ptr() {return this.ptr.asSlice(OFFSET$type, LAYOUT$type);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int generalShader() {return this.ptr.get(LAYOUT$generalShader, OFFSET$generalShader);}
-    public void generalShader(int value) {this.ptr.set(LAYOUT$generalShader, OFFSET$generalShader, value);}
-    public java.lang.foreign.MemorySegment generalShader_ptr() {return this.ptr.asSlice(OFFSET$generalShader, LAYOUT$generalShader);}
+    public int type() {return this.ptr.get(LAYOUT__type, OFFSET__type);}
+    public void type(int value) {this.ptr.set(LAYOUT__type, OFFSET__type, value);}
+    public java.lang.foreign.MemorySegment $type() {return this.ptr.asSlice(OFFSET__type, LAYOUT__type);}
 
-    public int closestHitShader() {return this.ptr.get(LAYOUT$closestHitShader, OFFSET$closestHitShader);}
-    public void closestHitShader(int value) {this.ptr.set(LAYOUT$closestHitShader, OFFSET$closestHitShader, value);}
-    public java.lang.foreign.MemorySegment closestHitShader_ptr() {return this.ptr.asSlice(OFFSET$closestHitShader, LAYOUT$closestHitShader);}
+    public int generalShader() {return this.ptr.get(LAYOUT__generalShader, OFFSET__generalShader);}
+    public void generalShader(int value) {this.ptr.set(LAYOUT__generalShader, OFFSET__generalShader, value);}
+    public java.lang.foreign.MemorySegment $generalShader() {return this.ptr.asSlice(OFFSET__generalShader, LAYOUT__generalShader);}
 
-    public int anyHitShader() {return this.ptr.get(LAYOUT$anyHitShader, OFFSET$anyHitShader);}
-    public void anyHitShader(int value) {this.ptr.set(LAYOUT$anyHitShader, OFFSET$anyHitShader, value);}
-    public java.lang.foreign.MemorySegment anyHitShader_ptr() {return this.ptr.asSlice(OFFSET$anyHitShader, LAYOUT$anyHitShader);}
+    public int closestHitShader() {return this.ptr.get(LAYOUT__closestHitShader, OFFSET__closestHitShader);}
+    public void closestHitShader(int value) {this.ptr.set(LAYOUT__closestHitShader, OFFSET__closestHitShader, value);}
+    public java.lang.foreign.MemorySegment $closestHitShader() {return this.ptr.asSlice(OFFSET__closestHitShader, LAYOUT__closestHitShader);}
 
-    public int intersectionShader() {return this.ptr.get(LAYOUT$intersectionShader, OFFSET$intersectionShader);}
-    public void intersectionShader(int value) {this.ptr.set(LAYOUT$intersectionShader, OFFSET$intersectionShader, value);}
-    public java.lang.foreign.MemorySegment intersectionShader_ptr() {return this.ptr.asSlice(OFFSET$intersectionShader, LAYOUT$intersectionShader);}
+    public int anyHitShader() {return this.ptr.get(LAYOUT__anyHitShader, OFFSET__anyHitShader);}
+    public void anyHitShader(int value) {this.ptr.set(LAYOUT__anyHitShader, OFFSET__anyHitShader, value);}
+    public java.lang.foreign.MemorySegment $anyHitShader() {return this.ptr.asSlice(OFFSET__anyHitShader, LAYOUT__anyHitShader);}
+
+    public int intersectionShader() {return this.ptr.get(LAYOUT__intersectionShader, OFFSET__intersectionShader);}
+    public void intersectionShader(int value) {this.ptr.set(LAYOUT__intersectionShader, OFFSET__intersectionShader, value);}
+    public java.lang.foreign.MemorySegment $intersectionShader() {return this.ptr.asSlice(OFFSET__intersectionShader, LAYOUT__intersectionShader);}
 }

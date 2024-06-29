@@ -3,15 +3,15 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_22
+    targetCompatibility = JavaVersion.VERSION_22
 
     withSourcesJar()
     withJavadocJar()
 }
 
 dependencies {
-    implementation("org.joml:joml:1.10.5")
+    implementation("org.joml:joml:1.10.6")
 
     implementation("com.zaxxer:SparseBitSet:1.3")
 

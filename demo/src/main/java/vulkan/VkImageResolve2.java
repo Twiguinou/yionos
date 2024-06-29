@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkImageResolve2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$srcSubresource = vulkan.VkImageSubresourceLayers.gStructLayout;
-    public static final long OFFSET$srcSubresource = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$srcOffset = vulkan.VkOffset3D.gStructLayout;
-    public static final long OFFSET$srcOffset = 32L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$dstSubresource = vulkan.VkImageSubresourceLayers.gStructLayout;
-    public static final long OFFSET$dstSubresource = 44L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$dstOffset = vulkan.VkOffset3D.gStructLayout;
-    public static final long OFFSET$dstOffset = 60L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$extent = vulkan.VkExtent3D.gStructLayout;
-    public static final long OFFSET$extent = 72L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__srcSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final long OFFSET__srcSubresource = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__srcOffset = vulkan.VkOffset3D.gRecordLayout;
+    public static final long OFFSET__srcOffset = 32;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final long OFFSET__dstSubresource = 44;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstOffset = vulkan.VkOffset3D.gRecordLayout;
+    public static final long OFFSET__dstOffset = 60;
+    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent3D.gRecordLayout;
+    public static final long OFFSET__extent = 72;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$srcSubresource,
-            LAYOUT$srcOffset,
-            LAYOUT$dstSubresource,
-            LAYOUT$dstOffset,
-            LAYOUT$extent,
+            LAYOUT__pNext,
+            LAYOUT__srcSubresource,
+            LAYOUT__srcOffset,
+            LAYOUT__dstSubresource,
+            LAYOUT__dstOffset,
+            LAYOUT__extent,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkImageResolve2");
+    ).withByteAlignment(8).withName("VkImageResolve2");
 
     public VkImageResolve2(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkImageResolve2 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkImageResolve2 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkImageResolve2(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkImageResolve2(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkImageResolve2 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkImageSubresourceLayers srcSubresource() {return new vulkan.VkImageSubresourceLayers(this.ptr.asSlice(OFFSET$srcSubresource, LAYOUT$srcSubresource));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkImageSubresourceLayers srcSubresource() {return new vulkan.VkImageSubresourceLayers(this.ptr.asSlice(OFFSET__srcSubresource, LAYOUT__srcSubresource));}
     public void srcSubresource(java.util.function.Consumer<vulkan.VkImageSubresourceLayers> consumer) {consumer.accept(this.srcSubresource());}
-    public void srcSubresource(vulkan.VkImageSubresourceLayers value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$srcSubresource, LAYOUT$srcSubresource.byteSize());}
+    public void srcSubresource(vulkan.VkImageSubresourceLayers value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__srcSubresource, LAYOUT__srcSubresource.byteSize());}
 
-    public vulkan.VkOffset3D srcOffset() {return new vulkan.VkOffset3D(this.ptr.asSlice(OFFSET$srcOffset, LAYOUT$srcOffset));}
+    public vulkan.VkOffset3D srcOffset() {return new vulkan.VkOffset3D(this.ptr.asSlice(OFFSET__srcOffset, LAYOUT__srcOffset));}
     public void srcOffset(java.util.function.Consumer<vulkan.VkOffset3D> consumer) {consumer.accept(this.srcOffset());}
-    public void srcOffset(vulkan.VkOffset3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$srcOffset, LAYOUT$srcOffset.byteSize());}
+    public void srcOffset(vulkan.VkOffset3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__srcOffset, LAYOUT__srcOffset.byteSize());}
 
-    public vulkan.VkImageSubresourceLayers dstSubresource() {return new vulkan.VkImageSubresourceLayers(this.ptr.asSlice(OFFSET$dstSubresource, LAYOUT$dstSubresource));}
+    public vulkan.VkImageSubresourceLayers dstSubresource() {return new vulkan.VkImageSubresourceLayers(this.ptr.asSlice(OFFSET__dstSubresource, LAYOUT__dstSubresource));}
     public void dstSubresource(java.util.function.Consumer<vulkan.VkImageSubresourceLayers> consumer) {consumer.accept(this.dstSubresource());}
-    public void dstSubresource(vulkan.VkImageSubresourceLayers value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$dstSubresource, LAYOUT$dstSubresource.byteSize());}
+    public void dstSubresource(vulkan.VkImageSubresourceLayers value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__dstSubresource, LAYOUT__dstSubresource.byteSize());}
 
-    public vulkan.VkOffset3D dstOffset() {return new vulkan.VkOffset3D(this.ptr.asSlice(OFFSET$dstOffset, LAYOUT$dstOffset));}
+    public vulkan.VkOffset3D dstOffset() {return new vulkan.VkOffset3D(this.ptr.asSlice(OFFSET__dstOffset, LAYOUT__dstOffset));}
     public void dstOffset(java.util.function.Consumer<vulkan.VkOffset3D> consumer) {consumer.accept(this.dstOffset());}
-    public void dstOffset(vulkan.VkOffset3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$dstOffset, LAYOUT$dstOffset.byteSize());}
+    public void dstOffset(vulkan.VkOffset3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__dstOffset, LAYOUT__dstOffset.byteSize());}
 
-    public vulkan.VkExtent3D extent() {return new vulkan.VkExtent3D(this.ptr.asSlice(OFFSET$extent, LAYOUT$extent));}
+    public vulkan.VkExtent3D extent() {return new vulkan.VkExtent3D(this.ptr.asSlice(OFFSET__extent, LAYOUT__extent));}
     public void extent(java.util.function.Consumer<vulkan.VkExtent3D> consumer) {consumer.accept(this.extent());}
-    public void extent(vulkan.VkExtent3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$extent, LAYOUT$extent.byteSize());}
+    public void extent(vulkan.VkExtent3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__extent, LAYOUT__extent.byteSize());}
 }

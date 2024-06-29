@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkPhysicalDeviceRenderPassStripedPropertiesARM(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$renderPassStripeGranularity = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$renderPassStripeGranularity = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxRenderPassStripes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxRenderPassStripes = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__renderPassStripeGranularity = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__renderPassStripeGranularity = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRenderPassStripes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxRenderPassStripes = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$renderPassStripeGranularity,
-            LAYOUT$maxRenderPassStripes,
+            LAYOUT__pNext,
+            LAYOUT__renderPassStripeGranularity,
+            LAYOUT__maxRenderPassStripes,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceRenderPassStripedPropertiesARM");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceRenderPassStripedPropertiesARM");
 
     public VkPhysicalDeviceRenderPassStripedPropertiesARM(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceRenderPassStripedPropertiesARM getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceRenderPassStripedPropertiesARM getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceRenderPassStripedPropertiesARM(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceRenderPassStripedPropertiesARM(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceRenderPassStripedPropertiesARM value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkExtent2D renderPassStripeGranularity() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$renderPassStripeGranularity, LAYOUT$renderPassStripeGranularity));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkExtent2D renderPassStripeGranularity() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__renderPassStripeGranularity, LAYOUT__renderPassStripeGranularity));}
     public void renderPassStripeGranularity(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.renderPassStripeGranularity());}
-    public void renderPassStripeGranularity(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$renderPassStripeGranularity, LAYOUT$renderPassStripeGranularity.byteSize());}
+    public void renderPassStripeGranularity(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__renderPassStripeGranularity, LAYOUT__renderPassStripeGranularity.byteSize());}
 
-    public int maxRenderPassStripes() {return this.ptr.get(LAYOUT$maxRenderPassStripes, OFFSET$maxRenderPassStripes);}
-    public void maxRenderPassStripes(int value) {this.ptr.set(LAYOUT$maxRenderPassStripes, OFFSET$maxRenderPassStripes, value);}
-    public java.lang.foreign.MemorySegment maxRenderPassStripes_ptr() {return this.ptr.asSlice(OFFSET$maxRenderPassStripes, LAYOUT$maxRenderPassStripes);}
+    public int maxRenderPassStripes() {return this.ptr.get(LAYOUT__maxRenderPassStripes, OFFSET__maxRenderPassStripes);}
+    public void maxRenderPassStripes(int value) {this.ptr.set(LAYOUT__maxRenderPassStripes, OFFSET__maxRenderPassStripes, value);}
+    public java.lang.foreign.MemorySegment $maxRenderPassStripes() {return this.ptr.asSlice(OFFSET__maxRenderPassStripes, LAYOUT__maxRenderPassStripes);}
 }

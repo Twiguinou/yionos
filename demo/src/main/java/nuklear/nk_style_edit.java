@@ -2,187 +2,192 @@ package nuklear;
 
 public record nk_style_edit(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$normal = nuklear.nk_style_item.gStructLayout;
-    public static final long OFFSET$normal = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$hover = nuklear.nk_style_item.gStructLayout;
-    public static final long OFFSET$hover = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$active = nuklear.nk_style_item.gStructLayout;
-    public static final long OFFSET$active = 80L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$border_color = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$border_color = 120L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$scrollbar = nuklear.nk_style_scrollbar.gStructLayout;
-    public static final long OFFSET$scrollbar = 128L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$cursor_normal = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$cursor_normal = 880L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$cursor_hover = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$cursor_hover = 884L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$cursor_text_normal = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$cursor_text_normal = 888L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$cursor_text_hover = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$cursor_text_hover = 892L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$text_normal = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$text_normal = 896L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$text_hover = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$text_hover = 900L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$text_active = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$text_active = 904L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$selected_normal = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$selected_normal = 908L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$selected_hover = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$selected_hover = 912L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$selected_text_normal = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$selected_text_normal = 916L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$selected_text_hover = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$selected_text_hover = 920L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$border = 924L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$rounding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$rounding = 928L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$cursor_size = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$cursor_size = 932L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$scrollbar_size = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$scrollbar_size = 936L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$padding = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$padding = 944L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$row_padding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$row_padding = 952L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$color_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$color_factor = 956L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$disabled_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$disabled_factor = 960L;
+    public static final java.lang.foreign.StructLayout LAYOUT__normal = nuklear.nk_style_item.gRecordLayout;
+    public static final long OFFSET__normal = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__hover = nuklear.nk_style_item.gRecordLayout;
+    public static final long OFFSET__hover = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__active = nuklear.nk_style_item.gRecordLayout;
+    public static final long OFFSET__active = 80;
+    public static final java.lang.foreign.StructLayout LAYOUT__border_color = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__border_color = 120;
+    public static final java.lang.foreign.StructLayout LAYOUT__scrollbar = nuklear.nk_style_scrollbar.gRecordLayout;
+    public static final long OFFSET__scrollbar = 128;
+    public static final java.lang.foreign.StructLayout LAYOUT__cursor_normal = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__cursor_normal = 880;
+    public static final java.lang.foreign.StructLayout LAYOUT__cursor_hover = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__cursor_hover = 884;
+    public static final java.lang.foreign.StructLayout LAYOUT__cursor_text_normal = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__cursor_text_normal = 888;
+    public static final java.lang.foreign.StructLayout LAYOUT__cursor_text_hover = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__cursor_text_hover = 892;
+    public static final java.lang.foreign.StructLayout LAYOUT__text_normal = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__text_normal = 896;
+    public static final java.lang.foreign.StructLayout LAYOUT__text_hover = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__text_hover = 900;
+    public static final java.lang.foreign.StructLayout LAYOUT__text_active = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__text_active = 904;
+    public static final java.lang.foreign.StructLayout LAYOUT__selected_normal = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__selected_normal = 908;
+    public static final java.lang.foreign.StructLayout LAYOUT__selected_hover = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__selected_hover = 912;
+    public static final java.lang.foreign.StructLayout LAYOUT__selected_text_normal = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__selected_text_normal = 916;
+    public static final java.lang.foreign.StructLayout LAYOUT__selected_text_hover = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__selected_text_hover = 920;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__border = 924;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__rounding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__rounding = 928;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__cursor_size = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__cursor_size = 932;
+    public static final java.lang.foreign.StructLayout LAYOUT__scrollbar_size = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__scrollbar_size = 936;
+    public static final java.lang.foreign.StructLayout LAYOUT__padding = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__padding = 944;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__row_padding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__row_padding = 952;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__color_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__color_factor = 956;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__disabled_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__disabled_factor = 960;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$normal,
-            LAYOUT$hover,
-            LAYOUT$active,
-            LAYOUT$border_color,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__normal,
+            LAYOUT__hover,
+            LAYOUT__active,
+            LAYOUT__border_color,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$scrollbar,
-            LAYOUT$cursor_normal,
-            LAYOUT$cursor_hover,
-            LAYOUT$cursor_text_normal,
-            LAYOUT$cursor_text_hover,
-            LAYOUT$text_normal,
-            LAYOUT$text_hover,
-            LAYOUT$text_active,
-            LAYOUT$selected_normal,
-            LAYOUT$selected_hover,
-            LAYOUT$selected_text_normal,
-            LAYOUT$selected_text_hover,
-            LAYOUT$border,
-            LAYOUT$rounding,
-            LAYOUT$cursor_size,
-            LAYOUT$scrollbar_size,
-            LAYOUT$padding,
-            LAYOUT$row_padding,
-            LAYOUT$color_factor,
-            LAYOUT$disabled_factor,
+            LAYOUT__scrollbar,
+            LAYOUT__cursor_normal,
+            LAYOUT__cursor_hover,
+            LAYOUT__cursor_text_normal,
+            LAYOUT__cursor_text_hover,
+            LAYOUT__text_normal,
+            LAYOUT__text_hover,
+            LAYOUT__text_active,
+            LAYOUT__selected_normal,
+            LAYOUT__selected_hover,
+            LAYOUT__selected_text_normal,
+            LAYOUT__selected_text_hover,
+            LAYOUT__border,
+            LAYOUT__rounding,
+            LAYOUT__cursor_size,
+            LAYOUT__scrollbar_size,
+            LAYOUT__padding,
+            LAYOUT__row_padding,
+            LAYOUT__color_factor,
+            LAYOUT__disabled_factor,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_style_edit");
+    ).withByteAlignment(8).withName("nk_style_edit");
 
     public nk_style_edit(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_style_edit getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_style_edit getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_style_edit(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_style_edit(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_style_item normal() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET$normal, LAYOUT$normal));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_style_edit value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_style_item normal() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET__normal, LAYOUT__normal));}
     public void normal(java.util.function.Consumer<nuklear.nk_style_item> consumer) {consumer.accept(this.normal());}
-    public void normal(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$normal, LAYOUT$normal.byteSize());}
+    public void normal(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__normal, LAYOUT__normal.byteSize());}
 
-    public nuklear.nk_style_item hover() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET$hover, LAYOUT$hover));}
+    public nuklear.nk_style_item hover() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET__hover, LAYOUT__hover));}
     public void hover(java.util.function.Consumer<nuklear.nk_style_item> consumer) {consumer.accept(this.hover());}
-    public void hover(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$hover, LAYOUT$hover.byteSize());}
+    public void hover(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__hover, LAYOUT__hover.byteSize());}
 
-    public nuklear.nk_style_item active() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET$active, LAYOUT$active));}
+    public nuklear.nk_style_item active() {return new nuklear.nk_style_item(this._ptr.asSlice(OFFSET__active, LAYOUT__active));}
     public void active(java.util.function.Consumer<nuklear.nk_style_item> consumer) {consumer.accept(this.active());}
-    public void active(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$active, LAYOUT$active.byteSize());}
+    public void active(nuklear.nk_style_item value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__active, LAYOUT__active.byteSize());}
 
-    public nuklear.nk_color border_color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$border_color, LAYOUT$border_color));}
+    public nuklear.nk_color border_color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__border_color, LAYOUT__border_color));}
     public void border_color(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.border_color());}
-    public void border_color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$border_color, LAYOUT$border_color.byteSize());}
+    public void border_color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__border_color, LAYOUT__border_color.byteSize());}
 
-    public nuklear.nk_style_scrollbar scrollbar() {return new nuklear.nk_style_scrollbar(this._ptr.asSlice(OFFSET$scrollbar, LAYOUT$scrollbar));}
+    public nuklear.nk_style_scrollbar scrollbar() {return new nuklear.nk_style_scrollbar(this._ptr.asSlice(OFFSET__scrollbar, LAYOUT__scrollbar));}
     public void scrollbar(java.util.function.Consumer<nuklear.nk_style_scrollbar> consumer) {consumer.accept(this.scrollbar());}
-    public void scrollbar(nuklear.nk_style_scrollbar value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$scrollbar, LAYOUT$scrollbar.byteSize());}
+    public void scrollbar(nuklear.nk_style_scrollbar value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__scrollbar, LAYOUT__scrollbar.byteSize());}
 
-    public nuklear.nk_color cursor_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$cursor_normal, LAYOUT$cursor_normal));}
+    public nuklear.nk_color cursor_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__cursor_normal, LAYOUT__cursor_normal));}
     public void cursor_normal(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.cursor_normal());}
-    public void cursor_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$cursor_normal, LAYOUT$cursor_normal.byteSize());}
+    public void cursor_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__cursor_normal, LAYOUT__cursor_normal.byteSize());}
 
-    public nuklear.nk_color cursor_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$cursor_hover, LAYOUT$cursor_hover));}
+    public nuklear.nk_color cursor_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__cursor_hover, LAYOUT__cursor_hover));}
     public void cursor_hover(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.cursor_hover());}
-    public void cursor_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$cursor_hover, LAYOUT$cursor_hover.byteSize());}
+    public void cursor_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__cursor_hover, LAYOUT__cursor_hover.byteSize());}
 
-    public nuklear.nk_color cursor_text_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$cursor_text_normal, LAYOUT$cursor_text_normal));}
+    public nuklear.nk_color cursor_text_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__cursor_text_normal, LAYOUT__cursor_text_normal));}
     public void cursor_text_normal(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.cursor_text_normal());}
-    public void cursor_text_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$cursor_text_normal, LAYOUT$cursor_text_normal.byteSize());}
+    public void cursor_text_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__cursor_text_normal, LAYOUT__cursor_text_normal.byteSize());}
 
-    public nuklear.nk_color cursor_text_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$cursor_text_hover, LAYOUT$cursor_text_hover));}
+    public nuklear.nk_color cursor_text_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__cursor_text_hover, LAYOUT__cursor_text_hover));}
     public void cursor_text_hover(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.cursor_text_hover());}
-    public void cursor_text_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$cursor_text_hover, LAYOUT$cursor_text_hover.byteSize());}
+    public void cursor_text_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__cursor_text_hover, LAYOUT__cursor_text_hover.byteSize());}
 
-    public nuklear.nk_color text_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$text_normal, LAYOUT$text_normal));}
+    public nuklear.nk_color text_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__text_normal, LAYOUT__text_normal));}
     public void text_normal(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.text_normal());}
-    public void text_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$text_normal, LAYOUT$text_normal.byteSize());}
+    public void text_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__text_normal, LAYOUT__text_normal.byteSize());}
 
-    public nuklear.nk_color text_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$text_hover, LAYOUT$text_hover));}
+    public nuklear.nk_color text_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__text_hover, LAYOUT__text_hover));}
     public void text_hover(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.text_hover());}
-    public void text_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$text_hover, LAYOUT$text_hover.byteSize());}
+    public void text_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__text_hover, LAYOUT__text_hover.byteSize());}
 
-    public nuklear.nk_color text_active() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$text_active, LAYOUT$text_active));}
+    public nuklear.nk_color text_active() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__text_active, LAYOUT__text_active));}
     public void text_active(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.text_active());}
-    public void text_active(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$text_active, LAYOUT$text_active.byteSize());}
+    public void text_active(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__text_active, LAYOUT__text_active.byteSize());}
 
-    public nuklear.nk_color selected_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$selected_normal, LAYOUT$selected_normal));}
+    public nuklear.nk_color selected_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__selected_normal, LAYOUT__selected_normal));}
     public void selected_normal(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.selected_normal());}
-    public void selected_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$selected_normal, LAYOUT$selected_normal.byteSize());}
+    public void selected_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__selected_normal, LAYOUT__selected_normal.byteSize());}
 
-    public nuklear.nk_color selected_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$selected_hover, LAYOUT$selected_hover));}
+    public nuklear.nk_color selected_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__selected_hover, LAYOUT__selected_hover));}
     public void selected_hover(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.selected_hover());}
-    public void selected_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$selected_hover, LAYOUT$selected_hover.byteSize());}
+    public void selected_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__selected_hover, LAYOUT__selected_hover.byteSize());}
 
-    public nuklear.nk_color selected_text_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$selected_text_normal, LAYOUT$selected_text_normal));}
+    public nuklear.nk_color selected_text_normal() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__selected_text_normal, LAYOUT__selected_text_normal));}
     public void selected_text_normal(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.selected_text_normal());}
-    public void selected_text_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$selected_text_normal, LAYOUT$selected_text_normal.byteSize());}
+    public void selected_text_normal(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__selected_text_normal, LAYOUT__selected_text_normal.byteSize());}
 
-    public nuklear.nk_color selected_text_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$selected_text_hover, LAYOUT$selected_text_hover));}
+    public nuklear.nk_color selected_text_hover() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__selected_text_hover, LAYOUT__selected_text_hover));}
     public void selected_text_hover(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.selected_text_hover());}
-    public void selected_text_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$selected_text_hover, LAYOUT$selected_text_hover.byteSize());}
+    public void selected_text_hover(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__selected_text_hover, LAYOUT__selected_text_hover.byteSize());}
 
-    public float border() {return this._ptr.get(LAYOUT$border, OFFSET$border);}
-    public void border(float value) {this._ptr.set(LAYOUT$border, OFFSET$border, value);}
-    public java.lang.foreign.MemorySegment border_ptr() {return this._ptr.asSlice(OFFSET$border, LAYOUT$border);}
+    public float border() {return this._ptr.get(LAYOUT__border, OFFSET__border);}
+    public void border(float value) {this._ptr.set(LAYOUT__border, OFFSET__border, value);}
+    public java.lang.foreign.MemorySegment $border() {return this._ptr.asSlice(OFFSET__border, LAYOUT__border);}
 
-    public float rounding() {return this._ptr.get(LAYOUT$rounding, OFFSET$rounding);}
-    public void rounding(float value) {this._ptr.set(LAYOUT$rounding, OFFSET$rounding, value);}
-    public java.lang.foreign.MemorySegment rounding_ptr() {return this._ptr.asSlice(OFFSET$rounding, LAYOUT$rounding);}
+    public float rounding() {return this._ptr.get(LAYOUT__rounding, OFFSET__rounding);}
+    public void rounding(float value) {this._ptr.set(LAYOUT__rounding, OFFSET__rounding, value);}
+    public java.lang.foreign.MemorySegment $rounding() {return this._ptr.asSlice(OFFSET__rounding, LAYOUT__rounding);}
 
-    public float cursor_size() {return this._ptr.get(LAYOUT$cursor_size, OFFSET$cursor_size);}
-    public void cursor_size(float value) {this._ptr.set(LAYOUT$cursor_size, OFFSET$cursor_size, value);}
-    public java.lang.foreign.MemorySegment cursor_size_ptr() {return this._ptr.asSlice(OFFSET$cursor_size, LAYOUT$cursor_size);}
+    public float cursor_size() {return this._ptr.get(LAYOUT__cursor_size, OFFSET__cursor_size);}
+    public void cursor_size(float value) {this._ptr.set(LAYOUT__cursor_size, OFFSET__cursor_size, value);}
+    public java.lang.foreign.MemorySegment $cursor_size() {return this._ptr.asSlice(OFFSET__cursor_size, LAYOUT__cursor_size);}
 
-    public nuklear.nk_vec2 scrollbar_size() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$scrollbar_size, LAYOUT$scrollbar_size));}
+    public nuklear.nk_vec2 scrollbar_size() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__scrollbar_size, LAYOUT__scrollbar_size));}
     public void scrollbar_size(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.scrollbar_size());}
-    public void scrollbar_size(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$scrollbar_size, LAYOUT$scrollbar_size.byteSize());}
+    public void scrollbar_size(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__scrollbar_size, LAYOUT__scrollbar_size.byteSize());}
 
-    public nuklear.nk_vec2 padding() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$padding, LAYOUT$padding));}
+    public nuklear.nk_vec2 padding() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__padding, LAYOUT__padding));}
     public void padding(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.padding());}
-    public void padding(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$padding, LAYOUT$padding.byteSize());}
+    public void padding(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__padding, LAYOUT__padding.byteSize());}
 
-    public float row_padding() {return this._ptr.get(LAYOUT$row_padding, OFFSET$row_padding);}
-    public void row_padding(float value) {this._ptr.set(LAYOUT$row_padding, OFFSET$row_padding, value);}
-    public java.lang.foreign.MemorySegment row_padding_ptr() {return this._ptr.asSlice(OFFSET$row_padding, LAYOUT$row_padding);}
+    public float row_padding() {return this._ptr.get(LAYOUT__row_padding, OFFSET__row_padding);}
+    public void row_padding(float value) {this._ptr.set(LAYOUT__row_padding, OFFSET__row_padding, value);}
+    public java.lang.foreign.MemorySegment $row_padding() {return this._ptr.asSlice(OFFSET__row_padding, LAYOUT__row_padding);}
 
-    public float color_factor() {return this._ptr.get(LAYOUT$color_factor, OFFSET$color_factor);}
-    public void color_factor(float value) {this._ptr.set(LAYOUT$color_factor, OFFSET$color_factor, value);}
-    public java.lang.foreign.MemorySegment color_factor_ptr() {return this._ptr.asSlice(OFFSET$color_factor, LAYOUT$color_factor);}
+    public float color_factor() {return this._ptr.get(LAYOUT__color_factor, OFFSET__color_factor);}
+    public void color_factor(float value) {this._ptr.set(LAYOUT__color_factor, OFFSET__color_factor, value);}
+    public java.lang.foreign.MemorySegment $color_factor() {return this._ptr.asSlice(OFFSET__color_factor, LAYOUT__color_factor);}
 
-    public float disabled_factor() {return this._ptr.get(LAYOUT$disabled_factor, OFFSET$disabled_factor);}
-    public void disabled_factor(float value) {this._ptr.set(LAYOUT$disabled_factor, OFFSET$disabled_factor, value);}
-    public java.lang.foreign.MemorySegment disabled_factor_ptr() {return this._ptr.asSlice(OFFSET$disabled_factor, LAYOUT$disabled_factor);}
+    public float disabled_factor() {return this._ptr.get(LAYOUT__disabled_factor, OFFSET__disabled_factor);}
+    public void disabled_factor(float value) {this._ptr.set(LAYOUT__disabled_factor, OFFSET__disabled_factor, value);}
+    public java.lang.foreign.MemorySegment $disabled_factor() {return this._ptr.asSlice(OFFSET__disabled_factor, LAYOUT__disabled_factor);}
 }

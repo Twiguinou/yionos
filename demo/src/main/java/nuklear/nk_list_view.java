@@ -2,67 +2,72 @@ package nuklear;
 
 public record nk_list_view(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$begin = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$begin = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$end = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$end = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$count = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$count = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$total_height = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$total_height = 12L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$ctx = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$ctx = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$scroll_pointer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$scroll_pointer = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$scroll_value = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$scroll_value = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__begin = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__end = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__count = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__total_height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__total_height = 12;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ctx = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__ctx = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__scroll_pointer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__scroll_pointer = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scroll_value = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__scroll_value = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$begin,
-            LAYOUT$end,
-            LAYOUT$count,
-            LAYOUT$total_height,
-            LAYOUT$ctx,
-            LAYOUT$scroll_pointer,
-            LAYOUT$scroll_value,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__begin,
+            LAYOUT__end,
+            LAYOUT__count,
+            LAYOUT__total_height,
+            LAYOUT__ctx,
+            LAYOUT__scroll_pointer,
+            LAYOUT__scroll_value,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_list_view");
+    ).withByteAlignment(8).withName("nk_list_view");
 
     public nk_list_view(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_list_view getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_list_view getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_list_view(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_list_view(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int begin() {return this._ptr.get(LAYOUT$begin, OFFSET$begin);}
-    public void begin(int value) {this._ptr.set(LAYOUT$begin, OFFSET$begin, value);}
-    public java.lang.foreign.MemorySegment begin_ptr() {return this._ptr.asSlice(OFFSET$begin, LAYOUT$begin);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_list_view value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int end() {return this._ptr.get(LAYOUT$end, OFFSET$end);}
-    public void end(int value) {this._ptr.set(LAYOUT$end, OFFSET$end, value);}
-    public java.lang.foreign.MemorySegment end_ptr() {return this._ptr.asSlice(OFFSET$end, LAYOUT$end);}
+    public int begin() {return this._ptr.get(LAYOUT__begin, OFFSET__begin);}
+    public void begin(int value) {this._ptr.set(LAYOUT__begin, OFFSET__begin, value);}
+    public java.lang.foreign.MemorySegment $begin() {return this._ptr.asSlice(OFFSET__begin, LAYOUT__begin);}
 
-    public int count() {return this._ptr.get(LAYOUT$count, OFFSET$count);}
-    public void count(int value) {this._ptr.set(LAYOUT$count, OFFSET$count, value);}
-    public java.lang.foreign.MemorySegment count_ptr() {return this._ptr.asSlice(OFFSET$count, LAYOUT$count);}
+    public int end() {return this._ptr.get(LAYOUT__end, OFFSET__end);}
+    public void end(int value) {this._ptr.set(LAYOUT__end, OFFSET__end, value);}
+    public java.lang.foreign.MemorySegment $end() {return this._ptr.asSlice(OFFSET__end, LAYOUT__end);}
 
-    public int total_height() {return this._ptr.get(LAYOUT$total_height, OFFSET$total_height);}
-    public void total_height(int value) {this._ptr.set(LAYOUT$total_height, OFFSET$total_height, value);}
-    public java.lang.foreign.MemorySegment total_height_ptr() {return this._ptr.asSlice(OFFSET$total_height, LAYOUT$total_height);}
+    public int count() {return this._ptr.get(LAYOUT__count, OFFSET__count);}
+    public void count(int value) {this._ptr.set(LAYOUT__count, OFFSET__count, value);}
+    public java.lang.foreign.MemorySegment $count() {return this._ptr.asSlice(OFFSET__count, LAYOUT__count);}
 
-    public java.lang.foreign.MemorySegment ctx() {return this._ptr.get(LAYOUT$ctx, OFFSET$ctx);}
-    public void ctx(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$ctx, OFFSET$ctx, value);}
-    public java.lang.foreign.MemorySegment ctx_ptr() {return this._ptr.asSlice(OFFSET$ctx, LAYOUT$ctx);}
+    public int total_height() {return this._ptr.get(LAYOUT__total_height, OFFSET__total_height);}
+    public void total_height(int value) {this._ptr.set(LAYOUT__total_height, OFFSET__total_height, value);}
+    public java.lang.foreign.MemorySegment $total_height() {return this._ptr.asSlice(OFFSET__total_height, LAYOUT__total_height);}
 
-    public java.lang.foreign.MemorySegment scroll_pointer() {return this._ptr.get(LAYOUT$scroll_pointer, OFFSET$scroll_pointer);}
-    public void scroll_pointer(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$scroll_pointer, OFFSET$scroll_pointer, value);}
-    public java.lang.foreign.MemorySegment scroll_pointer_ptr() {return this._ptr.asSlice(OFFSET$scroll_pointer, LAYOUT$scroll_pointer);}
+    public java.lang.foreign.MemorySegment ctx() {return this._ptr.get(LAYOUT__ctx, OFFSET__ctx);}
+    public void ctx(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__ctx, OFFSET__ctx, value);}
+    public java.lang.foreign.MemorySegment $ctx() {return this._ptr.asSlice(OFFSET__ctx, LAYOUT__ctx);}
 
-    public int scroll_value() {return this._ptr.get(LAYOUT$scroll_value, OFFSET$scroll_value);}
-    public void scroll_value(int value) {this._ptr.set(LAYOUT$scroll_value, OFFSET$scroll_value, value);}
-    public java.lang.foreign.MemorySegment scroll_value_ptr() {return this._ptr.asSlice(OFFSET$scroll_value, LAYOUT$scroll_value);}
+    public java.lang.foreign.MemorySegment scroll_pointer() {return this._ptr.get(LAYOUT__scroll_pointer, OFFSET__scroll_pointer);}
+    public void scroll_pointer(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__scroll_pointer, OFFSET__scroll_pointer, value);}
+    public java.lang.foreign.MemorySegment $scroll_pointer() {return this._ptr.asSlice(OFFSET__scroll_pointer, LAYOUT__scroll_pointer);}
+
+    public int scroll_value() {return this._ptr.get(LAYOUT__scroll_value, OFFSET__scroll_value);}
+    public void scroll_value(int value) {this._ptr.set(LAYOUT__scroll_value, OFFSET__scroll_value, value);}
+    public java.lang.foreign.MemorySegment $scroll_value() {return this._ptr.asSlice(OFFSET__scroll_value, LAYOUT__scroll_value);}
 }

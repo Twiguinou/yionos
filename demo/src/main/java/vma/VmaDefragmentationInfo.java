@@ -2,61 +2,66 @@ package vma;
 
 public record VmaDefragmentationInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pool = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pool = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$maxBytesPerPass = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$maxBytesPerPass = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxAllocationsPerPass = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxAllocationsPerPass = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pfnBreakCallback = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pfnBreakCallback = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pBreakCallbackUserData = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pBreakCallbackUserData = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pool = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pool = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBytesPerPass = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__maxBytesPerPass = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxAllocationsPerPass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxAllocationsPerPass = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnBreakCallback = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pfnBreakCallback = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pBreakCallbackUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pBreakCallbackUserData = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pool,
-            LAYOUT$maxBytesPerPass,
-            LAYOUT$maxAllocationsPerPass,
+            LAYOUT__pool,
+            LAYOUT__maxBytesPerPass,
+            LAYOUT__maxAllocationsPerPass,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pfnBreakCallback,
-            LAYOUT$pBreakCallbackUserData
-    ).withName("VmaDefragmentationInfo");
+            LAYOUT__pfnBreakCallback,
+            LAYOUT__pBreakCallbackUserData
+    ).withByteAlignment(8).withName("VmaDefragmentationInfo");
 
     public VmaDefragmentationInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VmaDefragmentationInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VmaDefragmentationInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VmaDefragmentationInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VmaDefragmentationInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VmaDefragmentationInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pool() {return this.ptr.get(LAYOUT$pool, OFFSET$pool);}
-    public void pool(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pool, OFFSET$pool, value);}
-    public java.lang.foreign.MemorySegment pool_ptr() {return this.ptr.asSlice(OFFSET$pool, LAYOUT$pool);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public long maxBytesPerPass() {return this.ptr.get(LAYOUT$maxBytesPerPass, OFFSET$maxBytesPerPass);}
-    public void maxBytesPerPass(long value) {this.ptr.set(LAYOUT$maxBytesPerPass, OFFSET$maxBytesPerPass, value);}
-    public java.lang.foreign.MemorySegment maxBytesPerPass_ptr() {return this.ptr.asSlice(OFFSET$maxBytesPerPass, LAYOUT$maxBytesPerPass);}
+    public java.lang.foreign.MemorySegment pool() {return this.ptr.get(LAYOUT__pool, OFFSET__pool);}
+    public void pool(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pool, OFFSET__pool, value);}
+    public java.lang.foreign.MemorySegment $pool() {return this.ptr.asSlice(OFFSET__pool, LAYOUT__pool);}
 
-    public int maxAllocationsPerPass() {return this.ptr.get(LAYOUT$maxAllocationsPerPass, OFFSET$maxAllocationsPerPass);}
-    public void maxAllocationsPerPass(int value) {this.ptr.set(LAYOUT$maxAllocationsPerPass, OFFSET$maxAllocationsPerPass, value);}
-    public java.lang.foreign.MemorySegment maxAllocationsPerPass_ptr() {return this.ptr.asSlice(OFFSET$maxAllocationsPerPass, LAYOUT$maxAllocationsPerPass);}
+    public long maxBytesPerPass() {return this.ptr.get(LAYOUT__maxBytesPerPass, OFFSET__maxBytesPerPass);}
+    public void maxBytesPerPass(long value) {this.ptr.set(LAYOUT__maxBytesPerPass, OFFSET__maxBytesPerPass, value);}
+    public java.lang.foreign.MemorySegment $maxBytesPerPass() {return this.ptr.asSlice(OFFSET__maxBytesPerPass, LAYOUT__maxBytesPerPass);}
 
-    public java.lang.foreign.MemorySegment pfnBreakCallback() {return this.ptr.get(LAYOUT$pfnBreakCallback, OFFSET$pfnBreakCallback);}
-    public void pfnBreakCallback(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pfnBreakCallback, OFFSET$pfnBreakCallback, value);}
-    public java.lang.foreign.MemorySegment pfnBreakCallback_ptr() {return this.ptr.asSlice(OFFSET$pfnBreakCallback, LAYOUT$pfnBreakCallback);}
+    public int maxAllocationsPerPass() {return this.ptr.get(LAYOUT__maxAllocationsPerPass, OFFSET__maxAllocationsPerPass);}
+    public void maxAllocationsPerPass(int value) {this.ptr.set(LAYOUT__maxAllocationsPerPass, OFFSET__maxAllocationsPerPass, value);}
+    public java.lang.foreign.MemorySegment $maxAllocationsPerPass() {return this.ptr.asSlice(OFFSET__maxAllocationsPerPass, LAYOUT__maxAllocationsPerPass);}
 
-    public java.lang.foreign.MemorySegment pBreakCallbackUserData() {return this.ptr.get(LAYOUT$pBreakCallbackUserData, OFFSET$pBreakCallbackUserData);}
-    public void pBreakCallbackUserData(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pBreakCallbackUserData, OFFSET$pBreakCallbackUserData, value);}
-    public java.lang.foreign.MemorySegment pBreakCallbackUserData_ptr() {return this.ptr.asSlice(OFFSET$pBreakCallbackUserData, LAYOUT$pBreakCallbackUserData);}
+    public java.lang.foreign.MemorySegment pfnBreakCallback() {return this.ptr.get(LAYOUT__pfnBreakCallback, OFFSET__pfnBreakCallback);}
+    public void pfnBreakCallback(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pfnBreakCallback, OFFSET__pfnBreakCallback, value);}
+    public java.lang.foreign.MemorySegment $pfnBreakCallback() {return this.ptr.asSlice(OFFSET__pfnBreakCallback, LAYOUT__pfnBreakCallback);}
+
+    public java.lang.foreign.MemorySegment pBreakCallbackUserData() {return this.ptr.get(LAYOUT__pBreakCallbackUserData, OFFSET__pBreakCallbackUserData);}
+    public void pBreakCallbackUserData(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pBreakCallbackUserData, OFFSET__pBreakCallbackUserData, value);}
+    public java.lang.foreign.MemorySegment $pBreakCallbackUserData() {return this.ptr.asSlice(OFFSET__pBreakCallbackUserData, LAYOUT__pBreakCallbackUserData);}
 }

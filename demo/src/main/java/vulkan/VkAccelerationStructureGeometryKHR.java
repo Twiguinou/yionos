@@ -2,55 +2,60 @@ package vulkan;
 
 public record VkAccelerationStructureGeometryKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$geometryType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$geometryType = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$geometry = vulkan.VkAccelerationStructureGeometryDataKHR.gStructLayout;
-    public static final long OFFSET$geometry = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 88L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__geometryType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__geometryType = 16;
+    public static final java.lang.foreign.UnionLayout LAYOUT__geometry = vulkan.VkAccelerationStructureGeometryDataKHR.gRecordLayout;
+    public static final long OFFSET__geometry = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 88;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$geometryType,
+            LAYOUT__pNext,
+            LAYOUT__geometryType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$geometry,
-            LAYOUT$flags,
+            LAYOUT__geometry,
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkAccelerationStructureGeometryKHR");
+    ).withByteAlignment(8).withName("VkAccelerationStructureGeometryKHR");
 
     public VkAccelerationStructureGeometryKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkAccelerationStructureGeometryKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkAccelerationStructureGeometryKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkAccelerationStructureGeometryKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkAccelerationStructureGeometryKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkAccelerationStructureGeometryKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int geometryType() {return this.ptr.get(LAYOUT$geometryType, OFFSET$geometryType);}
-    public void geometryType(int value) {this.ptr.set(LAYOUT$geometryType, OFFSET$geometryType, value);}
-    public java.lang.foreign.MemorySegment geometryType_ptr() {return this.ptr.asSlice(OFFSET$geometryType, LAYOUT$geometryType);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public vulkan.VkAccelerationStructureGeometryDataKHR geometry() {return new vulkan.VkAccelerationStructureGeometryDataKHR(this.ptr.asSlice(OFFSET$geometry, LAYOUT$geometry));}
+    public int geometryType() {return this.ptr.get(LAYOUT__geometryType, OFFSET__geometryType);}
+    public void geometryType(int value) {this.ptr.set(LAYOUT__geometryType, OFFSET__geometryType, value);}
+    public java.lang.foreign.MemorySegment $geometryType() {return this.ptr.asSlice(OFFSET__geometryType, LAYOUT__geometryType);}
+
+    public vulkan.VkAccelerationStructureGeometryDataKHR geometry() {return new vulkan.VkAccelerationStructureGeometryDataKHR(this.ptr.asSlice(OFFSET__geometry, LAYOUT__geometry));}
     public void geometry(java.util.function.Consumer<vulkan.VkAccelerationStructureGeometryDataKHR> consumer) {consumer.accept(this.geometry());}
-    public void geometry(vulkan.VkAccelerationStructureGeometryDataKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$geometry, LAYOUT$geometry.byteSize());}
+    public void geometry(vulkan.VkAccelerationStructureGeometryDataKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__geometry, LAYOUT__geometry.byteSize());}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 }

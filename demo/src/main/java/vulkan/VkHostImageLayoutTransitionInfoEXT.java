@@ -2,61 +2,66 @@ package vulkan;
 
 public record VkHostImageLayoutTransitionInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$image = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$image = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$oldLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$oldLayout = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$newLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$newLayout = 28L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$subresourceRange = vulkan.VkImageSubresourceRange.gStructLayout;
-    public static final long OFFSET$subresourceRange = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__image = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__oldLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__oldLayout = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__newLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__newLayout = 28;
+    public static final java.lang.foreign.StructLayout LAYOUT__subresourceRange = vulkan.VkImageSubresourceRange.gRecordLayout;
+    public static final long OFFSET__subresourceRange = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$image,
-            LAYOUT$oldLayout,
-            LAYOUT$newLayout,
-            LAYOUT$subresourceRange,
+            LAYOUT__pNext,
+            LAYOUT__image,
+            LAYOUT__oldLayout,
+            LAYOUT__newLayout,
+            LAYOUT__subresourceRange,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkHostImageLayoutTransitionInfoEXT");
+    ).withByteAlignment(8).withName("VkHostImageLayoutTransitionInfoEXT");
 
     public VkHostImageLayoutTransitionInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkHostImageLayoutTransitionInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkHostImageLayoutTransitionInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkHostImageLayoutTransitionInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkHostImageLayoutTransitionInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkHostImageLayoutTransitionInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment image() {return this.ptr.get(LAYOUT$image, OFFSET$image);}
-    public void image(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$image, OFFSET$image, value);}
-    public java.lang.foreign.MemorySegment image_ptr() {return this.ptr.asSlice(OFFSET$image, LAYOUT$image);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int oldLayout() {return this.ptr.get(LAYOUT$oldLayout, OFFSET$oldLayout);}
-    public void oldLayout(int value) {this.ptr.set(LAYOUT$oldLayout, OFFSET$oldLayout, value);}
-    public java.lang.foreign.MemorySegment oldLayout_ptr() {return this.ptr.asSlice(OFFSET$oldLayout, LAYOUT$oldLayout);}
+    public java.lang.foreign.MemorySegment image() {return this.ptr.get(LAYOUT__image, OFFSET__image);}
+    public void image(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__image, OFFSET__image, value);}
+    public java.lang.foreign.MemorySegment $image() {return this.ptr.asSlice(OFFSET__image, LAYOUT__image);}
 
-    public int newLayout() {return this.ptr.get(LAYOUT$newLayout, OFFSET$newLayout);}
-    public void newLayout(int value) {this.ptr.set(LAYOUT$newLayout, OFFSET$newLayout, value);}
-    public java.lang.foreign.MemorySegment newLayout_ptr() {return this.ptr.asSlice(OFFSET$newLayout, LAYOUT$newLayout);}
+    public int oldLayout() {return this.ptr.get(LAYOUT__oldLayout, OFFSET__oldLayout);}
+    public void oldLayout(int value) {this.ptr.set(LAYOUT__oldLayout, OFFSET__oldLayout, value);}
+    public java.lang.foreign.MemorySegment $oldLayout() {return this.ptr.asSlice(OFFSET__oldLayout, LAYOUT__oldLayout);}
 
-    public vulkan.VkImageSubresourceRange subresourceRange() {return new vulkan.VkImageSubresourceRange(this.ptr.asSlice(OFFSET$subresourceRange, LAYOUT$subresourceRange));}
+    public int newLayout() {return this.ptr.get(LAYOUT__newLayout, OFFSET__newLayout);}
+    public void newLayout(int value) {this.ptr.set(LAYOUT__newLayout, OFFSET__newLayout, value);}
+    public java.lang.foreign.MemorySegment $newLayout() {return this.ptr.asSlice(OFFSET__newLayout, LAYOUT__newLayout);}
+
+    public vulkan.VkImageSubresourceRange subresourceRange() {return new vulkan.VkImageSubresourceRange(this.ptr.asSlice(OFFSET__subresourceRange, LAYOUT__subresourceRange));}
     public void subresourceRange(java.util.function.Consumer<vulkan.VkImageSubresourceRange> consumer) {consumer.accept(this.subresourceRange());}
-    public void subresourceRange(vulkan.VkImageSubresourceRange value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$subresourceRange, LAYOUT$subresourceRange.byteSize());}
+    public void subresourceRange(vulkan.VkImageSubresourceRange value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__subresourceRange, LAYOUT__subresourceRange.byteSize());}
 }

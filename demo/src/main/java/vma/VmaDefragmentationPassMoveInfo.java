@@ -2,32 +2,37 @@ package vma;
 
 public record VmaDefragmentationPassMoveInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$moveCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$moveCount = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pMoves = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pMoves = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__moveCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__moveCount = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMoves = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pMoves = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$moveCount,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__moveCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pMoves
-    ).withName("VmaDefragmentationPassMoveInfo");
+            LAYOUT__pMoves
+    ).withByteAlignment(8).withName("VmaDefragmentationPassMoveInfo");
 
     public VmaDefragmentationPassMoveInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VmaDefragmentationPassMoveInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VmaDefragmentationPassMoveInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VmaDefragmentationPassMoveInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VmaDefragmentationPassMoveInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int moveCount() {return this.ptr.get(LAYOUT$moveCount, OFFSET$moveCount);}
-    public void moveCount(int value) {this.ptr.set(LAYOUT$moveCount, OFFSET$moveCount, value);}
-    public java.lang.foreign.MemorySegment moveCount_ptr() {return this.ptr.asSlice(OFFSET$moveCount, LAYOUT$moveCount);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VmaDefragmentationPassMoveInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pMoves() {return this.ptr.get(LAYOUT$pMoves, OFFSET$pMoves);}
-    public void pMoves(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pMoves, OFFSET$pMoves, value);}
-    public java.lang.foreign.MemorySegment pMoves_ptr() {return this.ptr.asSlice(OFFSET$pMoves, LAYOUT$pMoves);}
+    public int moveCount() {return this.ptr.get(LAYOUT__moveCount, OFFSET__moveCount);}
+    public void moveCount(int value) {this.ptr.set(LAYOUT__moveCount, OFFSET__moveCount, value);}
+    public java.lang.foreign.MemorySegment $moveCount() {return this.ptr.asSlice(OFFSET__moveCount, LAYOUT__moveCount);}
+
+    public java.lang.foreign.MemorySegment pMoves() {return this.ptr.get(LAYOUT__pMoves, OFFSET__pMoves);}
+    public void pMoves(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pMoves, OFFSET__pMoves, value);}
+    public java.lang.foreign.MemorySegment $pMoves() {return this.ptr.asSlice(OFFSET__pMoves, LAYOUT__pMoves);}
 }

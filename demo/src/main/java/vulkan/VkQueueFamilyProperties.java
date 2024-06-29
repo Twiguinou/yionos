@@ -2,45 +2,50 @@ package vulkan;
 
 public record VkQueueFamilyProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$queueFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$queueFlags = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$queueCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$queueCount = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$timestampValidBits = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$timestampValidBits = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$minImageTransferGranularity = vulkan.VkExtent3D.gStructLayout;
-    public static final long OFFSET$minImageTransferGranularity = 12L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__queueFlags = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__queueCount = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__timestampValidBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__timestampValidBits = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__minImageTransferGranularity = vulkan.VkExtent3D.gRecordLayout;
+    public static final long OFFSET__minImageTransferGranularity = 12;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$queueFlags,
-            LAYOUT$queueCount,
-            LAYOUT$timestampValidBits,
-            LAYOUT$minImageTransferGranularity
-    ).withName("VkQueueFamilyProperties");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__queueFlags,
+            LAYOUT__queueCount,
+            LAYOUT__timestampValidBits,
+            LAYOUT__minImageTransferGranularity
+    ).withByteAlignment(4).withName("VkQueueFamilyProperties");
 
     public VkQueueFamilyProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkQueueFamilyProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkQueueFamilyProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkQueueFamilyProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkQueueFamilyProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int queueFlags() {return this.ptr.get(LAYOUT$queueFlags, OFFSET$queueFlags);}
-    public void queueFlags(int value) {this.ptr.set(LAYOUT$queueFlags, OFFSET$queueFlags, value);}
-    public java.lang.foreign.MemorySegment queueFlags_ptr() {return this.ptr.asSlice(OFFSET$queueFlags, LAYOUT$queueFlags);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkQueueFamilyProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int queueCount() {return this.ptr.get(LAYOUT$queueCount, OFFSET$queueCount);}
-    public void queueCount(int value) {this.ptr.set(LAYOUT$queueCount, OFFSET$queueCount, value);}
-    public java.lang.foreign.MemorySegment queueCount_ptr() {return this.ptr.asSlice(OFFSET$queueCount, LAYOUT$queueCount);}
+    public int queueFlags() {return this.ptr.get(LAYOUT__queueFlags, OFFSET__queueFlags);}
+    public void queueFlags(int value) {this.ptr.set(LAYOUT__queueFlags, OFFSET__queueFlags, value);}
+    public java.lang.foreign.MemorySegment $queueFlags() {return this.ptr.asSlice(OFFSET__queueFlags, LAYOUT__queueFlags);}
 
-    public int timestampValidBits() {return this.ptr.get(LAYOUT$timestampValidBits, OFFSET$timestampValidBits);}
-    public void timestampValidBits(int value) {this.ptr.set(LAYOUT$timestampValidBits, OFFSET$timestampValidBits, value);}
-    public java.lang.foreign.MemorySegment timestampValidBits_ptr() {return this.ptr.asSlice(OFFSET$timestampValidBits, LAYOUT$timestampValidBits);}
+    public int queueCount() {return this.ptr.get(LAYOUT__queueCount, OFFSET__queueCount);}
+    public void queueCount(int value) {this.ptr.set(LAYOUT__queueCount, OFFSET__queueCount, value);}
+    public java.lang.foreign.MemorySegment $queueCount() {return this.ptr.asSlice(OFFSET__queueCount, LAYOUT__queueCount);}
 
-    public vulkan.VkExtent3D minImageTransferGranularity() {return new vulkan.VkExtent3D(this.ptr.asSlice(OFFSET$minImageTransferGranularity, LAYOUT$minImageTransferGranularity));}
+    public int timestampValidBits() {return this.ptr.get(LAYOUT__timestampValidBits, OFFSET__timestampValidBits);}
+    public void timestampValidBits(int value) {this.ptr.set(LAYOUT__timestampValidBits, OFFSET__timestampValidBits, value);}
+    public java.lang.foreign.MemorySegment $timestampValidBits() {return this.ptr.asSlice(OFFSET__timestampValidBits, LAYOUT__timestampValidBits);}
+
+    public vulkan.VkExtent3D minImageTransferGranularity() {return new vulkan.VkExtent3D(this.ptr.asSlice(OFFSET__minImageTransferGranularity, LAYOUT__minImageTransferGranularity));}
     public void minImageTransferGranularity(java.util.function.Consumer<vulkan.VkExtent3D> consumer) {consumer.accept(this.minImageTransferGranularity());}
-    public void minImageTransferGranularity(vulkan.VkExtent3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$minImageTransferGranularity, LAYOUT$minImageTransferGranularity.byteSize());}
+    public void minImageTransferGranularity(vulkan.VkExtent3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__minImageTransferGranularity, LAYOUT__minImageTransferGranularity.byteSize());}
 }

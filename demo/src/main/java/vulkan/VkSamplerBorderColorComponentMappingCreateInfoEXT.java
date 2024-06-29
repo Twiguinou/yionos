@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkSamplerBorderColorComponentMappingCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$components = vulkan.VkComponentMapping.gStructLayout;
-    public static final long OFFSET$components = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srgb = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srgb = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__components = vulkan.VkComponentMapping.gRecordLayout;
+    public static final long OFFSET__components = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srgb = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srgb = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$components,
-            LAYOUT$srgb,
+            LAYOUT__pNext,
+            LAYOUT__components,
+            LAYOUT__srgb,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkSamplerBorderColorComponentMappingCreateInfoEXT");
+    ).withByteAlignment(8).withName("VkSamplerBorderColorComponentMappingCreateInfoEXT");
 
     public VkSamplerBorderColorComponentMappingCreateInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSamplerBorderColorComponentMappingCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSamplerBorderColorComponentMappingCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSamplerBorderColorComponentMappingCreateInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSamplerBorderColorComponentMappingCreateInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSamplerBorderColorComponentMappingCreateInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkComponentMapping components() {return new vulkan.VkComponentMapping(this.ptr.asSlice(OFFSET$components, LAYOUT$components));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkComponentMapping components() {return new vulkan.VkComponentMapping(this.ptr.asSlice(OFFSET__components, LAYOUT__components));}
     public void components(java.util.function.Consumer<vulkan.VkComponentMapping> consumer) {consumer.accept(this.components());}
-    public void components(vulkan.VkComponentMapping value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$components, LAYOUT$components.byteSize());}
+    public void components(vulkan.VkComponentMapping value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__components, LAYOUT__components.byteSize());}
 
-    public int srgb() {return this.ptr.get(LAYOUT$srgb, OFFSET$srgb);}
-    public void srgb(int value) {this.ptr.set(LAYOUT$srgb, OFFSET$srgb, value);}
-    public java.lang.foreign.MemorySegment srgb_ptr() {return this.ptr.asSlice(OFFSET$srgb, LAYOUT$srgb);}
+    public int srgb() {return this.ptr.get(LAYOUT__srgb, OFFSET__srgb);}
+    public void srgb(int value) {this.ptr.set(LAYOUT__srgb, OFFSET__srgb, value);}
+    public java.lang.foreign.MemorySegment $srgb() {return this.ptr.asSlice(OFFSET__srgb, LAYOUT__srgb);}
 }

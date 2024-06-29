@@ -2,52 +2,57 @@ package vulkan;
 
 public record VkSubresourceLayout(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$offset = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$offset = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$size = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$size = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$rowPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$rowPitch = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$arrayPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$arrayPitch = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$depthPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$depthPitch = 32L;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__offset = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__size = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__rowPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__rowPitch = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__arrayPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__arrayPitch = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__depthPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__depthPitch = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$offset,
-            LAYOUT$size,
-            LAYOUT$rowPitch,
-            LAYOUT$arrayPitch,
-            LAYOUT$depthPitch
-    ).withName("VkSubresourceLayout");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__offset,
+            LAYOUT__size,
+            LAYOUT__rowPitch,
+            LAYOUT__arrayPitch,
+            LAYOUT__depthPitch
+    ).withByteAlignment(8).withName("VkSubresourceLayout");
 
     public VkSubresourceLayout(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSubresourceLayout getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSubresourceLayout getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSubresourceLayout(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSubresourceLayout(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public long offset() {return this.ptr.get(LAYOUT$offset, OFFSET$offset);}
-    public void offset(long value) {this.ptr.set(LAYOUT$offset, OFFSET$offset, value);}
-    public java.lang.foreign.MemorySegment offset_ptr() {return this.ptr.asSlice(OFFSET$offset, LAYOUT$offset);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSubresourceLayout value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long size() {return this.ptr.get(LAYOUT$size, OFFSET$size);}
-    public void size(long value) {this.ptr.set(LAYOUT$size, OFFSET$size, value);}
-    public java.lang.foreign.MemorySegment size_ptr() {return this.ptr.asSlice(OFFSET$size, LAYOUT$size);}
+    public long offset() {return this.ptr.get(LAYOUT__offset, OFFSET__offset);}
+    public void offset(long value) {this.ptr.set(LAYOUT__offset, OFFSET__offset, value);}
+    public java.lang.foreign.MemorySegment $offset() {return this.ptr.asSlice(OFFSET__offset, LAYOUT__offset);}
 
-    public long rowPitch() {return this.ptr.get(LAYOUT$rowPitch, OFFSET$rowPitch);}
-    public void rowPitch(long value) {this.ptr.set(LAYOUT$rowPitch, OFFSET$rowPitch, value);}
-    public java.lang.foreign.MemorySegment rowPitch_ptr() {return this.ptr.asSlice(OFFSET$rowPitch, LAYOUT$rowPitch);}
+    public long size() {return this.ptr.get(LAYOUT__size, OFFSET__size);}
+    public void size(long value) {this.ptr.set(LAYOUT__size, OFFSET__size, value);}
+    public java.lang.foreign.MemorySegment $size() {return this.ptr.asSlice(OFFSET__size, LAYOUT__size);}
 
-    public long arrayPitch() {return this.ptr.get(LAYOUT$arrayPitch, OFFSET$arrayPitch);}
-    public void arrayPitch(long value) {this.ptr.set(LAYOUT$arrayPitch, OFFSET$arrayPitch, value);}
-    public java.lang.foreign.MemorySegment arrayPitch_ptr() {return this.ptr.asSlice(OFFSET$arrayPitch, LAYOUT$arrayPitch);}
+    public long rowPitch() {return this.ptr.get(LAYOUT__rowPitch, OFFSET__rowPitch);}
+    public void rowPitch(long value) {this.ptr.set(LAYOUT__rowPitch, OFFSET__rowPitch, value);}
+    public java.lang.foreign.MemorySegment $rowPitch() {return this.ptr.asSlice(OFFSET__rowPitch, LAYOUT__rowPitch);}
 
-    public long depthPitch() {return this.ptr.get(LAYOUT$depthPitch, OFFSET$depthPitch);}
-    public void depthPitch(long value) {this.ptr.set(LAYOUT$depthPitch, OFFSET$depthPitch, value);}
-    public java.lang.foreign.MemorySegment depthPitch_ptr() {return this.ptr.asSlice(OFFSET$depthPitch, LAYOUT$depthPitch);}
+    public long arrayPitch() {return this.ptr.get(LAYOUT__arrayPitch, OFFSET__arrayPitch);}
+    public void arrayPitch(long value) {this.ptr.set(LAYOUT__arrayPitch, OFFSET__arrayPitch, value);}
+    public java.lang.foreign.MemorySegment $arrayPitch() {return this.ptr.asSlice(OFFSET__arrayPitch, LAYOUT__arrayPitch);}
+
+    public long depthPitch() {return this.ptr.get(LAYOUT__depthPitch, OFFSET__depthPitch);}
+    public void depthPitch(long value) {this.ptr.set(LAYOUT__depthPitch, OFFSET__depthPitch, value);}
+    public java.lang.foreign.MemorySegment $depthPitch() {return this.ptr.asSlice(OFFSET__depthPitch, LAYOUT__depthPitch);}
 }

@@ -2,31 +2,36 @@ package vulkan;
 
 public record VkRect2D(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$offset = vulkan.VkOffset2D.gStructLayout;
-    public static final long OFFSET$offset = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$extent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$extent = 8L;
+    public static final java.lang.foreign.StructLayout LAYOUT__offset = vulkan.VkOffset2D.gRecordLayout;
+    public static final long OFFSET__offset = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__extent = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$offset,
-            LAYOUT$extent
-    ).withName("VkRect2D");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__offset,
+            LAYOUT__extent
+    ).withByteAlignment(4).withName("VkRect2D");
 
     public VkRect2D(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkRect2D getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkRect2D getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkRect2D(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkRect2D(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.VkOffset2D offset() {return new vulkan.VkOffset2D(this.ptr.asSlice(OFFSET$offset, LAYOUT$offset));}
-    public void offset(java.util.function.Consumer<vulkan.VkOffset2D> consumer) {consumer.accept(this.offset());}
-    public void offset(vulkan.VkOffset2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$offset, LAYOUT$offset.byteSize());}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkRect2D value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public vulkan.VkExtent2D extent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$extent, LAYOUT$extent));}
+    public vulkan.VkOffset2D offset() {return new vulkan.VkOffset2D(this.ptr.asSlice(OFFSET__offset, LAYOUT__offset));}
+    public void offset(java.util.function.Consumer<vulkan.VkOffset2D> consumer) {consumer.accept(this.offset());}
+    public void offset(vulkan.VkOffset2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__offset, LAYOUT__offset.byteSize());}
+
+    public vulkan.VkExtent2D extent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__extent, LAYOUT__extent));}
     public void extent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.extent());}
-    public void extent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$extent, LAYOUT$extent.byteSize());}
+    public void extent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__extent, LAYOUT__extent.byteSize());}
 }

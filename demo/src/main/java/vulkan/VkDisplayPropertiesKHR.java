@@ -2,67 +2,72 @@ package vulkan;
 
 public record VkDisplayPropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT$display = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$display = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$displayName = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$displayName = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$physicalDimensions = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$physicalDimensions = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$physicalResolution = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$physicalResolution = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedTransforms = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$planeReorderPossible = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$planeReorderPossible = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$persistentContent = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$persistentContent = 40L;
+    public static final java.lang.foreign.AddressLayout LAYOUT__display = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__display = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__displayName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__displayName = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__physicalDimensions = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__physicalDimensions = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__physicalResolution = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__physicalResolution = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedTransforms = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeReorderPossible = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__planeReorderPossible = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__persistentContent = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__persistentContent = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$display,
-            LAYOUT$displayName,
-            LAYOUT$physicalDimensions,
-            LAYOUT$physicalResolution,
-            LAYOUT$supportedTransforms,
-            LAYOUT$planeReorderPossible,
-            LAYOUT$persistentContent,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__display,
+            LAYOUT__displayName,
+            LAYOUT__physicalDimensions,
+            LAYOUT__physicalResolution,
+            LAYOUT__supportedTransforms,
+            LAYOUT__planeReorderPossible,
+            LAYOUT__persistentContent,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDisplayPropertiesKHR");
+    ).withByteAlignment(8).withName("VkDisplayPropertiesKHR");
 
     public VkDisplayPropertiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDisplayPropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDisplayPropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDisplayPropertiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDisplayPropertiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment display() {return this.ptr.get(LAYOUT$display, OFFSET$display);}
-    public void display(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$display, OFFSET$display, value);}
-    public java.lang.foreign.MemorySegment display_ptr() {return this.ptr.asSlice(OFFSET$display, LAYOUT$display);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDisplayPropertiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment displayName() {return this.ptr.get(LAYOUT$displayName, OFFSET$displayName);}
-    public void displayName(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$displayName, OFFSET$displayName, value);}
-    public java.lang.foreign.MemorySegment displayName_ptr() {return this.ptr.asSlice(OFFSET$displayName, LAYOUT$displayName);}
+    public java.lang.foreign.MemorySegment display() {return this.ptr.get(LAYOUT__display, OFFSET__display);}
+    public void display(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__display, OFFSET__display, value);}
+    public java.lang.foreign.MemorySegment $display() {return this.ptr.asSlice(OFFSET__display, LAYOUT__display);}
 
-    public vulkan.VkExtent2D physicalDimensions() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$physicalDimensions, LAYOUT$physicalDimensions));}
+    public java.lang.foreign.MemorySegment displayName() {return this.ptr.get(LAYOUT__displayName, OFFSET__displayName);}
+    public void displayName(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__displayName, OFFSET__displayName, value);}
+    public java.lang.foreign.MemorySegment $displayName() {return this.ptr.asSlice(OFFSET__displayName, LAYOUT__displayName);}
+
+    public vulkan.VkExtent2D physicalDimensions() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__physicalDimensions, LAYOUT__physicalDimensions));}
     public void physicalDimensions(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.physicalDimensions());}
-    public void physicalDimensions(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$physicalDimensions, LAYOUT$physicalDimensions.byteSize());}
+    public void physicalDimensions(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__physicalDimensions, LAYOUT__physicalDimensions.byteSize());}
 
-    public vulkan.VkExtent2D physicalResolution() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$physicalResolution, LAYOUT$physicalResolution));}
+    public vulkan.VkExtent2D physicalResolution() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__physicalResolution, LAYOUT__physicalResolution));}
     public void physicalResolution(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.physicalResolution());}
-    public void physicalResolution(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$physicalResolution, LAYOUT$physicalResolution.byteSize());}
+    public void physicalResolution(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__physicalResolution, LAYOUT__physicalResolution.byteSize());}
 
-    public int supportedTransforms() {return this.ptr.get(LAYOUT$supportedTransforms, OFFSET$supportedTransforms);}
-    public void supportedTransforms(int value) {this.ptr.set(LAYOUT$supportedTransforms, OFFSET$supportedTransforms, value);}
-    public java.lang.foreign.MemorySegment supportedTransforms_ptr() {return this.ptr.asSlice(OFFSET$supportedTransforms, LAYOUT$supportedTransforms);}
+    public int supportedTransforms() {return this.ptr.get(LAYOUT__supportedTransforms, OFFSET__supportedTransforms);}
+    public void supportedTransforms(int value) {this.ptr.set(LAYOUT__supportedTransforms, OFFSET__supportedTransforms, value);}
+    public java.lang.foreign.MemorySegment $supportedTransforms() {return this.ptr.asSlice(OFFSET__supportedTransforms, LAYOUT__supportedTransforms);}
 
-    public int planeReorderPossible() {return this.ptr.get(LAYOUT$planeReorderPossible, OFFSET$planeReorderPossible);}
-    public void planeReorderPossible(int value) {this.ptr.set(LAYOUT$planeReorderPossible, OFFSET$planeReorderPossible, value);}
-    public java.lang.foreign.MemorySegment planeReorderPossible_ptr() {return this.ptr.asSlice(OFFSET$planeReorderPossible, LAYOUT$planeReorderPossible);}
+    public int planeReorderPossible() {return this.ptr.get(LAYOUT__planeReorderPossible, OFFSET__planeReorderPossible);}
+    public void planeReorderPossible(int value) {this.ptr.set(LAYOUT__planeReorderPossible, OFFSET__planeReorderPossible, value);}
+    public java.lang.foreign.MemorySegment $planeReorderPossible() {return this.ptr.asSlice(OFFSET__planeReorderPossible, LAYOUT__planeReorderPossible);}
 
-    public int persistentContent() {return this.ptr.get(LAYOUT$persistentContent, OFFSET$persistentContent);}
-    public void persistentContent(int value) {this.ptr.set(LAYOUT$persistentContent, OFFSET$persistentContent, value);}
-    public java.lang.foreign.MemorySegment persistentContent_ptr() {return this.ptr.asSlice(OFFSET$persistentContent, LAYOUT$persistentContent);}
+    public int persistentContent() {return this.ptr.get(LAYOUT__persistentContent, OFFSET__persistentContent);}
+    public void persistentContent(int value) {this.ptr.set(LAYOUT__persistentContent, OFFSET__persistentContent, value);}
+    public java.lang.foreign.MemorySegment $persistentContent() {return this.ptr.asSlice(OFFSET__persistentContent, LAYOUT__persistentContent);}
 }

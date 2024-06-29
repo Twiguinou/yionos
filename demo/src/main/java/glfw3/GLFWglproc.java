@@ -9,6 +9,6 @@ public interface GLFWglproc
 
     default java.lang.foreign.MemorySegment makeHandle(java.lang.foreign.Arena arena)
     {
-        return glfw3.GLFW3.gSystemLinker.upcallStub(gUpcallStub.bindTo(this), gDescriptor, arena);
+        return jpgen.NativeTypes.SYSTEM_LINKER.upcallStub(gUpcallStub.bindTo(this), gDescriptor, arena);
     }
 }

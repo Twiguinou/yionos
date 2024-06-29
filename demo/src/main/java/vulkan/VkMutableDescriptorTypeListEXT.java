@@ -2,32 +2,37 @@ package vulkan;
 
 public record VkMutableDescriptorTypeListEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorTypeCount = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDescriptorTypes = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDescriptorTypes = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorTypeCount = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorTypes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDescriptorTypes = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$descriptorTypeCount,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__descriptorTypeCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pDescriptorTypes
-    ).withName("VkMutableDescriptorTypeListEXT");
+            LAYOUT__pDescriptorTypes
+    ).withByteAlignment(8).withName("VkMutableDescriptorTypeListEXT");
 
     public VkMutableDescriptorTypeListEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkMutableDescriptorTypeListEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkMutableDescriptorTypeListEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkMutableDescriptorTypeListEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkMutableDescriptorTypeListEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int descriptorTypeCount() {return this.ptr.get(LAYOUT$descriptorTypeCount, OFFSET$descriptorTypeCount);}
-    public void descriptorTypeCount(int value) {this.ptr.set(LAYOUT$descriptorTypeCount, OFFSET$descriptorTypeCount, value);}
-    public java.lang.foreign.MemorySegment descriptorTypeCount_ptr() {return this.ptr.asSlice(OFFSET$descriptorTypeCount, LAYOUT$descriptorTypeCount);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkMutableDescriptorTypeListEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pDescriptorTypes() {return this.ptr.get(LAYOUT$pDescriptorTypes, OFFSET$pDescriptorTypes);}
-    public void pDescriptorTypes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDescriptorTypes, OFFSET$pDescriptorTypes, value);}
-    public java.lang.foreign.MemorySegment pDescriptorTypes_ptr() {return this.ptr.asSlice(OFFSET$pDescriptorTypes, LAYOUT$pDescriptorTypes);}
+    public int descriptorTypeCount() {return this.ptr.get(LAYOUT__descriptorTypeCount, OFFSET__descriptorTypeCount);}
+    public void descriptorTypeCount(int value) {this.ptr.set(LAYOUT__descriptorTypeCount, OFFSET__descriptorTypeCount, value);}
+    public java.lang.foreign.MemorySegment $descriptorTypeCount() {return this.ptr.asSlice(OFFSET__descriptorTypeCount, LAYOUT__descriptorTypeCount);}
+
+    public java.lang.foreign.MemorySegment pDescriptorTypes() {return this.ptr.get(LAYOUT__pDescriptorTypes, OFFSET__pDescriptorTypes);}
+    public void pDescriptorTypes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDescriptorTypes, OFFSET__pDescriptorTypes, value);}
+    public java.lang.foreign.MemorySegment $pDescriptorTypes() {return this.ptr.asSlice(OFFSET__pDescriptorTypes, LAYOUT__pDescriptorTypes);}
 }

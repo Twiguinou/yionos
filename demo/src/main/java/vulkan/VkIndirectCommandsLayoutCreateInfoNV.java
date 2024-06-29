@@ -2,76 +2,81 @@ package vulkan;
 
 public record VkIndirectCommandsLayoutCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pipelineBindPoint = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$tokenCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$tokenCount = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pTokens = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pTokens = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$streamCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$streamCount = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pStreamStrides = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pStreamStrides = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pipelineBindPoint = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tokenCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__tokenCount = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTokens = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pTokens = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__streamCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__streamCount = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStreamStrides = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pStreamStrides = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$pipelineBindPoint,
-            LAYOUT$tokenCount,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__pipelineBindPoint,
+            LAYOUT__tokenCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pTokens,
-            LAYOUT$streamCount,
+            LAYOUT__pTokens,
+            LAYOUT__streamCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pStreamStrides
-    ).withName("VkIndirectCommandsLayoutCreateInfoNV");
+            LAYOUT__pStreamStrides
+    ).withByteAlignment(8).withName("VkIndirectCommandsLayoutCreateInfoNV");
 
     public VkIndirectCommandsLayoutCreateInfoNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkIndirectCommandsLayoutCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkIndirectCommandsLayoutCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkIndirectCommandsLayoutCreateInfoNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkIndirectCommandsLayoutCreateInfoNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkIndirectCommandsLayoutCreateInfoNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int pipelineBindPoint() {return this.ptr.get(LAYOUT$pipelineBindPoint, OFFSET$pipelineBindPoint);}
-    public void pipelineBindPoint(int value) {this.ptr.set(LAYOUT$pipelineBindPoint, OFFSET$pipelineBindPoint, value);}
-    public java.lang.foreign.MemorySegment pipelineBindPoint_ptr() {return this.ptr.asSlice(OFFSET$pipelineBindPoint, LAYOUT$pipelineBindPoint);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int tokenCount() {return this.ptr.get(LAYOUT$tokenCount, OFFSET$tokenCount);}
-    public void tokenCount(int value) {this.ptr.set(LAYOUT$tokenCount, OFFSET$tokenCount, value);}
-    public java.lang.foreign.MemorySegment tokenCount_ptr() {return this.ptr.asSlice(OFFSET$tokenCount, LAYOUT$tokenCount);}
+    public int pipelineBindPoint() {return this.ptr.get(LAYOUT__pipelineBindPoint, OFFSET__pipelineBindPoint);}
+    public void pipelineBindPoint(int value) {this.ptr.set(LAYOUT__pipelineBindPoint, OFFSET__pipelineBindPoint, value);}
+    public java.lang.foreign.MemorySegment $pipelineBindPoint() {return this.ptr.asSlice(OFFSET__pipelineBindPoint, LAYOUT__pipelineBindPoint);}
 
-    public java.lang.foreign.MemorySegment pTokens() {return this.ptr.get(LAYOUT$pTokens, OFFSET$pTokens);}
-    public void pTokens(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pTokens, OFFSET$pTokens, value);}
-    public java.lang.foreign.MemorySegment pTokens_ptr() {return this.ptr.asSlice(OFFSET$pTokens, LAYOUT$pTokens);}
+    public int tokenCount() {return this.ptr.get(LAYOUT__tokenCount, OFFSET__tokenCount);}
+    public void tokenCount(int value) {this.ptr.set(LAYOUT__tokenCount, OFFSET__tokenCount, value);}
+    public java.lang.foreign.MemorySegment $tokenCount() {return this.ptr.asSlice(OFFSET__tokenCount, LAYOUT__tokenCount);}
 
-    public int streamCount() {return this.ptr.get(LAYOUT$streamCount, OFFSET$streamCount);}
-    public void streamCount(int value) {this.ptr.set(LAYOUT$streamCount, OFFSET$streamCount, value);}
-    public java.lang.foreign.MemorySegment streamCount_ptr() {return this.ptr.asSlice(OFFSET$streamCount, LAYOUT$streamCount);}
+    public java.lang.foreign.MemorySegment pTokens() {return this.ptr.get(LAYOUT__pTokens, OFFSET__pTokens);}
+    public void pTokens(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pTokens, OFFSET__pTokens, value);}
+    public java.lang.foreign.MemorySegment $pTokens() {return this.ptr.asSlice(OFFSET__pTokens, LAYOUT__pTokens);}
 
-    public java.lang.foreign.MemorySegment pStreamStrides() {return this.ptr.get(LAYOUT$pStreamStrides, OFFSET$pStreamStrides);}
-    public void pStreamStrides(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pStreamStrides, OFFSET$pStreamStrides, value);}
-    public java.lang.foreign.MemorySegment pStreamStrides_ptr() {return this.ptr.asSlice(OFFSET$pStreamStrides, LAYOUT$pStreamStrides);}
+    public int streamCount() {return this.ptr.get(LAYOUT__streamCount, OFFSET__streamCount);}
+    public void streamCount(int value) {this.ptr.set(LAYOUT__streamCount, OFFSET__streamCount, value);}
+    public java.lang.foreign.MemorySegment $streamCount() {return this.ptr.asSlice(OFFSET__streamCount, LAYOUT__streamCount);}
+
+    public java.lang.foreign.MemorySegment pStreamStrides() {return this.ptr.get(LAYOUT__pStreamStrides, OFFSET__pStreamStrides);}
+    public void pStreamStrides(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pStreamStrides, OFFSET__pStreamStrides, value);}
+    public java.lang.foreign.MemorySegment $pStreamStrides() {return this.ptr.asSlice(OFFSET__pStreamStrides, LAYOUT__pStreamStrides);}
 }

@@ -2,94 +2,99 @@ package nuklear;
 
 public record nk_property_state(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$active = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$active = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$prev = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$prev = 4L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$buffer = java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$buffer = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$length = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$length = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$cursor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$cursor = 76L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$select_start = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$select_start = 80L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$select_end = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$select_end = 84L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$name = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$name = 88L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$seq = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$seq = 92L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$old = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$old = 96L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$state = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$state = 100L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__active = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__prev = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__prev = 4;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__buffer = java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__buffer = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__length = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__length = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cursor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__cursor = 76;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_start = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__select_start = 80;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_end = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__select_end = 84;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__name = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__name = 88;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__seq = 92;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__old = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__old = 96;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__state = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__state = 100;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$active,
-            LAYOUT$prev,
-            LAYOUT$buffer,
-            LAYOUT$length,
-            LAYOUT$cursor,
-            LAYOUT$select_start,
-            LAYOUT$select_end,
-            LAYOUT$name,
-            LAYOUT$seq,
-            LAYOUT$old,
-            LAYOUT$state
-    ).withName("nk_property_state");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__active,
+            LAYOUT__prev,
+            LAYOUT__buffer,
+            LAYOUT__length,
+            LAYOUT__cursor,
+            LAYOUT__select_start,
+            LAYOUT__select_end,
+            LAYOUT__name,
+            LAYOUT__seq,
+            LAYOUT__old,
+            LAYOUT__state
+    ).withByteAlignment(4).withName("nk_property_state");
 
     public nk_property_state(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_property_state getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_property_state getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_property_state(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_property_state(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int active() {return this._ptr.get(LAYOUT$active, OFFSET$active);}
-    public void active(int value) {this._ptr.set(LAYOUT$active, OFFSET$active, value);}
-    public java.lang.foreign.MemorySegment active_ptr() {return this._ptr.asSlice(OFFSET$active, LAYOUT$active);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_property_state value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int prev() {return this._ptr.get(LAYOUT$prev, OFFSET$prev);}
-    public void prev(int value) {this._ptr.set(LAYOUT$prev, OFFSET$prev, value);}
-    public java.lang.foreign.MemorySegment prev_ptr() {return this._ptr.asSlice(OFFSET$prev, LAYOUT$prev);}
+    public int active() {return this._ptr.get(LAYOUT__active, OFFSET__active);}
+    public void active(int value) {this._ptr.set(LAYOUT__active, OFFSET__active, value);}
+    public java.lang.foreign.MemorySegment $active() {return this._ptr.asSlice(OFFSET__active, LAYOUT__active);}
 
-    public java.lang.foreign.MemorySegment buffer() {return this._ptr.asSlice(OFFSET$buffer, LAYOUT$buffer);}
-    public char buffer(int i) {return (char)this.buffer().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void buffer(int i, char value) {this.buffer().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public int prev() {return this._ptr.get(LAYOUT__prev, OFFSET__prev);}
+    public void prev(int value) {this._ptr.set(LAYOUT__prev, OFFSET__prev, value);}
+    public java.lang.foreign.MemorySegment $prev() {return this._ptr.asSlice(OFFSET__prev, LAYOUT__prev);}
 
-    public int length() {return this._ptr.get(LAYOUT$length, OFFSET$length);}
-    public void length(int value) {this._ptr.set(LAYOUT$length, OFFSET$length, value);}
-    public java.lang.foreign.MemorySegment length_ptr() {return this._ptr.asSlice(OFFSET$length, LAYOUT$length);}
+    public java.lang.foreign.MemorySegment buffer() {return this._ptr.asSlice(OFFSET__buffer, LAYOUT__buffer);}
+    public byte buffer(int index) {return this.buffer().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void buffer(int index, byte value) {this.buffer().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public int cursor() {return this._ptr.get(LAYOUT$cursor, OFFSET$cursor);}
-    public void cursor(int value) {this._ptr.set(LAYOUT$cursor, OFFSET$cursor, value);}
-    public java.lang.foreign.MemorySegment cursor_ptr() {return this._ptr.asSlice(OFFSET$cursor, LAYOUT$cursor);}
+    public int length() {return this._ptr.get(LAYOUT__length, OFFSET__length);}
+    public void length(int value) {this._ptr.set(LAYOUT__length, OFFSET__length, value);}
+    public java.lang.foreign.MemorySegment $length() {return this._ptr.asSlice(OFFSET__length, LAYOUT__length);}
 
-    public int select_start() {return this._ptr.get(LAYOUT$select_start, OFFSET$select_start);}
-    public void select_start(int value) {this._ptr.set(LAYOUT$select_start, OFFSET$select_start, value);}
-    public java.lang.foreign.MemorySegment select_start_ptr() {return this._ptr.asSlice(OFFSET$select_start, LAYOUT$select_start);}
+    public int cursor() {return this._ptr.get(LAYOUT__cursor, OFFSET__cursor);}
+    public void cursor(int value) {this._ptr.set(LAYOUT__cursor, OFFSET__cursor, value);}
+    public java.lang.foreign.MemorySegment $cursor() {return this._ptr.asSlice(OFFSET__cursor, LAYOUT__cursor);}
 
-    public int select_end() {return this._ptr.get(LAYOUT$select_end, OFFSET$select_end);}
-    public void select_end(int value) {this._ptr.set(LAYOUT$select_end, OFFSET$select_end, value);}
-    public java.lang.foreign.MemorySegment select_end_ptr() {return this._ptr.asSlice(OFFSET$select_end, LAYOUT$select_end);}
+    public int select_start() {return this._ptr.get(LAYOUT__select_start, OFFSET__select_start);}
+    public void select_start(int value) {this._ptr.set(LAYOUT__select_start, OFFSET__select_start, value);}
+    public java.lang.foreign.MemorySegment $select_start() {return this._ptr.asSlice(OFFSET__select_start, LAYOUT__select_start);}
 
-    public int name() {return this._ptr.get(LAYOUT$name, OFFSET$name);}
-    public void name(int value) {this._ptr.set(LAYOUT$name, OFFSET$name, value);}
-    public java.lang.foreign.MemorySegment name_ptr() {return this._ptr.asSlice(OFFSET$name, LAYOUT$name);}
+    public int select_end() {return this._ptr.get(LAYOUT__select_end, OFFSET__select_end);}
+    public void select_end(int value) {this._ptr.set(LAYOUT__select_end, OFFSET__select_end, value);}
+    public java.lang.foreign.MemorySegment $select_end() {return this._ptr.asSlice(OFFSET__select_end, LAYOUT__select_end);}
 
-    public int seq() {return this._ptr.get(LAYOUT$seq, OFFSET$seq);}
-    public void seq(int value) {this._ptr.set(LAYOUT$seq, OFFSET$seq, value);}
-    public java.lang.foreign.MemorySegment seq_ptr() {return this._ptr.asSlice(OFFSET$seq, LAYOUT$seq);}
+    public int name() {return this._ptr.get(LAYOUT__name, OFFSET__name);}
+    public void name(int value) {this._ptr.set(LAYOUT__name, OFFSET__name, value);}
+    public java.lang.foreign.MemorySegment $name() {return this._ptr.asSlice(OFFSET__name, LAYOUT__name);}
 
-    public int old() {return this._ptr.get(LAYOUT$old, OFFSET$old);}
-    public void old(int value) {this._ptr.set(LAYOUT$old, OFFSET$old, value);}
-    public java.lang.foreign.MemorySegment old_ptr() {return this._ptr.asSlice(OFFSET$old, LAYOUT$old);}
+    public int seq() {return this._ptr.get(LAYOUT__seq, OFFSET__seq);}
+    public void seq(int value) {this._ptr.set(LAYOUT__seq, OFFSET__seq, value);}
+    public java.lang.foreign.MemorySegment $seq() {return this._ptr.asSlice(OFFSET__seq, LAYOUT__seq);}
 
-    public int state() {return this._ptr.get(LAYOUT$state, OFFSET$state);}
-    public void state(int value) {this._ptr.set(LAYOUT$state, OFFSET$state, value);}
-    public java.lang.foreign.MemorySegment state_ptr() {return this._ptr.asSlice(OFFSET$state, LAYOUT$state);}
+    public int old() {return this._ptr.get(LAYOUT__old, OFFSET__old);}
+    public void old(int value) {this._ptr.set(LAYOUT__old, OFFSET__old, value);}
+    public java.lang.foreign.MemorySegment $old() {return this._ptr.asSlice(OFFSET__old, LAYOUT__old);}
+
+    public int state() {return this._ptr.get(LAYOUT__state, OFFSET__state);}
+    public void state(int value) {this._ptr.set(LAYOUT__state, OFFSET__state, value);}
+    public java.lang.foreign.MemorySegment $state() {return this._ptr.asSlice(OFFSET__state, LAYOUT__state);}
 }

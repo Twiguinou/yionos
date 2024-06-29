@@ -2,38 +2,43 @@ package vma;
 
 public record VmaDeviceMemoryCallbacks(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT$pfnAllocate = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pfnAllocate = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pfnFree = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pfnFree = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pUserData = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pUserData = 16L;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnAllocate = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pfnAllocate = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnFree = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pfnFree = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pUserData = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$pfnAllocate,
-            LAYOUT$pfnFree,
-            LAYOUT$pUserData
-    ).withName("VmaDeviceMemoryCallbacks");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__pfnAllocate,
+            LAYOUT__pfnFree,
+            LAYOUT__pUserData
+    ).withByteAlignment(8).withName("VmaDeviceMemoryCallbacks");
 
     public VmaDeviceMemoryCallbacks(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VmaDeviceMemoryCallbacks getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VmaDeviceMemoryCallbacks getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VmaDeviceMemoryCallbacks(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VmaDeviceMemoryCallbacks(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment pfnAllocate() {return this.ptr.get(LAYOUT$pfnAllocate, OFFSET$pfnAllocate);}
-    public void pfnAllocate(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pfnAllocate, OFFSET$pfnAllocate, value);}
-    public java.lang.foreign.MemorySegment pfnAllocate_ptr() {return this.ptr.asSlice(OFFSET$pfnAllocate, LAYOUT$pfnAllocate);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VmaDeviceMemoryCallbacks value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pfnFree() {return this.ptr.get(LAYOUT$pfnFree, OFFSET$pfnFree);}
-    public void pfnFree(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pfnFree, OFFSET$pfnFree, value);}
-    public java.lang.foreign.MemorySegment pfnFree_ptr() {return this.ptr.asSlice(OFFSET$pfnFree, LAYOUT$pfnFree);}
+    public java.lang.foreign.MemorySegment pfnAllocate() {return this.ptr.get(LAYOUT__pfnAllocate, OFFSET__pfnAllocate);}
+    public void pfnAllocate(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pfnAllocate, OFFSET__pfnAllocate, value);}
+    public java.lang.foreign.MemorySegment $pfnAllocate() {return this.ptr.asSlice(OFFSET__pfnAllocate, LAYOUT__pfnAllocate);}
 
-    public java.lang.foreign.MemorySegment pUserData() {return this.ptr.get(LAYOUT$pUserData, OFFSET$pUserData);}
-    public void pUserData(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pUserData, OFFSET$pUserData, value);}
-    public java.lang.foreign.MemorySegment pUserData_ptr() {return this.ptr.asSlice(OFFSET$pUserData, LAYOUT$pUserData);}
+    public java.lang.foreign.MemorySegment pfnFree() {return this.ptr.get(LAYOUT__pfnFree, OFFSET__pfnFree);}
+    public void pfnFree(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pfnFree, OFFSET__pfnFree, value);}
+    public java.lang.foreign.MemorySegment $pfnFree() {return this.ptr.asSlice(OFFSET__pfnFree, LAYOUT__pfnFree);}
+
+    public java.lang.foreign.MemorySegment pUserData() {return this.ptr.get(LAYOUT__pUserData, OFFSET__pUserData);}
+    public void pUserData(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pUserData, OFFSET__pUserData, value);}
+    public java.lang.foreign.MemorySegment $pUserData() {return this.ptr.asSlice(OFFSET__pUserData, LAYOUT__pUserData);}
 }

@@ -2,145 +2,150 @@ package nuklear;
 
 public record nk_panel(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$type = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$type = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 4L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$bounds = nuklear.nk_rect.gStructLayout;
-    public static final long OFFSET$bounds = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$offset_x = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$offset_x = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$offset_y = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$offset_y = 32L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$at_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$at_x = 40L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$at_y = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$at_y = 44L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$max_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$max_x = 48L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$footer_height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$footer_height = 52L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$header_height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$header_height = 56L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$border = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$has_scrolling = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$has_scrolling = 64L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$clip = nuklear.nk_rect.gStructLayout;
-    public static final long OFFSET$clip = 68L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$menu = nuklear.nk_menu_state.gStructLayout;
-    public static final long OFFSET$menu = 84L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$row = nuklear.nk_row_layout.gStructLayout;
-    public static final long OFFSET$row = 112L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$chart = nuklear.nk_chart.gStructLayout;
-    public static final long OFFSET$chart = 248L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$buffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$buffer = 432L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$parent = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$parent = 440L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__type = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 4;
+    public static final java.lang.foreign.StructLayout LAYOUT__bounds = nuklear.nk_rect.gRecordLayout;
+    public static final long OFFSET__bounds = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__offset_x = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__offset_x = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__offset_y = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__offset_y = 32;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__at_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__at_x = 40;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__at_y = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__at_y = 44;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__max_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__max_x = 48;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__footer_height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__footer_height = 52;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__header_height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__header_height = 56;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__border = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__has_scrolling = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__has_scrolling = 64;
+    public static final java.lang.foreign.StructLayout LAYOUT__clip = nuklear.nk_rect.gRecordLayout;
+    public static final long OFFSET__clip = 68;
+    public static final java.lang.foreign.StructLayout LAYOUT__menu = nuklear.nk_menu_state.gRecordLayout;
+    public static final long OFFSET__menu = 84;
+    public static final java.lang.foreign.StructLayout LAYOUT__row = nuklear.nk_row_layout.gRecordLayout;
+    public static final long OFFSET__row = 112;
+    public static final java.lang.foreign.StructLayout LAYOUT__chart = nuklear.nk_chart.gRecordLayout;
+    public static final long OFFSET__chart = 248;
+    public static final java.lang.foreign.AddressLayout LAYOUT__buffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__buffer = 448;
+    public static final java.lang.foreign.AddressLayout LAYOUT__parent = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__parent = 456;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$type,
-            LAYOUT$flags,
-            LAYOUT$bounds,
-            LAYOUT$offset_x,
-            LAYOUT$offset_y,
-            LAYOUT$at_x,
-            LAYOUT$at_y,
-            LAYOUT$max_x,
-            LAYOUT$footer_height,
-            LAYOUT$header_height,
-            LAYOUT$border,
-            LAYOUT$has_scrolling,
-            LAYOUT$clip,
-            LAYOUT$menu,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__type,
+            LAYOUT__flags,
+            LAYOUT__bounds,
+            LAYOUT__offset_x,
+            LAYOUT__offset_y,
+            LAYOUT__at_x,
+            LAYOUT__at_y,
+            LAYOUT__max_x,
+            LAYOUT__footer_height,
+            LAYOUT__header_height,
+            LAYOUT__border,
+            LAYOUT__has_scrolling,
+            LAYOUT__clip,
+            LAYOUT__menu,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$row,
-            LAYOUT$chart,
+            LAYOUT__row,
+            LAYOUT__chart,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$buffer,
-            LAYOUT$parent
-    ).withName("nk_panel");
+            LAYOUT__buffer,
+            LAYOUT__parent
+    ).withByteAlignment(8).withName("nk_panel");
 
     public nk_panel(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_panel getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_panel getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_panel(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_panel(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int type() {return this._ptr.get(LAYOUT$type, OFFSET$type);}
-    public void type(int value) {this._ptr.set(LAYOUT$type, OFFSET$type, value);}
-    public java.lang.foreign.MemorySegment type_ptr() {return this._ptr.asSlice(OFFSET$type, LAYOUT$type);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_panel value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int flags() {return this._ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this._ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this._ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public int type() {return this._ptr.get(LAYOUT__type, OFFSET__type);}
+    public void type(int value) {this._ptr.set(LAYOUT__type, OFFSET__type, value);}
+    public java.lang.foreign.MemorySegment $type() {return this._ptr.asSlice(OFFSET__type, LAYOUT__type);}
 
-    public nuklear.nk_rect bounds() {return new nuklear.nk_rect(this._ptr.asSlice(OFFSET$bounds, LAYOUT$bounds));}
+    public int flags() {return this._ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this._ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this._ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
+
+    public nuklear.nk_rect bounds() {return new nuklear.nk_rect(this._ptr.asSlice(OFFSET__bounds, LAYOUT__bounds));}
     public void bounds(java.util.function.Consumer<nuklear.nk_rect> consumer) {consumer.accept(this.bounds());}
-    public void bounds(nuklear.nk_rect value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$bounds, LAYOUT$bounds.byteSize());}
+    public void bounds(nuklear.nk_rect value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__bounds, LAYOUT__bounds.byteSize());}
 
-    public java.lang.foreign.MemorySegment offset_x() {return this._ptr.get(LAYOUT$offset_x, OFFSET$offset_x);}
-    public void offset_x(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$offset_x, OFFSET$offset_x, value);}
-    public java.lang.foreign.MemorySegment offset_x_ptr() {return this._ptr.asSlice(OFFSET$offset_x, LAYOUT$offset_x);}
+    public java.lang.foreign.MemorySegment offset_x() {return this._ptr.get(LAYOUT__offset_x, OFFSET__offset_x);}
+    public void offset_x(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__offset_x, OFFSET__offset_x, value);}
+    public java.lang.foreign.MemorySegment $offset_x() {return this._ptr.asSlice(OFFSET__offset_x, LAYOUT__offset_x);}
 
-    public java.lang.foreign.MemorySegment offset_y() {return this._ptr.get(LAYOUT$offset_y, OFFSET$offset_y);}
-    public void offset_y(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$offset_y, OFFSET$offset_y, value);}
-    public java.lang.foreign.MemorySegment offset_y_ptr() {return this._ptr.asSlice(OFFSET$offset_y, LAYOUT$offset_y);}
+    public java.lang.foreign.MemorySegment offset_y() {return this._ptr.get(LAYOUT__offset_y, OFFSET__offset_y);}
+    public void offset_y(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__offset_y, OFFSET__offset_y, value);}
+    public java.lang.foreign.MemorySegment $offset_y() {return this._ptr.asSlice(OFFSET__offset_y, LAYOUT__offset_y);}
 
-    public float at_x() {return this._ptr.get(LAYOUT$at_x, OFFSET$at_x);}
-    public void at_x(float value) {this._ptr.set(LAYOUT$at_x, OFFSET$at_x, value);}
-    public java.lang.foreign.MemorySegment at_x_ptr() {return this._ptr.asSlice(OFFSET$at_x, LAYOUT$at_x);}
+    public float at_x() {return this._ptr.get(LAYOUT__at_x, OFFSET__at_x);}
+    public void at_x(float value) {this._ptr.set(LAYOUT__at_x, OFFSET__at_x, value);}
+    public java.lang.foreign.MemorySegment $at_x() {return this._ptr.asSlice(OFFSET__at_x, LAYOUT__at_x);}
 
-    public float at_y() {return this._ptr.get(LAYOUT$at_y, OFFSET$at_y);}
-    public void at_y(float value) {this._ptr.set(LAYOUT$at_y, OFFSET$at_y, value);}
-    public java.lang.foreign.MemorySegment at_y_ptr() {return this._ptr.asSlice(OFFSET$at_y, LAYOUT$at_y);}
+    public float at_y() {return this._ptr.get(LAYOUT__at_y, OFFSET__at_y);}
+    public void at_y(float value) {this._ptr.set(LAYOUT__at_y, OFFSET__at_y, value);}
+    public java.lang.foreign.MemorySegment $at_y() {return this._ptr.asSlice(OFFSET__at_y, LAYOUT__at_y);}
 
-    public float max_x() {return this._ptr.get(LAYOUT$max_x, OFFSET$max_x);}
-    public void max_x(float value) {this._ptr.set(LAYOUT$max_x, OFFSET$max_x, value);}
-    public java.lang.foreign.MemorySegment max_x_ptr() {return this._ptr.asSlice(OFFSET$max_x, LAYOUT$max_x);}
+    public float max_x() {return this._ptr.get(LAYOUT__max_x, OFFSET__max_x);}
+    public void max_x(float value) {this._ptr.set(LAYOUT__max_x, OFFSET__max_x, value);}
+    public java.lang.foreign.MemorySegment $max_x() {return this._ptr.asSlice(OFFSET__max_x, LAYOUT__max_x);}
 
-    public float footer_height() {return this._ptr.get(LAYOUT$footer_height, OFFSET$footer_height);}
-    public void footer_height(float value) {this._ptr.set(LAYOUT$footer_height, OFFSET$footer_height, value);}
-    public java.lang.foreign.MemorySegment footer_height_ptr() {return this._ptr.asSlice(OFFSET$footer_height, LAYOUT$footer_height);}
+    public float footer_height() {return this._ptr.get(LAYOUT__footer_height, OFFSET__footer_height);}
+    public void footer_height(float value) {this._ptr.set(LAYOUT__footer_height, OFFSET__footer_height, value);}
+    public java.lang.foreign.MemorySegment $footer_height() {return this._ptr.asSlice(OFFSET__footer_height, LAYOUT__footer_height);}
 
-    public float header_height() {return this._ptr.get(LAYOUT$header_height, OFFSET$header_height);}
-    public void header_height(float value) {this._ptr.set(LAYOUT$header_height, OFFSET$header_height, value);}
-    public java.lang.foreign.MemorySegment header_height_ptr() {return this._ptr.asSlice(OFFSET$header_height, LAYOUT$header_height);}
+    public float header_height() {return this._ptr.get(LAYOUT__header_height, OFFSET__header_height);}
+    public void header_height(float value) {this._ptr.set(LAYOUT__header_height, OFFSET__header_height, value);}
+    public java.lang.foreign.MemorySegment $header_height() {return this._ptr.asSlice(OFFSET__header_height, LAYOUT__header_height);}
 
-    public float border() {return this._ptr.get(LAYOUT$border, OFFSET$border);}
-    public void border(float value) {this._ptr.set(LAYOUT$border, OFFSET$border, value);}
-    public java.lang.foreign.MemorySegment border_ptr() {return this._ptr.asSlice(OFFSET$border, LAYOUT$border);}
+    public float border() {return this._ptr.get(LAYOUT__border, OFFSET__border);}
+    public void border(float value) {this._ptr.set(LAYOUT__border, OFFSET__border, value);}
+    public java.lang.foreign.MemorySegment $border() {return this._ptr.asSlice(OFFSET__border, LAYOUT__border);}
 
-    public int has_scrolling() {return this._ptr.get(LAYOUT$has_scrolling, OFFSET$has_scrolling);}
-    public void has_scrolling(int value) {this._ptr.set(LAYOUT$has_scrolling, OFFSET$has_scrolling, value);}
-    public java.lang.foreign.MemorySegment has_scrolling_ptr() {return this._ptr.asSlice(OFFSET$has_scrolling, LAYOUT$has_scrolling);}
+    public int has_scrolling() {return this._ptr.get(LAYOUT__has_scrolling, OFFSET__has_scrolling);}
+    public void has_scrolling(int value) {this._ptr.set(LAYOUT__has_scrolling, OFFSET__has_scrolling, value);}
+    public java.lang.foreign.MemorySegment $has_scrolling() {return this._ptr.asSlice(OFFSET__has_scrolling, LAYOUT__has_scrolling);}
 
-    public nuklear.nk_rect clip() {return new nuklear.nk_rect(this._ptr.asSlice(OFFSET$clip, LAYOUT$clip));}
+    public nuklear.nk_rect clip() {return new nuklear.nk_rect(this._ptr.asSlice(OFFSET__clip, LAYOUT__clip));}
     public void clip(java.util.function.Consumer<nuklear.nk_rect> consumer) {consumer.accept(this.clip());}
-    public void clip(nuklear.nk_rect value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$clip, LAYOUT$clip.byteSize());}
+    public void clip(nuklear.nk_rect value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__clip, LAYOUT__clip.byteSize());}
 
-    public nuklear.nk_menu_state menu() {return new nuklear.nk_menu_state(this._ptr.asSlice(OFFSET$menu, LAYOUT$menu));}
+    public nuklear.nk_menu_state menu() {return new nuklear.nk_menu_state(this._ptr.asSlice(OFFSET__menu, LAYOUT__menu));}
     public void menu(java.util.function.Consumer<nuklear.nk_menu_state> consumer) {consumer.accept(this.menu());}
-    public void menu(nuklear.nk_menu_state value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$menu, LAYOUT$menu.byteSize());}
+    public void menu(nuklear.nk_menu_state value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__menu, LAYOUT__menu.byteSize());}
 
-    public nuklear.nk_row_layout row() {return new nuklear.nk_row_layout(this._ptr.asSlice(OFFSET$row, LAYOUT$row));}
+    public nuklear.nk_row_layout row() {return new nuklear.nk_row_layout(this._ptr.asSlice(OFFSET__row, LAYOUT__row));}
     public void row(java.util.function.Consumer<nuklear.nk_row_layout> consumer) {consumer.accept(this.row());}
-    public void row(nuklear.nk_row_layout value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$row, LAYOUT$row.byteSize());}
+    public void row(nuklear.nk_row_layout value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__row, LAYOUT__row.byteSize());}
 
-    public nuklear.nk_chart chart() {return new nuklear.nk_chart(this._ptr.asSlice(OFFSET$chart, LAYOUT$chart));}
+    public nuklear.nk_chart chart() {return new nuklear.nk_chart(this._ptr.asSlice(OFFSET__chart, LAYOUT__chart));}
     public void chart(java.util.function.Consumer<nuklear.nk_chart> consumer) {consumer.accept(this.chart());}
-    public void chart(nuklear.nk_chart value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$chart, LAYOUT$chart.byteSize());}
+    public void chart(nuklear.nk_chart value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__chart, LAYOUT__chart.byteSize());}
 
-    public java.lang.foreign.MemorySegment buffer() {return this._ptr.get(LAYOUT$buffer, OFFSET$buffer);}
-    public void buffer(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$buffer, OFFSET$buffer, value);}
-    public java.lang.foreign.MemorySegment buffer_ptr() {return this._ptr.asSlice(OFFSET$buffer, LAYOUT$buffer);}
+    public java.lang.foreign.MemorySegment buffer() {return this._ptr.get(LAYOUT__buffer, OFFSET__buffer);}
+    public void buffer(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__buffer, OFFSET__buffer, value);}
+    public java.lang.foreign.MemorySegment $buffer() {return this._ptr.asSlice(OFFSET__buffer, LAYOUT__buffer);}
 
-    public java.lang.foreign.MemorySegment parent() {return this._ptr.get(LAYOUT$parent, OFFSET$parent);}
-    public void parent(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$parent, OFFSET$parent, value);}
-    public java.lang.foreign.MemorySegment parent_ptr() {return this._ptr.asSlice(OFFSET$parent, LAYOUT$parent);}
+    public java.lang.foreign.MemorySegment parent() {return this._ptr.get(LAYOUT__parent, OFFSET__parent);}
+    public void parent(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__parent, OFFSET__parent, value);}
+    public java.lang.foreign.MemorySegment $parent() {return this._ptr.asSlice(OFFSET__parent, LAYOUT__parent);}
 }

@@ -10,7 +10,6 @@ import yionos.demo.app.samples.DemoSample;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 import java.time.Duration;
 
 import static glfw3.GLFW3.*;
@@ -18,6 +17,7 @@ import static nuklear.Nuklear.*;
 import static nuklear.Nuklear.nk_end;
 import static nuklear.nk_panel_flags.*;
 import static yionos.utils.MathDefinitions.*;
+import static java.lang.foreign.ValueLayout.*;
 
 public class DemoApplication
 {
@@ -94,14 +94,14 @@ public class DemoApplication
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            if (nk_begin(this.m_overlayContext.pContext(), arena.allocateUtf8String("Available samples"), nk_rect(arena, 20, 20, 230, 250),
+            if (nk_begin(this.m_overlayContext.pContext(), arena.allocateFrom("Available samples"), nk_rect(arena, 20, 20, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE) != 0)
             {
-                SegmentAllocator bufferAllocator = SegmentAllocator.prefixAllocator(arena.allocateArray(ValueLayout.JAVA_CHAR, 128));
+                SegmentAllocator bufferAllocator = SegmentAllocator.prefixAllocator(arena.allocate(JAVA_CHAR, 128));
                 for (DemoSample.Supplier sampleSupplier : this.m_samples)
                 {
                     nk_layout_row_dynamic(this.m_overlayContext.pContext(), 25, 1);
-                    if (nk_button_label(this.m_overlayContext.pContext(), bufferAllocator.allocateUtf8String(sampleSupplier.identifier())) != 0)
+                    if (nk_button_label(this.m_overlayContext.pContext(), bufferAllocator.allocateFrom(sampleSupplier.identifier())) != 0)
                     {
                         this.m_runningSample.dispose();
                         this.m_runningSample = sampleSupplier.get(this.m_renderer);
@@ -149,7 +149,7 @@ public class DemoApplication
 
             Runtime runtime = Runtime.getRuntime();
             long usedMemory = (long) ((runtime.totalMemory() - runtime.freeMemory()) / (1e+6));
-            this.windowProc.title(STR."yionos -- Current memory usage: \{usedMemory} MBs");
+            this.windowProc.title(String.format("yionos -- Current memory usage: %d MBs", usedMemory));
 
             this.m_runningSample.update();
 

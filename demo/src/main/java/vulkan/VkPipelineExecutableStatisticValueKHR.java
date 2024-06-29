@@ -2,45 +2,46 @@ package vulkan;
 
 public record VkPipelineExecutableStatisticValueKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$b32 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$b32 = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$i64 = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$i64 = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$u64 = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$u64 = 0L;
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT$f64 = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-    public static final long OFFSET$f64 = 0L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__b32 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__i64 = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__u64 = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__f64 = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 
-    public static final java.lang.foreign.UnionLayout gStructLayout = java.lang.foreign.MemoryLayout.unionLayout(
-            LAYOUT$b32,
-            LAYOUT$i64,
-            LAYOUT$u64,
-            LAYOUT$f64
-    ).withName("VkPipelineExecutableStatisticValueKHR");
+    public static final java.lang.foreign.UnionLayout gRecordLayout = java.lang.foreign.MemoryLayout.unionLayout(
+            LAYOUT__b32,
+            LAYOUT__i64,
+            LAYOUT__u64,
+            LAYOUT__f64
+    ).withByteAlignment(8).withName("VkPipelineExecutableStatisticValueKHR");
 
     public VkPipelineExecutableStatisticValueKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineExecutableStatisticValueKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineExecutableStatisticValueKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineExecutableStatisticValueKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineExecutableStatisticValueKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int b32() {return this.ptr.get(LAYOUT$b32, OFFSET$b32);}
-    public void b32(int value) {this.ptr.set(LAYOUT$b32, OFFSET$b32, value);}
-    public java.lang.foreign.MemorySegment b32_ptr() {return this.ptr.asSlice(OFFSET$b32, LAYOUT$b32);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineExecutableStatisticValueKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long i64() {return this.ptr.get(LAYOUT$i64, OFFSET$i64);}
-    public void i64(long value) {this.ptr.set(LAYOUT$i64, OFFSET$i64, value);}
-    public java.lang.foreign.MemorySegment i64_ptr() {return this.ptr.asSlice(OFFSET$i64, LAYOUT$i64);}
+    public int b32() {return this.ptr.get(LAYOUT__b32, 0);}
+    public void b32(int value) {this.ptr.set(LAYOUT__b32, 0, value);}
+    public java.lang.foreign.MemorySegment $b32() {return this.ptr.asSlice(0, LAYOUT__b32);}
 
-    public long u64() {return this.ptr.get(LAYOUT$u64, OFFSET$u64);}
-    public void u64(long value) {this.ptr.set(LAYOUT$u64, OFFSET$u64, value);}
-    public java.lang.foreign.MemorySegment u64_ptr() {return this.ptr.asSlice(OFFSET$u64, LAYOUT$u64);}
+    public long i64() {return this.ptr.get(LAYOUT__i64, 0);}
+    public void i64(long value) {this.ptr.set(LAYOUT__i64, 0, value);}
+    public java.lang.foreign.MemorySegment $i64() {return this.ptr.asSlice(0, LAYOUT__i64);}
 
-    public double f64() {return this.ptr.get(LAYOUT$f64, OFFSET$f64);}
-    public void f64(double value) {this.ptr.set(LAYOUT$f64, OFFSET$f64, value);}
-    public java.lang.foreign.MemorySegment f64_ptr() {return this.ptr.asSlice(OFFSET$f64, LAYOUT$f64);}
+    public long u64() {return this.ptr.get(LAYOUT__u64, 0);}
+    public void u64(long value) {this.ptr.set(LAYOUT__u64, 0, value);}
+    public java.lang.foreign.MemorySegment $u64() {return this.ptr.asSlice(0, LAYOUT__u64);}
+
+    public double f64() {return this.ptr.get(LAYOUT__f64, 0);}
+    public void f64(double value) {this.ptr.set(LAYOUT__f64, 0, value);}
+    public java.lang.foreign.MemorySegment $f64() {return this.ptr.asSlice(0, LAYOUT__f64);}
 }

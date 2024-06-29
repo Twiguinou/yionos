@@ -2,38 +2,43 @@ package vulkan;
 
 public record VkVideoEncodeH264QpKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$qpI = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$qpI = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$qpP = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$qpP = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$qpB = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$qpB = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpI = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__qpI = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpP = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__qpP = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpB = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__qpB = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$qpI,
-            LAYOUT$qpP,
-            LAYOUT$qpB
-    ).withName("VkVideoEncodeH264QpKHR");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__qpI,
+            LAYOUT__qpP,
+            LAYOUT__qpB
+    ).withByteAlignment(4).withName("VkVideoEncodeH264QpKHR");
 
     public VkVideoEncodeH264QpKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoEncodeH264QpKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoEncodeH264QpKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoEncodeH264QpKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoEncodeH264QpKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int qpI() {return this.ptr.get(LAYOUT$qpI, OFFSET$qpI);}
-    public void qpI(int value) {this.ptr.set(LAYOUT$qpI, OFFSET$qpI, value);}
-    public java.lang.foreign.MemorySegment qpI_ptr() {return this.ptr.asSlice(OFFSET$qpI, LAYOUT$qpI);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoEncodeH264QpKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int qpP() {return this.ptr.get(LAYOUT$qpP, OFFSET$qpP);}
-    public void qpP(int value) {this.ptr.set(LAYOUT$qpP, OFFSET$qpP, value);}
-    public java.lang.foreign.MemorySegment qpP_ptr() {return this.ptr.asSlice(OFFSET$qpP, LAYOUT$qpP);}
+    public int qpI() {return this.ptr.get(LAYOUT__qpI, OFFSET__qpI);}
+    public void qpI(int value) {this.ptr.set(LAYOUT__qpI, OFFSET__qpI, value);}
+    public java.lang.foreign.MemorySegment $qpI() {return this.ptr.asSlice(OFFSET__qpI, LAYOUT__qpI);}
 
-    public int qpB() {return this.ptr.get(LAYOUT$qpB, OFFSET$qpB);}
-    public void qpB(int value) {this.ptr.set(LAYOUT$qpB, OFFSET$qpB, value);}
-    public java.lang.foreign.MemorySegment qpB_ptr() {return this.ptr.asSlice(OFFSET$qpB, LAYOUT$qpB);}
+    public int qpP() {return this.ptr.get(LAYOUT__qpP, OFFSET__qpP);}
+    public void qpP(int value) {this.ptr.set(LAYOUT__qpP, OFFSET__qpP, value);}
+    public java.lang.foreign.MemorySegment $qpP() {return this.ptr.asSlice(OFFSET__qpP, LAYOUT__qpP);}
+
+    public int qpB() {return this.ptr.get(LAYOUT__qpB, OFFSET__qpB);}
+    public void qpB(int value) {this.ptr.set(LAYOUT__qpB, OFFSET__qpB, value);}
+    public java.lang.foreign.MemorySegment $qpB() {return this.ptr.asSlice(OFFSET__qpB, LAYOUT__qpB);}
 }

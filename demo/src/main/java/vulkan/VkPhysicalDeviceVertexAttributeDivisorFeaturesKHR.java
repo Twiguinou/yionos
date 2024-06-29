@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexAttributeInstanceRateDivisor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexAttributeInstanceRateDivisor = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexAttributeInstanceRateZeroDivisor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexAttributeInstanceRateZeroDivisor = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexAttributeInstanceRateDivisor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexAttributeInstanceRateDivisor = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexAttributeInstanceRateZeroDivisor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexAttributeInstanceRateZeroDivisor = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$vertexAttributeInstanceRateDivisor,
-            LAYOUT$vertexAttributeInstanceRateZeroDivisor
-    ).withName("VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR");
+            LAYOUT__pNext,
+            LAYOUT__vertexAttributeInstanceRateDivisor,
+            LAYOUT__vertexAttributeInstanceRateZeroDivisor
+    ).withByteAlignment(8).withName("VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR");
 
     public VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int vertexAttributeInstanceRateDivisor() {return this.ptr.get(LAYOUT$vertexAttributeInstanceRateDivisor, OFFSET$vertexAttributeInstanceRateDivisor);}
-    public void vertexAttributeInstanceRateDivisor(int value) {this.ptr.set(LAYOUT$vertexAttributeInstanceRateDivisor, OFFSET$vertexAttributeInstanceRateDivisor, value);}
-    public java.lang.foreign.MemorySegment vertexAttributeInstanceRateDivisor_ptr() {return this.ptr.asSlice(OFFSET$vertexAttributeInstanceRateDivisor, LAYOUT$vertexAttributeInstanceRateDivisor);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int vertexAttributeInstanceRateZeroDivisor() {return this.ptr.get(LAYOUT$vertexAttributeInstanceRateZeroDivisor, OFFSET$vertexAttributeInstanceRateZeroDivisor);}
-    public void vertexAttributeInstanceRateZeroDivisor(int value) {this.ptr.set(LAYOUT$vertexAttributeInstanceRateZeroDivisor, OFFSET$vertexAttributeInstanceRateZeroDivisor, value);}
-    public java.lang.foreign.MemorySegment vertexAttributeInstanceRateZeroDivisor_ptr() {return this.ptr.asSlice(OFFSET$vertexAttributeInstanceRateZeroDivisor, LAYOUT$vertexAttributeInstanceRateZeroDivisor);}
+    public int vertexAttributeInstanceRateDivisor() {return this.ptr.get(LAYOUT__vertexAttributeInstanceRateDivisor, OFFSET__vertexAttributeInstanceRateDivisor);}
+    public void vertexAttributeInstanceRateDivisor(int value) {this.ptr.set(LAYOUT__vertexAttributeInstanceRateDivisor, OFFSET__vertexAttributeInstanceRateDivisor, value);}
+    public java.lang.foreign.MemorySegment $vertexAttributeInstanceRateDivisor() {return this.ptr.asSlice(OFFSET__vertexAttributeInstanceRateDivisor, LAYOUT__vertexAttributeInstanceRateDivisor);}
+
+    public int vertexAttributeInstanceRateZeroDivisor() {return this.ptr.get(LAYOUT__vertexAttributeInstanceRateZeroDivisor, OFFSET__vertexAttributeInstanceRateZeroDivisor);}
+    public void vertexAttributeInstanceRateZeroDivisor(int value) {this.ptr.set(LAYOUT__vertexAttributeInstanceRateZeroDivisor, OFFSET__vertexAttributeInstanceRateZeroDivisor, value);}
+    public java.lang.foreign.MemorySegment $vertexAttributeInstanceRateZeroDivisor() {return this.ptr.asSlice(OFFSET__vertexAttributeInstanceRateZeroDivisor, LAYOUT__vertexAttributeInstanceRateZeroDivisor);}
 }

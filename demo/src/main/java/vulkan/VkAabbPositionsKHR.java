@@ -2,59 +2,64 @@ package vulkan;
 
 public record VkAabbPositionsKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$minX = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$minX = 0L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$minY = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$minY = 4L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$minZ = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$minZ = 8L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$maxX = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$maxX = 12L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$maxY = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$maxY = 16L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$maxZ = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$maxZ = 20L;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minX = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__minX = 0;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minY = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__minY = 4;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minZ = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__minZ = 8;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxX = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__maxX = 12;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxY = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__maxY = 16;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxZ = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__maxZ = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$minX,
-            LAYOUT$minY,
-            LAYOUT$minZ,
-            LAYOUT$maxX,
-            LAYOUT$maxY,
-            LAYOUT$maxZ
-    ).withName("VkAabbPositionsKHR");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__minX,
+            LAYOUT__minY,
+            LAYOUT__minZ,
+            LAYOUT__maxX,
+            LAYOUT__maxY,
+            LAYOUT__maxZ
+    ).withByteAlignment(4).withName("VkAabbPositionsKHR");
 
     public VkAabbPositionsKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkAabbPositionsKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkAabbPositionsKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkAabbPositionsKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkAabbPositionsKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public float minX() {return this.ptr.get(LAYOUT$minX, OFFSET$minX);}
-    public void minX(float value) {this.ptr.set(LAYOUT$minX, OFFSET$minX, value);}
-    public java.lang.foreign.MemorySegment minX_ptr() {return this.ptr.asSlice(OFFSET$minX, LAYOUT$minX);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkAabbPositionsKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public float minY() {return this.ptr.get(LAYOUT$minY, OFFSET$minY);}
-    public void minY(float value) {this.ptr.set(LAYOUT$minY, OFFSET$minY, value);}
-    public java.lang.foreign.MemorySegment minY_ptr() {return this.ptr.asSlice(OFFSET$minY, LAYOUT$minY);}
+    public float minX() {return this.ptr.get(LAYOUT__minX, OFFSET__minX);}
+    public void minX(float value) {this.ptr.set(LAYOUT__minX, OFFSET__minX, value);}
+    public java.lang.foreign.MemorySegment $minX() {return this.ptr.asSlice(OFFSET__minX, LAYOUT__minX);}
 
-    public float minZ() {return this.ptr.get(LAYOUT$minZ, OFFSET$minZ);}
-    public void minZ(float value) {this.ptr.set(LAYOUT$minZ, OFFSET$minZ, value);}
-    public java.lang.foreign.MemorySegment minZ_ptr() {return this.ptr.asSlice(OFFSET$minZ, LAYOUT$minZ);}
+    public float minY() {return this.ptr.get(LAYOUT__minY, OFFSET__minY);}
+    public void minY(float value) {this.ptr.set(LAYOUT__minY, OFFSET__minY, value);}
+    public java.lang.foreign.MemorySegment $minY() {return this.ptr.asSlice(OFFSET__minY, LAYOUT__minY);}
 
-    public float maxX() {return this.ptr.get(LAYOUT$maxX, OFFSET$maxX);}
-    public void maxX(float value) {this.ptr.set(LAYOUT$maxX, OFFSET$maxX, value);}
-    public java.lang.foreign.MemorySegment maxX_ptr() {return this.ptr.asSlice(OFFSET$maxX, LAYOUT$maxX);}
+    public float minZ() {return this.ptr.get(LAYOUT__minZ, OFFSET__minZ);}
+    public void minZ(float value) {this.ptr.set(LAYOUT__minZ, OFFSET__minZ, value);}
+    public java.lang.foreign.MemorySegment $minZ() {return this.ptr.asSlice(OFFSET__minZ, LAYOUT__minZ);}
 
-    public float maxY() {return this.ptr.get(LAYOUT$maxY, OFFSET$maxY);}
-    public void maxY(float value) {this.ptr.set(LAYOUT$maxY, OFFSET$maxY, value);}
-    public java.lang.foreign.MemorySegment maxY_ptr() {return this.ptr.asSlice(OFFSET$maxY, LAYOUT$maxY);}
+    public float maxX() {return this.ptr.get(LAYOUT__maxX, OFFSET__maxX);}
+    public void maxX(float value) {this.ptr.set(LAYOUT__maxX, OFFSET__maxX, value);}
+    public java.lang.foreign.MemorySegment $maxX() {return this.ptr.asSlice(OFFSET__maxX, LAYOUT__maxX);}
 
-    public float maxZ() {return this.ptr.get(LAYOUT$maxZ, OFFSET$maxZ);}
-    public void maxZ(float value) {this.ptr.set(LAYOUT$maxZ, OFFSET$maxZ, value);}
-    public java.lang.foreign.MemorySegment maxZ_ptr() {return this.ptr.asSlice(OFFSET$maxZ, LAYOUT$maxZ);}
+    public float maxY() {return this.ptr.get(LAYOUT__maxY, OFFSET__maxY);}
+    public void maxY(float value) {this.ptr.set(LAYOUT__maxY, OFFSET__maxY, value);}
+    public java.lang.foreign.MemorySegment $maxY() {return this.ptr.asSlice(OFFSET__maxY, LAYOUT__maxY);}
+
+    public float maxZ() {return this.ptr.get(LAYOUT__maxZ, OFFSET__maxZ);}
+    public void maxZ(float value) {this.ptr.set(LAYOUT__maxZ, OFFSET__maxZ, value);}
+    public java.lang.foreign.MemorySegment $maxZ() {return this.ptr.asSlice(OFFSET__maxZ, LAYOUT__maxZ);}
 }

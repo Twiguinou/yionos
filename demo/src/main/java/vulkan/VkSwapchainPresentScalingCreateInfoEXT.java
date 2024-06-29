@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkSwapchainPresentScalingCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$scalingBehavior = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$scalingBehavior = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$presentGravityX = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$presentGravityX = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$presentGravityY = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$presentGravityY = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scalingBehavior = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__scalingBehavior = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__presentGravityX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__presentGravityX = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__presentGravityY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__presentGravityY = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$scalingBehavior,
-            LAYOUT$presentGravityX,
-            LAYOUT$presentGravityY,
+            LAYOUT__pNext,
+            LAYOUT__scalingBehavior,
+            LAYOUT__presentGravityX,
+            LAYOUT__presentGravityY,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkSwapchainPresentScalingCreateInfoEXT");
+    ).withByteAlignment(8).withName("VkSwapchainPresentScalingCreateInfoEXT");
 
     public VkSwapchainPresentScalingCreateInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSwapchainPresentScalingCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSwapchainPresentScalingCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSwapchainPresentScalingCreateInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSwapchainPresentScalingCreateInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSwapchainPresentScalingCreateInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int scalingBehavior() {return this.ptr.get(LAYOUT$scalingBehavior, OFFSET$scalingBehavior);}
-    public void scalingBehavior(int value) {this.ptr.set(LAYOUT$scalingBehavior, OFFSET$scalingBehavior, value);}
-    public java.lang.foreign.MemorySegment scalingBehavior_ptr() {return this.ptr.asSlice(OFFSET$scalingBehavior, LAYOUT$scalingBehavior);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int presentGravityX() {return this.ptr.get(LAYOUT$presentGravityX, OFFSET$presentGravityX);}
-    public void presentGravityX(int value) {this.ptr.set(LAYOUT$presentGravityX, OFFSET$presentGravityX, value);}
-    public java.lang.foreign.MemorySegment presentGravityX_ptr() {return this.ptr.asSlice(OFFSET$presentGravityX, LAYOUT$presentGravityX);}
+    public int scalingBehavior() {return this.ptr.get(LAYOUT__scalingBehavior, OFFSET__scalingBehavior);}
+    public void scalingBehavior(int value) {this.ptr.set(LAYOUT__scalingBehavior, OFFSET__scalingBehavior, value);}
+    public java.lang.foreign.MemorySegment $scalingBehavior() {return this.ptr.asSlice(OFFSET__scalingBehavior, LAYOUT__scalingBehavior);}
 
-    public int presentGravityY() {return this.ptr.get(LAYOUT$presentGravityY, OFFSET$presentGravityY);}
-    public void presentGravityY(int value) {this.ptr.set(LAYOUT$presentGravityY, OFFSET$presentGravityY, value);}
-    public java.lang.foreign.MemorySegment presentGravityY_ptr() {return this.ptr.asSlice(OFFSET$presentGravityY, LAYOUT$presentGravityY);}
+    public int presentGravityX() {return this.ptr.get(LAYOUT__presentGravityX, OFFSET__presentGravityX);}
+    public void presentGravityX(int value) {this.ptr.set(LAYOUT__presentGravityX, OFFSET__presentGravityX, value);}
+    public java.lang.foreign.MemorySegment $presentGravityX() {return this.ptr.asSlice(OFFSET__presentGravityX, LAYOUT__presentGravityX);}
+
+    public int presentGravityY() {return this.ptr.get(LAYOUT__presentGravityY, OFFSET__presentGravityY);}
+    public void presentGravityY(int value) {this.ptr.set(LAYOUT__presentGravityY, OFFSET__presentGravityY, value);}
+    public java.lang.foreign.MemorySegment $presentGravityY() {return this.ptr.asSlice(OFFSET__presentGravityY, LAYOUT__presentGravityY);}
 }

@@ -2,153 +2,158 @@ package vulkan;
 
 public record VkGraphicsPipelineCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stageCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stageCount = 20L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pStages = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pStages = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pVertexInputState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pVertexInputState = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pInputAssemblyState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pInputAssemblyState = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pTessellationState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pTessellationState = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pViewportState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pViewportState = 56L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRasterizationState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRasterizationState = 64L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pMultisampleState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pMultisampleState = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDepthStencilState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDepthStencilState = 80L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pColorBlendState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pColorBlendState = 88L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDynamicState = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDynamicState = 96L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$layout = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$layout = 104L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$renderPass = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$renderPass = 112L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$subpass = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$subpass = 120L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$basePipelineHandle = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$basePipelineHandle = 128L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$basePipelineIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$basePipelineIndex = 136L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stageCount = 20;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStages = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pStages = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexInputState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pVertexInputState = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pInputAssemblyState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pInputAssemblyState = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTessellationState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pTessellationState = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pViewportState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pViewportState = 56;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRasterizationState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRasterizationState = 64;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMultisampleState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pMultisampleState = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthStencilState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDepthStencilState = 80;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pColorBlendState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pColorBlendState = 88;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDynamicState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDynamicState = 96;
+    public static final java.lang.foreign.AddressLayout LAYOUT__layout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__layout = 104;
+    public static final java.lang.foreign.AddressLayout LAYOUT__renderPass = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__renderPass = 112;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__subpass = 120;
+    public static final java.lang.foreign.AddressLayout LAYOUT__basePipelineHandle = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__basePipelineHandle = 128;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__basePipelineIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__basePipelineIndex = 136;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$stageCount,
-            LAYOUT$pStages,
-            LAYOUT$pVertexInputState,
-            LAYOUT$pInputAssemblyState,
-            LAYOUT$pTessellationState,
-            LAYOUT$pViewportState,
-            LAYOUT$pRasterizationState,
-            LAYOUT$pMultisampleState,
-            LAYOUT$pDepthStencilState,
-            LAYOUT$pColorBlendState,
-            LAYOUT$pDynamicState,
-            LAYOUT$layout,
-            LAYOUT$renderPass,
-            LAYOUT$subpass,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__stageCount,
+            LAYOUT__pStages,
+            LAYOUT__pVertexInputState,
+            LAYOUT__pInputAssemblyState,
+            LAYOUT__pTessellationState,
+            LAYOUT__pViewportState,
+            LAYOUT__pRasterizationState,
+            LAYOUT__pMultisampleState,
+            LAYOUT__pDepthStencilState,
+            LAYOUT__pColorBlendState,
+            LAYOUT__pDynamicState,
+            LAYOUT__layout,
+            LAYOUT__renderPass,
+            LAYOUT__subpass,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$basePipelineHandle,
-            LAYOUT$basePipelineIndex,
+            LAYOUT__basePipelineHandle,
+            LAYOUT__basePipelineIndex,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkGraphicsPipelineCreateInfo");
+    ).withByteAlignment(8).withName("VkGraphicsPipelineCreateInfo");
 
     public VkGraphicsPipelineCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkGraphicsPipelineCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkGraphicsPipelineCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkGraphicsPipelineCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkGraphicsPipelineCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkGraphicsPipelineCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int stageCount() {return this.ptr.get(LAYOUT$stageCount, OFFSET$stageCount);}
-    public void stageCount(int value) {this.ptr.set(LAYOUT$stageCount, OFFSET$stageCount, value);}
-    public java.lang.foreign.MemorySegment stageCount_ptr() {return this.ptr.asSlice(OFFSET$stageCount, LAYOUT$stageCount);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public java.lang.foreign.MemorySegment pStages() {return this.ptr.get(LAYOUT$pStages, OFFSET$pStages);}
-    public void pStages(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pStages, OFFSET$pStages, value);}
-    public java.lang.foreign.MemorySegment pStages_ptr() {return this.ptr.asSlice(OFFSET$pStages, LAYOUT$pStages);}
+    public int stageCount() {return this.ptr.get(LAYOUT__stageCount, OFFSET__stageCount);}
+    public void stageCount(int value) {this.ptr.set(LAYOUT__stageCount, OFFSET__stageCount, value);}
+    public java.lang.foreign.MemorySegment $stageCount() {return this.ptr.asSlice(OFFSET__stageCount, LAYOUT__stageCount);}
 
-    public java.lang.foreign.MemorySegment pVertexInputState() {return this.ptr.get(LAYOUT$pVertexInputState, OFFSET$pVertexInputState);}
-    public void pVertexInputState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pVertexInputState, OFFSET$pVertexInputState, value);}
-    public java.lang.foreign.MemorySegment pVertexInputState_ptr() {return this.ptr.asSlice(OFFSET$pVertexInputState, LAYOUT$pVertexInputState);}
+    public java.lang.foreign.MemorySegment pStages() {return this.ptr.get(LAYOUT__pStages, OFFSET__pStages);}
+    public void pStages(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pStages, OFFSET__pStages, value);}
+    public java.lang.foreign.MemorySegment $pStages() {return this.ptr.asSlice(OFFSET__pStages, LAYOUT__pStages);}
 
-    public java.lang.foreign.MemorySegment pInputAssemblyState() {return this.ptr.get(LAYOUT$pInputAssemblyState, OFFSET$pInputAssemblyState);}
-    public void pInputAssemblyState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pInputAssemblyState, OFFSET$pInputAssemblyState, value);}
-    public java.lang.foreign.MemorySegment pInputAssemblyState_ptr() {return this.ptr.asSlice(OFFSET$pInputAssemblyState, LAYOUT$pInputAssemblyState);}
+    public java.lang.foreign.MemorySegment pVertexInputState() {return this.ptr.get(LAYOUT__pVertexInputState, OFFSET__pVertexInputState);}
+    public void pVertexInputState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pVertexInputState, OFFSET__pVertexInputState, value);}
+    public java.lang.foreign.MemorySegment $pVertexInputState() {return this.ptr.asSlice(OFFSET__pVertexInputState, LAYOUT__pVertexInputState);}
 
-    public java.lang.foreign.MemorySegment pTessellationState() {return this.ptr.get(LAYOUT$pTessellationState, OFFSET$pTessellationState);}
-    public void pTessellationState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pTessellationState, OFFSET$pTessellationState, value);}
-    public java.lang.foreign.MemorySegment pTessellationState_ptr() {return this.ptr.asSlice(OFFSET$pTessellationState, LAYOUT$pTessellationState);}
+    public java.lang.foreign.MemorySegment pInputAssemblyState() {return this.ptr.get(LAYOUT__pInputAssemblyState, OFFSET__pInputAssemblyState);}
+    public void pInputAssemblyState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pInputAssemblyState, OFFSET__pInputAssemblyState, value);}
+    public java.lang.foreign.MemorySegment $pInputAssemblyState() {return this.ptr.asSlice(OFFSET__pInputAssemblyState, LAYOUT__pInputAssemblyState);}
 
-    public java.lang.foreign.MemorySegment pViewportState() {return this.ptr.get(LAYOUT$pViewportState, OFFSET$pViewportState);}
-    public void pViewportState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pViewportState, OFFSET$pViewportState, value);}
-    public java.lang.foreign.MemorySegment pViewportState_ptr() {return this.ptr.asSlice(OFFSET$pViewportState, LAYOUT$pViewportState);}
+    public java.lang.foreign.MemorySegment pTessellationState() {return this.ptr.get(LAYOUT__pTessellationState, OFFSET__pTessellationState);}
+    public void pTessellationState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pTessellationState, OFFSET__pTessellationState, value);}
+    public java.lang.foreign.MemorySegment $pTessellationState() {return this.ptr.asSlice(OFFSET__pTessellationState, LAYOUT__pTessellationState);}
 
-    public java.lang.foreign.MemorySegment pRasterizationState() {return this.ptr.get(LAYOUT$pRasterizationState, OFFSET$pRasterizationState);}
-    public void pRasterizationState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRasterizationState, OFFSET$pRasterizationState, value);}
-    public java.lang.foreign.MemorySegment pRasterizationState_ptr() {return this.ptr.asSlice(OFFSET$pRasterizationState, LAYOUT$pRasterizationState);}
+    public java.lang.foreign.MemorySegment pViewportState() {return this.ptr.get(LAYOUT__pViewportState, OFFSET__pViewportState);}
+    public void pViewportState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pViewportState, OFFSET__pViewportState, value);}
+    public java.lang.foreign.MemorySegment $pViewportState() {return this.ptr.asSlice(OFFSET__pViewportState, LAYOUT__pViewportState);}
 
-    public java.lang.foreign.MemorySegment pMultisampleState() {return this.ptr.get(LAYOUT$pMultisampleState, OFFSET$pMultisampleState);}
-    public void pMultisampleState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pMultisampleState, OFFSET$pMultisampleState, value);}
-    public java.lang.foreign.MemorySegment pMultisampleState_ptr() {return this.ptr.asSlice(OFFSET$pMultisampleState, LAYOUT$pMultisampleState);}
+    public java.lang.foreign.MemorySegment pRasterizationState() {return this.ptr.get(LAYOUT__pRasterizationState, OFFSET__pRasterizationState);}
+    public void pRasterizationState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRasterizationState, OFFSET__pRasterizationState, value);}
+    public java.lang.foreign.MemorySegment $pRasterizationState() {return this.ptr.asSlice(OFFSET__pRasterizationState, LAYOUT__pRasterizationState);}
 
-    public java.lang.foreign.MemorySegment pDepthStencilState() {return this.ptr.get(LAYOUT$pDepthStencilState, OFFSET$pDepthStencilState);}
-    public void pDepthStencilState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDepthStencilState, OFFSET$pDepthStencilState, value);}
-    public java.lang.foreign.MemorySegment pDepthStencilState_ptr() {return this.ptr.asSlice(OFFSET$pDepthStencilState, LAYOUT$pDepthStencilState);}
+    public java.lang.foreign.MemorySegment pMultisampleState() {return this.ptr.get(LAYOUT__pMultisampleState, OFFSET__pMultisampleState);}
+    public void pMultisampleState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pMultisampleState, OFFSET__pMultisampleState, value);}
+    public java.lang.foreign.MemorySegment $pMultisampleState() {return this.ptr.asSlice(OFFSET__pMultisampleState, LAYOUT__pMultisampleState);}
 
-    public java.lang.foreign.MemorySegment pColorBlendState() {return this.ptr.get(LAYOUT$pColorBlendState, OFFSET$pColorBlendState);}
-    public void pColorBlendState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pColorBlendState, OFFSET$pColorBlendState, value);}
-    public java.lang.foreign.MemorySegment pColorBlendState_ptr() {return this.ptr.asSlice(OFFSET$pColorBlendState, LAYOUT$pColorBlendState);}
+    public java.lang.foreign.MemorySegment pDepthStencilState() {return this.ptr.get(LAYOUT__pDepthStencilState, OFFSET__pDepthStencilState);}
+    public void pDepthStencilState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDepthStencilState, OFFSET__pDepthStencilState, value);}
+    public java.lang.foreign.MemorySegment $pDepthStencilState() {return this.ptr.asSlice(OFFSET__pDepthStencilState, LAYOUT__pDepthStencilState);}
 
-    public java.lang.foreign.MemorySegment pDynamicState() {return this.ptr.get(LAYOUT$pDynamicState, OFFSET$pDynamicState);}
-    public void pDynamicState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDynamicState, OFFSET$pDynamicState, value);}
-    public java.lang.foreign.MemorySegment pDynamicState_ptr() {return this.ptr.asSlice(OFFSET$pDynamicState, LAYOUT$pDynamicState);}
+    public java.lang.foreign.MemorySegment pColorBlendState() {return this.ptr.get(LAYOUT__pColorBlendState, OFFSET__pColorBlendState);}
+    public void pColorBlendState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pColorBlendState, OFFSET__pColorBlendState, value);}
+    public java.lang.foreign.MemorySegment $pColorBlendState() {return this.ptr.asSlice(OFFSET__pColorBlendState, LAYOUT__pColorBlendState);}
 
-    public java.lang.foreign.MemorySegment layout() {return this.ptr.get(LAYOUT$layout, OFFSET$layout);}
-    public void layout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$layout, OFFSET$layout, value);}
-    public java.lang.foreign.MemorySegment layout_ptr() {return this.ptr.asSlice(OFFSET$layout, LAYOUT$layout);}
+    public java.lang.foreign.MemorySegment pDynamicState() {return this.ptr.get(LAYOUT__pDynamicState, OFFSET__pDynamicState);}
+    public void pDynamicState(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDynamicState, OFFSET__pDynamicState, value);}
+    public java.lang.foreign.MemorySegment $pDynamicState() {return this.ptr.asSlice(OFFSET__pDynamicState, LAYOUT__pDynamicState);}
 
-    public java.lang.foreign.MemorySegment renderPass() {return this.ptr.get(LAYOUT$renderPass, OFFSET$renderPass);}
-    public void renderPass(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$renderPass, OFFSET$renderPass, value);}
-    public java.lang.foreign.MemorySegment renderPass_ptr() {return this.ptr.asSlice(OFFSET$renderPass, LAYOUT$renderPass);}
+    public java.lang.foreign.MemorySegment layout() {return this.ptr.get(LAYOUT__layout, OFFSET__layout);}
+    public void layout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__layout, OFFSET__layout, value);}
+    public java.lang.foreign.MemorySegment $layout() {return this.ptr.asSlice(OFFSET__layout, LAYOUT__layout);}
 
-    public int subpass() {return this.ptr.get(LAYOUT$subpass, OFFSET$subpass);}
-    public void subpass(int value) {this.ptr.set(LAYOUT$subpass, OFFSET$subpass, value);}
-    public java.lang.foreign.MemorySegment subpass_ptr() {return this.ptr.asSlice(OFFSET$subpass, LAYOUT$subpass);}
+    public java.lang.foreign.MemorySegment renderPass() {return this.ptr.get(LAYOUT__renderPass, OFFSET__renderPass);}
+    public void renderPass(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__renderPass, OFFSET__renderPass, value);}
+    public java.lang.foreign.MemorySegment $renderPass() {return this.ptr.asSlice(OFFSET__renderPass, LAYOUT__renderPass);}
 
-    public java.lang.foreign.MemorySegment basePipelineHandle() {return this.ptr.get(LAYOUT$basePipelineHandle, OFFSET$basePipelineHandle);}
-    public void basePipelineHandle(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$basePipelineHandle, OFFSET$basePipelineHandle, value);}
-    public java.lang.foreign.MemorySegment basePipelineHandle_ptr() {return this.ptr.asSlice(OFFSET$basePipelineHandle, LAYOUT$basePipelineHandle);}
+    public int subpass() {return this.ptr.get(LAYOUT__subpass, OFFSET__subpass);}
+    public void subpass(int value) {this.ptr.set(LAYOUT__subpass, OFFSET__subpass, value);}
+    public java.lang.foreign.MemorySegment $subpass() {return this.ptr.asSlice(OFFSET__subpass, LAYOUT__subpass);}
 
-    public int basePipelineIndex() {return this.ptr.get(LAYOUT$basePipelineIndex, OFFSET$basePipelineIndex);}
-    public void basePipelineIndex(int value) {this.ptr.set(LAYOUT$basePipelineIndex, OFFSET$basePipelineIndex, value);}
-    public java.lang.foreign.MemorySegment basePipelineIndex_ptr() {return this.ptr.asSlice(OFFSET$basePipelineIndex, LAYOUT$basePipelineIndex);}
+    public java.lang.foreign.MemorySegment basePipelineHandle() {return this.ptr.get(LAYOUT__basePipelineHandle, OFFSET__basePipelineHandle);}
+    public void basePipelineHandle(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__basePipelineHandle, OFFSET__basePipelineHandle, value);}
+    public java.lang.foreign.MemorySegment $basePipelineHandle() {return this.ptr.asSlice(OFFSET__basePipelineHandle, LAYOUT__basePipelineHandle);}
+
+    public int basePipelineIndex() {return this.ptr.get(LAYOUT__basePipelineIndex, OFFSET__basePipelineIndex);}
+    public void basePipelineIndex(int value) {this.ptr.set(LAYOUT__basePipelineIndex, OFFSET__basePipelineIndex, value);}
+    public java.lang.foreign.MemorySegment $basePipelineIndex() {return this.ptr.asSlice(OFFSET__basePipelineIndex, LAYOUT__basePipelineIndex);}
 }

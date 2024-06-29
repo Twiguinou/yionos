@@ -2,362 +2,367 @@ package vulkan;
 
 public record VkPhysicalDeviceVulkan12Features(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$samplerMirrorClampToEdge = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$samplerMirrorClampToEdge = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$drawIndirectCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$drawIndirectCount = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$storageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$storageBuffer8BitAccess = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$uniformAndStorageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$uniformAndStorageBuffer8BitAccess = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$storagePushConstant8 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$storagePushConstant8 = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderBufferInt64Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderBufferInt64Atomics = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSharedInt64Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSharedInt64Atomics = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderFloat16 = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderInt8 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderInt8 = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorIndexing = 52L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderInputAttachmentArrayDynamicIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderInputAttachmentArrayDynamicIndexing = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderUniformTexelBufferArrayDynamicIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderUniformTexelBufferArrayDynamicIndexing = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageTexelBufferArrayDynamicIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageTexelBufferArrayDynamicIndexing = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderUniformBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderUniformBufferArrayNonUniformIndexing = 68L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSampledImageArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSampledImageArrayNonUniformIndexing = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageBufferArrayNonUniformIndexing = 76L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageImageArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageImageArrayNonUniformIndexing = 80L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderInputAttachmentArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderInputAttachmentArrayNonUniformIndexing = 84L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderUniformTexelBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderUniformTexelBufferArrayNonUniformIndexing = 88L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageTexelBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageTexelBufferArrayNonUniformIndexing = 92L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingUniformBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingUniformBufferUpdateAfterBind = 96L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingSampledImageUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingSampledImageUpdateAfterBind = 100L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingStorageImageUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingStorageImageUpdateAfterBind = 104L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingStorageBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingStorageBufferUpdateAfterBind = 108L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingUniformTexelBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingUniformTexelBufferUpdateAfterBind = 112L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingStorageTexelBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingStorageTexelBufferUpdateAfterBind = 116L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingUpdateUnusedWhilePending = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingUpdateUnusedWhilePending = 120L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingPartiallyBound = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingPartiallyBound = 124L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingVariableDescriptorCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingVariableDescriptorCount = 128L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$runtimeDescriptorArray = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$runtimeDescriptorArray = 132L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$samplerFilterMinmax = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$samplerFilterMinmax = 136L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$scalarBlockLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$scalarBlockLayout = 140L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imagelessFramebuffer = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imagelessFramebuffer = 144L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$uniformBufferStandardLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$uniformBufferStandardLayout = 148L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSubgroupExtendedTypes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSubgroupExtendedTypes = 152L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$separateDepthStencilLayouts = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$separateDepthStencilLayouts = 156L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$hostQueryReset = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$hostQueryReset = 160L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$timelineSemaphore = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$timelineSemaphore = 164L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferDeviceAddress = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferDeviceAddress = 168L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferDeviceAddressCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferDeviceAddressCaptureReplay = 172L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$bufferDeviceAddressMultiDevice = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$bufferDeviceAddressMultiDevice = 176L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vulkanMemoryModel = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vulkanMemoryModel = 180L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vulkanMemoryModelDeviceScope = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vulkanMemoryModelDeviceScope = 184L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vulkanMemoryModelAvailabilityVisibilityChains = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vulkanMemoryModelAvailabilityVisibilityChains = 188L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderOutputViewportIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderOutputViewportIndex = 192L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderOutputLayer = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderOutputLayer = 196L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$subgroupBroadcastDynamicId = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$subgroupBroadcastDynamicId = 200L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samplerMirrorClampToEdge = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__samplerMirrorClampToEdge = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__drawIndirectCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__drawIndirectCount = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__storageBuffer8BitAccess = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformAndStorageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__uniformAndStorageBuffer8BitAccess = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storagePushConstant8 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__storagePushConstant8 = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferInt64Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderBufferInt64Atomics = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedInt64Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSharedInt64Atomics = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderFloat16 = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderInt8 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderInt8 = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorIndexing = 52;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderInputAttachmentArrayDynamicIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderInputAttachmentArrayDynamicIndexing = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderUniformTexelBufferArrayDynamicIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderUniformTexelBufferArrayDynamicIndexing = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageTexelBufferArrayDynamicIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageTexelBufferArrayDynamicIndexing = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderUniformBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderUniformBufferArrayNonUniformIndexing = 68;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSampledImageArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSampledImageArrayNonUniformIndexing = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageBufferArrayNonUniformIndexing = 76;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageImageArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageImageArrayNonUniformIndexing = 80;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderInputAttachmentArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderInputAttachmentArrayNonUniformIndexing = 84;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderUniformTexelBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderUniformTexelBufferArrayNonUniformIndexing = 88;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageTexelBufferArrayNonUniformIndexing = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageTexelBufferArrayNonUniformIndexing = 92;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingUniformBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingUniformBufferUpdateAfterBind = 96;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingSampledImageUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingSampledImageUpdateAfterBind = 100;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingStorageImageUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingStorageImageUpdateAfterBind = 104;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingStorageBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingStorageBufferUpdateAfterBind = 108;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingUniformTexelBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingUniformTexelBufferUpdateAfterBind = 112;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingStorageTexelBufferUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingStorageTexelBufferUpdateAfterBind = 116;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingUpdateUnusedWhilePending = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingUpdateUnusedWhilePending = 120;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingPartiallyBound = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingPartiallyBound = 124;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingVariableDescriptorCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingVariableDescriptorCount = 128;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__runtimeDescriptorArray = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__runtimeDescriptorArray = 132;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samplerFilterMinmax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__samplerFilterMinmax = 136;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scalarBlockLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__scalarBlockLayout = 140;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imagelessFramebuffer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imagelessFramebuffer = 144;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformBufferStandardLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__uniformBufferStandardLayout = 148;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSubgroupExtendedTypes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSubgroupExtendedTypes = 152;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__separateDepthStencilLayouts = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__separateDepthStencilLayouts = 156;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hostQueryReset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__hostQueryReset = 160;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__timelineSemaphore = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__timelineSemaphore = 164;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddress = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferDeviceAddress = 168;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferDeviceAddressCaptureReplay = 172;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressMultiDevice = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__bufferDeviceAddressMultiDevice = 176;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vulkanMemoryModel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vulkanMemoryModel = 180;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vulkanMemoryModelDeviceScope = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vulkanMemoryModelDeviceScope = 184;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vulkanMemoryModelAvailabilityVisibilityChains = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vulkanMemoryModelAvailabilityVisibilityChains = 188;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderOutputViewportIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderOutputViewportIndex = 192;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderOutputLayer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderOutputLayer = 196;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupBroadcastDynamicId = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__subgroupBroadcastDynamicId = 200;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$samplerMirrorClampToEdge,
-            LAYOUT$drawIndirectCount,
-            LAYOUT$storageBuffer8BitAccess,
-            LAYOUT$uniformAndStorageBuffer8BitAccess,
-            LAYOUT$storagePushConstant8,
-            LAYOUT$shaderBufferInt64Atomics,
-            LAYOUT$shaderSharedInt64Atomics,
-            LAYOUT$shaderFloat16,
-            LAYOUT$shaderInt8,
-            LAYOUT$descriptorIndexing,
-            LAYOUT$shaderInputAttachmentArrayDynamicIndexing,
-            LAYOUT$shaderUniformTexelBufferArrayDynamicIndexing,
-            LAYOUT$shaderStorageTexelBufferArrayDynamicIndexing,
-            LAYOUT$shaderUniformBufferArrayNonUniformIndexing,
-            LAYOUT$shaderSampledImageArrayNonUniformIndexing,
-            LAYOUT$shaderStorageBufferArrayNonUniformIndexing,
-            LAYOUT$shaderStorageImageArrayNonUniformIndexing,
-            LAYOUT$shaderInputAttachmentArrayNonUniformIndexing,
-            LAYOUT$shaderUniformTexelBufferArrayNonUniformIndexing,
-            LAYOUT$shaderStorageTexelBufferArrayNonUniformIndexing,
-            LAYOUT$descriptorBindingUniformBufferUpdateAfterBind,
-            LAYOUT$descriptorBindingSampledImageUpdateAfterBind,
-            LAYOUT$descriptorBindingStorageImageUpdateAfterBind,
-            LAYOUT$descriptorBindingStorageBufferUpdateAfterBind,
-            LAYOUT$descriptorBindingUniformTexelBufferUpdateAfterBind,
-            LAYOUT$descriptorBindingStorageTexelBufferUpdateAfterBind,
-            LAYOUT$descriptorBindingUpdateUnusedWhilePending,
-            LAYOUT$descriptorBindingPartiallyBound,
-            LAYOUT$descriptorBindingVariableDescriptorCount,
-            LAYOUT$runtimeDescriptorArray,
-            LAYOUT$samplerFilterMinmax,
-            LAYOUT$scalarBlockLayout,
-            LAYOUT$imagelessFramebuffer,
-            LAYOUT$uniformBufferStandardLayout,
-            LAYOUT$shaderSubgroupExtendedTypes,
-            LAYOUT$separateDepthStencilLayouts,
-            LAYOUT$hostQueryReset,
-            LAYOUT$timelineSemaphore,
-            LAYOUT$bufferDeviceAddress,
-            LAYOUT$bufferDeviceAddressCaptureReplay,
-            LAYOUT$bufferDeviceAddressMultiDevice,
-            LAYOUT$vulkanMemoryModel,
-            LAYOUT$vulkanMemoryModelDeviceScope,
-            LAYOUT$vulkanMemoryModelAvailabilityVisibilityChains,
-            LAYOUT$shaderOutputViewportIndex,
-            LAYOUT$shaderOutputLayer,
-            LAYOUT$subgroupBroadcastDynamicId,
+            LAYOUT__pNext,
+            LAYOUT__samplerMirrorClampToEdge,
+            LAYOUT__drawIndirectCount,
+            LAYOUT__storageBuffer8BitAccess,
+            LAYOUT__uniformAndStorageBuffer8BitAccess,
+            LAYOUT__storagePushConstant8,
+            LAYOUT__shaderBufferInt64Atomics,
+            LAYOUT__shaderSharedInt64Atomics,
+            LAYOUT__shaderFloat16,
+            LAYOUT__shaderInt8,
+            LAYOUT__descriptorIndexing,
+            LAYOUT__shaderInputAttachmentArrayDynamicIndexing,
+            LAYOUT__shaderUniformTexelBufferArrayDynamicIndexing,
+            LAYOUT__shaderStorageTexelBufferArrayDynamicIndexing,
+            LAYOUT__shaderUniformBufferArrayNonUniformIndexing,
+            LAYOUT__shaderSampledImageArrayNonUniformIndexing,
+            LAYOUT__shaderStorageBufferArrayNonUniformIndexing,
+            LAYOUT__shaderStorageImageArrayNonUniformIndexing,
+            LAYOUT__shaderInputAttachmentArrayNonUniformIndexing,
+            LAYOUT__shaderUniformTexelBufferArrayNonUniformIndexing,
+            LAYOUT__shaderStorageTexelBufferArrayNonUniformIndexing,
+            LAYOUT__descriptorBindingUniformBufferUpdateAfterBind,
+            LAYOUT__descriptorBindingSampledImageUpdateAfterBind,
+            LAYOUT__descriptorBindingStorageImageUpdateAfterBind,
+            LAYOUT__descriptorBindingStorageBufferUpdateAfterBind,
+            LAYOUT__descriptorBindingUniformTexelBufferUpdateAfterBind,
+            LAYOUT__descriptorBindingStorageTexelBufferUpdateAfterBind,
+            LAYOUT__descriptorBindingUpdateUnusedWhilePending,
+            LAYOUT__descriptorBindingPartiallyBound,
+            LAYOUT__descriptorBindingVariableDescriptorCount,
+            LAYOUT__runtimeDescriptorArray,
+            LAYOUT__samplerFilterMinmax,
+            LAYOUT__scalarBlockLayout,
+            LAYOUT__imagelessFramebuffer,
+            LAYOUT__uniformBufferStandardLayout,
+            LAYOUT__shaderSubgroupExtendedTypes,
+            LAYOUT__separateDepthStencilLayouts,
+            LAYOUT__hostQueryReset,
+            LAYOUT__timelineSemaphore,
+            LAYOUT__bufferDeviceAddress,
+            LAYOUT__bufferDeviceAddressCaptureReplay,
+            LAYOUT__bufferDeviceAddressMultiDevice,
+            LAYOUT__vulkanMemoryModel,
+            LAYOUT__vulkanMemoryModelDeviceScope,
+            LAYOUT__vulkanMemoryModelAvailabilityVisibilityChains,
+            LAYOUT__shaderOutputViewportIndex,
+            LAYOUT__shaderOutputLayer,
+            LAYOUT__subgroupBroadcastDynamicId,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceVulkan12Features");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceVulkan12Features");
 
     public VkPhysicalDeviceVulkan12Features(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceVulkan12Features getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceVulkan12Features getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceVulkan12Features(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceVulkan12Features(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceVulkan12Features value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int samplerMirrorClampToEdge() {return this.ptr.get(LAYOUT$samplerMirrorClampToEdge, OFFSET$samplerMirrorClampToEdge);}
-    public void samplerMirrorClampToEdge(int value) {this.ptr.set(LAYOUT$samplerMirrorClampToEdge, OFFSET$samplerMirrorClampToEdge, value);}
-    public java.lang.foreign.MemorySegment samplerMirrorClampToEdge_ptr() {return this.ptr.asSlice(OFFSET$samplerMirrorClampToEdge, LAYOUT$samplerMirrorClampToEdge);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int drawIndirectCount() {return this.ptr.get(LAYOUT$drawIndirectCount, OFFSET$drawIndirectCount);}
-    public void drawIndirectCount(int value) {this.ptr.set(LAYOUT$drawIndirectCount, OFFSET$drawIndirectCount, value);}
-    public java.lang.foreign.MemorySegment drawIndirectCount_ptr() {return this.ptr.asSlice(OFFSET$drawIndirectCount, LAYOUT$drawIndirectCount);}
+    public int samplerMirrorClampToEdge() {return this.ptr.get(LAYOUT__samplerMirrorClampToEdge, OFFSET__samplerMirrorClampToEdge);}
+    public void samplerMirrorClampToEdge(int value) {this.ptr.set(LAYOUT__samplerMirrorClampToEdge, OFFSET__samplerMirrorClampToEdge, value);}
+    public java.lang.foreign.MemorySegment $samplerMirrorClampToEdge() {return this.ptr.asSlice(OFFSET__samplerMirrorClampToEdge, LAYOUT__samplerMirrorClampToEdge);}
 
-    public int storageBuffer8BitAccess() {return this.ptr.get(LAYOUT$storageBuffer8BitAccess, OFFSET$storageBuffer8BitAccess);}
-    public void storageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT$storageBuffer8BitAccess, OFFSET$storageBuffer8BitAccess, value);}
-    public java.lang.foreign.MemorySegment storageBuffer8BitAccess_ptr() {return this.ptr.asSlice(OFFSET$storageBuffer8BitAccess, LAYOUT$storageBuffer8BitAccess);}
+    public int drawIndirectCount() {return this.ptr.get(LAYOUT__drawIndirectCount, OFFSET__drawIndirectCount);}
+    public void drawIndirectCount(int value) {this.ptr.set(LAYOUT__drawIndirectCount, OFFSET__drawIndirectCount, value);}
+    public java.lang.foreign.MemorySegment $drawIndirectCount() {return this.ptr.asSlice(OFFSET__drawIndirectCount, LAYOUT__drawIndirectCount);}
 
-    public int uniformAndStorageBuffer8BitAccess() {return this.ptr.get(LAYOUT$uniformAndStorageBuffer8BitAccess, OFFSET$uniformAndStorageBuffer8BitAccess);}
-    public void uniformAndStorageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT$uniformAndStorageBuffer8BitAccess, OFFSET$uniformAndStorageBuffer8BitAccess, value);}
-    public java.lang.foreign.MemorySegment uniformAndStorageBuffer8BitAccess_ptr() {return this.ptr.asSlice(OFFSET$uniformAndStorageBuffer8BitAccess, LAYOUT$uniformAndStorageBuffer8BitAccess);}
+    public int storageBuffer8BitAccess() {return this.ptr.get(LAYOUT__storageBuffer8BitAccess, OFFSET__storageBuffer8BitAccess);}
+    public void storageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT__storageBuffer8BitAccess, OFFSET__storageBuffer8BitAccess, value);}
+    public java.lang.foreign.MemorySegment $storageBuffer8BitAccess() {return this.ptr.asSlice(OFFSET__storageBuffer8BitAccess, LAYOUT__storageBuffer8BitAccess);}
 
-    public int storagePushConstant8() {return this.ptr.get(LAYOUT$storagePushConstant8, OFFSET$storagePushConstant8);}
-    public void storagePushConstant8(int value) {this.ptr.set(LAYOUT$storagePushConstant8, OFFSET$storagePushConstant8, value);}
-    public java.lang.foreign.MemorySegment storagePushConstant8_ptr() {return this.ptr.asSlice(OFFSET$storagePushConstant8, LAYOUT$storagePushConstant8);}
+    public int uniformAndStorageBuffer8BitAccess() {return this.ptr.get(LAYOUT__uniformAndStorageBuffer8BitAccess, OFFSET__uniformAndStorageBuffer8BitAccess);}
+    public void uniformAndStorageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT__uniformAndStorageBuffer8BitAccess, OFFSET__uniformAndStorageBuffer8BitAccess, value);}
+    public java.lang.foreign.MemorySegment $uniformAndStorageBuffer8BitAccess() {return this.ptr.asSlice(OFFSET__uniformAndStorageBuffer8BitAccess, LAYOUT__uniformAndStorageBuffer8BitAccess);}
 
-    public int shaderBufferInt64Atomics() {return this.ptr.get(LAYOUT$shaderBufferInt64Atomics, OFFSET$shaderBufferInt64Atomics);}
-    public void shaderBufferInt64Atomics(int value) {this.ptr.set(LAYOUT$shaderBufferInt64Atomics, OFFSET$shaderBufferInt64Atomics, value);}
-    public java.lang.foreign.MemorySegment shaderBufferInt64Atomics_ptr() {return this.ptr.asSlice(OFFSET$shaderBufferInt64Atomics, LAYOUT$shaderBufferInt64Atomics);}
+    public int storagePushConstant8() {return this.ptr.get(LAYOUT__storagePushConstant8, OFFSET__storagePushConstant8);}
+    public void storagePushConstant8(int value) {this.ptr.set(LAYOUT__storagePushConstant8, OFFSET__storagePushConstant8, value);}
+    public java.lang.foreign.MemorySegment $storagePushConstant8() {return this.ptr.asSlice(OFFSET__storagePushConstant8, LAYOUT__storagePushConstant8);}
 
-    public int shaderSharedInt64Atomics() {return this.ptr.get(LAYOUT$shaderSharedInt64Atomics, OFFSET$shaderSharedInt64Atomics);}
-    public void shaderSharedInt64Atomics(int value) {this.ptr.set(LAYOUT$shaderSharedInt64Atomics, OFFSET$shaderSharedInt64Atomics, value);}
-    public java.lang.foreign.MemorySegment shaderSharedInt64Atomics_ptr() {return this.ptr.asSlice(OFFSET$shaderSharedInt64Atomics, LAYOUT$shaderSharedInt64Atomics);}
+    public int shaderBufferInt64Atomics() {return this.ptr.get(LAYOUT__shaderBufferInt64Atomics, OFFSET__shaderBufferInt64Atomics);}
+    public void shaderBufferInt64Atomics(int value) {this.ptr.set(LAYOUT__shaderBufferInt64Atomics, OFFSET__shaderBufferInt64Atomics, value);}
+    public java.lang.foreign.MemorySegment $shaderBufferInt64Atomics() {return this.ptr.asSlice(OFFSET__shaderBufferInt64Atomics, LAYOUT__shaderBufferInt64Atomics);}
 
-    public int shaderFloat16() {return this.ptr.get(LAYOUT$shaderFloat16, OFFSET$shaderFloat16);}
-    public void shaderFloat16(int value) {this.ptr.set(LAYOUT$shaderFloat16, OFFSET$shaderFloat16, value);}
-    public java.lang.foreign.MemorySegment shaderFloat16_ptr() {return this.ptr.asSlice(OFFSET$shaderFloat16, LAYOUT$shaderFloat16);}
+    public int shaderSharedInt64Atomics() {return this.ptr.get(LAYOUT__shaderSharedInt64Atomics, OFFSET__shaderSharedInt64Atomics);}
+    public void shaderSharedInt64Atomics(int value) {this.ptr.set(LAYOUT__shaderSharedInt64Atomics, OFFSET__shaderSharedInt64Atomics, value);}
+    public java.lang.foreign.MemorySegment $shaderSharedInt64Atomics() {return this.ptr.asSlice(OFFSET__shaderSharedInt64Atomics, LAYOUT__shaderSharedInt64Atomics);}
 
-    public int shaderInt8() {return this.ptr.get(LAYOUT$shaderInt8, OFFSET$shaderInt8);}
-    public void shaderInt8(int value) {this.ptr.set(LAYOUT$shaderInt8, OFFSET$shaderInt8, value);}
-    public java.lang.foreign.MemorySegment shaderInt8_ptr() {return this.ptr.asSlice(OFFSET$shaderInt8, LAYOUT$shaderInt8);}
+    public int shaderFloat16() {return this.ptr.get(LAYOUT__shaderFloat16, OFFSET__shaderFloat16);}
+    public void shaderFloat16(int value) {this.ptr.set(LAYOUT__shaderFloat16, OFFSET__shaderFloat16, value);}
+    public java.lang.foreign.MemorySegment $shaderFloat16() {return this.ptr.asSlice(OFFSET__shaderFloat16, LAYOUT__shaderFloat16);}
 
-    public int descriptorIndexing() {return this.ptr.get(LAYOUT$descriptorIndexing, OFFSET$descriptorIndexing);}
-    public void descriptorIndexing(int value) {this.ptr.set(LAYOUT$descriptorIndexing, OFFSET$descriptorIndexing, value);}
-    public java.lang.foreign.MemorySegment descriptorIndexing_ptr() {return this.ptr.asSlice(OFFSET$descriptorIndexing, LAYOUT$descriptorIndexing);}
+    public int shaderInt8() {return this.ptr.get(LAYOUT__shaderInt8, OFFSET__shaderInt8);}
+    public void shaderInt8(int value) {this.ptr.set(LAYOUT__shaderInt8, OFFSET__shaderInt8, value);}
+    public java.lang.foreign.MemorySegment $shaderInt8() {return this.ptr.asSlice(OFFSET__shaderInt8, LAYOUT__shaderInt8);}
 
-    public int shaderInputAttachmentArrayDynamicIndexing() {return this.ptr.get(LAYOUT$shaderInputAttachmentArrayDynamicIndexing, OFFSET$shaderInputAttachmentArrayDynamicIndexing);}
-    public void shaderInputAttachmentArrayDynamicIndexing(int value) {this.ptr.set(LAYOUT$shaderInputAttachmentArrayDynamicIndexing, OFFSET$shaderInputAttachmentArrayDynamicIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderInputAttachmentArrayDynamicIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderInputAttachmentArrayDynamicIndexing, LAYOUT$shaderInputAttachmentArrayDynamicIndexing);}
+    public int descriptorIndexing() {return this.ptr.get(LAYOUT__descriptorIndexing, OFFSET__descriptorIndexing);}
+    public void descriptorIndexing(int value) {this.ptr.set(LAYOUT__descriptorIndexing, OFFSET__descriptorIndexing, value);}
+    public java.lang.foreign.MemorySegment $descriptorIndexing() {return this.ptr.asSlice(OFFSET__descriptorIndexing, LAYOUT__descriptorIndexing);}
 
-    public int shaderUniformTexelBufferArrayDynamicIndexing() {return this.ptr.get(LAYOUT$shaderUniformTexelBufferArrayDynamicIndexing, OFFSET$shaderUniformTexelBufferArrayDynamicIndexing);}
-    public void shaderUniformTexelBufferArrayDynamicIndexing(int value) {this.ptr.set(LAYOUT$shaderUniformTexelBufferArrayDynamicIndexing, OFFSET$shaderUniformTexelBufferArrayDynamicIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderUniformTexelBufferArrayDynamicIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderUniformTexelBufferArrayDynamicIndexing, LAYOUT$shaderUniformTexelBufferArrayDynamicIndexing);}
+    public int shaderInputAttachmentArrayDynamicIndexing() {return this.ptr.get(LAYOUT__shaderInputAttachmentArrayDynamicIndexing, OFFSET__shaderInputAttachmentArrayDynamicIndexing);}
+    public void shaderInputAttachmentArrayDynamicIndexing(int value) {this.ptr.set(LAYOUT__shaderInputAttachmentArrayDynamicIndexing, OFFSET__shaderInputAttachmentArrayDynamicIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderInputAttachmentArrayDynamicIndexing() {return this.ptr.asSlice(OFFSET__shaderInputAttachmentArrayDynamicIndexing, LAYOUT__shaderInputAttachmentArrayDynamicIndexing);}
 
-    public int shaderStorageTexelBufferArrayDynamicIndexing() {return this.ptr.get(LAYOUT$shaderStorageTexelBufferArrayDynamicIndexing, OFFSET$shaderStorageTexelBufferArrayDynamicIndexing);}
-    public void shaderStorageTexelBufferArrayDynamicIndexing(int value) {this.ptr.set(LAYOUT$shaderStorageTexelBufferArrayDynamicIndexing, OFFSET$shaderStorageTexelBufferArrayDynamicIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderStorageTexelBufferArrayDynamicIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageTexelBufferArrayDynamicIndexing, LAYOUT$shaderStorageTexelBufferArrayDynamicIndexing);}
+    public int shaderUniformTexelBufferArrayDynamicIndexing() {return this.ptr.get(LAYOUT__shaderUniformTexelBufferArrayDynamicIndexing, OFFSET__shaderUniformTexelBufferArrayDynamicIndexing);}
+    public void shaderUniformTexelBufferArrayDynamicIndexing(int value) {this.ptr.set(LAYOUT__shaderUniformTexelBufferArrayDynamicIndexing, OFFSET__shaderUniformTexelBufferArrayDynamicIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderUniformTexelBufferArrayDynamicIndexing() {return this.ptr.asSlice(OFFSET__shaderUniformTexelBufferArrayDynamicIndexing, LAYOUT__shaderUniformTexelBufferArrayDynamicIndexing);}
 
-    public int shaderUniformBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderUniformBufferArrayNonUniformIndexing, OFFSET$shaderUniformBufferArrayNonUniformIndexing);}
-    public void shaderUniformBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderUniformBufferArrayNonUniformIndexing, OFFSET$shaderUniformBufferArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderUniformBufferArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderUniformBufferArrayNonUniformIndexing, LAYOUT$shaderUniformBufferArrayNonUniformIndexing);}
+    public int shaderStorageTexelBufferArrayDynamicIndexing() {return this.ptr.get(LAYOUT__shaderStorageTexelBufferArrayDynamicIndexing, OFFSET__shaderStorageTexelBufferArrayDynamicIndexing);}
+    public void shaderStorageTexelBufferArrayDynamicIndexing(int value) {this.ptr.set(LAYOUT__shaderStorageTexelBufferArrayDynamicIndexing, OFFSET__shaderStorageTexelBufferArrayDynamicIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageTexelBufferArrayDynamicIndexing() {return this.ptr.asSlice(OFFSET__shaderStorageTexelBufferArrayDynamicIndexing, LAYOUT__shaderStorageTexelBufferArrayDynamicIndexing);}
 
-    public int shaderSampledImageArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderSampledImageArrayNonUniformIndexing, OFFSET$shaderSampledImageArrayNonUniformIndexing);}
-    public void shaderSampledImageArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderSampledImageArrayNonUniformIndexing, OFFSET$shaderSampledImageArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderSampledImageArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderSampledImageArrayNonUniformIndexing, LAYOUT$shaderSampledImageArrayNonUniformIndexing);}
+    public int shaderUniformBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderUniformBufferArrayNonUniformIndexing, OFFSET__shaderUniformBufferArrayNonUniformIndexing);}
+    public void shaderUniformBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderUniformBufferArrayNonUniformIndexing, OFFSET__shaderUniformBufferArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderUniformBufferArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderUniformBufferArrayNonUniformIndexing, LAYOUT__shaderUniformBufferArrayNonUniformIndexing);}
 
-    public int shaderStorageBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderStorageBufferArrayNonUniformIndexing, OFFSET$shaderStorageBufferArrayNonUniformIndexing);}
-    public void shaderStorageBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderStorageBufferArrayNonUniformIndexing, OFFSET$shaderStorageBufferArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderStorageBufferArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageBufferArrayNonUniformIndexing, LAYOUT$shaderStorageBufferArrayNonUniformIndexing);}
+    public int shaderSampledImageArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderSampledImageArrayNonUniformIndexing, OFFSET__shaderSampledImageArrayNonUniformIndexing);}
+    public void shaderSampledImageArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderSampledImageArrayNonUniformIndexing, OFFSET__shaderSampledImageArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderSampledImageArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderSampledImageArrayNonUniformIndexing, LAYOUT__shaderSampledImageArrayNonUniformIndexing);}
 
-    public int shaderStorageImageArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderStorageImageArrayNonUniformIndexing, OFFSET$shaderStorageImageArrayNonUniformIndexing);}
-    public void shaderStorageImageArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderStorageImageArrayNonUniformIndexing, OFFSET$shaderStorageImageArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderStorageImageArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageImageArrayNonUniformIndexing, LAYOUT$shaderStorageImageArrayNonUniformIndexing);}
+    public int shaderStorageBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderStorageBufferArrayNonUniformIndexing, OFFSET__shaderStorageBufferArrayNonUniformIndexing);}
+    public void shaderStorageBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderStorageBufferArrayNonUniformIndexing, OFFSET__shaderStorageBufferArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageBufferArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderStorageBufferArrayNonUniformIndexing, LAYOUT__shaderStorageBufferArrayNonUniformIndexing);}
 
-    public int shaderInputAttachmentArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderInputAttachmentArrayNonUniformIndexing, OFFSET$shaderInputAttachmentArrayNonUniformIndexing);}
-    public void shaderInputAttachmentArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderInputAttachmentArrayNonUniformIndexing, OFFSET$shaderInputAttachmentArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderInputAttachmentArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderInputAttachmentArrayNonUniformIndexing, LAYOUT$shaderInputAttachmentArrayNonUniformIndexing);}
+    public int shaderStorageImageArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderStorageImageArrayNonUniformIndexing, OFFSET__shaderStorageImageArrayNonUniformIndexing);}
+    public void shaderStorageImageArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderStorageImageArrayNonUniformIndexing, OFFSET__shaderStorageImageArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageImageArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderStorageImageArrayNonUniformIndexing, LAYOUT__shaderStorageImageArrayNonUniformIndexing);}
 
-    public int shaderUniformTexelBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderUniformTexelBufferArrayNonUniformIndexing, OFFSET$shaderUniformTexelBufferArrayNonUniformIndexing);}
-    public void shaderUniformTexelBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderUniformTexelBufferArrayNonUniformIndexing, OFFSET$shaderUniformTexelBufferArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderUniformTexelBufferArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderUniformTexelBufferArrayNonUniformIndexing, LAYOUT$shaderUniformTexelBufferArrayNonUniformIndexing);}
+    public int shaderInputAttachmentArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderInputAttachmentArrayNonUniformIndexing, OFFSET__shaderInputAttachmentArrayNonUniformIndexing);}
+    public void shaderInputAttachmentArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderInputAttachmentArrayNonUniformIndexing, OFFSET__shaderInputAttachmentArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderInputAttachmentArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderInputAttachmentArrayNonUniformIndexing, LAYOUT__shaderInputAttachmentArrayNonUniformIndexing);}
 
-    public int shaderStorageTexelBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT$shaderStorageTexelBufferArrayNonUniformIndexing, OFFSET$shaderStorageTexelBufferArrayNonUniformIndexing);}
-    public void shaderStorageTexelBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT$shaderStorageTexelBufferArrayNonUniformIndexing, OFFSET$shaderStorageTexelBufferArrayNonUniformIndexing, value);}
-    public java.lang.foreign.MemorySegment shaderStorageTexelBufferArrayNonUniformIndexing_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageTexelBufferArrayNonUniformIndexing, LAYOUT$shaderStorageTexelBufferArrayNonUniformIndexing);}
+    public int shaderUniformTexelBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderUniformTexelBufferArrayNonUniformIndexing, OFFSET__shaderUniformTexelBufferArrayNonUniformIndexing);}
+    public void shaderUniformTexelBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderUniformTexelBufferArrayNonUniformIndexing, OFFSET__shaderUniformTexelBufferArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderUniformTexelBufferArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderUniformTexelBufferArrayNonUniformIndexing, LAYOUT__shaderUniformTexelBufferArrayNonUniformIndexing);}
 
-    public int descriptorBindingUniformBufferUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingUniformBufferUpdateAfterBind, OFFSET$descriptorBindingUniformBufferUpdateAfterBind);}
-    public void descriptorBindingUniformBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingUniformBufferUpdateAfterBind, OFFSET$descriptorBindingUniformBufferUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingUniformBufferUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingUniformBufferUpdateAfterBind, LAYOUT$descriptorBindingUniformBufferUpdateAfterBind);}
+    public int shaderStorageTexelBufferArrayNonUniformIndexing() {return this.ptr.get(LAYOUT__shaderStorageTexelBufferArrayNonUniformIndexing, OFFSET__shaderStorageTexelBufferArrayNonUniformIndexing);}
+    public void shaderStorageTexelBufferArrayNonUniformIndexing(int value) {this.ptr.set(LAYOUT__shaderStorageTexelBufferArrayNonUniformIndexing, OFFSET__shaderStorageTexelBufferArrayNonUniformIndexing, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageTexelBufferArrayNonUniformIndexing() {return this.ptr.asSlice(OFFSET__shaderStorageTexelBufferArrayNonUniformIndexing, LAYOUT__shaderStorageTexelBufferArrayNonUniformIndexing);}
 
-    public int descriptorBindingSampledImageUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingSampledImageUpdateAfterBind, OFFSET$descriptorBindingSampledImageUpdateAfterBind);}
-    public void descriptorBindingSampledImageUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingSampledImageUpdateAfterBind, OFFSET$descriptorBindingSampledImageUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingSampledImageUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingSampledImageUpdateAfterBind, LAYOUT$descriptorBindingSampledImageUpdateAfterBind);}
+    public int descriptorBindingUniformBufferUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingUniformBufferUpdateAfterBind, OFFSET__descriptorBindingUniformBufferUpdateAfterBind);}
+    public void descriptorBindingUniformBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingUniformBufferUpdateAfterBind, OFFSET__descriptorBindingUniformBufferUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingUniformBufferUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingUniformBufferUpdateAfterBind, LAYOUT__descriptorBindingUniformBufferUpdateAfterBind);}
 
-    public int descriptorBindingStorageImageUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingStorageImageUpdateAfterBind, OFFSET$descriptorBindingStorageImageUpdateAfterBind);}
-    public void descriptorBindingStorageImageUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingStorageImageUpdateAfterBind, OFFSET$descriptorBindingStorageImageUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingStorageImageUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingStorageImageUpdateAfterBind, LAYOUT$descriptorBindingStorageImageUpdateAfterBind);}
+    public int descriptorBindingSampledImageUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingSampledImageUpdateAfterBind, OFFSET__descriptorBindingSampledImageUpdateAfterBind);}
+    public void descriptorBindingSampledImageUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingSampledImageUpdateAfterBind, OFFSET__descriptorBindingSampledImageUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingSampledImageUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingSampledImageUpdateAfterBind, LAYOUT__descriptorBindingSampledImageUpdateAfterBind);}
 
-    public int descriptorBindingStorageBufferUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingStorageBufferUpdateAfterBind, OFFSET$descriptorBindingStorageBufferUpdateAfterBind);}
-    public void descriptorBindingStorageBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingStorageBufferUpdateAfterBind, OFFSET$descriptorBindingStorageBufferUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingStorageBufferUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingStorageBufferUpdateAfterBind, LAYOUT$descriptorBindingStorageBufferUpdateAfterBind);}
+    public int descriptorBindingStorageImageUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingStorageImageUpdateAfterBind, OFFSET__descriptorBindingStorageImageUpdateAfterBind);}
+    public void descriptorBindingStorageImageUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingStorageImageUpdateAfterBind, OFFSET__descriptorBindingStorageImageUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingStorageImageUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingStorageImageUpdateAfterBind, LAYOUT__descriptorBindingStorageImageUpdateAfterBind);}
 
-    public int descriptorBindingUniformTexelBufferUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingUniformTexelBufferUpdateAfterBind, OFFSET$descriptorBindingUniformTexelBufferUpdateAfterBind);}
-    public void descriptorBindingUniformTexelBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingUniformTexelBufferUpdateAfterBind, OFFSET$descriptorBindingUniformTexelBufferUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingUniformTexelBufferUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingUniformTexelBufferUpdateAfterBind, LAYOUT$descriptorBindingUniformTexelBufferUpdateAfterBind);}
+    public int descriptorBindingStorageBufferUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingStorageBufferUpdateAfterBind, OFFSET__descriptorBindingStorageBufferUpdateAfterBind);}
+    public void descriptorBindingStorageBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingStorageBufferUpdateAfterBind, OFFSET__descriptorBindingStorageBufferUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingStorageBufferUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingStorageBufferUpdateAfterBind, LAYOUT__descriptorBindingStorageBufferUpdateAfterBind);}
 
-    public int descriptorBindingStorageTexelBufferUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingStorageTexelBufferUpdateAfterBind, OFFSET$descriptorBindingStorageTexelBufferUpdateAfterBind);}
-    public void descriptorBindingStorageTexelBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingStorageTexelBufferUpdateAfterBind, OFFSET$descriptorBindingStorageTexelBufferUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingStorageTexelBufferUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingStorageTexelBufferUpdateAfterBind, LAYOUT$descriptorBindingStorageTexelBufferUpdateAfterBind);}
+    public int descriptorBindingUniformTexelBufferUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingUniformTexelBufferUpdateAfterBind, OFFSET__descriptorBindingUniformTexelBufferUpdateAfterBind);}
+    public void descriptorBindingUniformTexelBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingUniformTexelBufferUpdateAfterBind, OFFSET__descriptorBindingUniformTexelBufferUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingUniformTexelBufferUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingUniformTexelBufferUpdateAfterBind, LAYOUT__descriptorBindingUniformTexelBufferUpdateAfterBind);}
 
-    public int descriptorBindingUpdateUnusedWhilePending() {return this.ptr.get(LAYOUT$descriptorBindingUpdateUnusedWhilePending, OFFSET$descriptorBindingUpdateUnusedWhilePending);}
-    public void descriptorBindingUpdateUnusedWhilePending(int value) {this.ptr.set(LAYOUT$descriptorBindingUpdateUnusedWhilePending, OFFSET$descriptorBindingUpdateUnusedWhilePending, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingUpdateUnusedWhilePending_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingUpdateUnusedWhilePending, LAYOUT$descriptorBindingUpdateUnusedWhilePending);}
+    public int descriptorBindingStorageTexelBufferUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingStorageTexelBufferUpdateAfterBind, OFFSET__descriptorBindingStorageTexelBufferUpdateAfterBind);}
+    public void descriptorBindingStorageTexelBufferUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingStorageTexelBufferUpdateAfterBind, OFFSET__descriptorBindingStorageTexelBufferUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingStorageTexelBufferUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingStorageTexelBufferUpdateAfterBind, LAYOUT__descriptorBindingStorageTexelBufferUpdateAfterBind);}
 
-    public int descriptorBindingPartiallyBound() {return this.ptr.get(LAYOUT$descriptorBindingPartiallyBound, OFFSET$descriptorBindingPartiallyBound);}
-    public void descriptorBindingPartiallyBound(int value) {this.ptr.set(LAYOUT$descriptorBindingPartiallyBound, OFFSET$descriptorBindingPartiallyBound, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingPartiallyBound_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingPartiallyBound, LAYOUT$descriptorBindingPartiallyBound);}
+    public int descriptorBindingUpdateUnusedWhilePending() {return this.ptr.get(LAYOUT__descriptorBindingUpdateUnusedWhilePending, OFFSET__descriptorBindingUpdateUnusedWhilePending);}
+    public void descriptorBindingUpdateUnusedWhilePending(int value) {this.ptr.set(LAYOUT__descriptorBindingUpdateUnusedWhilePending, OFFSET__descriptorBindingUpdateUnusedWhilePending, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingUpdateUnusedWhilePending() {return this.ptr.asSlice(OFFSET__descriptorBindingUpdateUnusedWhilePending, LAYOUT__descriptorBindingUpdateUnusedWhilePending);}
 
-    public int descriptorBindingVariableDescriptorCount() {return this.ptr.get(LAYOUT$descriptorBindingVariableDescriptorCount, OFFSET$descriptorBindingVariableDescriptorCount);}
-    public void descriptorBindingVariableDescriptorCount(int value) {this.ptr.set(LAYOUT$descriptorBindingVariableDescriptorCount, OFFSET$descriptorBindingVariableDescriptorCount, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingVariableDescriptorCount_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingVariableDescriptorCount, LAYOUT$descriptorBindingVariableDescriptorCount);}
+    public int descriptorBindingPartiallyBound() {return this.ptr.get(LAYOUT__descriptorBindingPartiallyBound, OFFSET__descriptorBindingPartiallyBound);}
+    public void descriptorBindingPartiallyBound(int value) {this.ptr.set(LAYOUT__descriptorBindingPartiallyBound, OFFSET__descriptorBindingPartiallyBound, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingPartiallyBound() {return this.ptr.asSlice(OFFSET__descriptorBindingPartiallyBound, LAYOUT__descriptorBindingPartiallyBound);}
 
-    public int runtimeDescriptorArray() {return this.ptr.get(LAYOUT$runtimeDescriptorArray, OFFSET$runtimeDescriptorArray);}
-    public void runtimeDescriptorArray(int value) {this.ptr.set(LAYOUT$runtimeDescriptorArray, OFFSET$runtimeDescriptorArray, value);}
-    public java.lang.foreign.MemorySegment runtimeDescriptorArray_ptr() {return this.ptr.asSlice(OFFSET$runtimeDescriptorArray, LAYOUT$runtimeDescriptorArray);}
+    public int descriptorBindingVariableDescriptorCount() {return this.ptr.get(LAYOUT__descriptorBindingVariableDescriptorCount, OFFSET__descriptorBindingVariableDescriptorCount);}
+    public void descriptorBindingVariableDescriptorCount(int value) {this.ptr.set(LAYOUT__descriptorBindingVariableDescriptorCount, OFFSET__descriptorBindingVariableDescriptorCount, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingVariableDescriptorCount() {return this.ptr.asSlice(OFFSET__descriptorBindingVariableDescriptorCount, LAYOUT__descriptorBindingVariableDescriptorCount);}
 
-    public int samplerFilterMinmax() {return this.ptr.get(LAYOUT$samplerFilterMinmax, OFFSET$samplerFilterMinmax);}
-    public void samplerFilterMinmax(int value) {this.ptr.set(LAYOUT$samplerFilterMinmax, OFFSET$samplerFilterMinmax, value);}
-    public java.lang.foreign.MemorySegment samplerFilterMinmax_ptr() {return this.ptr.asSlice(OFFSET$samplerFilterMinmax, LAYOUT$samplerFilterMinmax);}
+    public int runtimeDescriptorArray() {return this.ptr.get(LAYOUT__runtimeDescriptorArray, OFFSET__runtimeDescriptorArray);}
+    public void runtimeDescriptorArray(int value) {this.ptr.set(LAYOUT__runtimeDescriptorArray, OFFSET__runtimeDescriptorArray, value);}
+    public java.lang.foreign.MemorySegment $runtimeDescriptorArray() {return this.ptr.asSlice(OFFSET__runtimeDescriptorArray, LAYOUT__runtimeDescriptorArray);}
 
-    public int scalarBlockLayout() {return this.ptr.get(LAYOUT$scalarBlockLayout, OFFSET$scalarBlockLayout);}
-    public void scalarBlockLayout(int value) {this.ptr.set(LAYOUT$scalarBlockLayout, OFFSET$scalarBlockLayout, value);}
-    public java.lang.foreign.MemorySegment scalarBlockLayout_ptr() {return this.ptr.asSlice(OFFSET$scalarBlockLayout, LAYOUT$scalarBlockLayout);}
+    public int samplerFilterMinmax() {return this.ptr.get(LAYOUT__samplerFilterMinmax, OFFSET__samplerFilterMinmax);}
+    public void samplerFilterMinmax(int value) {this.ptr.set(LAYOUT__samplerFilterMinmax, OFFSET__samplerFilterMinmax, value);}
+    public java.lang.foreign.MemorySegment $samplerFilterMinmax() {return this.ptr.asSlice(OFFSET__samplerFilterMinmax, LAYOUT__samplerFilterMinmax);}
 
-    public int imagelessFramebuffer() {return this.ptr.get(LAYOUT$imagelessFramebuffer, OFFSET$imagelessFramebuffer);}
-    public void imagelessFramebuffer(int value) {this.ptr.set(LAYOUT$imagelessFramebuffer, OFFSET$imagelessFramebuffer, value);}
-    public java.lang.foreign.MemorySegment imagelessFramebuffer_ptr() {return this.ptr.asSlice(OFFSET$imagelessFramebuffer, LAYOUT$imagelessFramebuffer);}
+    public int scalarBlockLayout() {return this.ptr.get(LAYOUT__scalarBlockLayout, OFFSET__scalarBlockLayout);}
+    public void scalarBlockLayout(int value) {this.ptr.set(LAYOUT__scalarBlockLayout, OFFSET__scalarBlockLayout, value);}
+    public java.lang.foreign.MemorySegment $scalarBlockLayout() {return this.ptr.asSlice(OFFSET__scalarBlockLayout, LAYOUT__scalarBlockLayout);}
 
-    public int uniformBufferStandardLayout() {return this.ptr.get(LAYOUT$uniformBufferStandardLayout, OFFSET$uniformBufferStandardLayout);}
-    public void uniformBufferStandardLayout(int value) {this.ptr.set(LAYOUT$uniformBufferStandardLayout, OFFSET$uniformBufferStandardLayout, value);}
-    public java.lang.foreign.MemorySegment uniformBufferStandardLayout_ptr() {return this.ptr.asSlice(OFFSET$uniformBufferStandardLayout, LAYOUT$uniformBufferStandardLayout);}
+    public int imagelessFramebuffer() {return this.ptr.get(LAYOUT__imagelessFramebuffer, OFFSET__imagelessFramebuffer);}
+    public void imagelessFramebuffer(int value) {this.ptr.set(LAYOUT__imagelessFramebuffer, OFFSET__imagelessFramebuffer, value);}
+    public java.lang.foreign.MemorySegment $imagelessFramebuffer() {return this.ptr.asSlice(OFFSET__imagelessFramebuffer, LAYOUT__imagelessFramebuffer);}
 
-    public int shaderSubgroupExtendedTypes() {return this.ptr.get(LAYOUT$shaderSubgroupExtendedTypes, OFFSET$shaderSubgroupExtendedTypes);}
-    public void shaderSubgroupExtendedTypes(int value) {this.ptr.set(LAYOUT$shaderSubgroupExtendedTypes, OFFSET$shaderSubgroupExtendedTypes, value);}
-    public java.lang.foreign.MemorySegment shaderSubgroupExtendedTypes_ptr() {return this.ptr.asSlice(OFFSET$shaderSubgroupExtendedTypes, LAYOUT$shaderSubgroupExtendedTypes);}
+    public int uniformBufferStandardLayout() {return this.ptr.get(LAYOUT__uniformBufferStandardLayout, OFFSET__uniformBufferStandardLayout);}
+    public void uniformBufferStandardLayout(int value) {this.ptr.set(LAYOUT__uniformBufferStandardLayout, OFFSET__uniformBufferStandardLayout, value);}
+    public java.lang.foreign.MemorySegment $uniformBufferStandardLayout() {return this.ptr.asSlice(OFFSET__uniformBufferStandardLayout, LAYOUT__uniformBufferStandardLayout);}
 
-    public int separateDepthStencilLayouts() {return this.ptr.get(LAYOUT$separateDepthStencilLayouts, OFFSET$separateDepthStencilLayouts);}
-    public void separateDepthStencilLayouts(int value) {this.ptr.set(LAYOUT$separateDepthStencilLayouts, OFFSET$separateDepthStencilLayouts, value);}
-    public java.lang.foreign.MemorySegment separateDepthStencilLayouts_ptr() {return this.ptr.asSlice(OFFSET$separateDepthStencilLayouts, LAYOUT$separateDepthStencilLayouts);}
+    public int shaderSubgroupExtendedTypes() {return this.ptr.get(LAYOUT__shaderSubgroupExtendedTypes, OFFSET__shaderSubgroupExtendedTypes);}
+    public void shaderSubgroupExtendedTypes(int value) {this.ptr.set(LAYOUT__shaderSubgroupExtendedTypes, OFFSET__shaderSubgroupExtendedTypes, value);}
+    public java.lang.foreign.MemorySegment $shaderSubgroupExtendedTypes() {return this.ptr.asSlice(OFFSET__shaderSubgroupExtendedTypes, LAYOUT__shaderSubgroupExtendedTypes);}
 
-    public int hostQueryReset() {return this.ptr.get(LAYOUT$hostQueryReset, OFFSET$hostQueryReset);}
-    public void hostQueryReset(int value) {this.ptr.set(LAYOUT$hostQueryReset, OFFSET$hostQueryReset, value);}
-    public java.lang.foreign.MemorySegment hostQueryReset_ptr() {return this.ptr.asSlice(OFFSET$hostQueryReset, LAYOUT$hostQueryReset);}
+    public int separateDepthStencilLayouts() {return this.ptr.get(LAYOUT__separateDepthStencilLayouts, OFFSET__separateDepthStencilLayouts);}
+    public void separateDepthStencilLayouts(int value) {this.ptr.set(LAYOUT__separateDepthStencilLayouts, OFFSET__separateDepthStencilLayouts, value);}
+    public java.lang.foreign.MemorySegment $separateDepthStencilLayouts() {return this.ptr.asSlice(OFFSET__separateDepthStencilLayouts, LAYOUT__separateDepthStencilLayouts);}
 
-    public int timelineSemaphore() {return this.ptr.get(LAYOUT$timelineSemaphore, OFFSET$timelineSemaphore);}
-    public void timelineSemaphore(int value) {this.ptr.set(LAYOUT$timelineSemaphore, OFFSET$timelineSemaphore, value);}
-    public java.lang.foreign.MemorySegment timelineSemaphore_ptr() {return this.ptr.asSlice(OFFSET$timelineSemaphore, LAYOUT$timelineSemaphore);}
+    public int hostQueryReset() {return this.ptr.get(LAYOUT__hostQueryReset, OFFSET__hostQueryReset);}
+    public void hostQueryReset(int value) {this.ptr.set(LAYOUT__hostQueryReset, OFFSET__hostQueryReset, value);}
+    public java.lang.foreign.MemorySegment $hostQueryReset() {return this.ptr.asSlice(OFFSET__hostQueryReset, LAYOUT__hostQueryReset);}
 
-    public int bufferDeviceAddress() {return this.ptr.get(LAYOUT$bufferDeviceAddress, OFFSET$bufferDeviceAddress);}
-    public void bufferDeviceAddress(int value) {this.ptr.set(LAYOUT$bufferDeviceAddress, OFFSET$bufferDeviceAddress, value);}
-    public java.lang.foreign.MemorySegment bufferDeviceAddress_ptr() {return this.ptr.asSlice(OFFSET$bufferDeviceAddress, LAYOUT$bufferDeviceAddress);}
+    public int timelineSemaphore() {return this.ptr.get(LAYOUT__timelineSemaphore, OFFSET__timelineSemaphore);}
+    public void timelineSemaphore(int value) {this.ptr.set(LAYOUT__timelineSemaphore, OFFSET__timelineSemaphore, value);}
+    public java.lang.foreign.MemorySegment $timelineSemaphore() {return this.ptr.asSlice(OFFSET__timelineSemaphore, LAYOUT__timelineSemaphore);}
 
-    public int bufferDeviceAddressCaptureReplay() {return this.ptr.get(LAYOUT$bufferDeviceAddressCaptureReplay, OFFSET$bufferDeviceAddressCaptureReplay);}
-    public void bufferDeviceAddressCaptureReplay(int value) {this.ptr.set(LAYOUT$bufferDeviceAddressCaptureReplay, OFFSET$bufferDeviceAddressCaptureReplay, value);}
-    public java.lang.foreign.MemorySegment bufferDeviceAddressCaptureReplay_ptr() {return this.ptr.asSlice(OFFSET$bufferDeviceAddressCaptureReplay, LAYOUT$bufferDeviceAddressCaptureReplay);}
+    public int bufferDeviceAddress() {return this.ptr.get(LAYOUT__bufferDeviceAddress, OFFSET__bufferDeviceAddress);}
+    public void bufferDeviceAddress(int value) {this.ptr.set(LAYOUT__bufferDeviceAddress, OFFSET__bufferDeviceAddress, value);}
+    public java.lang.foreign.MemorySegment $bufferDeviceAddress() {return this.ptr.asSlice(OFFSET__bufferDeviceAddress, LAYOUT__bufferDeviceAddress);}
 
-    public int bufferDeviceAddressMultiDevice() {return this.ptr.get(LAYOUT$bufferDeviceAddressMultiDevice, OFFSET$bufferDeviceAddressMultiDevice);}
-    public void bufferDeviceAddressMultiDevice(int value) {this.ptr.set(LAYOUT$bufferDeviceAddressMultiDevice, OFFSET$bufferDeviceAddressMultiDevice, value);}
-    public java.lang.foreign.MemorySegment bufferDeviceAddressMultiDevice_ptr() {return this.ptr.asSlice(OFFSET$bufferDeviceAddressMultiDevice, LAYOUT$bufferDeviceAddressMultiDevice);}
+    public int bufferDeviceAddressCaptureReplay() {return this.ptr.get(LAYOUT__bufferDeviceAddressCaptureReplay, OFFSET__bufferDeviceAddressCaptureReplay);}
+    public void bufferDeviceAddressCaptureReplay(int value) {this.ptr.set(LAYOUT__bufferDeviceAddressCaptureReplay, OFFSET__bufferDeviceAddressCaptureReplay, value);}
+    public java.lang.foreign.MemorySegment $bufferDeviceAddressCaptureReplay() {return this.ptr.asSlice(OFFSET__bufferDeviceAddressCaptureReplay, LAYOUT__bufferDeviceAddressCaptureReplay);}
 
-    public int vulkanMemoryModel() {return this.ptr.get(LAYOUT$vulkanMemoryModel, OFFSET$vulkanMemoryModel);}
-    public void vulkanMemoryModel(int value) {this.ptr.set(LAYOUT$vulkanMemoryModel, OFFSET$vulkanMemoryModel, value);}
-    public java.lang.foreign.MemorySegment vulkanMemoryModel_ptr() {return this.ptr.asSlice(OFFSET$vulkanMemoryModel, LAYOUT$vulkanMemoryModel);}
+    public int bufferDeviceAddressMultiDevice() {return this.ptr.get(LAYOUT__bufferDeviceAddressMultiDevice, OFFSET__bufferDeviceAddressMultiDevice);}
+    public void bufferDeviceAddressMultiDevice(int value) {this.ptr.set(LAYOUT__bufferDeviceAddressMultiDevice, OFFSET__bufferDeviceAddressMultiDevice, value);}
+    public java.lang.foreign.MemorySegment $bufferDeviceAddressMultiDevice() {return this.ptr.asSlice(OFFSET__bufferDeviceAddressMultiDevice, LAYOUT__bufferDeviceAddressMultiDevice);}
 
-    public int vulkanMemoryModelDeviceScope() {return this.ptr.get(LAYOUT$vulkanMemoryModelDeviceScope, OFFSET$vulkanMemoryModelDeviceScope);}
-    public void vulkanMemoryModelDeviceScope(int value) {this.ptr.set(LAYOUT$vulkanMemoryModelDeviceScope, OFFSET$vulkanMemoryModelDeviceScope, value);}
-    public java.lang.foreign.MemorySegment vulkanMemoryModelDeviceScope_ptr() {return this.ptr.asSlice(OFFSET$vulkanMemoryModelDeviceScope, LAYOUT$vulkanMemoryModelDeviceScope);}
+    public int vulkanMemoryModel() {return this.ptr.get(LAYOUT__vulkanMemoryModel, OFFSET__vulkanMemoryModel);}
+    public void vulkanMemoryModel(int value) {this.ptr.set(LAYOUT__vulkanMemoryModel, OFFSET__vulkanMemoryModel, value);}
+    public java.lang.foreign.MemorySegment $vulkanMemoryModel() {return this.ptr.asSlice(OFFSET__vulkanMemoryModel, LAYOUT__vulkanMemoryModel);}
 
-    public int vulkanMemoryModelAvailabilityVisibilityChains() {return this.ptr.get(LAYOUT$vulkanMemoryModelAvailabilityVisibilityChains, OFFSET$vulkanMemoryModelAvailabilityVisibilityChains);}
-    public void vulkanMemoryModelAvailabilityVisibilityChains(int value) {this.ptr.set(LAYOUT$vulkanMemoryModelAvailabilityVisibilityChains, OFFSET$vulkanMemoryModelAvailabilityVisibilityChains, value);}
-    public java.lang.foreign.MemorySegment vulkanMemoryModelAvailabilityVisibilityChains_ptr() {return this.ptr.asSlice(OFFSET$vulkanMemoryModelAvailabilityVisibilityChains, LAYOUT$vulkanMemoryModelAvailabilityVisibilityChains);}
+    public int vulkanMemoryModelDeviceScope() {return this.ptr.get(LAYOUT__vulkanMemoryModelDeviceScope, OFFSET__vulkanMemoryModelDeviceScope);}
+    public void vulkanMemoryModelDeviceScope(int value) {this.ptr.set(LAYOUT__vulkanMemoryModelDeviceScope, OFFSET__vulkanMemoryModelDeviceScope, value);}
+    public java.lang.foreign.MemorySegment $vulkanMemoryModelDeviceScope() {return this.ptr.asSlice(OFFSET__vulkanMemoryModelDeviceScope, LAYOUT__vulkanMemoryModelDeviceScope);}
 
-    public int shaderOutputViewportIndex() {return this.ptr.get(LAYOUT$shaderOutputViewportIndex, OFFSET$shaderOutputViewportIndex);}
-    public void shaderOutputViewportIndex(int value) {this.ptr.set(LAYOUT$shaderOutputViewportIndex, OFFSET$shaderOutputViewportIndex, value);}
-    public java.lang.foreign.MemorySegment shaderOutputViewportIndex_ptr() {return this.ptr.asSlice(OFFSET$shaderOutputViewportIndex, LAYOUT$shaderOutputViewportIndex);}
+    public int vulkanMemoryModelAvailabilityVisibilityChains() {return this.ptr.get(LAYOUT__vulkanMemoryModelAvailabilityVisibilityChains, OFFSET__vulkanMemoryModelAvailabilityVisibilityChains);}
+    public void vulkanMemoryModelAvailabilityVisibilityChains(int value) {this.ptr.set(LAYOUT__vulkanMemoryModelAvailabilityVisibilityChains, OFFSET__vulkanMemoryModelAvailabilityVisibilityChains, value);}
+    public java.lang.foreign.MemorySegment $vulkanMemoryModelAvailabilityVisibilityChains() {return this.ptr.asSlice(OFFSET__vulkanMemoryModelAvailabilityVisibilityChains, LAYOUT__vulkanMemoryModelAvailabilityVisibilityChains);}
 
-    public int shaderOutputLayer() {return this.ptr.get(LAYOUT$shaderOutputLayer, OFFSET$shaderOutputLayer);}
-    public void shaderOutputLayer(int value) {this.ptr.set(LAYOUT$shaderOutputLayer, OFFSET$shaderOutputLayer, value);}
-    public java.lang.foreign.MemorySegment shaderOutputLayer_ptr() {return this.ptr.asSlice(OFFSET$shaderOutputLayer, LAYOUT$shaderOutputLayer);}
+    public int shaderOutputViewportIndex() {return this.ptr.get(LAYOUT__shaderOutputViewportIndex, OFFSET__shaderOutputViewportIndex);}
+    public void shaderOutputViewportIndex(int value) {this.ptr.set(LAYOUT__shaderOutputViewportIndex, OFFSET__shaderOutputViewportIndex, value);}
+    public java.lang.foreign.MemorySegment $shaderOutputViewportIndex() {return this.ptr.asSlice(OFFSET__shaderOutputViewportIndex, LAYOUT__shaderOutputViewportIndex);}
 
-    public int subgroupBroadcastDynamicId() {return this.ptr.get(LAYOUT$subgroupBroadcastDynamicId, OFFSET$subgroupBroadcastDynamicId);}
-    public void subgroupBroadcastDynamicId(int value) {this.ptr.set(LAYOUT$subgroupBroadcastDynamicId, OFFSET$subgroupBroadcastDynamicId, value);}
-    public java.lang.foreign.MemorySegment subgroupBroadcastDynamicId_ptr() {return this.ptr.asSlice(OFFSET$subgroupBroadcastDynamicId, LAYOUT$subgroupBroadcastDynamicId);}
+    public int shaderOutputLayer() {return this.ptr.get(LAYOUT__shaderOutputLayer, OFFSET__shaderOutputLayer);}
+    public void shaderOutputLayer(int value) {this.ptr.set(LAYOUT__shaderOutputLayer, OFFSET__shaderOutputLayer, value);}
+    public java.lang.foreign.MemorySegment $shaderOutputLayer() {return this.ptr.asSlice(OFFSET__shaderOutputLayer, LAYOUT__shaderOutputLayer);}
+
+    public int subgroupBroadcastDynamicId() {return this.ptr.get(LAYOUT__subgroupBroadcastDynamicId, OFFSET__subgroupBroadcastDynamicId);}
+    public void subgroupBroadcastDynamicId(int value) {this.ptr.set(LAYOUT__subgroupBroadcastDynamicId, OFFSET__subgroupBroadcastDynamicId, value);}
+    public java.lang.foreign.MemorySegment $subgroupBroadcastDynamicId() {return this.ptr.asSlice(OFFSET__subgroupBroadcastDynamicId, LAYOUT__subgroupBroadcastDynamicId);}
 }

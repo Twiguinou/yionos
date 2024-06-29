@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkFilterCubicImageViewImageFormatPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$filterCubic = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$filterCubic = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$filterCubicMinmax = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$filterCubicMinmax = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filterCubic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__filterCubic = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filterCubicMinmax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__filterCubicMinmax = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$filterCubic,
-            LAYOUT$filterCubicMinmax
-    ).withName("VkFilterCubicImageViewImageFormatPropertiesEXT");
+            LAYOUT__pNext,
+            LAYOUT__filterCubic,
+            LAYOUT__filterCubicMinmax
+    ).withByteAlignment(8).withName("VkFilterCubicImageViewImageFormatPropertiesEXT");
 
     public VkFilterCubicImageViewImageFormatPropertiesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkFilterCubicImageViewImageFormatPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkFilterCubicImageViewImageFormatPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkFilterCubicImageViewImageFormatPropertiesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkFilterCubicImageViewImageFormatPropertiesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkFilterCubicImageViewImageFormatPropertiesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int filterCubic() {return this.ptr.get(LAYOUT$filterCubic, OFFSET$filterCubic);}
-    public void filterCubic(int value) {this.ptr.set(LAYOUT$filterCubic, OFFSET$filterCubic, value);}
-    public java.lang.foreign.MemorySegment filterCubic_ptr() {return this.ptr.asSlice(OFFSET$filterCubic, LAYOUT$filterCubic);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int filterCubicMinmax() {return this.ptr.get(LAYOUT$filterCubicMinmax, OFFSET$filterCubicMinmax);}
-    public void filterCubicMinmax(int value) {this.ptr.set(LAYOUT$filterCubicMinmax, OFFSET$filterCubicMinmax, value);}
-    public java.lang.foreign.MemorySegment filterCubicMinmax_ptr() {return this.ptr.asSlice(OFFSET$filterCubicMinmax, LAYOUT$filterCubicMinmax);}
+    public int filterCubic() {return this.ptr.get(LAYOUT__filterCubic, OFFSET__filterCubic);}
+    public void filterCubic(int value) {this.ptr.set(LAYOUT__filterCubic, OFFSET__filterCubic, value);}
+    public java.lang.foreign.MemorySegment $filterCubic() {return this.ptr.asSlice(OFFSET__filterCubic, LAYOUT__filterCubic);}
+
+    public int filterCubicMinmax() {return this.ptr.get(LAYOUT__filterCubicMinmax, OFFSET__filterCubicMinmax);}
+    public void filterCubicMinmax(int value) {this.ptr.set(LAYOUT__filterCubicMinmax, OFFSET__filterCubicMinmax, value);}
+    public java.lang.foreign.MemorySegment $filterCubicMinmax() {return this.ptr.asSlice(OFFSET__filterCubicMinmax, LAYOUT__filterCubicMinmax);}
 }

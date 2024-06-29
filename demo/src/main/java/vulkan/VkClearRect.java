@@ -2,38 +2,43 @@ package vulkan;
 
 public record VkClearRect(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$rect = vulkan.VkRect2D.gStructLayout;
-    public static final long OFFSET$rect = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$baseArrayLayer = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$layerCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$layerCount = 20L;
+    public static final java.lang.foreign.StructLayout LAYOUT__rect = vulkan.VkRect2D.gRecordLayout;
+    public static final long OFFSET__rect = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__baseArrayLayer = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__layerCount = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$rect,
-            LAYOUT$baseArrayLayer,
-            LAYOUT$layerCount
-    ).withName("VkClearRect");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__rect,
+            LAYOUT__baseArrayLayer,
+            LAYOUT__layerCount
+    ).withByteAlignment(4).withName("VkClearRect");
 
     public VkClearRect(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkClearRect getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkClearRect getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkClearRect(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkClearRect(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.VkRect2D rect() {return new vulkan.VkRect2D(this.ptr.asSlice(OFFSET$rect, LAYOUT$rect));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkClearRect value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public vulkan.VkRect2D rect() {return new vulkan.VkRect2D(this.ptr.asSlice(OFFSET__rect, LAYOUT__rect));}
     public void rect(java.util.function.Consumer<vulkan.VkRect2D> consumer) {consumer.accept(this.rect());}
-    public void rect(vulkan.VkRect2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$rect, LAYOUT$rect.byteSize());}
+    public void rect(vulkan.VkRect2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__rect, LAYOUT__rect.byteSize());}
 
-    public int baseArrayLayer() {return this.ptr.get(LAYOUT$baseArrayLayer, OFFSET$baseArrayLayer);}
-    public void baseArrayLayer(int value) {this.ptr.set(LAYOUT$baseArrayLayer, OFFSET$baseArrayLayer, value);}
-    public java.lang.foreign.MemorySegment baseArrayLayer_ptr() {return this.ptr.asSlice(OFFSET$baseArrayLayer, LAYOUT$baseArrayLayer);}
+    public int baseArrayLayer() {return this.ptr.get(LAYOUT__baseArrayLayer, OFFSET__baseArrayLayer);}
+    public void baseArrayLayer(int value) {this.ptr.set(LAYOUT__baseArrayLayer, OFFSET__baseArrayLayer, value);}
+    public java.lang.foreign.MemorySegment $baseArrayLayer() {return this.ptr.asSlice(OFFSET__baseArrayLayer, LAYOUT__baseArrayLayer);}
 
-    public int layerCount() {return this.ptr.get(LAYOUT$layerCount, OFFSET$layerCount);}
-    public void layerCount(int value) {this.ptr.set(LAYOUT$layerCount, OFFSET$layerCount, value);}
-    public java.lang.foreign.MemorySegment layerCount_ptr() {return this.ptr.asSlice(OFFSET$layerCount, LAYOUT$layerCount);}
+    public int layerCount() {return this.ptr.get(LAYOUT__layerCount, OFFSET__layerCount);}
+    public void layerCount(int value) {this.ptr.set(LAYOUT__layerCount, OFFSET__layerCount, value);}
+    public java.lang.foreign.MemorySegment $layerCount() {return this.ptr.asSlice(OFFSET__layerCount, LAYOUT__layerCount);}
 }

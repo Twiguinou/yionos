@@ -2,74 +2,79 @@ package vulkan;
 
 public record VkPhysicalDeviceDrmPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$hasPrimary = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$hasPrimary = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$hasRender = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$hasRender = 20L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$primaryMajor = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$primaryMajor = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$primaryMinor = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$primaryMinor = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$renderMajor = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$renderMajor = 40L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$renderMinor = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$renderMinor = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hasPrimary = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__hasPrimary = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hasRender = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__hasRender = 20;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__primaryMajor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__primaryMajor = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__primaryMinor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__primaryMinor = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderMajor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__renderMajor = 40;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderMinor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__renderMinor = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$hasPrimary,
-            LAYOUT$hasRender,
-            LAYOUT$primaryMajor,
-            LAYOUT$primaryMinor,
-            LAYOUT$renderMajor,
-            LAYOUT$renderMinor
-    ).withName("VkPhysicalDeviceDrmPropertiesEXT");
+            LAYOUT__pNext,
+            LAYOUT__hasPrimary,
+            LAYOUT__hasRender,
+            LAYOUT__primaryMajor,
+            LAYOUT__primaryMinor,
+            LAYOUT__renderMajor,
+            LAYOUT__renderMinor
+    ).withByteAlignment(8).withName("VkPhysicalDeviceDrmPropertiesEXT");
 
     public VkPhysicalDeviceDrmPropertiesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceDrmPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceDrmPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceDrmPropertiesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceDrmPropertiesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceDrmPropertiesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int hasPrimary() {return this.ptr.get(LAYOUT$hasPrimary, OFFSET$hasPrimary);}
-    public void hasPrimary(int value) {this.ptr.set(LAYOUT$hasPrimary, OFFSET$hasPrimary, value);}
-    public java.lang.foreign.MemorySegment hasPrimary_ptr() {return this.ptr.asSlice(OFFSET$hasPrimary, LAYOUT$hasPrimary);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int hasRender() {return this.ptr.get(LAYOUT$hasRender, OFFSET$hasRender);}
-    public void hasRender(int value) {this.ptr.set(LAYOUT$hasRender, OFFSET$hasRender, value);}
-    public java.lang.foreign.MemorySegment hasRender_ptr() {return this.ptr.asSlice(OFFSET$hasRender, LAYOUT$hasRender);}
+    public int hasPrimary() {return this.ptr.get(LAYOUT__hasPrimary, OFFSET__hasPrimary);}
+    public void hasPrimary(int value) {this.ptr.set(LAYOUT__hasPrimary, OFFSET__hasPrimary, value);}
+    public java.lang.foreign.MemorySegment $hasPrimary() {return this.ptr.asSlice(OFFSET__hasPrimary, LAYOUT__hasPrimary);}
 
-    public long primaryMajor() {return this.ptr.get(LAYOUT$primaryMajor, OFFSET$primaryMajor);}
-    public void primaryMajor(long value) {this.ptr.set(LAYOUT$primaryMajor, OFFSET$primaryMajor, value);}
-    public java.lang.foreign.MemorySegment primaryMajor_ptr() {return this.ptr.asSlice(OFFSET$primaryMajor, LAYOUT$primaryMajor);}
+    public int hasRender() {return this.ptr.get(LAYOUT__hasRender, OFFSET__hasRender);}
+    public void hasRender(int value) {this.ptr.set(LAYOUT__hasRender, OFFSET__hasRender, value);}
+    public java.lang.foreign.MemorySegment $hasRender() {return this.ptr.asSlice(OFFSET__hasRender, LAYOUT__hasRender);}
 
-    public long primaryMinor() {return this.ptr.get(LAYOUT$primaryMinor, OFFSET$primaryMinor);}
-    public void primaryMinor(long value) {this.ptr.set(LAYOUT$primaryMinor, OFFSET$primaryMinor, value);}
-    public java.lang.foreign.MemorySegment primaryMinor_ptr() {return this.ptr.asSlice(OFFSET$primaryMinor, LAYOUT$primaryMinor);}
+    public long primaryMajor() {return this.ptr.get(LAYOUT__primaryMajor, OFFSET__primaryMajor);}
+    public void primaryMajor(long value) {this.ptr.set(LAYOUT__primaryMajor, OFFSET__primaryMajor, value);}
+    public java.lang.foreign.MemorySegment $primaryMajor() {return this.ptr.asSlice(OFFSET__primaryMajor, LAYOUT__primaryMajor);}
 
-    public long renderMajor() {return this.ptr.get(LAYOUT$renderMajor, OFFSET$renderMajor);}
-    public void renderMajor(long value) {this.ptr.set(LAYOUT$renderMajor, OFFSET$renderMajor, value);}
-    public java.lang.foreign.MemorySegment renderMajor_ptr() {return this.ptr.asSlice(OFFSET$renderMajor, LAYOUT$renderMajor);}
+    public long primaryMinor() {return this.ptr.get(LAYOUT__primaryMinor, OFFSET__primaryMinor);}
+    public void primaryMinor(long value) {this.ptr.set(LAYOUT__primaryMinor, OFFSET__primaryMinor, value);}
+    public java.lang.foreign.MemorySegment $primaryMinor() {return this.ptr.asSlice(OFFSET__primaryMinor, LAYOUT__primaryMinor);}
 
-    public long renderMinor() {return this.ptr.get(LAYOUT$renderMinor, OFFSET$renderMinor);}
-    public void renderMinor(long value) {this.ptr.set(LAYOUT$renderMinor, OFFSET$renderMinor, value);}
-    public java.lang.foreign.MemorySegment renderMinor_ptr() {return this.ptr.asSlice(OFFSET$renderMinor, LAYOUT$renderMinor);}
+    public long renderMajor() {return this.ptr.get(LAYOUT__renderMajor, OFFSET__renderMajor);}
+    public void renderMajor(long value) {this.ptr.set(LAYOUT__renderMajor, OFFSET__renderMajor, value);}
+    public java.lang.foreign.MemorySegment $renderMajor() {return this.ptr.asSlice(OFFSET__renderMajor, LAYOUT__renderMajor);}
+
+    public long renderMinor() {return this.ptr.get(LAYOUT__renderMinor, OFFSET__renderMinor);}
+    public void renderMinor(long value) {this.ptr.set(LAYOUT__renderMinor, OFFSET__renderMinor, value);}
+    public java.lang.foreign.MemorySegment $renderMinor() {return this.ptr.asSlice(OFFSET__renderMinor, LAYOUT__renderMinor);}
 }

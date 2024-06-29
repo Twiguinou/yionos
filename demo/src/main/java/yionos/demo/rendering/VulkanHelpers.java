@@ -13,10 +13,10 @@ import java.io.InputStream;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
+import static java.lang.foreign.ValueLayout.*;
 
 public final class VulkanHelpers
 {private VulkanHelpers() {}
@@ -43,7 +43,7 @@ public final class VulkanHelpers
         try (Arena arena = Arena.ofConfined(); InputStream input = new FileInputStream(file))
         {
             byte[] bytes = input.readAllBytes();
-            MemorySegment data = arena.allocateArray(ValueLayout.JAVA_BYTE, bytes);
+            MemorySegment data = arena.allocateFrom(JAVA_BYTE, bytes);
             return new ShaderModule(device, stage, "main", data, new ShaderModule.CompilationTask(file.getName(), true));
         }
         catch (IOException e)
@@ -57,7 +57,7 @@ public final class VulkanHelpers
         try (Arena arena = Arena.ofConfined())
         {
             byte[] bytes = inputStream.readAllBytes();
-            MemorySegment data = arena.allocateArray(ValueLayout.JAVA_BYTE, bytes);
+            MemorySegment data = arena.allocateFrom(JAVA_BYTE, bytes);
             return new ShaderModule(device, stage, "main", data, new ShaderModule.CompilationTask(filename, true));
         }
         catch (IOException e)

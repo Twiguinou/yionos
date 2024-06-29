@@ -2,97 +2,102 @@ package vulkan;
 
 public record VkVideoCapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$minBitstreamBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$minBitstreamBufferOffsetAlignment = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$minBitstreamBufferSizeAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$minBitstreamBufferSizeAlignment = 32L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$pictureAccessGranularity = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$pictureAccessGranularity = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$minCodedExtent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$minCodedExtent = 48L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxCodedExtent = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$maxCodedExtent = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDpbSlots = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDpbSlots = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxActiveReferencePictures = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxActiveReferencePictures = 68L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$stdHeaderVersion = vulkan.VkExtensionProperties.gStructLayout;
-    public static final long OFFSET$stdHeaderVersion = 72L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBitstreamBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__minBitstreamBufferOffsetAlignment = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBitstreamBufferSizeAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__minBitstreamBufferSizeAlignment = 32;
+    public static final java.lang.foreign.StructLayout LAYOUT__pictureAccessGranularity = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__pictureAccessGranularity = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__minCodedExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__minCodedExtent = 48;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxCodedExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__maxCodedExtent = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDpbSlots = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDpbSlots = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxActiveReferencePictures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxActiveReferencePictures = 68;
+    public static final java.lang.foreign.StructLayout LAYOUT__stdHeaderVersion = vulkan.VkExtensionProperties.gRecordLayout;
+    public static final long OFFSET__stdHeaderVersion = 72;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
+            LAYOUT__pNext,
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$minBitstreamBufferOffsetAlignment,
-            LAYOUT$minBitstreamBufferSizeAlignment,
-            LAYOUT$pictureAccessGranularity,
-            LAYOUT$minCodedExtent,
-            LAYOUT$maxCodedExtent,
-            LAYOUT$maxDpbSlots,
-            LAYOUT$maxActiveReferencePictures,
-            LAYOUT$stdHeaderVersion,
+            LAYOUT__minBitstreamBufferOffsetAlignment,
+            LAYOUT__minBitstreamBufferSizeAlignment,
+            LAYOUT__pictureAccessGranularity,
+            LAYOUT__minCodedExtent,
+            LAYOUT__maxCodedExtent,
+            LAYOUT__maxDpbSlots,
+            LAYOUT__maxActiveReferencePictures,
+            LAYOUT__stdHeaderVersion,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkVideoCapabilitiesKHR");
+    ).withByteAlignment(8).withName("VkVideoCapabilitiesKHR");
 
     public VkVideoCapabilitiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoCapabilitiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoCapabilitiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoCapabilitiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoCapabilitiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoCapabilitiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long minBitstreamBufferOffsetAlignment() {return this.ptr.get(LAYOUT$minBitstreamBufferOffsetAlignment, OFFSET$minBitstreamBufferOffsetAlignment);}
-    public void minBitstreamBufferOffsetAlignment(long value) {this.ptr.set(LAYOUT$minBitstreamBufferOffsetAlignment, OFFSET$minBitstreamBufferOffsetAlignment, value);}
-    public java.lang.foreign.MemorySegment minBitstreamBufferOffsetAlignment_ptr() {return this.ptr.asSlice(OFFSET$minBitstreamBufferOffsetAlignment, LAYOUT$minBitstreamBufferOffsetAlignment);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public long minBitstreamBufferSizeAlignment() {return this.ptr.get(LAYOUT$minBitstreamBufferSizeAlignment, OFFSET$minBitstreamBufferSizeAlignment);}
-    public void minBitstreamBufferSizeAlignment(long value) {this.ptr.set(LAYOUT$minBitstreamBufferSizeAlignment, OFFSET$minBitstreamBufferSizeAlignment, value);}
-    public java.lang.foreign.MemorySegment minBitstreamBufferSizeAlignment_ptr() {return this.ptr.asSlice(OFFSET$minBitstreamBufferSizeAlignment, LAYOUT$minBitstreamBufferSizeAlignment);}
+    public long minBitstreamBufferOffsetAlignment() {return this.ptr.get(LAYOUT__minBitstreamBufferOffsetAlignment, OFFSET__minBitstreamBufferOffsetAlignment);}
+    public void minBitstreamBufferOffsetAlignment(long value) {this.ptr.set(LAYOUT__minBitstreamBufferOffsetAlignment, OFFSET__minBitstreamBufferOffsetAlignment, value);}
+    public java.lang.foreign.MemorySegment $minBitstreamBufferOffsetAlignment() {return this.ptr.asSlice(OFFSET__minBitstreamBufferOffsetAlignment, LAYOUT__minBitstreamBufferOffsetAlignment);}
 
-    public vulkan.VkExtent2D pictureAccessGranularity() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$pictureAccessGranularity, LAYOUT$pictureAccessGranularity));}
+    public long minBitstreamBufferSizeAlignment() {return this.ptr.get(LAYOUT__minBitstreamBufferSizeAlignment, OFFSET__minBitstreamBufferSizeAlignment);}
+    public void minBitstreamBufferSizeAlignment(long value) {this.ptr.set(LAYOUT__minBitstreamBufferSizeAlignment, OFFSET__minBitstreamBufferSizeAlignment, value);}
+    public java.lang.foreign.MemorySegment $minBitstreamBufferSizeAlignment() {return this.ptr.asSlice(OFFSET__minBitstreamBufferSizeAlignment, LAYOUT__minBitstreamBufferSizeAlignment);}
+
+    public vulkan.VkExtent2D pictureAccessGranularity() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__pictureAccessGranularity, LAYOUT__pictureAccessGranularity));}
     public void pictureAccessGranularity(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.pictureAccessGranularity());}
-    public void pictureAccessGranularity(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$pictureAccessGranularity, LAYOUT$pictureAccessGranularity.byteSize());}
+    public void pictureAccessGranularity(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__pictureAccessGranularity, LAYOUT__pictureAccessGranularity.byteSize());}
 
-    public vulkan.VkExtent2D minCodedExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$minCodedExtent, LAYOUT$minCodedExtent));}
+    public vulkan.VkExtent2D minCodedExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__minCodedExtent, LAYOUT__minCodedExtent));}
     public void minCodedExtent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.minCodedExtent());}
-    public void minCodedExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$minCodedExtent, LAYOUT$minCodedExtent.byteSize());}
+    public void minCodedExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__minCodedExtent, LAYOUT__minCodedExtent.byteSize());}
 
-    public vulkan.VkExtent2D maxCodedExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$maxCodedExtent, LAYOUT$maxCodedExtent));}
+    public vulkan.VkExtent2D maxCodedExtent() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__maxCodedExtent, LAYOUT__maxCodedExtent));}
     public void maxCodedExtent(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.maxCodedExtent());}
-    public void maxCodedExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxCodedExtent, LAYOUT$maxCodedExtent.byteSize());}
+    public void maxCodedExtent(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxCodedExtent, LAYOUT__maxCodedExtent.byteSize());}
 
-    public int maxDpbSlots() {return this.ptr.get(LAYOUT$maxDpbSlots, OFFSET$maxDpbSlots);}
-    public void maxDpbSlots(int value) {this.ptr.set(LAYOUT$maxDpbSlots, OFFSET$maxDpbSlots, value);}
-    public java.lang.foreign.MemorySegment maxDpbSlots_ptr() {return this.ptr.asSlice(OFFSET$maxDpbSlots, LAYOUT$maxDpbSlots);}
+    public int maxDpbSlots() {return this.ptr.get(LAYOUT__maxDpbSlots, OFFSET__maxDpbSlots);}
+    public void maxDpbSlots(int value) {this.ptr.set(LAYOUT__maxDpbSlots, OFFSET__maxDpbSlots, value);}
+    public java.lang.foreign.MemorySegment $maxDpbSlots() {return this.ptr.asSlice(OFFSET__maxDpbSlots, LAYOUT__maxDpbSlots);}
 
-    public int maxActiveReferencePictures() {return this.ptr.get(LAYOUT$maxActiveReferencePictures, OFFSET$maxActiveReferencePictures);}
-    public void maxActiveReferencePictures(int value) {this.ptr.set(LAYOUT$maxActiveReferencePictures, OFFSET$maxActiveReferencePictures, value);}
-    public java.lang.foreign.MemorySegment maxActiveReferencePictures_ptr() {return this.ptr.asSlice(OFFSET$maxActiveReferencePictures, LAYOUT$maxActiveReferencePictures);}
+    public int maxActiveReferencePictures() {return this.ptr.get(LAYOUT__maxActiveReferencePictures, OFFSET__maxActiveReferencePictures);}
+    public void maxActiveReferencePictures(int value) {this.ptr.set(LAYOUT__maxActiveReferencePictures, OFFSET__maxActiveReferencePictures, value);}
+    public java.lang.foreign.MemorySegment $maxActiveReferencePictures() {return this.ptr.asSlice(OFFSET__maxActiveReferencePictures, LAYOUT__maxActiveReferencePictures);}
 
-    public vulkan.VkExtensionProperties stdHeaderVersion() {return new vulkan.VkExtensionProperties(this.ptr.asSlice(OFFSET$stdHeaderVersion, LAYOUT$stdHeaderVersion));}
+    public vulkan.VkExtensionProperties stdHeaderVersion() {return new vulkan.VkExtensionProperties(this.ptr.asSlice(OFFSET__stdHeaderVersion, LAYOUT__stdHeaderVersion));}
     public void stdHeaderVersion(java.util.function.Consumer<vulkan.VkExtensionProperties> consumer) {consumer.accept(this.stdHeaderVersion());}
-    public void stdHeaderVersion(vulkan.VkExtensionProperties value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$stdHeaderVersion, LAYOUT$stdHeaderVersion.byteSize());}
+    public void stdHeaderVersion(vulkan.VkExtensionProperties value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__stdHeaderVersion, LAYOUT__stdHeaderVersion.byteSize());}
 }

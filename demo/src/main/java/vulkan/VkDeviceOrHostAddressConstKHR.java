@@ -2,31 +2,34 @@ package vulkan;
 
 public record VkDeviceOrHostAddressConstKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$deviceAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$deviceAddress = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$hostAddress = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$hostAddress = 0L;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__deviceAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.AddressLayout LAYOUT__hostAddress = jpgen.NativeTypes.UNBOUNDED_POINTER;
 
-    public static final java.lang.foreign.UnionLayout gStructLayout = java.lang.foreign.MemoryLayout.unionLayout(
-            LAYOUT$deviceAddress,
-            LAYOUT$hostAddress
-    ).withName("VkDeviceOrHostAddressConstKHR");
+    public static final java.lang.foreign.UnionLayout gRecordLayout = java.lang.foreign.MemoryLayout.unionLayout(
+            LAYOUT__deviceAddress,
+            LAYOUT__hostAddress
+    ).withByteAlignment(8).withName("VkDeviceOrHostAddressConstKHR");
 
     public VkDeviceOrHostAddressConstKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceOrHostAddressConstKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceOrHostAddressConstKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceOrHostAddressConstKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceOrHostAddressConstKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public long deviceAddress() {return this.ptr.get(LAYOUT$deviceAddress, OFFSET$deviceAddress);}
-    public void deviceAddress(long value) {this.ptr.set(LAYOUT$deviceAddress, OFFSET$deviceAddress, value);}
-    public java.lang.foreign.MemorySegment deviceAddress_ptr() {return this.ptr.asSlice(OFFSET$deviceAddress, LAYOUT$deviceAddress);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceOrHostAddressConstKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment hostAddress() {return this.ptr.get(LAYOUT$hostAddress, OFFSET$hostAddress);}
-    public void hostAddress(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$hostAddress, OFFSET$hostAddress, value);}
-    public java.lang.foreign.MemorySegment hostAddress_ptr() {return this.ptr.asSlice(OFFSET$hostAddress, LAYOUT$hostAddress);}
+    public long deviceAddress() {return this.ptr.get(LAYOUT__deviceAddress, 0);}
+    public void deviceAddress(long value) {this.ptr.set(LAYOUT__deviceAddress, 0, value);}
+    public java.lang.foreign.MemorySegment $deviceAddress() {return this.ptr.asSlice(0, LAYOUT__deviceAddress);}
+
+    public java.lang.foreign.MemorySegment hostAddress() {return this.ptr.get(LAYOUT__hostAddress, 0);}
+    public void hostAddress(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__hostAddress, 0, value);}
+    public java.lang.foreign.MemorySegment $hostAddress() {return this.ptr.asSlice(0, LAYOUT__hostAddress);}
 }

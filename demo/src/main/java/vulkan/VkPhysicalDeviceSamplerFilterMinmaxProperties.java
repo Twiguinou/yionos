@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceSamplerFilterMinmaxProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$filterMinmaxSingleComponentFormats = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$filterMinmaxSingleComponentFormats = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$filterMinmaxImageComponentMapping = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$filterMinmaxImageComponentMapping = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filterMinmaxSingleComponentFormats = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__filterMinmaxSingleComponentFormats = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filterMinmaxImageComponentMapping = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__filterMinmaxImageComponentMapping = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$filterMinmaxSingleComponentFormats,
-            LAYOUT$filterMinmaxImageComponentMapping
-    ).withName("VkPhysicalDeviceSamplerFilterMinmaxProperties");
+            LAYOUT__pNext,
+            LAYOUT__filterMinmaxSingleComponentFormats,
+            LAYOUT__filterMinmaxImageComponentMapping
+    ).withByteAlignment(8).withName("VkPhysicalDeviceSamplerFilterMinmaxProperties");
 
     public VkPhysicalDeviceSamplerFilterMinmaxProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceSamplerFilterMinmaxProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceSamplerFilterMinmaxProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceSamplerFilterMinmaxProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceSamplerFilterMinmaxProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceSamplerFilterMinmaxProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int filterMinmaxSingleComponentFormats() {return this.ptr.get(LAYOUT$filterMinmaxSingleComponentFormats, OFFSET$filterMinmaxSingleComponentFormats);}
-    public void filterMinmaxSingleComponentFormats(int value) {this.ptr.set(LAYOUT$filterMinmaxSingleComponentFormats, OFFSET$filterMinmaxSingleComponentFormats, value);}
-    public java.lang.foreign.MemorySegment filterMinmaxSingleComponentFormats_ptr() {return this.ptr.asSlice(OFFSET$filterMinmaxSingleComponentFormats, LAYOUT$filterMinmaxSingleComponentFormats);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int filterMinmaxImageComponentMapping() {return this.ptr.get(LAYOUT$filterMinmaxImageComponentMapping, OFFSET$filterMinmaxImageComponentMapping);}
-    public void filterMinmaxImageComponentMapping(int value) {this.ptr.set(LAYOUT$filterMinmaxImageComponentMapping, OFFSET$filterMinmaxImageComponentMapping, value);}
-    public java.lang.foreign.MemorySegment filterMinmaxImageComponentMapping_ptr() {return this.ptr.asSlice(OFFSET$filterMinmaxImageComponentMapping, LAYOUT$filterMinmaxImageComponentMapping);}
+    public int filterMinmaxSingleComponentFormats() {return this.ptr.get(LAYOUT__filterMinmaxSingleComponentFormats, OFFSET__filterMinmaxSingleComponentFormats);}
+    public void filterMinmaxSingleComponentFormats(int value) {this.ptr.set(LAYOUT__filterMinmaxSingleComponentFormats, OFFSET__filterMinmaxSingleComponentFormats, value);}
+    public java.lang.foreign.MemorySegment $filterMinmaxSingleComponentFormats() {return this.ptr.asSlice(OFFSET__filterMinmaxSingleComponentFormats, LAYOUT__filterMinmaxSingleComponentFormats);}
+
+    public int filterMinmaxImageComponentMapping() {return this.ptr.get(LAYOUT__filterMinmaxImageComponentMapping, OFFSET__filterMinmaxImageComponentMapping);}
+    public void filterMinmaxImageComponentMapping(int value) {this.ptr.set(LAYOUT__filterMinmaxImageComponentMapping, OFFSET__filterMinmaxImageComponentMapping, value);}
+    public java.lang.foreign.MemorySegment $filterMinmaxImageComponentMapping() {return this.ptr.asSlice(OFFSET__filterMinmaxImageComponentMapping, LAYOUT__filterMinmaxImageComponentMapping);}
 }

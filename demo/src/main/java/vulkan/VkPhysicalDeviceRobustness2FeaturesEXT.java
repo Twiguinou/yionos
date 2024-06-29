@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceRobustness2FeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$robustBufferAccess2 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$robustBufferAccess2 = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$robustImageAccess2 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$robustImageAccess2 = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$nullDescriptor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$nullDescriptor = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustBufferAccess2 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__robustBufferAccess2 = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustImageAccess2 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__robustImageAccess2 = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nullDescriptor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__nullDescriptor = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$robustBufferAccess2,
-            LAYOUT$robustImageAccess2,
-            LAYOUT$nullDescriptor,
+            LAYOUT__pNext,
+            LAYOUT__robustBufferAccess2,
+            LAYOUT__robustImageAccess2,
+            LAYOUT__nullDescriptor,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceRobustness2FeaturesEXT");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceRobustness2FeaturesEXT");
 
     public VkPhysicalDeviceRobustness2FeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceRobustness2FeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceRobustness2FeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceRobustness2FeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceRobustness2FeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceRobustness2FeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int robustBufferAccess2() {return this.ptr.get(LAYOUT$robustBufferAccess2, OFFSET$robustBufferAccess2);}
-    public void robustBufferAccess2(int value) {this.ptr.set(LAYOUT$robustBufferAccess2, OFFSET$robustBufferAccess2, value);}
-    public java.lang.foreign.MemorySegment robustBufferAccess2_ptr() {return this.ptr.asSlice(OFFSET$robustBufferAccess2, LAYOUT$robustBufferAccess2);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int robustImageAccess2() {return this.ptr.get(LAYOUT$robustImageAccess2, OFFSET$robustImageAccess2);}
-    public void robustImageAccess2(int value) {this.ptr.set(LAYOUT$robustImageAccess2, OFFSET$robustImageAccess2, value);}
-    public java.lang.foreign.MemorySegment robustImageAccess2_ptr() {return this.ptr.asSlice(OFFSET$robustImageAccess2, LAYOUT$robustImageAccess2);}
+    public int robustBufferAccess2() {return this.ptr.get(LAYOUT__robustBufferAccess2, OFFSET__robustBufferAccess2);}
+    public void robustBufferAccess2(int value) {this.ptr.set(LAYOUT__robustBufferAccess2, OFFSET__robustBufferAccess2, value);}
+    public java.lang.foreign.MemorySegment $robustBufferAccess2() {return this.ptr.asSlice(OFFSET__robustBufferAccess2, LAYOUT__robustBufferAccess2);}
 
-    public int nullDescriptor() {return this.ptr.get(LAYOUT$nullDescriptor, OFFSET$nullDescriptor);}
-    public void nullDescriptor(int value) {this.ptr.set(LAYOUT$nullDescriptor, OFFSET$nullDescriptor, value);}
-    public java.lang.foreign.MemorySegment nullDescriptor_ptr() {return this.ptr.asSlice(OFFSET$nullDescriptor, LAYOUT$nullDescriptor);}
+    public int robustImageAccess2() {return this.ptr.get(LAYOUT__robustImageAccess2, OFFSET__robustImageAccess2);}
+    public void robustImageAccess2(int value) {this.ptr.set(LAYOUT__robustImageAccess2, OFFSET__robustImageAccess2, value);}
+    public java.lang.foreign.MemorySegment $robustImageAccess2() {return this.ptr.asSlice(OFFSET__robustImageAccess2, LAYOUT__robustImageAccess2);}
+
+    public int nullDescriptor() {return this.ptr.get(LAYOUT__nullDescriptor, OFFSET__nullDescriptor);}
+    public void nullDescriptor(int value) {this.ptr.set(LAYOUT__nullDescriptor, OFFSET__nullDescriptor, value);}
+    public java.lang.foreign.MemorySegment $nullDescriptor() {return this.ptr.asSlice(OFFSET__nullDescriptor, LAYOUT__nullDescriptor);}
 }

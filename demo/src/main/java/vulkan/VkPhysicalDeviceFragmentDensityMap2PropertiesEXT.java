@@ -2,60 +2,65 @@ package vulkan;
 
 public record VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$subsampledLoads = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$subsampledLoads = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$subsampledCoarseReconstructionEarlyAccess = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$subsampledCoarseReconstructionEarlyAccess = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxSubsampledArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxSubsampledArrayLayers = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetSubsampledSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetSubsampledSamplers = 28L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subsampledLoads = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__subsampledLoads = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subsampledCoarseReconstructionEarlyAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__subsampledCoarseReconstructionEarlyAccess = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSubsampledArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxSubsampledArrayLayers = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetSubsampledSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetSubsampledSamplers = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$subsampledLoads,
-            LAYOUT$subsampledCoarseReconstructionEarlyAccess,
-            LAYOUT$maxSubsampledArrayLayers,
-            LAYOUT$maxDescriptorSetSubsampledSamplers
-    ).withName("VkPhysicalDeviceFragmentDensityMap2PropertiesEXT");
+            LAYOUT__pNext,
+            LAYOUT__subsampledLoads,
+            LAYOUT__subsampledCoarseReconstructionEarlyAccess,
+            LAYOUT__maxSubsampledArrayLayers,
+            LAYOUT__maxDescriptorSetSubsampledSamplers
+    ).withByteAlignment(8).withName("VkPhysicalDeviceFragmentDensityMap2PropertiesEXT");
 
     public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceFragmentDensityMap2PropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceFragmentDensityMap2PropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceFragmentDensityMap2PropertiesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int subsampledLoads() {return this.ptr.get(LAYOUT$subsampledLoads, OFFSET$subsampledLoads);}
-    public void subsampledLoads(int value) {this.ptr.set(LAYOUT$subsampledLoads, OFFSET$subsampledLoads, value);}
-    public java.lang.foreign.MemorySegment subsampledLoads_ptr() {return this.ptr.asSlice(OFFSET$subsampledLoads, LAYOUT$subsampledLoads);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int subsampledCoarseReconstructionEarlyAccess() {return this.ptr.get(LAYOUT$subsampledCoarseReconstructionEarlyAccess, OFFSET$subsampledCoarseReconstructionEarlyAccess);}
-    public void subsampledCoarseReconstructionEarlyAccess(int value) {this.ptr.set(LAYOUT$subsampledCoarseReconstructionEarlyAccess, OFFSET$subsampledCoarseReconstructionEarlyAccess, value);}
-    public java.lang.foreign.MemorySegment subsampledCoarseReconstructionEarlyAccess_ptr() {return this.ptr.asSlice(OFFSET$subsampledCoarseReconstructionEarlyAccess, LAYOUT$subsampledCoarseReconstructionEarlyAccess);}
+    public int subsampledLoads() {return this.ptr.get(LAYOUT__subsampledLoads, OFFSET__subsampledLoads);}
+    public void subsampledLoads(int value) {this.ptr.set(LAYOUT__subsampledLoads, OFFSET__subsampledLoads, value);}
+    public java.lang.foreign.MemorySegment $subsampledLoads() {return this.ptr.asSlice(OFFSET__subsampledLoads, LAYOUT__subsampledLoads);}
 
-    public int maxSubsampledArrayLayers() {return this.ptr.get(LAYOUT$maxSubsampledArrayLayers, OFFSET$maxSubsampledArrayLayers);}
-    public void maxSubsampledArrayLayers(int value) {this.ptr.set(LAYOUT$maxSubsampledArrayLayers, OFFSET$maxSubsampledArrayLayers, value);}
-    public java.lang.foreign.MemorySegment maxSubsampledArrayLayers_ptr() {return this.ptr.asSlice(OFFSET$maxSubsampledArrayLayers, LAYOUT$maxSubsampledArrayLayers);}
+    public int subsampledCoarseReconstructionEarlyAccess() {return this.ptr.get(LAYOUT__subsampledCoarseReconstructionEarlyAccess, OFFSET__subsampledCoarseReconstructionEarlyAccess);}
+    public void subsampledCoarseReconstructionEarlyAccess(int value) {this.ptr.set(LAYOUT__subsampledCoarseReconstructionEarlyAccess, OFFSET__subsampledCoarseReconstructionEarlyAccess, value);}
+    public java.lang.foreign.MemorySegment $subsampledCoarseReconstructionEarlyAccess() {return this.ptr.asSlice(OFFSET__subsampledCoarseReconstructionEarlyAccess, LAYOUT__subsampledCoarseReconstructionEarlyAccess);}
 
-    public int maxDescriptorSetSubsampledSamplers() {return this.ptr.get(LAYOUT$maxDescriptorSetSubsampledSamplers, OFFSET$maxDescriptorSetSubsampledSamplers);}
-    public void maxDescriptorSetSubsampledSamplers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetSubsampledSamplers, OFFSET$maxDescriptorSetSubsampledSamplers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetSubsampledSamplers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetSubsampledSamplers, LAYOUT$maxDescriptorSetSubsampledSamplers);}
+    public int maxSubsampledArrayLayers() {return this.ptr.get(LAYOUT__maxSubsampledArrayLayers, OFFSET__maxSubsampledArrayLayers);}
+    public void maxSubsampledArrayLayers(int value) {this.ptr.set(LAYOUT__maxSubsampledArrayLayers, OFFSET__maxSubsampledArrayLayers, value);}
+    public java.lang.foreign.MemorySegment $maxSubsampledArrayLayers() {return this.ptr.asSlice(OFFSET__maxSubsampledArrayLayers, LAYOUT__maxSubsampledArrayLayers);}
+
+    public int maxDescriptorSetSubsampledSamplers() {return this.ptr.get(LAYOUT__maxDescriptorSetSubsampledSamplers, OFFSET__maxDescriptorSetSubsampledSamplers);}
+    public void maxDescriptorSetSubsampledSamplers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetSubsampledSamplers, OFFSET__maxDescriptorSetSubsampledSamplers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetSubsampledSamplers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetSubsampledSamplers, LAYOUT__maxDescriptorSetSubsampledSamplers);}
 }

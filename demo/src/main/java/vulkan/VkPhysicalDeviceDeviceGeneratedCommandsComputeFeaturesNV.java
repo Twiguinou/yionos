@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceGeneratedCompute = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceGeneratedCompute = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceGeneratedComputePipelines = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceGeneratedComputePipelines = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceGeneratedComputeCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceGeneratedComputeCaptureReplay = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceGeneratedCompute = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceGeneratedCompute = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceGeneratedComputePipelines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceGeneratedComputePipelines = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceGeneratedComputeCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceGeneratedComputeCaptureReplay = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$deviceGeneratedCompute,
-            LAYOUT$deviceGeneratedComputePipelines,
-            LAYOUT$deviceGeneratedComputeCaptureReplay,
+            LAYOUT__pNext,
+            LAYOUT__deviceGeneratedCompute,
+            LAYOUT__deviceGeneratedComputePipelines,
+            LAYOUT__deviceGeneratedComputeCaptureReplay,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV");
 
     public VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int deviceGeneratedCompute() {return this.ptr.get(LAYOUT$deviceGeneratedCompute, OFFSET$deviceGeneratedCompute);}
-    public void deviceGeneratedCompute(int value) {this.ptr.set(LAYOUT$deviceGeneratedCompute, OFFSET$deviceGeneratedCompute, value);}
-    public java.lang.foreign.MemorySegment deviceGeneratedCompute_ptr() {return this.ptr.asSlice(OFFSET$deviceGeneratedCompute, LAYOUT$deviceGeneratedCompute);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int deviceGeneratedComputePipelines() {return this.ptr.get(LAYOUT$deviceGeneratedComputePipelines, OFFSET$deviceGeneratedComputePipelines);}
-    public void deviceGeneratedComputePipelines(int value) {this.ptr.set(LAYOUT$deviceGeneratedComputePipelines, OFFSET$deviceGeneratedComputePipelines, value);}
-    public java.lang.foreign.MemorySegment deviceGeneratedComputePipelines_ptr() {return this.ptr.asSlice(OFFSET$deviceGeneratedComputePipelines, LAYOUT$deviceGeneratedComputePipelines);}
+    public int deviceGeneratedCompute() {return this.ptr.get(LAYOUT__deviceGeneratedCompute, OFFSET__deviceGeneratedCompute);}
+    public void deviceGeneratedCompute(int value) {this.ptr.set(LAYOUT__deviceGeneratedCompute, OFFSET__deviceGeneratedCompute, value);}
+    public java.lang.foreign.MemorySegment $deviceGeneratedCompute() {return this.ptr.asSlice(OFFSET__deviceGeneratedCompute, LAYOUT__deviceGeneratedCompute);}
 
-    public int deviceGeneratedComputeCaptureReplay() {return this.ptr.get(LAYOUT$deviceGeneratedComputeCaptureReplay, OFFSET$deviceGeneratedComputeCaptureReplay);}
-    public void deviceGeneratedComputeCaptureReplay(int value) {this.ptr.set(LAYOUT$deviceGeneratedComputeCaptureReplay, OFFSET$deviceGeneratedComputeCaptureReplay, value);}
-    public java.lang.foreign.MemorySegment deviceGeneratedComputeCaptureReplay_ptr() {return this.ptr.asSlice(OFFSET$deviceGeneratedComputeCaptureReplay, LAYOUT$deviceGeneratedComputeCaptureReplay);}
+    public int deviceGeneratedComputePipelines() {return this.ptr.get(LAYOUT__deviceGeneratedComputePipelines, OFFSET__deviceGeneratedComputePipelines);}
+    public void deviceGeneratedComputePipelines(int value) {this.ptr.set(LAYOUT__deviceGeneratedComputePipelines, OFFSET__deviceGeneratedComputePipelines, value);}
+    public java.lang.foreign.MemorySegment $deviceGeneratedComputePipelines() {return this.ptr.asSlice(OFFSET__deviceGeneratedComputePipelines, LAYOUT__deviceGeneratedComputePipelines);}
+
+    public int deviceGeneratedComputeCaptureReplay() {return this.ptr.get(LAYOUT__deviceGeneratedComputeCaptureReplay, OFFSET__deviceGeneratedComputeCaptureReplay);}
+    public void deviceGeneratedComputeCaptureReplay(int value) {this.ptr.set(LAYOUT__deviceGeneratedComputeCaptureReplay, OFFSET__deviceGeneratedComputeCaptureReplay, value);}
+    public java.lang.foreign.MemorySegment $deviceGeneratedComputeCaptureReplay() {return this.ptr.asSlice(OFFSET__deviceGeneratedComputeCaptureReplay, LAYOUT__deviceGeneratedComputeCaptureReplay);}
 }

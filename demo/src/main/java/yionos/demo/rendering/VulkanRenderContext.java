@@ -7,9 +7,9 @@ import yionos.demo.WindowProcessor;
 import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class VulkanRenderContext extends VulkanContext
@@ -25,9 +25,9 @@ public class VulkanRenderContext extends VulkanContext
         super(appInfo, enabledLayers, enabledExtensions, validationFeatures);
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pSurface = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pSurface = arena.allocate(ADDRESS);
             VulkanException.check(window.createVulkanSurface(this.instance().handle(), NULL, pSurface), "Failed to create Vulkan surface");
-            this.m_surface = pSurface.get(ValueLayout.ADDRESS, 0);
+            this.m_surface = pSurface.get(ADDRESS, 0);
 
             this.window = window;
         }
@@ -61,11 +61,11 @@ public class VulkanRenderContext extends VulkanContext
 
             VulkanException.check(vkGetPhysicalDeviceSurfaceCapabilitiesKHR(this.physicalDevice().handle(), this.m_surface, capabilities.ptr()));
 
-            MemorySegment pFormatCount = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pFormatCount = arena.allocate(JAVA_INT);
             VulkanException.check(vkGetPhysicalDeviceSurfaceFormatsKHR(this.physicalDevice().handle(), this.m_surface, pFormatCount, NULL));
-            int formatCount = pFormatCount.get(ValueLayout.JAVA_INT, 0);
+            int formatCount = pFormatCount.get(JAVA_INT, 0);
             formats = new VkSurfaceFormatKHR[formatCount];
-            MemorySegment pFormats = arena.allocateArray(VkSurfaceFormatKHR.gStructLayout, formatCount);
+            MemorySegment pFormats = arena.allocate(VkSurfaceFormatKHR.gRecordLayout, formatCount);
             VulkanException.check(vkGetPhysicalDeviceSurfaceFormatsKHR(this.physicalDevice().handle(), this.m_surface, pFormatCount, pFormats));
             for (int i = 0; i < formatCount; i++)
             {
@@ -74,15 +74,15 @@ public class VulkanRenderContext extends VulkanContext
                 formats[i].ptr().copyFrom(format.ptr());
             }
 
-            MemorySegment pModeCount = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pModeCount = arena.allocate(JAVA_INT);
             VulkanException.check(vkGetPhysicalDeviceSurfacePresentModesKHR(this.physicalDevice().handle(), this.m_surface, pModeCount, NULL));
-            int modeCount = pModeCount.get(ValueLayout.JAVA_INT, 0);
+            int modeCount = pModeCount.get(JAVA_INT, 0);
             presentModes = new int[modeCount];
-            MemorySegment pPresentModes = arena.allocateArray(ValueLayout.JAVA_INT, modeCount);
+            MemorySegment pPresentModes = arena.allocate(JAVA_INT, modeCount);
             VulkanException.check(vkGetPhysicalDeviceSurfacePresentModesKHR(this.physicalDevice().handle(), this.m_surface, pModeCount, pPresentModes));
             for (int i = 0; i < modeCount; i++)
             {
-                presentModes[i] = pPresentModes.getAtIndex(ValueLayout.JAVA_INT, i);
+                presentModes[i] = pPresentModes.getAtIndex(JAVA_INT, i);
             }
 
             this.m_physicalDeviceSurfaceProperties = new PhysicalDeviceSurfaceProperties(capabilities, formats, presentModes);

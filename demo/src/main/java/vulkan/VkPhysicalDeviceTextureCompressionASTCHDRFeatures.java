@@ -2,40 +2,45 @@ package vulkan;
 
 public record VkPhysicalDeviceTextureCompressionASTCHDRFeatures(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$textureCompressionASTC_HDR = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$textureCompressionASTC_HDR = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureCompressionASTC_HDR = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__textureCompressionASTC_HDR = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$textureCompressionASTC_HDR,
+            LAYOUT__pNext,
+            LAYOUT__textureCompressionASTC_HDR,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceTextureCompressionASTCHDRFeatures");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceTextureCompressionASTCHDRFeatures");
 
     public VkPhysicalDeviceTextureCompressionASTCHDRFeatures(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceTextureCompressionASTCHDRFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceTextureCompressionASTCHDRFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceTextureCompressionASTCHDRFeatures(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceTextureCompressionASTCHDRFeatures(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceTextureCompressionASTCHDRFeatures value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int textureCompressionASTC_HDR() {return this.ptr.get(LAYOUT$textureCompressionASTC_HDR, OFFSET$textureCompressionASTC_HDR);}
-    public void textureCompressionASTC_HDR(int value) {this.ptr.set(LAYOUT$textureCompressionASTC_HDR, OFFSET$textureCompressionASTC_HDR, value);}
-    public java.lang.foreign.MemorySegment textureCompressionASTC_HDR_ptr() {return this.ptr.asSlice(OFFSET$textureCompressionASTC_HDR, LAYOUT$textureCompressionASTC_HDR);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public int textureCompressionASTC_HDR() {return this.ptr.get(LAYOUT__textureCompressionASTC_HDR, OFFSET__textureCompressionASTC_HDR);}
+    public void textureCompressionASTC_HDR(int value) {this.ptr.set(LAYOUT__textureCompressionASTC_HDR, OFFSET__textureCompressionASTC_HDR, value);}
+    public java.lang.foreign.MemorySegment $textureCompressionASTC_HDR() {return this.ptr.asSlice(OFFSET__textureCompressionASTC_HDR, LAYOUT__textureCompressionASTC_HDR);}
 }

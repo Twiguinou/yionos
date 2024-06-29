@@ -2,60 +2,65 @@ package vulkan;
 
 public record VkSampleLocationsInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sampleLocationsPerPixel = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sampleLocationsPerPixel = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$sampleLocationGridSize = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$sampleLocationGridSize = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sampleLocationsCount = 28L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSampleLocations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSampleLocations = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleLocationsPerPixel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sampleLocationsPerPixel = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__sampleLocationGridSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__sampleLocationGridSize = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sampleLocationsCount = 28;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSampleLocations = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$sampleLocationsPerPixel,
-            LAYOUT$sampleLocationGridSize,
-            LAYOUT$sampleLocationsCount,
-            LAYOUT$pSampleLocations
-    ).withName("VkSampleLocationsInfoEXT");
+            LAYOUT__pNext,
+            LAYOUT__sampleLocationsPerPixel,
+            LAYOUT__sampleLocationGridSize,
+            LAYOUT__sampleLocationsCount,
+            LAYOUT__pSampleLocations
+    ).withByteAlignment(8).withName("VkSampleLocationsInfoEXT");
 
     public VkSampleLocationsInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSampleLocationsInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSampleLocationsInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSampleLocationsInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSampleLocationsInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSampleLocationsInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int sampleLocationsPerPixel() {return this.ptr.get(LAYOUT$sampleLocationsPerPixel, OFFSET$sampleLocationsPerPixel);}
-    public void sampleLocationsPerPixel(int value) {this.ptr.set(LAYOUT$sampleLocationsPerPixel, OFFSET$sampleLocationsPerPixel, value);}
-    public java.lang.foreign.MemorySegment sampleLocationsPerPixel_ptr() {return this.ptr.asSlice(OFFSET$sampleLocationsPerPixel, LAYOUT$sampleLocationsPerPixel);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public vulkan.VkExtent2D sampleLocationGridSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$sampleLocationGridSize, LAYOUT$sampleLocationGridSize));}
+    public int sampleLocationsPerPixel() {return this.ptr.get(LAYOUT__sampleLocationsPerPixel, OFFSET__sampleLocationsPerPixel);}
+    public void sampleLocationsPerPixel(int value) {this.ptr.set(LAYOUT__sampleLocationsPerPixel, OFFSET__sampleLocationsPerPixel, value);}
+    public java.lang.foreign.MemorySegment $sampleLocationsPerPixel() {return this.ptr.asSlice(OFFSET__sampleLocationsPerPixel, LAYOUT__sampleLocationsPerPixel);}
+
+    public vulkan.VkExtent2D sampleLocationGridSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__sampleLocationGridSize, LAYOUT__sampleLocationGridSize));}
     public void sampleLocationGridSize(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.sampleLocationGridSize());}
-    public void sampleLocationGridSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$sampleLocationGridSize, LAYOUT$sampleLocationGridSize.byteSize());}
+    public void sampleLocationGridSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__sampleLocationGridSize, LAYOUT__sampleLocationGridSize.byteSize());}
 
-    public int sampleLocationsCount() {return this.ptr.get(LAYOUT$sampleLocationsCount, OFFSET$sampleLocationsCount);}
-    public void sampleLocationsCount(int value) {this.ptr.set(LAYOUT$sampleLocationsCount, OFFSET$sampleLocationsCount, value);}
-    public java.lang.foreign.MemorySegment sampleLocationsCount_ptr() {return this.ptr.asSlice(OFFSET$sampleLocationsCount, LAYOUT$sampleLocationsCount);}
+    public int sampleLocationsCount() {return this.ptr.get(LAYOUT__sampleLocationsCount, OFFSET__sampleLocationsCount);}
+    public void sampleLocationsCount(int value) {this.ptr.set(LAYOUT__sampleLocationsCount, OFFSET__sampleLocationsCount, value);}
+    public java.lang.foreign.MemorySegment $sampleLocationsCount() {return this.ptr.asSlice(OFFSET__sampleLocationsCount, LAYOUT__sampleLocationsCount);}
 
-    public java.lang.foreign.MemorySegment pSampleLocations() {return this.ptr.get(LAYOUT$pSampleLocations, OFFSET$pSampleLocations);}
-    public void pSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSampleLocations, OFFSET$pSampleLocations, value);}
-    public java.lang.foreign.MemorySegment pSampleLocations_ptr() {return this.ptr.asSlice(OFFSET$pSampleLocations, LAYOUT$pSampleLocations);}
+    public java.lang.foreign.MemorySegment pSampleLocations() {return this.ptr.get(LAYOUT__pSampleLocations, OFFSET__pSampleLocations);}
+    public void pSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSampleLocations, OFFSET__pSampleLocations, value);}
+    public java.lang.foreign.MemorySegment $pSampleLocations() {return this.ptr.asSlice(OFFSET__pSampleLocations, LAYOUT__pSampleLocations);}
 }

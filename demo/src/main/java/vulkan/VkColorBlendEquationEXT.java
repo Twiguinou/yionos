@@ -2,59 +2,64 @@ package vulkan;
 
 public record VkColorBlendEquationEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcColorBlendFactor = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstColorBlendFactor = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$colorBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$colorBlendOp = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcAlphaBlendFactor = 12L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstAlphaBlendFactor = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$alphaBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$alphaBlendOp = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcColorBlendFactor = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstColorBlendFactor = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__colorBlendOp = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcAlphaBlendFactor = 12;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstAlphaBlendFactor = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__alphaBlendOp = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$srcColorBlendFactor,
-            LAYOUT$dstColorBlendFactor,
-            LAYOUT$colorBlendOp,
-            LAYOUT$srcAlphaBlendFactor,
-            LAYOUT$dstAlphaBlendFactor,
-            LAYOUT$alphaBlendOp
-    ).withName("VkColorBlendEquationEXT");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__srcColorBlendFactor,
+            LAYOUT__dstColorBlendFactor,
+            LAYOUT__colorBlendOp,
+            LAYOUT__srcAlphaBlendFactor,
+            LAYOUT__dstAlphaBlendFactor,
+            LAYOUT__alphaBlendOp
+    ).withByteAlignment(4).withName("VkColorBlendEquationEXT");
 
     public VkColorBlendEquationEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkColorBlendEquationEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkColorBlendEquationEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkColorBlendEquationEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkColorBlendEquationEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int srcColorBlendFactor() {return this.ptr.get(LAYOUT$srcColorBlendFactor, OFFSET$srcColorBlendFactor);}
-    public void srcColorBlendFactor(int value) {this.ptr.set(LAYOUT$srcColorBlendFactor, OFFSET$srcColorBlendFactor, value);}
-    public java.lang.foreign.MemorySegment srcColorBlendFactor_ptr() {return this.ptr.asSlice(OFFSET$srcColorBlendFactor, LAYOUT$srcColorBlendFactor);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkColorBlendEquationEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int dstColorBlendFactor() {return this.ptr.get(LAYOUT$dstColorBlendFactor, OFFSET$dstColorBlendFactor);}
-    public void dstColorBlendFactor(int value) {this.ptr.set(LAYOUT$dstColorBlendFactor, OFFSET$dstColorBlendFactor, value);}
-    public java.lang.foreign.MemorySegment dstColorBlendFactor_ptr() {return this.ptr.asSlice(OFFSET$dstColorBlendFactor, LAYOUT$dstColorBlendFactor);}
+    public int srcColorBlendFactor() {return this.ptr.get(LAYOUT__srcColorBlendFactor, OFFSET__srcColorBlendFactor);}
+    public void srcColorBlendFactor(int value) {this.ptr.set(LAYOUT__srcColorBlendFactor, OFFSET__srcColorBlendFactor, value);}
+    public java.lang.foreign.MemorySegment $srcColorBlendFactor() {return this.ptr.asSlice(OFFSET__srcColorBlendFactor, LAYOUT__srcColorBlendFactor);}
 
-    public int colorBlendOp() {return this.ptr.get(LAYOUT$colorBlendOp, OFFSET$colorBlendOp);}
-    public void colorBlendOp(int value) {this.ptr.set(LAYOUT$colorBlendOp, OFFSET$colorBlendOp, value);}
-    public java.lang.foreign.MemorySegment colorBlendOp_ptr() {return this.ptr.asSlice(OFFSET$colorBlendOp, LAYOUT$colorBlendOp);}
+    public int dstColorBlendFactor() {return this.ptr.get(LAYOUT__dstColorBlendFactor, OFFSET__dstColorBlendFactor);}
+    public void dstColorBlendFactor(int value) {this.ptr.set(LAYOUT__dstColorBlendFactor, OFFSET__dstColorBlendFactor, value);}
+    public java.lang.foreign.MemorySegment $dstColorBlendFactor() {return this.ptr.asSlice(OFFSET__dstColorBlendFactor, LAYOUT__dstColorBlendFactor);}
 
-    public int srcAlphaBlendFactor() {return this.ptr.get(LAYOUT$srcAlphaBlendFactor, OFFSET$srcAlphaBlendFactor);}
-    public void srcAlphaBlendFactor(int value) {this.ptr.set(LAYOUT$srcAlphaBlendFactor, OFFSET$srcAlphaBlendFactor, value);}
-    public java.lang.foreign.MemorySegment srcAlphaBlendFactor_ptr() {return this.ptr.asSlice(OFFSET$srcAlphaBlendFactor, LAYOUT$srcAlphaBlendFactor);}
+    public int colorBlendOp() {return this.ptr.get(LAYOUT__colorBlendOp, OFFSET__colorBlendOp);}
+    public void colorBlendOp(int value) {this.ptr.set(LAYOUT__colorBlendOp, OFFSET__colorBlendOp, value);}
+    public java.lang.foreign.MemorySegment $colorBlendOp() {return this.ptr.asSlice(OFFSET__colorBlendOp, LAYOUT__colorBlendOp);}
 
-    public int dstAlphaBlendFactor() {return this.ptr.get(LAYOUT$dstAlphaBlendFactor, OFFSET$dstAlphaBlendFactor);}
-    public void dstAlphaBlendFactor(int value) {this.ptr.set(LAYOUT$dstAlphaBlendFactor, OFFSET$dstAlphaBlendFactor, value);}
-    public java.lang.foreign.MemorySegment dstAlphaBlendFactor_ptr() {return this.ptr.asSlice(OFFSET$dstAlphaBlendFactor, LAYOUT$dstAlphaBlendFactor);}
+    public int srcAlphaBlendFactor() {return this.ptr.get(LAYOUT__srcAlphaBlendFactor, OFFSET__srcAlphaBlendFactor);}
+    public void srcAlphaBlendFactor(int value) {this.ptr.set(LAYOUT__srcAlphaBlendFactor, OFFSET__srcAlphaBlendFactor, value);}
+    public java.lang.foreign.MemorySegment $srcAlphaBlendFactor() {return this.ptr.asSlice(OFFSET__srcAlphaBlendFactor, LAYOUT__srcAlphaBlendFactor);}
 
-    public int alphaBlendOp() {return this.ptr.get(LAYOUT$alphaBlendOp, OFFSET$alphaBlendOp);}
-    public void alphaBlendOp(int value) {this.ptr.set(LAYOUT$alphaBlendOp, OFFSET$alphaBlendOp, value);}
-    public java.lang.foreign.MemorySegment alphaBlendOp_ptr() {return this.ptr.asSlice(OFFSET$alphaBlendOp, LAYOUT$alphaBlendOp);}
+    public int dstAlphaBlendFactor() {return this.ptr.get(LAYOUT__dstAlphaBlendFactor, OFFSET__dstAlphaBlendFactor);}
+    public void dstAlphaBlendFactor(int value) {this.ptr.set(LAYOUT__dstAlphaBlendFactor, OFFSET__dstAlphaBlendFactor, value);}
+    public java.lang.foreign.MemorySegment $dstAlphaBlendFactor() {return this.ptr.asSlice(OFFSET__dstAlphaBlendFactor, LAYOUT__dstAlphaBlendFactor);}
+
+    public int alphaBlendOp() {return this.ptr.get(LAYOUT__alphaBlendOp, OFFSET__alphaBlendOp);}
+    public void alphaBlendOp(int value) {this.ptr.set(LAYOUT__alphaBlendOp, OFFSET__alphaBlendOp, value);}
+    public java.lang.foreign.MemorySegment $alphaBlendOp() {return this.ptr.asSlice(OFFSET__alphaBlendOp, LAYOUT__alphaBlendOp);}
 }

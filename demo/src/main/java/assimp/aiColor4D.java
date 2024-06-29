@@ -2,45 +2,50 @@ package assimp;
 
 public record aiColor4D(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$r = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$r = 0L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$g = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$g = 4L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$b = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$b = 8L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$a = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$a = 12L;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__r = 0;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__g = 4;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__b = 8;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__a = 12;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$r,
-            LAYOUT$g,
-            LAYOUT$b,
-            LAYOUT$a
-    ).withName("aiColor4D");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__r,
+            LAYOUT__g,
+            LAYOUT__b,
+            LAYOUT__a
+    ).withByteAlignment(4).withName("aiColor4D");
 
     public aiColor4D(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiColor4D getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiColor4D getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiColor4D(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiColor4D(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public float r() {return this.ptr.get(LAYOUT$r, OFFSET$r);}
-    public void r(float value) {this.ptr.set(LAYOUT$r, OFFSET$r, value);}
-    public java.lang.foreign.MemorySegment r_ptr() {return this.ptr.asSlice(OFFSET$r, LAYOUT$r);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiColor4D value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public float g() {return this.ptr.get(LAYOUT$g, OFFSET$g);}
-    public void g(float value) {this.ptr.set(LAYOUT$g, OFFSET$g, value);}
-    public java.lang.foreign.MemorySegment g_ptr() {return this.ptr.asSlice(OFFSET$g, LAYOUT$g);}
+    public float r() {return this.ptr.get(LAYOUT__r, OFFSET__r);}
+    public void r(float value) {this.ptr.set(LAYOUT__r, OFFSET__r, value);}
+    public java.lang.foreign.MemorySegment $r() {return this.ptr.asSlice(OFFSET__r, LAYOUT__r);}
 
-    public float b() {return this.ptr.get(LAYOUT$b, OFFSET$b);}
-    public void b(float value) {this.ptr.set(LAYOUT$b, OFFSET$b, value);}
-    public java.lang.foreign.MemorySegment b_ptr() {return this.ptr.asSlice(OFFSET$b, LAYOUT$b);}
+    public float g() {return this.ptr.get(LAYOUT__g, OFFSET__g);}
+    public void g(float value) {this.ptr.set(LAYOUT__g, OFFSET__g, value);}
+    public java.lang.foreign.MemorySegment $g() {return this.ptr.asSlice(OFFSET__g, LAYOUT__g);}
 
-    public float a() {return this.ptr.get(LAYOUT$a, OFFSET$a);}
-    public void a(float value) {this.ptr.set(LAYOUT$a, OFFSET$a, value);}
-    public java.lang.foreign.MemorySegment a_ptr() {return this.ptr.asSlice(OFFSET$a, LAYOUT$a);}
+    public float b() {return this.ptr.get(LAYOUT__b, OFFSET__b);}
+    public void b(float value) {this.ptr.set(LAYOUT__b, OFFSET__b, value);}
+    public java.lang.foreign.MemorySegment $b() {return this.ptr.asSlice(OFFSET__b, LAYOUT__b);}
+
+    public float a() {return this.ptr.get(LAYOUT__a, OFFSET__a);}
+    public void a(float value) {this.ptr.set(LAYOUT__a, OFFSET__a, value);}
+    public java.lang.foreign.MemorySegment $a() {return this.ptr.asSlice(OFFSET__a, LAYOUT__a);}
 }

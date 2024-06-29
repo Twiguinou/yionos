@@ -2,61 +2,66 @@ package vulkan;
 
 public record VkBindVideoSessionMemoryInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$memoryBindIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$memoryBindIndex = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$memory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$memory = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$memoryOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$memoryOffset = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$memorySize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$memorySize = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryBindIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__memoryBindIndex = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__memory = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memoryOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__memoryOffset = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memorySize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__memorySize = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$memoryBindIndex,
+            LAYOUT__pNext,
+            LAYOUT__memoryBindIndex,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$memory,
-            LAYOUT$memoryOffset,
-            LAYOUT$memorySize
-    ).withName("VkBindVideoSessionMemoryInfoKHR");
+            LAYOUT__memory,
+            LAYOUT__memoryOffset,
+            LAYOUT__memorySize
+    ).withByteAlignment(8).withName("VkBindVideoSessionMemoryInfoKHR");
 
     public VkBindVideoSessionMemoryInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkBindVideoSessionMemoryInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkBindVideoSessionMemoryInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkBindVideoSessionMemoryInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkBindVideoSessionMemoryInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkBindVideoSessionMemoryInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int memoryBindIndex() {return this.ptr.get(LAYOUT$memoryBindIndex, OFFSET$memoryBindIndex);}
-    public void memoryBindIndex(int value) {this.ptr.set(LAYOUT$memoryBindIndex, OFFSET$memoryBindIndex, value);}
-    public java.lang.foreign.MemorySegment memoryBindIndex_ptr() {return this.ptr.asSlice(OFFSET$memoryBindIndex, LAYOUT$memoryBindIndex);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment memory() {return this.ptr.get(LAYOUT$memory, OFFSET$memory);}
-    public void memory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$memory, OFFSET$memory, value);}
-    public java.lang.foreign.MemorySegment memory_ptr() {return this.ptr.asSlice(OFFSET$memory, LAYOUT$memory);}
+    public int memoryBindIndex() {return this.ptr.get(LAYOUT__memoryBindIndex, OFFSET__memoryBindIndex);}
+    public void memoryBindIndex(int value) {this.ptr.set(LAYOUT__memoryBindIndex, OFFSET__memoryBindIndex, value);}
+    public java.lang.foreign.MemorySegment $memoryBindIndex() {return this.ptr.asSlice(OFFSET__memoryBindIndex, LAYOUT__memoryBindIndex);}
 
-    public long memoryOffset() {return this.ptr.get(LAYOUT$memoryOffset, OFFSET$memoryOffset);}
-    public void memoryOffset(long value) {this.ptr.set(LAYOUT$memoryOffset, OFFSET$memoryOffset, value);}
-    public java.lang.foreign.MemorySegment memoryOffset_ptr() {return this.ptr.asSlice(OFFSET$memoryOffset, LAYOUT$memoryOffset);}
+    public java.lang.foreign.MemorySegment memory() {return this.ptr.get(LAYOUT__memory, OFFSET__memory);}
+    public void memory(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__memory, OFFSET__memory, value);}
+    public java.lang.foreign.MemorySegment $memory() {return this.ptr.asSlice(OFFSET__memory, LAYOUT__memory);}
 
-    public long memorySize() {return this.ptr.get(LAYOUT$memorySize, OFFSET$memorySize);}
-    public void memorySize(long value) {this.ptr.set(LAYOUT$memorySize, OFFSET$memorySize, value);}
-    public java.lang.foreign.MemorySegment memorySize_ptr() {return this.ptr.asSlice(OFFSET$memorySize, LAYOUT$memorySize);}
+    public long memoryOffset() {return this.ptr.get(LAYOUT__memoryOffset, OFFSET__memoryOffset);}
+    public void memoryOffset(long value) {this.ptr.set(LAYOUT__memoryOffset, OFFSET__memoryOffset, value);}
+    public java.lang.foreign.MemorySegment $memoryOffset() {return this.ptr.asSlice(OFFSET__memoryOffset, LAYOUT__memoryOffset);}
+
+    public long memorySize() {return this.ptr.get(LAYOUT__memorySize, OFFSET__memorySize);}
+    public void memorySize(long value) {this.ptr.set(LAYOUT__memorySize, OFFSET__memorySize, value);}
+    public java.lang.foreign.MemorySegment $memorySize() {return this.ptr.asSlice(OFFSET__memorySize, LAYOUT__memorySize);}
 }

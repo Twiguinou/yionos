@@ -2,74 +2,79 @@ package vulkan;
 
 public record VkVideoEncodeH265RateControlLayerInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$useMinQp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$useMinQp = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$minQp = vulkan.VkVideoEncodeH265QpKHR.gStructLayout;
-    public static final long OFFSET$minQp = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$useMaxQp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$useMaxQp = 32L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxQp = vulkan.VkVideoEncodeH265QpKHR.gStructLayout;
-    public static final long OFFSET$maxQp = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$useMaxFrameSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$useMaxFrameSize = 48L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxFrameSize = vulkan.VkVideoEncodeH265FrameSizeKHR.gStructLayout;
-    public static final long OFFSET$maxFrameSize = 52L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMinQp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__useMinQp = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__minQp = vulkan.VkVideoEncodeH265QpKHR.gRecordLayout;
+    public static final long OFFSET__minQp = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMaxQp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__useMaxQp = 32;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxQp = vulkan.VkVideoEncodeH265QpKHR.gRecordLayout;
+    public static final long OFFSET__maxQp = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMaxFrameSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__useMaxFrameSize = 48;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxFrameSize = vulkan.VkVideoEncodeH265FrameSizeKHR.gRecordLayout;
+    public static final long OFFSET__maxFrameSize = 52;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$useMinQp,
-            LAYOUT$minQp,
-            LAYOUT$useMaxQp,
-            LAYOUT$maxQp,
-            LAYOUT$useMaxFrameSize,
-            LAYOUT$maxFrameSize
-    ).withName("VkVideoEncodeH265RateControlLayerInfoKHR");
+            LAYOUT__pNext,
+            LAYOUT__useMinQp,
+            LAYOUT__minQp,
+            LAYOUT__useMaxQp,
+            LAYOUT__maxQp,
+            LAYOUT__useMaxFrameSize,
+            LAYOUT__maxFrameSize
+    ).withByteAlignment(8).withName("VkVideoEncodeH265RateControlLayerInfoKHR");
 
     public VkVideoEncodeH265RateControlLayerInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoEncodeH265RateControlLayerInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoEncodeH265RateControlLayerInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoEncodeH265RateControlLayerInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoEncodeH265RateControlLayerInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoEncodeH265RateControlLayerInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int useMinQp() {return this.ptr.get(LAYOUT$useMinQp, OFFSET$useMinQp);}
-    public void useMinQp(int value) {this.ptr.set(LAYOUT$useMinQp, OFFSET$useMinQp, value);}
-    public java.lang.foreign.MemorySegment useMinQp_ptr() {return this.ptr.asSlice(OFFSET$useMinQp, LAYOUT$useMinQp);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public vulkan.VkVideoEncodeH265QpKHR minQp() {return new vulkan.VkVideoEncodeH265QpKHR(this.ptr.asSlice(OFFSET$minQp, LAYOUT$minQp));}
+    public int useMinQp() {return this.ptr.get(LAYOUT__useMinQp, OFFSET__useMinQp);}
+    public void useMinQp(int value) {this.ptr.set(LAYOUT__useMinQp, OFFSET__useMinQp, value);}
+    public java.lang.foreign.MemorySegment $useMinQp() {return this.ptr.asSlice(OFFSET__useMinQp, LAYOUT__useMinQp);}
+
+    public vulkan.VkVideoEncodeH265QpKHR minQp() {return new vulkan.VkVideoEncodeH265QpKHR(this.ptr.asSlice(OFFSET__minQp, LAYOUT__minQp));}
     public void minQp(java.util.function.Consumer<vulkan.VkVideoEncodeH265QpKHR> consumer) {consumer.accept(this.minQp());}
-    public void minQp(vulkan.VkVideoEncodeH265QpKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$minQp, LAYOUT$minQp.byteSize());}
+    public void minQp(vulkan.VkVideoEncodeH265QpKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__minQp, LAYOUT__minQp.byteSize());}
 
-    public int useMaxQp() {return this.ptr.get(LAYOUT$useMaxQp, OFFSET$useMaxQp);}
-    public void useMaxQp(int value) {this.ptr.set(LAYOUT$useMaxQp, OFFSET$useMaxQp, value);}
-    public java.lang.foreign.MemorySegment useMaxQp_ptr() {return this.ptr.asSlice(OFFSET$useMaxQp, LAYOUT$useMaxQp);}
+    public int useMaxQp() {return this.ptr.get(LAYOUT__useMaxQp, OFFSET__useMaxQp);}
+    public void useMaxQp(int value) {this.ptr.set(LAYOUT__useMaxQp, OFFSET__useMaxQp, value);}
+    public java.lang.foreign.MemorySegment $useMaxQp() {return this.ptr.asSlice(OFFSET__useMaxQp, LAYOUT__useMaxQp);}
 
-    public vulkan.VkVideoEncodeH265QpKHR maxQp() {return new vulkan.VkVideoEncodeH265QpKHR(this.ptr.asSlice(OFFSET$maxQp, LAYOUT$maxQp));}
+    public vulkan.VkVideoEncodeH265QpKHR maxQp() {return new vulkan.VkVideoEncodeH265QpKHR(this.ptr.asSlice(OFFSET__maxQp, LAYOUT__maxQp));}
     public void maxQp(java.util.function.Consumer<vulkan.VkVideoEncodeH265QpKHR> consumer) {consumer.accept(this.maxQp());}
-    public void maxQp(vulkan.VkVideoEncodeH265QpKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxQp, LAYOUT$maxQp.byteSize());}
+    public void maxQp(vulkan.VkVideoEncodeH265QpKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxQp, LAYOUT__maxQp.byteSize());}
 
-    public int useMaxFrameSize() {return this.ptr.get(LAYOUT$useMaxFrameSize, OFFSET$useMaxFrameSize);}
-    public void useMaxFrameSize(int value) {this.ptr.set(LAYOUT$useMaxFrameSize, OFFSET$useMaxFrameSize, value);}
-    public java.lang.foreign.MemorySegment useMaxFrameSize_ptr() {return this.ptr.asSlice(OFFSET$useMaxFrameSize, LAYOUT$useMaxFrameSize);}
+    public int useMaxFrameSize() {return this.ptr.get(LAYOUT__useMaxFrameSize, OFFSET__useMaxFrameSize);}
+    public void useMaxFrameSize(int value) {this.ptr.set(LAYOUT__useMaxFrameSize, OFFSET__useMaxFrameSize, value);}
+    public java.lang.foreign.MemorySegment $useMaxFrameSize() {return this.ptr.asSlice(OFFSET__useMaxFrameSize, LAYOUT__useMaxFrameSize);}
 
-    public vulkan.VkVideoEncodeH265FrameSizeKHR maxFrameSize() {return new vulkan.VkVideoEncodeH265FrameSizeKHR(this.ptr.asSlice(OFFSET$maxFrameSize, LAYOUT$maxFrameSize));}
+    public vulkan.VkVideoEncodeH265FrameSizeKHR maxFrameSize() {return new vulkan.VkVideoEncodeH265FrameSizeKHR(this.ptr.asSlice(OFFSET__maxFrameSize, LAYOUT__maxFrameSize));}
     public void maxFrameSize(java.util.function.Consumer<vulkan.VkVideoEncodeH265FrameSizeKHR> consumer) {consumer.accept(this.maxFrameSize());}
-    public void maxFrameSize(vulkan.VkVideoEncodeH265FrameSizeKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxFrameSize, LAYOUT$maxFrameSize.byteSize());}
+    public void maxFrameSize(vulkan.VkVideoEncodeH265FrameSizeKHR value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxFrameSize, LAYOUT__maxFrameSize.byteSize());}
 }

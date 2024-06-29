@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkRayTracingPipelineInterfaceCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPipelineRayPayloadSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPipelineRayPayloadSize = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPipelineRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPipelineRayHitAttributeSize = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPipelineRayPayloadSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPipelineRayPayloadSize = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPipelineRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPipelineRayHitAttributeSize = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$maxPipelineRayPayloadSize,
-            LAYOUT$maxPipelineRayHitAttributeSize
-    ).withName("VkRayTracingPipelineInterfaceCreateInfoKHR");
+            LAYOUT__pNext,
+            LAYOUT__maxPipelineRayPayloadSize,
+            LAYOUT__maxPipelineRayHitAttributeSize
+    ).withByteAlignment(8).withName("VkRayTracingPipelineInterfaceCreateInfoKHR");
 
     public VkRayTracingPipelineInterfaceCreateInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkRayTracingPipelineInterfaceCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkRayTracingPipelineInterfaceCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkRayTracingPipelineInterfaceCreateInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkRayTracingPipelineInterfaceCreateInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkRayTracingPipelineInterfaceCreateInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int maxPipelineRayPayloadSize() {return this.ptr.get(LAYOUT$maxPipelineRayPayloadSize, OFFSET$maxPipelineRayPayloadSize);}
-    public void maxPipelineRayPayloadSize(int value) {this.ptr.set(LAYOUT$maxPipelineRayPayloadSize, OFFSET$maxPipelineRayPayloadSize, value);}
-    public java.lang.foreign.MemorySegment maxPipelineRayPayloadSize_ptr() {return this.ptr.asSlice(OFFSET$maxPipelineRayPayloadSize, LAYOUT$maxPipelineRayPayloadSize);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int maxPipelineRayHitAttributeSize() {return this.ptr.get(LAYOUT$maxPipelineRayHitAttributeSize, OFFSET$maxPipelineRayHitAttributeSize);}
-    public void maxPipelineRayHitAttributeSize(int value) {this.ptr.set(LAYOUT$maxPipelineRayHitAttributeSize, OFFSET$maxPipelineRayHitAttributeSize, value);}
-    public java.lang.foreign.MemorySegment maxPipelineRayHitAttributeSize_ptr() {return this.ptr.asSlice(OFFSET$maxPipelineRayHitAttributeSize, LAYOUT$maxPipelineRayHitAttributeSize);}
+    public int maxPipelineRayPayloadSize() {return this.ptr.get(LAYOUT__maxPipelineRayPayloadSize, OFFSET__maxPipelineRayPayloadSize);}
+    public void maxPipelineRayPayloadSize(int value) {this.ptr.set(LAYOUT__maxPipelineRayPayloadSize, OFFSET__maxPipelineRayPayloadSize, value);}
+    public java.lang.foreign.MemorySegment $maxPipelineRayPayloadSize() {return this.ptr.asSlice(OFFSET__maxPipelineRayPayloadSize, LAYOUT__maxPipelineRayPayloadSize);}
+
+    public int maxPipelineRayHitAttributeSize() {return this.ptr.get(LAYOUT__maxPipelineRayHitAttributeSize, OFFSET__maxPipelineRayHitAttributeSize);}
+    public void maxPipelineRayHitAttributeSize(int value) {this.ptr.set(LAYOUT__maxPipelineRayHitAttributeSize, OFFSET__maxPipelineRayHitAttributeSize, value);}
+    public java.lang.foreign.MemorySegment $maxPipelineRayHitAttributeSize() {return this.ptr.asSlice(OFFSET__maxPipelineRayHitAttributeSize, LAYOUT__maxPipelineRayHitAttributeSize);}
 }

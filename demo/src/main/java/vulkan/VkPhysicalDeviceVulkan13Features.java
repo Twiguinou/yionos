@@ -2,138 +2,143 @@ package vulkan;
 
 public record VkPhysicalDeviceVulkan13Features(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$robustImageAccess = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$robustImageAccess = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$inlineUniformBlock = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$inlineUniformBlock = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorBindingInlineUniformBlockUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorBindingInlineUniformBlockUpdateAfterBind = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pipelineCreationCacheControl = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pipelineCreationCacheControl = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$privateData = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$privateData = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDemoteToHelperInvocation = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDemoteToHelperInvocation = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderTerminateInvocation = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderTerminateInvocation = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$subgroupSizeControl = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$subgroupSizeControl = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$computeFullSubgroups = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$computeFullSubgroups = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$synchronization2 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$synchronization2 = 52L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$textureCompressionASTC_HDR = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$textureCompressionASTC_HDR = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderZeroInitializeWorkgroupMemory = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderZeroInitializeWorkgroupMemory = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dynamicRendering = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dynamicRendering = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderIntegerDotProduct = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderIntegerDotProduct = 68L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maintenance4 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maintenance4 = 72L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustImageAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__robustImageAccess = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inlineUniformBlock = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__inlineUniformBlock = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorBindingInlineUniformBlockUpdateAfterBind = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineCreationCacheControl = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pipelineCreationCacheControl = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__privateData = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__privateData = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDemoteToHelperInvocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDemoteToHelperInvocation = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderTerminateInvocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderTerminateInvocation = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSizeControl = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__subgroupSizeControl = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeFullSubgroups = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__computeFullSubgroups = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__synchronization2 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__synchronization2 = 52;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureCompressionASTC_HDR = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__textureCompressionASTC_HDR = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderZeroInitializeWorkgroupMemory = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderZeroInitializeWorkgroupMemory = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dynamicRendering = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dynamicRendering = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderIntegerDotProduct = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderIntegerDotProduct = 68;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maintenance4 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maintenance4 = 72;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$robustImageAccess,
-            LAYOUT$inlineUniformBlock,
-            LAYOUT$descriptorBindingInlineUniformBlockUpdateAfterBind,
-            LAYOUT$pipelineCreationCacheControl,
-            LAYOUT$privateData,
-            LAYOUT$shaderDemoteToHelperInvocation,
-            LAYOUT$shaderTerminateInvocation,
-            LAYOUT$subgroupSizeControl,
-            LAYOUT$computeFullSubgroups,
-            LAYOUT$synchronization2,
-            LAYOUT$textureCompressionASTC_HDR,
-            LAYOUT$shaderZeroInitializeWorkgroupMemory,
-            LAYOUT$dynamicRendering,
-            LAYOUT$shaderIntegerDotProduct,
-            LAYOUT$maintenance4,
+            LAYOUT__pNext,
+            LAYOUT__robustImageAccess,
+            LAYOUT__inlineUniformBlock,
+            LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind,
+            LAYOUT__pipelineCreationCacheControl,
+            LAYOUT__privateData,
+            LAYOUT__shaderDemoteToHelperInvocation,
+            LAYOUT__shaderTerminateInvocation,
+            LAYOUT__subgroupSizeControl,
+            LAYOUT__computeFullSubgroups,
+            LAYOUT__synchronization2,
+            LAYOUT__textureCompressionASTC_HDR,
+            LAYOUT__shaderZeroInitializeWorkgroupMemory,
+            LAYOUT__dynamicRendering,
+            LAYOUT__shaderIntegerDotProduct,
+            LAYOUT__maintenance4,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceVulkan13Features");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceVulkan13Features");
 
     public VkPhysicalDeviceVulkan13Features(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceVulkan13Features getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceVulkan13Features getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceVulkan13Features(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceVulkan13Features(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceVulkan13Features value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int robustImageAccess() {return this.ptr.get(LAYOUT$robustImageAccess, OFFSET$robustImageAccess);}
-    public void robustImageAccess(int value) {this.ptr.set(LAYOUT$robustImageAccess, OFFSET$robustImageAccess, value);}
-    public java.lang.foreign.MemorySegment robustImageAccess_ptr() {return this.ptr.asSlice(OFFSET$robustImageAccess, LAYOUT$robustImageAccess);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int inlineUniformBlock() {return this.ptr.get(LAYOUT$inlineUniformBlock, OFFSET$inlineUniformBlock);}
-    public void inlineUniformBlock(int value) {this.ptr.set(LAYOUT$inlineUniformBlock, OFFSET$inlineUniformBlock, value);}
-    public java.lang.foreign.MemorySegment inlineUniformBlock_ptr() {return this.ptr.asSlice(OFFSET$inlineUniformBlock, LAYOUT$inlineUniformBlock);}
+    public int robustImageAccess() {return this.ptr.get(LAYOUT__robustImageAccess, OFFSET__robustImageAccess);}
+    public void robustImageAccess(int value) {this.ptr.set(LAYOUT__robustImageAccess, OFFSET__robustImageAccess, value);}
+    public java.lang.foreign.MemorySegment $robustImageAccess() {return this.ptr.asSlice(OFFSET__robustImageAccess, LAYOUT__robustImageAccess);}
 
-    public int descriptorBindingInlineUniformBlockUpdateAfterBind() {return this.ptr.get(LAYOUT$descriptorBindingInlineUniformBlockUpdateAfterBind, OFFSET$descriptorBindingInlineUniformBlockUpdateAfterBind);}
-    public void descriptorBindingInlineUniformBlockUpdateAfterBind(int value) {this.ptr.set(LAYOUT$descriptorBindingInlineUniformBlockUpdateAfterBind, OFFSET$descriptorBindingInlineUniformBlockUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment descriptorBindingInlineUniformBlockUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$descriptorBindingInlineUniformBlockUpdateAfterBind, LAYOUT$descriptorBindingInlineUniformBlockUpdateAfterBind);}
+    public int inlineUniformBlock() {return this.ptr.get(LAYOUT__inlineUniformBlock, OFFSET__inlineUniformBlock);}
+    public void inlineUniformBlock(int value) {this.ptr.set(LAYOUT__inlineUniformBlock, OFFSET__inlineUniformBlock, value);}
+    public java.lang.foreign.MemorySegment $inlineUniformBlock() {return this.ptr.asSlice(OFFSET__inlineUniformBlock, LAYOUT__inlineUniformBlock);}
 
-    public int pipelineCreationCacheControl() {return this.ptr.get(LAYOUT$pipelineCreationCacheControl, OFFSET$pipelineCreationCacheControl);}
-    public void pipelineCreationCacheControl(int value) {this.ptr.set(LAYOUT$pipelineCreationCacheControl, OFFSET$pipelineCreationCacheControl, value);}
-    public java.lang.foreign.MemorySegment pipelineCreationCacheControl_ptr() {return this.ptr.asSlice(OFFSET$pipelineCreationCacheControl, LAYOUT$pipelineCreationCacheControl);}
+    public int descriptorBindingInlineUniformBlockUpdateAfterBind() {return this.ptr.get(LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind, OFFSET__descriptorBindingInlineUniformBlockUpdateAfterBind);}
+    public void descriptorBindingInlineUniformBlockUpdateAfterBind(int value) {this.ptr.set(LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind, OFFSET__descriptorBindingInlineUniformBlockUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $descriptorBindingInlineUniformBlockUpdateAfterBind() {return this.ptr.asSlice(OFFSET__descriptorBindingInlineUniformBlockUpdateAfterBind, LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind);}
 
-    public int privateData() {return this.ptr.get(LAYOUT$privateData, OFFSET$privateData);}
-    public void privateData(int value) {this.ptr.set(LAYOUT$privateData, OFFSET$privateData, value);}
-    public java.lang.foreign.MemorySegment privateData_ptr() {return this.ptr.asSlice(OFFSET$privateData, LAYOUT$privateData);}
+    public int pipelineCreationCacheControl() {return this.ptr.get(LAYOUT__pipelineCreationCacheControl, OFFSET__pipelineCreationCacheControl);}
+    public void pipelineCreationCacheControl(int value) {this.ptr.set(LAYOUT__pipelineCreationCacheControl, OFFSET__pipelineCreationCacheControl, value);}
+    public java.lang.foreign.MemorySegment $pipelineCreationCacheControl() {return this.ptr.asSlice(OFFSET__pipelineCreationCacheControl, LAYOUT__pipelineCreationCacheControl);}
 
-    public int shaderDemoteToHelperInvocation() {return this.ptr.get(LAYOUT$shaderDemoteToHelperInvocation, OFFSET$shaderDemoteToHelperInvocation);}
-    public void shaderDemoteToHelperInvocation(int value) {this.ptr.set(LAYOUT$shaderDemoteToHelperInvocation, OFFSET$shaderDemoteToHelperInvocation, value);}
-    public java.lang.foreign.MemorySegment shaderDemoteToHelperInvocation_ptr() {return this.ptr.asSlice(OFFSET$shaderDemoteToHelperInvocation, LAYOUT$shaderDemoteToHelperInvocation);}
+    public int privateData() {return this.ptr.get(LAYOUT__privateData, OFFSET__privateData);}
+    public void privateData(int value) {this.ptr.set(LAYOUT__privateData, OFFSET__privateData, value);}
+    public java.lang.foreign.MemorySegment $privateData() {return this.ptr.asSlice(OFFSET__privateData, LAYOUT__privateData);}
 
-    public int shaderTerminateInvocation() {return this.ptr.get(LAYOUT$shaderTerminateInvocation, OFFSET$shaderTerminateInvocation);}
-    public void shaderTerminateInvocation(int value) {this.ptr.set(LAYOUT$shaderTerminateInvocation, OFFSET$shaderTerminateInvocation, value);}
-    public java.lang.foreign.MemorySegment shaderTerminateInvocation_ptr() {return this.ptr.asSlice(OFFSET$shaderTerminateInvocation, LAYOUT$shaderTerminateInvocation);}
+    public int shaderDemoteToHelperInvocation() {return this.ptr.get(LAYOUT__shaderDemoteToHelperInvocation, OFFSET__shaderDemoteToHelperInvocation);}
+    public void shaderDemoteToHelperInvocation(int value) {this.ptr.set(LAYOUT__shaderDemoteToHelperInvocation, OFFSET__shaderDemoteToHelperInvocation, value);}
+    public java.lang.foreign.MemorySegment $shaderDemoteToHelperInvocation() {return this.ptr.asSlice(OFFSET__shaderDemoteToHelperInvocation, LAYOUT__shaderDemoteToHelperInvocation);}
 
-    public int subgroupSizeControl() {return this.ptr.get(LAYOUT$subgroupSizeControl, OFFSET$subgroupSizeControl);}
-    public void subgroupSizeControl(int value) {this.ptr.set(LAYOUT$subgroupSizeControl, OFFSET$subgroupSizeControl, value);}
-    public java.lang.foreign.MemorySegment subgroupSizeControl_ptr() {return this.ptr.asSlice(OFFSET$subgroupSizeControl, LAYOUT$subgroupSizeControl);}
+    public int shaderTerminateInvocation() {return this.ptr.get(LAYOUT__shaderTerminateInvocation, OFFSET__shaderTerminateInvocation);}
+    public void shaderTerminateInvocation(int value) {this.ptr.set(LAYOUT__shaderTerminateInvocation, OFFSET__shaderTerminateInvocation, value);}
+    public java.lang.foreign.MemorySegment $shaderTerminateInvocation() {return this.ptr.asSlice(OFFSET__shaderTerminateInvocation, LAYOUT__shaderTerminateInvocation);}
 
-    public int computeFullSubgroups() {return this.ptr.get(LAYOUT$computeFullSubgroups, OFFSET$computeFullSubgroups);}
-    public void computeFullSubgroups(int value) {this.ptr.set(LAYOUT$computeFullSubgroups, OFFSET$computeFullSubgroups, value);}
-    public java.lang.foreign.MemorySegment computeFullSubgroups_ptr() {return this.ptr.asSlice(OFFSET$computeFullSubgroups, LAYOUT$computeFullSubgroups);}
+    public int subgroupSizeControl() {return this.ptr.get(LAYOUT__subgroupSizeControl, OFFSET__subgroupSizeControl);}
+    public void subgroupSizeControl(int value) {this.ptr.set(LAYOUT__subgroupSizeControl, OFFSET__subgroupSizeControl, value);}
+    public java.lang.foreign.MemorySegment $subgroupSizeControl() {return this.ptr.asSlice(OFFSET__subgroupSizeControl, LAYOUT__subgroupSizeControl);}
 
-    public int synchronization2() {return this.ptr.get(LAYOUT$synchronization2, OFFSET$synchronization2);}
-    public void synchronization2(int value) {this.ptr.set(LAYOUT$synchronization2, OFFSET$synchronization2, value);}
-    public java.lang.foreign.MemorySegment synchronization2_ptr() {return this.ptr.asSlice(OFFSET$synchronization2, LAYOUT$synchronization2);}
+    public int computeFullSubgroups() {return this.ptr.get(LAYOUT__computeFullSubgroups, OFFSET__computeFullSubgroups);}
+    public void computeFullSubgroups(int value) {this.ptr.set(LAYOUT__computeFullSubgroups, OFFSET__computeFullSubgroups, value);}
+    public java.lang.foreign.MemorySegment $computeFullSubgroups() {return this.ptr.asSlice(OFFSET__computeFullSubgroups, LAYOUT__computeFullSubgroups);}
 
-    public int textureCompressionASTC_HDR() {return this.ptr.get(LAYOUT$textureCompressionASTC_HDR, OFFSET$textureCompressionASTC_HDR);}
-    public void textureCompressionASTC_HDR(int value) {this.ptr.set(LAYOUT$textureCompressionASTC_HDR, OFFSET$textureCompressionASTC_HDR, value);}
-    public java.lang.foreign.MemorySegment textureCompressionASTC_HDR_ptr() {return this.ptr.asSlice(OFFSET$textureCompressionASTC_HDR, LAYOUT$textureCompressionASTC_HDR);}
+    public int synchronization2() {return this.ptr.get(LAYOUT__synchronization2, OFFSET__synchronization2);}
+    public void synchronization2(int value) {this.ptr.set(LAYOUT__synchronization2, OFFSET__synchronization2, value);}
+    public java.lang.foreign.MemorySegment $synchronization2() {return this.ptr.asSlice(OFFSET__synchronization2, LAYOUT__synchronization2);}
 
-    public int shaderZeroInitializeWorkgroupMemory() {return this.ptr.get(LAYOUT$shaderZeroInitializeWorkgroupMemory, OFFSET$shaderZeroInitializeWorkgroupMemory);}
-    public void shaderZeroInitializeWorkgroupMemory(int value) {this.ptr.set(LAYOUT$shaderZeroInitializeWorkgroupMemory, OFFSET$shaderZeroInitializeWorkgroupMemory, value);}
-    public java.lang.foreign.MemorySegment shaderZeroInitializeWorkgroupMemory_ptr() {return this.ptr.asSlice(OFFSET$shaderZeroInitializeWorkgroupMemory, LAYOUT$shaderZeroInitializeWorkgroupMemory);}
+    public int textureCompressionASTC_HDR() {return this.ptr.get(LAYOUT__textureCompressionASTC_HDR, OFFSET__textureCompressionASTC_HDR);}
+    public void textureCompressionASTC_HDR(int value) {this.ptr.set(LAYOUT__textureCompressionASTC_HDR, OFFSET__textureCompressionASTC_HDR, value);}
+    public java.lang.foreign.MemorySegment $textureCompressionASTC_HDR() {return this.ptr.asSlice(OFFSET__textureCompressionASTC_HDR, LAYOUT__textureCompressionASTC_HDR);}
 
-    public int dynamicRendering() {return this.ptr.get(LAYOUT$dynamicRendering, OFFSET$dynamicRendering);}
-    public void dynamicRendering(int value) {this.ptr.set(LAYOUT$dynamicRendering, OFFSET$dynamicRendering, value);}
-    public java.lang.foreign.MemorySegment dynamicRendering_ptr() {return this.ptr.asSlice(OFFSET$dynamicRendering, LAYOUT$dynamicRendering);}
+    public int shaderZeroInitializeWorkgroupMemory() {return this.ptr.get(LAYOUT__shaderZeroInitializeWorkgroupMemory, OFFSET__shaderZeroInitializeWorkgroupMemory);}
+    public void shaderZeroInitializeWorkgroupMemory(int value) {this.ptr.set(LAYOUT__shaderZeroInitializeWorkgroupMemory, OFFSET__shaderZeroInitializeWorkgroupMemory, value);}
+    public java.lang.foreign.MemorySegment $shaderZeroInitializeWorkgroupMemory() {return this.ptr.asSlice(OFFSET__shaderZeroInitializeWorkgroupMemory, LAYOUT__shaderZeroInitializeWorkgroupMemory);}
 
-    public int shaderIntegerDotProduct() {return this.ptr.get(LAYOUT$shaderIntegerDotProduct, OFFSET$shaderIntegerDotProduct);}
-    public void shaderIntegerDotProduct(int value) {this.ptr.set(LAYOUT$shaderIntegerDotProduct, OFFSET$shaderIntegerDotProduct, value);}
-    public java.lang.foreign.MemorySegment shaderIntegerDotProduct_ptr() {return this.ptr.asSlice(OFFSET$shaderIntegerDotProduct, LAYOUT$shaderIntegerDotProduct);}
+    public int dynamicRendering() {return this.ptr.get(LAYOUT__dynamicRendering, OFFSET__dynamicRendering);}
+    public void dynamicRendering(int value) {this.ptr.set(LAYOUT__dynamicRendering, OFFSET__dynamicRendering, value);}
+    public java.lang.foreign.MemorySegment $dynamicRendering() {return this.ptr.asSlice(OFFSET__dynamicRendering, LAYOUT__dynamicRendering);}
 
-    public int maintenance4() {return this.ptr.get(LAYOUT$maintenance4, OFFSET$maintenance4);}
-    public void maintenance4(int value) {this.ptr.set(LAYOUT$maintenance4, OFFSET$maintenance4, value);}
-    public java.lang.foreign.MemorySegment maintenance4_ptr() {return this.ptr.asSlice(OFFSET$maintenance4, LAYOUT$maintenance4);}
+    public int shaderIntegerDotProduct() {return this.ptr.get(LAYOUT__shaderIntegerDotProduct, OFFSET__shaderIntegerDotProduct);}
+    public void shaderIntegerDotProduct(int value) {this.ptr.set(LAYOUT__shaderIntegerDotProduct, OFFSET__shaderIntegerDotProduct, value);}
+    public java.lang.foreign.MemorySegment $shaderIntegerDotProduct() {return this.ptr.asSlice(OFFSET__shaderIntegerDotProduct, LAYOUT__shaderIntegerDotProduct);}
+
+    public int maintenance4() {return this.ptr.get(LAYOUT__maintenance4, OFFSET__maintenance4);}
+    public void maintenance4(int value) {this.ptr.set(LAYOUT__maintenance4, OFFSET__maintenance4, value);}
+    public java.lang.foreign.MemorySegment $maintenance4() {return this.ptr.asSlice(OFFSET__maintenance4, LAYOUT__maintenance4);}
 }

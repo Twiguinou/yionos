@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkPushDescriptorSetInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stageFlags = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$layout = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$layout = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$set = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$set = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorWriteCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorWriteCount = 36L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDescriptorWrites = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDescriptorWrites = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stageFlags = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__layout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__layout = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__set = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__set = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorWriteCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorWriteCount = 36;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorWrites = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDescriptorWrites = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$stageFlags,
+            LAYOUT__pNext,
+            LAYOUT__stageFlags,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$layout,
-            LAYOUT$set,
-            LAYOUT$descriptorWriteCount,
-            LAYOUT$pDescriptorWrites
-    ).withName("VkPushDescriptorSetInfoKHR");
+            LAYOUT__layout,
+            LAYOUT__set,
+            LAYOUT__descriptorWriteCount,
+            LAYOUT__pDescriptorWrites
+    ).withByteAlignment(8).withName("VkPushDescriptorSetInfoKHR");
 
     public VkPushDescriptorSetInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPushDescriptorSetInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPushDescriptorSetInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPushDescriptorSetInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPushDescriptorSetInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPushDescriptorSetInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int stageFlags() {return this.ptr.get(LAYOUT$stageFlags, OFFSET$stageFlags);}
-    public void stageFlags(int value) {this.ptr.set(LAYOUT$stageFlags, OFFSET$stageFlags, value);}
-    public java.lang.foreign.MemorySegment stageFlags_ptr() {return this.ptr.asSlice(OFFSET$stageFlags, LAYOUT$stageFlags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment layout() {return this.ptr.get(LAYOUT$layout, OFFSET$layout);}
-    public void layout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$layout, OFFSET$layout, value);}
-    public java.lang.foreign.MemorySegment layout_ptr() {return this.ptr.asSlice(OFFSET$layout, LAYOUT$layout);}
+    public int stageFlags() {return this.ptr.get(LAYOUT__stageFlags, OFFSET__stageFlags);}
+    public void stageFlags(int value) {this.ptr.set(LAYOUT__stageFlags, OFFSET__stageFlags, value);}
+    public java.lang.foreign.MemorySegment $stageFlags() {return this.ptr.asSlice(OFFSET__stageFlags, LAYOUT__stageFlags);}
 
-    public int set() {return this.ptr.get(LAYOUT$set, OFFSET$set);}
-    public void set(int value) {this.ptr.set(LAYOUT$set, OFFSET$set, value);}
-    public java.lang.foreign.MemorySegment set_ptr() {return this.ptr.asSlice(OFFSET$set, LAYOUT$set);}
+    public java.lang.foreign.MemorySegment layout() {return this.ptr.get(LAYOUT__layout, OFFSET__layout);}
+    public void layout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__layout, OFFSET__layout, value);}
+    public java.lang.foreign.MemorySegment $layout() {return this.ptr.asSlice(OFFSET__layout, LAYOUT__layout);}
 
-    public int descriptorWriteCount() {return this.ptr.get(LAYOUT$descriptorWriteCount, OFFSET$descriptorWriteCount);}
-    public void descriptorWriteCount(int value) {this.ptr.set(LAYOUT$descriptorWriteCount, OFFSET$descriptorWriteCount, value);}
-    public java.lang.foreign.MemorySegment descriptorWriteCount_ptr() {return this.ptr.asSlice(OFFSET$descriptorWriteCount, LAYOUT$descriptorWriteCount);}
+    public int set() {return this.ptr.get(LAYOUT__set, OFFSET__set);}
+    public void set(int value) {this.ptr.set(LAYOUT__set, OFFSET__set, value);}
+    public java.lang.foreign.MemorySegment $set() {return this.ptr.asSlice(OFFSET__set, LAYOUT__set);}
 
-    public java.lang.foreign.MemorySegment pDescriptorWrites() {return this.ptr.get(LAYOUT$pDescriptorWrites, OFFSET$pDescriptorWrites);}
-    public void pDescriptorWrites(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDescriptorWrites, OFFSET$pDescriptorWrites, value);}
-    public java.lang.foreign.MemorySegment pDescriptorWrites_ptr() {return this.ptr.asSlice(OFFSET$pDescriptorWrites, LAYOUT$pDescriptorWrites);}
+    public int descriptorWriteCount() {return this.ptr.get(LAYOUT__descriptorWriteCount, OFFSET__descriptorWriteCount);}
+    public void descriptorWriteCount(int value) {this.ptr.set(LAYOUT__descriptorWriteCount, OFFSET__descriptorWriteCount, value);}
+    public java.lang.foreign.MemorySegment $descriptorWriteCount() {return this.ptr.asSlice(OFFSET__descriptorWriteCount, LAYOUT__descriptorWriteCount);}
+
+    public java.lang.foreign.MemorySegment pDescriptorWrites() {return this.ptr.get(LAYOUT__pDescriptorWrites, OFFSET__pDescriptorWrites);}
+    public void pDescriptorWrites(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDescriptorWrites, OFFSET__pDescriptorWrites, value);}
+    public java.lang.foreign.MemorySegment $pDescriptorWrites() {return this.ptr.asSlice(OFFSET__pDescriptorWrites, LAYOUT__pDescriptorWrites);}
 }

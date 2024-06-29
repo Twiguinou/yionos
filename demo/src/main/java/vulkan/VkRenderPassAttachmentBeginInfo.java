@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkRenderPassAttachmentBeginInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$attachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$attachmentCount = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pAttachments = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pAttachments = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__attachmentCount = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pAttachments = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$attachmentCount,
+            LAYOUT__pNext,
+            LAYOUT__attachmentCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pAttachments
-    ).withName("VkRenderPassAttachmentBeginInfo");
+            LAYOUT__pAttachments
+    ).withByteAlignment(8).withName("VkRenderPassAttachmentBeginInfo");
 
     public VkRenderPassAttachmentBeginInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkRenderPassAttachmentBeginInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkRenderPassAttachmentBeginInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkRenderPassAttachmentBeginInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkRenderPassAttachmentBeginInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkRenderPassAttachmentBeginInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int attachmentCount() {return this.ptr.get(LAYOUT$attachmentCount, OFFSET$attachmentCount);}
-    public void attachmentCount(int value) {this.ptr.set(LAYOUT$attachmentCount, OFFSET$attachmentCount, value);}
-    public java.lang.foreign.MemorySegment attachmentCount_ptr() {return this.ptr.asSlice(OFFSET$attachmentCount, LAYOUT$attachmentCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pAttachments() {return this.ptr.get(LAYOUT$pAttachments, OFFSET$pAttachments);}
-    public void pAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pAttachments, OFFSET$pAttachments, value);}
-    public java.lang.foreign.MemorySegment pAttachments_ptr() {return this.ptr.asSlice(OFFSET$pAttachments, LAYOUT$pAttachments);}
+    public int attachmentCount() {return this.ptr.get(LAYOUT__attachmentCount, OFFSET__attachmentCount);}
+    public void attachmentCount(int value) {this.ptr.set(LAYOUT__attachmentCount, OFFSET__attachmentCount, value);}
+    public java.lang.foreign.MemorySegment $attachmentCount() {return this.ptr.asSlice(OFFSET__attachmentCount, LAYOUT__attachmentCount);}
+
+    public java.lang.foreign.MemorySegment pAttachments() {return this.ptr.get(LAYOUT__pAttachments, OFFSET__pAttachments);}
+    public void pAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pAttachments, OFFSET__pAttachments, value);}
+    public java.lang.foreign.MemorySegment $pAttachments() {return this.ptr.asSlice(OFFSET__pAttachments, LAYOUT__pAttachments);}
 }

@@ -12,7 +12,6 @@ import yionos.demo.rendering.VulkanException;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkAttachmentLoadOp.*;
@@ -21,6 +20,7 @@ import static vulkan.VkImageLayout.*;
 import static vulkan.VkSampleCountFlagBits.*;
 import static vulkan.VkPipelineBindPoint.*;
 import static vulkan.VkStructureType.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class RenderPass implements Disposable
@@ -36,7 +36,7 @@ public class RenderPass implements Disposable
         {
             boolean resolve = sampleCount > VK_SAMPLE_COUNT_1_BIT;
 
-            MemorySegment pAttachments = arena.allocateArray(VkAttachmentDescription.gStructLayout, 3);
+            MemorySegment pAttachments = arena.allocate(VkAttachmentDescription.gRecordLayout, 3);
             VkAttachmentDescription description;
 
             // color attachment
@@ -101,9 +101,9 @@ public class RenderPass implements Disposable
             renderPassCreateInfo.subpassCount(1);
             renderPassCreateInfo.pSubpasses(subpass.ptr());
 
-            MemorySegment pRenderPass = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pRenderPass = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateRenderPass(device, renderPassCreateInfo.ptr(), NULL, pRenderPass), "Unable to create render pass");
-            this.m_handle = pRenderPass.get(ValueLayout.ADDRESS, 0);
+            this.m_handle = pRenderPass.get(ADDRESS, 0);
 
             this.device = device;
         }
@@ -115,11 +115,11 @@ public class RenderPass implements Disposable
         {
             SequenceInitializer initializer = new SequenceInitializer();
 
-            MemorySegment pFramebufferAttachments = arena.allocateArray(ValueLayout.ADDRESS, 3);
-            pFramebufferAttachments.setAtIndex(ValueLayout.ADDRESS, 1, depthImageView);
+            MemorySegment pFramebufferAttachments = arena.allocate(ADDRESS, 3);
+            pFramebufferAttachments.setAtIndex(ADDRESS, 1, depthImageView);
             if (!msaaImageView.equals(NULL))
             {
-                pFramebufferAttachments.setAtIndex(ValueLayout.ADDRESS, 2, msaaImageView);
+                pFramebufferAttachments.setAtIndex(ADDRESS, 2, msaaImageView);
             }
 
             VkFramebufferCreateInfo framebufferCreateInfo = new VkFramebufferCreateInfo(arena);
@@ -131,14 +131,14 @@ public class RenderPass implements Disposable
             framebufferCreateInfo.height(height);
             framebufferCreateInfo.layers(1);
 
-            MemorySegment pFramebuffers = Arena.ofAuto().allocateArray(ValueLayout.ADDRESS, imageViewCount);
+            MemorySegment pFramebuffers = Arena.ofAuto().allocate(ADDRESS, imageViewCount);
             for (int i = 0; i < imageViewCount; i++)
             {
-                pFramebufferAttachments.setAtIndex(ValueLayout.ADDRESS, 0, pImageViews.getAtIndex(ValueLayout.ADDRESS, i));
-                MemorySegment pFramebuffer = pFramebuffers.asSlice(ValueLayout.ADDRESS.byteSize() * i, ValueLayout.ADDRESS);
+                pFramebufferAttachments.setAtIndex(ADDRESS, 0, pImageViews.getAtIndex(ADDRESS, i));
+                MemorySegment pFramebuffer = pFramebuffers.asSlice(ADDRESS.byteSize() * i, ADDRESS);
 
                 VulkanException.check(vkCreateFramebuffer(this.device, framebufferCreateInfo.ptr(), NULL, pFramebuffer), "Unable to create framebuffer", initializer);
-                MemorySegment framebuffer = pFramebuffer.get(ValueLayout.ADDRESS, 0);
+                MemorySegment framebuffer = pFramebuffer.get(ADDRESS, 0);
                 initializer.push(() -> vkDestroyFramebuffer(this.device, framebuffer, NULL));
             }
 
@@ -164,14 +164,14 @@ public class RenderPass implements Disposable
 
     public MemorySegment framebuffer(int index)
     {
-        return this.m_framebuffers.getAtIndex(ValueLayout.ADDRESS, index);
+        return this.m_framebuffers.getAtIndex(ADDRESS, index);
     }
 
     public void destroyFramebuffers()
     {
         for (int i = 0; i < this.m_framebufferCount; i++)
         {
-            vkDestroyFramebuffer(this.device, this.m_framebuffers.getAtIndex(ValueLayout.ADDRESS, i), NULL);
+            vkDestroyFramebuffer(this.device, this.m_framebuffers.getAtIndex(ADDRESS, i), NULL);
         }
 
         this.m_framebufferCount = 0;

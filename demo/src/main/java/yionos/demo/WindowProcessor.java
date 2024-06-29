@@ -1,7 +1,6 @@
 package yionos.demo;
 
 import glfw3.*;
-import jpgen.NativeTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yionos.demo.rendering.VulkanException;
@@ -11,12 +10,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.util.ArrayList;
 import java.util.List;
 
 import static glfw3.GLFW3.*;
-import static stbimage.StbImage.*;
+import static stb.image.StbImage.*;
+import static java.lang.foreign.ValueLayout.*;
+import static jpgen.NativeTypes.UNBOUNDED_POINTER;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class WindowProcessor implements Disposable
@@ -32,7 +32,7 @@ public class WindowProcessor implements Disposable
     public static final Logger gWindowLogger = LogManager.getLogger("Window Processor");
 
     private final MemorySegment m_handle;
-    private final Arena m_stubArena = Arena.ofAuto();
+    private final Arena m_stubArena = Arena.ofConfined();
     private int m_width, m_height;
     private boolean m_focused;
     private @Nullable FullscreenData m_fullscreenSaver = null;
@@ -51,21 +51,20 @@ public class WindowProcessor implements Disposable
             throw new IllegalStateException("GLFW initialization failed.");
         }
 
-        gWindowLogger.info(STR."GLFW version: \{glfwGetVersionString().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0)}");
+        gWindowLogger.info("GLFW version: {}", glfwGetVersionString().getString(0));
 
         try (Arena arena = Arena.ofConfined())
         {
             glfwSetErrorCallback(((GLFWerrorfun) (error, description) ->
-            {
-                description = description.reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize());
-                gWindowLogger.error(STR."GLFW error (\{error}): \{description.getUtf8String(0)}");
-            }).makeHandle(this.m_stubArena));
+                    gWindowLogger.error("GLFW error ({}): {}", error, description.getString(0))
+            ).makeHandle(this.m_stubArena));
 
             glfwDefaultWindowHints();
             glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
             glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
             glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
-            this.m_handle = glfwCreateWindow(width, height, arena.allocateUtf8String(title), NULL, NULL);
+
+            this.m_handle = glfwCreateWindow(width, height, arena.allocateFrom(title), NULL, NULL);
             if (this.m_handle.equals(NULL))
             {
                 throw new IllegalStateException("Unable to create GLFW window.");
@@ -77,6 +76,7 @@ public class WindowProcessor implements Disposable
                 this.m_height = newHeight;
                 this.m_sizeCallbacks.forEach(callback -> callback.invoke(newWidth, newHeight));
             }).makeHandle(this.m_stubArena));
+
             glfwSetWindowFocusCallback(this.m_handle, ((GLFWwindowfocusfun) (_, focused) ->
                     this.m_focused = focused != GLFW_FALSE).makeHandle(this.m_stubArena));
             glfwSetKeyCallback(this.m_handle, ((GLFWkeyfun) (_, key, scancode, action, mods) ->
@@ -99,10 +99,10 @@ public class WindowProcessor implements Disposable
                 }
                 else
                 {
-                    MemorySegment iconRawData = arena.allocateArray(ValueLayout.JAVA_BYTE, inputStream.readAllBytes());
+                    MemorySegment iconRawData = arena.allocateFrom(JAVA_BYTE, inputStream.readAllBytes());
 
                     GLFWimage iconImage = new GLFWimage(arena);
-                    iconImage.pixels(stbi_load_from_memory(iconRawData, (int) iconRawData.byteSize(), iconImage.width_ptr(), iconImage.height_ptr(), NULL, 4));
+                    iconImage.pixels(stbi_load_from_memory(iconRawData, (int) iconRawData.byteSize(), iconImage.$width(), iconImage.$height(), NULL, STBI_rgb_alpha));
                     glfwSetWindowIcon(this.m_handle, 1, iconImage.ptr());
 
                     stbi_image_free(iconImage.pixels());
@@ -110,18 +110,17 @@ public class WindowProcessor implements Disposable
             }
             catch (IOException e)
             {
-                gWindowLogger.error(STR."Failed to load window icon: \{e}");
+                gWindowLogger.error("Failed to load window icon: {}", e.toString());
             }
 
             MemorySegment monitor = glfwGetPrimaryMonitor();
-            MemorySegment pVidMode = glfwGetVideoMode(monitor);
-            if (!pVidMode.equals(NULL))
+            GLFWvidmode vidMode = new GLFWvidmode(glfwGetVideoMode(monitor));
+            if (!vidMode.ptr().equals(NULL))
             {
-                GLFWvidmode vidMode = new GLFWvidmode(pVidMode.reinterpret(GLFWvidmode.gStructLayout.byteSize()));
-                MemorySegment pX = arena.allocate(ValueLayout.JAVA_INT), pY = arena.allocate(ValueLayout.JAVA_INT);
+                MemorySegment pX = arena.allocate(JAVA_INT), pY = arena.allocate(JAVA_INT);
                 glfwGetMonitorPos(monitor, pX, pY);
 
-                int x = pX.get(ValueLayout.JAVA_INT, 0), y = pY.get(ValueLayout.JAVA_INT, 0);
+                int x = pX.get(JAVA_INT, 0), y = pY.get(JAVA_INT, 0);
                 glfwSetWindowPos(this.m_handle, x + (vidMode.width() - width) / 2, y + (vidMode.height() - height) / 2);
             }
 
@@ -138,19 +137,18 @@ public class WindowProcessor implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pExtensionCount = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pExtensionCount = arena.allocate(JAVA_INT);
             MemorySegment glfwExtensions = glfwGetRequiredInstanceExtensions(pExtensionCount);
-            int extensionCount = pExtensionCount.get(ValueLayout.JAVA_INT, 0);
+            int extensionCount = pExtensionCount.get(JAVA_INT, 0);
             if (extensionCount == 0)
             {
                 throw new VulkanException("An error occurred while acquiring GLFW required extensions.");
             }
 
-            glfwExtensions = glfwExtensions.reinterpret(ValueLayout.ADDRESS.byteSize() * extensionCount);
             String[] extensions = new String[extensionCount];
             for (int i = 0; i < extensionCount; i++)
             {
-                extensions[i] = glfwExtensions.getAtIndex(ValueLayout.ADDRESS, i).reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize()).getUtf8String(0);
+                extensions[i] = glfwExtensions.getAtIndex(UNBOUNDED_POINTER, i).getString(0);
             }
 
             return extensions;
@@ -161,31 +159,29 @@ public class WindowProcessor implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pMonitorCount = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pMonitorCount = arena.allocate(JAVA_INT);
             MemorySegment monitors = glfwGetMonitors(pMonitorCount);
-            MemorySegment pX = arena.allocate(ValueLayout.JAVA_INT), pY = arena.allocate(ValueLayout.JAVA_INT);
-            int monitorCount = pMonitorCount.get(ValueLayout.JAVA_INT, 0);
-            monitors = monitors.reinterpret(ValueLayout.ADDRESS.byteSize() * monitorCount);
+            MemorySegment pX = arena.allocate(JAVA_INT), pY = arena.allocate(JAVA_INT);
+            int monitorCount = pMonitorCount.get(JAVA_INT, 0);
 
             glfwGetWindowPos(this.m_handle, pX, pY);
-            int windowPx = pX.get(ValueLayout.JAVA_INT, 0), windowPy = pY.get(ValueLayout.JAVA_INT, 0);
+            int windowPx = pX.get(JAVA_INT, 0), windowPy = pY.get(JAVA_INT, 0);
             glfwGetWindowSize(this.m_handle, pX, pY);
-            int windowSx = pX.get(ValueLayout.JAVA_INT, 0), windowSy = pY.get(ValueLayout.JAVA_INT, 0);
+            int windowSx = pX.get(JAVA_INT, 0), windowSy = pY.get(JAVA_INT, 0);
 
             MemorySegment bestMonitor = NULL;
             int bestOverlapArea = -1;
             for (int i = 0; i < monitorCount; i++)
             {
-                MemorySegment monitor = monitors.getAtIndex(ValueLayout.ADDRESS, i);
-                MemorySegment pVidMode = glfwGetVideoMode(monitor);
-                if (pVidMode.equals(NULL))
+                MemorySegment monitor = monitors.getAtIndex(ADDRESS, i);
+                GLFWvidmode vidMode = new GLFWvidmode(glfwGetVideoMode(monitor));
+                if (vidMode.ptr().equals(NULL))
                 {
                     continue;
                 }
 
-                GLFWvidmode vidMode = new GLFWvidmode(pVidMode.reinterpret(GLFWvidmode.gStructLayout.byteSize()));
                 glfwGetMonitorPos(monitor, pX, pY);
-                int monitorPx = pX.get(ValueLayout.JAVA_INT, 0), monitorPy = pY.get(ValueLayout.JAVA_INT, 0);
+                int monitorPx = pX.get(JAVA_INT, 0), monitorPy = pY.get(JAVA_INT, 0);
 
                 int overlapArea = Math.max(0, Math.min(windowPx + windowSx, vidMode.width() + monitorPx) - Math.max(windowPx, monitorPx)) *
                         Math.max(0, Math.min(windowPy + windowSy, vidMode.height() + monitorPy) - Math.max(windowPy, monitorPy));
@@ -247,15 +243,14 @@ public class WindowProcessor implements Disposable
             monitor = glfwGetPrimaryMonitor();
         }
 
-        MemorySegment gVidMode = glfwGetVideoMode(monitor);
-        if (!gVidMode.equals(NULL))
+        GLFWvidmode vidMode = new GLFWvidmode(glfwGetVideoMode(monitor));
+        if (!vidMode.ptr().equals(NULL))
         {
-            GLFWvidmode vidMode = new GLFWvidmode(gVidMode.reinterpret(GLFWvidmode.gStructLayout.byteSize()));
             try (Arena arena = Arena.ofConfined())
             {
-                MemorySegment posX = arena.allocate(ValueLayout.JAVA_INT), posY = arena.allocate(ValueLayout.JAVA_INT);
+                MemorySegment posX = arena.allocate(JAVA_INT), posY = arena.allocate(JAVA_INT);
                 glfwGetWindowPos(this.m_handle, posX, posY);
-                this.m_fullscreenSaver = new FullscreenData(this.m_width, this.m_height, posX.get(ValueLayout.JAVA_INT, 0), posY.get(ValueLayout.JAVA_INT, 0));
+                this.m_fullscreenSaver = new FullscreenData(this.m_width, this.m_height, posX.get(JAVA_INT, 0), posY.get(JAVA_INT, 0));
             }
 
             glfwSetWindowMonitor(this.m_handle, monitor, 0, 0, vidMode.width(), vidMode.height(), 0);
@@ -273,7 +268,7 @@ public class WindowProcessor implements Disposable
 
         try (Arena arena = Arena.ofConfined())
         {
-            glfwSetWindowTitle(this.m_handle, arena.allocateUtf8String(title));
+            glfwSetWindowTitle(this.m_handle, arena.allocateFrom(title));
             this.m_title = title;
         }
     }
@@ -298,5 +293,6 @@ public class WindowProcessor implements Disposable
     public void dispose()
     {
         glfwDestroyWindow(this.m_handle);
+        this.m_stubArena.close();
     }
 }

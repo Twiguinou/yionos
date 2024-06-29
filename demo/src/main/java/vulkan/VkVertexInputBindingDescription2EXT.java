@@ -2,60 +2,65 @@ package vulkan;
 
 public record VkVertexInputBindingDescription2EXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$binding = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$binding = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stride = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stride = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$inputRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$inputRate = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$divisor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$divisor = 28L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__binding = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__binding = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stride = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__inputRate = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__divisor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__divisor = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$binding,
-            LAYOUT$stride,
-            LAYOUT$inputRate,
-            LAYOUT$divisor
-    ).withName("VkVertexInputBindingDescription2EXT");
+            LAYOUT__pNext,
+            LAYOUT__binding,
+            LAYOUT__stride,
+            LAYOUT__inputRate,
+            LAYOUT__divisor
+    ).withByteAlignment(8).withName("VkVertexInputBindingDescription2EXT");
 
     public VkVertexInputBindingDescription2EXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVertexInputBindingDescription2EXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVertexInputBindingDescription2EXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVertexInputBindingDescription2EXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVertexInputBindingDescription2EXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVertexInputBindingDescription2EXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int binding() {return this.ptr.get(LAYOUT$binding, OFFSET$binding);}
-    public void binding(int value) {this.ptr.set(LAYOUT$binding, OFFSET$binding, value);}
-    public java.lang.foreign.MemorySegment binding_ptr() {return this.ptr.asSlice(OFFSET$binding, LAYOUT$binding);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int stride() {return this.ptr.get(LAYOUT$stride, OFFSET$stride);}
-    public void stride(int value) {this.ptr.set(LAYOUT$stride, OFFSET$stride, value);}
-    public java.lang.foreign.MemorySegment stride_ptr() {return this.ptr.asSlice(OFFSET$stride, LAYOUT$stride);}
+    public int binding() {return this.ptr.get(LAYOUT__binding, OFFSET__binding);}
+    public void binding(int value) {this.ptr.set(LAYOUT__binding, OFFSET__binding, value);}
+    public java.lang.foreign.MemorySegment $binding() {return this.ptr.asSlice(OFFSET__binding, LAYOUT__binding);}
 
-    public int inputRate() {return this.ptr.get(LAYOUT$inputRate, OFFSET$inputRate);}
-    public void inputRate(int value) {this.ptr.set(LAYOUT$inputRate, OFFSET$inputRate, value);}
-    public java.lang.foreign.MemorySegment inputRate_ptr() {return this.ptr.asSlice(OFFSET$inputRate, LAYOUT$inputRate);}
+    public int stride() {return this.ptr.get(LAYOUT__stride, OFFSET__stride);}
+    public void stride(int value) {this.ptr.set(LAYOUT__stride, OFFSET__stride, value);}
+    public java.lang.foreign.MemorySegment $stride() {return this.ptr.asSlice(OFFSET__stride, LAYOUT__stride);}
 
-    public int divisor() {return this.ptr.get(LAYOUT$divisor, OFFSET$divisor);}
-    public void divisor(int value) {this.ptr.set(LAYOUT$divisor, OFFSET$divisor, value);}
-    public java.lang.foreign.MemorySegment divisor_ptr() {return this.ptr.asSlice(OFFSET$divisor, LAYOUT$divisor);}
+    public int inputRate() {return this.ptr.get(LAYOUT__inputRate, OFFSET__inputRate);}
+    public void inputRate(int value) {this.ptr.set(LAYOUT__inputRate, OFFSET__inputRate, value);}
+    public java.lang.foreign.MemorySegment $inputRate() {return this.ptr.asSlice(OFFSET__inputRate, LAYOUT__inputRate);}
+
+    public int divisor() {return this.ptr.get(LAYOUT__divisor, OFFSET__divisor);}
+    public void divisor(int value) {this.ptr.set(LAYOUT__divisor, OFFSET__divisor, value);}
+    public java.lang.foreign.MemorySegment $divisor() {return this.ptr.asSlice(OFFSET__divisor, LAYOUT__divisor);}
 }

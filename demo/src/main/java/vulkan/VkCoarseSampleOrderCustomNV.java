@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkCoarseSampleOrderCustomNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shadingRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shadingRate = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sampleCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sampleCount = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sampleLocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sampleLocationCount = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSampleLocations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSampleLocations = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shadingRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shadingRate = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sampleCount = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleLocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sampleLocationCount = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSampleLocations = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$shadingRate,
-            LAYOUT$sampleCount,
-            LAYOUT$sampleLocationCount,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__shadingRate,
+            LAYOUT__sampleCount,
+            LAYOUT__sampleLocationCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pSampleLocations
-    ).withName("VkCoarseSampleOrderCustomNV");
+            LAYOUT__pSampleLocations
+    ).withByteAlignment(8).withName("VkCoarseSampleOrderCustomNV");
 
     public VkCoarseSampleOrderCustomNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkCoarseSampleOrderCustomNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkCoarseSampleOrderCustomNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkCoarseSampleOrderCustomNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkCoarseSampleOrderCustomNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int shadingRate() {return this.ptr.get(LAYOUT$shadingRate, OFFSET$shadingRate);}
-    public void shadingRate(int value) {this.ptr.set(LAYOUT$shadingRate, OFFSET$shadingRate, value);}
-    public java.lang.foreign.MemorySegment shadingRate_ptr() {return this.ptr.asSlice(OFFSET$shadingRate, LAYOUT$shadingRate);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkCoarseSampleOrderCustomNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int sampleCount() {return this.ptr.get(LAYOUT$sampleCount, OFFSET$sampleCount);}
-    public void sampleCount(int value) {this.ptr.set(LAYOUT$sampleCount, OFFSET$sampleCount, value);}
-    public java.lang.foreign.MemorySegment sampleCount_ptr() {return this.ptr.asSlice(OFFSET$sampleCount, LAYOUT$sampleCount);}
+    public int shadingRate() {return this.ptr.get(LAYOUT__shadingRate, OFFSET__shadingRate);}
+    public void shadingRate(int value) {this.ptr.set(LAYOUT__shadingRate, OFFSET__shadingRate, value);}
+    public java.lang.foreign.MemorySegment $shadingRate() {return this.ptr.asSlice(OFFSET__shadingRate, LAYOUT__shadingRate);}
 
-    public int sampleLocationCount() {return this.ptr.get(LAYOUT$sampleLocationCount, OFFSET$sampleLocationCount);}
-    public void sampleLocationCount(int value) {this.ptr.set(LAYOUT$sampleLocationCount, OFFSET$sampleLocationCount, value);}
-    public java.lang.foreign.MemorySegment sampleLocationCount_ptr() {return this.ptr.asSlice(OFFSET$sampleLocationCount, LAYOUT$sampleLocationCount);}
+    public int sampleCount() {return this.ptr.get(LAYOUT__sampleCount, OFFSET__sampleCount);}
+    public void sampleCount(int value) {this.ptr.set(LAYOUT__sampleCount, OFFSET__sampleCount, value);}
+    public java.lang.foreign.MemorySegment $sampleCount() {return this.ptr.asSlice(OFFSET__sampleCount, LAYOUT__sampleCount);}
 
-    public java.lang.foreign.MemorySegment pSampleLocations() {return this.ptr.get(LAYOUT$pSampleLocations, OFFSET$pSampleLocations);}
-    public void pSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSampleLocations, OFFSET$pSampleLocations, value);}
-    public java.lang.foreign.MemorySegment pSampleLocations_ptr() {return this.ptr.asSlice(OFFSET$pSampleLocations, LAYOUT$pSampleLocations);}
+    public int sampleLocationCount() {return this.ptr.get(LAYOUT__sampleLocationCount, OFFSET__sampleLocationCount);}
+    public void sampleLocationCount(int value) {this.ptr.set(LAYOUT__sampleLocationCount, OFFSET__sampleLocationCount, value);}
+    public java.lang.foreign.MemorySegment $sampleLocationCount() {return this.ptr.asSlice(OFFSET__sampleLocationCount, LAYOUT__sampleLocationCount);}
+
+    public java.lang.foreign.MemorySegment pSampleLocations() {return this.ptr.get(LAYOUT__pSampleLocations, OFFSET__pSampleLocations);}
+    public void pSampleLocations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSampleLocations, OFFSET__pSampleLocations, value);}
+    public java.lang.foreign.MemorySegment $pSampleLocations() {return this.ptr.asSlice(OFFSET__pSampleLocations, LAYOUT__pSampleLocations);}
 }

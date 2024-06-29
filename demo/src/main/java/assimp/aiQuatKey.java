@@ -2,31 +2,36 @@ package assimp;
 
 public record aiQuatKey(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT$mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-    public static final long OFFSET$mTime = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mValue = assimp.aiQuaternion.gStructLayout;
-    public static final long OFFSET$mValue = 8L;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+    public static final long OFFSET__mTime = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__mValue = assimp.aiQuaternion.gRecordLayout;
+    public static final long OFFSET__mValue = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$mTime,
-            LAYOUT$mValue
-    ).withName("aiQuatKey");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__mTime,
+            LAYOUT__mValue
+    ).withByteAlignment(8).withName("aiQuatKey");
 
     public aiQuatKey(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiQuatKey getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiQuatKey getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiQuatKey(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiQuatKey(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public double mTime() {return this.ptr.get(LAYOUT$mTime, OFFSET$mTime);}
-    public void mTime(double value) {this.ptr.set(LAYOUT$mTime, OFFSET$mTime, value);}
-    public java.lang.foreign.MemorySegment mTime_ptr() {return this.ptr.asSlice(OFFSET$mTime, LAYOUT$mTime);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiQuatKey value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public assimp.aiQuaternion mValue() {return new assimp.aiQuaternion(this.ptr.asSlice(OFFSET$mValue, LAYOUT$mValue));}
+    public double mTime() {return this.ptr.get(LAYOUT__mTime, OFFSET__mTime);}
+    public void mTime(double value) {this.ptr.set(LAYOUT__mTime, OFFSET__mTime, value);}
+    public java.lang.foreign.MemorySegment $mTime() {return this.ptr.asSlice(OFFSET__mTime, LAYOUT__mTime);}
+
+    public assimp.aiQuaternion mValue() {return new assimp.aiQuaternion(this.ptr.asSlice(OFFSET__mValue, LAYOUT__mValue));}
     public void mValue(java.util.function.Consumer<assimp.aiQuaternion> consumer) {consumer.accept(this.mValue());}
-    public void mValue(assimp.aiQuaternion value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mValue, LAYOUT$mValue.byteSize());}
+    public void mValue(assimp.aiQuaternion value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mValue, LAYOUT__mValue.byteSize());}
 }

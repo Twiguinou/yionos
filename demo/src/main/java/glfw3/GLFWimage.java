@@ -2,38 +2,43 @@ package glfw3;
 
 public record GLFWimage(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$width = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$width = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$height = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$height = 4L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pixels = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pixels = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__width = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__height = 4;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pixels = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pixels = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$width,
-            LAYOUT$height,
-            LAYOUT$pixels
-    ).withName("GLFWimage");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__width,
+            LAYOUT__height,
+            LAYOUT__pixels
+    ).withByteAlignment(8).withName("GLFWimage");
 
     public GLFWimage(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static GLFWimage getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static GLFWimage getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new GLFWimage(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new GLFWimage(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int width() {return this.ptr.get(LAYOUT$width, OFFSET$width);}
-    public void width(int value) {this.ptr.set(LAYOUT$width, OFFSET$width, value);}
-    public java.lang.foreign.MemorySegment width_ptr() {return this.ptr.asSlice(OFFSET$width, LAYOUT$width);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, GLFWimage value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int height() {return this.ptr.get(LAYOUT$height, OFFSET$height);}
-    public void height(int value) {this.ptr.set(LAYOUT$height, OFFSET$height, value);}
-    public java.lang.foreign.MemorySegment height_ptr() {return this.ptr.asSlice(OFFSET$height, LAYOUT$height);}
+    public int width() {return this.ptr.get(LAYOUT__width, OFFSET__width);}
+    public void width(int value) {this.ptr.set(LAYOUT__width, OFFSET__width, value);}
+    public java.lang.foreign.MemorySegment $width() {return this.ptr.asSlice(OFFSET__width, LAYOUT__width);}
 
-    public java.lang.foreign.MemorySegment pixels() {return this.ptr.get(LAYOUT$pixels, OFFSET$pixels);}
-    public void pixels(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pixels, OFFSET$pixels, value);}
-    public java.lang.foreign.MemorySegment pixels_ptr() {return this.ptr.asSlice(OFFSET$pixels, LAYOUT$pixels);}
+    public int height() {return this.ptr.get(LAYOUT__height, OFFSET__height);}
+    public void height(int value) {this.ptr.set(LAYOUT__height, OFFSET__height, value);}
+    public java.lang.foreign.MemorySegment $height() {return this.ptr.asSlice(OFFSET__height, LAYOUT__height);}
+
+    public java.lang.foreign.MemorySegment pixels() {return this.ptr.get(LAYOUT__pixels, OFFSET__pixels);}
+    public void pixels(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pixels, OFFSET__pixels, value);}
+    public java.lang.foreign.MemorySegment $pixels() {return this.ptr.asSlice(OFFSET__pixels, LAYOUT__pixels);}
 }

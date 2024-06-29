@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkAmigoProfilingSubmitInfoSEC(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$firstDrawTimestamp = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$firstDrawTimestamp = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$swapBufferTimestamp = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$swapBufferTimestamp = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__firstDrawTimestamp = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__firstDrawTimestamp = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__swapBufferTimestamp = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__swapBufferTimestamp = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$firstDrawTimestamp,
-            LAYOUT$swapBufferTimestamp
-    ).withName("VkAmigoProfilingSubmitInfoSEC");
+            LAYOUT__pNext,
+            LAYOUT__firstDrawTimestamp,
+            LAYOUT__swapBufferTimestamp
+    ).withByteAlignment(8).withName("VkAmigoProfilingSubmitInfoSEC");
 
     public VkAmigoProfilingSubmitInfoSEC(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkAmigoProfilingSubmitInfoSEC getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkAmigoProfilingSubmitInfoSEC getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkAmigoProfilingSubmitInfoSEC(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkAmigoProfilingSubmitInfoSEC(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkAmigoProfilingSubmitInfoSEC value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public long firstDrawTimestamp() {return this.ptr.get(LAYOUT$firstDrawTimestamp, OFFSET$firstDrawTimestamp);}
-    public void firstDrawTimestamp(long value) {this.ptr.set(LAYOUT$firstDrawTimestamp, OFFSET$firstDrawTimestamp, value);}
-    public java.lang.foreign.MemorySegment firstDrawTimestamp_ptr() {return this.ptr.asSlice(OFFSET$firstDrawTimestamp, LAYOUT$firstDrawTimestamp);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long swapBufferTimestamp() {return this.ptr.get(LAYOUT$swapBufferTimestamp, OFFSET$swapBufferTimestamp);}
-    public void swapBufferTimestamp(long value) {this.ptr.set(LAYOUT$swapBufferTimestamp, OFFSET$swapBufferTimestamp, value);}
-    public java.lang.foreign.MemorySegment swapBufferTimestamp_ptr() {return this.ptr.asSlice(OFFSET$swapBufferTimestamp, LAYOUT$swapBufferTimestamp);}
+    public long firstDrawTimestamp() {return this.ptr.get(LAYOUT__firstDrawTimestamp, OFFSET__firstDrawTimestamp);}
+    public void firstDrawTimestamp(long value) {this.ptr.set(LAYOUT__firstDrawTimestamp, OFFSET__firstDrawTimestamp, value);}
+    public java.lang.foreign.MemorySegment $firstDrawTimestamp() {return this.ptr.asSlice(OFFSET__firstDrawTimestamp, LAYOUT__firstDrawTimestamp);}
+
+    public long swapBufferTimestamp() {return this.ptr.get(LAYOUT__swapBufferTimestamp, OFFSET__swapBufferTimestamp);}
+    public void swapBufferTimestamp(long value) {this.ptr.set(LAYOUT__swapBufferTimestamp, OFFSET__swapBufferTimestamp, value);}
+    public java.lang.foreign.MemorySegment $swapBufferTimestamp() {return this.ptr.asSlice(OFFSET__swapBufferTimestamp, LAYOUT__swapBufferTimestamp);}
 }

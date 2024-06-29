@@ -2,130 +2,135 @@ package nuklear;
 
 public record nk_text_edit(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$clip = nuklear.nk_clipboard.gStructLayout;
-    public static final long OFFSET$clip = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$string = nuklear.nk_str.gStructLayout;
-    public static final long OFFSET$string = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$filter = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$filter = 152L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$scrollbar = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$scrollbar = 160L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$cursor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$cursor = 168L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$select_start = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$select_start = 172L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$select_end = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$select_end = 176L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$mode = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$mode = 180L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$cursor_at_end_of_line = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$cursor_at_end_of_line = 181L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$initialized = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$initialized = 182L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$has_preferred_x = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$has_preferred_x = 183L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$single_line = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$single_line = 184L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$active = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$active = 185L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$padding1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$padding1 = 186L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$preferred_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$preferred_x = 188L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$undo = nuklear.nk_text_undo_state.gStructLayout;
-    public static final long OFFSET$undo = 192L;
+    public static final java.lang.foreign.StructLayout LAYOUT__clip = nuklear.nk_clipboard.gRecordLayout;
+    public static final long OFFSET__clip = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__string = nuklear.nk_str.gRecordLayout;
+    public static final long OFFSET__string = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__filter = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__filter = 152;
+    public static final java.lang.foreign.StructLayout LAYOUT__scrollbar = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__scrollbar = 160;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cursor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__cursor = 168;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_start = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__select_start = 172;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_end = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__select_end = 176;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__mode = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__mode = 180;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cursor_at_end_of_line = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__cursor_at_end_of_line = 181;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__initialized = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__initialized = 182;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__has_preferred_x = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__has_preferred_x = 183;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__single_line = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__single_line = 184;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__active = 185;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__padding1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__padding1 = 186;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__preferred_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__preferred_x = 188;
+    public static final java.lang.foreign.StructLayout LAYOUT__undo = nuklear.nk_text_undo_state.gRecordLayout;
+    public static final long OFFSET__undo = 192;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$clip,
-            LAYOUT$string,
-            LAYOUT$filter,
-            LAYOUT$scrollbar,
-            LAYOUT$cursor,
-            LAYOUT$select_start,
-            LAYOUT$select_end,
-            LAYOUT$mode,
-            LAYOUT$cursor_at_end_of_line,
-            LAYOUT$initialized,
-            LAYOUT$has_preferred_x,
-            LAYOUT$single_line,
-            LAYOUT$active,
-            LAYOUT$padding1,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__clip,
+            LAYOUT__string,
+            LAYOUT__filter,
+            LAYOUT__scrollbar,
+            LAYOUT__cursor,
+            LAYOUT__select_start,
+            LAYOUT__select_end,
+            LAYOUT__mode,
+            LAYOUT__cursor_at_end_of_line,
+            LAYOUT__initialized,
+            LAYOUT__has_preferred_x,
+            LAYOUT__single_line,
+            LAYOUT__active,
+            LAYOUT__padding1,
             java.lang.foreign.MemoryLayout.paddingLayout(1),
-            LAYOUT$preferred_x,
-            LAYOUT$undo
-    ).withName("nk_text_edit");
+            LAYOUT__preferred_x,
+            LAYOUT__undo
+    ).withByteAlignment(8).withName("nk_text_edit");
 
     public nk_text_edit(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_text_edit getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_text_edit getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_text_edit(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_text_edit(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_clipboard clip() {return new nuklear.nk_clipboard(this._ptr.asSlice(OFFSET$clip, LAYOUT$clip));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_text_edit value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_clipboard clip() {return new nuklear.nk_clipboard(this._ptr.asSlice(OFFSET__clip, LAYOUT__clip));}
     public void clip(java.util.function.Consumer<nuklear.nk_clipboard> consumer) {consumer.accept(this.clip());}
-    public void clip(nuklear.nk_clipboard value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$clip, LAYOUT$clip.byteSize());}
+    public void clip(nuklear.nk_clipboard value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__clip, LAYOUT__clip.byteSize());}
 
-    public nuklear.nk_str string() {return new nuklear.nk_str(this._ptr.asSlice(OFFSET$string, LAYOUT$string));}
+    public nuklear.nk_str string() {return new nuklear.nk_str(this._ptr.asSlice(OFFSET__string, LAYOUT__string));}
     public void string(java.util.function.Consumer<nuklear.nk_str> consumer) {consumer.accept(this.string());}
-    public void string(nuklear.nk_str value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$string, LAYOUT$string.byteSize());}
+    public void string(nuklear.nk_str value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__string, LAYOUT__string.byteSize());}
 
-    public java.lang.foreign.MemorySegment filter() {return this._ptr.get(LAYOUT$filter, OFFSET$filter);}
-    public void filter(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$filter, OFFSET$filter, value);}
-    public java.lang.foreign.MemorySegment filter_ptr() {return this._ptr.asSlice(OFFSET$filter, LAYOUT$filter);}
+    public java.lang.foreign.MemorySegment filter() {return this._ptr.get(LAYOUT__filter, OFFSET__filter);}
+    public void filter(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__filter, OFFSET__filter, value);}
+    public java.lang.foreign.MemorySegment $filter() {return this._ptr.asSlice(OFFSET__filter, LAYOUT__filter);}
 
-    public nuklear.nk_vec2 scrollbar() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$scrollbar, LAYOUT$scrollbar));}
+    public nuklear.nk_vec2 scrollbar() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__scrollbar, LAYOUT__scrollbar));}
     public void scrollbar(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.scrollbar());}
-    public void scrollbar(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$scrollbar, LAYOUT$scrollbar.byteSize());}
+    public void scrollbar(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__scrollbar, LAYOUT__scrollbar.byteSize());}
 
-    public int cursor() {return this._ptr.get(LAYOUT$cursor, OFFSET$cursor);}
-    public void cursor(int value) {this._ptr.set(LAYOUT$cursor, OFFSET$cursor, value);}
-    public java.lang.foreign.MemorySegment cursor_ptr() {return this._ptr.asSlice(OFFSET$cursor, LAYOUT$cursor);}
+    public int cursor() {return this._ptr.get(LAYOUT__cursor, OFFSET__cursor);}
+    public void cursor(int value) {this._ptr.set(LAYOUT__cursor, OFFSET__cursor, value);}
+    public java.lang.foreign.MemorySegment $cursor() {return this._ptr.asSlice(OFFSET__cursor, LAYOUT__cursor);}
 
-    public int select_start() {return this._ptr.get(LAYOUT$select_start, OFFSET$select_start);}
-    public void select_start(int value) {this._ptr.set(LAYOUT$select_start, OFFSET$select_start, value);}
-    public java.lang.foreign.MemorySegment select_start_ptr() {return this._ptr.asSlice(OFFSET$select_start, LAYOUT$select_start);}
+    public int select_start() {return this._ptr.get(LAYOUT__select_start, OFFSET__select_start);}
+    public void select_start(int value) {this._ptr.set(LAYOUT__select_start, OFFSET__select_start, value);}
+    public java.lang.foreign.MemorySegment $select_start() {return this._ptr.asSlice(OFFSET__select_start, LAYOUT__select_start);}
 
-    public int select_end() {return this._ptr.get(LAYOUT$select_end, OFFSET$select_end);}
-    public void select_end(int value) {this._ptr.set(LAYOUT$select_end, OFFSET$select_end, value);}
-    public java.lang.foreign.MemorySegment select_end_ptr() {return this._ptr.asSlice(OFFSET$select_end, LAYOUT$select_end);}
+    public int select_end() {return this._ptr.get(LAYOUT__select_end, OFFSET__select_end);}
+    public void select_end(int value) {this._ptr.set(LAYOUT__select_end, OFFSET__select_end, value);}
+    public java.lang.foreign.MemorySegment $select_end() {return this._ptr.asSlice(OFFSET__select_end, LAYOUT__select_end);}
 
-    public char mode() {return (char)this._ptr.get(LAYOUT$mode, OFFSET$mode);}
-    public void mode(char value) {this._ptr.set(LAYOUT$mode, OFFSET$mode, (byte)value);}
-    public java.lang.foreign.MemorySegment mode_ptr() {return this._ptr.asSlice(OFFSET$mode, LAYOUT$mode);}
+    public byte mode() {return this._ptr.get(LAYOUT__mode, OFFSET__mode);}
+    public void mode(byte value) {this._ptr.set(LAYOUT__mode, OFFSET__mode, value);}
+    public java.lang.foreign.MemorySegment $mode() {return this._ptr.asSlice(OFFSET__mode, LAYOUT__mode);}
 
-    public char cursor_at_end_of_line() {return (char)this._ptr.get(LAYOUT$cursor_at_end_of_line, OFFSET$cursor_at_end_of_line);}
-    public void cursor_at_end_of_line(char value) {this._ptr.set(LAYOUT$cursor_at_end_of_line, OFFSET$cursor_at_end_of_line, (byte)value);}
-    public java.lang.foreign.MemorySegment cursor_at_end_of_line_ptr() {return this._ptr.asSlice(OFFSET$cursor_at_end_of_line, LAYOUT$cursor_at_end_of_line);}
+    public byte cursor_at_end_of_line() {return this._ptr.get(LAYOUT__cursor_at_end_of_line, OFFSET__cursor_at_end_of_line);}
+    public void cursor_at_end_of_line(byte value) {this._ptr.set(LAYOUT__cursor_at_end_of_line, OFFSET__cursor_at_end_of_line, value);}
+    public java.lang.foreign.MemorySegment $cursor_at_end_of_line() {return this._ptr.asSlice(OFFSET__cursor_at_end_of_line, LAYOUT__cursor_at_end_of_line);}
 
-    public char initialized() {return (char)this._ptr.get(LAYOUT$initialized, OFFSET$initialized);}
-    public void initialized(char value) {this._ptr.set(LAYOUT$initialized, OFFSET$initialized, (byte)value);}
-    public java.lang.foreign.MemorySegment initialized_ptr() {return this._ptr.asSlice(OFFSET$initialized, LAYOUT$initialized);}
+    public byte initialized() {return this._ptr.get(LAYOUT__initialized, OFFSET__initialized);}
+    public void initialized(byte value) {this._ptr.set(LAYOUT__initialized, OFFSET__initialized, value);}
+    public java.lang.foreign.MemorySegment $initialized() {return this._ptr.asSlice(OFFSET__initialized, LAYOUT__initialized);}
 
-    public char has_preferred_x() {return (char)this._ptr.get(LAYOUT$has_preferred_x, OFFSET$has_preferred_x);}
-    public void has_preferred_x(char value) {this._ptr.set(LAYOUT$has_preferred_x, OFFSET$has_preferred_x, (byte)value);}
-    public java.lang.foreign.MemorySegment has_preferred_x_ptr() {return this._ptr.asSlice(OFFSET$has_preferred_x, LAYOUT$has_preferred_x);}
+    public byte has_preferred_x() {return this._ptr.get(LAYOUT__has_preferred_x, OFFSET__has_preferred_x);}
+    public void has_preferred_x(byte value) {this._ptr.set(LAYOUT__has_preferred_x, OFFSET__has_preferred_x, value);}
+    public java.lang.foreign.MemorySegment $has_preferred_x() {return this._ptr.asSlice(OFFSET__has_preferred_x, LAYOUT__has_preferred_x);}
 
-    public char single_line() {return (char)this._ptr.get(LAYOUT$single_line, OFFSET$single_line);}
-    public void single_line(char value) {this._ptr.set(LAYOUT$single_line, OFFSET$single_line, (byte)value);}
-    public java.lang.foreign.MemorySegment single_line_ptr() {return this._ptr.asSlice(OFFSET$single_line, LAYOUT$single_line);}
+    public byte single_line() {return this._ptr.get(LAYOUT__single_line, OFFSET__single_line);}
+    public void single_line(byte value) {this._ptr.set(LAYOUT__single_line, OFFSET__single_line, value);}
+    public java.lang.foreign.MemorySegment $single_line() {return this._ptr.asSlice(OFFSET__single_line, LAYOUT__single_line);}
 
-    public char active() {return (char)this._ptr.get(LAYOUT$active, OFFSET$active);}
-    public void active(char value) {this._ptr.set(LAYOUT$active, OFFSET$active, (byte)value);}
-    public java.lang.foreign.MemorySegment active_ptr() {return this._ptr.asSlice(OFFSET$active, LAYOUT$active);}
+    public byte active() {return this._ptr.get(LAYOUT__active, OFFSET__active);}
+    public void active(byte value) {this._ptr.set(LAYOUT__active, OFFSET__active, value);}
+    public java.lang.foreign.MemorySegment $active() {return this._ptr.asSlice(OFFSET__active, LAYOUT__active);}
 
-    public char padding1() {return (char)this._ptr.get(LAYOUT$padding1, OFFSET$padding1);}
-    public void padding1(char value) {this._ptr.set(LAYOUT$padding1, OFFSET$padding1, (byte)value);}
-    public java.lang.foreign.MemorySegment padding1_ptr() {return this._ptr.asSlice(OFFSET$padding1, LAYOUT$padding1);}
+    public byte padding1() {return this._ptr.get(LAYOUT__padding1, OFFSET__padding1);}
+    public void padding1(byte value) {this._ptr.set(LAYOUT__padding1, OFFSET__padding1, value);}
+    public java.lang.foreign.MemorySegment $padding1() {return this._ptr.asSlice(OFFSET__padding1, LAYOUT__padding1);}
 
-    public float preferred_x() {return this._ptr.get(LAYOUT$preferred_x, OFFSET$preferred_x);}
-    public void preferred_x(float value) {this._ptr.set(LAYOUT$preferred_x, OFFSET$preferred_x, value);}
-    public java.lang.foreign.MemorySegment preferred_x_ptr() {return this._ptr.asSlice(OFFSET$preferred_x, LAYOUT$preferred_x);}
+    public float preferred_x() {return this._ptr.get(LAYOUT__preferred_x, OFFSET__preferred_x);}
+    public void preferred_x(float value) {this._ptr.set(LAYOUT__preferred_x, OFFSET__preferred_x, value);}
+    public java.lang.foreign.MemorySegment $preferred_x() {return this._ptr.asSlice(OFFSET__preferred_x, LAYOUT__preferred_x);}
 
-    public nuklear.nk_text_undo_state undo() {return new nuklear.nk_text_undo_state(this._ptr.asSlice(OFFSET$undo, LAYOUT$undo));}
+    public nuklear.nk_text_undo_state undo() {return new nuklear.nk_text_undo_state(this._ptr.asSlice(OFFSET__undo, LAYOUT__undo));}
     public void undo(java.util.function.Consumer<nuklear.nk_text_undo_state> consumer) {consumer.accept(this.undo());}
-    public void undo(nuklear.nk_text_undo_state value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$undo, LAYOUT$undo.byteSize());}
+    public void undo(nuklear.nk_text_undo_state value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__undo, LAYOUT__undo.byteSize());}
 }

@@ -1,0 +1,27 @@
+package vulkan;
+
+public final class StdVideoAV1TransferCharacteristics
+{private StdVideoAV1TransferCharacteristics() {}
+
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_RESERVED_0 = 0;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_709 = 1;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_UNSPECIFIED = 2;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_RESERVED_3 = 3;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_470_M = 4;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_470_B_G = 5;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_601 = 6;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_SMPTE_240 = 7;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_LINEAR = 8;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_LOG_100 = 9;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_LOG_100_SQRT10 = 10;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_IEC_61966 = 11;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_1361 = 12;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_SRGB = 13;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_2020_10_BIT = 14;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_2020_12_BIT = 15;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_SMPTE_2084 = 16;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_SMPTE_428 = 17;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_HLG = 18;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_INVALID = 2147483647;
+    public static final int STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_MAX_ENUM = 2147483647;
+}

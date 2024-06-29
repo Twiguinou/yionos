@@ -2,61 +2,66 @@ package vulkan;
 
 public record VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$maxWorkGroupCount = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$maxWorkGroupCount = 16L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$maxWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final long OFFSET$maxWorkGroupSize = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxOutputClusterCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxOutputClusterCount = 40L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$indirectBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$indirectBufferOffsetAlignment = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxWorkGroupCount = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__maxWorkGroupCount = 16;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final long OFFSET__maxWorkGroupSize = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxOutputClusterCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxOutputClusterCount = 40;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__indirectBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__indirectBufferOffsetAlignment = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$maxWorkGroupCount,
-            LAYOUT$maxWorkGroupSize,
-            LAYOUT$maxOutputClusterCount,
+            LAYOUT__pNext,
+            LAYOUT__maxWorkGroupCount,
+            LAYOUT__maxWorkGroupSize,
+            LAYOUT__maxOutputClusterCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$indirectBufferOffsetAlignment
-    ).withName("VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI");
+            LAYOUT__indirectBufferOffsetAlignment
+    ).withByteAlignment(8).withName("VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI");
 
     public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment maxWorkGroupCount() {return this.ptr.asSlice(OFFSET$maxWorkGroupCount, LAYOUT$maxWorkGroupCount);}
-    public int maxWorkGroupCount(int i) {return this.maxWorkGroupCount().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void maxWorkGroupCount(int i, int value) {this.maxWorkGroupCount().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment maxWorkGroupSize() {return this.ptr.asSlice(OFFSET$maxWorkGroupSize, LAYOUT$maxWorkGroupSize);}
-    public int maxWorkGroupSize(int i) {return this.maxWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i);}
-    public void maxWorkGroupSize(int i, int value) {this.maxWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, i, value);}
+    public java.lang.foreign.MemorySegment maxWorkGroupCount() {return this.ptr.asSlice(OFFSET__maxWorkGroupCount, LAYOUT__maxWorkGroupCount);}
+    public int maxWorkGroupCount(int index) {return this.maxWorkGroupCount().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void maxWorkGroupCount(int index, int value) {this.maxWorkGroupCount().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 
-    public int maxOutputClusterCount() {return this.ptr.get(LAYOUT$maxOutputClusterCount, OFFSET$maxOutputClusterCount);}
-    public void maxOutputClusterCount(int value) {this.ptr.set(LAYOUT$maxOutputClusterCount, OFFSET$maxOutputClusterCount, value);}
-    public java.lang.foreign.MemorySegment maxOutputClusterCount_ptr() {return this.ptr.asSlice(OFFSET$maxOutputClusterCount, LAYOUT$maxOutputClusterCount);}
+    public java.lang.foreign.MemorySegment maxWorkGroupSize() {return this.ptr.asSlice(OFFSET__maxWorkGroupSize, LAYOUT__maxWorkGroupSize);}
+    public int maxWorkGroupSize(int index) {return this.maxWorkGroupSize().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
+    public void maxWorkGroupSize(int index, int value) {this.maxWorkGroupSize().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 
-    public long indirectBufferOffsetAlignment() {return this.ptr.get(LAYOUT$indirectBufferOffsetAlignment, OFFSET$indirectBufferOffsetAlignment);}
-    public void indirectBufferOffsetAlignment(long value) {this.ptr.set(LAYOUT$indirectBufferOffsetAlignment, OFFSET$indirectBufferOffsetAlignment, value);}
-    public java.lang.foreign.MemorySegment indirectBufferOffsetAlignment_ptr() {return this.ptr.asSlice(OFFSET$indirectBufferOffsetAlignment, LAYOUT$indirectBufferOffsetAlignment);}
+    public int maxOutputClusterCount() {return this.ptr.get(LAYOUT__maxOutputClusterCount, OFFSET__maxOutputClusterCount);}
+    public void maxOutputClusterCount(int value) {this.ptr.set(LAYOUT__maxOutputClusterCount, OFFSET__maxOutputClusterCount, value);}
+    public java.lang.foreign.MemorySegment $maxOutputClusterCount() {return this.ptr.asSlice(OFFSET__maxOutputClusterCount, LAYOUT__maxOutputClusterCount);}
+
+    public long indirectBufferOffsetAlignment() {return this.ptr.get(LAYOUT__indirectBufferOffsetAlignment, OFFSET__indirectBufferOffsetAlignment);}
+    public void indirectBufferOffsetAlignment(long value) {this.ptr.set(LAYOUT__indirectBufferOffsetAlignment, OFFSET__indirectBufferOffsetAlignment, value);}
+    public java.lang.foreign.MemorySegment $indirectBufferOffsetAlignment() {return this.ptr.asSlice(OFFSET__indirectBufferOffsetAlignment, LAYOUT__indirectBufferOffsetAlignment);}
 }

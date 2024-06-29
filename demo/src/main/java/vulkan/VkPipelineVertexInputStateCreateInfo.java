@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkPipelineVertexInputStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexBindingDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexBindingDescriptionCount = 20L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pVertexBindingDescriptions = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pVertexBindingDescriptions = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexAttributeDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexAttributeDescriptionCount = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pVertexAttributeDescriptions = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pVertexAttributeDescriptions = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexBindingDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexBindingDescriptionCount = 20;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexBindingDescriptions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pVertexBindingDescriptions = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexAttributeDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexAttributeDescriptionCount = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexAttributeDescriptions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pVertexAttributeDescriptions = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$vertexBindingDescriptionCount,
-            LAYOUT$pVertexBindingDescriptions,
-            LAYOUT$vertexAttributeDescriptionCount,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__vertexBindingDescriptionCount,
+            LAYOUT__pVertexBindingDescriptions,
+            LAYOUT__vertexAttributeDescriptionCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pVertexAttributeDescriptions
-    ).withName("VkPipelineVertexInputStateCreateInfo");
+            LAYOUT__pVertexAttributeDescriptions
+    ).withByteAlignment(8).withName("VkPipelineVertexInputStateCreateInfo");
 
     public VkPipelineVertexInputStateCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineVertexInputStateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineVertexInputStateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineVertexInputStateCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineVertexInputStateCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineVertexInputStateCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int vertexBindingDescriptionCount() {return this.ptr.get(LAYOUT$vertexBindingDescriptionCount, OFFSET$vertexBindingDescriptionCount);}
-    public void vertexBindingDescriptionCount(int value) {this.ptr.set(LAYOUT$vertexBindingDescriptionCount, OFFSET$vertexBindingDescriptionCount, value);}
-    public java.lang.foreign.MemorySegment vertexBindingDescriptionCount_ptr() {return this.ptr.asSlice(OFFSET$vertexBindingDescriptionCount, LAYOUT$vertexBindingDescriptionCount);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public java.lang.foreign.MemorySegment pVertexBindingDescriptions() {return this.ptr.get(LAYOUT$pVertexBindingDescriptions, OFFSET$pVertexBindingDescriptions);}
-    public void pVertexBindingDescriptions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pVertexBindingDescriptions, OFFSET$pVertexBindingDescriptions, value);}
-    public java.lang.foreign.MemorySegment pVertexBindingDescriptions_ptr() {return this.ptr.asSlice(OFFSET$pVertexBindingDescriptions, LAYOUT$pVertexBindingDescriptions);}
+    public int vertexBindingDescriptionCount() {return this.ptr.get(LAYOUT__vertexBindingDescriptionCount, OFFSET__vertexBindingDescriptionCount);}
+    public void vertexBindingDescriptionCount(int value) {this.ptr.set(LAYOUT__vertexBindingDescriptionCount, OFFSET__vertexBindingDescriptionCount, value);}
+    public java.lang.foreign.MemorySegment $vertexBindingDescriptionCount() {return this.ptr.asSlice(OFFSET__vertexBindingDescriptionCount, LAYOUT__vertexBindingDescriptionCount);}
 
-    public int vertexAttributeDescriptionCount() {return this.ptr.get(LAYOUT$vertexAttributeDescriptionCount, OFFSET$vertexAttributeDescriptionCount);}
-    public void vertexAttributeDescriptionCount(int value) {this.ptr.set(LAYOUT$vertexAttributeDescriptionCount, OFFSET$vertexAttributeDescriptionCount, value);}
-    public java.lang.foreign.MemorySegment vertexAttributeDescriptionCount_ptr() {return this.ptr.asSlice(OFFSET$vertexAttributeDescriptionCount, LAYOUT$vertexAttributeDescriptionCount);}
+    public java.lang.foreign.MemorySegment pVertexBindingDescriptions() {return this.ptr.get(LAYOUT__pVertexBindingDescriptions, OFFSET__pVertexBindingDescriptions);}
+    public void pVertexBindingDescriptions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pVertexBindingDescriptions, OFFSET__pVertexBindingDescriptions, value);}
+    public java.lang.foreign.MemorySegment $pVertexBindingDescriptions() {return this.ptr.asSlice(OFFSET__pVertexBindingDescriptions, LAYOUT__pVertexBindingDescriptions);}
 
-    public java.lang.foreign.MemorySegment pVertexAttributeDescriptions() {return this.ptr.get(LAYOUT$pVertexAttributeDescriptions, OFFSET$pVertexAttributeDescriptions);}
-    public void pVertexAttributeDescriptions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pVertexAttributeDescriptions, OFFSET$pVertexAttributeDescriptions, value);}
-    public java.lang.foreign.MemorySegment pVertexAttributeDescriptions_ptr() {return this.ptr.asSlice(OFFSET$pVertexAttributeDescriptions, LAYOUT$pVertexAttributeDescriptions);}
+    public int vertexAttributeDescriptionCount() {return this.ptr.get(LAYOUT__vertexAttributeDescriptionCount, OFFSET__vertexAttributeDescriptionCount);}
+    public void vertexAttributeDescriptionCount(int value) {this.ptr.set(LAYOUT__vertexAttributeDescriptionCount, OFFSET__vertexAttributeDescriptionCount, value);}
+    public java.lang.foreign.MemorySegment $vertexAttributeDescriptionCount() {return this.ptr.asSlice(OFFSET__vertexAttributeDescriptionCount, LAYOUT__vertexAttributeDescriptionCount);}
+
+    public java.lang.foreign.MemorySegment pVertexAttributeDescriptions() {return this.ptr.get(LAYOUT__pVertexAttributeDescriptions, OFFSET__pVertexAttributeDescriptions);}
+    public void pVertexAttributeDescriptions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pVertexAttributeDescriptions, OFFSET__pVertexAttributeDescriptions, value);}
+    public java.lang.foreign.MemorySegment $pVertexAttributeDescriptions() {return this.ptr.asSlice(OFFSET__pVertexAttributeDescriptions, LAYOUT__pVertexAttributeDescriptions);}
 }

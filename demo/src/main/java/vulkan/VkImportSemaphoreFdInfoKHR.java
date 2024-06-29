@@ -2,61 +2,66 @@ package vulkan;
 
 public record VkImportSemaphoreFdInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$semaphore = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$semaphore = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$handleType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$handleType = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fd = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fd = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__semaphore = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__semaphore = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__handleType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__handleType = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fd = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$semaphore,
-            LAYOUT$flags,
-            LAYOUT$handleType,
-            LAYOUT$fd,
+            LAYOUT__pNext,
+            LAYOUT__semaphore,
+            LAYOUT__flags,
+            LAYOUT__handleType,
+            LAYOUT__fd,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkImportSemaphoreFdInfoKHR");
+    ).withByteAlignment(8).withName("VkImportSemaphoreFdInfoKHR");
 
     public VkImportSemaphoreFdInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkImportSemaphoreFdInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkImportSemaphoreFdInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkImportSemaphoreFdInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkImportSemaphoreFdInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkImportSemaphoreFdInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment semaphore() {return this.ptr.get(LAYOUT$semaphore, OFFSET$semaphore);}
-    public void semaphore(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$semaphore, OFFSET$semaphore, value);}
-    public java.lang.foreign.MemorySegment semaphore_ptr() {return this.ptr.asSlice(OFFSET$semaphore, LAYOUT$semaphore);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment semaphore() {return this.ptr.get(LAYOUT__semaphore, OFFSET__semaphore);}
+    public void semaphore(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__semaphore, OFFSET__semaphore, value);}
+    public java.lang.foreign.MemorySegment $semaphore() {return this.ptr.asSlice(OFFSET__semaphore, LAYOUT__semaphore);}
 
-    public int handleType() {return this.ptr.get(LAYOUT$handleType, OFFSET$handleType);}
-    public void handleType(int value) {this.ptr.set(LAYOUT$handleType, OFFSET$handleType, value);}
-    public java.lang.foreign.MemorySegment handleType_ptr() {return this.ptr.asSlice(OFFSET$handleType, LAYOUT$handleType);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int fd() {return this.ptr.get(LAYOUT$fd, OFFSET$fd);}
-    public void fd(int value) {this.ptr.set(LAYOUT$fd, OFFSET$fd, value);}
-    public java.lang.foreign.MemorySegment fd_ptr() {return this.ptr.asSlice(OFFSET$fd, LAYOUT$fd);}
+    public int handleType() {return this.ptr.get(LAYOUT__handleType, OFFSET__handleType);}
+    public void handleType(int value) {this.ptr.set(LAYOUT__handleType, OFFSET__handleType, value);}
+    public java.lang.foreign.MemorySegment $handleType() {return this.ptr.asSlice(OFFSET__handleType, LAYOUT__handleType);}
+
+    public int fd() {return this.ptr.get(LAYOUT__fd, OFFSET__fd);}
+    public void fd(int value) {this.ptr.set(LAYOUT__fd, OFFSET__fd, value);}
+    public java.lang.foreign.MemorySegment $fd() {return this.ptr.asSlice(OFFSET__fd, LAYOUT__fd);}
 }

@@ -2,52 +2,57 @@ package vulkan;
 
 public record VkDecompressMemoryRegionNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$srcAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$srcAddress = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$dstAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$dstAddress = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$compressedSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$compressedSize = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$decompressedSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$decompressedSize = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$decompressionMethod = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$decompressionMethod = 32L;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__srcAddress = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__dstAddress = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__compressedSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__compressedSize = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressedSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__decompressedSize = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressionMethod = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__decompressionMethod = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$srcAddress,
-            LAYOUT$dstAddress,
-            LAYOUT$compressedSize,
-            LAYOUT$decompressedSize,
-            LAYOUT$decompressionMethod
-    ).withName("VkDecompressMemoryRegionNV");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__srcAddress,
+            LAYOUT__dstAddress,
+            LAYOUT__compressedSize,
+            LAYOUT__decompressedSize,
+            LAYOUT__decompressionMethod
+    ).withByteAlignment(8).withName("VkDecompressMemoryRegionNV");
 
     public VkDecompressMemoryRegionNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDecompressMemoryRegionNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDecompressMemoryRegionNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDecompressMemoryRegionNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDecompressMemoryRegionNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public long srcAddress() {return this.ptr.get(LAYOUT$srcAddress, OFFSET$srcAddress);}
-    public void srcAddress(long value) {this.ptr.set(LAYOUT$srcAddress, OFFSET$srcAddress, value);}
-    public java.lang.foreign.MemorySegment srcAddress_ptr() {return this.ptr.asSlice(OFFSET$srcAddress, LAYOUT$srcAddress);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDecompressMemoryRegionNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long dstAddress() {return this.ptr.get(LAYOUT$dstAddress, OFFSET$dstAddress);}
-    public void dstAddress(long value) {this.ptr.set(LAYOUT$dstAddress, OFFSET$dstAddress, value);}
-    public java.lang.foreign.MemorySegment dstAddress_ptr() {return this.ptr.asSlice(OFFSET$dstAddress, LAYOUT$dstAddress);}
+    public long srcAddress() {return this.ptr.get(LAYOUT__srcAddress, OFFSET__srcAddress);}
+    public void srcAddress(long value) {this.ptr.set(LAYOUT__srcAddress, OFFSET__srcAddress, value);}
+    public java.lang.foreign.MemorySegment $srcAddress() {return this.ptr.asSlice(OFFSET__srcAddress, LAYOUT__srcAddress);}
 
-    public long compressedSize() {return this.ptr.get(LAYOUT$compressedSize, OFFSET$compressedSize);}
-    public void compressedSize(long value) {this.ptr.set(LAYOUT$compressedSize, OFFSET$compressedSize, value);}
-    public java.lang.foreign.MemorySegment compressedSize_ptr() {return this.ptr.asSlice(OFFSET$compressedSize, LAYOUT$compressedSize);}
+    public long dstAddress() {return this.ptr.get(LAYOUT__dstAddress, OFFSET__dstAddress);}
+    public void dstAddress(long value) {this.ptr.set(LAYOUT__dstAddress, OFFSET__dstAddress, value);}
+    public java.lang.foreign.MemorySegment $dstAddress() {return this.ptr.asSlice(OFFSET__dstAddress, LAYOUT__dstAddress);}
 
-    public long decompressedSize() {return this.ptr.get(LAYOUT$decompressedSize, OFFSET$decompressedSize);}
-    public void decompressedSize(long value) {this.ptr.set(LAYOUT$decompressedSize, OFFSET$decompressedSize, value);}
-    public java.lang.foreign.MemorySegment decompressedSize_ptr() {return this.ptr.asSlice(OFFSET$decompressedSize, LAYOUT$decompressedSize);}
+    public long compressedSize() {return this.ptr.get(LAYOUT__compressedSize, OFFSET__compressedSize);}
+    public void compressedSize(long value) {this.ptr.set(LAYOUT__compressedSize, OFFSET__compressedSize, value);}
+    public java.lang.foreign.MemorySegment $compressedSize() {return this.ptr.asSlice(OFFSET__compressedSize, LAYOUT__compressedSize);}
 
-    public long decompressionMethod() {return this.ptr.get(LAYOUT$decompressionMethod, OFFSET$decompressionMethod);}
-    public void decompressionMethod(long value) {this.ptr.set(LAYOUT$decompressionMethod, OFFSET$decompressionMethod, value);}
-    public java.lang.foreign.MemorySegment decompressionMethod_ptr() {return this.ptr.asSlice(OFFSET$decompressionMethod, LAYOUT$decompressionMethod);}
+    public long decompressedSize() {return this.ptr.get(LAYOUT__decompressedSize, OFFSET__decompressedSize);}
+    public void decompressedSize(long value) {this.ptr.set(LAYOUT__decompressedSize, OFFSET__decompressedSize, value);}
+    public java.lang.foreign.MemorySegment $decompressedSize() {return this.ptr.asSlice(OFFSET__decompressedSize, LAYOUT__decompressedSize);}
+
+    public long decompressionMethod() {return this.ptr.get(LAYOUT__decompressionMethod, OFFSET__decompressionMethod);}
+    public void decompressionMethod(long value) {this.ptr.set(LAYOUT__decompressionMethod, OFFSET__decompressionMethod, value);}
+    public java.lang.foreign.MemorySegment $decompressionMethod() {return this.ptr.asSlice(OFFSET__decompressionMethod, LAYOUT__decompressionMethod);}
 }

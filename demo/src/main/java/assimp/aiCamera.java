@@ -2,80 +2,85 @@ package assimp;
 
 public record aiCamera(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$mName = assimp.aiString.gStructLayout;
-    public static final long OFFSET$mName = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mPosition = assimp.aiVector3D.gStructLayout;
-    public static final long OFFSET$mPosition = 1028L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mUp = assimp.aiVector3D.gStructLayout;
-    public static final long OFFSET$mUp = 1040L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mLookAt = assimp.aiVector3D.gStructLayout;
-    public static final long OFFSET$mLookAt = 1052L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$mHorizontalFOV = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$mHorizontalFOV = 1064L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$mClipPlaneNear = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$mClipPlaneNear = 1068L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$mClipPlaneFar = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$mClipPlaneFar = 1072L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$mAspect = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$mAspect = 1076L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$mOrthographicWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$mOrthographicWidth = 1080L;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final long OFFSET__mName = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__mPosition = assimp.aiVector3D.gRecordLayout;
+    public static final long OFFSET__mPosition = 1028;
+    public static final java.lang.foreign.StructLayout LAYOUT__mUp = assimp.aiVector3D.gRecordLayout;
+    public static final long OFFSET__mUp = 1040;
+    public static final java.lang.foreign.StructLayout LAYOUT__mLookAt = assimp.aiVector3D.gRecordLayout;
+    public static final long OFFSET__mLookAt = 1052;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mHorizontalFOV = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__mHorizontalFOV = 1064;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mClipPlaneNear = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__mClipPlaneNear = 1068;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mClipPlaneFar = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__mClipPlaneFar = 1072;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAspect = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__mAspect = 1076;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mOrthographicWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__mOrthographicWidth = 1080;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$mName,
-            LAYOUT$mPosition,
-            LAYOUT$mUp,
-            LAYOUT$mLookAt,
-            LAYOUT$mHorizontalFOV,
-            LAYOUT$mClipPlaneNear,
-            LAYOUT$mClipPlaneFar,
-            LAYOUT$mAspect,
-            LAYOUT$mOrthographicWidth
-    ).withName("aiCamera");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__mName,
+            LAYOUT__mPosition,
+            LAYOUT__mUp,
+            LAYOUT__mLookAt,
+            LAYOUT__mHorizontalFOV,
+            LAYOUT__mClipPlaneNear,
+            LAYOUT__mClipPlaneFar,
+            LAYOUT__mAspect,
+            LAYOUT__mOrthographicWidth
+    ).withByteAlignment(4).withName("aiCamera");
 
     public aiCamera(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiCamera getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiCamera getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiCamera(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiCamera(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public assimp.aiString mName() {return new assimp.aiString(this.ptr.asSlice(OFFSET$mName, LAYOUT$mName));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiCamera value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public assimp.aiString mName() {return new assimp.aiString(this.ptr.asSlice(OFFSET__mName, LAYOUT__mName));}
     public void mName(java.util.function.Consumer<assimp.aiString> consumer) {consumer.accept(this.mName());}
-    public void mName(assimp.aiString value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mName, LAYOUT$mName.byteSize());}
+    public void mName(assimp.aiString value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mName, LAYOUT__mName.byteSize());}
 
-    public assimp.aiVector3D mPosition() {return new assimp.aiVector3D(this.ptr.asSlice(OFFSET$mPosition, LAYOUT$mPosition));}
+    public assimp.aiVector3D mPosition() {return new assimp.aiVector3D(this.ptr.asSlice(OFFSET__mPosition, LAYOUT__mPosition));}
     public void mPosition(java.util.function.Consumer<assimp.aiVector3D> consumer) {consumer.accept(this.mPosition());}
-    public void mPosition(assimp.aiVector3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mPosition, LAYOUT$mPosition.byteSize());}
+    public void mPosition(assimp.aiVector3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mPosition, LAYOUT__mPosition.byteSize());}
 
-    public assimp.aiVector3D mUp() {return new assimp.aiVector3D(this.ptr.asSlice(OFFSET$mUp, LAYOUT$mUp));}
+    public assimp.aiVector3D mUp() {return new assimp.aiVector3D(this.ptr.asSlice(OFFSET__mUp, LAYOUT__mUp));}
     public void mUp(java.util.function.Consumer<assimp.aiVector3D> consumer) {consumer.accept(this.mUp());}
-    public void mUp(assimp.aiVector3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mUp, LAYOUT$mUp.byteSize());}
+    public void mUp(assimp.aiVector3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mUp, LAYOUT__mUp.byteSize());}
 
-    public assimp.aiVector3D mLookAt() {return new assimp.aiVector3D(this.ptr.asSlice(OFFSET$mLookAt, LAYOUT$mLookAt));}
+    public assimp.aiVector3D mLookAt() {return new assimp.aiVector3D(this.ptr.asSlice(OFFSET__mLookAt, LAYOUT__mLookAt));}
     public void mLookAt(java.util.function.Consumer<assimp.aiVector3D> consumer) {consumer.accept(this.mLookAt());}
-    public void mLookAt(assimp.aiVector3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mLookAt, LAYOUT$mLookAt.byteSize());}
+    public void mLookAt(assimp.aiVector3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mLookAt, LAYOUT__mLookAt.byteSize());}
 
-    public float mHorizontalFOV() {return this.ptr.get(LAYOUT$mHorizontalFOV, OFFSET$mHorizontalFOV);}
-    public void mHorizontalFOV(float value) {this.ptr.set(LAYOUT$mHorizontalFOV, OFFSET$mHorizontalFOV, value);}
-    public java.lang.foreign.MemorySegment mHorizontalFOV_ptr() {return this.ptr.asSlice(OFFSET$mHorizontalFOV, LAYOUT$mHorizontalFOV);}
+    public float mHorizontalFOV() {return this.ptr.get(LAYOUT__mHorizontalFOV, OFFSET__mHorizontalFOV);}
+    public void mHorizontalFOV(float value) {this.ptr.set(LAYOUT__mHorizontalFOV, OFFSET__mHorizontalFOV, value);}
+    public java.lang.foreign.MemorySegment $mHorizontalFOV() {return this.ptr.asSlice(OFFSET__mHorizontalFOV, LAYOUT__mHorizontalFOV);}
 
-    public float mClipPlaneNear() {return this.ptr.get(LAYOUT$mClipPlaneNear, OFFSET$mClipPlaneNear);}
-    public void mClipPlaneNear(float value) {this.ptr.set(LAYOUT$mClipPlaneNear, OFFSET$mClipPlaneNear, value);}
-    public java.lang.foreign.MemorySegment mClipPlaneNear_ptr() {return this.ptr.asSlice(OFFSET$mClipPlaneNear, LAYOUT$mClipPlaneNear);}
+    public float mClipPlaneNear() {return this.ptr.get(LAYOUT__mClipPlaneNear, OFFSET__mClipPlaneNear);}
+    public void mClipPlaneNear(float value) {this.ptr.set(LAYOUT__mClipPlaneNear, OFFSET__mClipPlaneNear, value);}
+    public java.lang.foreign.MemorySegment $mClipPlaneNear() {return this.ptr.asSlice(OFFSET__mClipPlaneNear, LAYOUT__mClipPlaneNear);}
 
-    public float mClipPlaneFar() {return this.ptr.get(LAYOUT$mClipPlaneFar, OFFSET$mClipPlaneFar);}
-    public void mClipPlaneFar(float value) {this.ptr.set(LAYOUT$mClipPlaneFar, OFFSET$mClipPlaneFar, value);}
-    public java.lang.foreign.MemorySegment mClipPlaneFar_ptr() {return this.ptr.asSlice(OFFSET$mClipPlaneFar, LAYOUT$mClipPlaneFar);}
+    public float mClipPlaneFar() {return this.ptr.get(LAYOUT__mClipPlaneFar, OFFSET__mClipPlaneFar);}
+    public void mClipPlaneFar(float value) {this.ptr.set(LAYOUT__mClipPlaneFar, OFFSET__mClipPlaneFar, value);}
+    public java.lang.foreign.MemorySegment $mClipPlaneFar() {return this.ptr.asSlice(OFFSET__mClipPlaneFar, LAYOUT__mClipPlaneFar);}
 
-    public float mAspect() {return this.ptr.get(LAYOUT$mAspect, OFFSET$mAspect);}
-    public void mAspect(float value) {this.ptr.set(LAYOUT$mAspect, OFFSET$mAspect, value);}
-    public java.lang.foreign.MemorySegment mAspect_ptr() {return this.ptr.asSlice(OFFSET$mAspect, LAYOUT$mAspect);}
+    public float mAspect() {return this.ptr.get(LAYOUT__mAspect, OFFSET__mAspect);}
+    public void mAspect(float value) {this.ptr.set(LAYOUT__mAspect, OFFSET__mAspect, value);}
+    public java.lang.foreign.MemorySegment $mAspect() {return this.ptr.asSlice(OFFSET__mAspect, LAYOUT__mAspect);}
 
-    public float mOrthographicWidth() {return this.ptr.get(LAYOUT$mOrthographicWidth, OFFSET$mOrthographicWidth);}
-    public void mOrthographicWidth(float value) {this.ptr.set(LAYOUT$mOrthographicWidth, OFFSET$mOrthographicWidth, value);}
-    public java.lang.foreign.MemorySegment mOrthographicWidth_ptr() {return this.ptr.asSlice(OFFSET$mOrthographicWidth, LAYOUT$mOrthographicWidth);}
+    public float mOrthographicWidth() {return this.ptr.get(LAYOUT__mOrthographicWidth, OFFSET__mOrthographicWidth);}
+    public void mOrthographicWidth(float value) {this.ptr.set(LAYOUT__mOrthographicWidth, OFFSET__mOrthographicWidth, value);}
+    public java.lang.foreign.MemorySegment $mOrthographicWidth() {return this.ptr.asSlice(OFFSET__mOrthographicWidth, LAYOUT__mOrthographicWidth);}
 }

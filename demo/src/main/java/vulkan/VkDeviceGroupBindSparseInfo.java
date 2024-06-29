@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkDeviceGroupBindSparseInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$resourceDeviceIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$resourceDeviceIndex = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$memoryDeviceIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$memoryDeviceIndex = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__resourceDeviceIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__resourceDeviceIndex = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryDeviceIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__memoryDeviceIndex = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$resourceDeviceIndex,
-            LAYOUT$memoryDeviceIndex
-    ).withName("VkDeviceGroupBindSparseInfo");
+            LAYOUT__pNext,
+            LAYOUT__resourceDeviceIndex,
+            LAYOUT__memoryDeviceIndex
+    ).withByteAlignment(8).withName("VkDeviceGroupBindSparseInfo");
 
     public VkDeviceGroupBindSparseInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceGroupBindSparseInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceGroupBindSparseInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceGroupBindSparseInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceGroupBindSparseInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceGroupBindSparseInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int resourceDeviceIndex() {return this.ptr.get(LAYOUT$resourceDeviceIndex, OFFSET$resourceDeviceIndex);}
-    public void resourceDeviceIndex(int value) {this.ptr.set(LAYOUT$resourceDeviceIndex, OFFSET$resourceDeviceIndex, value);}
-    public java.lang.foreign.MemorySegment resourceDeviceIndex_ptr() {return this.ptr.asSlice(OFFSET$resourceDeviceIndex, LAYOUT$resourceDeviceIndex);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int memoryDeviceIndex() {return this.ptr.get(LAYOUT$memoryDeviceIndex, OFFSET$memoryDeviceIndex);}
-    public void memoryDeviceIndex(int value) {this.ptr.set(LAYOUT$memoryDeviceIndex, OFFSET$memoryDeviceIndex, value);}
-    public java.lang.foreign.MemorySegment memoryDeviceIndex_ptr() {return this.ptr.asSlice(OFFSET$memoryDeviceIndex, LAYOUT$memoryDeviceIndex);}
+    public int resourceDeviceIndex() {return this.ptr.get(LAYOUT__resourceDeviceIndex, OFFSET__resourceDeviceIndex);}
+    public void resourceDeviceIndex(int value) {this.ptr.set(LAYOUT__resourceDeviceIndex, OFFSET__resourceDeviceIndex, value);}
+    public java.lang.foreign.MemorySegment $resourceDeviceIndex() {return this.ptr.asSlice(OFFSET__resourceDeviceIndex, LAYOUT__resourceDeviceIndex);}
+
+    public int memoryDeviceIndex() {return this.ptr.get(LAYOUT__memoryDeviceIndex, OFFSET__memoryDeviceIndex);}
+    public void memoryDeviceIndex(int value) {this.ptr.set(LAYOUT__memoryDeviceIndex, OFFSET__memoryDeviceIndex, value);}
+    public java.lang.foreign.MemorySegment $memoryDeviceIndex() {return this.ptr.asSlice(OFFSET__memoryDeviceIndex, LAYOUT__memoryDeviceIndex);}
 }

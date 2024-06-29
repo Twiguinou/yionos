@@ -6,13 +6,13 @@ import vulkan.VkDevice;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.util.ArrayList;
 import java.util.List;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
 import static vulkan.VkDescriptorType.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class DescriptorSetLayoutBuilder
@@ -52,7 +52,7 @@ public class DescriptorSetLayoutBuilder
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pBindings = arena.allocateArray(VkDescriptorSetLayoutBinding.gStructLayout, this.m_bindings.size());
+            MemorySegment pBindings = arena.allocate(VkDescriptorSetLayoutBinding.gRecordLayout, this.m_bindings.size());
             for (int i = 0; i < this.m_bindings.size(); i++)
             {
                 this.m_bindings.get(i).write(VkDescriptorSetLayoutBinding.getAtIndex(pBindings, i));
@@ -64,9 +64,9 @@ public class DescriptorSetLayoutBuilder
             layoutCreateInfo.bindingCount(this.m_bindings.size());
             layoutCreateInfo.pBindings(pBindings);
 
-            MemorySegment pLayout = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pLayout = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateDescriptorSetLayout(device, layoutCreateInfo.ptr(), NULL, pLayout), "Unable to create descriptor set layout");
-            return pLayout.get(ValueLayout.ADDRESS, 0);
+            return pLayout.get(ADDRESS, 0);
         }
     }
 }

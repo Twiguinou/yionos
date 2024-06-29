@@ -2,76 +2,81 @@ package vulkan;
 
 public record VkBufferCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$size = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$size = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$usage = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$usage = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sharingMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sharingMode = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$queueFamilyIndexCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$queueFamilyIndexCount = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pQueueFamilyIndices = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pQueueFamilyIndices = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__size = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__usage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__usage = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sharingMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sharingMode = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFamilyIndexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__queueFamilyIndexCount = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pQueueFamilyIndices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pQueueFamilyIndices = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
+            LAYOUT__pNext,
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$size,
-            LAYOUT$usage,
-            LAYOUT$sharingMode,
-            LAYOUT$queueFamilyIndexCount,
+            LAYOUT__size,
+            LAYOUT__usage,
+            LAYOUT__sharingMode,
+            LAYOUT__queueFamilyIndexCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pQueueFamilyIndices
-    ).withName("VkBufferCreateInfo");
+            LAYOUT__pQueueFamilyIndices
+    ).withByteAlignment(8).withName("VkBufferCreateInfo");
 
     public VkBufferCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkBufferCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkBufferCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkBufferCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkBufferCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkBufferCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long size() {return this.ptr.get(LAYOUT$size, OFFSET$size);}
-    public void size(long value) {this.ptr.set(LAYOUT$size, OFFSET$size, value);}
-    public java.lang.foreign.MemorySegment size_ptr() {return this.ptr.asSlice(OFFSET$size, LAYOUT$size);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int usage() {return this.ptr.get(LAYOUT$usage, OFFSET$usage);}
-    public void usage(int value) {this.ptr.set(LAYOUT$usage, OFFSET$usage, value);}
-    public java.lang.foreign.MemorySegment usage_ptr() {return this.ptr.asSlice(OFFSET$usage, LAYOUT$usage);}
+    public long size() {return this.ptr.get(LAYOUT__size, OFFSET__size);}
+    public void size(long value) {this.ptr.set(LAYOUT__size, OFFSET__size, value);}
+    public java.lang.foreign.MemorySegment $size() {return this.ptr.asSlice(OFFSET__size, LAYOUT__size);}
 
-    public int sharingMode() {return this.ptr.get(LAYOUT$sharingMode, OFFSET$sharingMode);}
-    public void sharingMode(int value) {this.ptr.set(LAYOUT$sharingMode, OFFSET$sharingMode, value);}
-    public java.lang.foreign.MemorySegment sharingMode_ptr() {return this.ptr.asSlice(OFFSET$sharingMode, LAYOUT$sharingMode);}
+    public int usage() {return this.ptr.get(LAYOUT__usage, OFFSET__usage);}
+    public void usage(int value) {this.ptr.set(LAYOUT__usage, OFFSET__usage, value);}
+    public java.lang.foreign.MemorySegment $usage() {return this.ptr.asSlice(OFFSET__usage, LAYOUT__usage);}
 
-    public int queueFamilyIndexCount() {return this.ptr.get(LAYOUT$queueFamilyIndexCount, OFFSET$queueFamilyIndexCount);}
-    public void queueFamilyIndexCount(int value) {this.ptr.set(LAYOUT$queueFamilyIndexCount, OFFSET$queueFamilyIndexCount, value);}
-    public java.lang.foreign.MemorySegment queueFamilyIndexCount_ptr() {return this.ptr.asSlice(OFFSET$queueFamilyIndexCount, LAYOUT$queueFamilyIndexCount);}
+    public int sharingMode() {return this.ptr.get(LAYOUT__sharingMode, OFFSET__sharingMode);}
+    public void sharingMode(int value) {this.ptr.set(LAYOUT__sharingMode, OFFSET__sharingMode, value);}
+    public java.lang.foreign.MemorySegment $sharingMode() {return this.ptr.asSlice(OFFSET__sharingMode, LAYOUT__sharingMode);}
 
-    public java.lang.foreign.MemorySegment pQueueFamilyIndices() {return this.ptr.get(LAYOUT$pQueueFamilyIndices, OFFSET$pQueueFamilyIndices);}
-    public void pQueueFamilyIndices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pQueueFamilyIndices, OFFSET$pQueueFamilyIndices, value);}
-    public java.lang.foreign.MemorySegment pQueueFamilyIndices_ptr() {return this.ptr.asSlice(OFFSET$pQueueFamilyIndices, LAYOUT$pQueueFamilyIndices);}
+    public int queueFamilyIndexCount() {return this.ptr.get(LAYOUT__queueFamilyIndexCount, OFFSET__queueFamilyIndexCount);}
+    public void queueFamilyIndexCount(int value) {this.ptr.set(LAYOUT__queueFamilyIndexCount, OFFSET__queueFamilyIndexCount, value);}
+    public java.lang.foreign.MemorySegment $queueFamilyIndexCount() {return this.ptr.asSlice(OFFSET__queueFamilyIndexCount, LAYOUT__queueFamilyIndexCount);}
+
+    public java.lang.foreign.MemorySegment pQueueFamilyIndices() {return this.ptr.get(LAYOUT__pQueueFamilyIndices, OFFSET__pQueueFamilyIndices);}
+    public void pQueueFamilyIndices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pQueueFamilyIndices, OFFSET__pQueueFamilyIndices, value);}
+    public java.lang.foreign.MemorySegment $pQueueFamilyIndices() {return this.ptr.asSlice(OFFSET__pQueueFamilyIndices, LAYOUT__pQueueFamilyIndices);}
 }

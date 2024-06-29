@@ -2,60 +2,65 @@ package vulkan;
 
 public record VkPipelineRobustnessCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$storageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$storageBuffers = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$uniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$uniformBuffers = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vertexInputs = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vertexInputs = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$images = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$images = 28L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__storageBuffers = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__uniformBuffers = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexInputs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vertexInputs = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__images = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__images = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$storageBuffers,
-            LAYOUT$uniformBuffers,
-            LAYOUT$vertexInputs,
-            LAYOUT$images
-    ).withName("VkPipelineRobustnessCreateInfoEXT");
+            LAYOUT__pNext,
+            LAYOUT__storageBuffers,
+            LAYOUT__uniformBuffers,
+            LAYOUT__vertexInputs,
+            LAYOUT__images
+    ).withByteAlignment(8).withName("VkPipelineRobustnessCreateInfoEXT");
 
     public VkPipelineRobustnessCreateInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineRobustnessCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineRobustnessCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineRobustnessCreateInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineRobustnessCreateInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineRobustnessCreateInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int storageBuffers() {return this.ptr.get(LAYOUT$storageBuffers, OFFSET$storageBuffers);}
-    public void storageBuffers(int value) {this.ptr.set(LAYOUT$storageBuffers, OFFSET$storageBuffers, value);}
-    public java.lang.foreign.MemorySegment storageBuffers_ptr() {return this.ptr.asSlice(OFFSET$storageBuffers, LAYOUT$storageBuffers);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int uniformBuffers() {return this.ptr.get(LAYOUT$uniformBuffers, OFFSET$uniformBuffers);}
-    public void uniformBuffers(int value) {this.ptr.set(LAYOUT$uniformBuffers, OFFSET$uniformBuffers, value);}
-    public java.lang.foreign.MemorySegment uniformBuffers_ptr() {return this.ptr.asSlice(OFFSET$uniformBuffers, LAYOUT$uniformBuffers);}
+    public int storageBuffers() {return this.ptr.get(LAYOUT__storageBuffers, OFFSET__storageBuffers);}
+    public void storageBuffers(int value) {this.ptr.set(LAYOUT__storageBuffers, OFFSET__storageBuffers, value);}
+    public java.lang.foreign.MemorySegment $storageBuffers() {return this.ptr.asSlice(OFFSET__storageBuffers, LAYOUT__storageBuffers);}
 
-    public int vertexInputs() {return this.ptr.get(LAYOUT$vertexInputs, OFFSET$vertexInputs);}
-    public void vertexInputs(int value) {this.ptr.set(LAYOUT$vertexInputs, OFFSET$vertexInputs, value);}
-    public java.lang.foreign.MemorySegment vertexInputs_ptr() {return this.ptr.asSlice(OFFSET$vertexInputs, LAYOUT$vertexInputs);}
+    public int uniformBuffers() {return this.ptr.get(LAYOUT__uniformBuffers, OFFSET__uniformBuffers);}
+    public void uniformBuffers(int value) {this.ptr.set(LAYOUT__uniformBuffers, OFFSET__uniformBuffers, value);}
+    public java.lang.foreign.MemorySegment $uniformBuffers() {return this.ptr.asSlice(OFFSET__uniformBuffers, LAYOUT__uniformBuffers);}
 
-    public int images() {return this.ptr.get(LAYOUT$images, OFFSET$images);}
-    public void images(int value) {this.ptr.set(LAYOUT$images, OFFSET$images, value);}
-    public java.lang.foreign.MemorySegment images_ptr() {return this.ptr.asSlice(OFFSET$images, LAYOUT$images);}
+    public int vertexInputs() {return this.ptr.get(LAYOUT__vertexInputs, OFFSET__vertexInputs);}
+    public void vertexInputs(int value) {this.ptr.set(LAYOUT__vertexInputs, OFFSET__vertexInputs, value);}
+    public java.lang.foreign.MemorySegment $vertexInputs() {return this.ptr.asSlice(OFFSET__vertexInputs, LAYOUT__vertexInputs);}
+
+    public int images() {return this.ptr.get(LAYOUT__images, OFFSET__images);}
+    public void images(int value) {this.ptr.set(LAYOUT__images, OFFSET__images, value);}
+    public java.lang.foreign.MemorySegment $images() {return this.ptr.asSlice(OFFSET__images, LAYOUT__images);}
 }

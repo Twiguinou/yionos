@@ -30,7 +30,7 @@ public record Shaders(Graphics grid, Graphics objectDebug, Graphics objectDebugI
 
     private static ShaderModule loadShader(VkDevice device, String filename, int stage)
     {
-        try(InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(STR."shaders/\{filename}"))
+        try(InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(String.format("shaders/%s", filename)))
         {
             if (input == null)
             {

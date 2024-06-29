@@ -1,7 +1,6 @@
 package yionos.demo.rendering;
 
 import jpgen.ForeignUtils;
-import jpgen.NativeTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vulkan.*;
@@ -10,7 +9,6 @@ import yionos.demo.Disposable;
 import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +19,7 @@ import static vulkan.VkStructureType.*;
 import static vulkan.VkPhysicalDeviceType.*;
 import static vulkan.VkDebugUtilsMessageSeverityFlagBitsEXT.*;
 import static vulkan.VkDebugUtilsMessageTypeFlagBitsEXT.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class VulkanContext implements Disposable
@@ -38,7 +37,7 @@ public class VulkanContext implements Disposable
 
         public String name()
         {
-            return this.properties.deviceName().getUtf8String(0);
+            return this.properties.deviceName().getString(0);
         }
     }
 
@@ -57,40 +56,31 @@ public class VulkanContext implements Disposable
 
             VkApplicationInfo applicationInfo = new VkApplicationInfo(arena);
             applicationInfo.sType(VK_STRUCTURE_TYPE_APPLICATION_INFO);
-            applicationInfo.pNext(NULL);
-            applicationInfo.pApplicationName(arena.allocateUtf8String(appInfo.appName));
+            applicationInfo.pApplicationName(arena.allocateFrom(appInfo.appName));
             applicationInfo.applicationVersion(appInfo.appVersion);
-            applicationInfo.pEngineName(arena.allocateUtf8String(appInfo.engineName));
+            applicationInfo.pEngineName(arena.allocateFrom(appInfo.engineName));
             applicationInfo.engineVersion(appInfo.engineVersion);
-            applicationInfo.applicationVersion(appInfo.apiVersion);
+            applicationInfo.apiVersion(appInfo.apiVersion);
 
             VkInstanceCreateInfo instanceCreateInfo = new VkInstanceCreateInfo(arena);
             instanceCreateInfo.sType(VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO);
-            if (validationFeatures.length == 0)
-            {
-                instanceCreateInfo.pNext(NULL);
-            }
-            else
+            if (validationFeatures.length > 0)
             {
                 VkValidationFeaturesEXT features = new VkValidationFeaturesEXT(arena);
                 features.sType(VK_STRUCTURE_TYPE_VALIDATION_FEATURES_EXT);
-                features.pNext(NULL);
                 features.enabledValidationFeatureCount(validationFeatures.length);
-                features.pEnabledValidationFeatures(arena.allocateArray(ValueLayout.JAVA_INT, validationFeatures));
-                features.disabledValidationFeatureCount(0);
-                features.pDisabledValidationFeatures(NULL);
+                features.pEnabledValidationFeatures(arena.allocateFrom(JAVA_INT, validationFeatures));
             }
 
-            instanceCreateInfo.flags(0);
             instanceCreateInfo.pApplicationInfo(applicationInfo.ptr());
             instanceCreateInfo.enabledLayerCount(enabledLayers.length);
             instanceCreateInfo.ppEnabledLayerNames(ForeignUtils.allocateUtf8Array(arena, enabledLayers));
             instanceCreateInfo.enabledExtensionCount(enabledExtensions.length);
             instanceCreateInfo.ppEnabledExtensionNames(ForeignUtils.allocateUtf8Array(arena, enabledExtensions));
 
-            MemorySegment pInstance = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pInstance = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateInstance(instanceCreateInfo.ptr(), NULL, pInstance), "Unable to create vulkan instance");
-            this.m_instance = new VkInstance(pInstance.get(ValueLayout.ADDRESS, 0));
+            this.m_instance = new VkInstance(pInstance.get(ADDRESS, 0));
         }
     }
 
@@ -98,10 +88,10 @@ public class VulkanContext implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pLayerCount = arena.allocate(ValueLayout.JAVA_INT, 0);
+            MemorySegment pLayerCount = arena.allocateFrom(JAVA_INT, 0);
             VulkanException.check(vkEnumerateInstanceLayerProperties(pLayerCount, NULL));
-            int layerCount = pLayerCount.get(ValueLayout.JAVA_INT, 0);
-            MemorySegment pAvailableLayers = arena.allocateArray(VkLayerProperties.gStructLayout, layerCount);
+            int layerCount = pLayerCount.get(JAVA_INT, 0);
+            MemorySegment pAvailableLayers = arena.allocate(VkLayerProperties.gRecordLayout, layerCount);
             VulkanException.check(vkEnumerateInstanceLayerProperties(pLayerCount, pAvailableLayers));
 
             return Arrays.stream(layers).filter(candidate ->
@@ -109,7 +99,7 @@ public class VulkanContext implements Disposable
                 for (int i = 0; i < layerCount; i++)
                 {
                     VkLayerProperties properties = VkLayerProperties.getAtIndex(pAvailableLayers, i);
-                    String name = properties.layerName().getUtf8String(0);
+                    String name = properties.layerName().getString(0);
 
                     if (name.equals(candidate))
                     {
@@ -117,7 +107,7 @@ public class VulkanContext implements Disposable
                     }
                 }
 
-                gVulkanLogger.warn(STR."Layer not present: \{candidate}");
+                gVulkanLogger.warn(String.format("Layer not present: %s", candidate));
                 return false;
             }).toArray(String[]::new);
         }
@@ -127,10 +117,10 @@ public class VulkanContext implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pExtensionCount = arena.allocate(ValueLayout.JAVA_INT, 0);
+            MemorySegment pExtensionCount = arena.allocateFrom(JAVA_INT, 0);
             VulkanException.check(vkEnumerateInstanceExtensionProperties(NULL, pExtensionCount, NULL));
-            int extensionCount = pExtensionCount.get(ValueLayout.JAVA_INT, 0);
-            MemorySegment pAvailableExtensions = arena.allocateArray(VkExtensionProperties.gStructLayout, extensionCount);
+            int extensionCount = pExtensionCount.get(JAVA_INT, 0);
+            MemorySegment pAvailableExtensions = arena.allocate(VkExtensionProperties.gRecordLayout, extensionCount);
             VulkanException.check(vkEnumerateInstanceExtensionProperties(NULL, pExtensionCount, pAvailableExtensions));
 
             return Arrays.stream(extensions).filter(candidate ->
@@ -138,7 +128,7 @@ public class VulkanContext implements Disposable
                 for (int i = 0; i < extensionCount; i++)
                 {
                     VkExtensionProperties properties = VkExtensionProperties.getAtIndex(pAvailableExtensions, i);
-                    String name = properties.extensionName().getUtf8String(0);
+                    String name = properties.extensionName().getString(0);
 
                     if (name.equals(candidate))
                     {
@@ -146,7 +136,7 @@ public class VulkanContext implements Disposable
                     }
                 }
 
-                gVulkanLogger.warn(STR."Extension not present: \{candidate}");
+                gVulkanLogger.warn(String.format("Extension not present: %s", candidate));
                 return false;
             }).toArray(String[]::new);
         }
@@ -154,22 +144,18 @@ public class VulkanContext implements Disposable
 
     public static int defaultDebugMessenger(int messageSeverity, int messageTypes, MemorySegment pCallbackData, MemorySegment pUserData)
     {
-        pCallbackData = pCallbackData.reinterpret(VkDebugUtilsMessengerCallbackDataEXT.gStructLayout.byteSize());
         VkDebugUtilsMessengerCallbackDataEXT callbackData = new VkDebugUtilsMessengerCallbackDataEXT(pCallbackData);
-
-        MemorySegment pMessage = callbackData.pMessage().reinterpret(NativeTypes.UNCHECKED_CHAR_PTR.byteSize());
-
         if (messageSeverity >= VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT)
         {
-            gVulkanLogger.error(pMessage.getUtf8String(0));
+            gVulkanLogger.error(callbackData.pMessage().getString(0));
         }
         else if (messageSeverity >= VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT)
         {
-            gVulkanLogger.warn(pMessage.getUtf8String(0));
+            gVulkanLogger.warn(callbackData.pMessage().getString(0));
         }
         else
         {
-            gVulkanLogger.info(pMessage.getUtf8String(0));
+            gVulkanLogger.info(callbackData.pMessage().getString(0));
         }
 
         return VK_FALSE;
@@ -185,22 +171,22 @@ public class VulkanContext implements Disposable
         this.m_physicalDevice = null;
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pDeviceCount = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pDeviceCount = arena.allocate(JAVA_INT);
             VulkanException.check(vkEnumeratePhysicalDevices(this.m_instance, pDeviceCount, NULL));
-            int deviceCount = pDeviceCount.get(ValueLayout.JAVA_INT, 0);
+            int deviceCount = pDeviceCount.get(JAVA_INT, 0);
             if (deviceCount == 0)
             {
                 return;
             }
 
-            MemorySegment pPhysicalDevices = arena.allocateArray(ValueLayout.ADDRESS, deviceCount);
+            MemorySegment pPhysicalDevices = arena.allocate(ADDRESS, deviceCount);
             VulkanException.check(vkEnumeratePhysicalDevices(this.m_instance, pDeviceCount, pPhysicalDevices));
             List<PhysicalDevice> physicalDevices = new ArrayList<>(deviceCount);
             for (int i = 0; i < deviceCount; i++)
             {
                 Arena physicalDeviceArena = Arena.ofAuto();
 
-                VkPhysicalDevice physicalDevice = new VkPhysicalDevice(pPhysicalDevices.getAtIndex(ValueLayout.ADDRESS, i), this.m_instance);
+                VkPhysicalDevice physicalDevice = new VkPhysicalDevice(pPhysicalDevices.getAtIndex(ADDRESS, i), this.m_instance);
                 VkPhysicalDeviceProperties properties = new VkPhysicalDeviceProperties(physicalDeviceArena);
                 VkPhysicalDeviceFeatures features = new VkPhysicalDeviceFeatures(physicalDeviceArena);
                 VkPhysicalDeviceMemoryProperties memoryProperties = new VkPhysicalDeviceMemoryProperties(physicalDeviceArena);
@@ -243,9 +229,9 @@ public class VulkanContext implements Disposable
             messengerCreateInfo.messageType(VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT);
             messengerCreateInfo.pfnUserCallback(callback.makeHandle(stubArena));
 
-            MemorySegment pMessenger = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pMessenger = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateDebugUtilsMessengerEXT(this.m_instance, messengerCreateInfo.ptr(), NULL, pMessenger), "Unable to create debug messenger");
-            this.m_debugMessenger = new DebugMessenger(pMessenger.get(ValueLayout.ADDRESS, 0), stubArena);
+            this.m_debugMessenger = new DebugMessenger(pMessenger.get(ADDRESS, 0), stubArena);
         }
     }
 

@@ -2,95 +2,100 @@ package nuklear;
 
 public record nk_command_text(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$header = nuklear.nk_command.gStructLayout;
-    public static final long OFFSET$header = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$font = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$font = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$background = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$background = 24L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$foreground = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$foreground = 28L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$x = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$x = 32L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$y = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$y = 34L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$w = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$w = 36L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$h = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$h = 38L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$height = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$length = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$length = 44L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$string = java.lang.foreign.MemoryLayout.sequenceLayout(1, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$string = 48L;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final long OFFSET__header = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__font = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__font = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__background = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__background = 24;
+    public static final java.lang.foreign.StructLayout LAYOUT__foreground = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__foreground = 28;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__x = 32;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__y = 34;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__w = 36;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__h = 38;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__height = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__length = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__length = 44;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__string = java.lang.foreign.MemoryLayout.sequenceLayout(1, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__string = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$header,
-            LAYOUT$font,
-            LAYOUT$background,
-            LAYOUT$foreground,
-            LAYOUT$x,
-            LAYOUT$y,
-            LAYOUT$w,
-            LAYOUT$h,
-            LAYOUT$height,
-            LAYOUT$length,
-            LAYOUT$string,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__header,
+            LAYOUT__font,
+            LAYOUT__background,
+            LAYOUT__foreground,
+            LAYOUT__x,
+            LAYOUT__y,
+            LAYOUT__w,
+            LAYOUT__h,
+            LAYOUT__height,
+            LAYOUT__length,
+            LAYOUT__string,
             java.lang.foreign.MemoryLayout.paddingLayout(7)
-    ).withName("nk_command_text");
+    ).withByteAlignment(8).withName("nk_command_text");
 
     public nk_command_text(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_command_text getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_command_text getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_command_text(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_command_text(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_command header() {return new nuklear.nk_command(this._ptr.asSlice(OFFSET$header, LAYOUT$header));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_command_text value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_command header() {return new nuklear.nk_command(this._ptr.asSlice(OFFSET__header, LAYOUT__header));}
     public void header(java.util.function.Consumer<nuklear.nk_command> consumer) {consumer.accept(this.header());}
-    public void header(nuklear.nk_command value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$header, LAYOUT$header.byteSize());}
+    public void header(nuklear.nk_command value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__header, LAYOUT__header.byteSize());}
 
-    public java.lang.foreign.MemorySegment font() {return this._ptr.get(LAYOUT$font, OFFSET$font);}
-    public void font(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$font, OFFSET$font, value);}
-    public java.lang.foreign.MemorySegment font_ptr() {return this._ptr.asSlice(OFFSET$font, LAYOUT$font);}
+    public java.lang.foreign.MemorySegment font() {return this._ptr.get(LAYOUT__font, OFFSET__font);}
+    public void font(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__font, OFFSET__font, value);}
+    public java.lang.foreign.MemorySegment $font() {return this._ptr.asSlice(OFFSET__font, LAYOUT__font);}
 
-    public nuklear.nk_color background() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$background, LAYOUT$background));}
+    public nuklear.nk_color background() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__background, LAYOUT__background));}
     public void background(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.background());}
-    public void background(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$background, LAYOUT$background.byteSize());}
+    public void background(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__background, LAYOUT__background.byteSize());}
 
-    public nuklear.nk_color foreground() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$foreground, LAYOUT$foreground));}
+    public nuklear.nk_color foreground() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__foreground, LAYOUT__foreground));}
     public void foreground(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.foreground());}
-    public void foreground(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$foreground, LAYOUT$foreground.byteSize());}
+    public void foreground(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__foreground, LAYOUT__foreground.byteSize());}
 
-    public short x() {return this._ptr.get(LAYOUT$x, OFFSET$x);}
-    public void x(short value) {this._ptr.set(LAYOUT$x, OFFSET$x, value);}
-    public java.lang.foreign.MemorySegment x_ptr() {return this._ptr.asSlice(OFFSET$x, LAYOUT$x);}
+    public short x() {return this._ptr.get(LAYOUT__x, OFFSET__x);}
+    public void x(short value) {this._ptr.set(LAYOUT__x, OFFSET__x, value);}
+    public java.lang.foreign.MemorySegment $x() {return this._ptr.asSlice(OFFSET__x, LAYOUT__x);}
 
-    public short y() {return this._ptr.get(LAYOUT$y, OFFSET$y);}
-    public void y(short value) {this._ptr.set(LAYOUT$y, OFFSET$y, value);}
-    public java.lang.foreign.MemorySegment y_ptr() {return this._ptr.asSlice(OFFSET$y, LAYOUT$y);}
+    public short y() {return this._ptr.get(LAYOUT__y, OFFSET__y);}
+    public void y(short value) {this._ptr.set(LAYOUT__y, OFFSET__y, value);}
+    public java.lang.foreign.MemorySegment $y() {return this._ptr.asSlice(OFFSET__y, LAYOUT__y);}
 
-    public short w() {return this._ptr.get(LAYOUT$w, OFFSET$w);}
-    public void w(short value) {this._ptr.set(LAYOUT$w, OFFSET$w, value);}
-    public java.lang.foreign.MemorySegment w_ptr() {return this._ptr.asSlice(OFFSET$w, LAYOUT$w);}
+    public short w() {return this._ptr.get(LAYOUT__w, OFFSET__w);}
+    public void w(short value) {this._ptr.set(LAYOUT__w, OFFSET__w, value);}
+    public java.lang.foreign.MemorySegment $w() {return this._ptr.asSlice(OFFSET__w, LAYOUT__w);}
 
-    public short h() {return this._ptr.get(LAYOUT$h, OFFSET$h);}
-    public void h(short value) {this._ptr.set(LAYOUT$h, OFFSET$h, value);}
-    public java.lang.foreign.MemorySegment h_ptr() {return this._ptr.asSlice(OFFSET$h, LAYOUT$h);}
+    public short h() {return this._ptr.get(LAYOUT__h, OFFSET__h);}
+    public void h(short value) {this._ptr.set(LAYOUT__h, OFFSET__h, value);}
+    public java.lang.foreign.MemorySegment $h() {return this._ptr.asSlice(OFFSET__h, LAYOUT__h);}
 
-    public float height() {return this._ptr.get(LAYOUT$height, OFFSET$height);}
-    public void height(float value) {this._ptr.set(LAYOUT$height, OFFSET$height, value);}
-    public java.lang.foreign.MemorySegment height_ptr() {return this._ptr.asSlice(OFFSET$height, LAYOUT$height);}
+    public float height() {return this._ptr.get(LAYOUT__height, OFFSET__height);}
+    public void height(float value) {this._ptr.set(LAYOUT__height, OFFSET__height, value);}
+    public java.lang.foreign.MemorySegment $height() {return this._ptr.asSlice(OFFSET__height, LAYOUT__height);}
 
-    public int length() {return this._ptr.get(LAYOUT$length, OFFSET$length);}
-    public void length(int value) {this._ptr.set(LAYOUT$length, OFFSET$length, value);}
-    public java.lang.foreign.MemorySegment length_ptr() {return this._ptr.asSlice(OFFSET$length, LAYOUT$length);}
+    public int length() {return this._ptr.get(LAYOUT__length, OFFSET__length);}
+    public void length(int value) {this._ptr.set(LAYOUT__length, OFFSET__length, value);}
+    public java.lang.foreign.MemorySegment $length() {return this._ptr.asSlice(OFFSET__length, LAYOUT__length);}
 
-    public java.lang.foreign.MemorySegment string() {return this._ptr.asSlice(OFFSET$string, LAYOUT$string);}
-    public char string(int i) {return (char)this.string().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void string(int i, char value) {this.string().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment string() {return this._ptr.asSlice(OFFSET__string, LAYOUT__string);}
+    public byte string(int index) {return this.string().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void string(int index, byte value) {this.string().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 }

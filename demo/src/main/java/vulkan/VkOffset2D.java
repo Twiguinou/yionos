@@ -2,31 +2,36 @@ package vulkan;
 
 public record VkOffset2D(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$x = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$x = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$y = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$y = 4L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__x = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__y = 4;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$x,
-            LAYOUT$y
-    ).withName("VkOffset2D");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__x,
+            LAYOUT__y
+    ).withByteAlignment(4).withName("VkOffset2D");
 
     public VkOffset2D(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkOffset2D getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkOffset2D getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkOffset2D(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkOffset2D(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int x() {return this.ptr.get(LAYOUT$x, OFFSET$x);}
-    public void x(int value) {this.ptr.set(LAYOUT$x, OFFSET$x, value);}
-    public java.lang.foreign.MemorySegment x_ptr() {return this.ptr.asSlice(OFFSET$x, LAYOUT$x);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkOffset2D value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int y() {return this.ptr.get(LAYOUT$y, OFFSET$y);}
-    public void y(int value) {this.ptr.set(LAYOUT$y, OFFSET$y, value);}
-    public java.lang.foreign.MemorySegment y_ptr() {return this.ptr.asSlice(OFFSET$y, LAYOUT$y);}
+    public int x() {return this.ptr.get(LAYOUT__x, OFFSET__x);}
+    public void x(int value) {this.ptr.set(LAYOUT__x, OFFSET__x, value);}
+    public java.lang.foreign.MemorySegment $x() {return this.ptr.asSlice(OFFSET__x, LAYOUT__x);}
+
+    public int y() {return this.ptr.get(LAYOUT__y, OFFSET__y);}
+    public void y(int value) {this.ptr.set(LAYOUT__y, OFFSET__y, value);}
+    public java.lang.foreign.MemorySegment $y() {return this.ptr.asSlice(OFFSET__y, LAYOUT__y);}
 }

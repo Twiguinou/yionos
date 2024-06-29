@@ -2,39 +2,44 @@ package vulkan;
 
 public record VkBindMemoryStatusKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pResult = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pResult = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pResult = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pResult = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$pResult
-    ).withName("VkBindMemoryStatusKHR");
+            LAYOUT__pNext,
+            LAYOUT__pResult
+    ).withByteAlignment(8).withName("VkBindMemoryStatusKHR");
 
     public VkBindMemoryStatusKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkBindMemoryStatusKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkBindMemoryStatusKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkBindMemoryStatusKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkBindMemoryStatusKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkBindMemoryStatusKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment pResult() {return this.ptr.get(LAYOUT$pResult, OFFSET$pResult);}
-    public void pResult(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pResult, OFFSET$pResult, value);}
-    public java.lang.foreign.MemorySegment pResult_ptr() {return this.ptr.asSlice(OFFSET$pResult, LAYOUT$pResult);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public java.lang.foreign.MemorySegment pResult() {return this.ptr.get(LAYOUT__pResult, OFFSET__pResult);}
+    public void pResult(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pResult, OFFSET__pResult, value);}
+    public java.lang.foreign.MemorySegment $pResult() {return this.ptr.asSlice(OFFSET__pResult, LAYOUT__pResult);}
 }

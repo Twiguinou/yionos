@@ -2,68 +2,73 @@ package vulkan;
 
 public record VkPhysicalDeviceInlineUniformBlockProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxInlineUniformBlockSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxInlineUniformBlockSize = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorInlineUniformBlocks = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetInlineUniformBlocks = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindInlineUniformBlocks = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxInlineUniformBlockSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxInlineUniformBlockSize = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorInlineUniformBlocks = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetInlineUniformBlocks = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindInlineUniformBlocks = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$maxInlineUniformBlockSize,
-            LAYOUT$maxPerStageDescriptorInlineUniformBlocks,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks,
-            LAYOUT$maxDescriptorSetInlineUniformBlocks,
-            LAYOUT$maxDescriptorSetUpdateAfterBindInlineUniformBlocks,
+            LAYOUT__pNext,
+            LAYOUT__maxInlineUniformBlockSize,
+            LAYOUT__maxPerStageDescriptorInlineUniformBlocks,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks,
+            LAYOUT__maxDescriptorSetInlineUniformBlocks,
+            LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceInlineUniformBlockProperties");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceInlineUniformBlockProperties");
 
     public VkPhysicalDeviceInlineUniformBlockProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceInlineUniformBlockProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceInlineUniformBlockProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceInlineUniformBlockProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceInlineUniformBlockProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceInlineUniformBlockProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int maxInlineUniformBlockSize() {return this.ptr.get(LAYOUT$maxInlineUniformBlockSize, OFFSET$maxInlineUniformBlockSize);}
-    public void maxInlineUniformBlockSize(int value) {this.ptr.set(LAYOUT$maxInlineUniformBlockSize, OFFSET$maxInlineUniformBlockSize, value);}
-    public java.lang.foreign.MemorySegment maxInlineUniformBlockSize_ptr() {return this.ptr.asSlice(OFFSET$maxInlineUniformBlockSize, LAYOUT$maxInlineUniformBlockSize);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int maxPerStageDescriptorInlineUniformBlocks() {return this.ptr.get(LAYOUT$maxPerStageDescriptorInlineUniformBlocks, OFFSET$maxPerStageDescriptorInlineUniformBlocks);}
-    public void maxPerStageDescriptorInlineUniformBlocks(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorInlineUniformBlocks, OFFSET$maxPerStageDescriptorInlineUniformBlocks, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorInlineUniformBlocks_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorInlineUniformBlocks, LAYOUT$maxPerStageDescriptorInlineUniformBlocks);}
+    public int maxInlineUniformBlockSize() {return this.ptr.get(LAYOUT__maxInlineUniformBlockSize, OFFSET__maxInlineUniformBlockSize);}
+    public void maxInlineUniformBlockSize(int value) {this.ptr.set(LAYOUT__maxInlineUniformBlockSize, OFFSET__maxInlineUniformBlockSize, value);}
+    public java.lang.foreign.MemorySegment $maxInlineUniformBlockSize() {return this.ptr.asSlice(OFFSET__maxInlineUniformBlockSize, LAYOUT__maxInlineUniformBlockSize);}
 
-    public int maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, OFFSET$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks);}
-    public void maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, OFFSET$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, LAYOUT$maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks);}
+    public int maxPerStageDescriptorInlineUniformBlocks() {return this.ptr.get(LAYOUT__maxPerStageDescriptorInlineUniformBlocks, OFFSET__maxPerStageDescriptorInlineUniformBlocks);}
+    public void maxPerStageDescriptorInlineUniformBlocks(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorInlineUniformBlocks, OFFSET__maxPerStageDescriptorInlineUniformBlocks, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorInlineUniformBlocks() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorInlineUniformBlocks, LAYOUT__maxPerStageDescriptorInlineUniformBlocks);}
 
-    public int maxDescriptorSetInlineUniformBlocks() {return this.ptr.get(LAYOUT$maxDescriptorSetInlineUniformBlocks, OFFSET$maxDescriptorSetInlineUniformBlocks);}
-    public void maxDescriptorSetInlineUniformBlocks(int value) {this.ptr.set(LAYOUT$maxDescriptorSetInlineUniformBlocks, OFFSET$maxDescriptorSetInlineUniformBlocks, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetInlineUniformBlocks_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetInlineUniformBlocks, LAYOUT$maxDescriptorSetInlineUniformBlocks);}
+    public int maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, OFFSET__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks);}
+    public void maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, OFFSET__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks, LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks);}
 
-    public int maxDescriptorSetUpdateAfterBindInlineUniformBlocks() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindInlineUniformBlocks, OFFSET$maxDescriptorSetUpdateAfterBindInlineUniformBlocks);}
-    public void maxDescriptorSetUpdateAfterBindInlineUniformBlocks(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindInlineUniformBlocks, OFFSET$maxDescriptorSetUpdateAfterBindInlineUniformBlocks, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindInlineUniformBlocks_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindInlineUniformBlocks, LAYOUT$maxDescriptorSetUpdateAfterBindInlineUniformBlocks);}
+    public int maxDescriptorSetInlineUniformBlocks() {return this.ptr.get(LAYOUT__maxDescriptorSetInlineUniformBlocks, OFFSET__maxDescriptorSetInlineUniformBlocks);}
+    public void maxDescriptorSetInlineUniformBlocks(int value) {this.ptr.set(LAYOUT__maxDescriptorSetInlineUniformBlocks, OFFSET__maxDescriptorSetInlineUniformBlocks, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetInlineUniformBlocks() {return this.ptr.asSlice(OFFSET__maxDescriptorSetInlineUniformBlocks, LAYOUT__maxDescriptorSetInlineUniformBlocks);}
+
+    public int maxDescriptorSetUpdateAfterBindInlineUniformBlocks() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks, OFFSET__maxDescriptorSetUpdateAfterBindInlineUniformBlocks);}
+    public void maxDescriptorSetUpdateAfterBindInlineUniformBlocks(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks, OFFSET__maxDescriptorSetUpdateAfterBindInlineUniformBlocks, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindInlineUniformBlocks() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindInlineUniformBlocks, LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks);}
 }

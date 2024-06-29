@@ -2,62 +2,67 @@ package vulkan;
 
 public record VkVideoDecodeH264SessionParametersAddInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stdSPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stdSPSCount = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pStdSPSs = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pStdSPSs = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stdPPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stdPPSCount = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pStdPPSs = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pStdPPSs = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stdSPSCount = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdSPSs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pStdSPSs = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdPPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stdPPSCount = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPPSs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pStdPPSs = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$stdSPSCount,
+            LAYOUT__pNext,
+            LAYOUT__stdSPSCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pStdSPSs,
-            LAYOUT$stdPPSCount,
+            LAYOUT__pStdSPSs,
+            LAYOUT__stdPPSCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pStdPPSs
-    ).withName("VkVideoDecodeH264SessionParametersAddInfoKHR");
+            LAYOUT__pStdPPSs
+    ).withByteAlignment(8).withName("VkVideoDecodeH264SessionParametersAddInfoKHR");
 
     public VkVideoDecodeH264SessionParametersAddInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoDecodeH264SessionParametersAddInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoDecodeH264SessionParametersAddInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoDecodeH264SessionParametersAddInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoDecodeH264SessionParametersAddInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoDecodeH264SessionParametersAddInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int stdSPSCount() {return this.ptr.get(LAYOUT$stdSPSCount, OFFSET$stdSPSCount);}
-    public void stdSPSCount(int value) {this.ptr.set(LAYOUT$stdSPSCount, OFFSET$stdSPSCount, value);}
-    public java.lang.foreign.MemorySegment stdSPSCount_ptr() {return this.ptr.asSlice(OFFSET$stdSPSCount, LAYOUT$stdSPSCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pStdSPSs() {return this.ptr.get(LAYOUT$pStdSPSs, OFFSET$pStdSPSs);}
-    public void pStdSPSs(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pStdSPSs, OFFSET$pStdSPSs, value);}
-    public java.lang.foreign.MemorySegment pStdSPSs_ptr() {return this.ptr.asSlice(OFFSET$pStdSPSs, LAYOUT$pStdSPSs);}
+    public int stdSPSCount() {return this.ptr.get(LAYOUT__stdSPSCount, OFFSET__stdSPSCount);}
+    public void stdSPSCount(int value) {this.ptr.set(LAYOUT__stdSPSCount, OFFSET__stdSPSCount, value);}
+    public java.lang.foreign.MemorySegment $stdSPSCount() {return this.ptr.asSlice(OFFSET__stdSPSCount, LAYOUT__stdSPSCount);}
 
-    public int stdPPSCount() {return this.ptr.get(LAYOUT$stdPPSCount, OFFSET$stdPPSCount);}
-    public void stdPPSCount(int value) {this.ptr.set(LAYOUT$stdPPSCount, OFFSET$stdPPSCount, value);}
-    public java.lang.foreign.MemorySegment stdPPSCount_ptr() {return this.ptr.asSlice(OFFSET$stdPPSCount, LAYOUT$stdPPSCount);}
+    public java.lang.foreign.MemorySegment pStdSPSs() {return this.ptr.get(LAYOUT__pStdSPSs, OFFSET__pStdSPSs);}
+    public void pStdSPSs(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pStdSPSs, OFFSET__pStdSPSs, value);}
+    public java.lang.foreign.MemorySegment $pStdSPSs() {return this.ptr.asSlice(OFFSET__pStdSPSs, LAYOUT__pStdSPSs);}
 
-    public java.lang.foreign.MemorySegment pStdPPSs() {return this.ptr.get(LAYOUT$pStdPPSs, OFFSET$pStdPPSs);}
-    public void pStdPPSs(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pStdPPSs, OFFSET$pStdPPSs, value);}
-    public java.lang.foreign.MemorySegment pStdPPSs_ptr() {return this.ptr.asSlice(OFFSET$pStdPPSs, LAYOUT$pStdPPSs);}
+    public int stdPPSCount() {return this.ptr.get(LAYOUT__stdPPSCount, OFFSET__stdPPSCount);}
+    public void stdPPSCount(int value) {this.ptr.set(LAYOUT__stdPPSCount, OFFSET__stdPPSCount, value);}
+    public java.lang.foreign.MemorySegment $stdPPSCount() {return this.ptr.asSlice(OFFSET__stdPPSCount, LAYOUT__stdPPSCount);}
+
+    public java.lang.foreign.MemorySegment pStdPPSs() {return this.ptr.get(LAYOUT__pStdPPSs, OFFSET__pStdPPSs);}
+    public void pStdPPSs(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pStdPPSs, OFFSET__pStdPPSs, value);}
+    public java.lang.foreign.MemorySegment $pStdPPSs() {return this.ptr.asSlice(OFFSET__pStdPPSs, LAYOUT__pStdPPSs);}
 }

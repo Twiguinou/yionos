@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkFenceGetFdInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$fence = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$fence = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$handleType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$handleType = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__fence = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__fence = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__handleType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__handleType = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$fence,
-            LAYOUT$handleType,
+            LAYOUT__pNext,
+            LAYOUT__fence,
+            LAYOUT__handleType,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkFenceGetFdInfoKHR");
+    ).withByteAlignment(8).withName("VkFenceGetFdInfoKHR");
 
     public VkFenceGetFdInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkFenceGetFdInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkFenceGetFdInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkFenceGetFdInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkFenceGetFdInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkFenceGetFdInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment fence() {return this.ptr.get(LAYOUT$fence, OFFSET$fence);}
-    public void fence(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$fence, OFFSET$fence, value);}
-    public java.lang.foreign.MemorySegment fence_ptr() {return this.ptr.asSlice(OFFSET$fence, LAYOUT$fence);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int handleType() {return this.ptr.get(LAYOUT$handleType, OFFSET$handleType);}
-    public void handleType(int value) {this.ptr.set(LAYOUT$handleType, OFFSET$handleType, value);}
-    public java.lang.foreign.MemorySegment handleType_ptr() {return this.ptr.asSlice(OFFSET$handleType, LAYOUT$handleType);}
+    public java.lang.foreign.MemorySegment fence() {return this.ptr.get(LAYOUT__fence, OFFSET__fence);}
+    public void fence(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__fence, OFFSET__fence, value);}
+    public java.lang.foreign.MemorySegment $fence() {return this.ptr.asSlice(OFFSET__fence, LAYOUT__fence);}
+
+    public int handleType() {return this.ptr.get(LAYOUT__handleType, OFFSET__handleType);}
+    public void handleType(int value) {this.ptr.set(LAYOUT__handleType, OFFSET__handleType, value);}
+    public java.lang.foreign.MemorySegment $handleType() {return this.ptr.asSlice(OFFSET__handleType, LAYOUT__handleType);}
 }

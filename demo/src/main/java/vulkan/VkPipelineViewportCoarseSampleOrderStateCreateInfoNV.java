@@ -2,53 +2,58 @@ package vulkan;
 
 public record VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sampleOrderType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sampleOrderType = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$customSampleOrderCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$customSampleOrderCount = 20L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pCustomSampleOrders = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pCustomSampleOrders = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleOrderType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sampleOrderType = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__customSampleOrderCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__customSampleOrderCount = 20;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCustomSampleOrders = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pCustomSampleOrders = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$sampleOrderType,
-            LAYOUT$customSampleOrderCount,
-            LAYOUT$pCustomSampleOrders
-    ).withName("VkPipelineViewportCoarseSampleOrderStateCreateInfoNV");
+            LAYOUT__pNext,
+            LAYOUT__sampleOrderType,
+            LAYOUT__customSampleOrderCount,
+            LAYOUT__pCustomSampleOrders
+    ).withByteAlignment(8).withName("VkPipelineViewportCoarseSampleOrderStateCreateInfoNV");
 
     public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineViewportCoarseSampleOrderStateCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineViewportCoarseSampleOrderStateCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineViewportCoarseSampleOrderStateCreateInfoNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int sampleOrderType() {return this.ptr.get(LAYOUT$sampleOrderType, OFFSET$sampleOrderType);}
-    public void sampleOrderType(int value) {this.ptr.set(LAYOUT$sampleOrderType, OFFSET$sampleOrderType, value);}
-    public java.lang.foreign.MemorySegment sampleOrderType_ptr() {return this.ptr.asSlice(OFFSET$sampleOrderType, LAYOUT$sampleOrderType);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int customSampleOrderCount() {return this.ptr.get(LAYOUT$customSampleOrderCount, OFFSET$customSampleOrderCount);}
-    public void customSampleOrderCount(int value) {this.ptr.set(LAYOUT$customSampleOrderCount, OFFSET$customSampleOrderCount, value);}
-    public java.lang.foreign.MemorySegment customSampleOrderCount_ptr() {return this.ptr.asSlice(OFFSET$customSampleOrderCount, LAYOUT$customSampleOrderCount);}
+    public int sampleOrderType() {return this.ptr.get(LAYOUT__sampleOrderType, OFFSET__sampleOrderType);}
+    public void sampleOrderType(int value) {this.ptr.set(LAYOUT__sampleOrderType, OFFSET__sampleOrderType, value);}
+    public java.lang.foreign.MemorySegment $sampleOrderType() {return this.ptr.asSlice(OFFSET__sampleOrderType, LAYOUT__sampleOrderType);}
 
-    public java.lang.foreign.MemorySegment pCustomSampleOrders() {return this.ptr.get(LAYOUT$pCustomSampleOrders, OFFSET$pCustomSampleOrders);}
-    public void pCustomSampleOrders(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pCustomSampleOrders, OFFSET$pCustomSampleOrders, value);}
-    public java.lang.foreign.MemorySegment pCustomSampleOrders_ptr() {return this.ptr.asSlice(OFFSET$pCustomSampleOrders, LAYOUT$pCustomSampleOrders);}
+    public int customSampleOrderCount() {return this.ptr.get(LAYOUT__customSampleOrderCount, OFFSET__customSampleOrderCount);}
+    public void customSampleOrderCount(int value) {this.ptr.set(LAYOUT__customSampleOrderCount, OFFSET__customSampleOrderCount, value);}
+    public java.lang.foreign.MemorySegment $customSampleOrderCount() {return this.ptr.asSlice(OFFSET__customSampleOrderCount, LAYOUT__customSampleOrderCount);}
+
+    public java.lang.foreign.MemorySegment pCustomSampleOrders() {return this.ptr.get(LAYOUT__pCustomSampleOrders, OFFSET__pCustomSampleOrders);}
+    public void pCustomSampleOrders(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pCustomSampleOrders, OFFSET__pCustomSampleOrders, value);}
+    public java.lang.foreign.MemorySegment $pCustomSampleOrders() {return this.ptr.asSlice(OFFSET__pCustomSampleOrders, LAYOUT__pCustomSampleOrders);}
 }

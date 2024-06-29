@@ -5,10 +5,10 @@ public interface GLFWjoystickfun
     java.lang.foreign.FunctionDescriptor gDescriptor = java.lang.foreign.FunctionDescriptor.ofVoid(java.lang.foreign.ValueLayout.JAVA_INT, java.lang.foreign.ValueLayout.JAVA_INT);
     java.lang.invoke.MethodHandle gUpcallStub = jpgen.NativeTypes.initUpcallStub(gDescriptor, "invoke", GLFWjoystickfun.class);
 
-    void invoke(int jid, int event);
+    void invoke(int arg0, int arg1);
 
     default java.lang.foreign.MemorySegment makeHandle(java.lang.foreign.Arena arena)
     {
-        return glfw3.GLFW3.gSystemLinker.upcallStub(gUpcallStub.bindTo(this), gDescriptor, arena);
+        return jpgen.NativeTypes.SYSTEM_LINKER.upcallStub(gUpcallStub.bindTo(this), gDescriptor, arena);
     }
 }

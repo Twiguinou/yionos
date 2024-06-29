@@ -2,129 +2,134 @@ package vulkan;
 
 public record VkSRTDataNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$sx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$sx = 0L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$a = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$a = 4L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$b = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$b = 8L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$pvx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$pvx = 12L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$sy = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$sy = 16L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$c = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$c = 20L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$pvy = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$pvy = 24L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$sz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$sz = 28L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$pvz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$pvz = 32L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$qx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$qx = 36L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$qy = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$qy = 40L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$qz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$qz = 44L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$qw = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$qw = 48L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$tx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$tx = 52L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$ty = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$ty = 56L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$tz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$tz = 60L;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__sx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__sx = 0;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__a = 4;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__b = 8;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__pvx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__pvx = 12;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__sy = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__sy = 16;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__c = 20;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__pvy = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__pvy = 24;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__sz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__sz = 28;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__pvz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__pvz = 32;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__qx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__qx = 36;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__qy = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__qy = 40;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__qz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__qz = 44;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__qw = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__qw = 48;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__tx = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__tx = 52;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__ty = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__ty = 56;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__tz = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__tz = 60;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sx,
-            LAYOUT$a,
-            LAYOUT$b,
-            LAYOUT$pvx,
-            LAYOUT$sy,
-            LAYOUT$c,
-            LAYOUT$pvy,
-            LAYOUT$sz,
-            LAYOUT$pvz,
-            LAYOUT$qx,
-            LAYOUT$qy,
-            LAYOUT$qz,
-            LAYOUT$qw,
-            LAYOUT$tx,
-            LAYOUT$ty,
-            LAYOUT$tz
-    ).withName("VkSRTDataNV");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sx,
+            LAYOUT__a,
+            LAYOUT__b,
+            LAYOUT__pvx,
+            LAYOUT__sy,
+            LAYOUT__c,
+            LAYOUT__pvy,
+            LAYOUT__sz,
+            LAYOUT__pvz,
+            LAYOUT__qx,
+            LAYOUT__qy,
+            LAYOUT__qz,
+            LAYOUT__qw,
+            LAYOUT__tx,
+            LAYOUT__ty,
+            LAYOUT__tz
+    ).withByteAlignment(4).withName("VkSRTDataNV");
 
     public VkSRTDataNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSRTDataNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSRTDataNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSRTDataNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSRTDataNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public float sx() {return this.ptr.get(LAYOUT$sx, OFFSET$sx);}
-    public void sx(float value) {this.ptr.set(LAYOUT$sx, OFFSET$sx, value);}
-    public java.lang.foreign.MemorySegment sx_ptr() {return this.ptr.asSlice(OFFSET$sx, LAYOUT$sx);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSRTDataNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public float a() {return this.ptr.get(LAYOUT$a, OFFSET$a);}
-    public void a(float value) {this.ptr.set(LAYOUT$a, OFFSET$a, value);}
-    public java.lang.foreign.MemorySegment a_ptr() {return this.ptr.asSlice(OFFSET$a, LAYOUT$a);}
+    public float sx() {return this.ptr.get(LAYOUT__sx, OFFSET__sx);}
+    public void sx(float value) {this.ptr.set(LAYOUT__sx, OFFSET__sx, value);}
+    public java.lang.foreign.MemorySegment $sx() {return this.ptr.asSlice(OFFSET__sx, LAYOUT__sx);}
 
-    public float b() {return this.ptr.get(LAYOUT$b, OFFSET$b);}
-    public void b(float value) {this.ptr.set(LAYOUT$b, OFFSET$b, value);}
-    public java.lang.foreign.MemorySegment b_ptr() {return this.ptr.asSlice(OFFSET$b, LAYOUT$b);}
+    public float a() {return this.ptr.get(LAYOUT__a, OFFSET__a);}
+    public void a(float value) {this.ptr.set(LAYOUT__a, OFFSET__a, value);}
+    public java.lang.foreign.MemorySegment $a() {return this.ptr.asSlice(OFFSET__a, LAYOUT__a);}
 
-    public float pvx() {return this.ptr.get(LAYOUT$pvx, OFFSET$pvx);}
-    public void pvx(float value) {this.ptr.set(LAYOUT$pvx, OFFSET$pvx, value);}
-    public java.lang.foreign.MemorySegment pvx_ptr() {return this.ptr.asSlice(OFFSET$pvx, LAYOUT$pvx);}
+    public float b() {return this.ptr.get(LAYOUT__b, OFFSET__b);}
+    public void b(float value) {this.ptr.set(LAYOUT__b, OFFSET__b, value);}
+    public java.lang.foreign.MemorySegment $b() {return this.ptr.asSlice(OFFSET__b, LAYOUT__b);}
 
-    public float sy() {return this.ptr.get(LAYOUT$sy, OFFSET$sy);}
-    public void sy(float value) {this.ptr.set(LAYOUT$sy, OFFSET$sy, value);}
-    public java.lang.foreign.MemorySegment sy_ptr() {return this.ptr.asSlice(OFFSET$sy, LAYOUT$sy);}
+    public float pvx() {return this.ptr.get(LAYOUT__pvx, OFFSET__pvx);}
+    public void pvx(float value) {this.ptr.set(LAYOUT__pvx, OFFSET__pvx, value);}
+    public java.lang.foreign.MemorySegment $pvx() {return this.ptr.asSlice(OFFSET__pvx, LAYOUT__pvx);}
 
-    public float c() {return this.ptr.get(LAYOUT$c, OFFSET$c);}
-    public void c(float value) {this.ptr.set(LAYOUT$c, OFFSET$c, value);}
-    public java.lang.foreign.MemorySegment c_ptr() {return this.ptr.asSlice(OFFSET$c, LAYOUT$c);}
+    public float sy() {return this.ptr.get(LAYOUT__sy, OFFSET__sy);}
+    public void sy(float value) {this.ptr.set(LAYOUT__sy, OFFSET__sy, value);}
+    public java.lang.foreign.MemorySegment $sy() {return this.ptr.asSlice(OFFSET__sy, LAYOUT__sy);}
 
-    public float pvy() {return this.ptr.get(LAYOUT$pvy, OFFSET$pvy);}
-    public void pvy(float value) {this.ptr.set(LAYOUT$pvy, OFFSET$pvy, value);}
-    public java.lang.foreign.MemorySegment pvy_ptr() {return this.ptr.asSlice(OFFSET$pvy, LAYOUT$pvy);}
+    public float c() {return this.ptr.get(LAYOUT__c, OFFSET__c);}
+    public void c(float value) {this.ptr.set(LAYOUT__c, OFFSET__c, value);}
+    public java.lang.foreign.MemorySegment $c() {return this.ptr.asSlice(OFFSET__c, LAYOUT__c);}
 
-    public float sz() {return this.ptr.get(LAYOUT$sz, OFFSET$sz);}
-    public void sz(float value) {this.ptr.set(LAYOUT$sz, OFFSET$sz, value);}
-    public java.lang.foreign.MemorySegment sz_ptr() {return this.ptr.asSlice(OFFSET$sz, LAYOUT$sz);}
+    public float pvy() {return this.ptr.get(LAYOUT__pvy, OFFSET__pvy);}
+    public void pvy(float value) {this.ptr.set(LAYOUT__pvy, OFFSET__pvy, value);}
+    public java.lang.foreign.MemorySegment $pvy() {return this.ptr.asSlice(OFFSET__pvy, LAYOUT__pvy);}
 
-    public float pvz() {return this.ptr.get(LAYOUT$pvz, OFFSET$pvz);}
-    public void pvz(float value) {this.ptr.set(LAYOUT$pvz, OFFSET$pvz, value);}
-    public java.lang.foreign.MemorySegment pvz_ptr() {return this.ptr.asSlice(OFFSET$pvz, LAYOUT$pvz);}
+    public float sz() {return this.ptr.get(LAYOUT__sz, OFFSET__sz);}
+    public void sz(float value) {this.ptr.set(LAYOUT__sz, OFFSET__sz, value);}
+    public java.lang.foreign.MemorySegment $sz() {return this.ptr.asSlice(OFFSET__sz, LAYOUT__sz);}
 
-    public float qx() {return this.ptr.get(LAYOUT$qx, OFFSET$qx);}
-    public void qx(float value) {this.ptr.set(LAYOUT$qx, OFFSET$qx, value);}
-    public java.lang.foreign.MemorySegment qx_ptr() {return this.ptr.asSlice(OFFSET$qx, LAYOUT$qx);}
+    public float pvz() {return this.ptr.get(LAYOUT__pvz, OFFSET__pvz);}
+    public void pvz(float value) {this.ptr.set(LAYOUT__pvz, OFFSET__pvz, value);}
+    public java.lang.foreign.MemorySegment $pvz() {return this.ptr.asSlice(OFFSET__pvz, LAYOUT__pvz);}
 
-    public float qy() {return this.ptr.get(LAYOUT$qy, OFFSET$qy);}
-    public void qy(float value) {this.ptr.set(LAYOUT$qy, OFFSET$qy, value);}
-    public java.lang.foreign.MemorySegment qy_ptr() {return this.ptr.asSlice(OFFSET$qy, LAYOUT$qy);}
+    public float qx() {return this.ptr.get(LAYOUT__qx, OFFSET__qx);}
+    public void qx(float value) {this.ptr.set(LAYOUT__qx, OFFSET__qx, value);}
+    public java.lang.foreign.MemorySegment $qx() {return this.ptr.asSlice(OFFSET__qx, LAYOUT__qx);}
 
-    public float qz() {return this.ptr.get(LAYOUT$qz, OFFSET$qz);}
-    public void qz(float value) {this.ptr.set(LAYOUT$qz, OFFSET$qz, value);}
-    public java.lang.foreign.MemorySegment qz_ptr() {return this.ptr.asSlice(OFFSET$qz, LAYOUT$qz);}
+    public float qy() {return this.ptr.get(LAYOUT__qy, OFFSET__qy);}
+    public void qy(float value) {this.ptr.set(LAYOUT__qy, OFFSET__qy, value);}
+    public java.lang.foreign.MemorySegment $qy() {return this.ptr.asSlice(OFFSET__qy, LAYOUT__qy);}
 
-    public float qw() {return this.ptr.get(LAYOUT$qw, OFFSET$qw);}
-    public void qw(float value) {this.ptr.set(LAYOUT$qw, OFFSET$qw, value);}
-    public java.lang.foreign.MemorySegment qw_ptr() {return this.ptr.asSlice(OFFSET$qw, LAYOUT$qw);}
+    public float qz() {return this.ptr.get(LAYOUT__qz, OFFSET__qz);}
+    public void qz(float value) {this.ptr.set(LAYOUT__qz, OFFSET__qz, value);}
+    public java.lang.foreign.MemorySegment $qz() {return this.ptr.asSlice(OFFSET__qz, LAYOUT__qz);}
 
-    public float tx() {return this.ptr.get(LAYOUT$tx, OFFSET$tx);}
-    public void tx(float value) {this.ptr.set(LAYOUT$tx, OFFSET$tx, value);}
-    public java.lang.foreign.MemorySegment tx_ptr() {return this.ptr.asSlice(OFFSET$tx, LAYOUT$tx);}
+    public float qw() {return this.ptr.get(LAYOUT__qw, OFFSET__qw);}
+    public void qw(float value) {this.ptr.set(LAYOUT__qw, OFFSET__qw, value);}
+    public java.lang.foreign.MemorySegment $qw() {return this.ptr.asSlice(OFFSET__qw, LAYOUT__qw);}
 
-    public float ty() {return this.ptr.get(LAYOUT$ty, OFFSET$ty);}
-    public void ty(float value) {this.ptr.set(LAYOUT$ty, OFFSET$ty, value);}
-    public java.lang.foreign.MemorySegment ty_ptr() {return this.ptr.asSlice(OFFSET$ty, LAYOUT$ty);}
+    public float tx() {return this.ptr.get(LAYOUT__tx, OFFSET__tx);}
+    public void tx(float value) {this.ptr.set(LAYOUT__tx, OFFSET__tx, value);}
+    public java.lang.foreign.MemorySegment $tx() {return this.ptr.asSlice(OFFSET__tx, LAYOUT__tx);}
 
-    public float tz() {return this.ptr.get(LAYOUT$tz, OFFSET$tz);}
-    public void tz(float value) {this.ptr.set(LAYOUT$tz, OFFSET$tz, value);}
-    public java.lang.foreign.MemorySegment tz_ptr() {return this.ptr.asSlice(OFFSET$tz, LAYOUT$tz);}
+    public float ty() {return this.ptr.get(LAYOUT__ty, OFFSET__ty);}
+    public void ty(float value) {this.ptr.set(LAYOUT__ty, OFFSET__ty, value);}
+    public java.lang.foreign.MemorySegment $ty() {return this.ptr.asSlice(OFFSET__ty, LAYOUT__ty);}
+
+    public float tz() {return this.ptr.get(LAYOUT__tz, OFFSET__tz);}
+    public void tz(float value) {this.ptr.set(LAYOUT__tz, OFFSET__tz, value);}
+    public java.lang.foreign.MemorySegment $tz() {return this.ptr.asSlice(OFFSET__tz, LAYOUT__tz);}
 }

@@ -20,7 +20,6 @@ import yionos.demo.rendering.VulkanRenderContext;
 import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -49,6 +48,7 @@ import static vulkan.VkSubpassContents.*;
 import static vulkan.VkDescriptorType.*;
 import static vulkan.VkAccessFlagBits.*;
 import static vma.VmaMemoryUsage.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class VulkanRenderer
@@ -106,7 +106,7 @@ public class VulkanRenderer
         this.m_context = new VulkanRenderContext(appInfo, instanceLayers, instanceExtensions.toArray(String[]::new), validationFeatures, windowProc);
         if (debug) this.m_context.attachDebugMessenger(VulkanContext::defaultDebugMessenger);
         this.m_context.findSuitableDevice((first, second) -> first.isDedicated() ? first : second);
-        gRendererLogger.info(STR."Selected physical device : \{this.m_context.physicalDevice().name()}");
+        gRendererLogger.info("Selected physical device : {}", this.m_context.physicalDevice().name());
 
         this.m_depthFormat = selectDepthFormat(this.m_context.physicalDevice().handle());
 
@@ -139,7 +139,7 @@ public class VulkanRenderer
 
         int maxMsaaSamples = getMaxUsableSampleCount(this.m_logicalDevice.physicalDevice.properties());
         this.m_sampleCount = Math.min(sampleCount, maxMsaaSamples);
-        gRendererLogger.info(STR."MSAA sample count: \{this.m_sampleCount} | Device supports: \{maxMsaaSamples}");
+        gRendererLogger.info("MSAA sample count: {} | Device supports: {}", this.m_sampleCount, maxMsaaSamples);
 
         this.m_swapchain = new Swapchain(this.m_logicalDevice.handle());
         this.initSwapchain();
@@ -292,20 +292,20 @@ public class VulkanRenderer
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pFamilyCount = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pFamilyCount = arena.allocate(JAVA_INT);
             vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, pFamilyCount, NULL);
-            int familyCount = pFamilyCount.get(ValueLayout.JAVA_INT, 0);
-            MemorySegment pFamilyProperties = arena.allocateArray(VkQueueFamilyProperties.gStructLayout, familyCount);
+            int familyCount = pFamilyCount.get(JAVA_INT, 0);
+            MemorySegment pFamilyProperties = arena.allocate(VkQueueFamilyProperties.gRecordLayout, familyCount);
             vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, pFamilyCount, pFamilyProperties);
 
-            MemorySegment pSupported = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pSupported = arena.allocate(JAVA_INT);
             LogicalDevice.QueueDescriptor graphicsQueueDescriptor = null, presentQueueDescriptor = null;
             int lastPresentQueueFamily = -1;
             for (int i = 0; i < familyCount; i++)
             {
                 VkQueueFamilyProperties properties = VkQueueFamilyProperties.getAtIndex(pFamilyProperties, i);
                 VulkanException.check(vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevice, i, surface, pSupported));
-                boolean presentQueue = pSupported.get(ValueLayout.JAVA_INT, 0) != VK_FALSE;
+                boolean presentQueue = pSupported.get(JAVA_INT, 0) != VK_FALSE;
                 if (presentQueue)
                 {
                     lastPresentQueueFamily = i;
@@ -367,10 +367,10 @@ public class VulkanRenderer
 
         try (Arena arena = StackAllocator.stackPush())
         {
-            MemorySegment pImageViews = arena.allocateArray(ValueLayout.ADDRESS, this.m_swapchain.images().length);
+            MemorySegment pImageViews = arena.allocate(ADDRESS, this.m_swapchain.images().length);
             for (int i = 0; i < this.m_swapchain.images().length; i++)
             {
-                pImageViews.setAtIndex(ValueLayout.ADDRESS, i, this.m_swapchain.images()[i].view());
+                pImageViews.setAtIndex(ADDRESS, i, this.m_swapchain.images()[i].view());
             }
 
             MemorySegment msaaImageView = this.m_msaaImage == null ? NULL : this.m_msaaImage.view();
@@ -431,7 +431,7 @@ public class VulkanRenderer
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            MemorySegment pFrameIndex = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment pFrameIndex = arena.allocate(JAVA_INT);
             int swapchainMessage = this.m_swapchain.acquireNextImage(this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame), pFrameIndex);
             if (swapchainMessage == VK_ERROR_OUT_OF_DATE_KHR || swapchainMessage == VK_SUBOPTIMAL_KHR)
             {
@@ -442,19 +442,19 @@ public class VulkanRenderer
                 VulkanException.check(swapchainMessage);
             }
 
-            this.m_vkFrameIndex = pFrameIndex.get(ValueLayout.JAVA_INT, 0);
+            this.m_vkFrameIndex = pFrameIndex.get(JAVA_INT, 0);
 
             this.m_renderingCommandBuffers.reset(this.m_currentFrame);
 
             this.m_frameCommandBuffer = this.m_renderingCommandBuffers.pool(this.m_currentFrame);
             beginCommandBuffer(arena, this.m_frameCommandBuffer, 0);
 
-            MemorySegment pClearValues = arena.allocateArray(VkClearValue.gStructLayout, 2);
+            MemorySegment pClearValues = arena.allocate(VkClearValue.gRecordLayout, 2);
             VkClearValue.getAtIndex(pClearValues, 0).color(value ->
             {
-                value.float32(0, 0.0f);
-                value.float32(1, 0.0f);
-                value.float32(2, 0.0f);
+                value.float32(0, 0.1f);
+                value.float32(1, 0.859f);
+                value.float32(2, 0.859f);
                 value.float32(3, 1.0f);
             });
             VkClearValue.getAtIndex(pClearValues, 1).depthStencil(value ->
@@ -528,23 +528,23 @@ public class VulkanRenderer
 
             MemorySegment commandBufferFence = this.m_syncObjects.fence(this.m_currentFrame);
 
-            MemorySegment pImageAcquiredSemaphore = arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame));
-            MemorySegment pRenderCompleteSemaphore = arena.allocate(ValueLayout.ADDRESS, this.m_syncObjects.renderCompleteSemaphore(this.m_currentFrame));
+            MemorySegment pImageAcquiredSemaphore = arena.allocateFrom(ADDRESS, this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame));
+            MemorySegment pRenderCompleteSemaphore = arena.allocateFrom(ADDRESS, this.m_syncObjects.renderCompleteSemaphore(this.m_currentFrame));
 
             VkSubmitInfo submitInfo = new VkSubmitInfo(arena);
             submitInfo.sType(VK_STRUCTURE_TYPE_SUBMIT_INFO);
             submitInfo.waitSemaphoreCount(1);
             submitInfo.pWaitSemaphores(pImageAcquiredSemaphore);
-            submitInfo.pWaitDstStageMask(arena.allocate(ValueLayout.JAVA_INT, VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT));
+            submitInfo.pWaitDstStageMask(arena.allocateFrom(JAVA_INT, VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT));
             submitInfo.commandBufferCount(1);
-            submitInfo.pCommandBuffers(arena.allocate(ValueLayout.ADDRESS, this.m_frameCommandBuffer.handle()));
+            submitInfo.pCommandBuffers(arena.allocateFrom(ADDRESS, this.m_frameCommandBuffer.handle()));
             submitInfo.signalSemaphoreCount(1);
             submitInfo.pSignalSemaphores(pRenderCompleteSemaphore);
 
             VulkanException.check(vkQueueSubmit(this.m_graphicsQueue.handle(), 1, submitInfo.ptr(), commandBufferFence));
 
             this.m_renderingCommandBuffers.offer(this.m_currentFrame, this.m_frameCommandBuffer);
-            MemorySegment pCommandBufferFence = arena.allocate(ValueLayout.ADDRESS, commandBufferFence);
+            MemorySegment pCommandBufferFence = arena.allocateFrom(ADDRESS, commandBufferFence);
 
             VulkanException.check(vkWaitForFences(this.m_logicalDevice.handle(), 1, pCommandBufferFence, VK_TRUE, -1));
             VulkanException.check(vkResetFences(this.m_logicalDevice.handle(), 1, pCommandBufferFence));
@@ -554,8 +554,8 @@ public class VulkanRenderer
             presentInfo.waitSemaphoreCount(1);
             presentInfo.pWaitSemaphores(pRenderCompleteSemaphore);
             presentInfo.swapchainCount(1);
-            presentInfo.pSwapchains(arena.allocate(ValueLayout.ADDRESS, this.m_swapchain.handle()));
-            presentInfo.pImageIndices(arena.allocate(ValueLayout.JAVA_INT, this.m_vkFrameIndex));
+            presentInfo.pSwapchains(arena.allocateFrom(ADDRESS, this.m_swapchain.handle()));
+            presentInfo.pImageIndices(arena.allocateFrom(JAVA_INT, this.m_vkFrameIndex));
 
             int swapchainMessage = vkQueuePresentKHR(this.m_presentQueue.handle(), presentInfo.ptr());
             if (swapchainMessage == VK_ERROR_OUT_OF_DATE_KHR)
@@ -606,7 +606,7 @@ public class VulkanRenderer
         {
             case CUBE -> this.m_cubeRenderer.render(this.m_frameCommandBuffer, camera, transform, colors);
             case SPHERE -> this.m_sphereRenderer.render(this.m_frameCommandBuffer, camera, transform, colors);
-            default -> throw new IllegalArgumentException(STR."Unsupported object type: \{type.name()}");
+            default -> throw new IllegalArgumentException(String.format("Unsupported object type: %s", type.name()));
         }
     }
 
@@ -617,7 +617,7 @@ public class VulkanRenderer
         {
             case CUBE -> this.m_cubeRenderer.renderInstanced(this.m_frameCommandBuffer, camera, count);
             case SPHERE -> this.m_sphereRenderer.renderInstanced(this.m_frameCommandBuffer, camera, count);
-            default -> throw new IllegalArgumentException(STR."Unsupported object type: \{type.name()}");
+            default -> throw new IllegalArgumentException(String.format("Unsupported object type: %s", type.name()));
         }
     }
 

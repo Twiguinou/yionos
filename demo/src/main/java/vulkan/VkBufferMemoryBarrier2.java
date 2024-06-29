@@ -2,95 +2,100 @@ package vulkan;
 
 public record VkBufferMemoryBarrier2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$srcStageMask = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$srcStageMask = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$srcAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$srcAccessMask = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$dstStageMask = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$dstStageMask = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$dstAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$dstAccessMask = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcQueueFamilyIndex = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstQueueFamilyIndex = 52L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$buffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$buffer = 56L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$offset = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$offset = 64L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$size = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$size = 72L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcStageMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__srcStageMask = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__srcAccessMask = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstStageMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__dstStageMask = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__dstAccessMask = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcQueueFamilyIndex = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstQueueFamilyIndex = 52;
+    public static final java.lang.foreign.AddressLayout LAYOUT__buffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__buffer = 56;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__offset = 64;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__size = 72;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$srcStageMask,
-            LAYOUT$srcAccessMask,
-            LAYOUT$dstStageMask,
-            LAYOUT$dstAccessMask,
-            LAYOUT$srcQueueFamilyIndex,
-            LAYOUT$dstQueueFamilyIndex,
-            LAYOUT$buffer,
-            LAYOUT$offset,
-            LAYOUT$size
-    ).withName("VkBufferMemoryBarrier2");
+            LAYOUT__pNext,
+            LAYOUT__srcStageMask,
+            LAYOUT__srcAccessMask,
+            LAYOUT__dstStageMask,
+            LAYOUT__dstAccessMask,
+            LAYOUT__srcQueueFamilyIndex,
+            LAYOUT__dstQueueFamilyIndex,
+            LAYOUT__buffer,
+            LAYOUT__offset,
+            LAYOUT__size
+    ).withByteAlignment(8).withName("VkBufferMemoryBarrier2");
 
     public VkBufferMemoryBarrier2(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkBufferMemoryBarrier2 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkBufferMemoryBarrier2 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkBufferMemoryBarrier2(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkBufferMemoryBarrier2(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkBufferMemoryBarrier2 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public long srcStageMask() {return this.ptr.get(LAYOUT$srcStageMask, OFFSET$srcStageMask);}
-    public void srcStageMask(long value) {this.ptr.set(LAYOUT$srcStageMask, OFFSET$srcStageMask, value);}
-    public java.lang.foreign.MemorySegment srcStageMask_ptr() {return this.ptr.asSlice(OFFSET$srcStageMask, LAYOUT$srcStageMask);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long srcAccessMask() {return this.ptr.get(LAYOUT$srcAccessMask, OFFSET$srcAccessMask);}
-    public void srcAccessMask(long value) {this.ptr.set(LAYOUT$srcAccessMask, OFFSET$srcAccessMask, value);}
-    public java.lang.foreign.MemorySegment srcAccessMask_ptr() {return this.ptr.asSlice(OFFSET$srcAccessMask, LAYOUT$srcAccessMask);}
+    public long srcStageMask() {return this.ptr.get(LAYOUT__srcStageMask, OFFSET__srcStageMask);}
+    public void srcStageMask(long value) {this.ptr.set(LAYOUT__srcStageMask, OFFSET__srcStageMask, value);}
+    public java.lang.foreign.MemorySegment $srcStageMask() {return this.ptr.asSlice(OFFSET__srcStageMask, LAYOUT__srcStageMask);}
 
-    public long dstStageMask() {return this.ptr.get(LAYOUT$dstStageMask, OFFSET$dstStageMask);}
-    public void dstStageMask(long value) {this.ptr.set(LAYOUT$dstStageMask, OFFSET$dstStageMask, value);}
-    public java.lang.foreign.MemorySegment dstStageMask_ptr() {return this.ptr.asSlice(OFFSET$dstStageMask, LAYOUT$dstStageMask);}
+    public long srcAccessMask() {return this.ptr.get(LAYOUT__srcAccessMask, OFFSET__srcAccessMask);}
+    public void srcAccessMask(long value) {this.ptr.set(LAYOUT__srcAccessMask, OFFSET__srcAccessMask, value);}
+    public java.lang.foreign.MemorySegment $srcAccessMask() {return this.ptr.asSlice(OFFSET__srcAccessMask, LAYOUT__srcAccessMask);}
 
-    public long dstAccessMask() {return this.ptr.get(LAYOUT$dstAccessMask, OFFSET$dstAccessMask);}
-    public void dstAccessMask(long value) {this.ptr.set(LAYOUT$dstAccessMask, OFFSET$dstAccessMask, value);}
-    public java.lang.foreign.MemorySegment dstAccessMask_ptr() {return this.ptr.asSlice(OFFSET$dstAccessMask, LAYOUT$dstAccessMask);}
+    public long dstStageMask() {return this.ptr.get(LAYOUT__dstStageMask, OFFSET__dstStageMask);}
+    public void dstStageMask(long value) {this.ptr.set(LAYOUT__dstStageMask, OFFSET__dstStageMask, value);}
+    public java.lang.foreign.MemorySegment $dstStageMask() {return this.ptr.asSlice(OFFSET__dstStageMask, LAYOUT__dstStageMask);}
 
-    public int srcQueueFamilyIndex() {return this.ptr.get(LAYOUT$srcQueueFamilyIndex, OFFSET$srcQueueFamilyIndex);}
-    public void srcQueueFamilyIndex(int value) {this.ptr.set(LAYOUT$srcQueueFamilyIndex, OFFSET$srcQueueFamilyIndex, value);}
-    public java.lang.foreign.MemorySegment srcQueueFamilyIndex_ptr() {return this.ptr.asSlice(OFFSET$srcQueueFamilyIndex, LAYOUT$srcQueueFamilyIndex);}
+    public long dstAccessMask() {return this.ptr.get(LAYOUT__dstAccessMask, OFFSET__dstAccessMask);}
+    public void dstAccessMask(long value) {this.ptr.set(LAYOUT__dstAccessMask, OFFSET__dstAccessMask, value);}
+    public java.lang.foreign.MemorySegment $dstAccessMask() {return this.ptr.asSlice(OFFSET__dstAccessMask, LAYOUT__dstAccessMask);}
 
-    public int dstQueueFamilyIndex() {return this.ptr.get(LAYOUT$dstQueueFamilyIndex, OFFSET$dstQueueFamilyIndex);}
-    public void dstQueueFamilyIndex(int value) {this.ptr.set(LAYOUT$dstQueueFamilyIndex, OFFSET$dstQueueFamilyIndex, value);}
-    public java.lang.foreign.MemorySegment dstQueueFamilyIndex_ptr() {return this.ptr.asSlice(OFFSET$dstQueueFamilyIndex, LAYOUT$dstQueueFamilyIndex);}
+    public int srcQueueFamilyIndex() {return this.ptr.get(LAYOUT__srcQueueFamilyIndex, OFFSET__srcQueueFamilyIndex);}
+    public void srcQueueFamilyIndex(int value) {this.ptr.set(LAYOUT__srcQueueFamilyIndex, OFFSET__srcQueueFamilyIndex, value);}
+    public java.lang.foreign.MemorySegment $srcQueueFamilyIndex() {return this.ptr.asSlice(OFFSET__srcQueueFamilyIndex, LAYOUT__srcQueueFamilyIndex);}
 
-    public java.lang.foreign.MemorySegment buffer() {return this.ptr.get(LAYOUT$buffer, OFFSET$buffer);}
-    public void buffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$buffer, OFFSET$buffer, value);}
-    public java.lang.foreign.MemorySegment buffer_ptr() {return this.ptr.asSlice(OFFSET$buffer, LAYOUT$buffer);}
+    public int dstQueueFamilyIndex() {return this.ptr.get(LAYOUT__dstQueueFamilyIndex, OFFSET__dstQueueFamilyIndex);}
+    public void dstQueueFamilyIndex(int value) {this.ptr.set(LAYOUT__dstQueueFamilyIndex, OFFSET__dstQueueFamilyIndex, value);}
+    public java.lang.foreign.MemorySegment $dstQueueFamilyIndex() {return this.ptr.asSlice(OFFSET__dstQueueFamilyIndex, LAYOUT__dstQueueFamilyIndex);}
 
-    public long offset() {return this.ptr.get(LAYOUT$offset, OFFSET$offset);}
-    public void offset(long value) {this.ptr.set(LAYOUT$offset, OFFSET$offset, value);}
-    public java.lang.foreign.MemorySegment offset_ptr() {return this.ptr.asSlice(OFFSET$offset, LAYOUT$offset);}
+    public java.lang.foreign.MemorySegment buffer() {return this.ptr.get(LAYOUT__buffer, OFFSET__buffer);}
+    public void buffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__buffer, OFFSET__buffer, value);}
+    public java.lang.foreign.MemorySegment $buffer() {return this.ptr.asSlice(OFFSET__buffer, LAYOUT__buffer);}
 
-    public long size() {return this.ptr.get(LAYOUT$size, OFFSET$size);}
-    public void size(long value) {this.ptr.set(LAYOUT$size, OFFSET$size, value);}
-    public java.lang.foreign.MemorySegment size_ptr() {return this.ptr.asSlice(OFFSET$size, LAYOUT$size);}
+    public long offset() {return this.ptr.get(LAYOUT__offset, OFFSET__offset);}
+    public void offset(long value) {this.ptr.set(LAYOUT__offset, OFFSET__offset, value);}
+    public java.lang.foreign.MemorySegment $offset() {return this.ptr.asSlice(OFFSET__offset, LAYOUT__offset);}
+
+    public long size() {return this.ptr.get(LAYOUT__size, OFFSET__size);}
+    public void size(long value) {this.ptr.set(LAYOUT__size, OFFSET__size, value);}
+    public java.lang.foreign.MemorySegment $size() {return this.ptr.asSlice(OFFSET__size, LAYOUT__size);}
 }

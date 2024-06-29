@@ -2,60 +2,65 @@ package vulkan;
 
 public record VkVideoEncodeH265GopRemainingFrameInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$useGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$useGopRemainingFrames = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$gopRemainingI = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$gopRemainingI = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$gopRemainingP = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$gopRemainingP = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$gopRemainingB = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$gopRemainingB = 28L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__useGopRemainingFrames = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingI = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__gopRemainingI = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingP = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__gopRemainingP = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingB = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__gopRemainingB = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$useGopRemainingFrames,
-            LAYOUT$gopRemainingI,
-            LAYOUT$gopRemainingP,
-            LAYOUT$gopRemainingB
-    ).withName("VkVideoEncodeH265GopRemainingFrameInfoKHR");
+            LAYOUT__pNext,
+            LAYOUT__useGopRemainingFrames,
+            LAYOUT__gopRemainingI,
+            LAYOUT__gopRemainingP,
+            LAYOUT__gopRemainingB
+    ).withByteAlignment(8).withName("VkVideoEncodeH265GopRemainingFrameInfoKHR");
 
     public VkVideoEncodeH265GopRemainingFrameInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoEncodeH265GopRemainingFrameInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoEncodeH265GopRemainingFrameInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoEncodeH265GopRemainingFrameInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoEncodeH265GopRemainingFrameInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoEncodeH265GopRemainingFrameInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int useGopRemainingFrames() {return this.ptr.get(LAYOUT$useGopRemainingFrames, OFFSET$useGopRemainingFrames);}
-    public void useGopRemainingFrames(int value) {this.ptr.set(LAYOUT$useGopRemainingFrames, OFFSET$useGopRemainingFrames, value);}
-    public java.lang.foreign.MemorySegment useGopRemainingFrames_ptr() {return this.ptr.asSlice(OFFSET$useGopRemainingFrames, LAYOUT$useGopRemainingFrames);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int gopRemainingI() {return this.ptr.get(LAYOUT$gopRemainingI, OFFSET$gopRemainingI);}
-    public void gopRemainingI(int value) {this.ptr.set(LAYOUT$gopRemainingI, OFFSET$gopRemainingI, value);}
-    public java.lang.foreign.MemorySegment gopRemainingI_ptr() {return this.ptr.asSlice(OFFSET$gopRemainingI, LAYOUT$gopRemainingI);}
+    public int useGopRemainingFrames() {return this.ptr.get(LAYOUT__useGopRemainingFrames, OFFSET__useGopRemainingFrames);}
+    public void useGopRemainingFrames(int value) {this.ptr.set(LAYOUT__useGopRemainingFrames, OFFSET__useGopRemainingFrames, value);}
+    public java.lang.foreign.MemorySegment $useGopRemainingFrames() {return this.ptr.asSlice(OFFSET__useGopRemainingFrames, LAYOUT__useGopRemainingFrames);}
 
-    public int gopRemainingP() {return this.ptr.get(LAYOUT$gopRemainingP, OFFSET$gopRemainingP);}
-    public void gopRemainingP(int value) {this.ptr.set(LAYOUT$gopRemainingP, OFFSET$gopRemainingP, value);}
-    public java.lang.foreign.MemorySegment gopRemainingP_ptr() {return this.ptr.asSlice(OFFSET$gopRemainingP, LAYOUT$gopRemainingP);}
+    public int gopRemainingI() {return this.ptr.get(LAYOUT__gopRemainingI, OFFSET__gopRemainingI);}
+    public void gopRemainingI(int value) {this.ptr.set(LAYOUT__gopRemainingI, OFFSET__gopRemainingI, value);}
+    public java.lang.foreign.MemorySegment $gopRemainingI() {return this.ptr.asSlice(OFFSET__gopRemainingI, LAYOUT__gopRemainingI);}
 
-    public int gopRemainingB() {return this.ptr.get(LAYOUT$gopRemainingB, OFFSET$gopRemainingB);}
-    public void gopRemainingB(int value) {this.ptr.set(LAYOUT$gopRemainingB, OFFSET$gopRemainingB, value);}
-    public java.lang.foreign.MemorySegment gopRemainingB_ptr() {return this.ptr.asSlice(OFFSET$gopRemainingB, LAYOUT$gopRemainingB);}
+    public int gopRemainingP() {return this.ptr.get(LAYOUT__gopRemainingP, OFFSET__gopRemainingP);}
+    public void gopRemainingP(int value) {this.ptr.set(LAYOUT__gopRemainingP, OFFSET__gopRemainingP, value);}
+    public java.lang.foreign.MemorySegment $gopRemainingP() {return this.ptr.asSlice(OFFSET__gopRemainingP, LAYOUT__gopRemainingP);}
+
+    public int gopRemainingB() {return this.ptr.get(LAYOUT__gopRemainingB, OFFSET__gopRemainingB);}
+    public void gopRemainingB(int value) {this.ptr.set(LAYOUT__gopRemainingB, OFFSET__gopRemainingB, value);}
+    public java.lang.foreign.MemorySegment $gopRemainingB() {return this.ptr.asSlice(OFFSET__gopRemainingB, LAYOUT__gopRemainingB);}
 }

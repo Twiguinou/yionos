@@ -2,397 +2,402 @@ package vulkan;
 
 public record VkPhysicalDeviceVulkan12Properties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$driverID = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$driverID = 16L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$driverName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$driverName = 20L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$driverInfo = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$driverInfo = 276L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$conformanceVersion = vulkan.VkConformanceVersion.gStructLayout;
-    public static final long OFFSET$conformanceVersion = 532L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$denormBehaviorIndependence = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$denormBehaviorIndependence = 536L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$roundingModeIndependence = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$roundingModeIndependence = 540L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSignedZeroInfNanPreserveFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSignedZeroInfNanPreserveFloat16 = 544L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSignedZeroInfNanPreserveFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSignedZeroInfNanPreserveFloat32 = 548L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSignedZeroInfNanPreserveFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSignedZeroInfNanPreserveFloat64 = 552L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDenormPreserveFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDenormPreserveFloat16 = 556L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDenormPreserveFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDenormPreserveFloat32 = 560L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDenormPreserveFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDenormPreserveFloat64 = 564L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDenormFlushToZeroFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDenormFlushToZeroFloat16 = 568L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDenormFlushToZeroFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDenormFlushToZeroFloat32 = 572L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderDenormFlushToZeroFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderDenormFlushToZeroFloat64 = 576L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderRoundingModeRTEFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderRoundingModeRTEFloat16 = 580L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderRoundingModeRTEFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderRoundingModeRTEFloat32 = 584L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderRoundingModeRTEFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderRoundingModeRTEFloat64 = 588L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderRoundingModeRTZFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderRoundingModeRTZFloat16 = 592L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderRoundingModeRTZFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderRoundingModeRTZFloat32 = 596L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderRoundingModeRTZFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderRoundingModeRTZFloat64 = 600L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxUpdateAfterBindDescriptorsInAllPools = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxUpdateAfterBindDescriptorsInAllPools = 604L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderUniformBufferArrayNonUniformIndexingNative = 608L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSampledImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSampledImageArrayNonUniformIndexingNative = 612L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageBufferArrayNonUniformIndexingNative = 616L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageImageArrayNonUniformIndexingNative = 620L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative = 624L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$robustBufferAccessUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$robustBufferAccessUpdateAfterBind = 628L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$quadDivergentImplicitLod = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$quadDivergentImplicitLod = 632L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers = 636L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers = 640L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers = 644L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages = 648L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages = 652L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments = 656L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageUpdateAfterBindResources = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageUpdateAfterBindResources = 660L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindSamplers = 664L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers = 668L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = 672L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers = 676L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = 680L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindSampledImages = 684L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindStorageImages = 688L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments = 692L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedDepthResolveModes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedDepthResolveModes = 696L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$supportedStencilResolveModes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$supportedStencilResolveModes = 700L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$independentResolveNone = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$independentResolveNone = 704L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$independentResolve = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$independentResolve = 708L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$filterMinmaxSingleComponentFormats = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$filterMinmaxSingleComponentFormats = 712L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$filterMinmaxImageComponentMapping = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$filterMinmaxImageComponentMapping = 716L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$maxTimelineSemaphoreValueDifference = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$maxTimelineSemaphoreValueDifference = 720L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$framebufferIntegerColorSampleCounts = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$framebufferIntegerColorSampleCounts = 728L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__driverID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__driverID = 16;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__driverName = 20;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverInfo = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__driverInfo = 276;
+    public static final java.lang.foreign.StructLayout LAYOUT__conformanceVersion = vulkan.VkConformanceVersion.gRecordLayout;
+    public static final long OFFSET__conformanceVersion = 532;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__denormBehaviorIndependence = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__denormBehaviorIndependence = 536;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__roundingModeIndependence = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__roundingModeIndependence = 540;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSignedZeroInfNanPreserveFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSignedZeroInfNanPreserveFloat16 = 544;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSignedZeroInfNanPreserveFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSignedZeroInfNanPreserveFloat32 = 548;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSignedZeroInfNanPreserveFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSignedZeroInfNanPreserveFloat64 = 552;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDenormPreserveFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDenormPreserveFloat16 = 556;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDenormPreserveFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDenormPreserveFloat32 = 560;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDenormPreserveFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDenormPreserveFloat64 = 564;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDenormFlushToZeroFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDenormFlushToZeroFloat16 = 568;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDenormFlushToZeroFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDenormFlushToZeroFloat32 = 572;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDenormFlushToZeroFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderDenormFlushToZeroFloat64 = 576;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderRoundingModeRTEFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderRoundingModeRTEFloat16 = 580;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderRoundingModeRTEFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderRoundingModeRTEFloat32 = 584;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderRoundingModeRTEFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderRoundingModeRTEFloat64 = 588;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderRoundingModeRTZFloat16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderRoundingModeRTZFloat16 = 592;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderRoundingModeRTZFloat32 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderRoundingModeRTZFloat32 = 596;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderRoundingModeRTZFloat64 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderRoundingModeRTZFloat64 = 600;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxUpdateAfterBindDescriptorsInAllPools = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxUpdateAfterBindDescriptorsInAllPools = 604;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderUniformBufferArrayNonUniformIndexingNative = 608;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSampledImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSampledImageArrayNonUniformIndexingNative = 612;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageBufferArrayNonUniformIndexingNative = 616;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageImageArrayNonUniformIndexingNative = 620;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative = 624;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustBufferAccessUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__robustBufferAccessUpdateAfterBind = 628;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__quadDivergentImplicitLod = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__quadDivergentImplicitLod = 632;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers = 636;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers = 640;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers = 644;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages = 648;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages = 652;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments = 656;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageUpdateAfterBindResources = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageUpdateAfterBindResources = 660;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindSamplers = 664;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers = 668;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = 672;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers = 676;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = 680;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindSampledImages = 684;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindStorageImages = 688;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments = 692;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedDepthResolveModes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedDepthResolveModes = 696;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedStencilResolveModes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__supportedStencilResolveModes = 700;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__independentResolveNone = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__independentResolveNone = 704;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__independentResolve = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__independentResolve = 708;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filterMinmaxSingleComponentFormats = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__filterMinmaxSingleComponentFormats = 712;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filterMinmaxImageComponentMapping = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__filterMinmaxImageComponentMapping = 716;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxTimelineSemaphoreValueDifference = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__maxTimelineSemaphoreValueDifference = 720;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__framebufferIntegerColorSampleCounts = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__framebufferIntegerColorSampleCounts = 728;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$driverID,
-            LAYOUT$driverName,
-            LAYOUT$driverInfo,
-            LAYOUT$conformanceVersion,
-            LAYOUT$denormBehaviorIndependence,
-            LAYOUT$roundingModeIndependence,
-            LAYOUT$shaderSignedZeroInfNanPreserveFloat16,
-            LAYOUT$shaderSignedZeroInfNanPreserveFloat32,
-            LAYOUT$shaderSignedZeroInfNanPreserveFloat64,
-            LAYOUT$shaderDenormPreserveFloat16,
-            LAYOUT$shaderDenormPreserveFloat32,
-            LAYOUT$shaderDenormPreserveFloat64,
-            LAYOUT$shaderDenormFlushToZeroFloat16,
-            LAYOUT$shaderDenormFlushToZeroFloat32,
-            LAYOUT$shaderDenormFlushToZeroFloat64,
-            LAYOUT$shaderRoundingModeRTEFloat16,
-            LAYOUT$shaderRoundingModeRTEFloat32,
-            LAYOUT$shaderRoundingModeRTEFloat64,
-            LAYOUT$shaderRoundingModeRTZFloat16,
-            LAYOUT$shaderRoundingModeRTZFloat32,
-            LAYOUT$shaderRoundingModeRTZFloat64,
-            LAYOUT$maxUpdateAfterBindDescriptorsInAllPools,
-            LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative,
-            LAYOUT$shaderSampledImageArrayNonUniformIndexingNative,
-            LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative,
-            LAYOUT$shaderStorageImageArrayNonUniformIndexingNative,
-            LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative,
-            LAYOUT$robustBufferAccessUpdateAfterBind,
-            LAYOUT$quadDivergentImplicitLod,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments,
-            LAYOUT$maxPerStageUpdateAfterBindResources,
-            LAYOUT$maxDescriptorSetUpdateAfterBindSamplers,
-            LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers,
-            LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic,
-            LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers,
-            LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic,
-            LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages,
-            LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages,
-            LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments,
-            LAYOUT$supportedDepthResolveModes,
-            LAYOUT$supportedStencilResolveModes,
-            LAYOUT$independentResolveNone,
-            LAYOUT$independentResolve,
-            LAYOUT$filterMinmaxSingleComponentFormats,
-            LAYOUT$filterMinmaxImageComponentMapping,
-            LAYOUT$maxTimelineSemaphoreValueDifference,
-            LAYOUT$framebufferIntegerColorSampleCounts,
+            LAYOUT__pNext,
+            LAYOUT__driverID,
+            LAYOUT__driverName,
+            LAYOUT__driverInfo,
+            LAYOUT__conformanceVersion,
+            LAYOUT__denormBehaviorIndependence,
+            LAYOUT__roundingModeIndependence,
+            LAYOUT__shaderSignedZeroInfNanPreserveFloat16,
+            LAYOUT__shaderSignedZeroInfNanPreserveFloat32,
+            LAYOUT__shaderSignedZeroInfNanPreserveFloat64,
+            LAYOUT__shaderDenormPreserveFloat16,
+            LAYOUT__shaderDenormPreserveFloat32,
+            LAYOUT__shaderDenormPreserveFloat64,
+            LAYOUT__shaderDenormFlushToZeroFloat16,
+            LAYOUT__shaderDenormFlushToZeroFloat32,
+            LAYOUT__shaderDenormFlushToZeroFloat64,
+            LAYOUT__shaderRoundingModeRTEFloat16,
+            LAYOUT__shaderRoundingModeRTEFloat32,
+            LAYOUT__shaderRoundingModeRTEFloat64,
+            LAYOUT__shaderRoundingModeRTZFloat16,
+            LAYOUT__shaderRoundingModeRTZFloat32,
+            LAYOUT__shaderRoundingModeRTZFloat64,
+            LAYOUT__maxUpdateAfterBindDescriptorsInAllPools,
+            LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative,
+            LAYOUT__shaderSampledImageArrayNonUniformIndexingNative,
+            LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative,
+            LAYOUT__shaderStorageImageArrayNonUniformIndexingNative,
+            LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative,
+            LAYOUT__robustBufferAccessUpdateAfterBind,
+            LAYOUT__quadDivergentImplicitLod,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments,
+            LAYOUT__maxPerStageUpdateAfterBindResources,
+            LAYOUT__maxDescriptorSetUpdateAfterBindSamplers,
+            LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers,
+            LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic,
+            LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers,
+            LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic,
+            LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages,
+            LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages,
+            LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments,
+            LAYOUT__supportedDepthResolveModes,
+            LAYOUT__supportedStencilResolveModes,
+            LAYOUT__independentResolveNone,
+            LAYOUT__independentResolve,
+            LAYOUT__filterMinmaxSingleComponentFormats,
+            LAYOUT__filterMinmaxImageComponentMapping,
+            LAYOUT__maxTimelineSemaphoreValueDifference,
+            LAYOUT__framebufferIntegerColorSampleCounts,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceVulkan12Properties");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceVulkan12Properties");
 
     public VkPhysicalDeviceVulkan12Properties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceVulkan12Properties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceVulkan12Properties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceVulkan12Properties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceVulkan12Properties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceVulkan12Properties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int driverID() {return this.ptr.get(LAYOUT$driverID, OFFSET$driverID);}
-    public void driverID(int value) {this.ptr.set(LAYOUT$driverID, OFFSET$driverID, value);}
-    public java.lang.foreign.MemorySegment driverID_ptr() {return this.ptr.asSlice(OFFSET$driverID, LAYOUT$driverID);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment driverName() {return this.ptr.asSlice(OFFSET$driverName, LAYOUT$driverName);}
-    public char driverName(int i) {return (char)this.driverName().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void driverName(int i, char value) {this.driverName().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public int driverID() {return this.ptr.get(LAYOUT__driverID, OFFSET__driverID);}
+    public void driverID(int value) {this.ptr.set(LAYOUT__driverID, OFFSET__driverID, value);}
+    public java.lang.foreign.MemorySegment $driverID() {return this.ptr.asSlice(OFFSET__driverID, LAYOUT__driverID);}
 
-    public java.lang.foreign.MemorySegment driverInfo() {return this.ptr.asSlice(OFFSET$driverInfo, LAYOUT$driverInfo);}
-    public char driverInfo(int i) {return (char)this.driverInfo().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void driverInfo(int i, char value) {this.driverInfo().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment driverName() {return this.ptr.asSlice(OFFSET__driverName, LAYOUT__driverName);}
+    public byte driverName(int index) {return this.driverName().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void driverName(int index, byte value) {this.driverName().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public vulkan.VkConformanceVersion conformanceVersion() {return new vulkan.VkConformanceVersion(this.ptr.asSlice(OFFSET$conformanceVersion, LAYOUT$conformanceVersion));}
+    public java.lang.foreign.MemorySegment driverInfo() {return this.ptr.asSlice(OFFSET__driverInfo, LAYOUT__driverInfo);}
+    public byte driverInfo(int index) {return this.driverInfo().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void driverInfo(int index, byte value) {this.driverInfo().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
+
+    public vulkan.VkConformanceVersion conformanceVersion() {return new vulkan.VkConformanceVersion(this.ptr.asSlice(OFFSET__conformanceVersion, LAYOUT__conformanceVersion));}
     public void conformanceVersion(java.util.function.Consumer<vulkan.VkConformanceVersion> consumer) {consumer.accept(this.conformanceVersion());}
-    public void conformanceVersion(vulkan.VkConformanceVersion value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$conformanceVersion, LAYOUT$conformanceVersion.byteSize());}
+    public void conformanceVersion(vulkan.VkConformanceVersion value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__conformanceVersion, LAYOUT__conformanceVersion.byteSize());}
 
-    public int denormBehaviorIndependence() {return this.ptr.get(LAYOUT$denormBehaviorIndependence, OFFSET$denormBehaviorIndependence);}
-    public void denormBehaviorIndependence(int value) {this.ptr.set(LAYOUT$denormBehaviorIndependence, OFFSET$denormBehaviorIndependence, value);}
-    public java.lang.foreign.MemorySegment denormBehaviorIndependence_ptr() {return this.ptr.asSlice(OFFSET$denormBehaviorIndependence, LAYOUT$denormBehaviorIndependence);}
+    public int denormBehaviorIndependence() {return this.ptr.get(LAYOUT__denormBehaviorIndependence, OFFSET__denormBehaviorIndependence);}
+    public void denormBehaviorIndependence(int value) {this.ptr.set(LAYOUT__denormBehaviorIndependence, OFFSET__denormBehaviorIndependence, value);}
+    public java.lang.foreign.MemorySegment $denormBehaviorIndependence() {return this.ptr.asSlice(OFFSET__denormBehaviorIndependence, LAYOUT__denormBehaviorIndependence);}
 
-    public int roundingModeIndependence() {return this.ptr.get(LAYOUT$roundingModeIndependence, OFFSET$roundingModeIndependence);}
-    public void roundingModeIndependence(int value) {this.ptr.set(LAYOUT$roundingModeIndependence, OFFSET$roundingModeIndependence, value);}
-    public java.lang.foreign.MemorySegment roundingModeIndependence_ptr() {return this.ptr.asSlice(OFFSET$roundingModeIndependence, LAYOUT$roundingModeIndependence);}
+    public int roundingModeIndependence() {return this.ptr.get(LAYOUT__roundingModeIndependence, OFFSET__roundingModeIndependence);}
+    public void roundingModeIndependence(int value) {this.ptr.set(LAYOUT__roundingModeIndependence, OFFSET__roundingModeIndependence, value);}
+    public java.lang.foreign.MemorySegment $roundingModeIndependence() {return this.ptr.asSlice(OFFSET__roundingModeIndependence, LAYOUT__roundingModeIndependence);}
 
-    public int shaderSignedZeroInfNanPreserveFloat16() {return this.ptr.get(LAYOUT$shaderSignedZeroInfNanPreserveFloat16, OFFSET$shaderSignedZeroInfNanPreserveFloat16);}
-    public void shaderSignedZeroInfNanPreserveFloat16(int value) {this.ptr.set(LAYOUT$shaderSignedZeroInfNanPreserveFloat16, OFFSET$shaderSignedZeroInfNanPreserveFloat16, value);}
-    public java.lang.foreign.MemorySegment shaderSignedZeroInfNanPreserveFloat16_ptr() {return this.ptr.asSlice(OFFSET$shaderSignedZeroInfNanPreserveFloat16, LAYOUT$shaderSignedZeroInfNanPreserveFloat16);}
+    public int shaderSignedZeroInfNanPreserveFloat16() {return this.ptr.get(LAYOUT__shaderSignedZeroInfNanPreserveFloat16, OFFSET__shaderSignedZeroInfNanPreserveFloat16);}
+    public void shaderSignedZeroInfNanPreserveFloat16(int value) {this.ptr.set(LAYOUT__shaderSignedZeroInfNanPreserveFloat16, OFFSET__shaderSignedZeroInfNanPreserveFloat16, value);}
+    public java.lang.foreign.MemorySegment $shaderSignedZeroInfNanPreserveFloat16() {return this.ptr.asSlice(OFFSET__shaderSignedZeroInfNanPreserveFloat16, LAYOUT__shaderSignedZeroInfNanPreserveFloat16);}
 
-    public int shaderSignedZeroInfNanPreserveFloat32() {return this.ptr.get(LAYOUT$shaderSignedZeroInfNanPreserveFloat32, OFFSET$shaderSignedZeroInfNanPreserveFloat32);}
-    public void shaderSignedZeroInfNanPreserveFloat32(int value) {this.ptr.set(LAYOUT$shaderSignedZeroInfNanPreserveFloat32, OFFSET$shaderSignedZeroInfNanPreserveFloat32, value);}
-    public java.lang.foreign.MemorySegment shaderSignedZeroInfNanPreserveFloat32_ptr() {return this.ptr.asSlice(OFFSET$shaderSignedZeroInfNanPreserveFloat32, LAYOUT$shaderSignedZeroInfNanPreserveFloat32);}
+    public int shaderSignedZeroInfNanPreserveFloat32() {return this.ptr.get(LAYOUT__shaderSignedZeroInfNanPreserveFloat32, OFFSET__shaderSignedZeroInfNanPreserveFloat32);}
+    public void shaderSignedZeroInfNanPreserveFloat32(int value) {this.ptr.set(LAYOUT__shaderSignedZeroInfNanPreserveFloat32, OFFSET__shaderSignedZeroInfNanPreserveFloat32, value);}
+    public java.lang.foreign.MemorySegment $shaderSignedZeroInfNanPreserveFloat32() {return this.ptr.asSlice(OFFSET__shaderSignedZeroInfNanPreserveFloat32, LAYOUT__shaderSignedZeroInfNanPreserveFloat32);}
 
-    public int shaderSignedZeroInfNanPreserveFloat64() {return this.ptr.get(LAYOUT$shaderSignedZeroInfNanPreserveFloat64, OFFSET$shaderSignedZeroInfNanPreserveFloat64);}
-    public void shaderSignedZeroInfNanPreserveFloat64(int value) {this.ptr.set(LAYOUT$shaderSignedZeroInfNanPreserveFloat64, OFFSET$shaderSignedZeroInfNanPreserveFloat64, value);}
-    public java.lang.foreign.MemorySegment shaderSignedZeroInfNanPreserveFloat64_ptr() {return this.ptr.asSlice(OFFSET$shaderSignedZeroInfNanPreserveFloat64, LAYOUT$shaderSignedZeroInfNanPreserveFloat64);}
+    public int shaderSignedZeroInfNanPreserveFloat64() {return this.ptr.get(LAYOUT__shaderSignedZeroInfNanPreserveFloat64, OFFSET__shaderSignedZeroInfNanPreserveFloat64);}
+    public void shaderSignedZeroInfNanPreserveFloat64(int value) {this.ptr.set(LAYOUT__shaderSignedZeroInfNanPreserveFloat64, OFFSET__shaderSignedZeroInfNanPreserveFloat64, value);}
+    public java.lang.foreign.MemorySegment $shaderSignedZeroInfNanPreserveFloat64() {return this.ptr.asSlice(OFFSET__shaderSignedZeroInfNanPreserveFloat64, LAYOUT__shaderSignedZeroInfNanPreserveFloat64);}
 
-    public int shaderDenormPreserveFloat16() {return this.ptr.get(LAYOUT$shaderDenormPreserveFloat16, OFFSET$shaderDenormPreserveFloat16);}
-    public void shaderDenormPreserveFloat16(int value) {this.ptr.set(LAYOUT$shaderDenormPreserveFloat16, OFFSET$shaderDenormPreserveFloat16, value);}
-    public java.lang.foreign.MemorySegment shaderDenormPreserveFloat16_ptr() {return this.ptr.asSlice(OFFSET$shaderDenormPreserveFloat16, LAYOUT$shaderDenormPreserveFloat16);}
+    public int shaderDenormPreserveFloat16() {return this.ptr.get(LAYOUT__shaderDenormPreserveFloat16, OFFSET__shaderDenormPreserveFloat16);}
+    public void shaderDenormPreserveFloat16(int value) {this.ptr.set(LAYOUT__shaderDenormPreserveFloat16, OFFSET__shaderDenormPreserveFloat16, value);}
+    public java.lang.foreign.MemorySegment $shaderDenormPreserveFloat16() {return this.ptr.asSlice(OFFSET__shaderDenormPreserveFloat16, LAYOUT__shaderDenormPreserveFloat16);}
 
-    public int shaderDenormPreserveFloat32() {return this.ptr.get(LAYOUT$shaderDenormPreserveFloat32, OFFSET$shaderDenormPreserveFloat32);}
-    public void shaderDenormPreserveFloat32(int value) {this.ptr.set(LAYOUT$shaderDenormPreserveFloat32, OFFSET$shaderDenormPreserveFloat32, value);}
-    public java.lang.foreign.MemorySegment shaderDenormPreserveFloat32_ptr() {return this.ptr.asSlice(OFFSET$shaderDenormPreserveFloat32, LAYOUT$shaderDenormPreserveFloat32);}
+    public int shaderDenormPreserveFloat32() {return this.ptr.get(LAYOUT__shaderDenormPreserveFloat32, OFFSET__shaderDenormPreserveFloat32);}
+    public void shaderDenormPreserveFloat32(int value) {this.ptr.set(LAYOUT__shaderDenormPreserveFloat32, OFFSET__shaderDenormPreserveFloat32, value);}
+    public java.lang.foreign.MemorySegment $shaderDenormPreserveFloat32() {return this.ptr.asSlice(OFFSET__shaderDenormPreserveFloat32, LAYOUT__shaderDenormPreserveFloat32);}
 
-    public int shaderDenormPreserveFloat64() {return this.ptr.get(LAYOUT$shaderDenormPreserveFloat64, OFFSET$shaderDenormPreserveFloat64);}
-    public void shaderDenormPreserveFloat64(int value) {this.ptr.set(LAYOUT$shaderDenormPreserveFloat64, OFFSET$shaderDenormPreserveFloat64, value);}
-    public java.lang.foreign.MemorySegment shaderDenormPreserveFloat64_ptr() {return this.ptr.asSlice(OFFSET$shaderDenormPreserveFloat64, LAYOUT$shaderDenormPreserveFloat64);}
+    public int shaderDenormPreserveFloat64() {return this.ptr.get(LAYOUT__shaderDenormPreserveFloat64, OFFSET__shaderDenormPreserveFloat64);}
+    public void shaderDenormPreserveFloat64(int value) {this.ptr.set(LAYOUT__shaderDenormPreserveFloat64, OFFSET__shaderDenormPreserveFloat64, value);}
+    public java.lang.foreign.MemorySegment $shaderDenormPreserveFloat64() {return this.ptr.asSlice(OFFSET__shaderDenormPreserveFloat64, LAYOUT__shaderDenormPreserveFloat64);}
 
-    public int shaderDenormFlushToZeroFloat16() {return this.ptr.get(LAYOUT$shaderDenormFlushToZeroFloat16, OFFSET$shaderDenormFlushToZeroFloat16);}
-    public void shaderDenormFlushToZeroFloat16(int value) {this.ptr.set(LAYOUT$shaderDenormFlushToZeroFloat16, OFFSET$shaderDenormFlushToZeroFloat16, value);}
-    public java.lang.foreign.MemorySegment shaderDenormFlushToZeroFloat16_ptr() {return this.ptr.asSlice(OFFSET$shaderDenormFlushToZeroFloat16, LAYOUT$shaderDenormFlushToZeroFloat16);}
+    public int shaderDenormFlushToZeroFloat16() {return this.ptr.get(LAYOUT__shaderDenormFlushToZeroFloat16, OFFSET__shaderDenormFlushToZeroFloat16);}
+    public void shaderDenormFlushToZeroFloat16(int value) {this.ptr.set(LAYOUT__shaderDenormFlushToZeroFloat16, OFFSET__shaderDenormFlushToZeroFloat16, value);}
+    public java.lang.foreign.MemorySegment $shaderDenormFlushToZeroFloat16() {return this.ptr.asSlice(OFFSET__shaderDenormFlushToZeroFloat16, LAYOUT__shaderDenormFlushToZeroFloat16);}
 
-    public int shaderDenormFlushToZeroFloat32() {return this.ptr.get(LAYOUT$shaderDenormFlushToZeroFloat32, OFFSET$shaderDenormFlushToZeroFloat32);}
-    public void shaderDenormFlushToZeroFloat32(int value) {this.ptr.set(LAYOUT$shaderDenormFlushToZeroFloat32, OFFSET$shaderDenormFlushToZeroFloat32, value);}
-    public java.lang.foreign.MemorySegment shaderDenormFlushToZeroFloat32_ptr() {return this.ptr.asSlice(OFFSET$shaderDenormFlushToZeroFloat32, LAYOUT$shaderDenormFlushToZeroFloat32);}
+    public int shaderDenormFlushToZeroFloat32() {return this.ptr.get(LAYOUT__shaderDenormFlushToZeroFloat32, OFFSET__shaderDenormFlushToZeroFloat32);}
+    public void shaderDenormFlushToZeroFloat32(int value) {this.ptr.set(LAYOUT__shaderDenormFlushToZeroFloat32, OFFSET__shaderDenormFlushToZeroFloat32, value);}
+    public java.lang.foreign.MemorySegment $shaderDenormFlushToZeroFloat32() {return this.ptr.asSlice(OFFSET__shaderDenormFlushToZeroFloat32, LAYOUT__shaderDenormFlushToZeroFloat32);}
 
-    public int shaderDenormFlushToZeroFloat64() {return this.ptr.get(LAYOUT$shaderDenormFlushToZeroFloat64, OFFSET$shaderDenormFlushToZeroFloat64);}
-    public void shaderDenormFlushToZeroFloat64(int value) {this.ptr.set(LAYOUT$shaderDenormFlushToZeroFloat64, OFFSET$shaderDenormFlushToZeroFloat64, value);}
-    public java.lang.foreign.MemorySegment shaderDenormFlushToZeroFloat64_ptr() {return this.ptr.asSlice(OFFSET$shaderDenormFlushToZeroFloat64, LAYOUT$shaderDenormFlushToZeroFloat64);}
+    public int shaderDenormFlushToZeroFloat64() {return this.ptr.get(LAYOUT__shaderDenormFlushToZeroFloat64, OFFSET__shaderDenormFlushToZeroFloat64);}
+    public void shaderDenormFlushToZeroFloat64(int value) {this.ptr.set(LAYOUT__shaderDenormFlushToZeroFloat64, OFFSET__shaderDenormFlushToZeroFloat64, value);}
+    public java.lang.foreign.MemorySegment $shaderDenormFlushToZeroFloat64() {return this.ptr.asSlice(OFFSET__shaderDenormFlushToZeroFloat64, LAYOUT__shaderDenormFlushToZeroFloat64);}
 
-    public int shaderRoundingModeRTEFloat16() {return this.ptr.get(LAYOUT$shaderRoundingModeRTEFloat16, OFFSET$shaderRoundingModeRTEFloat16);}
-    public void shaderRoundingModeRTEFloat16(int value) {this.ptr.set(LAYOUT$shaderRoundingModeRTEFloat16, OFFSET$shaderRoundingModeRTEFloat16, value);}
-    public java.lang.foreign.MemorySegment shaderRoundingModeRTEFloat16_ptr() {return this.ptr.asSlice(OFFSET$shaderRoundingModeRTEFloat16, LAYOUT$shaderRoundingModeRTEFloat16);}
+    public int shaderRoundingModeRTEFloat16() {return this.ptr.get(LAYOUT__shaderRoundingModeRTEFloat16, OFFSET__shaderRoundingModeRTEFloat16);}
+    public void shaderRoundingModeRTEFloat16(int value) {this.ptr.set(LAYOUT__shaderRoundingModeRTEFloat16, OFFSET__shaderRoundingModeRTEFloat16, value);}
+    public java.lang.foreign.MemorySegment $shaderRoundingModeRTEFloat16() {return this.ptr.asSlice(OFFSET__shaderRoundingModeRTEFloat16, LAYOUT__shaderRoundingModeRTEFloat16);}
 
-    public int shaderRoundingModeRTEFloat32() {return this.ptr.get(LAYOUT$shaderRoundingModeRTEFloat32, OFFSET$shaderRoundingModeRTEFloat32);}
-    public void shaderRoundingModeRTEFloat32(int value) {this.ptr.set(LAYOUT$shaderRoundingModeRTEFloat32, OFFSET$shaderRoundingModeRTEFloat32, value);}
-    public java.lang.foreign.MemorySegment shaderRoundingModeRTEFloat32_ptr() {return this.ptr.asSlice(OFFSET$shaderRoundingModeRTEFloat32, LAYOUT$shaderRoundingModeRTEFloat32);}
+    public int shaderRoundingModeRTEFloat32() {return this.ptr.get(LAYOUT__shaderRoundingModeRTEFloat32, OFFSET__shaderRoundingModeRTEFloat32);}
+    public void shaderRoundingModeRTEFloat32(int value) {this.ptr.set(LAYOUT__shaderRoundingModeRTEFloat32, OFFSET__shaderRoundingModeRTEFloat32, value);}
+    public java.lang.foreign.MemorySegment $shaderRoundingModeRTEFloat32() {return this.ptr.asSlice(OFFSET__shaderRoundingModeRTEFloat32, LAYOUT__shaderRoundingModeRTEFloat32);}
 
-    public int shaderRoundingModeRTEFloat64() {return this.ptr.get(LAYOUT$shaderRoundingModeRTEFloat64, OFFSET$shaderRoundingModeRTEFloat64);}
-    public void shaderRoundingModeRTEFloat64(int value) {this.ptr.set(LAYOUT$shaderRoundingModeRTEFloat64, OFFSET$shaderRoundingModeRTEFloat64, value);}
-    public java.lang.foreign.MemorySegment shaderRoundingModeRTEFloat64_ptr() {return this.ptr.asSlice(OFFSET$shaderRoundingModeRTEFloat64, LAYOUT$shaderRoundingModeRTEFloat64);}
+    public int shaderRoundingModeRTEFloat64() {return this.ptr.get(LAYOUT__shaderRoundingModeRTEFloat64, OFFSET__shaderRoundingModeRTEFloat64);}
+    public void shaderRoundingModeRTEFloat64(int value) {this.ptr.set(LAYOUT__shaderRoundingModeRTEFloat64, OFFSET__shaderRoundingModeRTEFloat64, value);}
+    public java.lang.foreign.MemorySegment $shaderRoundingModeRTEFloat64() {return this.ptr.asSlice(OFFSET__shaderRoundingModeRTEFloat64, LAYOUT__shaderRoundingModeRTEFloat64);}
 
-    public int shaderRoundingModeRTZFloat16() {return this.ptr.get(LAYOUT$shaderRoundingModeRTZFloat16, OFFSET$shaderRoundingModeRTZFloat16);}
-    public void shaderRoundingModeRTZFloat16(int value) {this.ptr.set(LAYOUT$shaderRoundingModeRTZFloat16, OFFSET$shaderRoundingModeRTZFloat16, value);}
-    public java.lang.foreign.MemorySegment shaderRoundingModeRTZFloat16_ptr() {return this.ptr.asSlice(OFFSET$shaderRoundingModeRTZFloat16, LAYOUT$shaderRoundingModeRTZFloat16);}
+    public int shaderRoundingModeRTZFloat16() {return this.ptr.get(LAYOUT__shaderRoundingModeRTZFloat16, OFFSET__shaderRoundingModeRTZFloat16);}
+    public void shaderRoundingModeRTZFloat16(int value) {this.ptr.set(LAYOUT__shaderRoundingModeRTZFloat16, OFFSET__shaderRoundingModeRTZFloat16, value);}
+    public java.lang.foreign.MemorySegment $shaderRoundingModeRTZFloat16() {return this.ptr.asSlice(OFFSET__shaderRoundingModeRTZFloat16, LAYOUT__shaderRoundingModeRTZFloat16);}
 
-    public int shaderRoundingModeRTZFloat32() {return this.ptr.get(LAYOUT$shaderRoundingModeRTZFloat32, OFFSET$shaderRoundingModeRTZFloat32);}
-    public void shaderRoundingModeRTZFloat32(int value) {this.ptr.set(LAYOUT$shaderRoundingModeRTZFloat32, OFFSET$shaderRoundingModeRTZFloat32, value);}
-    public java.lang.foreign.MemorySegment shaderRoundingModeRTZFloat32_ptr() {return this.ptr.asSlice(OFFSET$shaderRoundingModeRTZFloat32, LAYOUT$shaderRoundingModeRTZFloat32);}
+    public int shaderRoundingModeRTZFloat32() {return this.ptr.get(LAYOUT__shaderRoundingModeRTZFloat32, OFFSET__shaderRoundingModeRTZFloat32);}
+    public void shaderRoundingModeRTZFloat32(int value) {this.ptr.set(LAYOUT__shaderRoundingModeRTZFloat32, OFFSET__shaderRoundingModeRTZFloat32, value);}
+    public java.lang.foreign.MemorySegment $shaderRoundingModeRTZFloat32() {return this.ptr.asSlice(OFFSET__shaderRoundingModeRTZFloat32, LAYOUT__shaderRoundingModeRTZFloat32);}
 
-    public int shaderRoundingModeRTZFloat64() {return this.ptr.get(LAYOUT$shaderRoundingModeRTZFloat64, OFFSET$shaderRoundingModeRTZFloat64);}
-    public void shaderRoundingModeRTZFloat64(int value) {this.ptr.set(LAYOUT$shaderRoundingModeRTZFloat64, OFFSET$shaderRoundingModeRTZFloat64, value);}
-    public java.lang.foreign.MemorySegment shaderRoundingModeRTZFloat64_ptr() {return this.ptr.asSlice(OFFSET$shaderRoundingModeRTZFloat64, LAYOUT$shaderRoundingModeRTZFloat64);}
+    public int shaderRoundingModeRTZFloat64() {return this.ptr.get(LAYOUT__shaderRoundingModeRTZFloat64, OFFSET__shaderRoundingModeRTZFloat64);}
+    public void shaderRoundingModeRTZFloat64(int value) {this.ptr.set(LAYOUT__shaderRoundingModeRTZFloat64, OFFSET__shaderRoundingModeRTZFloat64, value);}
+    public java.lang.foreign.MemorySegment $shaderRoundingModeRTZFloat64() {return this.ptr.asSlice(OFFSET__shaderRoundingModeRTZFloat64, LAYOUT__shaderRoundingModeRTZFloat64);}
 
-    public int maxUpdateAfterBindDescriptorsInAllPools() {return this.ptr.get(LAYOUT$maxUpdateAfterBindDescriptorsInAllPools, OFFSET$maxUpdateAfterBindDescriptorsInAllPools);}
-    public void maxUpdateAfterBindDescriptorsInAllPools(int value) {this.ptr.set(LAYOUT$maxUpdateAfterBindDescriptorsInAllPools, OFFSET$maxUpdateAfterBindDescriptorsInAllPools, value);}
-    public java.lang.foreign.MemorySegment maxUpdateAfterBindDescriptorsInAllPools_ptr() {return this.ptr.asSlice(OFFSET$maxUpdateAfterBindDescriptorsInAllPools, LAYOUT$maxUpdateAfterBindDescriptorsInAllPools);}
+    public int maxUpdateAfterBindDescriptorsInAllPools() {return this.ptr.get(LAYOUT__maxUpdateAfterBindDescriptorsInAllPools, OFFSET__maxUpdateAfterBindDescriptorsInAllPools);}
+    public void maxUpdateAfterBindDescriptorsInAllPools(int value) {this.ptr.set(LAYOUT__maxUpdateAfterBindDescriptorsInAllPools, OFFSET__maxUpdateAfterBindDescriptorsInAllPools, value);}
+    public java.lang.foreign.MemorySegment $maxUpdateAfterBindDescriptorsInAllPools() {return this.ptr.asSlice(OFFSET__maxUpdateAfterBindDescriptorsInAllPools, LAYOUT__maxUpdateAfterBindDescriptorsInAllPools);}
 
-    public int shaderUniformBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative, OFFSET$shaderUniformBufferArrayNonUniformIndexingNative);}
-    public void shaderUniformBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative, OFFSET$shaderUniformBufferArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderUniformBufferArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderUniformBufferArrayNonUniformIndexingNative, LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative);}
+    public int shaderUniformBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative, OFFSET__shaderUniformBufferArrayNonUniformIndexingNative);}
+    public void shaderUniformBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative, OFFSET__shaderUniformBufferArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderUniformBufferArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderUniformBufferArrayNonUniformIndexingNative, LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative);}
 
-    public int shaderSampledImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderSampledImageArrayNonUniformIndexingNative, OFFSET$shaderSampledImageArrayNonUniformIndexingNative);}
-    public void shaderSampledImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderSampledImageArrayNonUniformIndexingNative, OFFSET$shaderSampledImageArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderSampledImageArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderSampledImageArrayNonUniformIndexingNative, LAYOUT$shaderSampledImageArrayNonUniformIndexingNative);}
+    public int shaderSampledImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderSampledImageArrayNonUniformIndexingNative, OFFSET__shaderSampledImageArrayNonUniformIndexingNative);}
+    public void shaderSampledImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderSampledImageArrayNonUniformIndexingNative, OFFSET__shaderSampledImageArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderSampledImageArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderSampledImageArrayNonUniformIndexingNative, LAYOUT__shaderSampledImageArrayNonUniformIndexingNative);}
 
-    public int shaderStorageBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative, OFFSET$shaderStorageBufferArrayNonUniformIndexingNative);}
-    public void shaderStorageBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative, OFFSET$shaderStorageBufferArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderStorageBufferArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageBufferArrayNonUniformIndexingNative, LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative);}
+    public int shaderStorageBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative, OFFSET__shaderStorageBufferArrayNonUniformIndexingNative);}
+    public void shaderStorageBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative, OFFSET__shaderStorageBufferArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageBufferArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderStorageBufferArrayNonUniformIndexingNative, LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative);}
 
-    public int shaderStorageImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderStorageImageArrayNonUniformIndexingNative, OFFSET$shaderStorageImageArrayNonUniformIndexingNative);}
-    public void shaderStorageImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderStorageImageArrayNonUniformIndexingNative, OFFSET$shaderStorageImageArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderStorageImageArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageImageArrayNonUniformIndexingNative, LAYOUT$shaderStorageImageArrayNonUniformIndexingNative);}
+    public int shaderStorageImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderStorageImageArrayNonUniformIndexingNative, OFFSET__shaderStorageImageArrayNonUniformIndexingNative);}
+    public void shaderStorageImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderStorageImageArrayNonUniformIndexingNative, OFFSET__shaderStorageImageArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageImageArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderStorageImageArrayNonUniformIndexingNative, LAYOUT__shaderStorageImageArrayNonUniformIndexingNative);}
 
-    public int shaderInputAttachmentArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative);}
-    public void shaderInputAttachmentArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderInputAttachmentArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative, LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative);}
+    public int shaderInputAttachmentArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative);}
+    public void shaderInputAttachmentArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderInputAttachmentArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative, LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative);}
 
-    public int robustBufferAccessUpdateAfterBind() {return this.ptr.get(LAYOUT$robustBufferAccessUpdateAfterBind, OFFSET$robustBufferAccessUpdateAfterBind);}
-    public void robustBufferAccessUpdateAfterBind(int value) {this.ptr.set(LAYOUT$robustBufferAccessUpdateAfterBind, OFFSET$robustBufferAccessUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment robustBufferAccessUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$robustBufferAccessUpdateAfterBind, LAYOUT$robustBufferAccessUpdateAfterBind);}
+    public int robustBufferAccessUpdateAfterBind() {return this.ptr.get(LAYOUT__robustBufferAccessUpdateAfterBind, OFFSET__robustBufferAccessUpdateAfterBind);}
+    public void robustBufferAccessUpdateAfterBind(int value) {this.ptr.set(LAYOUT__robustBufferAccessUpdateAfterBind, OFFSET__robustBufferAccessUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $robustBufferAccessUpdateAfterBind() {return this.ptr.asSlice(OFFSET__robustBufferAccessUpdateAfterBind, LAYOUT__robustBufferAccessUpdateAfterBind);}
 
-    public int quadDivergentImplicitLod() {return this.ptr.get(LAYOUT$quadDivergentImplicitLod, OFFSET$quadDivergentImplicitLod);}
-    public void quadDivergentImplicitLod(int value) {this.ptr.set(LAYOUT$quadDivergentImplicitLod, OFFSET$quadDivergentImplicitLod, value);}
-    public java.lang.foreign.MemorySegment quadDivergentImplicitLod_ptr() {return this.ptr.asSlice(OFFSET$quadDivergentImplicitLod, LAYOUT$quadDivergentImplicitLod);}
+    public int quadDivergentImplicitLod() {return this.ptr.get(LAYOUT__quadDivergentImplicitLod, OFFSET__quadDivergentImplicitLod);}
+    public void quadDivergentImplicitLod(int value) {this.ptr.set(LAYOUT__quadDivergentImplicitLod, OFFSET__quadDivergentImplicitLod, value);}
+    public java.lang.foreign.MemorySegment $quadDivergentImplicitLod() {return this.ptr.asSlice(OFFSET__quadDivergentImplicitLod, LAYOUT__quadDivergentImplicitLod);}
 
-    public int maxPerStageDescriptorUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers);}
-    public void maxPerStageDescriptorUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindSamplers_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers, LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers);}
+    public int maxPerStageDescriptorUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers);}
+    public void maxPerStageDescriptorUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindSamplers() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers, LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers);}
 
-    public int maxPerStageDescriptorUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
-    public void maxPerStageDescriptorUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindUniformBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers, LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
+    public int maxPerStageDescriptorUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
+    public void maxPerStageDescriptorUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindUniformBuffers() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers, LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
 
-    public int maxPerStageDescriptorUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
-    public void maxPerStageDescriptorUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindStorageBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers, LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
+    public int maxPerStageDescriptorUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
+    public void maxPerStageDescriptorUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindStorageBuffers() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers, LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
 
-    public int maxPerStageDescriptorUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages);}
-    public void maxPerStageDescriptorUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindSampledImages_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages, LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages);}
+    public int maxPerStageDescriptorUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages);}
+    public void maxPerStageDescriptorUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindSampledImages() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages, LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages);}
 
-    public int maxPerStageDescriptorUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages);}
-    public void maxPerStageDescriptorUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindStorageImages_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages, LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages);}
+    public int maxPerStageDescriptorUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages);}
+    public void maxPerStageDescriptorUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindStorageImages() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages, LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages);}
 
-    public int maxPerStageDescriptorUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments);}
-    public void maxPerStageDescriptorUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindInputAttachments_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments, LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments);}
+    public int maxPerStageDescriptorUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments);}
+    public void maxPerStageDescriptorUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindInputAttachments() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments, LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments);}
 
-    public int maxPerStageUpdateAfterBindResources() {return this.ptr.get(LAYOUT$maxPerStageUpdateAfterBindResources, OFFSET$maxPerStageUpdateAfterBindResources);}
-    public void maxPerStageUpdateAfterBindResources(int value) {this.ptr.set(LAYOUT$maxPerStageUpdateAfterBindResources, OFFSET$maxPerStageUpdateAfterBindResources, value);}
-    public java.lang.foreign.MemorySegment maxPerStageUpdateAfterBindResources_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageUpdateAfterBindResources, LAYOUT$maxPerStageUpdateAfterBindResources);}
+    public int maxPerStageUpdateAfterBindResources() {return this.ptr.get(LAYOUT__maxPerStageUpdateAfterBindResources, OFFSET__maxPerStageUpdateAfterBindResources);}
+    public void maxPerStageUpdateAfterBindResources(int value) {this.ptr.set(LAYOUT__maxPerStageUpdateAfterBindResources, OFFSET__maxPerStageUpdateAfterBindResources, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageUpdateAfterBindResources() {return this.ptr.asSlice(OFFSET__maxPerStageUpdateAfterBindResources, LAYOUT__maxPerStageUpdateAfterBindResources);}
 
-    public int maxDescriptorSetUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindSamplers, OFFSET$maxDescriptorSetUpdateAfterBindSamplers);}
-    public void maxDescriptorSetUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindSamplers, OFFSET$maxDescriptorSetUpdateAfterBindSamplers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindSamplers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindSamplers, LAYOUT$maxDescriptorSetUpdateAfterBindSamplers);}
+    public int maxDescriptorSetUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindSamplers, OFFSET__maxDescriptorSetUpdateAfterBindSamplers);}
+    public void maxDescriptorSetUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindSamplers, OFFSET__maxDescriptorSetUpdateAfterBindSamplers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindSamplers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindSamplers, LAYOUT__maxDescriptorSetUpdateAfterBindSamplers);}
 
-    public int maxDescriptorSetUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers);}
-    public void maxDescriptorSetUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindUniformBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers, LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers);}
+    public int maxDescriptorSetUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers);}
+    public void maxDescriptorSetUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindUniformBuffers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers, LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers);}
 
-    public int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
-    public void maxDescriptorSetUpdateAfterBindUniformBuffersDynamic(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindUniformBuffersDynamic_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
+    public int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
+    public void maxDescriptorSetUpdateAfterBindUniformBuffersDynamic(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindUniformBuffersDynamic() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
 
-    public int maxDescriptorSetUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers);}
-    public void maxDescriptorSetUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindStorageBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers, LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers);}
+    public int maxDescriptorSetUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers);}
+    public void maxDescriptorSetUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindStorageBuffers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers, LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers);}
 
-    public int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
-    public void maxDescriptorSetUpdateAfterBindStorageBuffersDynamic(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindStorageBuffersDynamic_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
+    public int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
+    public void maxDescriptorSetUpdateAfterBindStorageBuffersDynamic(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindStorageBuffersDynamic() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
 
-    public int maxDescriptorSetUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages, OFFSET$maxDescriptorSetUpdateAfterBindSampledImages);}
-    public void maxDescriptorSetUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages, OFFSET$maxDescriptorSetUpdateAfterBindSampledImages, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindSampledImages_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindSampledImages, LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages);}
+    public int maxDescriptorSetUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages, OFFSET__maxDescriptorSetUpdateAfterBindSampledImages);}
+    public void maxDescriptorSetUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages, OFFSET__maxDescriptorSetUpdateAfterBindSampledImages, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindSampledImages() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindSampledImages, LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages);}
 
-    public int maxDescriptorSetUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages, OFFSET$maxDescriptorSetUpdateAfterBindStorageImages);}
-    public void maxDescriptorSetUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages, OFFSET$maxDescriptorSetUpdateAfterBindStorageImages, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindStorageImages_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindStorageImages, LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages);}
+    public int maxDescriptorSetUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages, OFFSET__maxDescriptorSetUpdateAfterBindStorageImages);}
+    public void maxDescriptorSetUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages, OFFSET__maxDescriptorSetUpdateAfterBindStorageImages, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindStorageImages() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindStorageImages, LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages);}
 
-    public int maxDescriptorSetUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments);}
-    public void maxDescriptorSetUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindInputAttachments_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments, LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments);}
+    public int maxDescriptorSetUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments);}
+    public void maxDescriptorSetUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindInputAttachments() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments, LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments);}
 
-    public int supportedDepthResolveModes() {return this.ptr.get(LAYOUT$supportedDepthResolveModes, OFFSET$supportedDepthResolveModes);}
-    public void supportedDepthResolveModes(int value) {this.ptr.set(LAYOUT$supportedDepthResolveModes, OFFSET$supportedDepthResolveModes, value);}
-    public java.lang.foreign.MemorySegment supportedDepthResolveModes_ptr() {return this.ptr.asSlice(OFFSET$supportedDepthResolveModes, LAYOUT$supportedDepthResolveModes);}
+    public int supportedDepthResolveModes() {return this.ptr.get(LAYOUT__supportedDepthResolveModes, OFFSET__supportedDepthResolveModes);}
+    public void supportedDepthResolveModes(int value) {this.ptr.set(LAYOUT__supportedDepthResolveModes, OFFSET__supportedDepthResolveModes, value);}
+    public java.lang.foreign.MemorySegment $supportedDepthResolveModes() {return this.ptr.asSlice(OFFSET__supportedDepthResolveModes, LAYOUT__supportedDepthResolveModes);}
 
-    public int supportedStencilResolveModes() {return this.ptr.get(LAYOUT$supportedStencilResolveModes, OFFSET$supportedStencilResolveModes);}
-    public void supportedStencilResolveModes(int value) {this.ptr.set(LAYOUT$supportedStencilResolveModes, OFFSET$supportedStencilResolveModes, value);}
-    public java.lang.foreign.MemorySegment supportedStencilResolveModes_ptr() {return this.ptr.asSlice(OFFSET$supportedStencilResolveModes, LAYOUT$supportedStencilResolveModes);}
+    public int supportedStencilResolveModes() {return this.ptr.get(LAYOUT__supportedStencilResolveModes, OFFSET__supportedStencilResolveModes);}
+    public void supportedStencilResolveModes(int value) {this.ptr.set(LAYOUT__supportedStencilResolveModes, OFFSET__supportedStencilResolveModes, value);}
+    public java.lang.foreign.MemorySegment $supportedStencilResolveModes() {return this.ptr.asSlice(OFFSET__supportedStencilResolveModes, LAYOUT__supportedStencilResolveModes);}
 
-    public int independentResolveNone() {return this.ptr.get(LAYOUT$independentResolveNone, OFFSET$independentResolveNone);}
-    public void independentResolveNone(int value) {this.ptr.set(LAYOUT$independentResolveNone, OFFSET$independentResolveNone, value);}
-    public java.lang.foreign.MemorySegment independentResolveNone_ptr() {return this.ptr.asSlice(OFFSET$independentResolveNone, LAYOUT$independentResolveNone);}
+    public int independentResolveNone() {return this.ptr.get(LAYOUT__independentResolveNone, OFFSET__independentResolveNone);}
+    public void independentResolveNone(int value) {this.ptr.set(LAYOUT__independentResolveNone, OFFSET__independentResolveNone, value);}
+    public java.lang.foreign.MemorySegment $independentResolveNone() {return this.ptr.asSlice(OFFSET__independentResolveNone, LAYOUT__independentResolveNone);}
 
-    public int independentResolve() {return this.ptr.get(LAYOUT$independentResolve, OFFSET$independentResolve);}
-    public void independentResolve(int value) {this.ptr.set(LAYOUT$independentResolve, OFFSET$independentResolve, value);}
-    public java.lang.foreign.MemorySegment independentResolve_ptr() {return this.ptr.asSlice(OFFSET$independentResolve, LAYOUT$independentResolve);}
+    public int independentResolve() {return this.ptr.get(LAYOUT__independentResolve, OFFSET__independentResolve);}
+    public void independentResolve(int value) {this.ptr.set(LAYOUT__independentResolve, OFFSET__independentResolve, value);}
+    public java.lang.foreign.MemorySegment $independentResolve() {return this.ptr.asSlice(OFFSET__independentResolve, LAYOUT__independentResolve);}
 
-    public int filterMinmaxSingleComponentFormats() {return this.ptr.get(LAYOUT$filterMinmaxSingleComponentFormats, OFFSET$filterMinmaxSingleComponentFormats);}
-    public void filterMinmaxSingleComponentFormats(int value) {this.ptr.set(LAYOUT$filterMinmaxSingleComponentFormats, OFFSET$filterMinmaxSingleComponentFormats, value);}
-    public java.lang.foreign.MemorySegment filterMinmaxSingleComponentFormats_ptr() {return this.ptr.asSlice(OFFSET$filterMinmaxSingleComponentFormats, LAYOUT$filterMinmaxSingleComponentFormats);}
+    public int filterMinmaxSingleComponentFormats() {return this.ptr.get(LAYOUT__filterMinmaxSingleComponentFormats, OFFSET__filterMinmaxSingleComponentFormats);}
+    public void filterMinmaxSingleComponentFormats(int value) {this.ptr.set(LAYOUT__filterMinmaxSingleComponentFormats, OFFSET__filterMinmaxSingleComponentFormats, value);}
+    public java.lang.foreign.MemorySegment $filterMinmaxSingleComponentFormats() {return this.ptr.asSlice(OFFSET__filterMinmaxSingleComponentFormats, LAYOUT__filterMinmaxSingleComponentFormats);}
 
-    public int filterMinmaxImageComponentMapping() {return this.ptr.get(LAYOUT$filterMinmaxImageComponentMapping, OFFSET$filterMinmaxImageComponentMapping);}
-    public void filterMinmaxImageComponentMapping(int value) {this.ptr.set(LAYOUT$filterMinmaxImageComponentMapping, OFFSET$filterMinmaxImageComponentMapping, value);}
-    public java.lang.foreign.MemorySegment filterMinmaxImageComponentMapping_ptr() {return this.ptr.asSlice(OFFSET$filterMinmaxImageComponentMapping, LAYOUT$filterMinmaxImageComponentMapping);}
+    public int filterMinmaxImageComponentMapping() {return this.ptr.get(LAYOUT__filterMinmaxImageComponentMapping, OFFSET__filterMinmaxImageComponentMapping);}
+    public void filterMinmaxImageComponentMapping(int value) {this.ptr.set(LAYOUT__filterMinmaxImageComponentMapping, OFFSET__filterMinmaxImageComponentMapping, value);}
+    public java.lang.foreign.MemorySegment $filterMinmaxImageComponentMapping() {return this.ptr.asSlice(OFFSET__filterMinmaxImageComponentMapping, LAYOUT__filterMinmaxImageComponentMapping);}
 
-    public long maxTimelineSemaphoreValueDifference() {return this.ptr.get(LAYOUT$maxTimelineSemaphoreValueDifference, OFFSET$maxTimelineSemaphoreValueDifference);}
-    public void maxTimelineSemaphoreValueDifference(long value) {this.ptr.set(LAYOUT$maxTimelineSemaphoreValueDifference, OFFSET$maxTimelineSemaphoreValueDifference, value);}
-    public java.lang.foreign.MemorySegment maxTimelineSemaphoreValueDifference_ptr() {return this.ptr.asSlice(OFFSET$maxTimelineSemaphoreValueDifference, LAYOUT$maxTimelineSemaphoreValueDifference);}
+    public long maxTimelineSemaphoreValueDifference() {return this.ptr.get(LAYOUT__maxTimelineSemaphoreValueDifference, OFFSET__maxTimelineSemaphoreValueDifference);}
+    public void maxTimelineSemaphoreValueDifference(long value) {this.ptr.set(LAYOUT__maxTimelineSemaphoreValueDifference, OFFSET__maxTimelineSemaphoreValueDifference, value);}
+    public java.lang.foreign.MemorySegment $maxTimelineSemaphoreValueDifference() {return this.ptr.asSlice(OFFSET__maxTimelineSemaphoreValueDifference, LAYOUT__maxTimelineSemaphoreValueDifference);}
 
-    public int framebufferIntegerColorSampleCounts() {return this.ptr.get(LAYOUT$framebufferIntegerColorSampleCounts, OFFSET$framebufferIntegerColorSampleCounts);}
-    public void framebufferIntegerColorSampleCounts(int value) {this.ptr.set(LAYOUT$framebufferIntegerColorSampleCounts, OFFSET$framebufferIntegerColorSampleCounts, value);}
-    public java.lang.foreign.MemorySegment framebufferIntegerColorSampleCounts_ptr() {return this.ptr.asSlice(OFFSET$framebufferIntegerColorSampleCounts, LAYOUT$framebufferIntegerColorSampleCounts);}
+    public int framebufferIntegerColorSampleCounts() {return this.ptr.get(LAYOUT__framebufferIntegerColorSampleCounts, OFFSET__framebufferIntegerColorSampleCounts);}
+    public void framebufferIntegerColorSampleCounts(int value) {this.ptr.set(LAYOUT__framebufferIntegerColorSampleCounts, OFFSET__framebufferIntegerColorSampleCounts, value);}
+    public java.lang.foreign.MemorySegment $framebufferIntegerColorSampleCounts() {return this.ptr.asSlice(OFFSET__framebufferIntegerColorSampleCounts, LAYOUT__framebufferIntegerColorSampleCounts);}
 }

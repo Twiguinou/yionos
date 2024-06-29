@@ -2,52 +2,57 @@ package vulkan;
 
 public record VkImageFormatProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxExtent = vulkan.VkExtent3D.gStructLayout;
-    public static final long OFFSET$maxExtent = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxMipLevels = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxMipLevels = 12L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxArrayLayers = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sampleCounts = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sampleCounts = 20L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$maxResourceSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$maxResourceSize = 24L;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxExtent = vulkan.VkExtent3D.gRecordLayout;
+    public static final long OFFSET__maxExtent = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMipLevels = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxMipLevels = 12;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxArrayLayers = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleCounts = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sampleCounts = 20;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxResourceSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__maxResourceSize = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$maxExtent,
-            LAYOUT$maxMipLevels,
-            LAYOUT$maxArrayLayers,
-            LAYOUT$sampleCounts,
-            LAYOUT$maxResourceSize
-    ).withName("VkImageFormatProperties");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__maxExtent,
+            LAYOUT__maxMipLevels,
+            LAYOUT__maxArrayLayers,
+            LAYOUT__sampleCounts,
+            LAYOUT__maxResourceSize
+    ).withByteAlignment(8).withName("VkImageFormatProperties");
 
     public VkImageFormatProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkImageFormatProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkImageFormatProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkImageFormatProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkImageFormatProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.VkExtent3D maxExtent() {return new vulkan.VkExtent3D(this.ptr.asSlice(OFFSET$maxExtent, LAYOUT$maxExtent));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkImageFormatProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public vulkan.VkExtent3D maxExtent() {return new vulkan.VkExtent3D(this.ptr.asSlice(OFFSET__maxExtent, LAYOUT__maxExtent));}
     public void maxExtent(java.util.function.Consumer<vulkan.VkExtent3D> consumer) {consumer.accept(this.maxExtent());}
-    public void maxExtent(vulkan.VkExtent3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxExtent, LAYOUT$maxExtent.byteSize());}
+    public void maxExtent(vulkan.VkExtent3D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxExtent, LAYOUT__maxExtent.byteSize());}
 
-    public int maxMipLevels() {return this.ptr.get(LAYOUT$maxMipLevels, OFFSET$maxMipLevels);}
-    public void maxMipLevels(int value) {this.ptr.set(LAYOUT$maxMipLevels, OFFSET$maxMipLevels, value);}
-    public java.lang.foreign.MemorySegment maxMipLevels_ptr() {return this.ptr.asSlice(OFFSET$maxMipLevels, LAYOUT$maxMipLevels);}
+    public int maxMipLevels() {return this.ptr.get(LAYOUT__maxMipLevels, OFFSET__maxMipLevels);}
+    public void maxMipLevels(int value) {this.ptr.set(LAYOUT__maxMipLevels, OFFSET__maxMipLevels, value);}
+    public java.lang.foreign.MemorySegment $maxMipLevels() {return this.ptr.asSlice(OFFSET__maxMipLevels, LAYOUT__maxMipLevels);}
 
-    public int maxArrayLayers() {return this.ptr.get(LAYOUT$maxArrayLayers, OFFSET$maxArrayLayers);}
-    public void maxArrayLayers(int value) {this.ptr.set(LAYOUT$maxArrayLayers, OFFSET$maxArrayLayers, value);}
-    public java.lang.foreign.MemorySegment maxArrayLayers_ptr() {return this.ptr.asSlice(OFFSET$maxArrayLayers, LAYOUT$maxArrayLayers);}
+    public int maxArrayLayers() {return this.ptr.get(LAYOUT__maxArrayLayers, OFFSET__maxArrayLayers);}
+    public void maxArrayLayers(int value) {this.ptr.set(LAYOUT__maxArrayLayers, OFFSET__maxArrayLayers, value);}
+    public java.lang.foreign.MemorySegment $maxArrayLayers() {return this.ptr.asSlice(OFFSET__maxArrayLayers, LAYOUT__maxArrayLayers);}
 
-    public int sampleCounts() {return this.ptr.get(LAYOUT$sampleCounts, OFFSET$sampleCounts);}
-    public void sampleCounts(int value) {this.ptr.set(LAYOUT$sampleCounts, OFFSET$sampleCounts, value);}
-    public java.lang.foreign.MemorySegment sampleCounts_ptr() {return this.ptr.asSlice(OFFSET$sampleCounts, LAYOUT$sampleCounts);}
+    public int sampleCounts() {return this.ptr.get(LAYOUT__sampleCounts, OFFSET__sampleCounts);}
+    public void sampleCounts(int value) {this.ptr.set(LAYOUT__sampleCounts, OFFSET__sampleCounts, value);}
+    public java.lang.foreign.MemorySegment $sampleCounts() {return this.ptr.asSlice(OFFSET__sampleCounts, LAYOUT__sampleCounts);}
 
-    public long maxResourceSize() {return this.ptr.get(LAYOUT$maxResourceSize, OFFSET$maxResourceSize);}
-    public void maxResourceSize(long value) {this.ptr.set(LAYOUT$maxResourceSize, OFFSET$maxResourceSize, value);}
-    public java.lang.foreign.MemorySegment maxResourceSize_ptr() {return this.ptr.asSlice(OFFSET$maxResourceSize, LAYOUT$maxResourceSize);}
+    public long maxResourceSize() {return this.ptr.get(LAYOUT__maxResourceSize, OFFSET__maxResourceSize);}
+    public void maxResourceSize(long value) {this.ptr.set(LAYOUT__maxResourceSize, OFFSET__maxResourceSize, value);}
+    public java.lang.foreign.MemorySegment $maxResourceSize() {return this.ptr.asSlice(OFFSET__maxResourceSize, LAYOUT__maxResourceSize);}
 }

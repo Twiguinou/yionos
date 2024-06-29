@@ -2,75 +2,80 @@ package assimp;
 
 public record aiSkeletonBone(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mParent = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mParent = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mArmature = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mArmature = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mNode = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mNode = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mNumnWeights = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mNumnWeights = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mMeshId = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mMeshId = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mWeights = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mWeights = 40L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mOffsetMatrix = assimp.aiMatrix4x4.gStructLayout;
-    public static final long OFFSET$mOffsetMatrix = 48L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$mLocalMatrix = assimp.aiMatrix4x4.gStructLayout;
-    public static final long OFFSET$mLocalMatrix = 112L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mParent = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mParent = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mArmature = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mArmature = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mNode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mNode = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumnWeights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mNumnWeights = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshId = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mMeshId = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mWeights = 40;
+    public static final java.lang.foreign.StructLayout LAYOUT__mOffsetMatrix = assimp.aiMatrix4x4.gRecordLayout;
+    public static final long OFFSET__mOffsetMatrix = 48;
+    public static final java.lang.foreign.StructLayout LAYOUT__mLocalMatrix = assimp.aiMatrix4x4.gRecordLayout;
+    public static final long OFFSET__mLocalMatrix = 112;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$mParent,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__mParent,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mArmature,
-            LAYOUT$mNode,
-            LAYOUT$mNumnWeights,
+            LAYOUT__mArmature,
+            LAYOUT__mNode,
+            LAYOUT__mNumnWeights,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mMeshId,
-            LAYOUT$mWeights,
-            LAYOUT$mOffsetMatrix,
-            LAYOUT$mLocalMatrix
-    ).withName("aiSkeletonBone");
+            LAYOUT__mMeshId,
+            LAYOUT__mWeights,
+            LAYOUT__mOffsetMatrix,
+            LAYOUT__mLocalMatrix
+    ).withByteAlignment(8).withName("aiSkeletonBone");
 
     public aiSkeletonBone(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiSkeletonBone getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiSkeletonBone getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiSkeletonBone(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiSkeletonBone(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int mParent() {return this.ptr.get(LAYOUT$mParent, OFFSET$mParent);}
-    public void mParent(int value) {this.ptr.set(LAYOUT$mParent, OFFSET$mParent, value);}
-    public java.lang.foreign.MemorySegment mParent_ptr() {return this.ptr.asSlice(OFFSET$mParent, LAYOUT$mParent);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiSkeletonBone value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment mArmature() {return this.ptr.get(LAYOUT$mArmature, OFFSET$mArmature);}
-    public void mArmature(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mArmature, OFFSET$mArmature, value);}
-    public java.lang.foreign.MemorySegment mArmature_ptr() {return this.ptr.asSlice(OFFSET$mArmature, LAYOUT$mArmature);}
+    public int mParent() {return this.ptr.get(LAYOUT__mParent, OFFSET__mParent);}
+    public void mParent(int value) {this.ptr.set(LAYOUT__mParent, OFFSET__mParent, value);}
+    public java.lang.foreign.MemorySegment $mParent() {return this.ptr.asSlice(OFFSET__mParent, LAYOUT__mParent);}
 
-    public java.lang.foreign.MemorySegment mNode() {return this.ptr.get(LAYOUT$mNode, OFFSET$mNode);}
-    public void mNode(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mNode, OFFSET$mNode, value);}
-    public java.lang.foreign.MemorySegment mNode_ptr() {return this.ptr.asSlice(OFFSET$mNode, LAYOUT$mNode);}
+    public java.lang.foreign.MemorySegment mArmature() {return this.ptr.get(LAYOUT__mArmature, OFFSET__mArmature);}
+    public void mArmature(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mArmature, OFFSET__mArmature, value);}
+    public java.lang.foreign.MemorySegment $mArmature() {return this.ptr.asSlice(OFFSET__mArmature, LAYOUT__mArmature);}
 
-    public int mNumnWeights() {return this.ptr.get(LAYOUT$mNumnWeights, OFFSET$mNumnWeights);}
-    public void mNumnWeights(int value) {this.ptr.set(LAYOUT$mNumnWeights, OFFSET$mNumnWeights, value);}
-    public java.lang.foreign.MemorySegment mNumnWeights_ptr() {return this.ptr.asSlice(OFFSET$mNumnWeights, LAYOUT$mNumnWeights);}
+    public java.lang.foreign.MemorySegment mNode() {return this.ptr.get(LAYOUT__mNode, OFFSET__mNode);}
+    public void mNode(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mNode, OFFSET__mNode, value);}
+    public java.lang.foreign.MemorySegment $mNode() {return this.ptr.asSlice(OFFSET__mNode, LAYOUT__mNode);}
 
-    public java.lang.foreign.MemorySegment mMeshId() {return this.ptr.get(LAYOUT$mMeshId, OFFSET$mMeshId);}
-    public void mMeshId(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mMeshId, OFFSET$mMeshId, value);}
-    public java.lang.foreign.MemorySegment mMeshId_ptr() {return this.ptr.asSlice(OFFSET$mMeshId, LAYOUT$mMeshId);}
+    public int mNumnWeights() {return this.ptr.get(LAYOUT__mNumnWeights, OFFSET__mNumnWeights);}
+    public void mNumnWeights(int value) {this.ptr.set(LAYOUT__mNumnWeights, OFFSET__mNumnWeights, value);}
+    public java.lang.foreign.MemorySegment $mNumnWeights() {return this.ptr.asSlice(OFFSET__mNumnWeights, LAYOUT__mNumnWeights);}
 
-    public java.lang.foreign.MemorySegment mWeights() {return this.ptr.get(LAYOUT$mWeights, OFFSET$mWeights);}
-    public void mWeights(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mWeights, OFFSET$mWeights, value);}
-    public java.lang.foreign.MemorySegment mWeights_ptr() {return this.ptr.asSlice(OFFSET$mWeights, LAYOUT$mWeights);}
+    public java.lang.foreign.MemorySegment mMeshId() {return this.ptr.get(LAYOUT__mMeshId, OFFSET__mMeshId);}
+    public void mMeshId(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mMeshId, OFFSET__mMeshId, value);}
+    public java.lang.foreign.MemorySegment $mMeshId() {return this.ptr.asSlice(OFFSET__mMeshId, LAYOUT__mMeshId);}
 
-    public assimp.aiMatrix4x4 mOffsetMatrix() {return new assimp.aiMatrix4x4(this.ptr.asSlice(OFFSET$mOffsetMatrix, LAYOUT$mOffsetMatrix));}
+    public java.lang.foreign.MemorySegment mWeights() {return this.ptr.get(LAYOUT__mWeights, OFFSET__mWeights);}
+    public void mWeights(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mWeights, OFFSET__mWeights, value);}
+    public java.lang.foreign.MemorySegment $mWeights() {return this.ptr.asSlice(OFFSET__mWeights, LAYOUT__mWeights);}
+
+    public assimp.aiMatrix4x4 mOffsetMatrix() {return new assimp.aiMatrix4x4(this.ptr.asSlice(OFFSET__mOffsetMatrix, LAYOUT__mOffsetMatrix));}
     public void mOffsetMatrix(java.util.function.Consumer<assimp.aiMatrix4x4> consumer) {consumer.accept(this.mOffsetMatrix());}
-    public void mOffsetMatrix(assimp.aiMatrix4x4 value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mOffsetMatrix, LAYOUT$mOffsetMatrix.byteSize());}
+    public void mOffsetMatrix(assimp.aiMatrix4x4 value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mOffsetMatrix, LAYOUT__mOffsetMatrix.byteSize());}
 
-    public assimp.aiMatrix4x4 mLocalMatrix() {return new assimp.aiMatrix4x4(this.ptr.asSlice(OFFSET$mLocalMatrix, LAYOUT$mLocalMatrix));}
+    public assimp.aiMatrix4x4 mLocalMatrix() {return new assimp.aiMatrix4x4(this.ptr.asSlice(OFFSET__mLocalMatrix, LAYOUT__mLocalMatrix));}
     public void mLocalMatrix(java.util.function.Consumer<assimp.aiMatrix4x4> consumer) {consumer.accept(this.mLocalMatrix());}
-    public void mLocalMatrix(assimp.aiMatrix4x4 value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$mLocalMatrix, LAYOUT$mLocalMatrix.byteSize());}
+    public void mLocalMatrix(assimp.aiMatrix4x4 value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__mLocalMatrix, LAYOUT__mLocalMatrix.byteSize());}
 }

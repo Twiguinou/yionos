@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceImageProcessingFeaturesQCOM(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$textureSampleWeighted = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$textureSampleWeighted = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$textureBoxFilter = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$textureBoxFilter = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$textureBlockMatch = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$textureBlockMatch = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureSampleWeighted = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__textureSampleWeighted = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureBoxFilter = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__textureBoxFilter = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureBlockMatch = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__textureBlockMatch = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$textureSampleWeighted,
-            LAYOUT$textureBoxFilter,
-            LAYOUT$textureBlockMatch,
+            LAYOUT__pNext,
+            LAYOUT__textureSampleWeighted,
+            LAYOUT__textureBoxFilter,
+            LAYOUT__textureBlockMatch,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceImageProcessingFeaturesQCOM");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceImageProcessingFeaturesQCOM");
 
     public VkPhysicalDeviceImageProcessingFeaturesQCOM(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceImageProcessingFeaturesQCOM getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceImageProcessingFeaturesQCOM getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceImageProcessingFeaturesQCOM(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceImageProcessingFeaturesQCOM(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceImageProcessingFeaturesQCOM value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int textureSampleWeighted() {return this.ptr.get(LAYOUT$textureSampleWeighted, OFFSET$textureSampleWeighted);}
-    public void textureSampleWeighted(int value) {this.ptr.set(LAYOUT$textureSampleWeighted, OFFSET$textureSampleWeighted, value);}
-    public java.lang.foreign.MemorySegment textureSampleWeighted_ptr() {return this.ptr.asSlice(OFFSET$textureSampleWeighted, LAYOUT$textureSampleWeighted);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int textureBoxFilter() {return this.ptr.get(LAYOUT$textureBoxFilter, OFFSET$textureBoxFilter);}
-    public void textureBoxFilter(int value) {this.ptr.set(LAYOUT$textureBoxFilter, OFFSET$textureBoxFilter, value);}
-    public java.lang.foreign.MemorySegment textureBoxFilter_ptr() {return this.ptr.asSlice(OFFSET$textureBoxFilter, LAYOUT$textureBoxFilter);}
+    public int textureSampleWeighted() {return this.ptr.get(LAYOUT__textureSampleWeighted, OFFSET__textureSampleWeighted);}
+    public void textureSampleWeighted(int value) {this.ptr.set(LAYOUT__textureSampleWeighted, OFFSET__textureSampleWeighted, value);}
+    public java.lang.foreign.MemorySegment $textureSampleWeighted() {return this.ptr.asSlice(OFFSET__textureSampleWeighted, LAYOUT__textureSampleWeighted);}
 
-    public int textureBlockMatch() {return this.ptr.get(LAYOUT$textureBlockMatch, OFFSET$textureBlockMatch);}
-    public void textureBlockMatch(int value) {this.ptr.set(LAYOUT$textureBlockMatch, OFFSET$textureBlockMatch, value);}
-    public java.lang.foreign.MemorySegment textureBlockMatch_ptr() {return this.ptr.asSlice(OFFSET$textureBlockMatch, LAYOUT$textureBlockMatch);}
+    public int textureBoxFilter() {return this.ptr.get(LAYOUT__textureBoxFilter, OFFSET__textureBoxFilter);}
+    public void textureBoxFilter(int value) {this.ptr.set(LAYOUT__textureBoxFilter, OFFSET__textureBoxFilter, value);}
+    public java.lang.foreign.MemorySegment $textureBoxFilter() {return this.ptr.asSlice(OFFSET__textureBoxFilter, LAYOUT__textureBoxFilter);}
+
+    public int textureBlockMatch() {return this.ptr.get(LAYOUT__textureBlockMatch, OFFSET__textureBlockMatch);}
+    public void textureBlockMatch(int value) {this.ptr.set(LAYOUT__textureBlockMatch, OFFSET__textureBlockMatch, value);}
+    public java.lang.foreign.MemorySegment $textureBlockMatch() {return this.ptr.asSlice(OFFSET__textureBlockMatch, LAYOUT__textureBlockMatch);}
 }

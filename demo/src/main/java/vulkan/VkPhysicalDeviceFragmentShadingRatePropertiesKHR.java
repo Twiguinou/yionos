@@ -2,151 +2,156 @@ package vulkan;
 
 public record VkPhysicalDeviceFragmentShadingRatePropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$minFragmentShadingRateAttachmentTexelSize = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$minFragmentShadingRateAttachmentTexelSize = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxFragmentShadingRateAttachmentTexelSize = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$maxFragmentShadingRateAttachmentTexelSize = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxFragmentShadingRateAttachmentTexelSizeAspectRatio = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxFragmentShadingRateAttachmentTexelSizeAspectRatio = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$primitiveFragmentShadingRateWithMultipleViewports = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$primitiveFragmentShadingRateWithMultipleViewports = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$layeredShadingRateAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$layeredShadingRateAttachments = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateNonTrivialCombinerOps = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateNonTrivialCombinerOps = 44L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$maxFragmentSize = vulkan.VkExtent2D.gStructLayout;
-    public static final long OFFSET$maxFragmentSize = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxFragmentSizeAspectRatio = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxFragmentSizeAspectRatio = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxFragmentShadingRateCoverageSamples = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxFragmentShadingRateCoverageSamples = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxFragmentShadingRateRasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxFragmentShadingRateRasterizationSamples = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateWithShaderDepthStencilWrites = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateWithShaderDepthStencilWrites = 68L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateWithSampleMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateWithSampleMask = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateWithShaderSampleMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateWithShaderSampleMask = 76L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateWithConservativeRasterization = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateWithConservativeRasterization = 80L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateWithFragmentShaderInterlock = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateWithFragmentShaderInterlock = 84L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateWithCustomSampleLocations = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateWithCustomSampleLocations = 88L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentShadingRateStrictMultiplyCombiner = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentShadingRateStrictMultiplyCombiner = 92L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.StructLayout LAYOUT__minFragmentShadingRateAttachmentTexelSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__minFragmentShadingRateAttachmentTexelSize = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxFragmentShadingRateAttachmentTexelSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__maxFragmentShadingRateAttachmentTexelSize = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxFragmentShadingRateAttachmentTexelSizeAspectRatio = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxFragmentShadingRateAttachmentTexelSizeAspectRatio = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveFragmentShadingRateWithMultipleViewports = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__primitiveFragmentShadingRateWithMultipleViewports = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layeredShadingRateAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__layeredShadingRateAttachments = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateNonTrivialCombinerOps = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateNonTrivialCombinerOps = 44;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxFragmentSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final long OFFSET__maxFragmentSize = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxFragmentSizeAspectRatio = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxFragmentSizeAspectRatio = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxFragmentShadingRateCoverageSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxFragmentShadingRateCoverageSamples = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxFragmentShadingRateRasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxFragmentShadingRateRasterizationSamples = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateWithShaderDepthStencilWrites = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateWithShaderDepthStencilWrites = 68;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateWithSampleMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateWithSampleMask = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateWithShaderSampleMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateWithShaderSampleMask = 76;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateWithConservativeRasterization = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateWithConservativeRasterization = 80;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateWithFragmentShaderInterlock = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateWithFragmentShaderInterlock = 84;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateWithCustomSampleLocations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateWithCustomSampleLocations = 88;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateStrictMultiplyCombiner = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentShadingRateStrictMultiplyCombiner = 92;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$minFragmentShadingRateAttachmentTexelSize,
-            LAYOUT$maxFragmentShadingRateAttachmentTexelSize,
-            LAYOUT$maxFragmentShadingRateAttachmentTexelSizeAspectRatio,
-            LAYOUT$primitiveFragmentShadingRateWithMultipleViewports,
-            LAYOUT$layeredShadingRateAttachments,
-            LAYOUT$fragmentShadingRateNonTrivialCombinerOps,
-            LAYOUT$maxFragmentSize,
-            LAYOUT$maxFragmentSizeAspectRatio,
-            LAYOUT$maxFragmentShadingRateCoverageSamples,
-            LAYOUT$maxFragmentShadingRateRasterizationSamples,
-            LAYOUT$fragmentShadingRateWithShaderDepthStencilWrites,
-            LAYOUT$fragmentShadingRateWithSampleMask,
-            LAYOUT$fragmentShadingRateWithShaderSampleMask,
-            LAYOUT$fragmentShadingRateWithConservativeRasterization,
-            LAYOUT$fragmentShadingRateWithFragmentShaderInterlock,
-            LAYOUT$fragmentShadingRateWithCustomSampleLocations,
-            LAYOUT$fragmentShadingRateStrictMultiplyCombiner
-    ).withName("VkPhysicalDeviceFragmentShadingRatePropertiesKHR");
+            LAYOUT__pNext,
+            LAYOUT__minFragmentShadingRateAttachmentTexelSize,
+            LAYOUT__maxFragmentShadingRateAttachmentTexelSize,
+            LAYOUT__maxFragmentShadingRateAttachmentTexelSizeAspectRatio,
+            LAYOUT__primitiveFragmentShadingRateWithMultipleViewports,
+            LAYOUT__layeredShadingRateAttachments,
+            LAYOUT__fragmentShadingRateNonTrivialCombinerOps,
+            LAYOUT__maxFragmentSize,
+            LAYOUT__maxFragmentSizeAspectRatio,
+            LAYOUT__maxFragmentShadingRateCoverageSamples,
+            LAYOUT__maxFragmentShadingRateRasterizationSamples,
+            LAYOUT__fragmentShadingRateWithShaderDepthStencilWrites,
+            LAYOUT__fragmentShadingRateWithSampleMask,
+            LAYOUT__fragmentShadingRateWithShaderSampleMask,
+            LAYOUT__fragmentShadingRateWithConservativeRasterization,
+            LAYOUT__fragmentShadingRateWithFragmentShaderInterlock,
+            LAYOUT__fragmentShadingRateWithCustomSampleLocations,
+            LAYOUT__fragmentShadingRateStrictMultiplyCombiner
+    ).withByteAlignment(8).withName("VkPhysicalDeviceFragmentShadingRatePropertiesKHR");
 
     public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceFragmentShadingRatePropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceFragmentShadingRatePropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceFragmentShadingRatePropertiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceFragmentShadingRatePropertiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceFragmentShadingRatePropertiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public vulkan.VkExtent2D minFragmentShadingRateAttachmentTexelSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$minFragmentShadingRateAttachmentTexelSize, LAYOUT$minFragmentShadingRateAttachmentTexelSize));}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public vulkan.VkExtent2D minFragmentShadingRateAttachmentTexelSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__minFragmentShadingRateAttachmentTexelSize, LAYOUT__minFragmentShadingRateAttachmentTexelSize));}
     public void minFragmentShadingRateAttachmentTexelSize(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.minFragmentShadingRateAttachmentTexelSize());}
-    public void minFragmentShadingRateAttachmentTexelSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$minFragmentShadingRateAttachmentTexelSize, LAYOUT$minFragmentShadingRateAttachmentTexelSize.byteSize());}
+    public void minFragmentShadingRateAttachmentTexelSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__minFragmentShadingRateAttachmentTexelSize, LAYOUT__minFragmentShadingRateAttachmentTexelSize.byteSize());}
 
-    public vulkan.VkExtent2D maxFragmentShadingRateAttachmentTexelSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$maxFragmentShadingRateAttachmentTexelSize, LAYOUT$maxFragmentShadingRateAttachmentTexelSize));}
+    public vulkan.VkExtent2D maxFragmentShadingRateAttachmentTexelSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__maxFragmentShadingRateAttachmentTexelSize, LAYOUT__maxFragmentShadingRateAttachmentTexelSize));}
     public void maxFragmentShadingRateAttachmentTexelSize(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.maxFragmentShadingRateAttachmentTexelSize());}
-    public void maxFragmentShadingRateAttachmentTexelSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxFragmentShadingRateAttachmentTexelSize, LAYOUT$maxFragmentShadingRateAttachmentTexelSize.byteSize());}
+    public void maxFragmentShadingRateAttachmentTexelSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxFragmentShadingRateAttachmentTexelSize, LAYOUT__maxFragmentShadingRateAttachmentTexelSize.byteSize());}
 
-    public int maxFragmentShadingRateAttachmentTexelSizeAspectRatio() {return this.ptr.get(LAYOUT$maxFragmentShadingRateAttachmentTexelSizeAspectRatio, OFFSET$maxFragmentShadingRateAttachmentTexelSizeAspectRatio);}
-    public void maxFragmentShadingRateAttachmentTexelSizeAspectRatio(int value) {this.ptr.set(LAYOUT$maxFragmentShadingRateAttachmentTexelSizeAspectRatio, OFFSET$maxFragmentShadingRateAttachmentTexelSizeAspectRatio, value);}
-    public java.lang.foreign.MemorySegment maxFragmentShadingRateAttachmentTexelSizeAspectRatio_ptr() {return this.ptr.asSlice(OFFSET$maxFragmentShadingRateAttachmentTexelSizeAspectRatio, LAYOUT$maxFragmentShadingRateAttachmentTexelSizeAspectRatio);}
+    public int maxFragmentShadingRateAttachmentTexelSizeAspectRatio() {return this.ptr.get(LAYOUT__maxFragmentShadingRateAttachmentTexelSizeAspectRatio, OFFSET__maxFragmentShadingRateAttachmentTexelSizeAspectRatio);}
+    public void maxFragmentShadingRateAttachmentTexelSizeAspectRatio(int value) {this.ptr.set(LAYOUT__maxFragmentShadingRateAttachmentTexelSizeAspectRatio, OFFSET__maxFragmentShadingRateAttachmentTexelSizeAspectRatio, value);}
+    public java.lang.foreign.MemorySegment $maxFragmentShadingRateAttachmentTexelSizeAspectRatio() {return this.ptr.asSlice(OFFSET__maxFragmentShadingRateAttachmentTexelSizeAspectRatio, LAYOUT__maxFragmentShadingRateAttachmentTexelSizeAspectRatio);}
 
-    public int primitiveFragmentShadingRateWithMultipleViewports() {return this.ptr.get(LAYOUT$primitiveFragmentShadingRateWithMultipleViewports, OFFSET$primitiveFragmentShadingRateWithMultipleViewports);}
-    public void primitiveFragmentShadingRateWithMultipleViewports(int value) {this.ptr.set(LAYOUT$primitiveFragmentShadingRateWithMultipleViewports, OFFSET$primitiveFragmentShadingRateWithMultipleViewports, value);}
-    public java.lang.foreign.MemorySegment primitiveFragmentShadingRateWithMultipleViewports_ptr() {return this.ptr.asSlice(OFFSET$primitiveFragmentShadingRateWithMultipleViewports, LAYOUT$primitiveFragmentShadingRateWithMultipleViewports);}
+    public int primitiveFragmentShadingRateWithMultipleViewports() {return this.ptr.get(LAYOUT__primitiveFragmentShadingRateWithMultipleViewports, OFFSET__primitiveFragmentShadingRateWithMultipleViewports);}
+    public void primitiveFragmentShadingRateWithMultipleViewports(int value) {this.ptr.set(LAYOUT__primitiveFragmentShadingRateWithMultipleViewports, OFFSET__primitiveFragmentShadingRateWithMultipleViewports, value);}
+    public java.lang.foreign.MemorySegment $primitiveFragmentShadingRateWithMultipleViewports() {return this.ptr.asSlice(OFFSET__primitiveFragmentShadingRateWithMultipleViewports, LAYOUT__primitiveFragmentShadingRateWithMultipleViewports);}
 
-    public int layeredShadingRateAttachments() {return this.ptr.get(LAYOUT$layeredShadingRateAttachments, OFFSET$layeredShadingRateAttachments);}
-    public void layeredShadingRateAttachments(int value) {this.ptr.set(LAYOUT$layeredShadingRateAttachments, OFFSET$layeredShadingRateAttachments, value);}
-    public java.lang.foreign.MemorySegment layeredShadingRateAttachments_ptr() {return this.ptr.asSlice(OFFSET$layeredShadingRateAttachments, LAYOUT$layeredShadingRateAttachments);}
+    public int layeredShadingRateAttachments() {return this.ptr.get(LAYOUT__layeredShadingRateAttachments, OFFSET__layeredShadingRateAttachments);}
+    public void layeredShadingRateAttachments(int value) {this.ptr.set(LAYOUT__layeredShadingRateAttachments, OFFSET__layeredShadingRateAttachments, value);}
+    public java.lang.foreign.MemorySegment $layeredShadingRateAttachments() {return this.ptr.asSlice(OFFSET__layeredShadingRateAttachments, LAYOUT__layeredShadingRateAttachments);}
 
-    public int fragmentShadingRateNonTrivialCombinerOps() {return this.ptr.get(LAYOUT$fragmentShadingRateNonTrivialCombinerOps, OFFSET$fragmentShadingRateNonTrivialCombinerOps);}
-    public void fragmentShadingRateNonTrivialCombinerOps(int value) {this.ptr.set(LAYOUT$fragmentShadingRateNonTrivialCombinerOps, OFFSET$fragmentShadingRateNonTrivialCombinerOps, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateNonTrivialCombinerOps_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateNonTrivialCombinerOps, LAYOUT$fragmentShadingRateNonTrivialCombinerOps);}
+    public int fragmentShadingRateNonTrivialCombinerOps() {return this.ptr.get(LAYOUT__fragmentShadingRateNonTrivialCombinerOps, OFFSET__fragmentShadingRateNonTrivialCombinerOps);}
+    public void fragmentShadingRateNonTrivialCombinerOps(int value) {this.ptr.set(LAYOUT__fragmentShadingRateNonTrivialCombinerOps, OFFSET__fragmentShadingRateNonTrivialCombinerOps, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateNonTrivialCombinerOps() {return this.ptr.asSlice(OFFSET__fragmentShadingRateNonTrivialCombinerOps, LAYOUT__fragmentShadingRateNonTrivialCombinerOps);}
 
-    public vulkan.VkExtent2D maxFragmentSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET$maxFragmentSize, LAYOUT$maxFragmentSize));}
+    public vulkan.VkExtent2D maxFragmentSize() {return new vulkan.VkExtent2D(this.ptr.asSlice(OFFSET__maxFragmentSize, LAYOUT__maxFragmentSize));}
     public void maxFragmentSize(java.util.function.Consumer<vulkan.VkExtent2D> consumer) {consumer.accept(this.maxFragmentSize());}
-    public void maxFragmentSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$maxFragmentSize, LAYOUT$maxFragmentSize.byteSize());}
+    public void maxFragmentSize(vulkan.VkExtent2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__maxFragmentSize, LAYOUT__maxFragmentSize.byteSize());}
 
-    public int maxFragmentSizeAspectRatio() {return this.ptr.get(LAYOUT$maxFragmentSizeAspectRatio, OFFSET$maxFragmentSizeAspectRatio);}
-    public void maxFragmentSizeAspectRatio(int value) {this.ptr.set(LAYOUT$maxFragmentSizeAspectRatio, OFFSET$maxFragmentSizeAspectRatio, value);}
-    public java.lang.foreign.MemorySegment maxFragmentSizeAspectRatio_ptr() {return this.ptr.asSlice(OFFSET$maxFragmentSizeAspectRatio, LAYOUT$maxFragmentSizeAspectRatio);}
+    public int maxFragmentSizeAspectRatio() {return this.ptr.get(LAYOUT__maxFragmentSizeAspectRatio, OFFSET__maxFragmentSizeAspectRatio);}
+    public void maxFragmentSizeAspectRatio(int value) {this.ptr.set(LAYOUT__maxFragmentSizeAspectRatio, OFFSET__maxFragmentSizeAspectRatio, value);}
+    public java.lang.foreign.MemorySegment $maxFragmentSizeAspectRatio() {return this.ptr.asSlice(OFFSET__maxFragmentSizeAspectRatio, LAYOUT__maxFragmentSizeAspectRatio);}
 
-    public int maxFragmentShadingRateCoverageSamples() {return this.ptr.get(LAYOUT$maxFragmentShadingRateCoverageSamples, OFFSET$maxFragmentShadingRateCoverageSamples);}
-    public void maxFragmentShadingRateCoverageSamples(int value) {this.ptr.set(LAYOUT$maxFragmentShadingRateCoverageSamples, OFFSET$maxFragmentShadingRateCoverageSamples, value);}
-    public java.lang.foreign.MemorySegment maxFragmentShadingRateCoverageSamples_ptr() {return this.ptr.asSlice(OFFSET$maxFragmentShadingRateCoverageSamples, LAYOUT$maxFragmentShadingRateCoverageSamples);}
+    public int maxFragmentShadingRateCoverageSamples() {return this.ptr.get(LAYOUT__maxFragmentShadingRateCoverageSamples, OFFSET__maxFragmentShadingRateCoverageSamples);}
+    public void maxFragmentShadingRateCoverageSamples(int value) {this.ptr.set(LAYOUT__maxFragmentShadingRateCoverageSamples, OFFSET__maxFragmentShadingRateCoverageSamples, value);}
+    public java.lang.foreign.MemorySegment $maxFragmentShadingRateCoverageSamples() {return this.ptr.asSlice(OFFSET__maxFragmentShadingRateCoverageSamples, LAYOUT__maxFragmentShadingRateCoverageSamples);}
 
-    public int maxFragmentShadingRateRasterizationSamples() {return this.ptr.get(LAYOUT$maxFragmentShadingRateRasterizationSamples, OFFSET$maxFragmentShadingRateRasterizationSamples);}
-    public void maxFragmentShadingRateRasterizationSamples(int value) {this.ptr.set(LAYOUT$maxFragmentShadingRateRasterizationSamples, OFFSET$maxFragmentShadingRateRasterizationSamples, value);}
-    public java.lang.foreign.MemorySegment maxFragmentShadingRateRasterizationSamples_ptr() {return this.ptr.asSlice(OFFSET$maxFragmentShadingRateRasterizationSamples, LAYOUT$maxFragmentShadingRateRasterizationSamples);}
+    public int maxFragmentShadingRateRasterizationSamples() {return this.ptr.get(LAYOUT__maxFragmentShadingRateRasterizationSamples, OFFSET__maxFragmentShadingRateRasterizationSamples);}
+    public void maxFragmentShadingRateRasterizationSamples(int value) {this.ptr.set(LAYOUT__maxFragmentShadingRateRasterizationSamples, OFFSET__maxFragmentShadingRateRasterizationSamples, value);}
+    public java.lang.foreign.MemorySegment $maxFragmentShadingRateRasterizationSamples() {return this.ptr.asSlice(OFFSET__maxFragmentShadingRateRasterizationSamples, LAYOUT__maxFragmentShadingRateRasterizationSamples);}
 
-    public int fragmentShadingRateWithShaderDepthStencilWrites() {return this.ptr.get(LAYOUT$fragmentShadingRateWithShaderDepthStencilWrites, OFFSET$fragmentShadingRateWithShaderDepthStencilWrites);}
-    public void fragmentShadingRateWithShaderDepthStencilWrites(int value) {this.ptr.set(LAYOUT$fragmentShadingRateWithShaderDepthStencilWrites, OFFSET$fragmentShadingRateWithShaderDepthStencilWrites, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateWithShaderDepthStencilWrites_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateWithShaderDepthStencilWrites, LAYOUT$fragmentShadingRateWithShaderDepthStencilWrites);}
+    public int fragmentShadingRateWithShaderDepthStencilWrites() {return this.ptr.get(LAYOUT__fragmentShadingRateWithShaderDepthStencilWrites, OFFSET__fragmentShadingRateWithShaderDepthStencilWrites);}
+    public void fragmentShadingRateWithShaderDepthStencilWrites(int value) {this.ptr.set(LAYOUT__fragmentShadingRateWithShaderDepthStencilWrites, OFFSET__fragmentShadingRateWithShaderDepthStencilWrites, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateWithShaderDepthStencilWrites() {return this.ptr.asSlice(OFFSET__fragmentShadingRateWithShaderDepthStencilWrites, LAYOUT__fragmentShadingRateWithShaderDepthStencilWrites);}
 
-    public int fragmentShadingRateWithSampleMask() {return this.ptr.get(LAYOUT$fragmentShadingRateWithSampleMask, OFFSET$fragmentShadingRateWithSampleMask);}
-    public void fragmentShadingRateWithSampleMask(int value) {this.ptr.set(LAYOUT$fragmentShadingRateWithSampleMask, OFFSET$fragmentShadingRateWithSampleMask, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateWithSampleMask_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateWithSampleMask, LAYOUT$fragmentShadingRateWithSampleMask);}
+    public int fragmentShadingRateWithSampleMask() {return this.ptr.get(LAYOUT__fragmentShadingRateWithSampleMask, OFFSET__fragmentShadingRateWithSampleMask);}
+    public void fragmentShadingRateWithSampleMask(int value) {this.ptr.set(LAYOUT__fragmentShadingRateWithSampleMask, OFFSET__fragmentShadingRateWithSampleMask, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateWithSampleMask() {return this.ptr.asSlice(OFFSET__fragmentShadingRateWithSampleMask, LAYOUT__fragmentShadingRateWithSampleMask);}
 
-    public int fragmentShadingRateWithShaderSampleMask() {return this.ptr.get(LAYOUT$fragmentShadingRateWithShaderSampleMask, OFFSET$fragmentShadingRateWithShaderSampleMask);}
-    public void fragmentShadingRateWithShaderSampleMask(int value) {this.ptr.set(LAYOUT$fragmentShadingRateWithShaderSampleMask, OFFSET$fragmentShadingRateWithShaderSampleMask, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateWithShaderSampleMask_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateWithShaderSampleMask, LAYOUT$fragmentShadingRateWithShaderSampleMask);}
+    public int fragmentShadingRateWithShaderSampleMask() {return this.ptr.get(LAYOUT__fragmentShadingRateWithShaderSampleMask, OFFSET__fragmentShadingRateWithShaderSampleMask);}
+    public void fragmentShadingRateWithShaderSampleMask(int value) {this.ptr.set(LAYOUT__fragmentShadingRateWithShaderSampleMask, OFFSET__fragmentShadingRateWithShaderSampleMask, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateWithShaderSampleMask() {return this.ptr.asSlice(OFFSET__fragmentShadingRateWithShaderSampleMask, LAYOUT__fragmentShadingRateWithShaderSampleMask);}
 
-    public int fragmentShadingRateWithConservativeRasterization() {return this.ptr.get(LAYOUT$fragmentShadingRateWithConservativeRasterization, OFFSET$fragmentShadingRateWithConservativeRasterization);}
-    public void fragmentShadingRateWithConservativeRasterization(int value) {this.ptr.set(LAYOUT$fragmentShadingRateWithConservativeRasterization, OFFSET$fragmentShadingRateWithConservativeRasterization, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateWithConservativeRasterization_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateWithConservativeRasterization, LAYOUT$fragmentShadingRateWithConservativeRasterization);}
+    public int fragmentShadingRateWithConservativeRasterization() {return this.ptr.get(LAYOUT__fragmentShadingRateWithConservativeRasterization, OFFSET__fragmentShadingRateWithConservativeRasterization);}
+    public void fragmentShadingRateWithConservativeRasterization(int value) {this.ptr.set(LAYOUT__fragmentShadingRateWithConservativeRasterization, OFFSET__fragmentShadingRateWithConservativeRasterization, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateWithConservativeRasterization() {return this.ptr.asSlice(OFFSET__fragmentShadingRateWithConservativeRasterization, LAYOUT__fragmentShadingRateWithConservativeRasterization);}
 
-    public int fragmentShadingRateWithFragmentShaderInterlock() {return this.ptr.get(LAYOUT$fragmentShadingRateWithFragmentShaderInterlock, OFFSET$fragmentShadingRateWithFragmentShaderInterlock);}
-    public void fragmentShadingRateWithFragmentShaderInterlock(int value) {this.ptr.set(LAYOUT$fragmentShadingRateWithFragmentShaderInterlock, OFFSET$fragmentShadingRateWithFragmentShaderInterlock, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateWithFragmentShaderInterlock_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateWithFragmentShaderInterlock, LAYOUT$fragmentShadingRateWithFragmentShaderInterlock);}
+    public int fragmentShadingRateWithFragmentShaderInterlock() {return this.ptr.get(LAYOUT__fragmentShadingRateWithFragmentShaderInterlock, OFFSET__fragmentShadingRateWithFragmentShaderInterlock);}
+    public void fragmentShadingRateWithFragmentShaderInterlock(int value) {this.ptr.set(LAYOUT__fragmentShadingRateWithFragmentShaderInterlock, OFFSET__fragmentShadingRateWithFragmentShaderInterlock, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateWithFragmentShaderInterlock() {return this.ptr.asSlice(OFFSET__fragmentShadingRateWithFragmentShaderInterlock, LAYOUT__fragmentShadingRateWithFragmentShaderInterlock);}
 
-    public int fragmentShadingRateWithCustomSampleLocations() {return this.ptr.get(LAYOUT$fragmentShadingRateWithCustomSampleLocations, OFFSET$fragmentShadingRateWithCustomSampleLocations);}
-    public void fragmentShadingRateWithCustomSampleLocations(int value) {this.ptr.set(LAYOUT$fragmentShadingRateWithCustomSampleLocations, OFFSET$fragmentShadingRateWithCustomSampleLocations, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateWithCustomSampleLocations_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateWithCustomSampleLocations, LAYOUT$fragmentShadingRateWithCustomSampleLocations);}
+    public int fragmentShadingRateWithCustomSampleLocations() {return this.ptr.get(LAYOUT__fragmentShadingRateWithCustomSampleLocations, OFFSET__fragmentShadingRateWithCustomSampleLocations);}
+    public void fragmentShadingRateWithCustomSampleLocations(int value) {this.ptr.set(LAYOUT__fragmentShadingRateWithCustomSampleLocations, OFFSET__fragmentShadingRateWithCustomSampleLocations, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateWithCustomSampleLocations() {return this.ptr.asSlice(OFFSET__fragmentShadingRateWithCustomSampleLocations, LAYOUT__fragmentShadingRateWithCustomSampleLocations);}
 
-    public int fragmentShadingRateStrictMultiplyCombiner() {return this.ptr.get(LAYOUT$fragmentShadingRateStrictMultiplyCombiner, OFFSET$fragmentShadingRateStrictMultiplyCombiner);}
-    public void fragmentShadingRateStrictMultiplyCombiner(int value) {this.ptr.set(LAYOUT$fragmentShadingRateStrictMultiplyCombiner, OFFSET$fragmentShadingRateStrictMultiplyCombiner, value);}
-    public java.lang.foreign.MemorySegment fragmentShadingRateStrictMultiplyCombiner_ptr() {return this.ptr.asSlice(OFFSET$fragmentShadingRateStrictMultiplyCombiner, LAYOUT$fragmentShadingRateStrictMultiplyCombiner);}
+    public int fragmentShadingRateStrictMultiplyCombiner() {return this.ptr.get(LAYOUT__fragmentShadingRateStrictMultiplyCombiner, OFFSET__fragmentShadingRateStrictMultiplyCombiner);}
+    public void fragmentShadingRateStrictMultiplyCombiner(int value) {this.ptr.set(LAYOUT__fragmentShadingRateStrictMultiplyCombiner, OFFSET__fragmentShadingRateStrictMultiplyCombiner, value);}
+    public java.lang.foreign.MemorySegment $fragmentShadingRateStrictMultiplyCombiner() {return this.ptr.asSlice(OFFSET__fragmentShadingRateStrictMultiplyCombiner, LAYOUT__fragmentShadingRateStrictMultiplyCombiner);}
 }

@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceMemoryDecompressionPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$decompressionMethods = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$decompressionMethods = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$maxDecompressionIndirectCount = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$maxDecompressionIndirectCount = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressionMethods = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__decompressionMethods = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxDecompressionIndirectCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__maxDecompressionIndirectCount = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$decompressionMethods,
-            LAYOUT$maxDecompressionIndirectCount
-    ).withName("VkPhysicalDeviceMemoryDecompressionPropertiesNV");
+            LAYOUT__pNext,
+            LAYOUT__decompressionMethods,
+            LAYOUT__maxDecompressionIndirectCount
+    ).withByteAlignment(8).withName("VkPhysicalDeviceMemoryDecompressionPropertiesNV");
 
     public VkPhysicalDeviceMemoryDecompressionPropertiesNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceMemoryDecompressionPropertiesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceMemoryDecompressionPropertiesNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceMemoryDecompressionPropertiesNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceMemoryDecompressionPropertiesNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceMemoryDecompressionPropertiesNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public long decompressionMethods() {return this.ptr.get(LAYOUT$decompressionMethods, OFFSET$decompressionMethods);}
-    public void decompressionMethods(long value) {this.ptr.set(LAYOUT$decompressionMethods, OFFSET$decompressionMethods, value);}
-    public java.lang.foreign.MemorySegment decompressionMethods_ptr() {return this.ptr.asSlice(OFFSET$decompressionMethods, LAYOUT$decompressionMethods);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long maxDecompressionIndirectCount() {return this.ptr.get(LAYOUT$maxDecompressionIndirectCount, OFFSET$maxDecompressionIndirectCount);}
-    public void maxDecompressionIndirectCount(long value) {this.ptr.set(LAYOUT$maxDecompressionIndirectCount, OFFSET$maxDecompressionIndirectCount, value);}
-    public java.lang.foreign.MemorySegment maxDecompressionIndirectCount_ptr() {return this.ptr.asSlice(OFFSET$maxDecompressionIndirectCount, LAYOUT$maxDecompressionIndirectCount);}
+    public long decompressionMethods() {return this.ptr.get(LAYOUT__decompressionMethods, OFFSET__decompressionMethods);}
+    public void decompressionMethods(long value) {this.ptr.set(LAYOUT__decompressionMethods, OFFSET__decompressionMethods, value);}
+    public java.lang.foreign.MemorySegment $decompressionMethods() {return this.ptr.asSlice(OFFSET__decompressionMethods, LAYOUT__decompressionMethods);}
+
+    public long maxDecompressionIndirectCount() {return this.ptr.get(LAYOUT__maxDecompressionIndirectCount, OFFSET__maxDecompressionIndirectCount);}
+    public void maxDecompressionIndirectCount(long value) {this.ptr.set(LAYOUT__maxDecompressionIndirectCount, OFFSET__maxDecompressionIndirectCount, value);}
+    public java.lang.foreign.MemorySegment $maxDecompressionIndirectCount() {return this.ptr.asSlice(OFFSET__maxDecompressionIndirectCount, LAYOUT__maxDecompressionIndirectCount);}
 }

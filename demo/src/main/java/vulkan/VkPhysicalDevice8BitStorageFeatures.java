@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDevice8BitStorageFeatures(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$storageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$storageBuffer8BitAccess = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$uniformAndStorageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$uniformAndStorageBuffer8BitAccess = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$storagePushConstant8 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$storagePushConstant8 = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__storageBuffer8BitAccess = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformAndStorageBuffer8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__uniformAndStorageBuffer8BitAccess = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storagePushConstant8 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__storagePushConstant8 = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$storageBuffer8BitAccess,
-            LAYOUT$uniformAndStorageBuffer8BitAccess,
-            LAYOUT$storagePushConstant8,
+            LAYOUT__pNext,
+            LAYOUT__storageBuffer8BitAccess,
+            LAYOUT__uniformAndStorageBuffer8BitAccess,
+            LAYOUT__storagePushConstant8,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDevice8BitStorageFeatures");
+    ).withByteAlignment(8).withName("VkPhysicalDevice8BitStorageFeatures");
 
     public VkPhysicalDevice8BitStorageFeatures(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDevice8BitStorageFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDevice8BitStorageFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDevice8BitStorageFeatures(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDevice8BitStorageFeatures(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDevice8BitStorageFeatures value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int storageBuffer8BitAccess() {return this.ptr.get(LAYOUT$storageBuffer8BitAccess, OFFSET$storageBuffer8BitAccess);}
-    public void storageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT$storageBuffer8BitAccess, OFFSET$storageBuffer8BitAccess, value);}
-    public java.lang.foreign.MemorySegment storageBuffer8BitAccess_ptr() {return this.ptr.asSlice(OFFSET$storageBuffer8BitAccess, LAYOUT$storageBuffer8BitAccess);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int uniformAndStorageBuffer8BitAccess() {return this.ptr.get(LAYOUT$uniformAndStorageBuffer8BitAccess, OFFSET$uniformAndStorageBuffer8BitAccess);}
-    public void uniformAndStorageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT$uniformAndStorageBuffer8BitAccess, OFFSET$uniformAndStorageBuffer8BitAccess, value);}
-    public java.lang.foreign.MemorySegment uniformAndStorageBuffer8BitAccess_ptr() {return this.ptr.asSlice(OFFSET$uniformAndStorageBuffer8BitAccess, LAYOUT$uniformAndStorageBuffer8BitAccess);}
+    public int storageBuffer8BitAccess() {return this.ptr.get(LAYOUT__storageBuffer8BitAccess, OFFSET__storageBuffer8BitAccess);}
+    public void storageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT__storageBuffer8BitAccess, OFFSET__storageBuffer8BitAccess, value);}
+    public java.lang.foreign.MemorySegment $storageBuffer8BitAccess() {return this.ptr.asSlice(OFFSET__storageBuffer8BitAccess, LAYOUT__storageBuffer8BitAccess);}
 
-    public int storagePushConstant8() {return this.ptr.get(LAYOUT$storagePushConstant8, OFFSET$storagePushConstant8);}
-    public void storagePushConstant8(int value) {this.ptr.set(LAYOUT$storagePushConstant8, OFFSET$storagePushConstant8, value);}
-    public java.lang.foreign.MemorySegment storagePushConstant8_ptr() {return this.ptr.asSlice(OFFSET$storagePushConstant8, LAYOUT$storagePushConstant8);}
+    public int uniformAndStorageBuffer8BitAccess() {return this.ptr.get(LAYOUT__uniformAndStorageBuffer8BitAccess, OFFSET__uniformAndStorageBuffer8BitAccess);}
+    public void uniformAndStorageBuffer8BitAccess(int value) {this.ptr.set(LAYOUT__uniformAndStorageBuffer8BitAccess, OFFSET__uniformAndStorageBuffer8BitAccess, value);}
+    public java.lang.foreign.MemorySegment $uniformAndStorageBuffer8BitAccess() {return this.ptr.asSlice(OFFSET__uniformAndStorageBuffer8BitAccess, LAYOUT__uniformAndStorageBuffer8BitAccess);}
+
+    public int storagePushConstant8() {return this.ptr.get(LAYOUT__storagePushConstant8, OFFSET__storagePushConstant8);}
+    public void storagePushConstant8(int value) {this.ptr.set(LAYOUT__storagePushConstant8, OFFSET__storagePushConstant8, value);}
+    public java.lang.foreign.MemorySegment $storagePushConstant8() {return this.ptr.asSlice(OFFSET__storagePushConstant8, LAYOUT__storagePushConstant8);}
 }

@@ -49,7 +49,7 @@ public final class VkResult
     public static final int VK_OPERATION_NOT_DEFERRED_KHR = 1000268003;
     public static final int VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR = -1000299000;
     public static final int VK_ERROR_COMPRESSION_EXHAUSTED_EXT = -1000338000;
-    public static final int VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT = 1000482000;
+    public static final int VK_INCOMPATIBLE_SHADER_BINARY_EXT = 1000482000;
     public static final int VK_ERROR_OUT_OF_POOL_MEMORY_KHR = -1000069000;
     public static final int VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR = -1000072003;
     public static final int VK_ERROR_FRAGMENTATION_EXT = -1000161000;
@@ -58,5 +58,6 @@ public final class VkResult
     public static final int VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS_KHR = -1000257000;
     public static final int VK_PIPELINE_COMPILE_REQUIRED_EXT = 1000297000;
     public static final int VK_ERROR_PIPELINE_COMPILE_REQUIRED_EXT = 1000297000;
+    public static final int VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT = 1000482000;
     public static final int VK_RESULT_MAX_ENUM = 2147483647;
 }

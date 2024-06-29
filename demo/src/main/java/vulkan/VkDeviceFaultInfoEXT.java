@@ -2,60 +2,65 @@ package vulkan;
 
 public record VkDeviceFaultInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$description = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pAddressInfos = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pAddressInfos = 272L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pVendorInfos = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pVendorInfos = 280L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pVendorBinaryData = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pVendorBinaryData = 288L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__description = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAddressInfos = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pAddressInfos = 272;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVendorInfos = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pVendorInfos = 280;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVendorBinaryData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pVendorBinaryData = 288;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$description,
-            LAYOUT$pAddressInfos,
-            LAYOUT$pVendorInfos,
-            LAYOUT$pVendorBinaryData
-    ).withName("VkDeviceFaultInfoEXT");
+            LAYOUT__pNext,
+            LAYOUT__description,
+            LAYOUT__pAddressInfos,
+            LAYOUT__pVendorInfos,
+            LAYOUT__pVendorBinaryData
+    ).withByteAlignment(8).withName("VkDeviceFaultInfoEXT");
 
     public VkDeviceFaultInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceFaultInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceFaultInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceFaultInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceFaultInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceFaultInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment description() {return this.ptr.asSlice(OFFSET$description, LAYOUT$description);}
-    public char description(int i) {return (char)this.description().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void description(int i, char value) {this.description().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pAddressInfos() {return this.ptr.get(LAYOUT$pAddressInfos, OFFSET$pAddressInfos);}
-    public void pAddressInfos(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pAddressInfos, OFFSET$pAddressInfos, value);}
-    public java.lang.foreign.MemorySegment pAddressInfos_ptr() {return this.ptr.asSlice(OFFSET$pAddressInfos, LAYOUT$pAddressInfos);}
+    public java.lang.foreign.MemorySegment description() {return this.ptr.asSlice(OFFSET__description, LAYOUT__description);}
+    public byte description(int index) {return this.description().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void description(int index, byte value) {this.description().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public java.lang.foreign.MemorySegment pVendorInfos() {return this.ptr.get(LAYOUT$pVendorInfos, OFFSET$pVendorInfos);}
-    public void pVendorInfos(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pVendorInfos, OFFSET$pVendorInfos, value);}
-    public java.lang.foreign.MemorySegment pVendorInfos_ptr() {return this.ptr.asSlice(OFFSET$pVendorInfos, LAYOUT$pVendorInfos);}
+    public java.lang.foreign.MemorySegment pAddressInfos() {return this.ptr.get(LAYOUT__pAddressInfos, OFFSET__pAddressInfos);}
+    public void pAddressInfos(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pAddressInfos, OFFSET__pAddressInfos, value);}
+    public java.lang.foreign.MemorySegment $pAddressInfos() {return this.ptr.asSlice(OFFSET__pAddressInfos, LAYOUT__pAddressInfos);}
 
-    public java.lang.foreign.MemorySegment pVendorBinaryData() {return this.ptr.get(LAYOUT$pVendorBinaryData, OFFSET$pVendorBinaryData);}
-    public void pVendorBinaryData(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pVendorBinaryData, OFFSET$pVendorBinaryData, value);}
-    public java.lang.foreign.MemorySegment pVendorBinaryData_ptr() {return this.ptr.asSlice(OFFSET$pVendorBinaryData, LAYOUT$pVendorBinaryData);}
+    public java.lang.foreign.MemorySegment pVendorInfos() {return this.ptr.get(LAYOUT__pVendorInfos, OFFSET__pVendorInfos);}
+    public void pVendorInfos(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pVendorInfos, OFFSET__pVendorInfos, value);}
+    public java.lang.foreign.MemorySegment $pVendorInfos() {return this.ptr.asSlice(OFFSET__pVendorInfos, LAYOUT__pVendorInfos);}
+
+    public java.lang.foreign.MemorySegment pVendorBinaryData() {return this.ptr.get(LAYOUT__pVendorBinaryData, OFFSET__pVendorBinaryData);}
+    public void pVendorBinaryData(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pVendorBinaryData, OFFSET__pVendorBinaryData, value);}
+    public java.lang.foreign.MemorySegment $pVendorBinaryData() {return this.ptr.asSlice(OFFSET__pVendorBinaryData, LAYOUT__pVendorBinaryData);}
 }

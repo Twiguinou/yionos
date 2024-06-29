@@ -2,53 +2,58 @@ package vulkan;
 
 public record VkVideoInlineQueryInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$queryPool = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$queryPool = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$firstQuery = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$firstQuery = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$queryCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$queryCount = 28L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__queryPool = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__queryPool = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstQuery = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__firstQuery = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__queryCount = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$queryPool,
-            LAYOUT$firstQuery,
-            LAYOUT$queryCount
-    ).withName("VkVideoInlineQueryInfoKHR");
+            LAYOUT__pNext,
+            LAYOUT__queryPool,
+            LAYOUT__firstQuery,
+            LAYOUT__queryCount
+    ).withByteAlignment(8).withName("VkVideoInlineQueryInfoKHR");
 
     public VkVideoInlineQueryInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoInlineQueryInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoInlineQueryInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoInlineQueryInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoInlineQueryInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoInlineQueryInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment queryPool() {return this.ptr.get(LAYOUT$queryPool, OFFSET$queryPool);}
-    public void queryPool(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$queryPool, OFFSET$queryPool, value);}
-    public java.lang.foreign.MemorySegment queryPool_ptr() {return this.ptr.asSlice(OFFSET$queryPool, LAYOUT$queryPool);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int firstQuery() {return this.ptr.get(LAYOUT$firstQuery, OFFSET$firstQuery);}
-    public void firstQuery(int value) {this.ptr.set(LAYOUT$firstQuery, OFFSET$firstQuery, value);}
-    public java.lang.foreign.MemorySegment firstQuery_ptr() {return this.ptr.asSlice(OFFSET$firstQuery, LAYOUT$firstQuery);}
+    public java.lang.foreign.MemorySegment queryPool() {return this.ptr.get(LAYOUT__queryPool, OFFSET__queryPool);}
+    public void queryPool(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__queryPool, OFFSET__queryPool, value);}
+    public java.lang.foreign.MemorySegment $queryPool() {return this.ptr.asSlice(OFFSET__queryPool, LAYOUT__queryPool);}
 
-    public int queryCount() {return this.ptr.get(LAYOUT$queryCount, OFFSET$queryCount);}
-    public void queryCount(int value) {this.ptr.set(LAYOUT$queryCount, OFFSET$queryCount, value);}
-    public java.lang.foreign.MemorySegment queryCount_ptr() {return this.ptr.asSlice(OFFSET$queryCount, LAYOUT$queryCount);}
+    public int firstQuery() {return this.ptr.get(LAYOUT__firstQuery, OFFSET__firstQuery);}
+    public void firstQuery(int value) {this.ptr.set(LAYOUT__firstQuery, OFFSET__firstQuery, value);}
+    public java.lang.foreign.MemorySegment $firstQuery() {return this.ptr.asSlice(OFFSET__firstQuery, LAYOUT__firstQuery);}
+
+    public int queryCount() {return this.ptr.get(LAYOUT__queryCount, OFFSET__queryCount);}
+    public void queryCount(int value) {this.ptr.set(LAYOUT__queryCount, OFFSET__queryCount, value);}
+    public java.lang.foreign.MemorySegment $queryCount() {return this.ptr.asSlice(OFFSET__queryCount, LAYOUT__queryCount);}
 }

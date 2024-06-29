@@ -2,116 +2,121 @@ package vulkan;
 
 public record VkTraceRaysIndirectCommand2KHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$raygenShaderRecordAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$raygenShaderRecordAddress = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$raygenShaderRecordSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$raygenShaderRecordSize = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$missShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$missShaderBindingTableAddress = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$missShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$missShaderBindingTableSize = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$missShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$missShaderBindingTableStride = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$hitShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$hitShaderBindingTableAddress = 40L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$hitShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$hitShaderBindingTableSize = 48L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$hitShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$hitShaderBindingTableStride = 56L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$callableShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$callableShaderBindingTableAddress = 64L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$callableShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$callableShaderBindingTableSize = 72L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$callableShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$callableShaderBindingTableStride = 80L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$width = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$width = 88L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$height = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$height = 92L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depth = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depth = 96L;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__raygenShaderRecordAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__raygenShaderRecordAddress = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__raygenShaderRecordSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__raygenShaderRecordSize = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__missShaderBindingTableAddress = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__missShaderBindingTableSize = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__missShaderBindingTableStride = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__hitShaderBindingTableAddress = 40;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__hitShaderBindingTableSize = 48;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__hitShaderBindingTableStride = 56;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__callableShaderBindingTableAddress = 64;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__callableShaderBindingTableSize = 72;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__callableShaderBindingTableStride = 80;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__width = 88;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__height = 92;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depth = 96;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$raygenShaderRecordAddress,
-            LAYOUT$raygenShaderRecordSize,
-            LAYOUT$missShaderBindingTableAddress,
-            LAYOUT$missShaderBindingTableSize,
-            LAYOUT$missShaderBindingTableStride,
-            LAYOUT$hitShaderBindingTableAddress,
-            LAYOUT$hitShaderBindingTableSize,
-            LAYOUT$hitShaderBindingTableStride,
-            LAYOUT$callableShaderBindingTableAddress,
-            LAYOUT$callableShaderBindingTableSize,
-            LAYOUT$callableShaderBindingTableStride,
-            LAYOUT$width,
-            LAYOUT$height,
-            LAYOUT$depth,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__raygenShaderRecordAddress,
+            LAYOUT__raygenShaderRecordSize,
+            LAYOUT__missShaderBindingTableAddress,
+            LAYOUT__missShaderBindingTableSize,
+            LAYOUT__missShaderBindingTableStride,
+            LAYOUT__hitShaderBindingTableAddress,
+            LAYOUT__hitShaderBindingTableSize,
+            LAYOUT__hitShaderBindingTableStride,
+            LAYOUT__callableShaderBindingTableAddress,
+            LAYOUT__callableShaderBindingTableSize,
+            LAYOUT__callableShaderBindingTableStride,
+            LAYOUT__width,
+            LAYOUT__height,
+            LAYOUT__depth,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkTraceRaysIndirectCommand2KHR");
+    ).withByteAlignment(8).withName("VkTraceRaysIndirectCommand2KHR");
 
     public VkTraceRaysIndirectCommand2KHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkTraceRaysIndirectCommand2KHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkTraceRaysIndirectCommand2KHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkTraceRaysIndirectCommand2KHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkTraceRaysIndirectCommand2KHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public long raygenShaderRecordAddress() {return this.ptr.get(LAYOUT$raygenShaderRecordAddress, OFFSET$raygenShaderRecordAddress);}
-    public void raygenShaderRecordAddress(long value) {this.ptr.set(LAYOUT$raygenShaderRecordAddress, OFFSET$raygenShaderRecordAddress, value);}
-    public java.lang.foreign.MemorySegment raygenShaderRecordAddress_ptr() {return this.ptr.asSlice(OFFSET$raygenShaderRecordAddress, LAYOUT$raygenShaderRecordAddress);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkTraceRaysIndirectCommand2KHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long raygenShaderRecordSize() {return this.ptr.get(LAYOUT$raygenShaderRecordSize, OFFSET$raygenShaderRecordSize);}
-    public void raygenShaderRecordSize(long value) {this.ptr.set(LAYOUT$raygenShaderRecordSize, OFFSET$raygenShaderRecordSize, value);}
-    public java.lang.foreign.MemorySegment raygenShaderRecordSize_ptr() {return this.ptr.asSlice(OFFSET$raygenShaderRecordSize, LAYOUT$raygenShaderRecordSize);}
+    public long raygenShaderRecordAddress() {return this.ptr.get(LAYOUT__raygenShaderRecordAddress, OFFSET__raygenShaderRecordAddress);}
+    public void raygenShaderRecordAddress(long value) {this.ptr.set(LAYOUT__raygenShaderRecordAddress, OFFSET__raygenShaderRecordAddress, value);}
+    public java.lang.foreign.MemorySegment $raygenShaderRecordAddress() {return this.ptr.asSlice(OFFSET__raygenShaderRecordAddress, LAYOUT__raygenShaderRecordAddress);}
 
-    public long missShaderBindingTableAddress() {return this.ptr.get(LAYOUT$missShaderBindingTableAddress, OFFSET$missShaderBindingTableAddress);}
-    public void missShaderBindingTableAddress(long value) {this.ptr.set(LAYOUT$missShaderBindingTableAddress, OFFSET$missShaderBindingTableAddress, value);}
-    public java.lang.foreign.MemorySegment missShaderBindingTableAddress_ptr() {return this.ptr.asSlice(OFFSET$missShaderBindingTableAddress, LAYOUT$missShaderBindingTableAddress);}
+    public long raygenShaderRecordSize() {return this.ptr.get(LAYOUT__raygenShaderRecordSize, OFFSET__raygenShaderRecordSize);}
+    public void raygenShaderRecordSize(long value) {this.ptr.set(LAYOUT__raygenShaderRecordSize, OFFSET__raygenShaderRecordSize, value);}
+    public java.lang.foreign.MemorySegment $raygenShaderRecordSize() {return this.ptr.asSlice(OFFSET__raygenShaderRecordSize, LAYOUT__raygenShaderRecordSize);}
 
-    public long missShaderBindingTableSize() {return this.ptr.get(LAYOUT$missShaderBindingTableSize, OFFSET$missShaderBindingTableSize);}
-    public void missShaderBindingTableSize(long value) {this.ptr.set(LAYOUT$missShaderBindingTableSize, OFFSET$missShaderBindingTableSize, value);}
-    public java.lang.foreign.MemorySegment missShaderBindingTableSize_ptr() {return this.ptr.asSlice(OFFSET$missShaderBindingTableSize, LAYOUT$missShaderBindingTableSize);}
+    public long missShaderBindingTableAddress() {return this.ptr.get(LAYOUT__missShaderBindingTableAddress, OFFSET__missShaderBindingTableAddress);}
+    public void missShaderBindingTableAddress(long value) {this.ptr.set(LAYOUT__missShaderBindingTableAddress, OFFSET__missShaderBindingTableAddress, value);}
+    public java.lang.foreign.MemorySegment $missShaderBindingTableAddress() {return this.ptr.asSlice(OFFSET__missShaderBindingTableAddress, LAYOUT__missShaderBindingTableAddress);}
 
-    public long missShaderBindingTableStride() {return this.ptr.get(LAYOUT$missShaderBindingTableStride, OFFSET$missShaderBindingTableStride);}
-    public void missShaderBindingTableStride(long value) {this.ptr.set(LAYOUT$missShaderBindingTableStride, OFFSET$missShaderBindingTableStride, value);}
-    public java.lang.foreign.MemorySegment missShaderBindingTableStride_ptr() {return this.ptr.asSlice(OFFSET$missShaderBindingTableStride, LAYOUT$missShaderBindingTableStride);}
+    public long missShaderBindingTableSize() {return this.ptr.get(LAYOUT__missShaderBindingTableSize, OFFSET__missShaderBindingTableSize);}
+    public void missShaderBindingTableSize(long value) {this.ptr.set(LAYOUT__missShaderBindingTableSize, OFFSET__missShaderBindingTableSize, value);}
+    public java.lang.foreign.MemorySegment $missShaderBindingTableSize() {return this.ptr.asSlice(OFFSET__missShaderBindingTableSize, LAYOUT__missShaderBindingTableSize);}
 
-    public long hitShaderBindingTableAddress() {return this.ptr.get(LAYOUT$hitShaderBindingTableAddress, OFFSET$hitShaderBindingTableAddress);}
-    public void hitShaderBindingTableAddress(long value) {this.ptr.set(LAYOUT$hitShaderBindingTableAddress, OFFSET$hitShaderBindingTableAddress, value);}
-    public java.lang.foreign.MemorySegment hitShaderBindingTableAddress_ptr() {return this.ptr.asSlice(OFFSET$hitShaderBindingTableAddress, LAYOUT$hitShaderBindingTableAddress);}
+    public long missShaderBindingTableStride() {return this.ptr.get(LAYOUT__missShaderBindingTableStride, OFFSET__missShaderBindingTableStride);}
+    public void missShaderBindingTableStride(long value) {this.ptr.set(LAYOUT__missShaderBindingTableStride, OFFSET__missShaderBindingTableStride, value);}
+    public java.lang.foreign.MemorySegment $missShaderBindingTableStride() {return this.ptr.asSlice(OFFSET__missShaderBindingTableStride, LAYOUT__missShaderBindingTableStride);}
 
-    public long hitShaderBindingTableSize() {return this.ptr.get(LAYOUT$hitShaderBindingTableSize, OFFSET$hitShaderBindingTableSize);}
-    public void hitShaderBindingTableSize(long value) {this.ptr.set(LAYOUT$hitShaderBindingTableSize, OFFSET$hitShaderBindingTableSize, value);}
-    public java.lang.foreign.MemorySegment hitShaderBindingTableSize_ptr() {return this.ptr.asSlice(OFFSET$hitShaderBindingTableSize, LAYOUT$hitShaderBindingTableSize);}
+    public long hitShaderBindingTableAddress() {return this.ptr.get(LAYOUT__hitShaderBindingTableAddress, OFFSET__hitShaderBindingTableAddress);}
+    public void hitShaderBindingTableAddress(long value) {this.ptr.set(LAYOUT__hitShaderBindingTableAddress, OFFSET__hitShaderBindingTableAddress, value);}
+    public java.lang.foreign.MemorySegment $hitShaderBindingTableAddress() {return this.ptr.asSlice(OFFSET__hitShaderBindingTableAddress, LAYOUT__hitShaderBindingTableAddress);}
 
-    public long hitShaderBindingTableStride() {return this.ptr.get(LAYOUT$hitShaderBindingTableStride, OFFSET$hitShaderBindingTableStride);}
-    public void hitShaderBindingTableStride(long value) {this.ptr.set(LAYOUT$hitShaderBindingTableStride, OFFSET$hitShaderBindingTableStride, value);}
-    public java.lang.foreign.MemorySegment hitShaderBindingTableStride_ptr() {return this.ptr.asSlice(OFFSET$hitShaderBindingTableStride, LAYOUT$hitShaderBindingTableStride);}
+    public long hitShaderBindingTableSize() {return this.ptr.get(LAYOUT__hitShaderBindingTableSize, OFFSET__hitShaderBindingTableSize);}
+    public void hitShaderBindingTableSize(long value) {this.ptr.set(LAYOUT__hitShaderBindingTableSize, OFFSET__hitShaderBindingTableSize, value);}
+    public java.lang.foreign.MemorySegment $hitShaderBindingTableSize() {return this.ptr.asSlice(OFFSET__hitShaderBindingTableSize, LAYOUT__hitShaderBindingTableSize);}
 
-    public long callableShaderBindingTableAddress() {return this.ptr.get(LAYOUT$callableShaderBindingTableAddress, OFFSET$callableShaderBindingTableAddress);}
-    public void callableShaderBindingTableAddress(long value) {this.ptr.set(LAYOUT$callableShaderBindingTableAddress, OFFSET$callableShaderBindingTableAddress, value);}
-    public java.lang.foreign.MemorySegment callableShaderBindingTableAddress_ptr() {return this.ptr.asSlice(OFFSET$callableShaderBindingTableAddress, LAYOUT$callableShaderBindingTableAddress);}
+    public long hitShaderBindingTableStride() {return this.ptr.get(LAYOUT__hitShaderBindingTableStride, OFFSET__hitShaderBindingTableStride);}
+    public void hitShaderBindingTableStride(long value) {this.ptr.set(LAYOUT__hitShaderBindingTableStride, OFFSET__hitShaderBindingTableStride, value);}
+    public java.lang.foreign.MemorySegment $hitShaderBindingTableStride() {return this.ptr.asSlice(OFFSET__hitShaderBindingTableStride, LAYOUT__hitShaderBindingTableStride);}
 
-    public long callableShaderBindingTableSize() {return this.ptr.get(LAYOUT$callableShaderBindingTableSize, OFFSET$callableShaderBindingTableSize);}
-    public void callableShaderBindingTableSize(long value) {this.ptr.set(LAYOUT$callableShaderBindingTableSize, OFFSET$callableShaderBindingTableSize, value);}
-    public java.lang.foreign.MemorySegment callableShaderBindingTableSize_ptr() {return this.ptr.asSlice(OFFSET$callableShaderBindingTableSize, LAYOUT$callableShaderBindingTableSize);}
+    public long callableShaderBindingTableAddress() {return this.ptr.get(LAYOUT__callableShaderBindingTableAddress, OFFSET__callableShaderBindingTableAddress);}
+    public void callableShaderBindingTableAddress(long value) {this.ptr.set(LAYOUT__callableShaderBindingTableAddress, OFFSET__callableShaderBindingTableAddress, value);}
+    public java.lang.foreign.MemorySegment $callableShaderBindingTableAddress() {return this.ptr.asSlice(OFFSET__callableShaderBindingTableAddress, LAYOUT__callableShaderBindingTableAddress);}
 
-    public long callableShaderBindingTableStride() {return this.ptr.get(LAYOUT$callableShaderBindingTableStride, OFFSET$callableShaderBindingTableStride);}
-    public void callableShaderBindingTableStride(long value) {this.ptr.set(LAYOUT$callableShaderBindingTableStride, OFFSET$callableShaderBindingTableStride, value);}
-    public java.lang.foreign.MemorySegment callableShaderBindingTableStride_ptr() {return this.ptr.asSlice(OFFSET$callableShaderBindingTableStride, LAYOUT$callableShaderBindingTableStride);}
+    public long callableShaderBindingTableSize() {return this.ptr.get(LAYOUT__callableShaderBindingTableSize, OFFSET__callableShaderBindingTableSize);}
+    public void callableShaderBindingTableSize(long value) {this.ptr.set(LAYOUT__callableShaderBindingTableSize, OFFSET__callableShaderBindingTableSize, value);}
+    public java.lang.foreign.MemorySegment $callableShaderBindingTableSize() {return this.ptr.asSlice(OFFSET__callableShaderBindingTableSize, LAYOUT__callableShaderBindingTableSize);}
 
-    public int width() {return this.ptr.get(LAYOUT$width, OFFSET$width);}
-    public void width(int value) {this.ptr.set(LAYOUT$width, OFFSET$width, value);}
-    public java.lang.foreign.MemorySegment width_ptr() {return this.ptr.asSlice(OFFSET$width, LAYOUT$width);}
+    public long callableShaderBindingTableStride() {return this.ptr.get(LAYOUT__callableShaderBindingTableStride, OFFSET__callableShaderBindingTableStride);}
+    public void callableShaderBindingTableStride(long value) {this.ptr.set(LAYOUT__callableShaderBindingTableStride, OFFSET__callableShaderBindingTableStride, value);}
+    public java.lang.foreign.MemorySegment $callableShaderBindingTableStride() {return this.ptr.asSlice(OFFSET__callableShaderBindingTableStride, LAYOUT__callableShaderBindingTableStride);}
 
-    public int height() {return this.ptr.get(LAYOUT$height, OFFSET$height);}
-    public void height(int value) {this.ptr.set(LAYOUT$height, OFFSET$height, value);}
-    public java.lang.foreign.MemorySegment height_ptr() {return this.ptr.asSlice(OFFSET$height, LAYOUT$height);}
+    public int width() {return this.ptr.get(LAYOUT__width, OFFSET__width);}
+    public void width(int value) {this.ptr.set(LAYOUT__width, OFFSET__width, value);}
+    public java.lang.foreign.MemorySegment $width() {return this.ptr.asSlice(OFFSET__width, LAYOUT__width);}
 
-    public int depth() {return this.ptr.get(LAYOUT$depth, OFFSET$depth);}
-    public void depth(int value) {this.ptr.set(LAYOUT$depth, OFFSET$depth, value);}
-    public java.lang.foreign.MemorySegment depth_ptr() {return this.ptr.asSlice(OFFSET$depth, LAYOUT$depth);}
+    public int height() {return this.ptr.get(LAYOUT__height, OFFSET__height);}
+    public void height(int value) {this.ptr.set(LAYOUT__height, OFFSET__height, value);}
+    public java.lang.foreign.MemorySegment $height() {return this.ptr.asSlice(OFFSET__height, LAYOUT__height);}
+
+    public int depth() {return this.ptr.get(LAYOUT__depth, OFFSET__depth);}
+    public void depth(int value) {this.ptr.set(LAYOUT__depth, OFFSET__depth, value);}
+    public java.lang.foreign.MemorySegment $depth() {return this.ptr.asSlice(OFFSET__depth, LAYOUT__depth);}
 }

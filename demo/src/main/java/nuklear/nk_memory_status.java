@@ -2,60 +2,65 @@ package nuklear;
 
 public record nk_memory_status(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT$memory = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$memory = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$type = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$type = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$size = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$size = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$allocated = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$allocated = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$needed = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$needed = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$calls = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$calls = 40L;
+    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__memory = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__type = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__size = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocated = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__allocated = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__needed = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__needed = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__calls = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__calls = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$memory,
-            LAYOUT$type,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__memory,
+            LAYOUT__type,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$size,
-            LAYOUT$allocated,
-            LAYOUT$needed,
-            LAYOUT$calls
-    ).withName("nk_memory_status");
+            LAYOUT__size,
+            LAYOUT__allocated,
+            LAYOUT__needed,
+            LAYOUT__calls
+    ).withByteAlignment(8).withName("nk_memory_status");
 
     public nk_memory_status(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_memory_status getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_memory_status getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_memory_status(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_memory_status(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment memory() {return this._ptr.get(LAYOUT$memory, OFFSET$memory);}
-    public void memory(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT$memory, OFFSET$memory, value);}
-    public java.lang.foreign.MemorySegment memory_ptr() {return this._ptr.asSlice(OFFSET$memory, LAYOUT$memory);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_memory_status value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int type() {return this._ptr.get(LAYOUT$type, OFFSET$type);}
-    public void type(int value) {this._ptr.set(LAYOUT$type, OFFSET$type, value);}
-    public java.lang.foreign.MemorySegment type_ptr() {return this._ptr.asSlice(OFFSET$type, LAYOUT$type);}
+    public java.lang.foreign.MemorySegment memory() {return this._ptr.get(LAYOUT__memory, OFFSET__memory);}
+    public void memory(java.lang.foreign.MemorySegment value) {this._ptr.set(LAYOUT__memory, OFFSET__memory, value);}
+    public java.lang.foreign.MemorySegment $memory() {return this._ptr.asSlice(OFFSET__memory, LAYOUT__memory);}
 
-    public long size() {return this._ptr.get(LAYOUT$size, OFFSET$size);}
-    public void size(long value) {this._ptr.set(LAYOUT$size, OFFSET$size, value);}
-    public java.lang.foreign.MemorySegment size_ptr() {return this._ptr.asSlice(OFFSET$size, LAYOUT$size);}
+    public int type() {return this._ptr.get(LAYOUT__type, OFFSET__type);}
+    public void type(int value) {this._ptr.set(LAYOUT__type, OFFSET__type, value);}
+    public java.lang.foreign.MemorySegment $type() {return this._ptr.asSlice(OFFSET__type, LAYOUT__type);}
 
-    public long allocated() {return this._ptr.get(LAYOUT$allocated, OFFSET$allocated);}
-    public void allocated(long value) {this._ptr.set(LAYOUT$allocated, OFFSET$allocated, value);}
-    public java.lang.foreign.MemorySegment allocated_ptr() {return this._ptr.asSlice(OFFSET$allocated, LAYOUT$allocated);}
+    public long size() {return this._ptr.get(LAYOUT__size, OFFSET__size);}
+    public void size(long value) {this._ptr.set(LAYOUT__size, OFFSET__size, value);}
+    public java.lang.foreign.MemorySegment $size() {return this._ptr.asSlice(OFFSET__size, LAYOUT__size);}
 
-    public long needed() {return this._ptr.get(LAYOUT$needed, OFFSET$needed);}
-    public void needed(long value) {this._ptr.set(LAYOUT$needed, OFFSET$needed, value);}
-    public java.lang.foreign.MemorySegment needed_ptr() {return this._ptr.asSlice(OFFSET$needed, LAYOUT$needed);}
+    public long allocated() {return this._ptr.get(LAYOUT__allocated, OFFSET__allocated);}
+    public void allocated(long value) {this._ptr.set(LAYOUT__allocated, OFFSET__allocated, value);}
+    public java.lang.foreign.MemorySegment $allocated() {return this._ptr.asSlice(OFFSET__allocated, LAYOUT__allocated);}
 
-    public long calls() {return this._ptr.get(LAYOUT$calls, OFFSET$calls);}
-    public void calls(long value) {this._ptr.set(LAYOUT$calls, OFFSET$calls, value);}
-    public java.lang.foreign.MemorySegment calls_ptr() {return this._ptr.asSlice(OFFSET$calls, LAYOUT$calls);}
+    public long needed() {return this._ptr.get(LAYOUT__needed, OFFSET__needed);}
+    public void needed(long value) {this._ptr.set(LAYOUT__needed, OFFSET__needed, value);}
+    public java.lang.foreign.MemorySegment $needed() {return this._ptr.asSlice(OFFSET__needed, LAYOUT__needed);}
+
+    public long calls() {return this._ptr.get(LAYOUT__calls, OFFSET__calls);}
+    public void calls(long value) {this._ptr.set(LAYOUT__calls, OFFSET__calls, value);}
+    public java.lang.foreign.MemorySegment $calls() {return this._ptr.asSlice(OFFSET__calls, LAYOUT__calls);}
 }

@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPipelineRasterizationConservativeStateCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$conservativeRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$conservativeRasterizationMode = 20L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$extraPrimitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$extraPrimitiveOverestimationSize = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__conservativeRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__conservativeRasterizationMode = 20;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__extraPrimitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__extraPrimitiveOverestimationSize = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$conservativeRasterizationMode,
-            LAYOUT$extraPrimitiveOverestimationSize,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__conservativeRasterizationMode,
+            LAYOUT__extraPrimitiveOverestimationSize,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPipelineRasterizationConservativeStateCreateInfoEXT");
+    ).withByteAlignment(8).withName("VkPipelineRasterizationConservativeStateCreateInfoEXT");
 
     public VkPipelineRasterizationConservativeStateCreateInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineRasterizationConservativeStateCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineRasterizationConservativeStateCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineRasterizationConservativeStateCreateInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineRasterizationConservativeStateCreateInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineRasterizationConservativeStateCreateInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int conservativeRasterizationMode() {return this.ptr.get(LAYOUT$conservativeRasterizationMode, OFFSET$conservativeRasterizationMode);}
-    public void conservativeRasterizationMode(int value) {this.ptr.set(LAYOUT$conservativeRasterizationMode, OFFSET$conservativeRasterizationMode, value);}
-    public java.lang.foreign.MemorySegment conservativeRasterizationMode_ptr() {return this.ptr.asSlice(OFFSET$conservativeRasterizationMode, LAYOUT$conservativeRasterizationMode);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public float extraPrimitiveOverestimationSize() {return this.ptr.get(LAYOUT$extraPrimitiveOverestimationSize, OFFSET$extraPrimitiveOverestimationSize);}
-    public void extraPrimitiveOverestimationSize(float value) {this.ptr.set(LAYOUT$extraPrimitiveOverestimationSize, OFFSET$extraPrimitiveOverestimationSize, value);}
-    public java.lang.foreign.MemorySegment extraPrimitiveOverestimationSize_ptr() {return this.ptr.asSlice(OFFSET$extraPrimitiveOverestimationSize, LAYOUT$extraPrimitiveOverestimationSize);}
+    public int conservativeRasterizationMode() {return this.ptr.get(LAYOUT__conservativeRasterizationMode, OFFSET__conservativeRasterizationMode);}
+    public void conservativeRasterizationMode(int value) {this.ptr.set(LAYOUT__conservativeRasterizationMode, OFFSET__conservativeRasterizationMode, value);}
+    public java.lang.foreign.MemorySegment $conservativeRasterizationMode() {return this.ptr.asSlice(OFFSET__conservativeRasterizationMode, LAYOUT__conservativeRasterizationMode);}
+
+    public float extraPrimitiveOverestimationSize() {return this.ptr.get(LAYOUT__extraPrimitiveOverestimationSize, OFFSET__extraPrimitiveOverestimationSize);}
+    public void extraPrimitiveOverestimationSize(float value) {this.ptr.set(LAYOUT__extraPrimitiveOverestimationSize, OFFSET__extraPrimitiveOverestimationSize, value);}
+    public java.lang.foreign.MemorySegment $extraPrimitiveOverestimationSize() {return this.ptr.asSlice(OFFSET__extraPrimitiveOverestimationSize, LAYOUT__extraPrimitiveOverestimationSize);}
 }

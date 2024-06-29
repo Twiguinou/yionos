@@ -2,40 +2,45 @@ package vulkan;
 
 public record VkPhysicalDeviceScalarBlockLayoutFeatures(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$scalarBlockLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$scalarBlockLayout = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scalarBlockLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__scalarBlockLayout = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$scalarBlockLayout,
+            LAYOUT__pNext,
+            LAYOUT__scalarBlockLayout,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceScalarBlockLayoutFeatures");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceScalarBlockLayoutFeatures");
 
     public VkPhysicalDeviceScalarBlockLayoutFeatures(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceScalarBlockLayoutFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceScalarBlockLayoutFeatures getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceScalarBlockLayoutFeatures(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceScalarBlockLayoutFeatures(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceScalarBlockLayoutFeatures value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int scalarBlockLayout() {return this.ptr.get(LAYOUT$scalarBlockLayout, OFFSET$scalarBlockLayout);}
-    public void scalarBlockLayout(int value) {this.ptr.set(LAYOUT$scalarBlockLayout, OFFSET$scalarBlockLayout, value);}
-    public java.lang.foreign.MemorySegment scalarBlockLayout_ptr() {return this.ptr.asSlice(OFFSET$scalarBlockLayout, LAYOUT$scalarBlockLayout);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
+
+    public int scalarBlockLayout() {return this.ptr.get(LAYOUT__scalarBlockLayout, OFFSET__scalarBlockLayout);}
+    public void scalarBlockLayout(int value) {this.ptr.set(LAYOUT__scalarBlockLayout, OFFSET__scalarBlockLayout, value);}
+    public java.lang.foreign.MemorySegment $scalarBlockLayout() {return this.ptr.asSlice(OFFSET__scalarBlockLayout, LAYOUT__scalarBlockLayout);}
 }

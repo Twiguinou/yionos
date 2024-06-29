@@ -2,96 +2,101 @@ package vma;
 
 public record VmaAllocatorCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$physicalDevice = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$physicalDevice = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$device = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$device = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$preferredLargeHeapBlockSize = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$preferredLargeHeapBlockSize = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pAllocationCallbacks = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pAllocationCallbacks = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDeviceMemoryCallbacks = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDeviceMemoryCallbacks = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pHeapSizeLimit = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pHeapSizeLimit = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pVulkanFunctions = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pVulkanFunctions = 56L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$instance = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$instance = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$vulkanApiVersion = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$vulkanApiVersion = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pTypeExternalMemoryHandleTypes = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pTypeExternalMemoryHandleTypes = 80L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__physicalDevice = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__physicalDevice = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__device = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__device = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preferredLargeHeapBlockSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__preferredLargeHeapBlockSize = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAllocationCallbacks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pAllocationCallbacks = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceMemoryCallbacks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDeviceMemoryCallbacks = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pHeapSizeLimit = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pHeapSizeLimit = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVulkanFunctions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pVulkanFunctions = 56;
+    public static final java.lang.foreign.AddressLayout LAYOUT__instance = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__instance = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vulkanApiVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__vulkanApiVersion = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTypeExternalMemoryHandleTypes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pTypeExternalMemoryHandleTypes = 80;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$physicalDevice,
-            LAYOUT$device,
-            LAYOUT$preferredLargeHeapBlockSize,
-            LAYOUT$pAllocationCallbacks,
-            LAYOUT$pDeviceMemoryCallbacks,
-            LAYOUT$pHeapSizeLimit,
-            LAYOUT$pVulkanFunctions,
-            LAYOUT$instance,
-            LAYOUT$vulkanApiVersion,
+            LAYOUT__physicalDevice,
+            LAYOUT__device,
+            LAYOUT__preferredLargeHeapBlockSize,
+            LAYOUT__pAllocationCallbacks,
+            LAYOUT__pDeviceMemoryCallbacks,
+            LAYOUT__pHeapSizeLimit,
+            LAYOUT__pVulkanFunctions,
+            LAYOUT__instance,
+            LAYOUT__vulkanApiVersion,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pTypeExternalMemoryHandleTypes
-    ).withName("VmaAllocatorCreateInfo");
+            LAYOUT__pTypeExternalMemoryHandleTypes
+    ).withByteAlignment(8).withName("VmaAllocatorCreateInfo");
 
     public VmaAllocatorCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VmaAllocatorCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VmaAllocatorCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VmaAllocatorCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VmaAllocatorCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VmaAllocatorCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment physicalDevice() {return this.ptr.get(LAYOUT$physicalDevice, OFFSET$physicalDevice);}
-    public void physicalDevice(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$physicalDevice, OFFSET$physicalDevice, value);}
-    public java.lang.foreign.MemorySegment physicalDevice_ptr() {return this.ptr.asSlice(OFFSET$physicalDevice, LAYOUT$physicalDevice);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public java.lang.foreign.MemorySegment device() {return this.ptr.get(LAYOUT$device, OFFSET$device);}
-    public void device(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$device, OFFSET$device, value);}
-    public java.lang.foreign.MemorySegment device_ptr() {return this.ptr.asSlice(OFFSET$device, LAYOUT$device);}
+    public java.lang.foreign.MemorySegment physicalDevice() {return this.ptr.get(LAYOUT__physicalDevice, OFFSET__physicalDevice);}
+    public void physicalDevice(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__physicalDevice, OFFSET__physicalDevice, value);}
+    public java.lang.foreign.MemorySegment $physicalDevice() {return this.ptr.asSlice(OFFSET__physicalDevice, LAYOUT__physicalDevice);}
 
-    public long preferredLargeHeapBlockSize() {return this.ptr.get(LAYOUT$preferredLargeHeapBlockSize, OFFSET$preferredLargeHeapBlockSize);}
-    public void preferredLargeHeapBlockSize(long value) {this.ptr.set(LAYOUT$preferredLargeHeapBlockSize, OFFSET$preferredLargeHeapBlockSize, value);}
-    public java.lang.foreign.MemorySegment preferredLargeHeapBlockSize_ptr() {return this.ptr.asSlice(OFFSET$preferredLargeHeapBlockSize, LAYOUT$preferredLargeHeapBlockSize);}
+    public java.lang.foreign.MemorySegment device() {return this.ptr.get(LAYOUT__device, OFFSET__device);}
+    public void device(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__device, OFFSET__device, value);}
+    public java.lang.foreign.MemorySegment $device() {return this.ptr.asSlice(OFFSET__device, LAYOUT__device);}
 
-    public java.lang.foreign.MemorySegment pAllocationCallbacks() {return this.ptr.get(LAYOUT$pAllocationCallbacks, OFFSET$pAllocationCallbacks);}
-    public void pAllocationCallbacks(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pAllocationCallbacks, OFFSET$pAllocationCallbacks, value);}
-    public java.lang.foreign.MemorySegment pAllocationCallbacks_ptr() {return this.ptr.asSlice(OFFSET$pAllocationCallbacks, LAYOUT$pAllocationCallbacks);}
+    public long preferredLargeHeapBlockSize() {return this.ptr.get(LAYOUT__preferredLargeHeapBlockSize, OFFSET__preferredLargeHeapBlockSize);}
+    public void preferredLargeHeapBlockSize(long value) {this.ptr.set(LAYOUT__preferredLargeHeapBlockSize, OFFSET__preferredLargeHeapBlockSize, value);}
+    public java.lang.foreign.MemorySegment $preferredLargeHeapBlockSize() {return this.ptr.asSlice(OFFSET__preferredLargeHeapBlockSize, LAYOUT__preferredLargeHeapBlockSize);}
 
-    public java.lang.foreign.MemorySegment pDeviceMemoryCallbacks() {return this.ptr.get(LAYOUT$pDeviceMemoryCallbacks, OFFSET$pDeviceMemoryCallbacks);}
-    public void pDeviceMemoryCallbacks(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDeviceMemoryCallbacks, OFFSET$pDeviceMemoryCallbacks, value);}
-    public java.lang.foreign.MemorySegment pDeviceMemoryCallbacks_ptr() {return this.ptr.asSlice(OFFSET$pDeviceMemoryCallbacks, LAYOUT$pDeviceMemoryCallbacks);}
+    public java.lang.foreign.MemorySegment pAllocationCallbacks() {return this.ptr.get(LAYOUT__pAllocationCallbacks, OFFSET__pAllocationCallbacks);}
+    public void pAllocationCallbacks(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pAllocationCallbacks, OFFSET__pAllocationCallbacks, value);}
+    public java.lang.foreign.MemorySegment $pAllocationCallbacks() {return this.ptr.asSlice(OFFSET__pAllocationCallbacks, LAYOUT__pAllocationCallbacks);}
 
-    public java.lang.foreign.MemorySegment pHeapSizeLimit() {return this.ptr.get(LAYOUT$pHeapSizeLimit, OFFSET$pHeapSizeLimit);}
-    public void pHeapSizeLimit(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pHeapSizeLimit, OFFSET$pHeapSizeLimit, value);}
-    public java.lang.foreign.MemorySegment pHeapSizeLimit_ptr() {return this.ptr.asSlice(OFFSET$pHeapSizeLimit, LAYOUT$pHeapSizeLimit);}
+    public java.lang.foreign.MemorySegment pDeviceMemoryCallbacks() {return this.ptr.get(LAYOUT__pDeviceMemoryCallbacks, OFFSET__pDeviceMemoryCallbacks);}
+    public void pDeviceMemoryCallbacks(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDeviceMemoryCallbacks, OFFSET__pDeviceMemoryCallbacks, value);}
+    public java.lang.foreign.MemorySegment $pDeviceMemoryCallbacks() {return this.ptr.asSlice(OFFSET__pDeviceMemoryCallbacks, LAYOUT__pDeviceMemoryCallbacks);}
 
-    public java.lang.foreign.MemorySegment pVulkanFunctions() {return this.ptr.get(LAYOUT$pVulkanFunctions, OFFSET$pVulkanFunctions);}
-    public void pVulkanFunctions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pVulkanFunctions, OFFSET$pVulkanFunctions, value);}
-    public java.lang.foreign.MemorySegment pVulkanFunctions_ptr() {return this.ptr.asSlice(OFFSET$pVulkanFunctions, LAYOUT$pVulkanFunctions);}
+    public java.lang.foreign.MemorySegment pHeapSizeLimit() {return this.ptr.get(LAYOUT__pHeapSizeLimit, OFFSET__pHeapSizeLimit);}
+    public void pHeapSizeLimit(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pHeapSizeLimit, OFFSET__pHeapSizeLimit, value);}
+    public java.lang.foreign.MemorySegment $pHeapSizeLimit() {return this.ptr.asSlice(OFFSET__pHeapSizeLimit, LAYOUT__pHeapSizeLimit);}
 
-    public java.lang.foreign.MemorySegment instance() {return this.ptr.get(LAYOUT$instance, OFFSET$instance);}
-    public void instance(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$instance, OFFSET$instance, value);}
-    public java.lang.foreign.MemorySegment instance_ptr() {return this.ptr.asSlice(OFFSET$instance, LAYOUT$instance);}
+    public java.lang.foreign.MemorySegment pVulkanFunctions() {return this.ptr.get(LAYOUT__pVulkanFunctions, OFFSET__pVulkanFunctions);}
+    public void pVulkanFunctions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pVulkanFunctions, OFFSET__pVulkanFunctions, value);}
+    public java.lang.foreign.MemorySegment $pVulkanFunctions() {return this.ptr.asSlice(OFFSET__pVulkanFunctions, LAYOUT__pVulkanFunctions);}
 
-    public int vulkanApiVersion() {return this.ptr.get(LAYOUT$vulkanApiVersion, OFFSET$vulkanApiVersion);}
-    public void vulkanApiVersion(int value) {this.ptr.set(LAYOUT$vulkanApiVersion, OFFSET$vulkanApiVersion, value);}
-    public java.lang.foreign.MemorySegment vulkanApiVersion_ptr() {return this.ptr.asSlice(OFFSET$vulkanApiVersion, LAYOUT$vulkanApiVersion);}
+    public java.lang.foreign.MemorySegment instance() {return this.ptr.get(LAYOUT__instance, OFFSET__instance);}
+    public void instance(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__instance, OFFSET__instance, value);}
+    public java.lang.foreign.MemorySegment $instance() {return this.ptr.asSlice(OFFSET__instance, LAYOUT__instance);}
 
-    public java.lang.foreign.MemorySegment pTypeExternalMemoryHandleTypes() {return this.ptr.get(LAYOUT$pTypeExternalMemoryHandleTypes, OFFSET$pTypeExternalMemoryHandleTypes);}
-    public void pTypeExternalMemoryHandleTypes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pTypeExternalMemoryHandleTypes, OFFSET$pTypeExternalMemoryHandleTypes, value);}
-    public java.lang.foreign.MemorySegment pTypeExternalMemoryHandleTypes_ptr() {return this.ptr.asSlice(OFFSET$pTypeExternalMemoryHandleTypes, LAYOUT$pTypeExternalMemoryHandleTypes);}
+    public int vulkanApiVersion() {return this.ptr.get(LAYOUT__vulkanApiVersion, OFFSET__vulkanApiVersion);}
+    public void vulkanApiVersion(int value) {this.ptr.set(LAYOUT__vulkanApiVersion, OFFSET__vulkanApiVersion, value);}
+    public java.lang.foreign.MemorySegment $vulkanApiVersion() {return this.ptr.asSlice(OFFSET__vulkanApiVersion, LAYOUT__vulkanApiVersion);}
+
+    public java.lang.foreign.MemorySegment pTypeExternalMemoryHandleTypes() {return this.ptr.get(LAYOUT__pTypeExternalMemoryHandleTypes, OFFSET__pTypeExternalMemoryHandleTypes);}
+    public void pTypeExternalMemoryHandleTypes(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pTypeExternalMemoryHandleTypes, OFFSET__pTypeExternalMemoryHandleTypes, value);}
+    public java.lang.foreign.MemorySegment $pTypeExternalMemoryHandleTypes() {return this.ptr.asSlice(OFFSET__pTypeExternalMemoryHandleTypes, LAYOUT__pTypeExternalMemoryHandleTypes);}
 }

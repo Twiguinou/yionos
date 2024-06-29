@@ -2,32 +2,37 @@ package nuklear;
 
 public record nk_command(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$type = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$type = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$next = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$next = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__type = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__next = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__next = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$type,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__type,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$next
-    ).withName("nk_command");
+            LAYOUT__next
+    ).withByteAlignment(8).withName("nk_command");
 
     public nk_command(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_command getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_command getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_command(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_command(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int type() {return this._ptr.get(LAYOUT$type, OFFSET$type);}
-    public void type(int value) {this._ptr.set(LAYOUT$type, OFFSET$type, value);}
-    public java.lang.foreign.MemorySegment type_ptr() {return this._ptr.asSlice(OFFSET$type, LAYOUT$type);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_command value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long next() {return this._ptr.get(LAYOUT$next, OFFSET$next);}
-    public void next(long value) {this._ptr.set(LAYOUT$next, OFFSET$next, value);}
-    public java.lang.foreign.MemorySegment next_ptr() {return this._ptr.asSlice(OFFSET$next, LAYOUT$next);}
+    public int type() {return this._ptr.get(LAYOUT__type, OFFSET__type);}
+    public void type(int value) {this._ptr.set(LAYOUT__type, OFFSET__type, value);}
+    public java.lang.foreign.MemorySegment $type() {return this._ptr.asSlice(OFFSET__type, LAYOUT__type);}
+
+    public long next() {return this._ptr.get(LAYOUT__next, OFFSET__next);}
+    public void next(long value) {this._ptr.set(LAYOUT__next, OFFSET__next, value);}
+    public java.lang.foreign.MemorySegment $next() {return this._ptr.asSlice(OFFSET__next, LAYOUT__next);}
 }

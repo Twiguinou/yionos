@@ -2,73 +2,78 @@ package assimp;
 
 public record aiMemoryInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$textures = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$textures = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$materials = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$materials = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$meshes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$meshes = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$nodes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$nodes = 12L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$animations = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$animations = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$cameras = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$cameras = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$lights = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$lights = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$total = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$total = 28L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__textures = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__materials = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__materials = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__meshes = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nodes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__nodes = 12;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__animations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__animations = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cameras = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__cameras = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__lights = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__total = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__total = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$textures,
-            LAYOUT$materials,
-            LAYOUT$meshes,
-            LAYOUT$nodes,
-            LAYOUT$animations,
-            LAYOUT$cameras,
-            LAYOUT$lights,
-            LAYOUT$total
-    ).withName("aiMemoryInfo");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__textures,
+            LAYOUT__materials,
+            LAYOUT__meshes,
+            LAYOUT__nodes,
+            LAYOUT__animations,
+            LAYOUT__cameras,
+            LAYOUT__lights,
+            LAYOUT__total
+    ).withByteAlignment(4).withName("aiMemoryInfo");
 
     public aiMemoryInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiMemoryInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiMemoryInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiMemoryInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiMemoryInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int textures() {return this.ptr.get(LAYOUT$textures, OFFSET$textures);}
-    public void textures(int value) {this.ptr.set(LAYOUT$textures, OFFSET$textures, value);}
-    public java.lang.foreign.MemorySegment textures_ptr() {return this.ptr.asSlice(OFFSET$textures, LAYOUT$textures);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiMemoryInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int materials() {return this.ptr.get(LAYOUT$materials, OFFSET$materials);}
-    public void materials(int value) {this.ptr.set(LAYOUT$materials, OFFSET$materials, value);}
-    public java.lang.foreign.MemorySegment materials_ptr() {return this.ptr.asSlice(OFFSET$materials, LAYOUT$materials);}
+    public int textures() {return this.ptr.get(LAYOUT__textures, OFFSET__textures);}
+    public void textures(int value) {this.ptr.set(LAYOUT__textures, OFFSET__textures, value);}
+    public java.lang.foreign.MemorySegment $textures() {return this.ptr.asSlice(OFFSET__textures, LAYOUT__textures);}
 
-    public int meshes() {return this.ptr.get(LAYOUT$meshes, OFFSET$meshes);}
-    public void meshes(int value) {this.ptr.set(LAYOUT$meshes, OFFSET$meshes, value);}
-    public java.lang.foreign.MemorySegment meshes_ptr() {return this.ptr.asSlice(OFFSET$meshes, LAYOUT$meshes);}
+    public int materials() {return this.ptr.get(LAYOUT__materials, OFFSET__materials);}
+    public void materials(int value) {this.ptr.set(LAYOUT__materials, OFFSET__materials, value);}
+    public java.lang.foreign.MemorySegment $materials() {return this.ptr.asSlice(OFFSET__materials, LAYOUT__materials);}
 
-    public int nodes() {return this.ptr.get(LAYOUT$nodes, OFFSET$nodes);}
-    public void nodes(int value) {this.ptr.set(LAYOUT$nodes, OFFSET$nodes, value);}
-    public java.lang.foreign.MemorySegment nodes_ptr() {return this.ptr.asSlice(OFFSET$nodes, LAYOUT$nodes);}
+    public int meshes() {return this.ptr.get(LAYOUT__meshes, OFFSET__meshes);}
+    public void meshes(int value) {this.ptr.set(LAYOUT__meshes, OFFSET__meshes, value);}
+    public java.lang.foreign.MemorySegment $meshes() {return this.ptr.asSlice(OFFSET__meshes, LAYOUT__meshes);}
 
-    public int animations() {return this.ptr.get(LAYOUT$animations, OFFSET$animations);}
-    public void animations(int value) {this.ptr.set(LAYOUT$animations, OFFSET$animations, value);}
-    public java.lang.foreign.MemorySegment animations_ptr() {return this.ptr.asSlice(OFFSET$animations, LAYOUT$animations);}
+    public int nodes() {return this.ptr.get(LAYOUT__nodes, OFFSET__nodes);}
+    public void nodes(int value) {this.ptr.set(LAYOUT__nodes, OFFSET__nodes, value);}
+    public java.lang.foreign.MemorySegment $nodes() {return this.ptr.asSlice(OFFSET__nodes, LAYOUT__nodes);}
 
-    public int cameras() {return this.ptr.get(LAYOUT$cameras, OFFSET$cameras);}
-    public void cameras(int value) {this.ptr.set(LAYOUT$cameras, OFFSET$cameras, value);}
-    public java.lang.foreign.MemorySegment cameras_ptr() {return this.ptr.asSlice(OFFSET$cameras, LAYOUT$cameras);}
+    public int animations() {return this.ptr.get(LAYOUT__animations, OFFSET__animations);}
+    public void animations(int value) {this.ptr.set(LAYOUT__animations, OFFSET__animations, value);}
+    public java.lang.foreign.MemorySegment $animations() {return this.ptr.asSlice(OFFSET__animations, LAYOUT__animations);}
 
-    public int lights() {return this.ptr.get(LAYOUT$lights, OFFSET$lights);}
-    public void lights(int value) {this.ptr.set(LAYOUT$lights, OFFSET$lights, value);}
-    public java.lang.foreign.MemorySegment lights_ptr() {return this.ptr.asSlice(OFFSET$lights, LAYOUT$lights);}
+    public int cameras() {return this.ptr.get(LAYOUT__cameras, OFFSET__cameras);}
+    public void cameras(int value) {this.ptr.set(LAYOUT__cameras, OFFSET__cameras, value);}
+    public java.lang.foreign.MemorySegment $cameras() {return this.ptr.asSlice(OFFSET__cameras, LAYOUT__cameras);}
 
-    public int total() {return this.ptr.get(LAYOUT$total, OFFSET$total);}
-    public void total(int value) {this.ptr.set(LAYOUT$total, OFFSET$total, value);}
-    public java.lang.foreign.MemorySegment total_ptr() {return this.ptr.asSlice(OFFSET$total, LAYOUT$total);}
+    public int lights() {return this.ptr.get(LAYOUT__lights, OFFSET__lights);}
+    public void lights(int value) {this.ptr.set(LAYOUT__lights, OFFSET__lights, value);}
+    public java.lang.foreign.MemorySegment $lights() {return this.ptr.asSlice(OFFSET__lights, LAYOUT__lights);}
+
+    public int total() {return this.ptr.get(LAYOUT__total, OFFSET__total);}
+    public void total(int value) {this.ptr.set(LAYOUT__total, OFFSET__total, value);}
+    public java.lang.foreign.MemorySegment $total() {return this.ptr.asSlice(OFFSET__total, LAYOUT__total);}
 }

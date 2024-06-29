@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceFaultFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceFault = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceFault = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$deviceFaultVendorBinary = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$deviceFaultVendorBinary = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceFault = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceFault = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceFaultVendorBinary = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__deviceFaultVendorBinary = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$deviceFault,
-            LAYOUT$deviceFaultVendorBinary
-    ).withName("VkPhysicalDeviceFaultFeaturesEXT");
+            LAYOUT__pNext,
+            LAYOUT__deviceFault,
+            LAYOUT__deviceFaultVendorBinary
+    ).withByteAlignment(8).withName("VkPhysicalDeviceFaultFeaturesEXT");
 
     public VkPhysicalDeviceFaultFeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceFaultFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceFaultFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceFaultFeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceFaultFeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceFaultFeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int deviceFault() {return this.ptr.get(LAYOUT$deviceFault, OFFSET$deviceFault);}
-    public void deviceFault(int value) {this.ptr.set(LAYOUT$deviceFault, OFFSET$deviceFault, value);}
-    public java.lang.foreign.MemorySegment deviceFault_ptr() {return this.ptr.asSlice(OFFSET$deviceFault, LAYOUT$deviceFault);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int deviceFaultVendorBinary() {return this.ptr.get(LAYOUT$deviceFaultVendorBinary, OFFSET$deviceFaultVendorBinary);}
-    public void deviceFaultVendorBinary(int value) {this.ptr.set(LAYOUT$deviceFaultVendorBinary, OFFSET$deviceFaultVendorBinary, value);}
-    public java.lang.foreign.MemorySegment deviceFaultVendorBinary_ptr() {return this.ptr.asSlice(OFFSET$deviceFaultVendorBinary, LAYOUT$deviceFaultVendorBinary);}
+    public int deviceFault() {return this.ptr.get(LAYOUT__deviceFault, OFFSET__deviceFault);}
+    public void deviceFault(int value) {this.ptr.set(LAYOUT__deviceFault, OFFSET__deviceFault, value);}
+    public java.lang.foreign.MemorySegment $deviceFault() {return this.ptr.asSlice(OFFSET__deviceFault, LAYOUT__deviceFault);}
+
+    public int deviceFaultVendorBinary() {return this.ptr.get(LAYOUT__deviceFaultVendorBinary, OFFSET__deviceFaultVendorBinary);}
+    public void deviceFaultVendorBinary(int value) {this.ptr.set(LAYOUT__deviceFaultVendorBinary, OFFSET__deviceFaultVendorBinary, value);}
+    public java.lang.foreign.MemorySegment $deviceFaultVendorBinary() {return this.ptr.asSlice(OFFSET__deviceFaultVendorBinary, LAYOUT__deviceFaultVendorBinary);}
 }

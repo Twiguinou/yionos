@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPipelineCreationFeedbackCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pPipelineCreationFeedback = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pPipelineCreationFeedback = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pipelineStageCreationFeedbackCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pipelineStageCreationFeedbackCount = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pPipelineStageCreationFeedbacks = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pPipelineStageCreationFeedbacks = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPipelineCreationFeedback = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pPipelineCreationFeedback = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineStageCreationFeedbackCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pipelineStageCreationFeedbackCount = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPipelineStageCreationFeedbacks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pPipelineStageCreationFeedbacks = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$pPipelineCreationFeedback,
-            LAYOUT$pipelineStageCreationFeedbackCount,
+            LAYOUT__pNext,
+            LAYOUT__pPipelineCreationFeedback,
+            LAYOUT__pipelineStageCreationFeedbackCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pPipelineStageCreationFeedbacks
-    ).withName("VkPipelineCreationFeedbackCreateInfo");
+            LAYOUT__pPipelineStageCreationFeedbacks
+    ).withByteAlignment(8).withName("VkPipelineCreationFeedbackCreateInfo");
 
     public VkPipelineCreationFeedbackCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineCreationFeedbackCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineCreationFeedbackCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineCreationFeedbackCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineCreationFeedbackCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineCreationFeedbackCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment pPipelineCreationFeedback() {return this.ptr.get(LAYOUT$pPipelineCreationFeedback, OFFSET$pPipelineCreationFeedback);}
-    public void pPipelineCreationFeedback(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pPipelineCreationFeedback, OFFSET$pPipelineCreationFeedback, value);}
-    public java.lang.foreign.MemorySegment pPipelineCreationFeedback_ptr() {return this.ptr.asSlice(OFFSET$pPipelineCreationFeedback, LAYOUT$pPipelineCreationFeedback);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int pipelineStageCreationFeedbackCount() {return this.ptr.get(LAYOUT$pipelineStageCreationFeedbackCount, OFFSET$pipelineStageCreationFeedbackCount);}
-    public void pipelineStageCreationFeedbackCount(int value) {this.ptr.set(LAYOUT$pipelineStageCreationFeedbackCount, OFFSET$pipelineStageCreationFeedbackCount, value);}
-    public java.lang.foreign.MemorySegment pipelineStageCreationFeedbackCount_ptr() {return this.ptr.asSlice(OFFSET$pipelineStageCreationFeedbackCount, LAYOUT$pipelineStageCreationFeedbackCount);}
+    public java.lang.foreign.MemorySegment pPipelineCreationFeedback() {return this.ptr.get(LAYOUT__pPipelineCreationFeedback, OFFSET__pPipelineCreationFeedback);}
+    public void pPipelineCreationFeedback(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pPipelineCreationFeedback, OFFSET__pPipelineCreationFeedback, value);}
+    public java.lang.foreign.MemorySegment $pPipelineCreationFeedback() {return this.ptr.asSlice(OFFSET__pPipelineCreationFeedback, LAYOUT__pPipelineCreationFeedback);}
 
-    public java.lang.foreign.MemorySegment pPipelineStageCreationFeedbacks() {return this.ptr.get(LAYOUT$pPipelineStageCreationFeedbacks, OFFSET$pPipelineStageCreationFeedbacks);}
-    public void pPipelineStageCreationFeedbacks(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pPipelineStageCreationFeedbacks, OFFSET$pPipelineStageCreationFeedbacks, value);}
-    public java.lang.foreign.MemorySegment pPipelineStageCreationFeedbacks_ptr() {return this.ptr.asSlice(OFFSET$pPipelineStageCreationFeedbacks, LAYOUT$pPipelineStageCreationFeedbacks);}
+    public int pipelineStageCreationFeedbackCount() {return this.ptr.get(LAYOUT__pipelineStageCreationFeedbackCount, OFFSET__pipelineStageCreationFeedbackCount);}
+    public void pipelineStageCreationFeedbackCount(int value) {this.ptr.set(LAYOUT__pipelineStageCreationFeedbackCount, OFFSET__pipelineStageCreationFeedbackCount, value);}
+    public java.lang.foreign.MemorySegment $pipelineStageCreationFeedbackCount() {return this.ptr.asSlice(OFFSET__pipelineStageCreationFeedbackCount, LAYOUT__pipelineStageCreationFeedbackCount);}
+
+    public java.lang.foreign.MemorySegment pPipelineStageCreationFeedbacks() {return this.ptr.get(LAYOUT__pPipelineStageCreationFeedbacks, OFFSET__pPipelineStageCreationFeedbacks);}
+    public void pPipelineStageCreationFeedbacks(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pPipelineStageCreationFeedbacks, OFFSET__pPipelineStageCreationFeedbacks, value);}
+    public java.lang.foreign.MemorySegment $pPipelineStageCreationFeedbacks() {return this.ptr.asSlice(OFFSET__pPipelineStageCreationFeedbacks, LAYOUT__pPipelineStageCreationFeedbacks);}
 }

@@ -8,7 +8,6 @@ import yionos.demo.rendering.VulkanException;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkBlendFactor.*;
@@ -24,6 +23,7 @@ import static vulkan.VkStructureType.*;
 import static vulkan.VkDynamicState.*;
 import static vulkan.VkFormat.*;
 import static vulkan.VkVertexInputRate.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public record Pipelines(LogicalDevice logicalDevice,
@@ -101,7 +101,7 @@ public record Pipelines(LogicalDevice logicalDevice,
         VkPipelineDynamicStateCreateInfo dynamicStateCreateInfo = new VkPipelineDynamicStateCreateInfo(allocator);
         dynamicStateCreateInfo.sType(VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO);
         dynamicStateCreateInfo.dynamicStateCount(2);
-        dynamicStateCreateInfo.pDynamicStates(allocator.allocateArray(ValueLayout.JAVA_INT, VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR));
+        dynamicStateCreateInfo.pDynamicStates(allocator.allocateFrom(JAVA_INT, VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR));
 
         VkPipelineLayoutCreateInfo layoutCreateInfo = new VkPipelineLayoutCreateInfo(allocator);
         layoutCreateInfo.sType(VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO);
@@ -122,19 +122,19 @@ public record Pipelines(LogicalDevice logicalDevice,
         pipelineCreateInfo.subpass(0);
         pipelineCreateInfo.basePipelineIndex(-1);
 
-        MemorySegment pStages = allocator.allocateArray(VkPipelineShaderStageCreateInfo.gStructLayout, 2);
+        MemorySegment pStages = allocator.allocate(VkPipelineShaderStageCreateInfo.gRecordLayout, 2);
 
         VkPipelineShaderStageCreateInfo vertexShaderStage = VkPipelineShaderStageCreateInfo.getAtIndex(pStages, 0);
         vertexShaderStage.sType(VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO);
         vertexShaderStage.stage(shaders.vertex().stage());
         vertexShaderStage.module(shaders.vertex().handle());
-        vertexShaderStage.pName(allocator.allocateUtf8String(shaders.vertex().entryPoint()));
+        vertexShaderStage.pName(allocator.allocateFrom(shaders.vertex().entryPoint()));
 
         VkPipelineShaderStageCreateInfo fragmentShaderStage = VkPipelineShaderStageCreateInfo.getAtIndex(pStages, 1);
         fragmentShaderStage.sType(VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO);
         fragmentShaderStage.stage(shaders.fragment().stage());
         fragmentShaderStage.module(shaders.fragment().handle());
-        fragmentShaderStage.pName(allocator.allocateUtf8String(shaders.fragment().entryPoint()));
+        fragmentShaderStage.pName(allocator.allocateFrom(shaders.fragment().entryPoint()));
 
         pipelineCreateInfo.stageCount(2);
         pipelineCreateInfo.pStages(pStages);
@@ -144,21 +144,21 @@ public record Pipelines(LogicalDevice logicalDevice,
 
     private static MemorySegment buildGraphicsPipeline(SegmentAllocator allocator, VkDevice device, MemorySegment pPipelineCreateInfo) throws VulkanException
     {
-        MemorySegment pPipeline = allocator.allocate(ValueLayout.ADDRESS);
+        MemorySegment pPipeline = allocator.allocate(ADDRESS);
         VulkanException.check(vkCreateGraphicsPipelines(device, NULL, 1, pPipelineCreateInfo, NULL, pPipeline), "Unable to create graphics pipeline");
-        return pPipeline.get(ValueLayout.ADDRESS, 0);
+        return pPipeline.get(ADDRESS, 0);
     }
 
     private static void appendLineDynamicState(SegmentAllocator allocator, VkGraphicsPipelineCreateInfo pipelineCreateInfo)
     {
-        VkPipelineDynamicStateCreateInfo dynamicStateCreateInfo = new VkPipelineDynamicStateCreateInfo(pipelineCreateInfo.pDynamicState().reinterpret(VkPipelineDynamicStateCreateInfo.gStructLayout.byteSize()));
+        VkPipelineDynamicStateCreateInfo dynamicStateCreateInfo = new VkPipelineDynamicStateCreateInfo(pipelineCreateInfo.pDynamicState());
 
-        MemorySegment oldDynamicStates = dynamicStateCreateInfo.pDynamicStates().reinterpret(ValueLayout.JAVA_INT.byteSize() * dynamicStateCreateInfo.dynamicStateCount());
+        MemorySegment oldDynamicStates = dynamicStateCreateInfo.pDynamicStates().reinterpret(JAVA_INT.byteSize() * dynamicStateCreateInfo.dynamicStateCount());
 
         boolean hasDynamicLineWidth = false;
         for (int i = 0; i < dynamicStateCreateInfo.dynamicStateCount(); i++)
         {
-            if (oldDynamicStates.getAtIndex(ValueLayout.JAVA_INT, i) == VK_DYNAMIC_STATE_LINE_WIDTH)
+            if (oldDynamicStates.getAtIndex(JAVA_INT, i) == VK_DYNAMIC_STATE_LINE_WIDTH)
             {
                 hasDynamicLineWidth = true;
                 break;
@@ -167,9 +167,9 @@ public record Pipelines(LogicalDevice logicalDevice,
 
         if (!hasDynamicLineWidth)
         {
-            MemorySegment dynamicStates = allocator.allocateArray(ValueLayout.JAVA_INT, dynamicStateCreateInfo.dynamicStateCount() + 1);
+            MemorySegment dynamicStates = allocator.allocate(JAVA_INT, dynamicStateCreateInfo.dynamicStateCount() + 1);
             dynamicStates.copyFrom(oldDynamicStates);
-            dynamicStates.setAtIndex(ValueLayout.JAVA_INT, dynamicStateCreateInfo.dynamicStateCount(), VK_DYNAMIC_STATE_LINE_WIDTH);
+            dynamicStates.setAtIndex(JAVA_INT, dynamicStateCreateInfo.dynamicStateCount(), VK_DYNAMIC_STATE_LINE_WIDTH);
 
             dynamicStateCreateInfo.dynamicStateCount(dynamicStateCreateInfo.dynamicStateCount() + 1);
             dynamicStateCreateInfo.pDynamicStates(dynamicStates);
@@ -196,7 +196,7 @@ public record Pipelines(LogicalDevice logicalDevice,
             attribute0.format(VK_FORMAT_R32G32_SFLOAT);
             attribute0.offset(0);
 
-            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState());
             vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
@@ -220,7 +220,7 @@ public record Pipelines(LogicalDevice logicalDevice,
             attribute0.format(VK_FORMAT_R32G32B32_SFLOAT);
             attribute0.offset(0);
 
-            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState());
             vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
@@ -230,7 +230,7 @@ public record Pipelines(LogicalDevice logicalDevice,
 
             if (hasWireframes)
             {
-                VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo(pipelineCreateInfo.pRasterizationState().reinterpret(VkPipelineRasterizationStateCreateInfo.gStructLayout.byteSize()));
+                VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo(pipelineCreateInfo.pRasterizationState());
                 rasterizationStateCreateInfo.polygonMode(VK_POLYGON_MODE_LINE);
                 rasterizationStateCreateInfo.cullMode(VK_CULL_MODE_NONE);
 
@@ -262,7 +262,7 @@ public record Pipelines(LogicalDevice logicalDevice,
             attribute0.format(VK_FORMAT_R32G32B32_SFLOAT);
             attribute0.offset(0);
 
-            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState());
             vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(1);
@@ -281,7 +281,7 @@ public record Pipelines(LogicalDevice logicalDevice,
             binding0.stride(4 * Float.BYTES + 4);
             binding0.inputRate(VK_VERTEX_INPUT_RATE_VERTEX);
 
-            MemorySegment attributes = arena.allocateArray(VkVertexInputAttributeDescription.gStructLayout, 3);
+            MemorySegment attributes = arena.allocate(VkVertexInputAttributeDescription.gRecordLayout, 3);
             VkVertexInputAttributeDescription attribute;
 
             attribute = VkVertexInputAttributeDescription.getAtIndex(attributes, 0);
@@ -299,13 +299,13 @@ public record Pipelines(LogicalDevice logicalDevice,
             attribute.format(VK_FORMAT_R8G8B8A8_UINT);
             attribute.offset(4 * Float.BYTES);
 
-            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState().reinterpret(VkPipelineVertexInputStateCreateInfo.gStructLayout.byteSize()));
+            VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo(pipelineCreateInfo.pVertexInputState());
             vertexInputStateCreateInfo.vertexBindingDescriptionCount(1);
             vertexInputStateCreateInfo.pVertexBindingDescriptions(binding0.ptr());
             vertexInputStateCreateInfo.vertexAttributeDescriptionCount(3);
             vertexInputStateCreateInfo.pVertexAttributeDescriptions(attributes);
 
-            VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo(pipelineCreateInfo.pRasterizationState().reinterpret(VkPipelineRasterizationStateCreateInfo.gStructLayout.byteSize()));
+            VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo(pipelineCreateInfo.pRasterizationState());
             rasterizationStateCreateInfo.depthClampEnable(VK_FALSE);
             rasterizationStateCreateInfo.cullMode(VK_CULL_MODE_FRONT_BIT);
 

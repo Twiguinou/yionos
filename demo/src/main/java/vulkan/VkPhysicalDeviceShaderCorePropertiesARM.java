@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceShaderCorePropertiesARM(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pixelRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pixelRate = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$texelRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$texelRate = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fmaRate = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fmaRate = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pixelRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pixelRate = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__texelRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__texelRate = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fmaRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fmaRate = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$pixelRate,
-            LAYOUT$texelRate,
-            LAYOUT$fmaRate,
+            LAYOUT__pNext,
+            LAYOUT__pixelRate,
+            LAYOUT__texelRate,
+            LAYOUT__fmaRate,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceShaderCorePropertiesARM");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceShaderCorePropertiesARM");
 
     public VkPhysicalDeviceShaderCorePropertiesARM(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceShaderCorePropertiesARM getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceShaderCorePropertiesARM getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceShaderCorePropertiesARM(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceShaderCorePropertiesARM(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceShaderCorePropertiesARM value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int pixelRate() {return this.ptr.get(LAYOUT$pixelRate, OFFSET$pixelRate);}
-    public void pixelRate(int value) {this.ptr.set(LAYOUT$pixelRate, OFFSET$pixelRate, value);}
-    public java.lang.foreign.MemorySegment pixelRate_ptr() {return this.ptr.asSlice(OFFSET$pixelRate, LAYOUT$pixelRate);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int texelRate() {return this.ptr.get(LAYOUT$texelRate, OFFSET$texelRate);}
-    public void texelRate(int value) {this.ptr.set(LAYOUT$texelRate, OFFSET$texelRate, value);}
-    public java.lang.foreign.MemorySegment texelRate_ptr() {return this.ptr.asSlice(OFFSET$texelRate, LAYOUT$texelRate);}
+    public int pixelRate() {return this.ptr.get(LAYOUT__pixelRate, OFFSET__pixelRate);}
+    public void pixelRate(int value) {this.ptr.set(LAYOUT__pixelRate, OFFSET__pixelRate, value);}
+    public java.lang.foreign.MemorySegment $pixelRate() {return this.ptr.asSlice(OFFSET__pixelRate, LAYOUT__pixelRate);}
 
-    public int fmaRate() {return this.ptr.get(LAYOUT$fmaRate, OFFSET$fmaRate);}
-    public void fmaRate(int value) {this.ptr.set(LAYOUT$fmaRate, OFFSET$fmaRate, value);}
-    public java.lang.foreign.MemorySegment fmaRate_ptr() {return this.ptr.asSlice(OFFSET$fmaRate, LAYOUT$fmaRate);}
+    public int texelRate() {return this.ptr.get(LAYOUT__texelRate, OFFSET__texelRate);}
+    public void texelRate(int value) {this.ptr.set(LAYOUT__texelRate, OFFSET__texelRate, value);}
+    public java.lang.foreign.MemorySegment $texelRate() {return this.ptr.asSlice(OFFSET__texelRate, LAYOUT__texelRate);}
+
+    public int fmaRate() {return this.ptr.get(LAYOUT__fmaRate, OFFSET__fmaRate);}
+    public void fmaRate(int value) {this.ptr.set(LAYOUT__fmaRate, OFFSET__fmaRate, value);}
+    public java.lang.foreign.MemorySegment $fmaRate() {return this.ptr.asSlice(OFFSET__fmaRate, LAYOUT__fmaRate);}
 }

@@ -2,54 +2,59 @@ package nuklear;
 
 public record nk_command_polygon(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$header = nuklear.nk_command.gStructLayout;
-    public static final long OFFSET$header = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$color = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$color = 16L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$line_thickness = 20L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$point_count = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$point_count = 22L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$points = java.lang.foreign.MemoryLayout.sequenceLayout(1, nuklear.nk_vec2i.gStructLayout);
-    public static final long OFFSET$points = 24L;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final long OFFSET__header = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__color = 16;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__line_thickness = 20;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__point_count = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__point_count = 22;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__points = java.lang.foreign.MemoryLayout.sequenceLayout(1, nuklear.nk_vec2i.gRecordLayout);
+    public static final long OFFSET__points = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$header,
-            LAYOUT$color,
-            LAYOUT$line_thickness,
-            LAYOUT$point_count,
-            LAYOUT$points,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__header,
+            LAYOUT__color,
+            LAYOUT__line_thickness,
+            LAYOUT__point_count,
+            LAYOUT__points,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_command_polygon");
+    ).withByteAlignment(8).withName("nk_command_polygon");
 
     public nk_command_polygon(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_command_polygon getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_command_polygon getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_command_polygon(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_command_polygon(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_command header() {return new nuklear.nk_command(this._ptr.asSlice(OFFSET$header, LAYOUT$header));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_command_polygon value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_command header() {return new nuklear.nk_command(this._ptr.asSlice(OFFSET__header, LAYOUT__header));}
     public void header(java.util.function.Consumer<nuklear.nk_command> consumer) {consumer.accept(this.header());}
-    public void header(nuklear.nk_command value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$header, LAYOUT$header.byteSize());}
+    public void header(nuklear.nk_command value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__header, LAYOUT__header.byteSize());}
 
-    public nuklear.nk_color color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$color, LAYOUT$color));}
+    public nuklear.nk_color color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__color, LAYOUT__color));}
     public void color(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.color());}
-    public void color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$color, LAYOUT$color.byteSize());}
+    public void color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__color, LAYOUT__color.byteSize());}
 
-    public short line_thickness() {return this._ptr.get(LAYOUT$line_thickness, OFFSET$line_thickness);}
-    public void line_thickness(short value) {this._ptr.set(LAYOUT$line_thickness, OFFSET$line_thickness, value);}
-    public java.lang.foreign.MemorySegment line_thickness_ptr() {return this._ptr.asSlice(OFFSET$line_thickness, LAYOUT$line_thickness);}
+    public short line_thickness() {return this._ptr.get(LAYOUT__line_thickness, OFFSET__line_thickness);}
+    public void line_thickness(short value) {this._ptr.set(LAYOUT__line_thickness, OFFSET__line_thickness, value);}
+    public java.lang.foreign.MemorySegment $line_thickness() {return this._ptr.asSlice(OFFSET__line_thickness, LAYOUT__line_thickness);}
 
-    public short point_count() {return this._ptr.get(LAYOUT$point_count, OFFSET$point_count);}
-    public void point_count(short value) {this._ptr.set(LAYOUT$point_count, OFFSET$point_count, value);}
-    public java.lang.foreign.MemorySegment point_count_ptr() {return this._ptr.asSlice(OFFSET$point_count, LAYOUT$point_count);}
+    public short point_count() {return this._ptr.get(LAYOUT__point_count, OFFSET__point_count);}
+    public void point_count(short value) {this._ptr.set(LAYOUT__point_count, OFFSET__point_count, value);}
+    public java.lang.foreign.MemorySegment $point_count() {return this._ptr.asSlice(OFFSET__point_count, LAYOUT__point_count);}
 
-    public java.lang.foreign.MemorySegment points() {return this._ptr.asSlice(OFFSET$points, LAYOUT$points);}
-    public nuklear.nk_vec2i points(int i) {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET$points + i * LAYOUT$points.byteSize(), LAYOUT$points));}
-    public void points(int i, java.util.function.Consumer<nuklear.nk_vec2i> consumer) {consumer.accept(this.points(i));}
-    public void points(int i, nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$points + i * LAYOUT$points.byteSize(), LAYOUT$points.byteSize());}
+    public java.lang.foreign.MemorySegment points() {return this._ptr.asSlice(OFFSET__points, LAYOUT__points);}
+    public nuklear.nk_vec2i points(int index) {return nuklear.nk_vec2i.getAtIndex(this.points(), index);}
+    public void points(int index, java.util.function.Consumer<nuklear.nk_vec2i> consumer) {consumer.accept(this.points(index));}
+    public void points(int index, nuklear.nk_vec2i value) {nuklear.nk_vec2i.setAtIndex(this.points(), index, value);}
 }

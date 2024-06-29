@@ -2,101 +2,106 @@ package vulkan;
 
 public record StdVideoEncodeH265PictureInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$flags = vulkan.StdVideoEncodeH265PictureInfoFlags.gStructLayout;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pic_type = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pic_type = 4L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$sps_video_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$sps_video_parameter_set_id = 8L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$pps_seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$pps_seq_parameter_set_id = 9L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$pps_pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$pps_pic_parameter_set_id = 10L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$short_term_ref_pic_set_idx = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$short_term_ref_pic_set_idx = 11L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$PicOrderCntVal = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$PicOrderCntVal = 12L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$TemporalId = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$TemporalId = 16L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$reserved1 = 17L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRefLists = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRefLists = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pShortTermRefPicSet = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pShortTermRefPicSet = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pLongTermRefPics = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pLongTermRefPics = 40L;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH265PictureInfoFlags.gRecordLayout;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pic_type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pic_type = 4;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__sps_video_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__sps_video_parameter_set_id = 8;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pps_seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__pps_seq_parameter_set_id = 9;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pps_pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__pps_pic_parameter_set_id = 10;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__short_term_ref_pic_set_idx = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__short_term_ref_pic_set_idx = 11;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCntVal = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__PicOrderCntVal = 12;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TemporalId = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__TemporalId = 16;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__reserved1 = 17;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefLists = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRefLists = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pShortTermRefPicSet = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pShortTermRefPicSet = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pLongTermRefPics = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pLongTermRefPics = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
-            LAYOUT$pic_type,
-            LAYOUT$sps_video_parameter_set_id,
-            LAYOUT$pps_seq_parameter_set_id,
-            LAYOUT$pps_pic_parameter_set_id,
-            LAYOUT$short_term_ref_pic_set_idx,
-            LAYOUT$PicOrderCntVal,
-            LAYOUT$TemporalId,
-            LAYOUT$reserved1,
-            LAYOUT$pRefLists,
-            LAYOUT$pShortTermRefPicSet,
-            LAYOUT$pLongTermRefPics
-    ).withName("StdVideoEncodeH265PictureInfo");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
+            LAYOUT__pic_type,
+            LAYOUT__sps_video_parameter_set_id,
+            LAYOUT__pps_seq_parameter_set_id,
+            LAYOUT__pps_pic_parameter_set_id,
+            LAYOUT__short_term_ref_pic_set_idx,
+            LAYOUT__PicOrderCntVal,
+            LAYOUT__TemporalId,
+            LAYOUT__reserved1,
+            LAYOUT__pRefLists,
+            LAYOUT__pShortTermRefPicSet,
+            LAYOUT__pLongTermRefPics
+    ).withByteAlignment(8).withName("StdVideoEncodeH265PictureInfo");
 
     public StdVideoEncodeH265PictureInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static StdVideoEncodeH265PictureInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static StdVideoEncodeH265PictureInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new StdVideoEncodeH265PictureInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new StdVideoEncodeH265PictureInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.StdVideoEncodeH265PictureInfoFlags flags() {return new vulkan.StdVideoEncodeH265PictureInfoFlags(this.ptr.asSlice(OFFSET$flags, LAYOUT$flags));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, StdVideoEncodeH265PictureInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public vulkan.StdVideoEncodeH265PictureInfoFlags flags() {return new vulkan.StdVideoEncodeH265PictureInfoFlags(this.ptr.asSlice(OFFSET__flags, LAYOUT__flags));}
     public void flags(java.util.function.Consumer<vulkan.StdVideoEncodeH265PictureInfoFlags> consumer) {consumer.accept(this.flags());}
-    public void flags(vulkan.StdVideoEncodeH265PictureInfoFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$flags, LAYOUT$flags.byteSize());}
+    public void flags(vulkan.StdVideoEncodeH265PictureInfoFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__flags, LAYOUT__flags.byteSize());}
 
-    public int pic_type() {return this.ptr.get(LAYOUT$pic_type, OFFSET$pic_type);}
-    public void pic_type(int value) {this.ptr.set(LAYOUT$pic_type, OFFSET$pic_type, value);}
-    public java.lang.foreign.MemorySegment pic_type_ptr() {return this.ptr.asSlice(OFFSET$pic_type, LAYOUT$pic_type);}
+    public int pic_type() {return this.ptr.get(LAYOUT__pic_type, OFFSET__pic_type);}
+    public void pic_type(int value) {this.ptr.set(LAYOUT__pic_type, OFFSET__pic_type, value);}
+    public java.lang.foreign.MemorySegment $pic_type() {return this.ptr.asSlice(OFFSET__pic_type, LAYOUT__pic_type);}
 
-    public char sps_video_parameter_set_id() {return (char)this.ptr.get(LAYOUT$sps_video_parameter_set_id, OFFSET$sps_video_parameter_set_id);}
-    public void sps_video_parameter_set_id(char value) {this.ptr.set(LAYOUT$sps_video_parameter_set_id, OFFSET$sps_video_parameter_set_id, (byte)value);}
-    public java.lang.foreign.MemorySegment sps_video_parameter_set_id_ptr() {return this.ptr.asSlice(OFFSET$sps_video_parameter_set_id, LAYOUT$sps_video_parameter_set_id);}
+    public byte sps_video_parameter_set_id() {return this.ptr.get(LAYOUT__sps_video_parameter_set_id, OFFSET__sps_video_parameter_set_id);}
+    public void sps_video_parameter_set_id(byte value) {this.ptr.set(LAYOUT__sps_video_parameter_set_id, OFFSET__sps_video_parameter_set_id, value);}
+    public java.lang.foreign.MemorySegment $sps_video_parameter_set_id() {return this.ptr.asSlice(OFFSET__sps_video_parameter_set_id, LAYOUT__sps_video_parameter_set_id);}
 
-    public char pps_seq_parameter_set_id() {return (char)this.ptr.get(LAYOUT$pps_seq_parameter_set_id, OFFSET$pps_seq_parameter_set_id);}
-    public void pps_seq_parameter_set_id(char value) {this.ptr.set(LAYOUT$pps_seq_parameter_set_id, OFFSET$pps_seq_parameter_set_id, (byte)value);}
-    public java.lang.foreign.MemorySegment pps_seq_parameter_set_id_ptr() {return this.ptr.asSlice(OFFSET$pps_seq_parameter_set_id, LAYOUT$pps_seq_parameter_set_id);}
+    public byte pps_seq_parameter_set_id() {return this.ptr.get(LAYOUT__pps_seq_parameter_set_id, OFFSET__pps_seq_parameter_set_id);}
+    public void pps_seq_parameter_set_id(byte value) {this.ptr.set(LAYOUT__pps_seq_parameter_set_id, OFFSET__pps_seq_parameter_set_id, value);}
+    public java.lang.foreign.MemorySegment $pps_seq_parameter_set_id() {return this.ptr.asSlice(OFFSET__pps_seq_parameter_set_id, LAYOUT__pps_seq_parameter_set_id);}
 
-    public char pps_pic_parameter_set_id() {return (char)this.ptr.get(LAYOUT$pps_pic_parameter_set_id, OFFSET$pps_pic_parameter_set_id);}
-    public void pps_pic_parameter_set_id(char value) {this.ptr.set(LAYOUT$pps_pic_parameter_set_id, OFFSET$pps_pic_parameter_set_id, (byte)value);}
-    public java.lang.foreign.MemorySegment pps_pic_parameter_set_id_ptr() {return this.ptr.asSlice(OFFSET$pps_pic_parameter_set_id, LAYOUT$pps_pic_parameter_set_id);}
+    public byte pps_pic_parameter_set_id() {return this.ptr.get(LAYOUT__pps_pic_parameter_set_id, OFFSET__pps_pic_parameter_set_id);}
+    public void pps_pic_parameter_set_id(byte value) {this.ptr.set(LAYOUT__pps_pic_parameter_set_id, OFFSET__pps_pic_parameter_set_id, value);}
+    public java.lang.foreign.MemorySegment $pps_pic_parameter_set_id() {return this.ptr.asSlice(OFFSET__pps_pic_parameter_set_id, LAYOUT__pps_pic_parameter_set_id);}
 
-    public char short_term_ref_pic_set_idx() {return (char)this.ptr.get(LAYOUT$short_term_ref_pic_set_idx, OFFSET$short_term_ref_pic_set_idx);}
-    public void short_term_ref_pic_set_idx(char value) {this.ptr.set(LAYOUT$short_term_ref_pic_set_idx, OFFSET$short_term_ref_pic_set_idx, (byte)value);}
-    public java.lang.foreign.MemorySegment short_term_ref_pic_set_idx_ptr() {return this.ptr.asSlice(OFFSET$short_term_ref_pic_set_idx, LAYOUT$short_term_ref_pic_set_idx);}
+    public byte short_term_ref_pic_set_idx() {return this.ptr.get(LAYOUT__short_term_ref_pic_set_idx, OFFSET__short_term_ref_pic_set_idx);}
+    public void short_term_ref_pic_set_idx(byte value) {this.ptr.set(LAYOUT__short_term_ref_pic_set_idx, OFFSET__short_term_ref_pic_set_idx, value);}
+    public java.lang.foreign.MemorySegment $short_term_ref_pic_set_idx() {return this.ptr.asSlice(OFFSET__short_term_ref_pic_set_idx, LAYOUT__short_term_ref_pic_set_idx);}
 
-    public int PicOrderCntVal() {return this.ptr.get(LAYOUT$PicOrderCntVal, OFFSET$PicOrderCntVal);}
-    public void PicOrderCntVal(int value) {this.ptr.set(LAYOUT$PicOrderCntVal, OFFSET$PicOrderCntVal, value);}
-    public java.lang.foreign.MemorySegment PicOrderCntVal_ptr() {return this.ptr.asSlice(OFFSET$PicOrderCntVal, LAYOUT$PicOrderCntVal);}
+    public int PicOrderCntVal() {return this.ptr.get(LAYOUT__PicOrderCntVal, OFFSET__PicOrderCntVal);}
+    public void PicOrderCntVal(int value) {this.ptr.set(LAYOUT__PicOrderCntVal, OFFSET__PicOrderCntVal, value);}
+    public java.lang.foreign.MemorySegment $PicOrderCntVal() {return this.ptr.asSlice(OFFSET__PicOrderCntVal, LAYOUT__PicOrderCntVal);}
 
-    public char TemporalId() {return (char)this.ptr.get(LAYOUT$TemporalId, OFFSET$TemporalId);}
-    public void TemporalId(char value) {this.ptr.set(LAYOUT$TemporalId, OFFSET$TemporalId, (byte)value);}
-    public java.lang.foreign.MemorySegment TemporalId_ptr() {return this.ptr.asSlice(OFFSET$TemporalId, LAYOUT$TemporalId);}
+    public byte TemporalId() {return this.ptr.get(LAYOUT__TemporalId, OFFSET__TemporalId);}
+    public void TemporalId(byte value) {this.ptr.set(LAYOUT__TemporalId, OFFSET__TemporalId, value);}
+    public java.lang.foreign.MemorySegment $TemporalId() {return this.ptr.asSlice(OFFSET__TemporalId, LAYOUT__TemporalId);}
 
-    public java.lang.foreign.MemorySegment reserved1() {return this.ptr.asSlice(OFFSET$reserved1, LAYOUT$reserved1);}
-    public char reserved1(int i) {return (char)this.reserved1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void reserved1(int i, char value) {this.reserved1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment reserved1() {return this.ptr.asSlice(OFFSET__reserved1, LAYOUT__reserved1);}
+    public byte reserved1(int index) {return this.reserved1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void reserved1(int index, byte value) {this.reserved1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public java.lang.foreign.MemorySegment pRefLists() {return this.ptr.get(LAYOUT$pRefLists, OFFSET$pRefLists);}
-    public void pRefLists(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRefLists, OFFSET$pRefLists, value);}
-    public java.lang.foreign.MemorySegment pRefLists_ptr() {return this.ptr.asSlice(OFFSET$pRefLists, LAYOUT$pRefLists);}
+    public java.lang.foreign.MemorySegment pRefLists() {return this.ptr.get(LAYOUT__pRefLists, OFFSET__pRefLists);}
+    public void pRefLists(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRefLists, OFFSET__pRefLists, value);}
+    public java.lang.foreign.MemorySegment $pRefLists() {return this.ptr.asSlice(OFFSET__pRefLists, LAYOUT__pRefLists);}
 
-    public java.lang.foreign.MemorySegment pShortTermRefPicSet() {return this.ptr.get(LAYOUT$pShortTermRefPicSet, OFFSET$pShortTermRefPicSet);}
-    public void pShortTermRefPicSet(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pShortTermRefPicSet, OFFSET$pShortTermRefPicSet, value);}
-    public java.lang.foreign.MemorySegment pShortTermRefPicSet_ptr() {return this.ptr.asSlice(OFFSET$pShortTermRefPicSet, LAYOUT$pShortTermRefPicSet);}
+    public java.lang.foreign.MemorySegment pShortTermRefPicSet() {return this.ptr.get(LAYOUT__pShortTermRefPicSet, OFFSET__pShortTermRefPicSet);}
+    public void pShortTermRefPicSet(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pShortTermRefPicSet, OFFSET__pShortTermRefPicSet, value);}
+    public java.lang.foreign.MemorySegment $pShortTermRefPicSet() {return this.ptr.asSlice(OFFSET__pShortTermRefPicSet, LAYOUT__pShortTermRefPicSet);}
 
-    public java.lang.foreign.MemorySegment pLongTermRefPics() {return this.ptr.get(LAYOUT$pLongTermRefPics, OFFSET$pLongTermRefPics);}
-    public void pLongTermRefPics(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pLongTermRefPics, OFFSET$pLongTermRefPics, value);}
-    public java.lang.foreign.MemorySegment pLongTermRefPics_ptr() {return this.ptr.asSlice(OFFSET$pLongTermRefPics, LAYOUT$pLongTermRefPics);}
+    public java.lang.foreign.MemorySegment pLongTermRefPics() {return this.ptr.get(LAYOUT__pLongTermRefPics, OFFSET__pLongTermRefPics);}
+    public void pLongTermRefPics(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pLongTermRefPics, OFFSET__pLongTermRefPics, value);}
+    public java.lang.foreign.MemorySegment $pLongTermRefPics() {return this.ptr.asSlice(OFFSET__pLongTermRefPics, LAYOUT__pLongTermRefPics);}
 }

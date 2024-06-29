@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceProvokingVertexFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$provokingVertexLast = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$provokingVertexLast = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$transformFeedbackPreservesProvokingVertex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$transformFeedbackPreservesProvokingVertex = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__provokingVertexLast = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__provokingVertexLast = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackPreservesProvokingVertex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__transformFeedbackPreservesProvokingVertex = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$provokingVertexLast,
-            LAYOUT$transformFeedbackPreservesProvokingVertex
-    ).withName("VkPhysicalDeviceProvokingVertexFeaturesEXT");
+            LAYOUT__pNext,
+            LAYOUT__provokingVertexLast,
+            LAYOUT__transformFeedbackPreservesProvokingVertex
+    ).withByteAlignment(8).withName("VkPhysicalDeviceProvokingVertexFeaturesEXT");
 
     public VkPhysicalDeviceProvokingVertexFeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceProvokingVertexFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceProvokingVertexFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceProvokingVertexFeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceProvokingVertexFeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceProvokingVertexFeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int provokingVertexLast() {return this.ptr.get(LAYOUT$provokingVertexLast, OFFSET$provokingVertexLast);}
-    public void provokingVertexLast(int value) {this.ptr.set(LAYOUT$provokingVertexLast, OFFSET$provokingVertexLast, value);}
-    public java.lang.foreign.MemorySegment provokingVertexLast_ptr() {return this.ptr.asSlice(OFFSET$provokingVertexLast, LAYOUT$provokingVertexLast);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int transformFeedbackPreservesProvokingVertex() {return this.ptr.get(LAYOUT$transformFeedbackPreservesProvokingVertex, OFFSET$transformFeedbackPreservesProvokingVertex);}
-    public void transformFeedbackPreservesProvokingVertex(int value) {this.ptr.set(LAYOUT$transformFeedbackPreservesProvokingVertex, OFFSET$transformFeedbackPreservesProvokingVertex, value);}
-    public java.lang.foreign.MemorySegment transformFeedbackPreservesProvokingVertex_ptr() {return this.ptr.asSlice(OFFSET$transformFeedbackPreservesProvokingVertex, LAYOUT$transformFeedbackPreservesProvokingVertex);}
+    public int provokingVertexLast() {return this.ptr.get(LAYOUT__provokingVertexLast, OFFSET__provokingVertexLast);}
+    public void provokingVertexLast(int value) {this.ptr.set(LAYOUT__provokingVertexLast, OFFSET__provokingVertexLast, value);}
+    public java.lang.foreign.MemorySegment $provokingVertexLast() {return this.ptr.asSlice(OFFSET__provokingVertexLast, LAYOUT__provokingVertexLast);}
+
+    public int transformFeedbackPreservesProvokingVertex() {return this.ptr.get(LAYOUT__transformFeedbackPreservesProvokingVertex, OFFSET__transformFeedbackPreservesProvokingVertex);}
+    public void transformFeedbackPreservesProvokingVertex(int value) {this.ptr.set(LAYOUT__transformFeedbackPreservesProvokingVertex, OFFSET__transformFeedbackPreservesProvokingVertex, value);}
+    public java.lang.foreign.MemorySegment $transformFeedbackPreservesProvokingVertex() {return this.ptr.asSlice(OFFSET__transformFeedbackPreservesProvokingVertex, LAYOUT__transformFeedbackPreservesProvokingVertex);}
 }

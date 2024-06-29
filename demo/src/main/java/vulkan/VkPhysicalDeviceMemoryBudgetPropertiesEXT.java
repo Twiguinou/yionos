@@ -2,46 +2,51 @@ package vulkan;
 
 public record VkPhysicalDeviceMemoryBudgetPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$heapBudget = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_LONG);
-    public static final long OFFSET$heapBudget = 16L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$heapUsage = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_LONG);
-    public static final long OFFSET$heapUsage = 144L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__heapBudget = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_LONG);
+    public static final long OFFSET__heapBudget = 16;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__heapUsage = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_LONG);
+    public static final long OFFSET__heapUsage = 144;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$heapBudget,
-            LAYOUT$heapUsage
-    ).withName("VkPhysicalDeviceMemoryBudgetPropertiesEXT");
+            LAYOUT__pNext,
+            LAYOUT__heapBudget,
+            LAYOUT__heapUsage
+    ).withByteAlignment(8).withName("VkPhysicalDeviceMemoryBudgetPropertiesEXT");
 
     public VkPhysicalDeviceMemoryBudgetPropertiesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceMemoryBudgetPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceMemoryBudgetPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceMemoryBudgetPropertiesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceMemoryBudgetPropertiesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceMemoryBudgetPropertiesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment heapBudget() {return this.ptr.asSlice(OFFSET$heapBudget, LAYOUT$heapBudget);}
-    public long heapBudget(int i) {return this.heapBudget().getAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, i);}
-    public void heapBudget(int i, long value) {this.heapBudget().setAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, i, value);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment heapUsage() {return this.ptr.asSlice(OFFSET$heapUsage, LAYOUT$heapUsage);}
-    public long heapUsage(int i) {return this.heapUsage().getAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, i);}
-    public void heapUsage(int i, long value) {this.heapUsage().setAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, i, value);}
+    public java.lang.foreign.MemorySegment heapBudget() {return this.ptr.asSlice(OFFSET__heapBudget, LAYOUT__heapBudget);}
+    public long heapBudget(int index) {return this.heapBudget().getAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, index);}
+    public void heapBudget(int index, long value) {this.heapBudget().setAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, index, value);}
+
+    public java.lang.foreign.MemorySegment heapUsage() {return this.ptr.asSlice(OFFSET__heapUsage, LAYOUT__heapUsage);}
+    public long heapUsage(int index) {return this.heapUsage().getAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, index);}
+    public void heapUsage(int index, long value) {this.heapUsage().setAtIndex(java.lang.foreign.ValueLayout.JAVA_LONG, index, value);}
 }

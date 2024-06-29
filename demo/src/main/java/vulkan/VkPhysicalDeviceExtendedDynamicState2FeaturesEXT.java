@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState2 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState2 = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState2LogicOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState2LogicOp = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState2PatchControlPoints = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState2PatchControlPoints = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState2 = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2LogicOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState2LogicOp = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2PatchControlPoints = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState2PatchControlPoints = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$extendedDynamicState2,
-            LAYOUT$extendedDynamicState2LogicOp,
-            LAYOUT$extendedDynamicState2PatchControlPoints,
+            LAYOUT__pNext,
+            LAYOUT__extendedDynamicState2,
+            LAYOUT__extendedDynamicState2LogicOp,
+            LAYOUT__extendedDynamicState2PatchControlPoints,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceExtendedDynamicState2FeaturesEXT");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceExtendedDynamicState2FeaturesEXT");
 
     public VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceExtendedDynamicState2FeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceExtendedDynamicState2FeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceExtendedDynamicState2FeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int extendedDynamicState2() {return this.ptr.get(LAYOUT$extendedDynamicState2, OFFSET$extendedDynamicState2);}
-    public void extendedDynamicState2(int value) {this.ptr.set(LAYOUT$extendedDynamicState2, OFFSET$extendedDynamicState2, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState2_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState2, LAYOUT$extendedDynamicState2);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int extendedDynamicState2LogicOp() {return this.ptr.get(LAYOUT$extendedDynamicState2LogicOp, OFFSET$extendedDynamicState2LogicOp);}
-    public void extendedDynamicState2LogicOp(int value) {this.ptr.set(LAYOUT$extendedDynamicState2LogicOp, OFFSET$extendedDynamicState2LogicOp, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState2LogicOp_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState2LogicOp, LAYOUT$extendedDynamicState2LogicOp);}
+    public int extendedDynamicState2() {return this.ptr.get(LAYOUT__extendedDynamicState2, OFFSET__extendedDynamicState2);}
+    public void extendedDynamicState2(int value) {this.ptr.set(LAYOUT__extendedDynamicState2, OFFSET__extendedDynamicState2, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState2() {return this.ptr.asSlice(OFFSET__extendedDynamicState2, LAYOUT__extendedDynamicState2);}
 
-    public int extendedDynamicState2PatchControlPoints() {return this.ptr.get(LAYOUT$extendedDynamicState2PatchControlPoints, OFFSET$extendedDynamicState2PatchControlPoints);}
-    public void extendedDynamicState2PatchControlPoints(int value) {this.ptr.set(LAYOUT$extendedDynamicState2PatchControlPoints, OFFSET$extendedDynamicState2PatchControlPoints, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState2PatchControlPoints_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState2PatchControlPoints, LAYOUT$extendedDynamicState2PatchControlPoints);}
+    public int extendedDynamicState2LogicOp() {return this.ptr.get(LAYOUT__extendedDynamicState2LogicOp, OFFSET__extendedDynamicState2LogicOp);}
+    public void extendedDynamicState2LogicOp(int value) {this.ptr.set(LAYOUT__extendedDynamicState2LogicOp, OFFSET__extendedDynamicState2LogicOp, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState2LogicOp() {return this.ptr.asSlice(OFFSET__extendedDynamicState2LogicOp, LAYOUT__extendedDynamicState2LogicOp);}
+
+    public int extendedDynamicState2PatchControlPoints() {return this.ptr.get(LAYOUT__extendedDynamicState2PatchControlPoints, OFFSET__extendedDynamicState2PatchControlPoints);}
+    public void extendedDynamicState2PatchControlPoints(int value) {this.ptr.set(LAYOUT__extendedDynamicState2PatchControlPoints, OFFSET__extendedDynamicState2PatchControlPoints, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState2PatchControlPoints() {return this.ptr.asSlice(OFFSET__extendedDynamicState2PatchControlPoints, LAYOUT__extendedDynamicState2PatchControlPoints);}
 }

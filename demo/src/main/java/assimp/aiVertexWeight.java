@@ -2,31 +2,36 @@ package assimp;
 
 public record aiVertexWeight(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mVertexId = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mVertexId = 0L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$mWeight = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$mWeight = 4L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mVertexId = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mVertexId = 0;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mWeight = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__mWeight = 4;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$mVertexId,
-            LAYOUT$mWeight
-    ).withName("aiVertexWeight");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__mVertexId,
+            LAYOUT__mWeight
+    ).withByteAlignment(4).withName("aiVertexWeight");
 
     public aiVertexWeight(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiVertexWeight getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiVertexWeight getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiVertexWeight(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiVertexWeight(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int mVertexId() {return this.ptr.get(LAYOUT$mVertexId, OFFSET$mVertexId);}
-    public void mVertexId(int value) {this.ptr.set(LAYOUT$mVertexId, OFFSET$mVertexId, value);}
-    public java.lang.foreign.MemorySegment mVertexId_ptr() {return this.ptr.asSlice(OFFSET$mVertexId, LAYOUT$mVertexId);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiVertexWeight value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public float mWeight() {return this.ptr.get(LAYOUT$mWeight, OFFSET$mWeight);}
-    public void mWeight(float value) {this.ptr.set(LAYOUT$mWeight, OFFSET$mWeight, value);}
-    public java.lang.foreign.MemorySegment mWeight_ptr() {return this.ptr.asSlice(OFFSET$mWeight, LAYOUT$mWeight);}
+    public int mVertexId() {return this.ptr.get(LAYOUT__mVertexId, OFFSET__mVertexId);}
+    public void mVertexId(int value) {this.ptr.set(LAYOUT__mVertexId, OFFSET__mVertexId, value);}
+    public java.lang.foreign.MemorySegment $mVertexId() {return this.ptr.asSlice(OFFSET__mVertexId, LAYOUT__mVertexId);}
+
+    public float mWeight() {return this.ptr.get(LAYOUT__mWeight, OFFSET__mWeight);}
+    public void mWeight(float value) {this.ptr.set(LAYOUT__mWeight, OFFSET__mWeight, value);}
+    public java.lang.foreign.MemorySegment $mWeight() {return this.ptr.asSlice(OFFSET__mWeight, LAYOUT__mWeight);}
 }

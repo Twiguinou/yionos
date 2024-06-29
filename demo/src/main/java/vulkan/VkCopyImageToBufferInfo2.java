@@ -2,69 +2,74 @@ package vulkan;
 
 public record VkCopyImageToBufferInfo2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$srcImage = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$srcImage = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcImageLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcImageLayout = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$dstBuffer = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$dstBuffer = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$regionCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$regionCount = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRegions = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRegions = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__srcImage = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__srcImage = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcImageLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcImageLayout = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__dstBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__dstBuffer = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__regionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__regionCount = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRegions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRegions = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$srcImage,
-            LAYOUT$srcImageLayout,
+            LAYOUT__pNext,
+            LAYOUT__srcImage,
+            LAYOUT__srcImageLayout,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$dstBuffer,
-            LAYOUT$regionCount,
+            LAYOUT__dstBuffer,
+            LAYOUT__regionCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pRegions
-    ).withName("VkCopyImageToBufferInfo2");
+            LAYOUT__pRegions
+    ).withByteAlignment(8).withName("VkCopyImageToBufferInfo2");
 
     public VkCopyImageToBufferInfo2(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkCopyImageToBufferInfo2 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkCopyImageToBufferInfo2 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkCopyImageToBufferInfo2(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkCopyImageToBufferInfo2(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkCopyImageToBufferInfo2 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment srcImage() {return this.ptr.get(LAYOUT$srcImage, OFFSET$srcImage);}
-    public void srcImage(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$srcImage, OFFSET$srcImage, value);}
-    public java.lang.foreign.MemorySegment srcImage_ptr() {return this.ptr.asSlice(OFFSET$srcImage, LAYOUT$srcImage);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int srcImageLayout() {return this.ptr.get(LAYOUT$srcImageLayout, OFFSET$srcImageLayout);}
-    public void srcImageLayout(int value) {this.ptr.set(LAYOUT$srcImageLayout, OFFSET$srcImageLayout, value);}
-    public java.lang.foreign.MemorySegment srcImageLayout_ptr() {return this.ptr.asSlice(OFFSET$srcImageLayout, LAYOUT$srcImageLayout);}
+    public java.lang.foreign.MemorySegment srcImage() {return this.ptr.get(LAYOUT__srcImage, OFFSET__srcImage);}
+    public void srcImage(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__srcImage, OFFSET__srcImage, value);}
+    public java.lang.foreign.MemorySegment $srcImage() {return this.ptr.asSlice(OFFSET__srcImage, LAYOUT__srcImage);}
 
-    public java.lang.foreign.MemorySegment dstBuffer() {return this.ptr.get(LAYOUT$dstBuffer, OFFSET$dstBuffer);}
-    public void dstBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$dstBuffer, OFFSET$dstBuffer, value);}
-    public java.lang.foreign.MemorySegment dstBuffer_ptr() {return this.ptr.asSlice(OFFSET$dstBuffer, LAYOUT$dstBuffer);}
+    public int srcImageLayout() {return this.ptr.get(LAYOUT__srcImageLayout, OFFSET__srcImageLayout);}
+    public void srcImageLayout(int value) {this.ptr.set(LAYOUT__srcImageLayout, OFFSET__srcImageLayout, value);}
+    public java.lang.foreign.MemorySegment $srcImageLayout() {return this.ptr.asSlice(OFFSET__srcImageLayout, LAYOUT__srcImageLayout);}
 
-    public int regionCount() {return this.ptr.get(LAYOUT$regionCount, OFFSET$regionCount);}
-    public void regionCount(int value) {this.ptr.set(LAYOUT$regionCount, OFFSET$regionCount, value);}
-    public java.lang.foreign.MemorySegment regionCount_ptr() {return this.ptr.asSlice(OFFSET$regionCount, LAYOUT$regionCount);}
+    public java.lang.foreign.MemorySegment dstBuffer() {return this.ptr.get(LAYOUT__dstBuffer, OFFSET__dstBuffer);}
+    public void dstBuffer(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__dstBuffer, OFFSET__dstBuffer, value);}
+    public java.lang.foreign.MemorySegment $dstBuffer() {return this.ptr.asSlice(OFFSET__dstBuffer, LAYOUT__dstBuffer);}
 
-    public java.lang.foreign.MemorySegment pRegions() {return this.ptr.get(LAYOUT$pRegions, OFFSET$pRegions);}
-    public void pRegions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRegions, OFFSET$pRegions, value);}
-    public java.lang.foreign.MemorySegment pRegions_ptr() {return this.ptr.asSlice(OFFSET$pRegions, LAYOUT$pRegions);}
+    public int regionCount() {return this.ptr.get(LAYOUT__regionCount, OFFSET__regionCount);}
+    public void regionCount(int value) {this.ptr.set(LAYOUT__regionCount, OFFSET__regionCount, value);}
+    public java.lang.foreign.MemorySegment $regionCount() {return this.ptr.asSlice(OFFSET__regionCount, LAYOUT__regionCount);}
+
+    public java.lang.foreign.MemorySegment pRegions() {return this.ptr.get(LAYOUT__pRegions, OFFSET__pRegions);}
+    public void pRegions(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRegions, OFFSET__pRegions, value);}
+    public java.lang.foreign.MemorySegment $pRegions() {return this.ptr.asSlice(OFFSET__pRegions, LAYOUT__pRegions);}
 }

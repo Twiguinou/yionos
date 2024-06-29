@@ -2,32 +2,37 @@ package vulkan;
 
 public record VkPresentTimeGOOGLE(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$presentID = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$presentID = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$desiredPresentTime = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$desiredPresentTime = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__presentID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__presentID = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__desiredPresentTime = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__desiredPresentTime = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$presentID,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__presentID,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$desiredPresentTime
-    ).withName("VkPresentTimeGOOGLE");
+            LAYOUT__desiredPresentTime
+    ).withByteAlignment(8).withName("VkPresentTimeGOOGLE");
 
     public VkPresentTimeGOOGLE(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPresentTimeGOOGLE getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPresentTimeGOOGLE getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPresentTimeGOOGLE(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPresentTimeGOOGLE(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int presentID() {return this.ptr.get(LAYOUT$presentID, OFFSET$presentID);}
-    public void presentID(int value) {this.ptr.set(LAYOUT$presentID, OFFSET$presentID, value);}
-    public java.lang.foreign.MemorySegment presentID_ptr() {return this.ptr.asSlice(OFFSET$presentID, LAYOUT$presentID);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPresentTimeGOOGLE value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long desiredPresentTime() {return this.ptr.get(LAYOUT$desiredPresentTime, OFFSET$desiredPresentTime);}
-    public void desiredPresentTime(long value) {this.ptr.set(LAYOUT$desiredPresentTime, OFFSET$desiredPresentTime, value);}
-    public java.lang.foreign.MemorySegment desiredPresentTime_ptr() {return this.ptr.asSlice(OFFSET$desiredPresentTime, LAYOUT$desiredPresentTime);}
+    public int presentID() {return this.ptr.get(LAYOUT__presentID, OFFSET__presentID);}
+    public void presentID(int value) {this.ptr.set(LAYOUT__presentID, OFFSET__presentID, value);}
+    public java.lang.foreign.MemorySegment $presentID() {return this.ptr.asSlice(OFFSET__presentID, LAYOUT__presentID);}
+
+    public long desiredPresentTime() {return this.ptr.get(LAYOUT__desiredPresentTime, OFFSET__desiredPresentTime);}
+    public void desiredPresentTime(long value) {this.ptr.set(LAYOUT__desiredPresentTime, OFFSET__desiredPresentTime, value);}
+    public java.lang.foreign.MemorySegment $desiredPresentTime() {return this.ptr.asSlice(OFFSET__desiredPresentTime, LAYOUT__desiredPresentTime);}
 }

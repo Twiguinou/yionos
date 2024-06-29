@@ -2,250 +2,255 @@ package vulkan;
 
 public record VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3TessellationDomainOrigin = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3TessellationDomainOrigin = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3DepthClampEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3DepthClampEnable = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3PolygonMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3PolygonMode = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3RasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3RasterizationSamples = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3SampleMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3SampleMask = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3AlphaToCoverageEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3AlphaToCoverageEnable = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3AlphaToOneEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3AlphaToOneEnable = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3LogicOpEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3LogicOpEnable = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ColorBlendEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ColorBlendEnable = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ColorBlendEquation = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ColorBlendEquation = 52L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ColorWriteMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ColorWriteMask = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3RasterizationStream = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3RasterizationStream = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ConservativeRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ConservativeRasterizationMode = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ExtraPrimitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ExtraPrimitiveOverestimationSize = 68L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3DepthClipEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3DepthClipEnable = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3SampleLocationsEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3SampleLocationsEnable = 76L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ColorBlendAdvanced = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ColorBlendAdvanced = 80L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ProvokingVertexMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ProvokingVertexMode = 84L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3LineRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3LineRasterizationMode = 88L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3LineStippleEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3LineStippleEnable = 92L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3DepthClipNegativeOneToOne = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3DepthClipNegativeOneToOne = 96L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ViewportWScalingEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ViewportWScalingEnable = 100L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ViewportSwizzle = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ViewportSwizzle = 104L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3CoverageToColorEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3CoverageToColorEnable = 108L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3CoverageToColorLocation = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3CoverageToColorLocation = 112L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3CoverageModulationMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3CoverageModulationMode = 116L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3CoverageModulationTableEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3CoverageModulationTableEnable = 120L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3CoverageModulationTable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3CoverageModulationTable = 124L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3CoverageReductionMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3CoverageReductionMode = 128L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3RepresentativeFragmentTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3RepresentativeFragmentTestEnable = 132L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$extendedDynamicState3ShadingRateImageEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$extendedDynamicState3ShadingRateImageEnable = 136L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3TessellationDomainOrigin = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3TessellationDomainOrigin = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3DepthClampEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3DepthClampEnable = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3PolygonMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3PolygonMode = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3RasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3RasterizationSamples = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3SampleMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3SampleMask = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3AlphaToCoverageEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3AlphaToCoverageEnable = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3AlphaToOneEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3AlphaToOneEnable = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3LogicOpEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3LogicOpEnable = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ColorBlendEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ColorBlendEnable = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ColorBlendEquation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ColorBlendEquation = 52;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ColorWriteMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ColorWriteMask = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3RasterizationStream = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3RasterizationStream = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ConservativeRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ConservativeRasterizationMode = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ExtraPrimitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ExtraPrimitiveOverestimationSize = 68;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3DepthClipEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3DepthClipEnable = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3SampleLocationsEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3SampleLocationsEnable = 76;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ColorBlendAdvanced = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ColorBlendAdvanced = 80;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ProvokingVertexMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ProvokingVertexMode = 84;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3LineRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3LineRasterizationMode = 88;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3LineStippleEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3LineStippleEnable = 92;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3DepthClipNegativeOneToOne = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3DepthClipNegativeOneToOne = 96;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ViewportWScalingEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ViewportWScalingEnable = 100;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ViewportSwizzle = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ViewportSwizzle = 104;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3CoverageToColorEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3CoverageToColorEnable = 108;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3CoverageToColorLocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3CoverageToColorLocation = 112;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3CoverageModulationMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3CoverageModulationMode = 116;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3CoverageModulationTableEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3CoverageModulationTableEnable = 120;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3CoverageModulationTable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3CoverageModulationTable = 124;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3CoverageReductionMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3CoverageReductionMode = 128;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3RepresentativeFragmentTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3RepresentativeFragmentTestEnable = 132;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState3ShadingRateImageEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__extendedDynamicState3ShadingRateImageEnable = 136;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$extendedDynamicState3TessellationDomainOrigin,
-            LAYOUT$extendedDynamicState3DepthClampEnable,
-            LAYOUT$extendedDynamicState3PolygonMode,
-            LAYOUT$extendedDynamicState3RasterizationSamples,
-            LAYOUT$extendedDynamicState3SampleMask,
-            LAYOUT$extendedDynamicState3AlphaToCoverageEnable,
-            LAYOUT$extendedDynamicState3AlphaToOneEnable,
-            LAYOUT$extendedDynamicState3LogicOpEnable,
-            LAYOUT$extendedDynamicState3ColorBlendEnable,
-            LAYOUT$extendedDynamicState3ColorBlendEquation,
-            LAYOUT$extendedDynamicState3ColorWriteMask,
-            LAYOUT$extendedDynamicState3RasterizationStream,
-            LAYOUT$extendedDynamicState3ConservativeRasterizationMode,
-            LAYOUT$extendedDynamicState3ExtraPrimitiveOverestimationSize,
-            LAYOUT$extendedDynamicState3DepthClipEnable,
-            LAYOUT$extendedDynamicState3SampleLocationsEnable,
-            LAYOUT$extendedDynamicState3ColorBlendAdvanced,
-            LAYOUT$extendedDynamicState3ProvokingVertexMode,
-            LAYOUT$extendedDynamicState3LineRasterizationMode,
-            LAYOUT$extendedDynamicState3LineStippleEnable,
-            LAYOUT$extendedDynamicState3DepthClipNegativeOneToOne,
-            LAYOUT$extendedDynamicState3ViewportWScalingEnable,
-            LAYOUT$extendedDynamicState3ViewportSwizzle,
-            LAYOUT$extendedDynamicState3CoverageToColorEnable,
-            LAYOUT$extendedDynamicState3CoverageToColorLocation,
-            LAYOUT$extendedDynamicState3CoverageModulationMode,
-            LAYOUT$extendedDynamicState3CoverageModulationTableEnable,
-            LAYOUT$extendedDynamicState3CoverageModulationTable,
-            LAYOUT$extendedDynamicState3CoverageReductionMode,
-            LAYOUT$extendedDynamicState3RepresentativeFragmentTestEnable,
-            LAYOUT$extendedDynamicState3ShadingRateImageEnable,
+            LAYOUT__pNext,
+            LAYOUT__extendedDynamicState3TessellationDomainOrigin,
+            LAYOUT__extendedDynamicState3DepthClampEnable,
+            LAYOUT__extendedDynamicState3PolygonMode,
+            LAYOUT__extendedDynamicState3RasterizationSamples,
+            LAYOUT__extendedDynamicState3SampleMask,
+            LAYOUT__extendedDynamicState3AlphaToCoverageEnable,
+            LAYOUT__extendedDynamicState3AlphaToOneEnable,
+            LAYOUT__extendedDynamicState3LogicOpEnable,
+            LAYOUT__extendedDynamicState3ColorBlendEnable,
+            LAYOUT__extendedDynamicState3ColorBlendEquation,
+            LAYOUT__extendedDynamicState3ColorWriteMask,
+            LAYOUT__extendedDynamicState3RasterizationStream,
+            LAYOUT__extendedDynamicState3ConservativeRasterizationMode,
+            LAYOUT__extendedDynamicState3ExtraPrimitiveOverestimationSize,
+            LAYOUT__extendedDynamicState3DepthClipEnable,
+            LAYOUT__extendedDynamicState3SampleLocationsEnable,
+            LAYOUT__extendedDynamicState3ColorBlendAdvanced,
+            LAYOUT__extendedDynamicState3ProvokingVertexMode,
+            LAYOUT__extendedDynamicState3LineRasterizationMode,
+            LAYOUT__extendedDynamicState3LineStippleEnable,
+            LAYOUT__extendedDynamicState3DepthClipNegativeOneToOne,
+            LAYOUT__extendedDynamicState3ViewportWScalingEnable,
+            LAYOUT__extendedDynamicState3ViewportSwizzle,
+            LAYOUT__extendedDynamicState3CoverageToColorEnable,
+            LAYOUT__extendedDynamicState3CoverageToColorLocation,
+            LAYOUT__extendedDynamicState3CoverageModulationMode,
+            LAYOUT__extendedDynamicState3CoverageModulationTableEnable,
+            LAYOUT__extendedDynamicState3CoverageModulationTable,
+            LAYOUT__extendedDynamicState3CoverageReductionMode,
+            LAYOUT__extendedDynamicState3RepresentativeFragmentTestEnable,
+            LAYOUT__extendedDynamicState3ShadingRateImageEnable,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceExtendedDynamicState3FeaturesEXT");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceExtendedDynamicState3FeaturesEXT");
 
     public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceExtendedDynamicState3FeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceExtendedDynamicState3FeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceExtendedDynamicState3FeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int extendedDynamicState3TessellationDomainOrigin() {return this.ptr.get(LAYOUT$extendedDynamicState3TessellationDomainOrigin, OFFSET$extendedDynamicState3TessellationDomainOrigin);}
-    public void extendedDynamicState3TessellationDomainOrigin(int value) {this.ptr.set(LAYOUT$extendedDynamicState3TessellationDomainOrigin, OFFSET$extendedDynamicState3TessellationDomainOrigin, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3TessellationDomainOrigin_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3TessellationDomainOrigin, LAYOUT$extendedDynamicState3TessellationDomainOrigin);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int extendedDynamicState3DepthClampEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3DepthClampEnable, OFFSET$extendedDynamicState3DepthClampEnable);}
-    public void extendedDynamicState3DepthClampEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3DepthClampEnable, OFFSET$extendedDynamicState3DepthClampEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3DepthClampEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3DepthClampEnable, LAYOUT$extendedDynamicState3DepthClampEnable);}
+    public int extendedDynamicState3TessellationDomainOrigin() {return this.ptr.get(LAYOUT__extendedDynamicState3TessellationDomainOrigin, OFFSET__extendedDynamicState3TessellationDomainOrigin);}
+    public void extendedDynamicState3TessellationDomainOrigin(int value) {this.ptr.set(LAYOUT__extendedDynamicState3TessellationDomainOrigin, OFFSET__extendedDynamicState3TessellationDomainOrigin, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3TessellationDomainOrigin() {return this.ptr.asSlice(OFFSET__extendedDynamicState3TessellationDomainOrigin, LAYOUT__extendedDynamicState3TessellationDomainOrigin);}
 
-    public int extendedDynamicState3PolygonMode() {return this.ptr.get(LAYOUT$extendedDynamicState3PolygonMode, OFFSET$extendedDynamicState3PolygonMode);}
-    public void extendedDynamicState3PolygonMode(int value) {this.ptr.set(LAYOUT$extendedDynamicState3PolygonMode, OFFSET$extendedDynamicState3PolygonMode, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3PolygonMode_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3PolygonMode, LAYOUT$extendedDynamicState3PolygonMode);}
+    public int extendedDynamicState3DepthClampEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3DepthClampEnable, OFFSET__extendedDynamicState3DepthClampEnable);}
+    public void extendedDynamicState3DepthClampEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3DepthClampEnable, OFFSET__extendedDynamicState3DepthClampEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3DepthClampEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3DepthClampEnable, LAYOUT__extendedDynamicState3DepthClampEnable);}
 
-    public int extendedDynamicState3RasterizationSamples() {return this.ptr.get(LAYOUT$extendedDynamicState3RasterizationSamples, OFFSET$extendedDynamicState3RasterizationSamples);}
-    public void extendedDynamicState3RasterizationSamples(int value) {this.ptr.set(LAYOUT$extendedDynamicState3RasterizationSamples, OFFSET$extendedDynamicState3RasterizationSamples, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3RasterizationSamples_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3RasterizationSamples, LAYOUT$extendedDynamicState3RasterizationSamples);}
+    public int extendedDynamicState3PolygonMode() {return this.ptr.get(LAYOUT__extendedDynamicState3PolygonMode, OFFSET__extendedDynamicState3PolygonMode);}
+    public void extendedDynamicState3PolygonMode(int value) {this.ptr.set(LAYOUT__extendedDynamicState3PolygonMode, OFFSET__extendedDynamicState3PolygonMode, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3PolygonMode() {return this.ptr.asSlice(OFFSET__extendedDynamicState3PolygonMode, LAYOUT__extendedDynamicState3PolygonMode);}
 
-    public int extendedDynamicState3SampleMask() {return this.ptr.get(LAYOUT$extendedDynamicState3SampleMask, OFFSET$extendedDynamicState3SampleMask);}
-    public void extendedDynamicState3SampleMask(int value) {this.ptr.set(LAYOUT$extendedDynamicState3SampleMask, OFFSET$extendedDynamicState3SampleMask, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3SampleMask_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3SampleMask, LAYOUT$extendedDynamicState3SampleMask);}
+    public int extendedDynamicState3RasterizationSamples() {return this.ptr.get(LAYOUT__extendedDynamicState3RasterizationSamples, OFFSET__extendedDynamicState3RasterizationSamples);}
+    public void extendedDynamicState3RasterizationSamples(int value) {this.ptr.set(LAYOUT__extendedDynamicState3RasterizationSamples, OFFSET__extendedDynamicState3RasterizationSamples, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3RasterizationSamples() {return this.ptr.asSlice(OFFSET__extendedDynamicState3RasterizationSamples, LAYOUT__extendedDynamicState3RasterizationSamples);}
 
-    public int extendedDynamicState3AlphaToCoverageEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3AlphaToCoverageEnable, OFFSET$extendedDynamicState3AlphaToCoverageEnable);}
-    public void extendedDynamicState3AlphaToCoverageEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3AlphaToCoverageEnable, OFFSET$extendedDynamicState3AlphaToCoverageEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3AlphaToCoverageEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3AlphaToCoverageEnable, LAYOUT$extendedDynamicState3AlphaToCoverageEnable);}
+    public int extendedDynamicState3SampleMask() {return this.ptr.get(LAYOUT__extendedDynamicState3SampleMask, OFFSET__extendedDynamicState3SampleMask);}
+    public void extendedDynamicState3SampleMask(int value) {this.ptr.set(LAYOUT__extendedDynamicState3SampleMask, OFFSET__extendedDynamicState3SampleMask, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3SampleMask() {return this.ptr.asSlice(OFFSET__extendedDynamicState3SampleMask, LAYOUT__extendedDynamicState3SampleMask);}
 
-    public int extendedDynamicState3AlphaToOneEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3AlphaToOneEnable, OFFSET$extendedDynamicState3AlphaToOneEnable);}
-    public void extendedDynamicState3AlphaToOneEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3AlphaToOneEnable, OFFSET$extendedDynamicState3AlphaToOneEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3AlphaToOneEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3AlphaToOneEnable, LAYOUT$extendedDynamicState3AlphaToOneEnable);}
+    public int extendedDynamicState3AlphaToCoverageEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3AlphaToCoverageEnable, OFFSET__extendedDynamicState3AlphaToCoverageEnable);}
+    public void extendedDynamicState3AlphaToCoverageEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3AlphaToCoverageEnable, OFFSET__extendedDynamicState3AlphaToCoverageEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3AlphaToCoverageEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3AlphaToCoverageEnable, LAYOUT__extendedDynamicState3AlphaToCoverageEnable);}
 
-    public int extendedDynamicState3LogicOpEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3LogicOpEnable, OFFSET$extendedDynamicState3LogicOpEnable);}
-    public void extendedDynamicState3LogicOpEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3LogicOpEnable, OFFSET$extendedDynamicState3LogicOpEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3LogicOpEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3LogicOpEnable, LAYOUT$extendedDynamicState3LogicOpEnable);}
+    public int extendedDynamicState3AlphaToOneEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3AlphaToOneEnable, OFFSET__extendedDynamicState3AlphaToOneEnable);}
+    public void extendedDynamicState3AlphaToOneEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3AlphaToOneEnable, OFFSET__extendedDynamicState3AlphaToOneEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3AlphaToOneEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3AlphaToOneEnable, LAYOUT__extendedDynamicState3AlphaToOneEnable);}
 
-    public int extendedDynamicState3ColorBlendEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3ColorBlendEnable, OFFSET$extendedDynamicState3ColorBlendEnable);}
-    public void extendedDynamicState3ColorBlendEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ColorBlendEnable, OFFSET$extendedDynamicState3ColorBlendEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ColorBlendEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ColorBlendEnable, LAYOUT$extendedDynamicState3ColorBlendEnable);}
+    public int extendedDynamicState3LogicOpEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3LogicOpEnable, OFFSET__extendedDynamicState3LogicOpEnable);}
+    public void extendedDynamicState3LogicOpEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3LogicOpEnable, OFFSET__extendedDynamicState3LogicOpEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3LogicOpEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3LogicOpEnable, LAYOUT__extendedDynamicState3LogicOpEnable);}
 
-    public int extendedDynamicState3ColorBlendEquation() {return this.ptr.get(LAYOUT$extendedDynamicState3ColorBlendEquation, OFFSET$extendedDynamicState3ColorBlendEquation);}
-    public void extendedDynamicState3ColorBlendEquation(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ColorBlendEquation, OFFSET$extendedDynamicState3ColorBlendEquation, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ColorBlendEquation_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ColorBlendEquation, LAYOUT$extendedDynamicState3ColorBlendEquation);}
+    public int extendedDynamicState3ColorBlendEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3ColorBlendEnable, OFFSET__extendedDynamicState3ColorBlendEnable);}
+    public void extendedDynamicState3ColorBlendEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ColorBlendEnable, OFFSET__extendedDynamicState3ColorBlendEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ColorBlendEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ColorBlendEnable, LAYOUT__extendedDynamicState3ColorBlendEnable);}
 
-    public int extendedDynamicState3ColorWriteMask() {return this.ptr.get(LAYOUT$extendedDynamicState3ColorWriteMask, OFFSET$extendedDynamicState3ColorWriteMask);}
-    public void extendedDynamicState3ColorWriteMask(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ColorWriteMask, OFFSET$extendedDynamicState3ColorWriteMask, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ColorWriteMask_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ColorWriteMask, LAYOUT$extendedDynamicState3ColorWriteMask);}
+    public int extendedDynamicState3ColorBlendEquation() {return this.ptr.get(LAYOUT__extendedDynamicState3ColorBlendEquation, OFFSET__extendedDynamicState3ColorBlendEquation);}
+    public void extendedDynamicState3ColorBlendEquation(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ColorBlendEquation, OFFSET__extendedDynamicState3ColorBlendEquation, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ColorBlendEquation() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ColorBlendEquation, LAYOUT__extendedDynamicState3ColorBlendEquation);}
 
-    public int extendedDynamicState3RasterizationStream() {return this.ptr.get(LAYOUT$extendedDynamicState3RasterizationStream, OFFSET$extendedDynamicState3RasterizationStream);}
-    public void extendedDynamicState3RasterizationStream(int value) {this.ptr.set(LAYOUT$extendedDynamicState3RasterizationStream, OFFSET$extendedDynamicState3RasterizationStream, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3RasterizationStream_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3RasterizationStream, LAYOUT$extendedDynamicState3RasterizationStream);}
+    public int extendedDynamicState3ColorWriteMask() {return this.ptr.get(LAYOUT__extendedDynamicState3ColorWriteMask, OFFSET__extendedDynamicState3ColorWriteMask);}
+    public void extendedDynamicState3ColorWriteMask(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ColorWriteMask, OFFSET__extendedDynamicState3ColorWriteMask, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ColorWriteMask() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ColorWriteMask, LAYOUT__extendedDynamicState3ColorWriteMask);}
 
-    public int extendedDynamicState3ConservativeRasterizationMode() {return this.ptr.get(LAYOUT$extendedDynamicState3ConservativeRasterizationMode, OFFSET$extendedDynamicState3ConservativeRasterizationMode);}
-    public void extendedDynamicState3ConservativeRasterizationMode(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ConservativeRasterizationMode, OFFSET$extendedDynamicState3ConservativeRasterizationMode, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ConservativeRasterizationMode_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ConservativeRasterizationMode, LAYOUT$extendedDynamicState3ConservativeRasterizationMode);}
+    public int extendedDynamicState3RasterizationStream() {return this.ptr.get(LAYOUT__extendedDynamicState3RasterizationStream, OFFSET__extendedDynamicState3RasterizationStream);}
+    public void extendedDynamicState3RasterizationStream(int value) {this.ptr.set(LAYOUT__extendedDynamicState3RasterizationStream, OFFSET__extendedDynamicState3RasterizationStream, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3RasterizationStream() {return this.ptr.asSlice(OFFSET__extendedDynamicState3RasterizationStream, LAYOUT__extendedDynamicState3RasterizationStream);}
 
-    public int extendedDynamicState3ExtraPrimitiveOverestimationSize() {return this.ptr.get(LAYOUT$extendedDynamicState3ExtraPrimitiveOverestimationSize, OFFSET$extendedDynamicState3ExtraPrimitiveOverestimationSize);}
-    public void extendedDynamicState3ExtraPrimitiveOverestimationSize(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ExtraPrimitiveOverestimationSize, OFFSET$extendedDynamicState3ExtraPrimitiveOverestimationSize, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ExtraPrimitiveOverestimationSize_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ExtraPrimitiveOverestimationSize, LAYOUT$extendedDynamicState3ExtraPrimitiveOverestimationSize);}
+    public int extendedDynamicState3ConservativeRasterizationMode() {return this.ptr.get(LAYOUT__extendedDynamicState3ConservativeRasterizationMode, OFFSET__extendedDynamicState3ConservativeRasterizationMode);}
+    public void extendedDynamicState3ConservativeRasterizationMode(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ConservativeRasterizationMode, OFFSET__extendedDynamicState3ConservativeRasterizationMode, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ConservativeRasterizationMode() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ConservativeRasterizationMode, LAYOUT__extendedDynamicState3ConservativeRasterizationMode);}
 
-    public int extendedDynamicState3DepthClipEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3DepthClipEnable, OFFSET$extendedDynamicState3DepthClipEnable);}
-    public void extendedDynamicState3DepthClipEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3DepthClipEnable, OFFSET$extendedDynamicState3DepthClipEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3DepthClipEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3DepthClipEnable, LAYOUT$extendedDynamicState3DepthClipEnable);}
+    public int extendedDynamicState3ExtraPrimitiveOverestimationSize() {return this.ptr.get(LAYOUT__extendedDynamicState3ExtraPrimitiveOverestimationSize, OFFSET__extendedDynamicState3ExtraPrimitiveOverestimationSize);}
+    public void extendedDynamicState3ExtraPrimitiveOverestimationSize(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ExtraPrimitiveOverestimationSize, OFFSET__extendedDynamicState3ExtraPrimitiveOverestimationSize, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ExtraPrimitiveOverestimationSize() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ExtraPrimitiveOverestimationSize, LAYOUT__extendedDynamicState3ExtraPrimitiveOverestimationSize);}
 
-    public int extendedDynamicState3SampleLocationsEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3SampleLocationsEnable, OFFSET$extendedDynamicState3SampleLocationsEnable);}
-    public void extendedDynamicState3SampleLocationsEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3SampleLocationsEnable, OFFSET$extendedDynamicState3SampleLocationsEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3SampleLocationsEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3SampleLocationsEnable, LAYOUT$extendedDynamicState3SampleLocationsEnable);}
+    public int extendedDynamicState3DepthClipEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3DepthClipEnable, OFFSET__extendedDynamicState3DepthClipEnable);}
+    public void extendedDynamicState3DepthClipEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3DepthClipEnable, OFFSET__extendedDynamicState3DepthClipEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3DepthClipEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3DepthClipEnable, LAYOUT__extendedDynamicState3DepthClipEnable);}
 
-    public int extendedDynamicState3ColorBlendAdvanced() {return this.ptr.get(LAYOUT$extendedDynamicState3ColorBlendAdvanced, OFFSET$extendedDynamicState3ColorBlendAdvanced);}
-    public void extendedDynamicState3ColorBlendAdvanced(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ColorBlendAdvanced, OFFSET$extendedDynamicState3ColorBlendAdvanced, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ColorBlendAdvanced_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ColorBlendAdvanced, LAYOUT$extendedDynamicState3ColorBlendAdvanced);}
+    public int extendedDynamicState3SampleLocationsEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3SampleLocationsEnable, OFFSET__extendedDynamicState3SampleLocationsEnable);}
+    public void extendedDynamicState3SampleLocationsEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3SampleLocationsEnable, OFFSET__extendedDynamicState3SampleLocationsEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3SampleLocationsEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3SampleLocationsEnable, LAYOUT__extendedDynamicState3SampleLocationsEnable);}
 
-    public int extendedDynamicState3ProvokingVertexMode() {return this.ptr.get(LAYOUT$extendedDynamicState3ProvokingVertexMode, OFFSET$extendedDynamicState3ProvokingVertexMode);}
-    public void extendedDynamicState3ProvokingVertexMode(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ProvokingVertexMode, OFFSET$extendedDynamicState3ProvokingVertexMode, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ProvokingVertexMode_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ProvokingVertexMode, LAYOUT$extendedDynamicState3ProvokingVertexMode);}
+    public int extendedDynamicState3ColorBlendAdvanced() {return this.ptr.get(LAYOUT__extendedDynamicState3ColorBlendAdvanced, OFFSET__extendedDynamicState3ColorBlendAdvanced);}
+    public void extendedDynamicState3ColorBlendAdvanced(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ColorBlendAdvanced, OFFSET__extendedDynamicState3ColorBlendAdvanced, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ColorBlendAdvanced() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ColorBlendAdvanced, LAYOUT__extendedDynamicState3ColorBlendAdvanced);}
 
-    public int extendedDynamicState3LineRasterizationMode() {return this.ptr.get(LAYOUT$extendedDynamicState3LineRasterizationMode, OFFSET$extendedDynamicState3LineRasterizationMode);}
-    public void extendedDynamicState3LineRasterizationMode(int value) {this.ptr.set(LAYOUT$extendedDynamicState3LineRasterizationMode, OFFSET$extendedDynamicState3LineRasterizationMode, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3LineRasterizationMode_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3LineRasterizationMode, LAYOUT$extendedDynamicState3LineRasterizationMode);}
+    public int extendedDynamicState3ProvokingVertexMode() {return this.ptr.get(LAYOUT__extendedDynamicState3ProvokingVertexMode, OFFSET__extendedDynamicState3ProvokingVertexMode);}
+    public void extendedDynamicState3ProvokingVertexMode(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ProvokingVertexMode, OFFSET__extendedDynamicState3ProvokingVertexMode, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ProvokingVertexMode() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ProvokingVertexMode, LAYOUT__extendedDynamicState3ProvokingVertexMode);}
 
-    public int extendedDynamicState3LineStippleEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3LineStippleEnable, OFFSET$extendedDynamicState3LineStippleEnable);}
-    public void extendedDynamicState3LineStippleEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3LineStippleEnable, OFFSET$extendedDynamicState3LineStippleEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3LineStippleEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3LineStippleEnable, LAYOUT$extendedDynamicState3LineStippleEnable);}
+    public int extendedDynamicState3LineRasterizationMode() {return this.ptr.get(LAYOUT__extendedDynamicState3LineRasterizationMode, OFFSET__extendedDynamicState3LineRasterizationMode);}
+    public void extendedDynamicState3LineRasterizationMode(int value) {this.ptr.set(LAYOUT__extendedDynamicState3LineRasterizationMode, OFFSET__extendedDynamicState3LineRasterizationMode, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3LineRasterizationMode() {return this.ptr.asSlice(OFFSET__extendedDynamicState3LineRasterizationMode, LAYOUT__extendedDynamicState3LineRasterizationMode);}
 
-    public int extendedDynamicState3DepthClipNegativeOneToOne() {return this.ptr.get(LAYOUT$extendedDynamicState3DepthClipNegativeOneToOne, OFFSET$extendedDynamicState3DepthClipNegativeOneToOne);}
-    public void extendedDynamicState3DepthClipNegativeOneToOne(int value) {this.ptr.set(LAYOUT$extendedDynamicState3DepthClipNegativeOneToOne, OFFSET$extendedDynamicState3DepthClipNegativeOneToOne, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3DepthClipNegativeOneToOne_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3DepthClipNegativeOneToOne, LAYOUT$extendedDynamicState3DepthClipNegativeOneToOne);}
+    public int extendedDynamicState3LineStippleEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3LineStippleEnable, OFFSET__extendedDynamicState3LineStippleEnable);}
+    public void extendedDynamicState3LineStippleEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3LineStippleEnable, OFFSET__extendedDynamicState3LineStippleEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3LineStippleEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3LineStippleEnable, LAYOUT__extendedDynamicState3LineStippleEnable);}
 
-    public int extendedDynamicState3ViewportWScalingEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3ViewportWScalingEnable, OFFSET$extendedDynamicState3ViewportWScalingEnable);}
-    public void extendedDynamicState3ViewportWScalingEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ViewportWScalingEnable, OFFSET$extendedDynamicState3ViewportWScalingEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ViewportWScalingEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ViewportWScalingEnable, LAYOUT$extendedDynamicState3ViewportWScalingEnable);}
+    public int extendedDynamicState3DepthClipNegativeOneToOne() {return this.ptr.get(LAYOUT__extendedDynamicState3DepthClipNegativeOneToOne, OFFSET__extendedDynamicState3DepthClipNegativeOneToOne);}
+    public void extendedDynamicState3DepthClipNegativeOneToOne(int value) {this.ptr.set(LAYOUT__extendedDynamicState3DepthClipNegativeOneToOne, OFFSET__extendedDynamicState3DepthClipNegativeOneToOne, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3DepthClipNegativeOneToOne() {return this.ptr.asSlice(OFFSET__extendedDynamicState3DepthClipNegativeOneToOne, LAYOUT__extendedDynamicState3DepthClipNegativeOneToOne);}
 
-    public int extendedDynamicState3ViewportSwizzle() {return this.ptr.get(LAYOUT$extendedDynamicState3ViewportSwizzle, OFFSET$extendedDynamicState3ViewportSwizzle);}
-    public void extendedDynamicState3ViewportSwizzle(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ViewportSwizzle, OFFSET$extendedDynamicState3ViewportSwizzle, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ViewportSwizzle_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ViewportSwizzle, LAYOUT$extendedDynamicState3ViewportSwizzle);}
+    public int extendedDynamicState3ViewportWScalingEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3ViewportWScalingEnable, OFFSET__extendedDynamicState3ViewportWScalingEnable);}
+    public void extendedDynamicState3ViewportWScalingEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ViewportWScalingEnable, OFFSET__extendedDynamicState3ViewportWScalingEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ViewportWScalingEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ViewportWScalingEnable, LAYOUT__extendedDynamicState3ViewportWScalingEnable);}
 
-    public int extendedDynamicState3CoverageToColorEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3CoverageToColorEnable, OFFSET$extendedDynamicState3CoverageToColorEnable);}
-    public void extendedDynamicState3CoverageToColorEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3CoverageToColorEnable, OFFSET$extendedDynamicState3CoverageToColorEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3CoverageToColorEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3CoverageToColorEnable, LAYOUT$extendedDynamicState3CoverageToColorEnable);}
+    public int extendedDynamicState3ViewportSwizzle() {return this.ptr.get(LAYOUT__extendedDynamicState3ViewportSwizzle, OFFSET__extendedDynamicState3ViewportSwizzle);}
+    public void extendedDynamicState3ViewportSwizzle(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ViewportSwizzle, OFFSET__extendedDynamicState3ViewportSwizzle, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ViewportSwizzle() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ViewportSwizzle, LAYOUT__extendedDynamicState3ViewportSwizzle);}
 
-    public int extendedDynamicState3CoverageToColorLocation() {return this.ptr.get(LAYOUT$extendedDynamicState3CoverageToColorLocation, OFFSET$extendedDynamicState3CoverageToColorLocation);}
-    public void extendedDynamicState3CoverageToColorLocation(int value) {this.ptr.set(LAYOUT$extendedDynamicState3CoverageToColorLocation, OFFSET$extendedDynamicState3CoverageToColorLocation, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3CoverageToColorLocation_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3CoverageToColorLocation, LAYOUT$extendedDynamicState3CoverageToColorLocation);}
+    public int extendedDynamicState3CoverageToColorEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3CoverageToColorEnable, OFFSET__extendedDynamicState3CoverageToColorEnable);}
+    public void extendedDynamicState3CoverageToColorEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3CoverageToColorEnable, OFFSET__extendedDynamicState3CoverageToColorEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3CoverageToColorEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3CoverageToColorEnable, LAYOUT__extendedDynamicState3CoverageToColorEnable);}
 
-    public int extendedDynamicState3CoverageModulationMode() {return this.ptr.get(LAYOUT$extendedDynamicState3CoverageModulationMode, OFFSET$extendedDynamicState3CoverageModulationMode);}
-    public void extendedDynamicState3CoverageModulationMode(int value) {this.ptr.set(LAYOUT$extendedDynamicState3CoverageModulationMode, OFFSET$extendedDynamicState3CoverageModulationMode, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3CoverageModulationMode_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3CoverageModulationMode, LAYOUT$extendedDynamicState3CoverageModulationMode);}
+    public int extendedDynamicState3CoverageToColorLocation() {return this.ptr.get(LAYOUT__extendedDynamicState3CoverageToColorLocation, OFFSET__extendedDynamicState3CoverageToColorLocation);}
+    public void extendedDynamicState3CoverageToColorLocation(int value) {this.ptr.set(LAYOUT__extendedDynamicState3CoverageToColorLocation, OFFSET__extendedDynamicState3CoverageToColorLocation, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3CoverageToColorLocation() {return this.ptr.asSlice(OFFSET__extendedDynamicState3CoverageToColorLocation, LAYOUT__extendedDynamicState3CoverageToColorLocation);}
 
-    public int extendedDynamicState3CoverageModulationTableEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3CoverageModulationTableEnable, OFFSET$extendedDynamicState3CoverageModulationTableEnable);}
-    public void extendedDynamicState3CoverageModulationTableEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3CoverageModulationTableEnable, OFFSET$extendedDynamicState3CoverageModulationTableEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3CoverageModulationTableEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3CoverageModulationTableEnable, LAYOUT$extendedDynamicState3CoverageModulationTableEnable);}
+    public int extendedDynamicState3CoverageModulationMode() {return this.ptr.get(LAYOUT__extendedDynamicState3CoverageModulationMode, OFFSET__extendedDynamicState3CoverageModulationMode);}
+    public void extendedDynamicState3CoverageModulationMode(int value) {this.ptr.set(LAYOUT__extendedDynamicState3CoverageModulationMode, OFFSET__extendedDynamicState3CoverageModulationMode, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3CoverageModulationMode() {return this.ptr.asSlice(OFFSET__extendedDynamicState3CoverageModulationMode, LAYOUT__extendedDynamicState3CoverageModulationMode);}
 
-    public int extendedDynamicState3CoverageModulationTable() {return this.ptr.get(LAYOUT$extendedDynamicState3CoverageModulationTable, OFFSET$extendedDynamicState3CoverageModulationTable);}
-    public void extendedDynamicState3CoverageModulationTable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3CoverageModulationTable, OFFSET$extendedDynamicState3CoverageModulationTable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3CoverageModulationTable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3CoverageModulationTable, LAYOUT$extendedDynamicState3CoverageModulationTable);}
+    public int extendedDynamicState3CoverageModulationTableEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3CoverageModulationTableEnable, OFFSET__extendedDynamicState3CoverageModulationTableEnable);}
+    public void extendedDynamicState3CoverageModulationTableEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3CoverageModulationTableEnable, OFFSET__extendedDynamicState3CoverageModulationTableEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3CoverageModulationTableEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3CoverageModulationTableEnable, LAYOUT__extendedDynamicState3CoverageModulationTableEnable);}
 
-    public int extendedDynamicState3CoverageReductionMode() {return this.ptr.get(LAYOUT$extendedDynamicState3CoverageReductionMode, OFFSET$extendedDynamicState3CoverageReductionMode);}
-    public void extendedDynamicState3CoverageReductionMode(int value) {this.ptr.set(LAYOUT$extendedDynamicState3CoverageReductionMode, OFFSET$extendedDynamicState3CoverageReductionMode, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3CoverageReductionMode_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3CoverageReductionMode, LAYOUT$extendedDynamicState3CoverageReductionMode);}
+    public int extendedDynamicState3CoverageModulationTable() {return this.ptr.get(LAYOUT__extendedDynamicState3CoverageModulationTable, OFFSET__extendedDynamicState3CoverageModulationTable);}
+    public void extendedDynamicState3CoverageModulationTable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3CoverageModulationTable, OFFSET__extendedDynamicState3CoverageModulationTable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3CoverageModulationTable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3CoverageModulationTable, LAYOUT__extendedDynamicState3CoverageModulationTable);}
 
-    public int extendedDynamicState3RepresentativeFragmentTestEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3RepresentativeFragmentTestEnable, OFFSET$extendedDynamicState3RepresentativeFragmentTestEnable);}
-    public void extendedDynamicState3RepresentativeFragmentTestEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3RepresentativeFragmentTestEnable, OFFSET$extendedDynamicState3RepresentativeFragmentTestEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3RepresentativeFragmentTestEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3RepresentativeFragmentTestEnable, LAYOUT$extendedDynamicState3RepresentativeFragmentTestEnable);}
+    public int extendedDynamicState3CoverageReductionMode() {return this.ptr.get(LAYOUT__extendedDynamicState3CoverageReductionMode, OFFSET__extendedDynamicState3CoverageReductionMode);}
+    public void extendedDynamicState3CoverageReductionMode(int value) {this.ptr.set(LAYOUT__extendedDynamicState3CoverageReductionMode, OFFSET__extendedDynamicState3CoverageReductionMode, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3CoverageReductionMode() {return this.ptr.asSlice(OFFSET__extendedDynamicState3CoverageReductionMode, LAYOUT__extendedDynamicState3CoverageReductionMode);}
 
-    public int extendedDynamicState3ShadingRateImageEnable() {return this.ptr.get(LAYOUT$extendedDynamicState3ShadingRateImageEnable, OFFSET$extendedDynamicState3ShadingRateImageEnable);}
-    public void extendedDynamicState3ShadingRateImageEnable(int value) {this.ptr.set(LAYOUT$extendedDynamicState3ShadingRateImageEnable, OFFSET$extendedDynamicState3ShadingRateImageEnable, value);}
-    public java.lang.foreign.MemorySegment extendedDynamicState3ShadingRateImageEnable_ptr() {return this.ptr.asSlice(OFFSET$extendedDynamicState3ShadingRateImageEnable, LAYOUT$extendedDynamicState3ShadingRateImageEnable);}
+    public int extendedDynamicState3RepresentativeFragmentTestEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3RepresentativeFragmentTestEnable, OFFSET__extendedDynamicState3RepresentativeFragmentTestEnable);}
+    public void extendedDynamicState3RepresentativeFragmentTestEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3RepresentativeFragmentTestEnable, OFFSET__extendedDynamicState3RepresentativeFragmentTestEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3RepresentativeFragmentTestEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3RepresentativeFragmentTestEnable, LAYOUT__extendedDynamicState3RepresentativeFragmentTestEnable);}
+
+    public int extendedDynamicState3ShadingRateImageEnable() {return this.ptr.get(LAYOUT__extendedDynamicState3ShadingRateImageEnable, OFFSET__extendedDynamicState3ShadingRateImageEnable);}
+    public void extendedDynamicState3ShadingRateImageEnable(int value) {this.ptr.set(LAYOUT__extendedDynamicState3ShadingRateImageEnable, OFFSET__extendedDynamicState3ShadingRateImageEnable, value);}
+    public java.lang.foreign.MemorySegment $extendedDynamicState3ShadingRateImageEnable() {return this.ptr.asSlice(OFFSET__extendedDynamicState3ShadingRateImageEnable, LAYOUT__extendedDynamicState3ShadingRateImageEnable);}
 }

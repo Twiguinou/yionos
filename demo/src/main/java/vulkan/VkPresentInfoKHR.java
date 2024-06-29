@@ -2,76 +2,81 @@ package vulkan;
 
 public record VkPresentInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$waitSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$waitSemaphoreCount = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pWaitSemaphores = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pWaitSemaphores = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$swapchainCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$swapchainCount = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSwapchains = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSwapchains = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pImageIndices = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pImageIndices = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pResults = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pResults = 56L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__waitSemaphoreCount = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pWaitSemaphores = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__swapchainCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__swapchainCount = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSwapchains = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSwapchains = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pImageIndices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pImageIndices = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pResults = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pResults = 56;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$waitSemaphoreCount,
+            LAYOUT__pNext,
+            LAYOUT__waitSemaphoreCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pWaitSemaphores,
-            LAYOUT$swapchainCount,
+            LAYOUT__pWaitSemaphores,
+            LAYOUT__swapchainCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pSwapchains,
-            LAYOUT$pImageIndices,
-            LAYOUT$pResults
-    ).withName("VkPresentInfoKHR");
+            LAYOUT__pSwapchains,
+            LAYOUT__pImageIndices,
+            LAYOUT__pResults
+    ).withByteAlignment(8).withName("VkPresentInfoKHR");
 
     public VkPresentInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPresentInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPresentInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPresentInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPresentInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPresentInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int waitSemaphoreCount() {return this.ptr.get(LAYOUT$waitSemaphoreCount, OFFSET$waitSemaphoreCount);}
-    public void waitSemaphoreCount(int value) {this.ptr.set(LAYOUT$waitSemaphoreCount, OFFSET$waitSemaphoreCount, value);}
-    public java.lang.foreign.MemorySegment waitSemaphoreCount_ptr() {return this.ptr.asSlice(OFFSET$waitSemaphoreCount, LAYOUT$waitSemaphoreCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pWaitSemaphores() {return this.ptr.get(LAYOUT$pWaitSemaphores, OFFSET$pWaitSemaphores);}
-    public void pWaitSemaphores(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pWaitSemaphores, OFFSET$pWaitSemaphores, value);}
-    public java.lang.foreign.MemorySegment pWaitSemaphores_ptr() {return this.ptr.asSlice(OFFSET$pWaitSemaphores, LAYOUT$pWaitSemaphores);}
+    public int waitSemaphoreCount() {return this.ptr.get(LAYOUT__waitSemaphoreCount, OFFSET__waitSemaphoreCount);}
+    public void waitSemaphoreCount(int value) {this.ptr.set(LAYOUT__waitSemaphoreCount, OFFSET__waitSemaphoreCount, value);}
+    public java.lang.foreign.MemorySegment $waitSemaphoreCount() {return this.ptr.asSlice(OFFSET__waitSemaphoreCount, LAYOUT__waitSemaphoreCount);}
 
-    public int swapchainCount() {return this.ptr.get(LAYOUT$swapchainCount, OFFSET$swapchainCount);}
-    public void swapchainCount(int value) {this.ptr.set(LAYOUT$swapchainCount, OFFSET$swapchainCount, value);}
-    public java.lang.foreign.MemorySegment swapchainCount_ptr() {return this.ptr.asSlice(OFFSET$swapchainCount, LAYOUT$swapchainCount);}
+    public java.lang.foreign.MemorySegment pWaitSemaphores() {return this.ptr.get(LAYOUT__pWaitSemaphores, OFFSET__pWaitSemaphores);}
+    public void pWaitSemaphores(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pWaitSemaphores, OFFSET__pWaitSemaphores, value);}
+    public java.lang.foreign.MemorySegment $pWaitSemaphores() {return this.ptr.asSlice(OFFSET__pWaitSemaphores, LAYOUT__pWaitSemaphores);}
 
-    public java.lang.foreign.MemorySegment pSwapchains() {return this.ptr.get(LAYOUT$pSwapchains, OFFSET$pSwapchains);}
-    public void pSwapchains(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSwapchains, OFFSET$pSwapchains, value);}
-    public java.lang.foreign.MemorySegment pSwapchains_ptr() {return this.ptr.asSlice(OFFSET$pSwapchains, LAYOUT$pSwapchains);}
+    public int swapchainCount() {return this.ptr.get(LAYOUT__swapchainCount, OFFSET__swapchainCount);}
+    public void swapchainCount(int value) {this.ptr.set(LAYOUT__swapchainCount, OFFSET__swapchainCount, value);}
+    public java.lang.foreign.MemorySegment $swapchainCount() {return this.ptr.asSlice(OFFSET__swapchainCount, LAYOUT__swapchainCount);}
 
-    public java.lang.foreign.MemorySegment pImageIndices() {return this.ptr.get(LAYOUT$pImageIndices, OFFSET$pImageIndices);}
-    public void pImageIndices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pImageIndices, OFFSET$pImageIndices, value);}
-    public java.lang.foreign.MemorySegment pImageIndices_ptr() {return this.ptr.asSlice(OFFSET$pImageIndices, LAYOUT$pImageIndices);}
+    public java.lang.foreign.MemorySegment pSwapchains() {return this.ptr.get(LAYOUT__pSwapchains, OFFSET__pSwapchains);}
+    public void pSwapchains(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSwapchains, OFFSET__pSwapchains, value);}
+    public java.lang.foreign.MemorySegment $pSwapchains() {return this.ptr.asSlice(OFFSET__pSwapchains, LAYOUT__pSwapchains);}
 
-    public java.lang.foreign.MemorySegment pResults() {return this.ptr.get(LAYOUT$pResults, OFFSET$pResults);}
-    public void pResults(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pResults, OFFSET$pResults, value);}
-    public java.lang.foreign.MemorySegment pResults_ptr() {return this.ptr.asSlice(OFFSET$pResults, LAYOUT$pResults);}
+    public java.lang.foreign.MemorySegment pImageIndices() {return this.ptr.get(LAYOUT__pImageIndices, OFFSET__pImageIndices);}
+    public void pImageIndices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pImageIndices, OFFSET__pImageIndices, value);}
+    public java.lang.foreign.MemorySegment $pImageIndices() {return this.ptr.asSlice(OFFSET__pImageIndices, LAYOUT__pImageIndices);}
+
+    public java.lang.foreign.MemorySegment pResults() {return this.ptr.get(LAYOUT__pResults, OFFSET__pResults);}
+    public void pResults(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pResults, OFFSET__pResults, value);}
+    public java.lang.foreign.MemorySegment $pResults() {return this.ptr.asSlice(OFFSET__pResults, LAYOUT__pResults);}
 }

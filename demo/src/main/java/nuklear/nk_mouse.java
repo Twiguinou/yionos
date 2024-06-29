@@ -2,75 +2,80 @@ package nuklear;
 
 public record nk_mouse(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT$buttons = java.lang.foreign.MemoryLayout.sequenceLayout(4, nuklear.nk_mouse_button.gStructLayout);
-    public static final long OFFSET$buttons = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$pos = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$pos = 64L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$prev = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$prev = 72L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$delta = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$delta = 80L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$scroll_delta = nuklear.nk_vec2.gStructLayout;
-    public static final long OFFSET$scroll_delta = 88L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$grab = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$grab = 96L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$grabbed = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$grabbed = 97L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$ungrab = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$ungrab = 98L;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__buttons = java.lang.foreign.MemoryLayout.sequenceLayout(4, nuklear.nk_mouse_button.gRecordLayout);
+    public static final long OFFSET__buttons = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__pos = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__pos = 64;
+    public static final java.lang.foreign.StructLayout LAYOUT__prev = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__prev = 72;
+    public static final java.lang.foreign.StructLayout LAYOUT__delta = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__delta = 80;
+    public static final java.lang.foreign.StructLayout LAYOUT__scroll_delta = nuklear.nk_vec2.gRecordLayout;
+    public static final long OFFSET__scroll_delta = 88;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__grab = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__grab = 96;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__grabbed = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__grabbed = 97;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__ungrab = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__ungrab = 98;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$buttons,
-            LAYOUT$pos,
-            LAYOUT$prev,
-            LAYOUT$delta,
-            LAYOUT$scroll_delta,
-            LAYOUT$grab,
-            LAYOUT$grabbed,
-            LAYOUT$ungrab,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__buttons,
+            LAYOUT__pos,
+            LAYOUT__prev,
+            LAYOUT__delta,
+            LAYOUT__scroll_delta,
+            LAYOUT__grab,
+            LAYOUT__grabbed,
+            LAYOUT__ungrab,
             java.lang.foreign.MemoryLayout.paddingLayout(1)
-    ).withName("nk_mouse");
+    ).withByteAlignment(4).withName("nk_mouse");
 
     public nk_mouse(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_mouse getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_mouse getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_mouse(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_mouse(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment buttons() {return this._ptr.asSlice(OFFSET$buttons, LAYOUT$buttons);}
-    public nuklear.nk_mouse_button buttons(int i) {return new nuklear.nk_mouse_button(this._ptr.asSlice(OFFSET$buttons + i * LAYOUT$buttons.byteSize(), LAYOUT$buttons));}
-    public void buttons(int i, java.util.function.Consumer<nuklear.nk_mouse_button> consumer) {consumer.accept(this.buttons(i));}
-    public void buttons(int i, nuklear.nk_mouse_button value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$buttons + i * LAYOUT$buttons.byteSize(), LAYOUT$buttons.byteSize());}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_mouse value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public nuklear.nk_vec2 pos() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$pos, LAYOUT$pos));}
+    public java.lang.foreign.MemorySegment buttons() {return this._ptr.asSlice(OFFSET__buttons, LAYOUT__buttons);}
+    public nuklear.nk_mouse_button buttons(int index) {return nuklear.nk_mouse_button.getAtIndex(this.buttons(), index);}
+    public void buttons(int index, java.util.function.Consumer<nuklear.nk_mouse_button> consumer) {consumer.accept(this.buttons(index));}
+    public void buttons(int index, nuklear.nk_mouse_button value) {nuklear.nk_mouse_button.setAtIndex(this.buttons(), index, value);}
+
+    public nuklear.nk_vec2 pos() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__pos, LAYOUT__pos));}
     public void pos(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.pos());}
-    public void pos(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$pos, LAYOUT$pos.byteSize());}
+    public void pos(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__pos, LAYOUT__pos.byteSize());}
 
-    public nuklear.nk_vec2 prev() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$prev, LAYOUT$prev));}
+    public nuklear.nk_vec2 prev() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__prev, LAYOUT__prev));}
     public void prev(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.prev());}
-    public void prev(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$prev, LAYOUT$prev.byteSize());}
+    public void prev(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__prev, LAYOUT__prev.byteSize());}
 
-    public nuklear.nk_vec2 delta() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$delta, LAYOUT$delta));}
+    public nuklear.nk_vec2 delta() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__delta, LAYOUT__delta));}
     public void delta(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.delta());}
-    public void delta(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$delta, LAYOUT$delta.byteSize());}
+    public void delta(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__delta, LAYOUT__delta.byteSize());}
 
-    public nuklear.nk_vec2 scroll_delta() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET$scroll_delta, LAYOUT$scroll_delta));}
+    public nuklear.nk_vec2 scroll_delta() {return new nuklear.nk_vec2(this._ptr.asSlice(OFFSET__scroll_delta, LAYOUT__scroll_delta));}
     public void scroll_delta(java.util.function.Consumer<nuklear.nk_vec2> consumer) {consumer.accept(this.scroll_delta());}
-    public void scroll_delta(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$scroll_delta, LAYOUT$scroll_delta.byteSize());}
+    public void scroll_delta(nuklear.nk_vec2 value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__scroll_delta, LAYOUT__scroll_delta.byteSize());}
 
-    public char grab() {return (char)this._ptr.get(LAYOUT$grab, OFFSET$grab);}
-    public void grab(char value) {this._ptr.set(LAYOUT$grab, OFFSET$grab, (byte)value);}
-    public java.lang.foreign.MemorySegment grab_ptr() {return this._ptr.asSlice(OFFSET$grab, LAYOUT$grab);}
+    public byte grab() {return this._ptr.get(LAYOUT__grab, OFFSET__grab);}
+    public void grab(byte value) {this._ptr.set(LAYOUT__grab, OFFSET__grab, value);}
+    public java.lang.foreign.MemorySegment $grab() {return this._ptr.asSlice(OFFSET__grab, LAYOUT__grab);}
 
-    public char grabbed() {return (char)this._ptr.get(LAYOUT$grabbed, OFFSET$grabbed);}
-    public void grabbed(char value) {this._ptr.set(LAYOUT$grabbed, OFFSET$grabbed, (byte)value);}
-    public java.lang.foreign.MemorySegment grabbed_ptr() {return this._ptr.asSlice(OFFSET$grabbed, LAYOUT$grabbed);}
+    public byte grabbed() {return this._ptr.get(LAYOUT__grabbed, OFFSET__grabbed);}
+    public void grabbed(byte value) {this._ptr.set(LAYOUT__grabbed, OFFSET__grabbed, value);}
+    public java.lang.foreign.MemorySegment $grabbed() {return this._ptr.asSlice(OFFSET__grabbed, LAYOUT__grabbed);}
 
-    public char ungrab() {return (char)this._ptr.get(LAYOUT$ungrab, OFFSET$ungrab);}
-    public void ungrab(char value) {this._ptr.set(LAYOUT$ungrab, OFFSET$ungrab, (byte)value);}
-    public java.lang.foreign.MemorySegment ungrab_ptr() {return this._ptr.asSlice(OFFSET$ungrab, LAYOUT$ungrab);}
+    public byte ungrab() {return this._ptr.get(LAYOUT__ungrab, OFFSET__ungrab);}
+    public void ungrab(byte value) {this._ptr.set(LAYOUT__ungrab, OFFSET__ungrab, value);}
+    public java.lang.foreign.MemorySegment $ungrab() {return this._ptr.asSlice(OFFSET__ungrab, LAYOUT__ungrab);}
 }

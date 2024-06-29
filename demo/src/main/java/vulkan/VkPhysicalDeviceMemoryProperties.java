@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkPhysicalDeviceMemoryProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$memoryTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$memoryTypeCount = 0L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$memoryTypes = java.lang.foreign.MemoryLayout.sequenceLayout(32, vulkan.VkMemoryType.gStructLayout);
-    public static final long OFFSET$memoryTypes = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$memoryHeapCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$memoryHeapCount = 260L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$memoryHeaps = java.lang.foreign.MemoryLayout.sequenceLayout(16, vulkan.VkMemoryHeap.gStructLayout);
-    public static final long OFFSET$memoryHeaps = 264L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__memoryTypeCount = 0;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryTypes = java.lang.foreign.MemoryLayout.sequenceLayout(32, vulkan.VkMemoryType.gRecordLayout);
+    public static final long OFFSET__memoryTypes = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryHeapCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__memoryHeapCount = 260;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryHeaps = java.lang.foreign.MemoryLayout.sequenceLayout(16, vulkan.VkMemoryHeap.gRecordLayout);
+    public static final long OFFSET__memoryHeaps = 264;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$memoryTypeCount,
-            LAYOUT$memoryTypes,
-            LAYOUT$memoryHeapCount,
-            LAYOUT$memoryHeaps
-    ).withName("VkPhysicalDeviceMemoryProperties");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__memoryTypeCount,
+            LAYOUT__memoryTypes,
+            LAYOUT__memoryHeapCount,
+            LAYOUT__memoryHeaps
+    ).withByteAlignment(8).withName("VkPhysicalDeviceMemoryProperties");
 
     public VkPhysicalDeviceMemoryProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceMemoryProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceMemoryProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceMemoryProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceMemoryProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int memoryTypeCount() {return this.ptr.get(LAYOUT$memoryTypeCount, OFFSET$memoryTypeCount);}
-    public void memoryTypeCount(int value) {this.ptr.set(LAYOUT$memoryTypeCount, OFFSET$memoryTypeCount, value);}
-    public java.lang.foreign.MemorySegment memoryTypeCount_ptr() {return this.ptr.asSlice(OFFSET$memoryTypeCount, LAYOUT$memoryTypeCount);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceMemoryProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment memoryTypes() {return this.ptr.asSlice(OFFSET$memoryTypes, LAYOUT$memoryTypes);}
-    public vulkan.VkMemoryType memoryTypes(int i) {return new vulkan.VkMemoryType(this.ptr.asSlice(OFFSET$memoryTypes + i * LAYOUT$memoryTypes.byteSize(), LAYOUT$memoryTypes));}
-    public void memoryTypes(int i, java.util.function.Consumer<vulkan.VkMemoryType> consumer) {consumer.accept(this.memoryTypes(i));}
-    public void memoryTypes(int i, vulkan.VkMemoryType value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$memoryTypes + i * LAYOUT$memoryTypes.byteSize(), LAYOUT$memoryTypes.byteSize());}
+    public int memoryTypeCount() {return this.ptr.get(LAYOUT__memoryTypeCount, OFFSET__memoryTypeCount);}
+    public void memoryTypeCount(int value) {this.ptr.set(LAYOUT__memoryTypeCount, OFFSET__memoryTypeCount, value);}
+    public java.lang.foreign.MemorySegment $memoryTypeCount() {return this.ptr.asSlice(OFFSET__memoryTypeCount, LAYOUT__memoryTypeCount);}
 
-    public int memoryHeapCount() {return this.ptr.get(LAYOUT$memoryHeapCount, OFFSET$memoryHeapCount);}
-    public void memoryHeapCount(int value) {this.ptr.set(LAYOUT$memoryHeapCount, OFFSET$memoryHeapCount, value);}
-    public java.lang.foreign.MemorySegment memoryHeapCount_ptr() {return this.ptr.asSlice(OFFSET$memoryHeapCount, LAYOUT$memoryHeapCount);}
+    public java.lang.foreign.MemorySegment memoryTypes() {return this.ptr.asSlice(OFFSET__memoryTypes, LAYOUT__memoryTypes);}
+    public vulkan.VkMemoryType memoryTypes(int index) {return vulkan.VkMemoryType.getAtIndex(this.memoryTypes(), index);}
+    public void memoryTypes(int index, java.util.function.Consumer<vulkan.VkMemoryType> consumer) {consumer.accept(this.memoryTypes(index));}
+    public void memoryTypes(int index, vulkan.VkMemoryType value) {vulkan.VkMemoryType.setAtIndex(this.memoryTypes(), index, value);}
 
-    public java.lang.foreign.MemorySegment memoryHeaps() {return this.ptr.asSlice(OFFSET$memoryHeaps, LAYOUT$memoryHeaps);}
-    public vulkan.VkMemoryHeap memoryHeaps(int i) {return new vulkan.VkMemoryHeap(this.ptr.asSlice(OFFSET$memoryHeaps + i * LAYOUT$memoryHeaps.byteSize(), LAYOUT$memoryHeaps));}
-    public void memoryHeaps(int i, java.util.function.Consumer<vulkan.VkMemoryHeap> consumer) {consumer.accept(this.memoryHeaps(i));}
-    public void memoryHeaps(int i, vulkan.VkMemoryHeap value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$memoryHeaps + i * LAYOUT$memoryHeaps.byteSize(), LAYOUT$memoryHeaps.byteSize());}
+    public int memoryHeapCount() {return this.ptr.get(LAYOUT__memoryHeapCount, OFFSET__memoryHeapCount);}
+    public void memoryHeapCount(int value) {this.ptr.set(LAYOUT__memoryHeapCount, OFFSET__memoryHeapCount, value);}
+    public java.lang.foreign.MemorySegment $memoryHeapCount() {return this.ptr.asSlice(OFFSET__memoryHeapCount, LAYOUT__memoryHeapCount);}
+
+    public java.lang.foreign.MemorySegment memoryHeaps() {return this.ptr.asSlice(OFFSET__memoryHeaps, LAYOUT__memoryHeaps);}
+    public vulkan.VkMemoryHeap memoryHeaps(int index) {return vulkan.VkMemoryHeap.getAtIndex(this.memoryHeaps(), index);}
+    public void memoryHeaps(int index, java.util.function.Consumer<vulkan.VkMemoryHeap> consumer) {consumer.accept(this.memoryHeaps(index));}
+    public void memoryHeaps(int index, vulkan.VkMemoryHeap value) {vulkan.VkMemoryHeap.setAtIndex(this.memoryHeaps(), index, value);}
 }

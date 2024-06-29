@@ -2,75 +2,80 @@ package vulkan;
 
 public record VkVideoFormatPropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$format = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$format = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$componentMapping = vulkan.VkComponentMapping.gStructLayout;
-    public static final long OFFSET$componentMapping = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imageCreateFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imageCreateFlags = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imageType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imageType = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imageTiling = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imageTiling = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imageUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imageUsageFlags = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__format = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__componentMapping = vulkan.VkComponentMapping.gRecordLayout;
+    public static final long OFFSET__componentMapping = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageCreateFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imageCreateFlags = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imageType = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageTiling = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imageTiling = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imageUsageFlags = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$format,
-            LAYOUT$componentMapping,
-            LAYOUT$imageCreateFlags,
-            LAYOUT$imageType,
-            LAYOUT$imageTiling,
-            LAYOUT$imageUsageFlags,
+            LAYOUT__pNext,
+            LAYOUT__format,
+            LAYOUT__componentMapping,
+            LAYOUT__imageCreateFlags,
+            LAYOUT__imageType,
+            LAYOUT__imageTiling,
+            LAYOUT__imageUsageFlags,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkVideoFormatPropertiesKHR");
+    ).withByteAlignment(8).withName("VkVideoFormatPropertiesKHR");
 
     public VkVideoFormatPropertiesKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkVideoFormatPropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkVideoFormatPropertiesKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkVideoFormatPropertiesKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkVideoFormatPropertiesKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkVideoFormatPropertiesKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int format() {return this.ptr.get(LAYOUT$format, OFFSET$format);}
-    public void format(int value) {this.ptr.set(LAYOUT$format, OFFSET$format, value);}
-    public java.lang.foreign.MemorySegment format_ptr() {return this.ptr.asSlice(OFFSET$format, LAYOUT$format);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public vulkan.VkComponentMapping componentMapping() {return new vulkan.VkComponentMapping(this.ptr.asSlice(OFFSET$componentMapping, LAYOUT$componentMapping));}
+    public int format() {return this.ptr.get(LAYOUT__format, OFFSET__format);}
+    public void format(int value) {this.ptr.set(LAYOUT__format, OFFSET__format, value);}
+    public java.lang.foreign.MemorySegment $format() {return this.ptr.asSlice(OFFSET__format, LAYOUT__format);}
+
+    public vulkan.VkComponentMapping componentMapping() {return new vulkan.VkComponentMapping(this.ptr.asSlice(OFFSET__componentMapping, LAYOUT__componentMapping));}
     public void componentMapping(java.util.function.Consumer<vulkan.VkComponentMapping> consumer) {consumer.accept(this.componentMapping());}
-    public void componentMapping(vulkan.VkComponentMapping value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$componentMapping, LAYOUT$componentMapping.byteSize());}
+    public void componentMapping(vulkan.VkComponentMapping value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__componentMapping, LAYOUT__componentMapping.byteSize());}
 
-    public int imageCreateFlags() {return this.ptr.get(LAYOUT$imageCreateFlags, OFFSET$imageCreateFlags);}
-    public void imageCreateFlags(int value) {this.ptr.set(LAYOUT$imageCreateFlags, OFFSET$imageCreateFlags, value);}
-    public java.lang.foreign.MemorySegment imageCreateFlags_ptr() {return this.ptr.asSlice(OFFSET$imageCreateFlags, LAYOUT$imageCreateFlags);}
+    public int imageCreateFlags() {return this.ptr.get(LAYOUT__imageCreateFlags, OFFSET__imageCreateFlags);}
+    public void imageCreateFlags(int value) {this.ptr.set(LAYOUT__imageCreateFlags, OFFSET__imageCreateFlags, value);}
+    public java.lang.foreign.MemorySegment $imageCreateFlags() {return this.ptr.asSlice(OFFSET__imageCreateFlags, LAYOUT__imageCreateFlags);}
 
-    public int imageType() {return this.ptr.get(LAYOUT$imageType, OFFSET$imageType);}
-    public void imageType(int value) {this.ptr.set(LAYOUT$imageType, OFFSET$imageType, value);}
-    public java.lang.foreign.MemorySegment imageType_ptr() {return this.ptr.asSlice(OFFSET$imageType, LAYOUT$imageType);}
+    public int imageType() {return this.ptr.get(LAYOUT__imageType, OFFSET__imageType);}
+    public void imageType(int value) {this.ptr.set(LAYOUT__imageType, OFFSET__imageType, value);}
+    public java.lang.foreign.MemorySegment $imageType() {return this.ptr.asSlice(OFFSET__imageType, LAYOUT__imageType);}
 
-    public int imageTiling() {return this.ptr.get(LAYOUT$imageTiling, OFFSET$imageTiling);}
-    public void imageTiling(int value) {this.ptr.set(LAYOUT$imageTiling, OFFSET$imageTiling, value);}
-    public java.lang.foreign.MemorySegment imageTiling_ptr() {return this.ptr.asSlice(OFFSET$imageTiling, LAYOUT$imageTiling);}
+    public int imageTiling() {return this.ptr.get(LAYOUT__imageTiling, OFFSET__imageTiling);}
+    public void imageTiling(int value) {this.ptr.set(LAYOUT__imageTiling, OFFSET__imageTiling, value);}
+    public java.lang.foreign.MemorySegment $imageTiling() {return this.ptr.asSlice(OFFSET__imageTiling, LAYOUT__imageTiling);}
 
-    public int imageUsageFlags() {return this.ptr.get(LAYOUT$imageUsageFlags, OFFSET$imageUsageFlags);}
-    public void imageUsageFlags(int value) {this.ptr.set(LAYOUT$imageUsageFlags, OFFSET$imageUsageFlags, value);}
-    public java.lang.foreign.MemorySegment imageUsageFlags_ptr() {return this.ptr.asSlice(OFFSET$imageUsageFlags, LAYOUT$imageUsageFlags);}
+    public int imageUsageFlags() {return this.ptr.get(LAYOUT__imageUsageFlags, OFFSET__imageUsageFlags);}
+    public void imageUsageFlags(int value) {this.ptr.set(LAYOUT__imageUsageFlags, OFFSET__imageUsageFlags, value);}
+    public java.lang.foreign.MemorySegment $imageUsageFlags() {return this.ptr.asSlice(OFFSET__imageUsageFlags, LAYOUT__imageUsageFlags);}
 }

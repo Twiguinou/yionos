@@ -2,39 +2,44 @@ package assimp;
 
 public record aiMetadata(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mNumProperties = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mNumProperties = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mKeys = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mKeys = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$mValues = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$mValues = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumProperties = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mNumProperties = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mKeys = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mKeys = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__mValues = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$mNumProperties,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__mNumProperties,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$mKeys,
-            LAYOUT$mValues
-    ).withName("aiMetadata");
+            LAYOUT__mKeys,
+            LAYOUT__mValues
+    ).withByteAlignment(8).withName("aiMetadata");
 
     public aiMetadata(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiMetadata getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiMetadata getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiMetadata(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiMetadata(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int mNumProperties() {return this.ptr.get(LAYOUT$mNumProperties, OFFSET$mNumProperties);}
-    public void mNumProperties(int value) {this.ptr.set(LAYOUT$mNumProperties, OFFSET$mNumProperties, value);}
-    public java.lang.foreign.MemorySegment mNumProperties_ptr() {return this.ptr.asSlice(OFFSET$mNumProperties, LAYOUT$mNumProperties);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiMetadata value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment mKeys() {return this.ptr.get(LAYOUT$mKeys, OFFSET$mKeys);}
-    public void mKeys(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mKeys, OFFSET$mKeys, value);}
-    public java.lang.foreign.MemorySegment mKeys_ptr() {return this.ptr.asSlice(OFFSET$mKeys, LAYOUT$mKeys);}
+    public int mNumProperties() {return this.ptr.get(LAYOUT__mNumProperties, OFFSET__mNumProperties);}
+    public void mNumProperties(int value) {this.ptr.set(LAYOUT__mNumProperties, OFFSET__mNumProperties, value);}
+    public java.lang.foreign.MemorySegment $mNumProperties() {return this.ptr.asSlice(OFFSET__mNumProperties, LAYOUT__mNumProperties);}
 
-    public java.lang.foreign.MemorySegment mValues() {return this.ptr.get(LAYOUT$mValues, OFFSET$mValues);}
-    public void mValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$mValues, OFFSET$mValues, value);}
-    public java.lang.foreign.MemorySegment mValues_ptr() {return this.ptr.asSlice(OFFSET$mValues, LAYOUT$mValues);}
+    public java.lang.foreign.MemorySegment mKeys() {return this.ptr.get(LAYOUT__mKeys, OFFSET__mKeys);}
+    public void mKeys(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mKeys, OFFSET__mKeys, value);}
+    public java.lang.foreign.MemorySegment $mKeys() {return this.ptr.asSlice(OFFSET__mKeys, LAYOUT__mKeys);}
+
+    public java.lang.foreign.MemorySegment mValues() {return this.ptr.get(LAYOUT__mValues, OFFSET__mValues);}
+    public void mValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__mValues, OFFSET__mValues, value);}
+    public java.lang.foreign.MemorySegment $mValues() {return this.ptr.asSlice(OFFSET__mValues, LAYOUT__mValues);}
 }

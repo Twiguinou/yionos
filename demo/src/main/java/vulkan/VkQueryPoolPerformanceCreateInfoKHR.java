@@ -2,53 +2,58 @@ package vulkan;
 
 public record VkQueryPoolPerformanceCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$queueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$queueFamilyIndex = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$counterIndexCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$counterIndexCount = 20L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pCounterIndices = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pCounterIndices = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__queueFamilyIndex = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__counterIndexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__counterIndexCount = 20;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCounterIndices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pCounterIndices = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$queueFamilyIndex,
-            LAYOUT$counterIndexCount,
-            LAYOUT$pCounterIndices
-    ).withName("VkQueryPoolPerformanceCreateInfoKHR");
+            LAYOUT__pNext,
+            LAYOUT__queueFamilyIndex,
+            LAYOUT__counterIndexCount,
+            LAYOUT__pCounterIndices
+    ).withByteAlignment(8).withName("VkQueryPoolPerformanceCreateInfoKHR");
 
     public VkQueryPoolPerformanceCreateInfoKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkQueryPoolPerformanceCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkQueryPoolPerformanceCreateInfoKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkQueryPoolPerformanceCreateInfoKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkQueryPoolPerformanceCreateInfoKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkQueryPoolPerformanceCreateInfoKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int queueFamilyIndex() {return this.ptr.get(LAYOUT$queueFamilyIndex, OFFSET$queueFamilyIndex);}
-    public void queueFamilyIndex(int value) {this.ptr.set(LAYOUT$queueFamilyIndex, OFFSET$queueFamilyIndex, value);}
-    public java.lang.foreign.MemorySegment queueFamilyIndex_ptr() {return this.ptr.asSlice(OFFSET$queueFamilyIndex, LAYOUT$queueFamilyIndex);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int counterIndexCount() {return this.ptr.get(LAYOUT$counterIndexCount, OFFSET$counterIndexCount);}
-    public void counterIndexCount(int value) {this.ptr.set(LAYOUT$counterIndexCount, OFFSET$counterIndexCount, value);}
-    public java.lang.foreign.MemorySegment counterIndexCount_ptr() {return this.ptr.asSlice(OFFSET$counterIndexCount, LAYOUT$counterIndexCount);}
+    public int queueFamilyIndex() {return this.ptr.get(LAYOUT__queueFamilyIndex, OFFSET__queueFamilyIndex);}
+    public void queueFamilyIndex(int value) {this.ptr.set(LAYOUT__queueFamilyIndex, OFFSET__queueFamilyIndex, value);}
+    public java.lang.foreign.MemorySegment $queueFamilyIndex() {return this.ptr.asSlice(OFFSET__queueFamilyIndex, LAYOUT__queueFamilyIndex);}
 
-    public java.lang.foreign.MemorySegment pCounterIndices() {return this.ptr.get(LAYOUT$pCounterIndices, OFFSET$pCounterIndices);}
-    public void pCounterIndices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pCounterIndices, OFFSET$pCounterIndices, value);}
-    public java.lang.foreign.MemorySegment pCounterIndices_ptr() {return this.ptr.asSlice(OFFSET$pCounterIndices, LAYOUT$pCounterIndices);}
+    public int counterIndexCount() {return this.ptr.get(LAYOUT__counterIndexCount, OFFSET__counterIndexCount);}
+    public void counterIndexCount(int value) {this.ptr.set(LAYOUT__counterIndexCount, OFFSET__counterIndexCount, value);}
+    public java.lang.foreign.MemorySegment $counterIndexCount() {return this.ptr.asSlice(OFFSET__counterIndexCount, LAYOUT__counterIndexCount);}
+
+    public java.lang.foreign.MemorySegment pCounterIndices() {return this.ptr.get(LAYOUT__pCounterIndices, OFFSET__pCounterIndices);}
+    public void pCounterIndices(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pCounterIndices, OFFSET__pCounterIndices, value);}
+    public java.lang.foreign.MemorySegment $pCounterIndices() {return this.ptr.asSlice(OFFSET__pCounterIndices, LAYOUT__pCounterIndices);}
 }

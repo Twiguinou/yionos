@@ -2,62 +2,67 @@ package vulkan;
 
 public record VkTimelineSemaphoreSubmitInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$waitSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$waitSemaphoreValueCount = 16L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pWaitSemaphoreValues = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pWaitSemaphoreValues = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$signalSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$signalSemaphoreValueCount = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pSignalSemaphoreValues = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pSignalSemaphoreValues = 40L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__waitSemaphoreValueCount = 16;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphoreValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pWaitSemaphoreValues = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__signalSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__signalSemaphoreValueCount = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSignalSemaphoreValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pSignalSemaphoreValues = 40;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$waitSemaphoreValueCount,
+            LAYOUT__pNext,
+            LAYOUT__waitSemaphoreValueCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pWaitSemaphoreValues,
-            LAYOUT$signalSemaphoreValueCount,
+            LAYOUT__pWaitSemaphoreValues,
+            LAYOUT__signalSemaphoreValueCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pSignalSemaphoreValues
-    ).withName("VkTimelineSemaphoreSubmitInfo");
+            LAYOUT__pSignalSemaphoreValues
+    ).withByteAlignment(8).withName("VkTimelineSemaphoreSubmitInfo");
 
     public VkTimelineSemaphoreSubmitInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkTimelineSemaphoreSubmitInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkTimelineSemaphoreSubmitInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkTimelineSemaphoreSubmitInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkTimelineSemaphoreSubmitInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkTimelineSemaphoreSubmitInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int waitSemaphoreValueCount() {return this.ptr.get(LAYOUT$waitSemaphoreValueCount, OFFSET$waitSemaphoreValueCount);}
-    public void waitSemaphoreValueCount(int value) {this.ptr.set(LAYOUT$waitSemaphoreValueCount, OFFSET$waitSemaphoreValueCount, value);}
-    public java.lang.foreign.MemorySegment waitSemaphoreValueCount_ptr() {return this.ptr.asSlice(OFFSET$waitSemaphoreValueCount, LAYOUT$waitSemaphoreValueCount);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public java.lang.foreign.MemorySegment pWaitSemaphoreValues() {return this.ptr.get(LAYOUT$pWaitSemaphoreValues, OFFSET$pWaitSemaphoreValues);}
-    public void pWaitSemaphoreValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pWaitSemaphoreValues, OFFSET$pWaitSemaphoreValues, value);}
-    public java.lang.foreign.MemorySegment pWaitSemaphoreValues_ptr() {return this.ptr.asSlice(OFFSET$pWaitSemaphoreValues, LAYOUT$pWaitSemaphoreValues);}
+    public int waitSemaphoreValueCount() {return this.ptr.get(LAYOUT__waitSemaphoreValueCount, OFFSET__waitSemaphoreValueCount);}
+    public void waitSemaphoreValueCount(int value) {this.ptr.set(LAYOUT__waitSemaphoreValueCount, OFFSET__waitSemaphoreValueCount, value);}
+    public java.lang.foreign.MemorySegment $waitSemaphoreValueCount() {return this.ptr.asSlice(OFFSET__waitSemaphoreValueCount, LAYOUT__waitSemaphoreValueCount);}
 
-    public int signalSemaphoreValueCount() {return this.ptr.get(LAYOUT$signalSemaphoreValueCount, OFFSET$signalSemaphoreValueCount);}
-    public void signalSemaphoreValueCount(int value) {this.ptr.set(LAYOUT$signalSemaphoreValueCount, OFFSET$signalSemaphoreValueCount, value);}
-    public java.lang.foreign.MemorySegment signalSemaphoreValueCount_ptr() {return this.ptr.asSlice(OFFSET$signalSemaphoreValueCount, LAYOUT$signalSemaphoreValueCount);}
+    public java.lang.foreign.MemorySegment pWaitSemaphoreValues() {return this.ptr.get(LAYOUT__pWaitSemaphoreValues, OFFSET__pWaitSemaphoreValues);}
+    public void pWaitSemaphoreValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pWaitSemaphoreValues, OFFSET__pWaitSemaphoreValues, value);}
+    public java.lang.foreign.MemorySegment $pWaitSemaphoreValues() {return this.ptr.asSlice(OFFSET__pWaitSemaphoreValues, LAYOUT__pWaitSemaphoreValues);}
 
-    public java.lang.foreign.MemorySegment pSignalSemaphoreValues() {return this.ptr.get(LAYOUT$pSignalSemaphoreValues, OFFSET$pSignalSemaphoreValues);}
-    public void pSignalSemaphoreValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pSignalSemaphoreValues, OFFSET$pSignalSemaphoreValues, value);}
-    public java.lang.foreign.MemorySegment pSignalSemaphoreValues_ptr() {return this.ptr.asSlice(OFFSET$pSignalSemaphoreValues, LAYOUT$pSignalSemaphoreValues);}
+    public int signalSemaphoreValueCount() {return this.ptr.get(LAYOUT__signalSemaphoreValueCount, OFFSET__signalSemaphoreValueCount);}
+    public void signalSemaphoreValueCount(int value) {this.ptr.set(LAYOUT__signalSemaphoreValueCount, OFFSET__signalSemaphoreValueCount, value);}
+    public java.lang.foreign.MemorySegment $signalSemaphoreValueCount() {return this.ptr.asSlice(OFFSET__signalSemaphoreValueCount, LAYOUT__signalSemaphoreValueCount);}
+
+    public java.lang.foreign.MemorySegment pSignalSemaphoreValues() {return this.ptr.get(LAYOUT__pSignalSemaphoreValues, OFFSET__pSignalSemaphoreValues);}
+    public void pSignalSemaphoreValues(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pSignalSemaphoreValues, OFFSET__pSignalSemaphoreValues, value);}
+    public java.lang.foreign.MemorySegment $pSignalSemaphoreValues() {return this.ptr.asSlice(OFFSET__pSignalSemaphoreValues, LAYOUT__pSignalSemaphoreValues);}
 }

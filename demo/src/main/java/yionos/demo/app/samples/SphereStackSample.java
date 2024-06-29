@@ -21,11 +21,11 @@ import yionos.dynamics.geometries.SphereGeometry;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 import java.util.Arrays;
 
 import static nuklear.Nuklear.*;
 import static nuklear.nk_panel_flags.*;
+import static java.lang.foreign.ValueLayout.*;
 
 public class SphereStackSample implements DemoSample
 {
@@ -168,13 +168,13 @@ public class SphereStackSample implements DemoSample
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            SegmentAllocator textAllocator = SegmentAllocator.prefixAllocator(arena.allocateArray(ValueLayout.JAVA_CHAR, 128));
+            SegmentAllocator textAllocator = SegmentAllocator.prefixAllocator(arena.allocate(JAVA_CHAR, 128));
 
-            if (nk_begin(context.pContext(), textAllocator.allocateUtf8String("Scene configuration"), nk_rect(arena, 20, 500, 230, 250),
+            if (nk_begin(context.pContext(), textAllocator.allocateFrom("Scene configuration"), nk_rect(arena, 20, 500, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE | NK_WINDOW_SCALABLE) != 0)
             {
                 nk_layout_row_static(context.pContext(), 30, 140, 1);
-                if (nk_checkbox_label(context.pContext(), textAllocator.allocateUtf8String("Pause simulation"), arena.allocate(ValueLayout.JAVA_INT, this.m_stepping ? 1 : 0)) != 0)
+                if (nk_checkbox_label(context.pContext(), textAllocator.allocateFrom("Pause simulation"), arena.allocateFrom(JAVA_INT, this.m_stepping ? 1 : 0)) != 0)
                 {
                     this.m_stepping = !this.m_stepping;
                 }

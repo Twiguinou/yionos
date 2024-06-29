@@ -2,53 +2,58 @@ package nuklear;
 
 public record nk_popup_buffer(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$begin = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$begin = 0L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$parent = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$parent = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$last = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$last = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$end = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$end = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$active = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$active = 32L;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__begin = 0;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__parent = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__parent = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__last = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__last = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__end = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__active = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$begin,
-            LAYOUT$parent,
-            LAYOUT$last,
-            LAYOUT$end,
-            LAYOUT$active,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__begin,
+            LAYOUT__parent,
+            LAYOUT__last,
+            LAYOUT__end,
+            LAYOUT__active,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("nk_popup_buffer");
+    ).withByteAlignment(8).withName("nk_popup_buffer");
 
     public nk_popup_buffer(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_popup_buffer getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_popup_buffer getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_popup_buffer(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_popup_buffer(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public long begin() {return this._ptr.get(LAYOUT$begin, OFFSET$begin);}
-    public void begin(long value) {this._ptr.set(LAYOUT$begin, OFFSET$begin, value);}
-    public java.lang.foreign.MemorySegment begin_ptr() {return this._ptr.asSlice(OFFSET$begin, LAYOUT$begin);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_popup_buffer value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public long parent() {return this._ptr.get(LAYOUT$parent, OFFSET$parent);}
-    public void parent(long value) {this._ptr.set(LAYOUT$parent, OFFSET$parent, value);}
-    public java.lang.foreign.MemorySegment parent_ptr() {return this._ptr.asSlice(OFFSET$parent, LAYOUT$parent);}
+    public long begin() {return this._ptr.get(LAYOUT__begin, OFFSET__begin);}
+    public void begin(long value) {this._ptr.set(LAYOUT__begin, OFFSET__begin, value);}
+    public java.lang.foreign.MemorySegment $begin() {return this._ptr.asSlice(OFFSET__begin, LAYOUT__begin);}
 
-    public long last() {return this._ptr.get(LAYOUT$last, OFFSET$last);}
-    public void last(long value) {this._ptr.set(LAYOUT$last, OFFSET$last, value);}
-    public java.lang.foreign.MemorySegment last_ptr() {return this._ptr.asSlice(OFFSET$last, LAYOUT$last);}
+    public long parent() {return this._ptr.get(LAYOUT__parent, OFFSET__parent);}
+    public void parent(long value) {this._ptr.set(LAYOUT__parent, OFFSET__parent, value);}
+    public java.lang.foreign.MemorySegment $parent() {return this._ptr.asSlice(OFFSET__parent, LAYOUT__parent);}
 
-    public long end() {return this._ptr.get(LAYOUT$end, OFFSET$end);}
-    public void end(long value) {this._ptr.set(LAYOUT$end, OFFSET$end, value);}
-    public java.lang.foreign.MemorySegment end_ptr() {return this._ptr.asSlice(OFFSET$end, LAYOUT$end);}
+    public long last() {return this._ptr.get(LAYOUT__last, OFFSET__last);}
+    public void last(long value) {this._ptr.set(LAYOUT__last, OFFSET__last, value);}
+    public java.lang.foreign.MemorySegment $last() {return this._ptr.asSlice(OFFSET__last, LAYOUT__last);}
 
-    public int active() {return this._ptr.get(LAYOUT$active, OFFSET$active);}
-    public void active(int value) {this._ptr.set(LAYOUT$active, OFFSET$active, value);}
-    public java.lang.foreign.MemorySegment active_ptr() {return this._ptr.asSlice(OFFSET$active, LAYOUT$active);}
+    public long end() {return this._ptr.get(LAYOUT__end, OFFSET__end);}
+    public void end(long value) {this._ptr.set(LAYOUT__end, OFFSET__end, value);}
+    public java.lang.foreign.MemorySegment $end() {return this._ptr.asSlice(OFFSET__end, LAYOUT__end);}
+
+    public int active() {return this._ptr.get(LAYOUT__active, OFFSET__active);}
+    public void active(int value) {this._ptr.set(LAYOUT__active, OFFSET__active, value);}
+    public java.lang.foreign.MemorySegment $active() {return this._ptr.asSlice(OFFSET__active, LAYOUT__active);}
 }

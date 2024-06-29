@@ -12,7 +12,6 @@ import yionos.demo.SequenceInitializer;
 import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkFormat.*;
@@ -26,6 +25,7 @@ import static vulkan.VkImageViewType.*;
 import static vulkan.VkSurfaceTransformFlagBitsKHR.*;
 import static vulkan.VkComponentSwizzle.*;
 import static vulkan.VkImageAspectFlagBits.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class Swapchain implements Disposable
@@ -108,10 +108,10 @@ public class Swapchain implements Disposable
 
     private void createImages(Arena arena, SequenceInitializer initializer) throws VulkanException
     {
-        MemorySegment pImageCount = arena.allocate(ValueLayout.JAVA_INT);
+        MemorySegment pImageCount = arena.allocate(JAVA_INT);
         VulkanException.check(vkGetSwapchainImagesKHR(this.device, this.m_handle, pImageCount, NULL), initializer);
-        int swapchainImageCount = pImageCount.get(ValueLayout.JAVA_INT, 0);
-        MemorySegment pImages = arena.allocateArray(ValueLayout.ADDRESS, swapchainImageCount);
+        int swapchainImageCount = pImageCount.get(JAVA_INT, 0);
+        MemorySegment pImages = arena.allocate(ADDRESS, swapchainImageCount);
         VulkanException.check(vkGetSwapchainImagesKHR(this.device, this.m_handle, pImageCount, pImages), initializer);
 
         VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(arena);
@@ -136,14 +136,14 @@ public class Swapchain implements Disposable
             range.layerCount(1);
         });
 
-        MemorySegment pImageView = arena.allocate(ValueLayout.ADDRESS);
+        MemorySegment pImageView = arena.allocate(ADDRESS);
         this.m_images = new VulkanImage[swapchainImageCount];
         for (int i = 0; i < this.m_images.length; i++)
         {
-            MemorySegment image = pImages.getAtIndex(ValueLayout.ADDRESS, i);
+            MemorySegment image = pImages.getAtIndex(ADDRESS, i);
             imageViewCreateInfo.image(image);
             VulkanException.check(vkCreateImageView(this.device, imageViewCreateInfo.ptr(), NULL, pImageView), "Unable to create image view", initializer);
-            MemorySegment imageView = pImageView.get(ValueLayout.ADDRESS, 0);
+            MemorySegment imageView = pImageView.get(ADDRESS, 0);
             this.m_images[i] = new VulkanImage()
             {
                 @Override
@@ -202,13 +202,13 @@ public class Swapchain implements Disposable
             {
                 swapchainCreateInfo.imageSharingMode(VK_SHARING_MODE_CONCURRENT);
                 swapchainCreateInfo.queueFamilyIndexCount(2);
-                swapchainCreateInfo.pQueueFamilyIndices(arena.allocateArray(ValueLayout.JAVA_INT, graphicsQueueFamily, presentMode));
+                swapchainCreateInfo.pQueueFamilyIndices(arena.allocateFrom(JAVA_INT, graphicsQueueFamily, presentMode));
             }
 
-            MemorySegment pSwapchain = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pSwapchain = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateSwapchainKHR(this.device, swapchainCreateInfo.ptr(), NULL, pSwapchain), "Unable to create Vulkan swapchain", initializer);
             this.dispose();
-            this.m_handle = pSwapchain.get(ValueLayout.ADDRESS, 0);
+            this.m_handle = pSwapchain.get(ADDRESS, 0);
             initializer.push(this::destroyHandle);
 
             this.createImages(arena, initializer);

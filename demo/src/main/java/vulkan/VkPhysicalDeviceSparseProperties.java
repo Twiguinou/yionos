@@ -2,52 +2,57 @@ package vulkan;
 
 public record VkPhysicalDeviceSparseProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$residencyStandard2DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$residencyStandard2DBlockShape = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$residencyStandard2DMultisampleBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$residencyStandard2DMultisampleBlockShape = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$residencyStandard3DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$residencyStandard3DBlockShape = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$residencyAlignedMipSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$residencyAlignedMipSize = 12L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$residencyNonResidentStrict = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$residencyNonResidentStrict = 16L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard2DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__residencyStandard2DBlockShape = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard2DMultisampleBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__residencyStandard2DMultisampleBlockShape = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard3DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__residencyStandard3DBlockShape = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyAlignedMipSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__residencyAlignedMipSize = 12;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyNonResidentStrict = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__residencyNonResidentStrict = 16;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$residencyStandard2DBlockShape,
-            LAYOUT$residencyStandard2DMultisampleBlockShape,
-            LAYOUT$residencyStandard3DBlockShape,
-            LAYOUT$residencyAlignedMipSize,
-            LAYOUT$residencyNonResidentStrict
-    ).withName("VkPhysicalDeviceSparseProperties");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__residencyStandard2DBlockShape,
+            LAYOUT__residencyStandard2DMultisampleBlockShape,
+            LAYOUT__residencyStandard3DBlockShape,
+            LAYOUT__residencyAlignedMipSize,
+            LAYOUT__residencyNonResidentStrict
+    ).withByteAlignment(4).withName("VkPhysicalDeviceSparseProperties");
 
     public VkPhysicalDeviceSparseProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceSparseProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceSparseProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceSparseProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceSparseProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int residencyStandard2DBlockShape() {return this.ptr.get(LAYOUT$residencyStandard2DBlockShape, OFFSET$residencyStandard2DBlockShape);}
-    public void residencyStandard2DBlockShape(int value) {this.ptr.set(LAYOUT$residencyStandard2DBlockShape, OFFSET$residencyStandard2DBlockShape, value);}
-    public java.lang.foreign.MemorySegment residencyStandard2DBlockShape_ptr() {return this.ptr.asSlice(OFFSET$residencyStandard2DBlockShape, LAYOUT$residencyStandard2DBlockShape);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceSparseProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int residencyStandard2DMultisampleBlockShape() {return this.ptr.get(LAYOUT$residencyStandard2DMultisampleBlockShape, OFFSET$residencyStandard2DMultisampleBlockShape);}
-    public void residencyStandard2DMultisampleBlockShape(int value) {this.ptr.set(LAYOUT$residencyStandard2DMultisampleBlockShape, OFFSET$residencyStandard2DMultisampleBlockShape, value);}
-    public java.lang.foreign.MemorySegment residencyStandard2DMultisampleBlockShape_ptr() {return this.ptr.asSlice(OFFSET$residencyStandard2DMultisampleBlockShape, LAYOUT$residencyStandard2DMultisampleBlockShape);}
+    public int residencyStandard2DBlockShape() {return this.ptr.get(LAYOUT__residencyStandard2DBlockShape, OFFSET__residencyStandard2DBlockShape);}
+    public void residencyStandard2DBlockShape(int value) {this.ptr.set(LAYOUT__residencyStandard2DBlockShape, OFFSET__residencyStandard2DBlockShape, value);}
+    public java.lang.foreign.MemorySegment $residencyStandard2DBlockShape() {return this.ptr.asSlice(OFFSET__residencyStandard2DBlockShape, LAYOUT__residencyStandard2DBlockShape);}
 
-    public int residencyStandard3DBlockShape() {return this.ptr.get(LAYOUT$residencyStandard3DBlockShape, OFFSET$residencyStandard3DBlockShape);}
-    public void residencyStandard3DBlockShape(int value) {this.ptr.set(LAYOUT$residencyStandard3DBlockShape, OFFSET$residencyStandard3DBlockShape, value);}
-    public java.lang.foreign.MemorySegment residencyStandard3DBlockShape_ptr() {return this.ptr.asSlice(OFFSET$residencyStandard3DBlockShape, LAYOUT$residencyStandard3DBlockShape);}
+    public int residencyStandard2DMultisampleBlockShape() {return this.ptr.get(LAYOUT__residencyStandard2DMultisampleBlockShape, OFFSET__residencyStandard2DMultisampleBlockShape);}
+    public void residencyStandard2DMultisampleBlockShape(int value) {this.ptr.set(LAYOUT__residencyStandard2DMultisampleBlockShape, OFFSET__residencyStandard2DMultisampleBlockShape, value);}
+    public java.lang.foreign.MemorySegment $residencyStandard2DMultisampleBlockShape() {return this.ptr.asSlice(OFFSET__residencyStandard2DMultisampleBlockShape, LAYOUT__residencyStandard2DMultisampleBlockShape);}
 
-    public int residencyAlignedMipSize() {return this.ptr.get(LAYOUT$residencyAlignedMipSize, OFFSET$residencyAlignedMipSize);}
-    public void residencyAlignedMipSize(int value) {this.ptr.set(LAYOUT$residencyAlignedMipSize, OFFSET$residencyAlignedMipSize, value);}
-    public java.lang.foreign.MemorySegment residencyAlignedMipSize_ptr() {return this.ptr.asSlice(OFFSET$residencyAlignedMipSize, LAYOUT$residencyAlignedMipSize);}
+    public int residencyStandard3DBlockShape() {return this.ptr.get(LAYOUT__residencyStandard3DBlockShape, OFFSET__residencyStandard3DBlockShape);}
+    public void residencyStandard3DBlockShape(int value) {this.ptr.set(LAYOUT__residencyStandard3DBlockShape, OFFSET__residencyStandard3DBlockShape, value);}
+    public java.lang.foreign.MemorySegment $residencyStandard3DBlockShape() {return this.ptr.asSlice(OFFSET__residencyStandard3DBlockShape, LAYOUT__residencyStandard3DBlockShape);}
 
-    public int residencyNonResidentStrict() {return this.ptr.get(LAYOUT$residencyNonResidentStrict, OFFSET$residencyNonResidentStrict);}
-    public void residencyNonResidentStrict(int value) {this.ptr.set(LAYOUT$residencyNonResidentStrict, OFFSET$residencyNonResidentStrict, value);}
-    public java.lang.foreign.MemorySegment residencyNonResidentStrict_ptr() {return this.ptr.asSlice(OFFSET$residencyNonResidentStrict, LAYOUT$residencyNonResidentStrict);}
+    public int residencyAlignedMipSize() {return this.ptr.get(LAYOUT__residencyAlignedMipSize, OFFSET__residencyAlignedMipSize);}
+    public void residencyAlignedMipSize(int value) {this.ptr.set(LAYOUT__residencyAlignedMipSize, OFFSET__residencyAlignedMipSize, value);}
+    public java.lang.foreign.MemorySegment $residencyAlignedMipSize() {return this.ptr.asSlice(OFFSET__residencyAlignedMipSize, LAYOUT__residencyAlignedMipSize);}
+
+    public int residencyNonResidentStrict() {return this.ptr.get(LAYOUT__residencyNonResidentStrict, OFFSET__residencyNonResidentStrict);}
+    public void residencyNonResidentStrict(int value) {this.ptr.set(LAYOUT__residencyNonResidentStrict, OFFSET__residencyNonResidentStrict, value);}
+    public java.lang.foreign.MemorySegment $residencyNonResidentStrict() {return this.ptr.asSlice(OFFSET__residencyNonResidentStrict, LAYOUT__residencyNonResidentStrict);}
 }

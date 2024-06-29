@@ -2,117 +2,122 @@ package vulkan;
 
 public record VkCuLaunchInfoNVX(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$function = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$function = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$gridDimX = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$gridDimX = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$gridDimY = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$gridDimY = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$gridDimZ = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$gridDimZ = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$blockDimX = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$blockDimX = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$blockDimY = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$blockDimY = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$blockDimZ = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$blockDimZ = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sharedMemBytes = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sharedMemBytes = 48L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$paramCount = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$paramCount = 56L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pParams = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pParams = 64L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$extraCount = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$extraCount = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pExtras = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pExtras = 80L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__function = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__function = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__gridDimX = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__gridDimY = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimZ = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__gridDimZ = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__blockDimX = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__blockDimY = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimZ = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__blockDimZ = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sharedMemBytes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sharedMemBytes = 48;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__paramCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__paramCount = 56;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pParams = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pParams = 64;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__extraCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__extraCount = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pExtras = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pExtras = 80;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$function,
-            LAYOUT$gridDimX,
-            LAYOUT$gridDimY,
-            LAYOUT$gridDimZ,
-            LAYOUT$blockDimX,
-            LAYOUT$blockDimY,
-            LAYOUT$blockDimZ,
-            LAYOUT$sharedMemBytes,
+            LAYOUT__pNext,
+            LAYOUT__function,
+            LAYOUT__gridDimX,
+            LAYOUT__gridDimY,
+            LAYOUT__gridDimZ,
+            LAYOUT__blockDimX,
+            LAYOUT__blockDimY,
+            LAYOUT__blockDimZ,
+            LAYOUT__sharedMemBytes,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$paramCount,
-            LAYOUT$pParams,
-            LAYOUT$extraCount,
-            LAYOUT$pExtras
-    ).withName("VkCuLaunchInfoNVX");
+            LAYOUT__paramCount,
+            LAYOUT__pParams,
+            LAYOUT__extraCount,
+            LAYOUT__pExtras
+    ).withByteAlignment(8).withName("VkCuLaunchInfoNVX");
 
     public VkCuLaunchInfoNVX(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkCuLaunchInfoNVX getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkCuLaunchInfoNVX getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkCuLaunchInfoNVX(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkCuLaunchInfoNVX(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkCuLaunchInfoNVX value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment function() {return this.ptr.get(LAYOUT$function, OFFSET$function);}
-    public void function(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$function, OFFSET$function, value);}
-    public java.lang.foreign.MemorySegment function_ptr() {return this.ptr.asSlice(OFFSET$function, LAYOUT$function);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int gridDimX() {return this.ptr.get(LAYOUT$gridDimX, OFFSET$gridDimX);}
-    public void gridDimX(int value) {this.ptr.set(LAYOUT$gridDimX, OFFSET$gridDimX, value);}
-    public java.lang.foreign.MemorySegment gridDimX_ptr() {return this.ptr.asSlice(OFFSET$gridDimX, LAYOUT$gridDimX);}
+    public java.lang.foreign.MemorySegment function() {return this.ptr.get(LAYOUT__function, OFFSET__function);}
+    public void function(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__function, OFFSET__function, value);}
+    public java.lang.foreign.MemorySegment $function() {return this.ptr.asSlice(OFFSET__function, LAYOUT__function);}
 
-    public int gridDimY() {return this.ptr.get(LAYOUT$gridDimY, OFFSET$gridDimY);}
-    public void gridDimY(int value) {this.ptr.set(LAYOUT$gridDimY, OFFSET$gridDimY, value);}
-    public java.lang.foreign.MemorySegment gridDimY_ptr() {return this.ptr.asSlice(OFFSET$gridDimY, LAYOUT$gridDimY);}
+    public int gridDimX() {return this.ptr.get(LAYOUT__gridDimX, OFFSET__gridDimX);}
+    public void gridDimX(int value) {this.ptr.set(LAYOUT__gridDimX, OFFSET__gridDimX, value);}
+    public java.lang.foreign.MemorySegment $gridDimX() {return this.ptr.asSlice(OFFSET__gridDimX, LAYOUT__gridDimX);}
 
-    public int gridDimZ() {return this.ptr.get(LAYOUT$gridDimZ, OFFSET$gridDimZ);}
-    public void gridDimZ(int value) {this.ptr.set(LAYOUT$gridDimZ, OFFSET$gridDimZ, value);}
-    public java.lang.foreign.MemorySegment gridDimZ_ptr() {return this.ptr.asSlice(OFFSET$gridDimZ, LAYOUT$gridDimZ);}
+    public int gridDimY() {return this.ptr.get(LAYOUT__gridDimY, OFFSET__gridDimY);}
+    public void gridDimY(int value) {this.ptr.set(LAYOUT__gridDimY, OFFSET__gridDimY, value);}
+    public java.lang.foreign.MemorySegment $gridDimY() {return this.ptr.asSlice(OFFSET__gridDimY, LAYOUT__gridDimY);}
 
-    public int blockDimX() {return this.ptr.get(LAYOUT$blockDimX, OFFSET$blockDimX);}
-    public void blockDimX(int value) {this.ptr.set(LAYOUT$blockDimX, OFFSET$blockDimX, value);}
-    public java.lang.foreign.MemorySegment blockDimX_ptr() {return this.ptr.asSlice(OFFSET$blockDimX, LAYOUT$blockDimX);}
+    public int gridDimZ() {return this.ptr.get(LAYOUT__gridDimZ, OFFSET__gridDimZ);}
+    public void gridDimZ(int value) {this.ptr.set(LAYOUT__gridDimZ, OFFSET__gridDimZ, value);}
+    public java.lang.foreign.MemorySegment $gridDimZ() {return this.ptr.asSlice(OFFSET__gridDimZ, LAYOUT__gridDimZ);}
 
-    public int blockDimY() {return this.ptr.get(LAYOUT$blockDimY, OFFSET$blockDimY);}
-    public void blockDimY(int value) {this.ptr.set(LAYOUT$blockDimY, OFFSET$blockDimY, value);}
-    public java.lang.foreign.MemorySegment blockDimY_ptr() {return this.ptr.asSlice(OFFSET$blockDimY, LAYOUT$blockDimY);}
+    public int blockDimX() {return this.ptr.get(LAYOUT__blockDimX, OFFSET__blockDimX);}
+    public void blockDimX(int value) {this.ptr.set(LAYOUT__blockDimX, OFFSET__blockDimX, value);}
+    public java.lang.foreign.MemorySegment $blockDimX() {return this.ptr.asSlice(OFFSET__blockDimX, LAYOUT__blockDimX);}
 
-    public int blockDimZ() {return this.ptr.get(LAYOUT$blockDimZ, OFFSET$blockDimZ);}
-    public void blockDimZ(int value) {this.ptr.set(LAYOUT$blockDimZ, OFFSET$blockDimZ, value);}
-    public java.lang.foreign.MemorySegment blockDimZ_ptr() {return this.ptr.asSlice(OFFSET$blockDimZ, LAYOUT$blockDimZ);}
+    public int blockDimY() {return this.ptr.get(LAYOUT__blockDimY, OFFSET__blockDimY);}
+    public void blockDimY(int value) {this.ptr.set(LAYOUT__blockDimY, OFFSET__blockDimY, value);}
+    public java.lang.foreign.MemorySegment $blockDimY() {return this.ptr.asSlice(OFFSET__blockDimY, LAYOUT__blockDimY);}
 
-    public int sharedMemBytes() {return this.ptr.get(LAYOUT$sharedMemBytes, OFFSET$sharedMemBytes);}
-    public void sharedMemBytes(int value) {this.ptr.set(LAYOUT$sharedMemBytes, OFFSET$sharedMemBytes, value);}
-    public java.lang.foreign.MemorySegment sharedMemBytes_ptr() {return this.ptr.asSlice(OFFSET$sharedMemBytes, LAYOUT$sharedMemBytes);}
+    public int blockDimZ() {return this.ptr.get(LAYOUT__blockDimZ, OFFSET__blockDimZ);}
+    public void blockDimZ(int value) {this.ptr.set(LAYOUT__blockDimZ, OFFSET__blockDimZ, value);}
+    public java.lang.foreign.MemorySegment $blockDimZ() {return this.ptr.asSlice(OFFSET__blockDimZ, LAYOUT__blockDimZ);}
 
-    public long paramCount() {return this.ptr.get(LAYOUT$paramCount, OFFSET$paramCount);}
-    public void paramCount(long value) {this.ptr.set(LAYOUT$paramCount, OFFSET$paramCount, value);}
-    public java.lang.foreign.MemorySegment paramCount_ptr() {return this.ptr.asSlice(OFFSET$paramCount, LAYOUT$paramCount);}
+    public int sharedMemBytes() {return this.ptr.get(LAYOUT__sharedMemBytes, OFFSET__sharedMemBytes);}
+    public void sharedMemBytes(int value) {this.ptr.set(LAYOUT__sharedMemBytes, OFFSET__sharedMemBytes, value);}
+    public java.lang.foreign.MemorySegment $sharedMemBytes() {return this.ptr.asSlice(OFFSET__sharedMemBytes, LAYOUT__sharedMemBytes);}
 
-    public java.lang.foreign.MemorySegment pParams() {return this.ptr.get(LAYOUT$pParams, OFFSET$pParams);}
-    public void pParams(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pParams, OFFSET$pParams, value);}
-    public java.lang.foreign.MemorySegment pParams_ptr() {return this.ptr.asSlice(OFFSET$pParams, LAYOUT$pParams);}
+    public long paramCount() {return this.ptr.get(LAYOUT__paramCount, OFFSET__paramCount);}
+    public void paramCount(long value) {this.ptr.set(LAYOUT__paramCount, OFFSET__paramCount, value);}
+    public java.lang.foreign.MemorySegment $paramCount() {return this.ptr.asSlice(OFFSET__paramCount, LAYOUT__paramCount);}
 
-    public long extraCount() {return this.ptr.get(LAYOUT$extraCount, OFFSET$extraCount);}
-    public void extraCount(long value) {this.ptr.set(LAYOUT$extraCount, OFFSET$extraCount, value);}
-    public java.lang.foreign.MemorySegment extraCount_ptr() {return this.ptr.asSlice(OFFSET$extraCount, LAYOUT$extraCount);}
+    public java.lang.foreign.MemorySegment pParams() {return this.ptr.get(LAYOUT__pParams, OFFSET__pParams);}
+    public void pParams(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pParams, OFFSET__pParams, value);}
+    public java.lang.foreign.MemorySegment $pParams() {return this.ptr.asSlice(OFFSET__pParams, LAYOUT__pParams);}
 
-    public java.lang.foreign.MemorySegment pExtras() {return this.ptr.get(LAYOUT$pExtras, OFFSET$pExtras);}
-    public void pExtras(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pExtras, OFFSET$pExtras, value);}
-    public java.lang.foreign.MemorySegment pExtras_ptr() {return this.ptr.asSlice(OFFSET$pExtras, LAYOUT$pExtras);}
+    public long extraCount() {return this.ptr.get(LAYOUT__extraCount, OFFSET__extraCount);}
+    public void extraCount(long value) {this.ptr.set(LAYOUT__extraCount, OFFSET__extraCount, value);}
+    public java.lang.foreign.MemorySegment $extraCount() {return this.ptr.asSlice(OFFSET__extraCount, LAYOUT__extraCount);}
+
+    public java.lang.foreign.MemorySegment pExtras() {return this.ptr.get(LAYOUT__pExtras, OFFSET__pExtras);}
+    public void pExtras(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pExtras, OFFSET__pExtras, value);}
+    public java.lang.foreign.MemorySegment $pExtras() {return this.ptr.asSlice(OFFSET__pExtras, LAYOUT__pExtras);}
 }

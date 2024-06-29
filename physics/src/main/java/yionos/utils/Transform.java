@@ -40,6 +40,6 @@ public record Transform(Vector3d position, Quaterniond rotation)
     @Override
     public String toString()
     {
-        return STR."Transform[pos:\{this.position}, rot:\{this.rotation}]";
+        return String.format("Transform[pos:%s, rot:%s]", this.position, this.rotation);
     }
 }

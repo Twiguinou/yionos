@@ -24,7 +24,7 @@ public class VulkanException extends IllegalStateException
     {
         if (vkError != VK_SUCCESS)
         {
-            throw new VulkanException(STR."\{s}: \{vkError}", vkError);
+            throw new VulkanException(String.format("%s: %d", s, vkError));
         }
     }
 
@@ -38,7 +38,7 @@ public class VulkanException extends IllegalStateException
         if (vkError != VK_SUCCESS)
         {
             initializer.empty();
-            throw new VulkanException(STR."\{s}: \{vkError}", vkError);
+            throw new VulkanException(String.format("%s: %d", s, vkError));
         }
     }
 

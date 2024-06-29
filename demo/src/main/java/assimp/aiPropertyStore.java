@@ -2,24 +2,29 @@ package assimp;
 
 public record aiPropertyStore(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$sentinel = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$sentinel = 0L;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__sentinel = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__sentinel = 0;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sentinel
-    ).withName("aiPropertyStore");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sentinel
+    ).withByteAlignment(1).withName("aiPropertyStore");
 
     public aiPropertyStore(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static aiPropertyStore getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static aiPropertyStore getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new aiPropertyStore(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new aiPropertyStore(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public char sentinel() {return (char)this.ptr.get(LAYOUT$sentinel, OFFSET$sentinel);}
-    public void sentinel(char value) {this.ptr.set(LAYOUT$sentinel, OFFSET$sentinel, (byte)value);}
-    public java.lang.foreign.MemorySegment sentinel_ptr() {return this.ptr.asSlice(OFFSET$sentinel, LAYOUT$sentinel);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, aiPropertyStore value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public byte sentinel() {return this.ptr.get(LAYOUT__sentinel, OFFSET__sentinel);}
+    public void sentinel(byte value) {this.ptr.set(LAYOUT__sentinel, OFFSET__sentinel, value);}
+    public java.lang.foreign.MemorySegment $sentinel() {return this.ptr.asSlice(OFFSET__sentinel, LAYOUT__sentinel);}
 }

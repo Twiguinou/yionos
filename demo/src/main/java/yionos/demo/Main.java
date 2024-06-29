@@ -15,6 +15,19 @@ import java.util.function.Function;
 public final class Main
 {private Main() {}
 
+    static
+    {
+        System.loadLibrary("libassimp-5");
+        System.loadLibrary("glfw3");
+        System.loadLibrary("shaderc_shared");
+        System.loadLibrary("vulkan-1");
+        System.loadLibrary("libnuklear");
+        System.loadLibrary("libstb_image");
+        System.loadLibrary("libvma");
+
+        configureLog4j();
+    }
+
     public static void configureLog4j()
     {
         ConfigurationBuilder<BuiltConfiguration> builder = ConfigurationBuilderFactory.newConfigurationBuilder();
@@ -26,7 +39,7 @@ public final class Main
                 .addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT)
                 .add(builder.newLayout("PatternLayout")
                         .addAttribute("disableAnsi", false)
-                        .addAttribute("pattern", "%highlight{[%d] - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue}")));
+                        .addAttribute("pattern", "%highlight{%c | [%d] - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue}")));
 
         builder.add(builder.newRootLogger(Level.ALL)
                 .add(builder.newAppenderRef("Console")));
@@ -54,8 +67,6 @@ public final class Main
 
     public static void main(String... args)
     {
-        configureLog4j();
-
         ProgramArguments parsedArgs = new ProgramArguments(args);
 
         int windowWidth = parsedArgs.getArgValueIndexed("wnd_dimensions", 0).map(Integer::parseUnsignedInt).orElse(1706);

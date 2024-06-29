@@ -2,33 +2,38 @@ package nuklear;
 
 public record nk_config_stack_style_item(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$head = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$head = 0L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$elements = java.lang.foreign.MemoryLayout.sequenceLayout(16, nuklear.nk_config_stack_style_item_element.gStructLayout);
-    public static final long OFFSET$elements = 8L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__head = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__head = 0;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__elements = java.lang.foreign.MemoryLayout.sequenceLayout(16, nuklear.nk_config_stack_style_item_element.gRecordLayout);
+    public static final long OFFSET__elements = 8;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$head,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__head,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$elements
-    ).withName("nk_config_stack_style_item");
+            LAYOUT__elements
+    ).withByteAlignment(8).withName("nk_config_stack_style_item");
 
     public nk_config_stack_style_item(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_config_stack_style_item getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_config_stack_style_item getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_config_stack_style_item(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_config_stack_style_item(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int head() {return this._ptr.get(LAYOUT$head, OFFSET$head);}
-    public void head(int value) {this._ptr.set(LAYOUT$head, OFFSET$head, value);}
-    public java.lang.foreign.MemorySegment head_ptr() {return this._ptr.asSlice(OFFSET$head, LAYOUT$head);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_config_stack_style_item value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment elements() {return this._ptr.asSlice(OFFSET$elements, LAYOUT$elements);}
-    public nuklear.nk_config_stack_style_item_element elements(int i) {return new nuklear.nk_config_stack_style_item_element(this._ptr.asSlice(OFFSET$elements + i * LAYOUT$elements.byteSize(), LAYOUT$elements));}
-    public void elements(int i, java.util.function.Consumer<nuklear.nk_config_stack_style_item_element> consumer) {consumer.accept(this.elements(i));}
-    public void elements(int i, nuklear.nk_config_stack_style_item_element value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$elements + i * LAYOUT$elements.byteSize(), LAYOUT$elements.byteSize());}
+    public int head() {return this._ptr.get(LAYOUT__head, OFFSET__head);}
+    public void head(int value) {this._ptr.set(LAYOUT__head, OFFSET__head, value);}
+    public java.lang.foreign.MemorySegment $head() {return this._ptr.asSlice(OFFSET__head, LAYOUT__head);}
+
+    public java.lang.foreign.MemorySegment elements() {return this._ptr.asSlice(OFFSET__elements, LAYOUT__elements);}
+    public nuklear.nk_config_stack_style_item_element elements(int index) {return nuklear.nk_config_stack_style_item_element.getAtIndex(this.elements(), index);}
+    public void elements(int index, java.util.function.Consumer<nuklear.nk_config_stack_style_item_element> consumer) {consumer.accept(this.elements(index));}
+    public void elements(int index, nuklear.nk_config_stack_style_item_element value) {nuklear.nk_config_stack_style_item_element.setAtIndex(this.elements(), index, value);}
 }

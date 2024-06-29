@@ -250,7 +250,7 @@ public final class VkFormat
     public static final int VK_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG = 1000054005;
     public static final int VK_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG = 1000054006;
     public static final int VK_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG = 1000054007;
-    public static final int VK_FORMAT_R16G16_S10_5_NV = 1000464000;
+    public static final int VK_FORMAT_R16G16_SFIXED5_NV = 1000464000;
     public static final int VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR = 1000470000;
     public static final int VK_FORMAT_A8_UNORM_KHR = 1000470001;
     public static final int VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT = 1000066000;
@@ -307,5 +307,6 @@ public final class VkFormat
     public static final int VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT = 1000330003;
     public static final int VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT = 1000340000;
     public static final int VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT = 1000340001;
+    public static final int VK_FORMAT_R16G16_S10_5_NV = 1000464000;
     public static final int VK_FORMAT_MAX_ENUM = 2147483647;
 }

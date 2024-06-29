@@ -2,40 +2,45 @@ package vma;
 
 public record VmaTotalStatistics(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT$memoryType = java.lang.foreign.MemoryLayout.sequenceLayout(32, vma.VmaDetailedStatistics.gStructLayout);
-    public static final long OFFSET$memoryType = 0L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$memoryHeap = java.lang.foreign.MemoryLayout.sequenceLayout(16, vma.VmaDetailedStatistics.gStructLayout);
-    public static final long OFFSET$memoryHeap = 2048L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$total = vma.VmaDetailedStatistics.gStructLayout;
-    public static final long OFFSET$total = 3072L;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryType = java.lang.foreign.MemoryLayout.sequenceLayout(32, vma.VmaDetailedStatistics.gRecordLayout);
+    public static final long OFFSET__memoryType = 0;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryHeap = java.lang.foreign.MemoryLayout.sequenceLayout(16, vma.VmaDetailedStatistics.gRecordLayout);
+    public static final long OFFSET__memoryHeap = 2048;
+    public static final java.lang.foreign.StructLayout LAYOUT__total = vma.VmaDetailedStatistics.gRecordLayout;
+    public static final long OFFSET__total = 3072;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$memoryType,
-            LAYOUT$memoryHeap,
-            LAYOUT$total
-    ).withName("VmaTotalStatistics");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__memoryType,
+            LAYOUT__memoryHeap,
+            LAYOUT__total
+    ).withByteAlignment(8).withName("VmaTotalStatistics");
 
     public VmaTotalStatistics(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VmaTotalStatistics getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VmaTotalStatistics getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VmaTotalStatistics(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VmaTotalStatistics(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment memoryType() {return this.ptr.asSlice(OFFSET$memoryType, LAYOUT$memoryType);}
-    public vma.VmaDetailedStatistics memoryType(int i) {return new vma.VmaDetailedStatistics(this.ptr.asSlice(OFFSET$memoryType + i * LAYOUT$memoryType.byteSize(), LAYOUT$memoryType));}
-    public void memoryType(int i, java.util.function.Consumer<vma.VmaDetailedStatistics> consumer) {consumer.accept(this.memoryType(i));}
-    public void memoryType(int i, vma.VmaDetailedStatistics value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$memoryType + i * LAYOUT$memoryType.byteSize(), LAYOUT$memoryType.byteSize());}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VmaTotalStatistics value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment memoryHeap() {return this.ptr.asSlice(OFFSET$memoryHeap, LAYOUT$memoryHeap);}
-    public vma.VmaDetailedStatistics memoryHeap(int i) {return new vma.VmaDetailedStatistics(this.ptr.asSlice(OFFSET$memoryHeap + i * LAYOUT$memoryHeap.byteSize(), LAYOUT$memoryHeap));}
-    public void memoryHeap(int i, java.util.function.Consumer<vma.VmaDetailedStatistics> consumer) {consumer.accept(this.memoryHeap(i));}
-    public void memoryHeap(int i, vma.VmaDetailedStatistics value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$memoryHeap + i * LAYOUT$memoryHeap.byteSize(), LAYOUT$memoryHeap.byteSize());}
+    public java.lang.foreign.MemorySegment memoryType() {return this.ptr.asSlice(OFFSET__memoryType, LAYOUT__memoryType);}
+    public vma.VmaDetailedStatistics memoryType(int index) {return vma.VmaDetailedStatistics.getAtIndex(this.memoryType(), index);}
+    public void memoryType(int index, java.util.function.Consumer<vma.VmaDetailedStatistics> consumer) {consumer.accept(this.memoryType(index));}
+    public void memoryType(int index, vma.VmaDetailedStatistics value) {vma.VmaDetailedStatistics.setAtIndex(this.memoryType(), index, value);}
 
-    public vma.VmaDetailedStatistics total() {return new vma.VmaDetailedStatistics(this.ptr.asSlice(OFFSET$total, LAYOUT$total));}
+    public java.lang.foreign.MemorySegment memoryHeap() {return this.ptr.asSlice(OFFSET__memoryHeap, LAYOUT__memoryHeap);}
+    public vma.VmaDetailedStatistics memoryHeap(int index) {return vma.VmaDetailedStatistics.getAtIndex(this.memoryHeap(), index);}
+    public void memoryHeap(int index, java.util.function.Consumer<vma.VmaDetailedStatistics> consumer) {consumer.accept(this.memoryHeap(index));}
+    public void memoryHeap(int index, vma.VmaDetailedStatistics value) {vma.VmaDetailedStatistics.setAtIndex(this.memoryHeap(), index, value);}
+
+    public vma.VmaDetailedStatistics total() {return new vma.VmaDetailedStatistics(this.ptr.asSlice(OFFSET__total, LAYOUT__total));}
     public void total(java.util.function.Consumer<vma.VmaDetailedStatistics> consumer) {consumer.accept(this.total());}
-    public void total(vma.VmaDetailedStatistics value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$total, LAYOUT$total.byteSize());}
+    public void total(vma.VmaDetailedStatistics value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__total, LAYOUT__total.byteSize());}
 }

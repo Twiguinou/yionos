@@ -2,110 +2,115 @@ package vulkan;
 
 public record VkPipelineRasterizationStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthClampEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthClampEnable = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$rasterizerDiscardEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$rasterizerDiscardEnable = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$polygonMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$polygonMode = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$cullMode = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$cullMode = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$frontFace = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$frontFace = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$depthBiasEnable = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$depthBiasEnable = 40L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$depthBiasConstantFactor = 44L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$depthBiasClamp = 48L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$depthBiasSlopeFactor = 52L;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT$lineWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
-    public static final long OFFSET$lineWidth = 56L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthClampEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthClampEnable = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizerDiscardEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__rasterizerDiscardEnable = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__polygonMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__polygonMode = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cullMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__cullMode = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frontFace = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__frontFace = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__depthBiasEnable = 40;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__depthBiasConstantFactor = 44;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__depthBiasClamp = 48;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__depthBiasSlopeFactor = 52;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__lineWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final long OFFSET__lineWidth = 56;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$depthClampEnable,
-            LAYOUT$rasterizerDiscardEnable,
-            LAYOUT$polygonMode,
-            LAYOUT$cullMode,
-            LAYOUT$frontFace,
-            LAYOUT$depthBiasEnable,
-            LAYOUT$depthBiasConstantFactor,
-            LAYOUT$depthBiasClamp,
-            LAYOUT$depthBiasSlopeFactor,
-            LAYOUT$lineWidth,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__depthClampEnable,
+            LAYOUT__rasterizerDiscardEnable,
+            LAYOUT__polygonMode,
+            LAYOUT__cullMode,
+            LAYOUT__frontFace,
+            LAYOUT__depthBiasEnable,
+            LAYOUT__depthBiasConstantFactor,
+            LAYOUT__depthBiasClamp,
+            LAYOUT__depthBiasSlopeFactor,
+            LAYOUT__lineWidth,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPipelineRasterizationStateCreateInfo");
+    ).withByteAlignment(8).withName("VkPipelineRasterizationStateCreateInfo");
 
     public VkPipelineRasterizationStateCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineRasterizationStateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineRasterizationStateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineRasterizationStateCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineRasterizationStateCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineRasterizationStateCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int depthClampEnable() {return this.ptr.get(LAYOUT$depthClampEnable, OFFSET$depthClampEnable);}
-    public void depthClampEnable(int value) {this.ptr.set(LAYOUT$depthClampEnable, OFFSET$depthClampEnable, value);}
-    public java.lang.foreign.MemorySegment depthClampEnable_ptr() {return this.ptr.asSlice(OFFSET$depthClampEnable, LAYOUT$depthClampEnable);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int rasterizerDiscardEnable() {return this.ptr.get(LAYOUT$rasterizerDiscardEnable, OFFSET$rasterizerDiscardEnable);}
-    public void rasterizerDiscardEnable(int value) {this.ptr.set(LAYOUT$rasterizerDiscardEnable, OFFSET$rasterizerDiscardEnable, value);}
-    public java.lang.foreign.MemorySegment rasterizerDiscardEnable_ptr() {return this.ptr.asSlice(OFFSET$rasterizerDiscardEnable, LAYOUT$rasterizerDiscardEnable);}
+    public int depthClampEnable() {return this.ptr.get(LAYOUT__depthClampEnable, OFFSET__depthClampEnable);}
+    public void depthClampEnable(int value) {this.ptr.set(LAYOUT__depthClampEnable, OFFSET__depthClampEnable, value);}
+    public java.lang.foreign.MemorySegment $depthClampEnable() {return this.ptr.asSlice(OFFSET__depthClampEnable, LAYOUT__depthClampEnable);}
 
-    public int polygonMode() {return this.ptr.get(LAYOUT$polygonMode, OFFSET$polygonMode);}
-    public void polygonMode(int value) {this.ptr.set(LAYOUT$polygonMode, OFFSET$polygonMode, value);}
-    public java.lang.foreign.MemorySegment polygonMode_ptr() {return this.ptr.asSlice(OFFSET$polygonMode, LAYOUT$polygonMode);}
+    public int rasterizerDiscardEnable() {return this.ptr.get(LAYOUT__rasterizerDiscardEnable, OFFSET__rasterizerDiscardEnable);}
+    public void rasterizerDiscardEnable(int value) {this.ptr.set(LAYOUT__rasterizerDiscardEnable, OFFSET__rasterizerDiscardEnable, value);}
+    public java.lang.foreign.MemorySegment $rasterizerDiscardEnable() {return this.ptr.asSlice(OFFSET__rasterizerDiscardEnable, LAYOUT__rasterizerDiscardEnable);}
 
-    public int cullMode() {return this.ptr.get(LAYOUT$cullMode, OFFSET$cullMode);}
-    public void cullMode(int value) {this.ptr.set(LAYOUT$cullMode, OFFSET$cullMode, value);}
-    public java.lang.foreign.MemorySegment cullMode_ptr() {return this.ptr.asSlice(OFFSET$cullMode, LAYOUT$cullMode);}
+    public int polygonMode() {return this.ptr.get(LAYOUT__polygonMode, OFFSET__polygonMode);}
+    public void polygonMode(int value) {this.ptr.set(LAYOUT__polygonMode, OFFSET__polygonMode, value);}
+    public java.lang.foreign.MemorySegment $polygonMode() {return this.ptr.asSlice(OFFSET__polygonMode, LAYOUT__polygonMode);}
 
-    public int frontFace() {return this.ptr.get(LAYOUT$frontFace, OFFSET$frontFace);}
-    public void frontFace(int value) {this.ptr.set(LAYOUT$frontFace, OFFSET$frontFace, value);}
-    public java.lang.foreign.MemorySegment frontFace_ptr() {return this.ptr.asSlice(OFFSET$frontFace, LAYOUT$frontFace);}
+    public int cullMode() {return this.ptr.get(LAYOUT__cullMode, OFFSET__cullMode);}
+    public void cullMode(int value) {this.ptr.set(LAYOUT__cullMode, OFFSET__cullMode, value);}
+    public java.lang.foreign.MemorySegment $cullMode() {return this.ptr.asSlice(OFFSET__cullMode, LAYOUT__cullMode);}
 
-    public int depthBiasEnable() {return this.ptr.get(LAYOUT$depthBiasEnable, OFFSET$depthBiasEnable);}
-    public void depthBiasEnable(int value) {this.ptr.set(LAYOUT$depthBiasEnable, OFFSET$depthBiasEnable, value);}
-    public java.lang.foreign.MemorySegment depthBiasEnable_ptr() {return this.ptr.asSlice(OFFSET$depthBiasEnable, LAYOUT$depthBiasEnable);}
+    public int frontFace() {return this.ptr.get(LAYOUT__frontFace, OFFSET__frontFace);}
+    public void frontFace(int value) {this.ptr.set(LAYOUT__frontFace, OFFSET__frontFace, value);}
+    public java.lang.foreign.MemorySegment $frontFace() {return this.ptr.asSlice(OFFSET__frontFace, LAYOUT__frontFace);}
 
-    public float depthBiasConstantFactor() {return this.ptr.get(LAYOUT$depthBiasConstantFactor, OFFSET$depthBiasConstantFactor);}
-    public void depthBiasConstantFactor(float value) {this.ptr.set(LAYOUT$depthBiasConstantFactor, OFFSET$depthBiasConstantFactor, value);}
-    public java.lang.foreign.MemorySegment depthBiasConstantFactor_ptr() {return this.ptr.asSlice(OFFSET$depthBiasConstantFactor, LAYOUT$depthBiasConstantFactor);}
+    public int depthBiasEnable() {return this.ptr.get(LAYOUT__depthBiasEnable, OFFSET__depthBiasEnable);}
+    public void depthBiasEnable(int value) {this.ptr.set(LAYOUT__depthBiasEnable, OFFSET__depthBiasEnable, value);}
+    public java.lang.foreign.MemorySegment $depthBiasEnable() {return this.ptr.asSlice(OFFSET__depthBiasEnable, LAYOUT__depthBiasEnable);}
 
-    public float depthBiasClamp() {return this.ptr.get(LAYOUT$depthBiasClamp, OFFSET$depthBiasClamp);}
-    public void depthBiasClamp(float value) {this.ptr.set(LAYOUT$depthBiasClamp, OFFSET$depthBiasClamp, value);}
-    public java.lang.foreign.MemorySegment depthBiasClamp_ptr() {return this.ptr.asSlice(OFFSET$depthBiasClamp, LAYOUT$depthBiasClamp);}
+    public float depthBiasConstantFactor() {return this.ptr.get(LAYOUT__depthBiasConstantFactor, OFFSET__depthBiasConstantFactor);}
+    public void depthBiasConstantFactor(float value) {this.ptr.set(LAYOUT__depthBiasConstantFactor, OFFSET__depthBiasConstantFactor, value);}
+    public java.lang.foreign.MemorySegment $depthBiasConstantFactor() {return this.ptr.asSlice(OFFSET__depthBiasConstantFactor, LAYOUT__depthBiasConstantFactor);}
 
-    public float depthBiasSlopeFactor() {return this.ptr.get(LAYOUT$depthBiasSlopeFactor, OFFSET$depthBiasSlopeFactor);}
-    public void depthBiasSlopeFactor(float value) {this.ptr.set(LAYOUT$depthBiasSlopeFactor, OFFSET$depthBiasSlopeFactor, value);}
-    public java.lang.foreign.MemorySegment depthBiasSlopeFactor_ptr() {return this.ptr.asSlice(OFFSET$depthBiasSlopeFactor, LAYOUT$depthBiasSlopeFactor);}
+    public float depthBiasClamp() {return this.ptr.get(LAYOUT__depthBiasClamp, OFFSET__depthBiasClamp);}
+    public void depthBiasClamp(float value) {this.ptr.set(LAYOUT__depthBiasClamp, OFFSET__depthBiasClamp, value);}
+    public java.lang.foreign.MemorySegment $depthBiasClamp() {return this.ptr.asSlice(OFFSET__depthBiasClamp, LAYOUT__depthBiasClamp);}
 
-    public float lineWidth() {return this.ptr.get(LAYOUT$lineWidth, OFFSET$lineWidth);}
-    public void lineWidth(float value) {this.ptr.set(LAYOUT$lineWidth, OFFSET$lineWidth, value);}
-    public java.lang.foreign.MemorySegment lineWidth_ptr() {return this.ptr.asSlice(OFFSET$lineWidth, LAYOUT$lineWidth);}
+    public float depthBiasSlopeFactor() {return this.ptr.get(LAYOUT__depthBiasSlopeFactor, OFFSET__depthBiasSlopeFactor);}
+    public void depthBiasSlopeFactor(float value) {this.ptr.set(LAYOUT__depthBiasSlopeFactor, OFFSET__depthBiasSlopeFactor, value);}
+    public java.lang.foreign.MemorySegment $depthBiasSlopeFactor() {return this.ptr.asSlice(OFFSET__depthBiasSlopeFactor, LAYOUT__depthBiasSlopeFactor);}
+
+    public float lineWidth() {return this.ptr.get(LAYOUT__lineWidth, OFFSET__lineWidth);}
+    public void lineWidth(float value) {this.ptr.set(LAYOUT__lineWidth, OFFSET__lineWidth, value);}
+    public java.lang.foreign.MemorySegment $lineWidth() {return this.ptr.asSlice(OFFSET__lineWidth, LAYOUT__lineWidth);}
 }

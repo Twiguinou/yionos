@@ -16,11 +16,11 @@ import yionos.utils.Transform;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 
 import static glfw3.GLFW3.*;
 import static nuklear.Nuklear.*;
 import static nuklear.nk_panel_flags.*;
+import static java.lang.foreign.ValueLayout.*;
 
 public class MPRSample implements DemoSample
 {
@@ -164,19 +164,19 @@ public class MPRSample implements DemoSample
     {
         try (Arena arena = StackAllocator.stackPush())
         {
-            SegmentAllocator textAllocator = SegmentAllocator.prefixAllocator(arena.allocateArray(ValueLayout.JAVA_CHAR, 512));
+            SegmentAllocator textAllocator = SegmentAllocator.prefixAllocator(arena.allocate(JAVA_CHAR, 512));
 
-            if (nk_begin(context.pContext(), textAllocator.allocateUtf8String("Scene configuration"), nk_rect(arena, 20, 500, 230, 250),
+            if (nk_begin(context.pContext(), textAllocator.allocateFrom("Scene configuration"), nk_rect(arena, 20, 500, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE | NK_WINDOW_SCALABLE) != 0)
             {
                 nk_layout_row_static(context.pContext(), 30, 140, 1);
-                if (nk_checkbox_label(context.pContext(), textAllocator.allocateUtf8String("Render wireframes"), arena.allocate(ValueLayout.JAVA_INT, this.m_renderWireframes ? 0 : 1)) != 0)
+                if (nk_checkbox_label(context.pContext(), textAllocator.allocateFrom("Render wireframes"), arena.allocateFrom(JAVA_INT, this.m_renderWireframes ? 0 : 1)) != 0)
                 {
                     this.m_renderWireframes = !this.m_renderWireframes;
                 }
 
                 nk_layout_row_static(context.pContext(), 30, 200, 1);
-                nk_label_wrap(context.pContext(), textAllocator.allocateUtf8String("-Use your numpad keys to move the cube around"));
+                nk_label_wrap(context.pContext(), textAllocator.allocateFrom("-Use your numpad keys to move the cube around"));
             }
 
             nk_end(context.pContext());

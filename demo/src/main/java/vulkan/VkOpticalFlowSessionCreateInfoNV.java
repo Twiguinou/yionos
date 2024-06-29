@@ -2,96 +2,101 @@ package vulkan;
 
 public record VkOpticalFlowSessionCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$width = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$width = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$height = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$height = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$imageFormat = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$imageFormat = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flowVectorFormat = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flowVectorFormat = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$costFormat = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$costFormat = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$outputGridSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$outputGridSize = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$hintGridSize = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$hintGridSize = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$performanceLevel = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$performanceLevel = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 48L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__width = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__height = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__imageFormat = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flowVectorFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flowVectorFormat = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__costFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__costFormat = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__outputGridSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__outputGridSize = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hintGridSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__hintGridSize = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceLevel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__performanceLevel = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 48;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$width,
-            LAYOUT$height,
-            LAYOUT$imageFormat,
-            LAYOUT$flowVectorFormat,
-            LAYOUT$costFormat,
-            LAYOUT$outputGridSize,
-            LAYOUT$hintGridSize,
-            LAYOUT$performanceLevel,
-            LAYOUT$flags,
+            LAYOUT__pNext,
+            LAYOUT__width,
+            LAYOUT__height,
+            LAYOUT__imageFormat,
+            LAYOUT__flowVectorFormat,
+            LAYOUT__costFormat,
+            LAYOUT__outputGridSize,
+            LAYOUT__hintGridSize,
+            LAYOUT__performanceLevel,
+            LAYOUT__flags,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkOpticalFlowSessionCreateInfoNV");
+    ).withByteAlignment(8).withName("VkOpticalFlowSessionCreateInfoNV");
 
     public VkOpticalFlowSessionCreateInfoNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkOpticalFlowSessionCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkOpticalFlowSessionCreateInfoNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkOpticalFlowSessionCreateInfoNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkOpticalFlowSessionCreateInfoNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkOpticalFlowSessionCreateInfoNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int width() {return this.ptr.get(LAYOUT$width, OFFSET$width);}
-    public void width(int value) {this.ptr.set(LAYOUT$width, OFFSET$width, value);}
-    public java.lang.foreign.MemorySegment width_ptr() {return this.ptr.asSlice(OFFSET$width, LAYOUT$width);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int height() {return this.ptr.get(LAYOUT$height, OFFSET$height);}
-    public void height(int value) {this.ptr.set(LAYOUT$height, OFFSET$height, value);}
-    public java.lang.foreign.MemorySegment height_ptr() {return this.ptr.asSlice(OFFSET$height, LAYOUT$height);}
+    public int width() {return this.ptr.get(LAYOUT__width, OFFSET__width);}
+    public void width(int value) {this.ptr.set(LAYOUT__width, OFFSET__width, value);}
+    public java.lang.foreign.MemorySegment $width() {return this.ptr.asSlice(OFFSET__width, LAYOUT__width);}
 
-    public int imageFormat() {return this.ptr.get(LAYOUT$imageFormat, OFFSET$imageFormat);}
-    public void imageFormat(int value) {this.ptr.set(LAYOUT$imageFormat, OFFSET$imageFormat, value);}
-    public java.lang.foreign.MemorySegment imageFormat_ptr() {return this.ptr.asSlice(OFFSET$imageFormat, LAYOUT$imageFormat);}
+    public int height() {return this.ptr.get(LAYOUT__height, OFFSET__height);}
+    public void height(int value) {this.ptr.set(LAYOUT__height, OFFSET__height, value);}
+    public java.lang.foreign.MemorySegment $height() {return this.ptr.asSlice(OFFSET__height, LAYOUT__height);}
 
-    public int flowVectorFormat() {return this.ptr.get(LAYOUT$flowVectorFormat, OFFSET$flowVectorFormat);}
-    public void flowVectorFormat(int value) {this.ptr.set(LAYOUT$flowVectorFormat, OFFSET$flowVectorFormat, value);}
-    public java.lang.foreign.MemorySegment flowVectorFormat_ptr() {return this.ptr.asSlice(OFFSET$flowVectorFormat, LAYOUT$flowVectorFormat);}
+    public int imageFormat() {return this.ptr.get(LAYOUT__imageFormat, OFFSET__imageFormat);}
+    public void imageFormat(int value) {this.ptr.set(LAYOUT__imageFormat, OFFSET__imageFormat, value);}
+    public java.lang.foreign.MemorySegment $imageFormat() {return this.ptr.asSlice(OFFSET__imageFormat, LAYOUT__imageFormat);}
 
-    public int costFormat() {return this.ptr.get(LAYOUT$costFormat, OFFSET$costFormat);}
-    public void costFormat(int value) {this.ptr.set(LAYOUT$costFormat, OFFSET$costFormat, value);}
-    public java.lang.foreign.MemorySegment costFormat_ptr() {return this.ptr.asSlice(OFFSET$costFormat, LAYOUT$costFormat);}
+    public int flowVectorFormat() {return this.ptr.get(LAYOUT__flowVectorFormat, OFFSET__flowVectorFormat);}
+    public void flowVectorFormat(int value) {this.ptr.set(LAYOUT__flowVectorFormat, OFFSET__flowVectorFormat, value);}
+    public java.lang.foreign.MemorySegment $flowVectorFormat() {return this.ptr.asSlice(OFFSET__flowVectorFormat, LAYOUT__flowVectorFormat);}
 
-    public int outputGridSize() {return this.ptr.get(LAYOUT$outputGridSize, OFFSET$outputGridSize);}
-    public void outputGridSize(int value) {this.ptr.set(LAYOUT$outputGridSize, OFFSET$outputGridSize, value);}
-    public java.lang.foreign.MemorySegment outputGridSize_ptr() {return this.ptr.asSlice(OFFSET$outputGridSize, LAYOUT$outputGridSize);}
+    public int costFormat() {return this.ptr.get(LAYOUT__costFormat, OFFSET__costFormat);}
+    public void costFormat(int value) {this.ptr.set(LAYOUT__costFormat, OFFSET__costFormat, value);}
+    public java.lang.foreign.MemorySegment $costFormat() {return this.ptr.asSlice(OFFSET__costFormat, LAYOUT__costFormat);}
 
-    public int hintGridSize() {return this.ptr.get(LAYOUT$hintGridSize, OFFSET$hintGridSize);}
-    public void hintGridSize(int value) {this.ptr.set(LAYOUT$hintGridSize, OFFSET$hintGridSize, value);}
-    public java.lang.foreign.MemorySegment hintGridSize_ptr() {return this.ptr.asSlice(OFFSET$hintGridSize, LAYOUT$hintGridSize);}
+    public int outputGridSize() {return this.ptr.get(LAYOUT__outputGridSize, OFFSET__outputGridSize);}
+    public void outputGridSize(int value) {this.ptr.set(LAYOUT__outputGridSize, OFFSET__outputGridSize, value);}
+    public java.lang.foreign.MemorySegment $outputGridSize() {return this.ptr.asSlice(OFFSET__outputGridSize, LAYOUT__outputGridSize);}
 
-    public int performanceLevel() {return this.ptr.get(LAYOUT$performanceLevel, OFFSET$performanceLevel);}
-    public void performanceLevel(int value) {this.ptr.set(LAYOUT$performanceLevel, OFFSET$performanceLevel, value);}
-    public java.lang.foreign.MemorySegment performanceLevel_ptr() {return this.ptr.asSlice(OFFSET$performanceLevel, LAYOUT$performanceLevel);}
+    public int hintGridSize() {return this.ptr.get(LAYOUT__hintGridSize, OFFSET__hintGridSize);}
+    public void hintGridSize(int value) {this.ptr.set(LAYOUT__hintGridSize, OFFSET__hintGridSize, value);}
+    public java.lang.foreign.MemorySegment $hintGridSize() {return this.ptr.asSlice(OFFSET__hintGridSize, LAYOUT__hintGridSize);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public int performanceLevel() {return this.ptr.get(LAYOUT__performanceLevel, OFFSET__performanceLevel);}
+    public void performanceLevel(int value) {this.ptr.set(LAYOUT__performanceLevel, OFFSET__performanceLevel, value);}
+    public java.lang.foreign.MemorySegment $performanceLevel() {return this.ptr.asSlice(OFFSET__performanceLevel, LAYOUT__performanceLevel);}
+
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 }

@@ -2,111 +2,116 @@ package vulkan;
 
 public record VkSubpassDescription2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pipelineBindPoint = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$viewMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$viewMask = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$inputAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$inputAttachmentCount = 28L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pInputAttachments = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pInputAttachments = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$colorAttachmentCount = 40L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pColorAttachments = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pColorAttachments = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pResolveAttachments = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pResolveAttachments = 56L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDepthStencilAttachment = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDepthStencilAttachment = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$preserveAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$preserveAttachmentCount = 72L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pPreserveAttachments = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pPreserveAttachments = 80L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pipelineBindPoint = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__viewMask = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__inputAttachmentCount = 28;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pInputAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pInputAttachments = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__colorAttachmentCount = 40;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pColorAttachments = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pResolveAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pResolveAttachments = 56;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthStencilAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDepthStencilAttachment = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preserveAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__preserveAttachmentCount = 72;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPreserveAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pPreserveAttachments = 80;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$pipelineBindPoint,
-            LAYOUT$viewMask,
-            LAYOUT$inputAttachmentCount,
-            LAYOUT$pInputAttachments,
-            LAYOUT$colorAttachmentCount,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__pipelineBindPoint,
+            LAYOUT__viewMask,
+            LAYOUT__inputAttachmentCount,
+            LAYOUT__pInputAttachments,
+            LAYOUT__colorAttachmentCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pColorAttachments,
-            LAYOUT$pResolveAttachments,
-            LAYOUT$pDepthStencilAttachment,
-            LAYOUT$preserveAttachmentCount,
+            LAYOUT__pColorAttachments,
+            LAYOUT__pResolveAttachments,
+            LAYOUT__pDepthStencilAttachment,
+            LAYOUT__preserveAttachmentCount,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pPreserveAttachments
-    ).withName("VkSubpassDescription2");
+            LAYOUT__pPreserveAttachments
+    ).withByteAlignment(8).withName("VkSubpassDescription2");
 
     public VkSubpassDescription2(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSubpassDescription2 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSubpassDescription2 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSubpassDescription2(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSubpassDescription2(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSubpassDescription2 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int pipelineBindPoint() {return this.ptr.get(LAYOUT$pipelineBindPoint, OFFSET$pipelineBindPoint);}
-    public void pipelineBindPoint(int value) {this.ptr.set(LAYOUT$pipelineBindPoint, OFFSET$pipelineBindPoint, value);}
-    public java.lang.foreign.MemorySegment pipelineBindPoint_ptr() {return this.ptr.asSlice(OFFSET$pipelineBindPoint, LAYOUT$pipelineBindPoint);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int viewMask() {return this.ptr.get(LAYOUT$viewMask, OFFSET$viewMask);}
-    public void viewMask(int value) {this.ptr.set(LAYOUT$viewMask, OFFSET$viewMask, value);}
-    public java.lang.foreign.MemorySegment viewMask_ptr() {return this.ptr.asSlice(OFFSET$viewMask, LAYOUT$viewMask);}
+    public int pipelineBindPoint() {return this.ptr.get(LAYOUT__pipelineBindPoint, OFFSET__pipelineBindPoint);}
+    public void pipelineBindPoint(int value) {this.ptr.set(LAYOUT__pipelineBindPoint, OFFSET__pipelineBindPoint, value);}
+    public java.lang.foreign.MemorySegment $pipelineBindPoint() {return this.ptr.asSlice(OFFSET__pipelineBindPoint, LAYOUT__pipelineBindPoint);}
 
-    public int inputAttachmentCount() {return this.ptr.get(LAYOUT$inputAttachmentCount, OFFSET$inputAttachmentCount);}
-    public void inputAttachmentCount(int value) {this.ptr.set(LAYOUT$inputAttachmentCount, OFFSET$inputAttachmentCount, value);}
-    public java.lang.foreign.MemorySegment inputAttachmentCount_ptr() {return this.ptr.asSlice(OFFSET$inputAttachmentCount, LAYOUT$inputAttachmentCount);}
+    public int viewMask() {return this.ptr.get(LAYOUT__viewMask, OFFSET__viewMask);}
+    public void viewMask(int value) {this.ptr.set(LAYOUT__viewMask, OFFSET__viewMask, value);}
+    public java.lang.foreign.MemorySegment $viewMask() {return this.ptr.asSlice(OFFSET__viewMask, LAYOUT__viewMask);}
 
-    public java.lang.foreign.MemorySegment pInputAttachments() {return this.ptr.get(LAYOUT$pInputAttachments, OFFSET$pInputAttachments);}
-    public void pInputAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pInputAttachments, OFFSET$pInputAttachments, value);}
-    public java.lang.foreign.MemorySegment pInputAttachments_ptr() {return this.ptr.asSlice(OFFSET$pInputAttachments, LAYOUT$pInputAttachments);}
+    public int inputAttachmentCount() {return this.ptr.get(LAYOUT__inputAttachmentCount, OFFSET__inputAttachmentCount);}
+    public void inputAttachmentCount(int value) {this.ptr.set(LAYOUT__inputAttachmentCount, OFFSET__inputAttachmentCount, value);}
+    public java.lang.foreign.MemorySegment $inputAttachmentCount() {return this.ptr.asSlice(OFFSET__inputAttachmentCount, LAYOUT__inputAttachmentCount);}
 
-    public int colorAttachmentCount() {return this.ptr.get(LAYOUT$colorAttachmentCount, OFFSET$colorAttachmentCount);}
-    public void colorAttachmentCount(int value) {this.ptr.set(LAYOUT$colorAttachmentCount, OFFSET$colorAttachmentCount, value);}
-    public java.lang.foreign.MemorySegment colorAttachmentCount_ptr() {return this.ptr.asSlice(OFFSET$colorAttachmentCount, LAYOUT$colorAttachmentCount);}
+    public java.lang.foreign.MemorySegment pInputAttachments() {return this.ptr.get(LAYOUT__pInputAttachments, OFFSET__pInputAttachments);}
+    public void pInputAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pInputAttachments, OFFSET__pInputAttachments, value);}
+    public java.lang.foreign.MemorySegment $pInputAttachments() {return this.ptr.asSlice(OFFSET__pInputAttachments, LAYOUT__pInputAttachments);}
 
-    public java.lang.foreign.MemorySegment pColorAttachments() {return this.ptr.get(LAYOUT$pColorAttachments, OFFSET$pColorAttachments);}
-    public void pColorAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pColorAttachments, OFFSET$pColorAttachments, value);}
-    public java.lang.foreign.MemorySegment pColorAttachments_ptr() {return this.ptr.asSlice(OFFSET$pColorAttachments, LAYOUT$pColorAttachments);}
+    public int colorAttachmentCount() {return this.ptr.get(LAYOUT__colorAttachmentCount, OFFSET__colorAttachmentCount);}
+    public void colorAttachmentCount(int value) {this.ptr.set(LAYOUT__colorAttachmentCount, OFFSET__colorAttachmentCount, value);}
+    public java.lang.foreign.MemorySegment $colorAttachmentCount() {return this.ptr.asSlice(OFFSET__colorAttachmentCount, LAYOUT__colorAttachmentCount);}
 
-    public java.lang.foreign.MemorySegment pResolveAttachments() {return this.ptr.get(LAYOUT$pResolveAttachments, OFFSET$pResolveAttachments);}
-    public void pResolveAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pResolveAttachments, OFFSET$pResolveAttachments, value);}
-    public java.lang.foreign.MemorySegment pResolveAttachments_ptr() {return this.ptr.asSlice(OFFSET$pResolveAttachments, LAYOUT$pResolveAttachments);}
+    public java.lang.foreign.MemorySegment pColorAttachments() {return this.ptr.get(LAYOUT__pColorAttachments, OFFSET__pColorAttachments);}
+    public void pColorAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pColorAttachments, OFFSET__pColorAttachments, value);}
+    public java.lang.foreign.MemorySegment $pColorAttachments() {return this.ptr.asSlice(OFFSET__pColorAttachments, LAYOUT__pColorAttachments);}
 
-    public java.lang.foreign.MemorySegment pDepthStencilAttachment() {return this.ptr.get(LAYOUT$pDepthStencilAttachment, OFFSET$pDepthStencilAttachment);}
-    public void pDepthStencilAttachment(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDepthStencilAttachment, OFFSET$pDepthStencilAttachment, value);}
-    public java.lang.foreign.MemorySegment pDepthStencilAttachment_ptr() {return this.ptr.asSlice(OFFSET$pDepthStencilAttachment, LAYOUT$pDepthStencilAttachment);}
+    public java.lang.foreign.MemorySegment pResolveAttachments() {return this.ptr.get(LAYOUT__pResolveAttachments, OFFSET__pResolveAttachments);}
+    public void pResolveAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pResolveAttachments, OFFSET__pResolveAttachments, value);}
+    public java.lang.foreign.MemorySegment $pResolveAttachments() {return this.ptr.asSlice(OFFSET__pResolveAttachments, LAYOUT__pResolveAttachments);}
 
-    public int preserveAttachmentCount() {return this.ptr.get(LAYOUT$preserveAttachmentCount, OFFSET$preserveAttachmentCount);}
-    public void preserveAttachmentCount(int value) {this.ptr.set(LAYOUT$preserveAttachmentCount, OFFSET$preserveAttachmentCount, value);}
-    public java.lang.foreign.MemorySegment preserveAttachmentCount_ptr() {return this.ptr.asSlice(OFFSET$preserveAttachmentCount, LAYOUT$preserveAttachmentCount);}
+    public java.lang.foreign.MemorySegment pDepthStencilAttachment() {return this.ptr.get(LAYOUT__pDepthStencilAttachment, OFFSET__pDepthStencilAttachment);}
+    public void pDepthStencilAttachment(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDepthStencilAttachment, OFFSET__pDepthStencilAttachment, value);}
+    public java.lang.foreign.MemorySegment $pDepthStencilAttachment() {return this.ptr.asSlice(OFFSET__pDepthStencilAttachment, LAYOUT__pDepthStencilAttachment);}
 
-    public java.lang.foreign.MemorySegment pPreserveAttachments() {return this.ptr.get(LAYOUT$pPreserveAttachments, OFFSET$pPreserveAttachments);}
-    public void pPreserveAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pPreserveAttachments, OFFSET$pPreserveAttachments, value);}
-    public java.lang.foreign.MemorySegment pPreserveAttachments_ptr() {return this.ptr.asSlice(OFFSET$pPreserveAttachments, LAYOUT$pPreserveAttachments);}
+    public int preserveAttachmentCount() {return this.ptr.get(LAYOUT__preserveAttachmentCount, OFFSET__preserveAttachmentCount);}
+    public void preserveAttachmentCount(int value) {this.ptr.set(LAYOUT__preserveAttachmentCount, OFFSET__preserveAttachmentCount, value);}
+    public java.lang.foreign.MemorySegment $preserveAttachmentCount() {return this.ptr.asSlice(OFFSET__preserveAttachmentCount, LAYOUT__preserveAttachmentCount);}
+
+    public java.lang.foreign.MemorySegment pPreserveAttachments() {return this.ptr.get(LAYOUT__pPreserveAttachments, OFFSET__pPreserveAttachments);}
+    public void pPreserveAttachments(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pPreserveAttachments, OFFSET__pPreserveAttachments, value);}
+    public java.lang.foreign.MemorySegment $pPreserveAttachments() {return this.ptr.asSlice(OFFSET__pPreserveAttachments, LAYOUT__pPreserveAttachments);}
 }

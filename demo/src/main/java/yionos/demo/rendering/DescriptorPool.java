@@ -8,10 +8,10 @@ import yionos.demo.Disposable;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkStructureType.*;
+import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class DescriptorPool implements Disposable
@@ -26,7 +26,7 @@ public class DescriptorPool implements Disposable
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment poolSizes = arena.allocateArray(VkDescriptorPoolSize.gStructLayout, sizes.length);
+            MemorySegment poolSizes = arena.allocate(VkDescriptorPoolSize.gRecordLayout, sizes.length);
             for (int i = 0; i < sizes.length; i++)
             {
                 VkDescriptorPoolSize descriptorPoolSize = VkDescriptorPoolSize.getAtIndex(poolSizes, i);
@@ -41,9 +41,9 @@ public class DescriptorPool implements Disposable
             descriptorPoolCreateInfo.pPoolSizes(poolSizes);
             descriptorPoolCreateInfo.maxSets(capacity);
 
-            MemorySegment pDescriptorPool = arena.allocate(ValueLayout.ADDRESS);
+            MemorySegment pDescriptorPool = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateDescriptorPool(device, descriptorPoolCreateInfo.ptr(), NULL, pDescriptorPool), "Unable to create descriptor pool");
-            this.m_handle = pDescriptorPool.get(ValueLayout.ADDRESS, 0);
+            this.m_handle = pDescriptorPool.get(ADDRESS, 0);
 
             this.device = device;
             this.m_capacity = capacity;

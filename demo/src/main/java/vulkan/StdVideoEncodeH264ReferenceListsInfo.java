@@ -2,101 +2,106 @@ package vulkan;
 
 public record StdVideoEncodeH264ReferenceListsInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$flags = vulkan.StdVideoEncodeH264ReferenceListsInfoFlags.gStructLayout;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$num_ref_idx_l0_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$num_ref_idx_l0_active_minus1 = 4L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$num_ref_idx_l1_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$num_ref_idx_l1_active_minus1 = 5L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$RefPicList0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$RefPicList0 = 6L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$RefPicList1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$RefPicList1 = 38L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$refList0ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$refList0ModOpCount = 70L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$refList1ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$refList1ModOpCount = 71L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$refPicMarkingOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$refPicMarkingOpCount = 72L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$reserved1 = 73L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRefList0ModOperations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRefList0ModOperations = 80L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRefList1ModOperations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRefList1ModOperations = 88L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pRefPicMarkingOperations = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pRefPicMarkingOperations = 96L;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264ReferenceListsInfoFlags.gRecordLayout;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__num_ref_idx_l0_active_minus1 = 4;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__num_ref_idx_l1_active_minus1 = 5;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__RefPicList0 = 6;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__RefPicList1 = 38;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refList0ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__refList0ModOpCount = 70;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refList1ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__refList1ModOpCount = 71;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refPicMarkingOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__refPicMarkingOpCount = 72;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__reserved1 = 73;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefList0ModOperations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRefList0ModOperations = 80;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefList1ModOperations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRefList1ModOperations = 88;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefPicMarkingOperations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pRefPicMarkingOperations = 96;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
-            LAYOUT$num_ref_idx_l0_active_minus1,
-            LAYOUT$num_ref_idx_l1_active_minus1,
-            LAYOUT$RefPicList0,
-            LAYOUT$RefPicList1,
-            LAYOUT$refList0ModOpCount,
-            LAYOUT$refList1ModOpCount,
-            LAYOUT$refPicMarkingOpCount,
-            LAYOUT$reserved1,
-            LAYOUT$pRefList0ModOperations,
-            LAYOUT$pRefList1ModOperations,
-            LAYOUT$pRefPicMarkingOperations
-    ).withName("StdVideoEncodeH264ReferenceListsInfo");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
+            LAYOUT__num_ref_idx_l0_active_minus1,
+            LAYOUT__num_ref_idx_l1_active_minus1,
+            LAYOUT__RefPicList0,
+            LAYOUT__RefPicList1,
+            LAYOUT__refList0ModOpCount,
+            LAYOUT__refList1ModOpCount,
+            LAYOUT__refPicMarkingOpCount,
+            LAYOUT__reserved1,
+            LAYOUT__pRefList0ModOperations,
+            LAYOUT__pRefList1ModOperations,
+            LAYOUT__pRefPicMarkingOperations
+    ).withByteAlignment(8).withName("StdVideoEncodeH264ReferenceListsInfo");
 
     public StdVideoEncodeH264ReferenceListsInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static StdVideoEncodeH264ReferenceListsInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static StdVideoEncodeH264ReferenceListsInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new StdVideoEncodeH264ReferenceListsInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new StdVideoEncodeH264ReferenceListsInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.StdVideoEncodeH264ReferenceListsInfoFlags flags() {return new vulkan.StdVideoEncodeH264ReferenceListsInfoFlags(this.ptr.asSlice(OFFSET$flags, LAYOUT$flags));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, StdVideoEncodeH264ReferenceListsInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public vulkan.StdVideoEncodeH264ReferenceListsInfoFlags flags() {return new vulkan.StdVideoEncodeH264ReferenceListsInfoFlags(this.ptr.asSlice(OFFSET__flags, LAYOUT__flags));}
     public void flags(java.util.function.Consumer<vulkan.StdVideoEncodeH264ReferenceListsInfoFlags> consumer) {consumer.accept(this.flags());}
-    public void flags(vulkan.StdVideoEncodeH264ReferenceListsInfoFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$flags, LAYOUT$flags.byteSize());}
+    public void flags(vulkan.StdVideoEncodeH264ReferenceListsInfoFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__flags, LAYOUT__flags.byteSize());}
 
-    public char num_ref_idx_l0_active_minus1() {return (char)this.ptr.get(LAYOUT$num_ref_idx_l0_active_minus1, OFFSET$num_ref_idx_l0_active_minus1);}
-    public void num_ref_idx_l0_active_minus1(char value) {this.ptr.set(LAYOUT$num_ref_idx_l0_active_minus1, OFFSET$num_ref_idx_l0_active_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment num_ref_idx_l0_active_minus1_ptr() {return this.ptr.asSlice(OFFSET$num_ref_idx_l0_active_minus1, LAYOUT$num_ref_idx_l0_active_minus1);}
+    public byte num_ref_idx_l0_active_minus1() {return this.ptr.get(LAYOUT__num_ref_idx_l0_active_minus1, OFFSET__num_ref_idx_l0_active_minus1);}
+    public void num_ref_idx_l0_active_minus1(byte value) {this.ptr.set(LAYOUT__num_ref_idx_l0_active_minus1, OFFSET__num_ref_idx_l0_active_minus1, value);}
+    public java.lang.foreign.MemorySegment $num_ref_idx_l0_active_minus1() {return this.ptr.asSlice(OFFSET__num_ref_idx_l0_active_minus1, LAYOUT__num_ref_idx_l0_active_minus1);}
 
-    public char num_ref_idx_l1_active_minus1() {return (char)this.ptr.get(LAYOUT$num_ref_idx_l1_active_minus1, OFFSET$num_ref_idx_l1_active_minus1);}
-    public void num_ref_idx_l1_active_minus1(char value) {this.ptr.set(LAYOUT$num_ref_idx_l1_active_minus1, OFFSET$num_ref_idx_l1_active_minus1, (byte)value);}
-    public java.lang.foreign.MemorySegment num_ref_idx_l1_active_minus1_ptr() {return this.ptr.asSlice(OFFSET$num_ref_idx_l1_active_minus1, LAYOUT$num_ref_idx_l1_active_minus1);}
+    public byte num_ref_idx_l1_active_minus1() {return this.ptr.get(LAYOUT__num_ref_idx_l1_active_minus1, OFFSET__num_ref_idx_l1_active_minus1);}
+    public void num_ref_idx_l1_active_minus1(byte value) {this.ptr.set(LAYOUT__num_ref_idx_l1_active_minus1, OFFSET__num_ref_idx_l1_active_minus1, value);}
+    public java.lang.foreign.MemorySegment $num_ref_idx_l1_active_minus1() {return this.ptr.asSlice(OFFSET__num_ref_idx_l1_active_minus1, LAYOUT__num_ref_idx_l1_active_minus1);}
 
-    public java.lang.foreign.MemorySegment RefPicList0() {return this.ptr.asSlice(OFFSET$RefPicList0, LAYOUT$RefPicList0);}
-    public char RefPicList0(int i) {return (char)this.RefPicList0().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void RefPicList0(int i, char value) {this.RefPicList0().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment RefPicList0() {return this.ptr.asSlice(OFFSET__RefPicList0, LAYOUT__RefPicList0);}
+    public byte RefPicList0(int index) {return this.RefPicList0().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void RefPicList0(int index, byte value) {this.RefPicList0().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public java.lang.foreign.MemorySegment RefPicList1() {return this.ptr.asSlice(OFFSET$RefPicList1, LAYOUT$RefPicList1);}
-    public char RefPicList1(int i) {return (char)this.RefPicList1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void RefPicList1(int i, char value) {this.RefPicList1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment RefPicList1() {return this.ptr.asSlice(OFFSET__RefPicList1, LAYOUT__RefPicList1);}
+    public byte RefPicList1(int index) {return this.RefPicList1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void RefPicList1(int index, byte value) {this.RefPicList1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public char refList0ModOpCount() {return (char)this.ptr.get(LAYOUT$refList0ModOpCount, OFFSET$refList0ModOpCount);}
-    public void refList0ModOpCount(char value) {this.ptr.set(LAYOUT$refList0ModOpCount, OFFSET$refList0ModOpCount, (byte)value);}
-    public java.lang.foreign.MemorySegment refList0ModOpCount_ptr() {return this.ptr.asSlice(OFFSET$refList0ModOpCount, LAYOUT$refList0ModOpCount);}
+    public byte refList0ModOpCount() {return this.ptr.get(LAYOUT__refList0ModOpCount, OFFSET__refList0ModOpCount);}
+    public void refList0ModOpCount(byte value) {this.ptr.set(LAYOUT__refList0ModOpCount, OFFSET__refList0ModOpCount, value);}
+    public java.lang.foreign.MemorySegment $refList0ModOpCount() {return this.ptr.asSlice(OFFSET__refList0ModOpCount, LAYOUT__refList0ModOpCount);}
 
-    public char refList1ModOpCount() {return (char)this.ptr.get(LAYOUT$refList1ModOpCount, OFFSET$refList1ModOpCount);}
-    public void refList1ModOpCount(char value) {this.ptr.set(LAYOUT$refList1ModOpCount, OFFSET$refList1ModOpCount, (byte)value);}
-    public java.lang.foreign.MemorySegment refList1ModOpCount_ptr() {return this.ptr.asSlice(OFFSET$refList1ModOpCount, LAYOUT$refList1ModOpCount);}
+    public byte refList1ModOpCount() {return this.ptr.get(LAYOUT__refList1ModOpCount, OFFSET__refList1ModOpCount);}
+    public void refList1ModOpCount(byte value) {this.ptr.set(LAYOUT__refList1ModOpCount, OFFSET__refList1ModOpCount, value);}
+    public java.lang.foreign.MemorySegment $refList1ModOpCount() {return this.ptr.asSlice(OFFSET__refList1ModOpCount, LAYOUT__refList1ModOpCount);}
 
-    public char refPicMarkingOpCount() {return (char)this.ptr.get(LAYOUT$refPicMarkingOpCount, OFFSET$refPicMarkingOpCount);}
-    public void refPicMarkingOpCount(char value) {this.ptr.set(LAYOUT$refPicMarkingOpCount, OFFSET$refPicMarkingOpCount, (byte)value);}
-    public java.lang.foreign.MemorySegment refPicMarkingOpCount_ptr() {return this.ptr.asSlice(OFFSET$refPicMarkingOpCount, LAYOUT$refPicMarkingOpCount);}
+    public byte refPicMarkingOpCount() {return this.ptr.get(LAYOUT__refPicMarkingOpCount, OFFSET__refPicMarkingOpCount);}
+    public void refPicMarkingOpCount(byte value) {this.ptr.set(LAYOUT__refPicMarkingOpCount, OFFSET__refPicMarkingOpCount, value);}
+    public java.lang.foreign.MemorySegment $refPicMarkingOpCount() {return this.ptr.asSlice(OFFSET__refPicMarkingOpCount, LAYOUT__refPicMarkingOpCount);}
 
-    public java.lang.foreign.MemorySegment reserved1() {return this.ptr.asSlice(OFFSET$reserved1, LAYOUT$reserved1);}
-    public char reserved1(int i) {return (char)this.reserved1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void reserved1(int i, char value) {this.reserved1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public java.lang.foreign.MemorySegment reserved1() {return this.ptr.asSlice(OFFSET__reserved1, LAYOUT__reserved1);}
+    public byte reserved1(int index) {return this.reserved1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void reserved1(int index, byte value) {this.reserved1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
 
-    public java.lang.foreign.MemorySegment pRefList0ModOperations() {return this.ptr.get(LAYOUT$pRefList0ModOperations, OFFSET$pRefList0ModOperations);}
-    public void pRefList0ModOperations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRefList0ModOperations, OFFSET$pRefList0ModOperations, value);}
-    public java.lang.foreign.MemorySegment pRefList0ModOperations_ptr() {return this.ptr.asSlice(OFFSET$pRefList0ModOperations, LAYOUT$pRefList0ModOperations);}
+    public java.lang.foreign.MemorySegment pRefList0ModOperations() {return this.ptr.get(LAYOUT__pRefList0ModOperations, OFFSET__pRefList0ModOperations);}
+    public void pRefList0ModOperations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRefList0ModOperations, OFFSET__pRefList0ModOperations, value);}
+    public java.lang.foreign.MemorySegment $pRefList0ModOperations() {return this.ptr.asSlice(OFFSET__pRefList0ModOperations, LAYOUT__pRefList0ModOperations);}
 
-    public java.lang.foreign.MemorySegment pRefList1ModOperations() {return this.ptr.get(LAYOUT$pRefList1ModOperations, OFFSET$pRefList1ModOperations);}
-    public void pRefList1ModOperations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRefList1ModOperations, OFFSET$pRefList1ModOperations, value);}
-    public java.lang.foreign.MemorySegment pRefList1ModOperations_ptr() {return this.ptr.asSlice(OFFSET$pRefList1ModOperations, LAYOUT$pRefList1ModOperations);}
+    public java.lang.foreign.MemorySegment pRefList1ModOperations() {return this.ptr.get(LAYOUT__pRefList1ModOperations, OFFSET__pRefList1ModOperations);}
+    public void pRefList1ModOperations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRefList1ModOperations, OFFSET__pRefList1ModOperations, value);}
+    public java.lang.foreign.MemorySegment $pRefList1ModOperations() {return this.ptr.asSlice(OFFSET__pRefList1ModOperations, LAYOUT__pRefList1ModOperations);}
 
-    public java.lang.foreign.MemorySegment pRefPicMarkingOperations() {return this.ptr.get(LAYOUT$pRefPicMarkingOperations, OFFSET$pRefPicMarkingOperations);}
-    public void pRefPicMarkingOperations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pRefPicMarkingOperations, OFFSET$pRefPicMarkingOperations, value);}
-    public java.lang.foreign.MemorySegment pRefPicMarkingOperations_ptr() {return this.ptr.asSlice(OFFSET$pRefPicMarkingOperations, LAYOUT$pRefPicMarkingOperations);}
+    public java.lang.foreign.MemorySegment pRefPicMarkingOperations() {return this.ptr.get(LAYOUT__pRefPicMarkingOperations, OFFSET__pRefPicMarkingOperations);}
+    public void pRefPicMarkingOperations(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pRefPicMarkingOperations, OFFSET__pRefPicMarkingOperations, value);}
+    public java.lang.foreign.MemorySegment $pRefPicMarkingOperations() {return this.ptr.asSlice(OFFSET__pRefPicMarkingOperations, LAYOUT__pRefPicMarkingOperations);}
 }

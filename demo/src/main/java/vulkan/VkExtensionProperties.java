@@ -2,31 +2,36 @@ package vulkan;
 
 public record VkExtensionProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT$extensionName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
-    public static final long OFFSET$extensionName = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$specVersion = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$specVersion = 256L;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__extensionName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final long OFFSET__extensionName = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__specVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__specVersion = 256;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$extensionName,
-            LAYOUT$specVersion
-    ).withName("VkExtensionProperties");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__extensionName,
+            LAYOUT__specVersion
+    ).withByteAlignment(4).withName("VkExtensionProperties");
 
     public VkExtensionProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkExtensionProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkExtensionProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkExtensionProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkExtensionProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment extensionName() {return this.ptr.asSlice(OFFSET$extensionName, LAYOUT$extensionName);}
-    public char extensionName(int i) {return (char)this.extensionName().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i);}
-    public void extensionName(int i, char value) {this.extensionName().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, i, (byte)value);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkExtensionProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int specVersion() {return this.ptr.get(LAYOUT$specVersion, OFFSET$specVersion);}
-    public void specVersion(int value) {this.ptr.set(LAYOUT$specVersion, OFFSET$specVersion, value);}
-    public java.lang.foreign.MemorySegment specVersion_ptr() {return this.ptr.asSlice(OFFSET$specVersion, LAYOUT$specVersion);}
+    public java.lang.foreign.MemorySegment extensionName() {return this.ptr.asSlice(OFFSET__extensionName, LAYOUT__extensionName);}
+    public byte extensionName(int index) {return this.extensionName().getAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index);}
+    public void extensionName(int index, byte value) {this.extensionName().setAtIndex(java.lang.foreign.ValueLayout.JAVA_BYTE, index, value);}
+
+    public int specVersion() {return this.ptr.get(LAYOUT__specVersion, OFFSET__specVersion);}
+    public void specVersion(int value) {this.ptr.set(LAYOUT__specVersion, OFFSET__specVersion, value);}
+    public java.lang.foreign.MemorySegment $specVersion() {return this.ptr.asSlice(OFFSET__specVersion, LAYOUT__specVersion);}
 }

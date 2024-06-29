@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceOpacityMicromapFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$micromap = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$micromap = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$micromapCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$micromapCaptureReplay = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$micromapHostCommands = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$micromapHostCommands = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__micromap = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromapCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__micromapCaptureReplay = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromapHostCommands = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__micromapHostCommands = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$micromap,
-            LAYOUT$micromapCaptureReplay,
-            LAYOUT$micromapHostCommands,
+            LAYOUT__pNext,
+            LAYOUT__micromap,
+            LAYOUT__micromapCaptureReplay,
+            LAYOUT__micromapHostCommands,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceOpacityMicromapFeaturesEXT");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceOpacityMicromapFeaturesEXT");
 
     public VkPhysicalDeviceOpacityMicromapFeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceOpacityMicromapFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceOpacityMicromapFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceOpacityMicromapFeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceOpacityMicromapFeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceOpacityMicromapFeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int micromap() {return this.ptr.get(LAYOUT$micromap, OFFSET$micromap);}
-    public void micromap(int value) {this.ptr.set(LAYOUT$micromap, OFFSET$micromap, value);}
-    public java.lang.foreign.MemorySegment micromap_ptr() {return this.ptr.asSlice(OFFSET$micromap, LAYOUT$micromap);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int micromapCaptureReplay() {return this.ptr.get(LAYOUT$micromapCaptureReplay, OFFSET$micromapCaptureReplay);}
-    public void micromapCaptureReplay(int value) {this.ptr.set(LAYOUT$micromapCaptureReplay, OFFSET$micromapCaptureReplay, value);}
-    public java.lang.foreign.MemorySegment micromapCaptureReplay_ptr() {return this.ptr.asSlice(OFFSET$micromapCaptureReplay, LAYOUT$micromapCaptureReplay);}
+    public int micromap() {return this.ptr.get(LAYOUT__micromap, OFFSET__micromap);}
+    public void micromap(int value) {this.ptr.set(LAYOUT__micromap, OFFSET__micromap, value);}
+    public java.lang.foreign.MemorySegment $micromap() {return this.ptr.asSlice(OFFSET__micromap, LAYOUT__micromap);}
 
-    public int micromapHostCommands() {return this.ptr.get(LAYOUT$micromapHostCommands, OFFSET$micromapHostCommands);}
-    public void micromapHostCommands(int value) {this.ptr.set(LAYOUT$micromapHostCommands, OFFSET$micromapHostCommands, value);}
-    public java.lang.foreign.MemorySegment micromapHostCommands_ptr() {return this.ptr.asSlice(OFFSET$micromapHostCommands, LAYOUT$micromapHostCommands);}
+    public int micromapCaptureReplay() {return this.ptr.get(LAYOUT__micromapCaptureReplay, OFFSET__micromapCaptureReplay);}
+    public void micromapCaptureReplay(int value) {this.ptr.set(LAYOUT__micromapCaptureReplay, OFFSET__micromapCaptureReplay, value);}
+    public java.lang.foreign.MemorySegment $micromapCaptureReplay() {return this.ptr.asSlice(OFFSET__micromapCaptureReplay, LAYOUT__micromapCaptureReplay);}
+
+    public int micromapHostCommands() {return this.ptr.get(LAYOUT__micromapHostCommands, OFFSET__micromapHostCommands);}
+    public void micromapHostCommands(int value) {this.ptr.set(LAYOUT__micromapHostCommands, OFFSET__micromapHostCommands, value);}
+    public java.lang.foreign.MemorySegment $micromapHostCommands() {return this.ptr.asSlice(OFFSET__micromapHostCommands, LAYOUT__micromapHostCommands);}
 }

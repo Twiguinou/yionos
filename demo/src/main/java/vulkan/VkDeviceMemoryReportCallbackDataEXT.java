@@ -2,83 +2,88 @@ package vulkan;
 
 public record VkDeviceMemoryReportCallbackDataEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$type = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$type = 20L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$memoryObjectId = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$memoryObjectId = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$size = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$size = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$objectType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$objectType = 40L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$objectHandle = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$objectHandle = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$heapIndex = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$heapIndex = 56L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__type = 20;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memoryObjectId = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__memoryObjectId = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__size = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__objectType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__objectType = 40;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__objectHandle = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__objectHandle = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__heapIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__heapIndex = 56;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$type,
-            LAYOUT$memoryObjectId,
-            LAYOUT$size,
-            LAYOUT$objectType,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__type,
+            LAYOUT__memoryObjectId,
+            LAYOUT__size,
+            LAYOUT__objectType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$objectHandle,
-            LAYOUT$heapIndex,
+            LAYOUT__objectHandle,
+            LAYOUT__heapIndex,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDeviceMemoryReportCallbackDataEXT");
+    ).withByteAlignment(8).withName("VkDeviceMemoryReportCallbackDataEXT");
 
     public VkDeviceMemoryReportCallbackDataEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDeviceMemoryReportCallbackDataEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDeviceMemoryReportCallbackDataEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDeviceMemoryReportCallbackDataEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDeviceMemoryReportCallbackDataEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDeviceMemoryReportCallbackDataEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int type() {return this.ptr.get(LAYOUT$type, OFFSET$type);}
-    public void type(int value) {this.ptr.set(LAYOUT$type, OFFSET$type, value);}
-    public java.lang.foreign.MemorySegment type_ptr() {return this.ptr.asSlice(OFFSET$type, LAYOUT$type);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public long memoryObjectId() {return this.ptr.get(LAYOUT$memoryObjectId, OFFSET$memoryObjectId);}
-    public void memoryObjectId(long value) {this.ptr.set(LAYOUT$memoryObjectId, OFFSET$memoryObjectId, value);}
-    public java.lang.foreign.MemorySegment memoryObjectId_ptr() {return this.ptr.asSlice(OFFSET$memoryObjectId, LAYOUT$memoryObjectId);}
+    public int type() {return this.ptr.get(LAYOUT__type, OFFSET__type);}
+    public void type(int value) {this.ptr.set(LAYOUT__type, OFFSET__type, value);}
+    public java.lang.foreign.MemorySegment $type() {return this.ptr.asSlice(OFFSET__type, LAYOUT__type);}
 
-    public long size() {return this.ptr.get(LAYOUT$size, OFFSET$size);}
-    public void size(long value) {this.ptr.set(LAYOUT$size, OFFSET$size, value);}
-    public java.lang.foreign.MemorySegment size_ptr() {return this.ptr.asSlice(OFFSET$size, LAYOUT$size);}
+    public long memoryObjectId() {return this.ptr.get(LAYOUT__memoryObjectId, OFFSET__memoryObjectId);}
+    public void memoryObjectId(long value) {this.ptr.set(LAYOUT__memoryObjectId, OFFSET__memoryObjectId, value);}
+    public java.lang.foreign.MemorySegment $memoryObjectId() {return this.ptr.asSlice(OFFSET__memoryObjectId, LAYOUT__memoryObjectId);}
 
-    public int objectType() {return this.ptr.get(LAYOUT$objectType, OFFSET$objectType);}
-    public void objectType(int value) {this.ptr.set(LAYOUT$objectType, OFFSET$objectType, value);}
-    public java.lang.foreign.MemorySegment objectType_ptr() {return this.ptr.asSlice(OFFSET$objectType, LAYOUT$objectType);}
+    public long size() {return this.ptr.get(LAYOUT__size, OFFSET__size);}
+    public void size(long value) {this.ptr.set(LAYOUT__size, OFFSET__size, value);}
+    public java.lang.foreign.MemorySegment $size() {return this.ptr.asSlice(OFFSET__size, LAYOUT__size);}
 
-    public long objectHandle() {return this.ptr.get(LAYOUT$objectHandle, OFFSET$objectHandle);}
-    public void objectHandle(long value) {this.ptr.set(LAYOUT$objectHandle, OFFSET$objectHandle, value);}
-    public java.lang.foreign.MemorySegment objectHandle_ptr() {return this.ptr.asSlice(OFFSET$objectHandle, LAYOUT$objectHandle);}
+    public int objectType() {return this.ptr.get(LAYOUT__objectType, OFFSET__objectType);}
+    public void objectType(int value) {this.ptr.set(LAYOUT__objectType, OFFSET__objectType, value);}
+    public java.lang.foreign.MemorySegment $objectType() {return this.ptr.asSlice(OFFSET__objectType, LAYOUT__objectType);}
 
-    public int heapIndex() {return this.ptr.get(LAYOUT$heapIndex, OFFSET$heapIndex);}
-    public void heapIndex(int value) {this.ptr.set(LAYOUT$heapIndex, OFFSET$heapIndex, value);}
-    public java.lang.foreign.MemorySegment heapIndex_ptr() {return this.ptr.asSlice(OFFSET$heapIndex, LAYOUT$heapIndex);}
+    public long objectHandle() {return this.ptr.get(LAYOUT__objectHandle, OFFSET__objectHandle);}
+    public void objectHandle(long value) {this.ptr.set(LAYOUT__objectHandle, OFFSET__objectHandle, value);}
+    public java.lang.foreign.MemorySegment $objectHandle() {return this.ptr.asSlice(OFFSET__objectHandle, LAYOUT__objectHandle);}
+
+    public int heapIndex() {return this.ptr.get(LAYOUT__heapIndex, OFFSET__heapIndex);}
+    public void heapIndex(int value) {this.ptr.set(LAYOUT__heapIndex, OFFSET__heapIndex, value);}
+    public java.lang.foreign.MemorySegment $heapIndex() {return this.ptr.asSlice(OFFSET__heapIndex, LAYOUT__heapIndex);}
 }

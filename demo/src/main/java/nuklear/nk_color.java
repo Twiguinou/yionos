@@ -2,45 +2,50 @@ package nuklear;
 
 public record nk_color(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$r = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$r = 0L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$g = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$g = 1L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$b = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$b = 2L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$a = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$a = 3L;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__r = 0;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__g = 1;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__b = 2;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__a = 3;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$r,
-            LAYOUT$g,
-            LAYOUT$b,
-            LAYOUT$a
-    ).withName("nk_color");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__r,
+            LAYOUT__g,
+            LAYOUT__b,
+            LAYOUT__a
+    ).withByteAlignment(1).withName("nk_color");
 
     public nk_color(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_color getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_color getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_color(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_color(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public char r() {return (char)this._ptr.get(LAYOUT$r, OFFSET$r);}
-    public void r(char value) {this._ptr.set(LAYOUT$r, OFFSET$r, (byte)value);}
-    public java.lang.foreign.MemorySegment r_ptr() {return this._ptr.asSlice(OFFSET$r, LAYOUT$r);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_color value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public char g() {return (char)this._ptr.get(LAYOUT$g, OFFSET$g);}
-    public void g(char value) {this._ptr.set(LAYOUT$g, OFFSET$g, (byte)value);}
-    public java.lang.foreign.MemorySegment g_ptr() {return this._ptr.asSlice(OFFSET$g, LAYOUT$g);}
+    public byte r() {return this._ptr.get(LAYOUT__r, OFFSET__r);}
+    public void r(byte value) {this._ptr.set(LAYOUT__r, OFFSET__r, value);}
+    public java.lang.foreign.MemorySegment $r() {return this._ptr.asSlice(OFFSET__r, LAYOUT__r);}
 
-    public char b() {return (char)this._ptr.get(LAYOUT$b, OFFSET$b);}
-    public void b(char value) {this._ptr.set(LAYOUT$b, OFFSET$b, (byte)value);}
-    public java.lang.foreign.MemorySegment b_ptr() {return this._ptr.asSlice(OFFSET$b, LAYOUT$b);}
+    public byte g() {return this._ptr.get(LAYOUT__g, OFFSET__g);}
+    public void g(byte value) {this._ptr.set(LAYOUT__g, OFFSET__g, value);}
+    public java.lang.foreign.MemorySegment $g() {return this._ptr.asSlice(OFFSET__g, LAYOUT__g);}
 
-    public char a() {return (char)this._ptr.get(LAYOUT$a, OFFSET$a);}
-    public void a(char value) {this._ptr.set(LAYOUT$a, OFFSET$a, (byte)value);}
-    public java.lang.foreign.MemorySegment a_ptr() {return this._ptr.asSlice(OFFSET$a, LAYOUT$a);}
+    public byte b() {return this._ptr.get(LAYOUT__b, OFFSET__b);}
+    public void b(byte value) {this._ptr.set(LAYOUT__b, OFFSET__b, value);}
+    public java.lang.foreign.MemorySegment $b() {return this._ptr.asSlice(OFFSET__b, LAYOUT__b);}
+
+    public byte a() {return this._ptr.get(LAYOUT__a, OFFSET__a);}
+    public void a(byte value) {this._ptr.set(LAYOUT__a, OFFSET__a, value);}
+    public java.lang.foreign.MemorySegment $a() {return this._ptr.asSlice(OFFSET__a, LAYOUT__a);}
 }

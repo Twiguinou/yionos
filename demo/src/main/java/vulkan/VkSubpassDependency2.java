@@ -2,88 +2,93 @@ package vulkan;
 
 public record VkSubpassDependency2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcSubpass = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcSubpass = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstSubpass = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstSubpass = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcStageMask = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstStageMask = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcAccessMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcAccessMask = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstAccessMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstAccessMask = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dependencyFlags = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$viewOffset = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$viewOffset = 44L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcSubpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcSubpass = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstSubpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstSubpass = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcStageMask = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstStageMask = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcAccessMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcAccessMask = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstAccessMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstAccessMask = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dependencyFlags = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__viewOffset = 44;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$srcSubpass,
-            LAYOUT$dstSubpass,
-            LAYOUT$srcStageMask,
-            LAYOUT$dstStageMask,
-            LAYOUT$srcAccessMask,
-            LAYOUT$dstAccessMask,
-            LAYOUT$dependencyFlags,
-            LAYOUT$viewOffset
-    ).withName("VkSubpassDependency2");
+            LAYOUT__pNext,
+            LAYOUT__srcSubpass,
+            LAYOUT__dstSubpass,
+            LAYOUT__srcStageMask,
+            LAYOUT__dstStageMask,
+            LAYOUT__srcAccessMask,
+            LAYOUT__dstAccessMask,
+            LAYOUT__dependencyFlags,
+            LAYOUT__viewOffset
+    ).withByteAlignment(8).withName("VkSubpassDependency2");
 
     public VkSubpassDependency2(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkSubpassDependency2 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkSubpassDependency2 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkSubpassDependency2(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkSubpassDependency2(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkSubpassDependency2 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int srcSubpass() {return this.ptr.get(LAYOUT$srcSubpass, OFFSET$srcSubpass);}
-    public void srcSubpass(int value) {this.ptr.set(LAYOUT$srcSubpass, OFFSET$srcSubpass, value);}
-    public java.lang.foreign.MemorySegment srcSubpass_ptr() {return this.ptr.asSlice(OFFSET$srcSubpass, LAYOUT$srcSubpass);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int dstSubpass() {return this.ptr.get(LAYOUT$dstSubpass, OFFSET$dstSubpass);}
-    public void dstSubpass(int value) {this.ptr.set(LAYOUT$dstSubpass, OFFSET$dstSubpass, value);}
-    public java.lang.foreign.MemorySegment dstSubpass_ptr() {return this.ptr.asSlice(OFFSET$dstSubpass, LAYOUT$dstSubpass);}
+    public int srcSubpass() {return this.ptr.get(LAYOUT__srcSubpass, OFFSET__srcSubpass);}
+    public void srcSubpass(int value) {this.ptr.set(LAYOUT__srcSubpass, OFFSET__srcSubpass, value);}
+    public java.lang.foreign.MemorySegment $srcSubpass() {return this.ptr.asSlice(OFFSET__srcSubpass, LAYOUT__srcSubpass);}
 
-    public int srcStageMask() {return this.ptr.get(LAYOUT$srcStageMask, OFFSET$srcStageMask);}
-    public void srcStageMask(int value) {this.ptr.set(LAYOUT$srcStageMask, OFFSET$srcStageMask, value);}
-    public java.lang.foreign.MemorySegment srcStageMask_ptr() {return this.ptr.asSlice(OFFSET$srcStageMask, LAYOUT$srcStageMask);}
+    public int dstSubpass() {return this.ptr.get(LAYOUT__dstSubpass, OFFSET__dstSubpass);}
+    public void dstSubpass(int value) {this.ptr.set(LAYOUT__dstSubpass, OFFSET__dstSubpass, value);}
+    public java.lang.foreign.MemorySegment $dstSubpass() {return this.ptr.asSlice(OFFSET__dstSubpass, LAYOUT__dstSubpass);}
 
-    public int dstStageMask() {return this.ptr.get(LAYOUT$dstStageMask, OFFSET$dstStageMask);}
-    public void dstStageMask(int value) {this.ptr.set(LAYOUT$dstStageMask, OFFSET$dstStageMask, value);}
-    public java.lang.foreign.MemorySegment dstStageMask_ptr() {return this.ptr.asSlice(OFFSET$dstStageMask, LAYOUT$dstStageMask);}
+    public int srcStageMask() {return this.ptr.get(LAYOUT__srcStageMask, OFFSET__srcStageMask);}
+    public void srcStageMask(int value) {this.ptr.set(LAYOUT__srcStageMask, OFFSET__srcStageMask, value);}
+    public java.lang.foreign.MemorySegment $srcStageMask() {return this.ptr.asSlice(OFFSET__srcStageMask, LAYOUT__srcStageMask);}
 
-    public int srcAccessMask() {return this.ptr.get(LAYOUT$srcAccessMask, OFFSET$srcAccessMask);}
-    public void srcAccessMask(int value) {this.ptr.set(LAYOUT$srcAccessMask, OFFSET$srcAccessMask, value);}
-    public java.lang.foreign.MemorySegment srcAccessMask_ptr() {return this.ptr.asSlice(OFFSET$srcAccessMask, LAYOUT$srcAccessMask);}
+    public int dstStageMask() {return this.ptr.get(LAYOUT__dstStageMask, OFFSET__dstStageMask);}
+    public void dstStageMask(int value) {this.ptr.set(LAYOUT__dstStageMask, OFFSET__dstStageMask, value);}
+    public java.lang.foreign.MemorySegment $dstStageMask() {return this.ptr.asSlice(OFFSET__dstStageMask, LAYOUT__dstStageMask);}
 
-    public int dstAccessMask() {return this.ptr.get(LAYOUT$dstAccessMask, OFFSET$dstAccessMask);}
-    public void dstAccessMask(int value) {this.ptr.set(LAYOUT$dstAccessMask, OFFSET$dstAccessMask, value);}
-    public java.lang.foreign.MemorySegment dstAccessMask_ptr() {return this.ptr.asSlice(OFFSET$dstAccessMask, LAYOUT$dstAccessMask);}
+    public int srcAccessMask() {return this.ptr.get(LAYOUT__srcAccessMask, OFFSET__srcAccessMask);}
+    public void srcAccessMask(int value) {this.ptr.set(LAYOUT__srcAccessMask, OFFSET__srcAccessMask, value);}
+    public java.lang.foreign.MemorySegment $srcAccessMask() {return this.ptr.asSlice(OFFSET__srcAccessMask, LAYOUT__srcAccessMask);}
 
-    public int dependencyFlags() {return this.ptr.get(LAYOUT$dependencyFlags, OFFSET$dependencyFlags);}
-    public void dependencyFlags(int value) {this.ptr.set(LAYOUT$dependencyFlags, OFFSET$dependencyFlags, value);}
-    public java.lang.foreign.MemorySegment dependencyFlags_ptr() {return this.ptr.asSlice(OFFSET$dependencyFlags, LAYOUT$dependencyFlags);}
+    public int dstAccessMask() {return this.ptr.get(LAYOUT__dstAccessMask, OFFSET__dstAccessMask);}
+    public void dstAccessMask(int value) {this.ptr.set(LAYOUT__dstAccessMask, OFFSET__dstAccessMask, value);}
+    public java.lang.foreign.MemorySegment $dstAccessMask() {return this.ptr.asSlice(OFFSET__dstAccessMask, LAYOUT__dstAccessMask);}
 
-    public int viewOffset() {return this.ptr.get(LAYOUT$viewOffset, OFFSET$viewOffset);}
-    public void viewOffset(int value) {this.ptr.set(LAYOUT$viewOffset, OFFSET$viewOffset, value);}
-    public java.lang.foreign.MemorySegment viewOffset_ptr() {return this.ptr.asSlice(OFFSET$viewOffset, LAYOUT$viewOffset);}
+    public int dependencyFlags() {return this.ptr.get(LAYOUT__dependencyFlags, OFFSET__dependencyFlags);}
+    public void dependencyFlags(int value) {this.ptr.set(LAYOUT__dependencyFlags, OFFSET__dependencyFlags, value);}
+    public java.lang.foreign.MemorySegment $dependencyFlags() {return this.ptr.asSlice(OFFSET__dependencyFlags, LAYOUT__dependencyFlags);}
+
+    public int viewOffset() {return this.ptr.get(LAYOUT__viewOffset, OFFSET__viewOffset);}
+    public void viewOffset(int value) {this.ptr.set(LAYOUT__viewOffset, OFFSET__viewOffset, value);}
+    public java.lang.foreign.MemorySegment $viewOffset() {return this.ptr.asSlice(OFFSET__viewOffset, LAYOUT__viewOffset);}
 }

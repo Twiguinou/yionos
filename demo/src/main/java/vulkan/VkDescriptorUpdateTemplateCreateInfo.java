@@ -2,91 +2,96 @@ package vulkan;
 
 public record VkDescriptorUpdateTemplateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorUpdateEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorUpdateEntryCount = 20L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pDescriptorUpdateEntries = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pDescriptorUpdateEntries = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$templateType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$templateType = 32L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$descriptorSetLayout = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$descriptorSetLayout = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$pipelineBindPoint = 48L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pipelineLayout = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pipelineLayout = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$set = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$set = 64L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorUpdateEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorUpdateEntryCount = 20;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorUpdateEntries = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pDescriptorUpdateEntries = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__templateType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__templateType = 32;
+    public static final java.lang.foreign.AddressLayout LAYOUT__descriptorSetLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__descriptorSetLayout = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__pipelineBindPoint = 48;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pipelineLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pipelineLayout = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__set = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__set = 64;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$flags,
-            LAYOUT$descriptorUpdateEntryCount,
-            LAYOUT$pDescriptorUpdateEntries,
-            LAYOUT$templateType,
+            LAYOUT__pNext,
+            LAYOUT__flags,
+            LAYOUT__descriptorUpdateEntryCount,
+            LAYOUT__pDescriptorUpdateEntries,
+            LAYOUT__templateType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$descriptorSetLayout,
-            LAYOUT$pipelineBindPoint,
+            LAYOUT__descriptorSetLayout,
+            LAYOUT__pipelineBindPoint,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pipelineLayout,
-            LAYOUT$set,
+            LAYOUT__pipelineLayout,
+            LAYOUT__set,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkDescriptorUpdateTemplateCreateInfo");
+    ).withByteAlignment(8).withName("VkDescriptorUpdateTemplateCreateInfo");
 
     public VkDescriptorUpdateTemplateCreateInfo(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkDescriptorUpdateTemplateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkDescriptorUpdateTemplateCreateInfo getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkDescriptorUpdateTemplateCreateInfo(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkDescriptorUpdateTemplateCreateInfo(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkDescriptorUpdateTemplateCreateInfo value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int descriptorUpdateEntryCount() {return this.ptr.get(LAYOUT$descriptorUpdateEntryCount, OFFSET$descriptorUpdateEntryCount);}
-    public void descriptorUpdateEntryCount(int value) {this.ptr.set(LAYOUT$descriptorUpdateEntryCount, OFFSET$descriptorUpdateEntryCount, value);}
-    public java.lang.foreign.MemorySegment descriptorUpdateEntryCount_ptr() {return this.ptr.asSlice(OFFSET$descriptorUpdateEntryCount, LAYOUT$descriptorUpdateEntryCount);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public java.lang.foreign.MemorySegment pDescriptorUpdateEntries() {return this.ptr.get(LAYOUT$pDescriptorUpdateEntries, OFFSET$pDescriptorUpdateEntries);}
-    public void pDescriptorUpdateEntries(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pDescriptorUpdateEntries, OFFSET$pDescriptorUpdateEntries, value);}
-    public java.lang.foreign.MemorySegment pDescriptorUpdateEntries_ptr() {return this.ptr.asSlice(OFFSET$pDescriptorUpdateEntries, LAYOUT$pDescriptorUpdateEntries);}
+    public int descriptorUpdateEntryCount() {return this.ptr.get(LAYOUT__descriptorUpdateEntryCount, OFFSET__descriptorUpdateEntryCount);}
+    public void descriptorUpdateEntryCount(int value) {this.ptr.set(LAYOUT__descriptorUpdateEntryCount, OFFSET__descriptorUpdateEntryCount, value);}
+    public java.lang.foreign.MemorySegment $descriptorUpdateEntryCount() {return this.ptr.asSlice(OFFSET__descriptorUpdateEntryCount, LAYOUT__descriptorUpdateEntryCount);}
 
-    public int templateType() {return this.ptr.get(LAYOUT$templateType, OFFSET$templateType);}
-    public void templateType(int value) {this.ptr.set(LAYOUT$templateType, OFFSET$templateType, value);}
-    public java.lang.foreign.MemorySegment templateType_ptr() {return this.ptr.asSlice(OFFSET$templateType, LAYOUT$templateType);}
+    public java.lang.foreign.MemorySegment pDescriptorUpdateEntries() {return this.ptr.get(LAYOUT__pDescriptorUpdateEntries, OFFSET__pDescriptorUpdateEntries);}
+    public void pDescriptorUpdateEntries(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pDescriptorUpdateEntries, OFFSET__pDescriptorUpdateEntries, value);}
+    public java.lang.foreign.MemorySegment $pDescriptorUpdateEntries() {return this.ptr.asSlice(OFFSET__pDescriptorUpdateEntries, LAYOUT__pDescriptorUpdateEntries);}
 
-    public java.lang.foreign.MemorySegment descriptorSetLayout() {return this.ptr.get(LAYOUT$descriptorSetLayout, OFFSET$descriptorSetLayout);}
-    public void descriptorSetLayout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$descriptorSetLayout, OFFSET$descriptorSetLayout, value);}
-    public java.lang.foreign.MemorySegment descriptorSetLayout_ptr() {return this.ptr.asSlice(OFFSET$descriptorSetLayout, LAYOUT$descriptorSetLayout);}
+    public int templateType() {return this.ptr.get(LAYOUT__templateType, OFFSET__templateType);}
+    public void templateType(int value) {this.ptr.set(LAYOUT__templateType, OFFSET__templateType, value);}
+    public java.lang.foreign.MemorySegment $templateType() {return this.ptr.asSlice(OFFSET__templateType, LAYOUT__templateType);}
 
-    public int pipelineBindPoint() {return this.ptr.get(LAYOUT$pipelineBindPoint, OFFSET$pipelineBindPoint);}
-    public void pipelineBindPoint(int value) {this.ptr.set(LAYOUT$pipelineBindPoint, OFFSET$pipelineBindPoint, value);}
-    public java.lang.foreign.MemorySegment pipelineBindPoint_ptr() {return this.ptr.asSlice(OFFSET$pipelineBindPoint, LAYOUT$pipelineBindPoint);}
+    public java.lang.foreign.MemorySegment descriptorSetLayout() {return this.ptr.get(LAYOUT__descriptorSetLayout, OFFSET__descriptorSetLayout);}
+    public void descriptorSetLayout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__descriptorSetLayout, OFFSET__descriptorSetLayout, value);}
+    public java.lang.foreign.MemorySegment $descriptorSetLayout() {return this.ptr.asSlice(OFFSET__descriptorSetLayout, LAYOUT__descriptorSetLayout);}
 
-    public java.lang.foreign.MemorySegment pipelineLayout() {return this.ptr.get(LAYOUT$pipelineLayout, OFFSET$pipelineLayout);}
-    public void pipelineLayout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pipelineLayout, OFFSET$pipelineLayout, value);}
-    public java.lang.foreign.MemorySegment pipelineLayout_ptr() {return this.ptr.asSlice(OFFSET$pipelineLayout, LAYOUT$pipelineLayout);}
+    public int pipelineBindPoint() {return this.ptr.get(LAYOUT__pipelineBindPoint, OFFSET__pipelineBindPoint);}
+    public void pipelineBindPoint(int value) {this.ptr.set(LAYOUT__pipelineBindPoint, OFFSET__pipelineBindPoint, value);}
+    public java.lang.foreign.MemorySegment $pipelineBindPoint() {return this.ptr.asSlice(OFFSET__pipelineBindPoint, LAYOUT__pipelineBindPoint);}
 
-    public int set() {return this.ptr.get(LAYOUT$set, OFFSET$set);}
-    public void set(int value) {this.ptr.set(LAYOUT$set, OFFSET$set, value);}
-    public java.lang.foreign.MemorySegment set_ptr() {return this.ptr.asSlice(OFFSET$set, LAYOUT$set);}
+    public java.lang.foreign.MemorySegment pipelineLayout() {return this.ptr.get(LAYOUT__pipelineLayout, OFFSET__pipelineLayout);}
+    public void pipelineLayout(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pipelineLayout, OFFSET__pipelineLayout, value);}
+    public java.lang.foreign.MemorySegment $pipelineLayout() {return this.ptr.asSlice(OFFSET__pipelineLayout, LAYOUT__pipelineLayout);}
+
+    public int set() {return this.ptr.get(LAYOUT__set, OFFSET__set);}
+    public void set(int value) {this.ptr.set(LAYOUT__set, OFFSET__set, value);}
+    public java.lang.foreign.MemorySegment $set() {return this.ptr.asSlice(OFFSET__set, LAYOUT__set);}
 }

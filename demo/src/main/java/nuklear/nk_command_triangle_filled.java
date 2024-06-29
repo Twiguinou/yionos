@@ -2,52 +2,57 @@ package nuklear;
 
 public record nk_command_triangle_filled(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$header = nuklear.nk_command.gStructLayout;
-    public static final long OFFSET$header = 0L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$a = nuklear.nk_vec2i.gStructLayout;
-    public static final long OFFSET$a = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$b = nuklear.nk_vec2i.gStructLayout;
-    public static final long OFFSET$b = 20L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$c = nuklear.nk_vec2i.gStructLayout;
-    public static final long OFFSET$c = 24L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$color = nuklear.nk_color.gStructLayout;
-    public static final long OFFSET$color = 28L;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final long OFFSET__header = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__a = nuklear.nk_vec2i.gRecordLayout;
+    public static final long OFFSET__a = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__b = nuklear.nk_vec2i.gRecordLayout;
+    public static final long OFFSET__b = 20;
+    public static final java.lang.foreign.StructLayout LAYOUT__c = nuklear.nk_vec2i.gRecordLayout;
+    public static final long OFFSET__c = 24;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final long OFFSET__color = 28;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$header,
-            LAYOUT$a,
-            LAYOUT$b,
-            LAYOUT$c,
-            LAYOUT$color
-    ).withName("nk_command_triangle_filled");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__header,
+            LAYOUT__a,
+            LAYOUT__b,
+            LAYOUT__c,
+            LAYOUT__color
+    ).withByteAlignment(8).withName("nk_command_triangle_filled");
 
     public nk_command_triangle_filled(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static nk_command_triangle_filled getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static nk_command_triangle_filled getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new nk_command_triangle_filled(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new nk_command_triangle_filled(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public nuklear.nk_command header() {return new nuklear.nk_command(this._ptr.asSlice(OFFSET$header, LAYOUT$header));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, nk_command_triangle_filled value)
+    {
+        java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public nuklear.nk_command header() {return new nuklear.nk_command(this._ptr.asSlice(OFFSET__header, LAYOUT__header));}
     public void header(java.util.function.Consumer<nuklear.nk_command> consumer) {consumer.accept(this.header());}
-    public void header(nuklear.nk_command value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$header, LAYOUT$header.byteSize());}
+    public void header(nuklear.nk_command value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__header, LAYOUT__header.byteSize());}
 
-    public nuklear.nk_vec2i a() {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET$a, LAYOUT$a));}
+    public nuklear.nk_vec2i a() {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET__a, LAYOUT__a));}
     public void a(java.util.function.Consumer<nuklear.nk_vec2i> consumer) {consumer.accept(this.a());}
-    public void a(nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$a, LAYOUT$a.byteSize());}
+    public void a(nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__a, LAYOUT__a.byteSize());}
 
-    public nuklear.nk_vec2i b() {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET$b, LAYOUT$b));}
+    public nuklear.nk_vec2i b() {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET__b, LAYOUT__b));}
     public void b(java.util.function.Consumer<nuklear.nk_vec2i> consumer) {consumer.accept(this.b());}
-    public void b(nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$b, LAYOUT$b.byteSize());}
+    public void b(nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__b, LAYOUT__b.byteSize());}
 
-    public nuklear.nk_vec2i c() {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET$c, LAYOUT$c));}
+    public nuklear.nk_vec2i c() {return new nuklear.nk_vec2i(this._ptr.asSlice(OFFSET__c, LAYOUT__c));}
     public void c(java.util.function.Consumer<nuklear.nk_vec2i> consumer) {consumer.accept(this.c());}
-    public void c(nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$c, LAYOUT$c.byteSize());}
+    public void c(nuklear.nk_vec2i value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__c, LAYOUT__c.byteSize());}
 
-    public nuklear.nk_color color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET$color, LAYOUT$color));}
+    public nuklear.nk_color color() {return new nuklear.nk_color(this._ptr.asSlice(OFFSET__color, LAYOUT__color));}
     public void color(java.util.function.Consumer<nuklear.nk_color> consumer) {consumer.accept(this.color());}
-    public void color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET$color, LAYOUT$color.byteSize());}
+    public void color(nuklear.nk_color value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__color, LAYOUT__color.byteSize());}
 }

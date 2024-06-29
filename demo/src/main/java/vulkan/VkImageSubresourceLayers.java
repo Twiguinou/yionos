@@ -2,45 +2,50 @@ package vulkan;
 
 public record VkImageSubresourceLayers(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$aspectMask = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$aspectMask = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$mipLevel = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$mipLevel = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$baseArrayLayer = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$layerCount = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$layerCount = 12L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__aspectMask = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mipLevel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__mipLevel = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__baseArrayLayer = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__layerCount = 12;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$aspectMask,
-            LAYOUT$mipLevel,
-            LAYOUT$baseArrayLayer,
-            LAYOUT$layerCount
-    ).withName("VkImageSubresourceLayers");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__aspectMask,
+            LAYOUT__mipLevel,
+            LAYOUT__baseArrayLayer,
+            LAYOUT__layerCount
+    ).withByteAlignment(4).withName("VkImageSubresourceLayers");
 
     public VkImageSubresourceLayers(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkImageSubresourceLayers getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkImageSubresourceLayers getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkImageSubresourceLayers(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkImageSubresourceLayers(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int aspectMask() {return this.ptr.get(LAYOUT$aspectMask, OFFSET$aspectMask);}
-    public void aspectMask(int value) {this.ptr.set(LAYOUT$aspectMask, OFFSET$aspectMask, value);}
-    public java.lang.foreign.MemorySegment aspectMask_ptr() {return this.ptr.asSlice(OFFSET$aspectMask, LAYOUT$aspectMask);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkImageSubresourceLayers value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int mipLevel() {return this.ptr.get(LAYOUT$mipLevel, OFFSET$mipLevel);}
-    public void mipLevel(int value) {this.ptr.set(LAYOUT$mipLevel, OFFSET$mipLevel, value);}
-    public java.lang.foreign.MemorySegment mipLevel_ptr() {return this.ptr.asSlice(OFFSET$mipLevel, LAYOUT$mipLevel);}
+    public int aspectMask() {return this.ptr.get(LAYOUT__aspectMask, OFFSET__aspectMask);}
+    public void aspectMask(int value) {this.ptr.set(LAYOUT__aspectMask, OFFSET__aspectMask, value);}
+    public java.lang.foreign.MemorySegment $aspectMask() {return this.ptr.asSlice(OFFSET__aspectMask, LAYOUT__aspectMask);}
 
-    public int baseArrayLayer() {return this.ptr.get(LAYOUT$baseArrayLayer, OFFSET$baseArrayLayer);}
-    public void baseArrayLayer(int value) {this.ptr.set(LAYOUT$baseArrayLayer, OFFSET$baseArrayLayer, value);}
-    public java.lang.foreign.MemorySegment baseArrayLayer_ptr() {return this.ptr.asSlice(OFFSET$baseArrayLayer, LAYOUT$baseArrayLayer);}
+    public int mipLevel() {return this.ptr.get(LAYOUT__mipLevel, OFFSET__mipLevel);}
+    public void mipLevel(int value) {this.ptr.set(LAYOUT__mipLevel, OFFSET__mipLevel, value);}
+    public java.lang.foreign.MemorySegment $mipLevel() {return this.ptr.asSlice(OFFSET__mipLevel, LAYOUT__mipLevel);}
 
-    public int layerCount() {return this.ptr.get(LAYOUT$layerCount, OFFSET$layerCount);}
-    public void layerCount(int value) {this.ptr.set(LAYOUT$layerCount, OFFSET$layerCount, value);}
-    public java.lang.foreign.MemorySegment layerCount_ptr() {return this.ptr.asSlice(OFFSET$layerCount, LAYOUT$layerCount);}
+    public int baseArrayLayer() {return this.ptr.get(LAYOUT__baseArrayLayer, OFFSET__baseArrayLayer);}
+    public void baseArrayLayer(int value) {this.ptr.set(LAYOUT__baseArrayLayer, OFFSET__baseArrayLayer, value);}
+    public java.lang.foreign.MemorySegment $baseArrayLayer() {return this.ptr.asSlice(OFFSET__baseArrayLayer, LAYOUT__baseArrayLayer);}
+
+    public int layerCount() {return this.ptr.get(LAYOUT__layerCount, OFFSET__layerCount);}
+    public void layerCount(int value) {this.ptr.set(LAYOUT__layerCount, OFFSET__layerCount, value);}
+    public java.lang.foreign.MemorySegment $layerCount() {return this.ptr.asSlice(OFFSET__layerCount, LAYOUT__layerCount);}
 }

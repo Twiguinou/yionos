@@ -2,22 +2,27 @@ package vulkan;
 
 public record VkTransformMatrixKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT$matrix = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_FLOAT));
-    public static final long OFFSET$matrix = 0L;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__matrix = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_FLOAT));
+    public static final long OFFSET__matrix = 0;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$matrix
-    ).withName("VkTransformMatrixKHR");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__matrix
+    ).withByteAlignment(4).withName("VkTransformMatrixKHR");
 
     public VkTransformMatrixKHR(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkTransformMatrixKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkTransformMatrixKHR getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkTransformMatrixKHR(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkTransformMatrixKHR(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public java.lang.foreign.MemorySegment matrix() {return this.ptr.asSlice(OFFSET$matrix, LAYOUT$matrix);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkTransformMatrixKHR value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public java.lang.foreign.MemorySegment matrix() {return this.ptr.asSlice(OFFSET__matrix, LAYOUT__matrix);}
 }

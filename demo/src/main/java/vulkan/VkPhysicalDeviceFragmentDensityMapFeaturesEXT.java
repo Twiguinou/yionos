@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPhysicalDeviceFragmentDensityMapFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentDensityMap = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentDensityMap = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentDensityMapDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentDensityMapDynamic = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$fragmentDensityMapNonSubsampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$fragmentDensityMapNonSubsampledImages = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentDensityMap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentDensityMap = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentDensityMapDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentDensityMapDynamic = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentDensityMapNonSubsampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__fragmentDensityMapNonSubsampledImages = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$fragmentDensityMap,
-            LAYOUT$fragmentDensityMapDynamic,
-            LAYOUT$fragmentDensityMapNonSubsampledImages,
+            LAYOUT__pNext,
+            LAYOUT__fragmentDensityMap,
+            LAYOUT__fragmentDensityMapDynamic,
+            LAYOUT__fragmentDensityMapNonSubsampledImages,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceFragmentDensityMapFeaturesEXT");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceFragmentDensityMapFeaturesEXT");
 
     public VkPhysicalDeviceFragmentDensityMapFeaturesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceFragmentDensityMapFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceFragmentDensityMapFeaturesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceFragmentDensityMapFeaturesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceFragmentDensityMapFeaturesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceFragmentDensityMapFeaturesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int fragmentDensityMap() {return this.ptr.get(LAYOUT$fragmentDensityMap, OFFSET$fragmentDensityMap);}
-    public void fragmentDensityMap(int value) {this.ptr.set(LAYOUT$fragmentDensityMap, OFFSET$fragmentDensityMap, value);}
-    public java.lang.foreign.MemorySegment fragmentDensityMap_ptr() {return this.ptr.asSlice(OFFSET$fragmentDensityMap, LAYOUT$fragmentDensityMap);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int fragmentDensityMapDynamic() {return this.ptr.get(LAYOUT$fragmentDensityMapDynamic, OFFSET$fragmentDensityMapDynamic);}
-    public void fragmentDensityMapDynamic(int value) {this.ptr.set(LAYOUT$fragmentDensityMapDynamic, OFFSET$fragmentDensityMapDynamic, value);}
-    public java.lang.foreign.MemorySegment fragmentDensityMapDynamic_ptr() {return this.ptr.asSlice(OFFSET$fragmentDensityMapDynamic, LAYOUT$fragmentDensityMapDynamic);}
+    public int fragmentDensityMap() {return this.ptr.get(LAYOUT__fragmentDensityMap, OFFSET__fragmentDensityMap);}
+    public void fragmentDensityMap(int value) {this.ptr.set(LAYOUT__fragmentDensityMap, OFFSET__fragmentDensityMap, value);}
+    public java.lang.foreign.MemorySegment $fragmentDensityMap() {return this.ptr.asSlice(OFFSET__fragmentDensityMap, LAYOUT__fragmentDensityMap);}
 
-    public int fragmentDensityMapNonSubsampledImages() {return this.ptr.get(LAYOUT$fragmentDensityMapNonSubsampledImages, OFFSET$fragmentDensityMapNonSubsampledImages);}
-    public void fragmentDensityMapNonSubsampledImages(int value) {this.ptr.set(LAYOUT$fragmentDensityMapNonSubsampledImages, OFFSET$fragmentDensityMapNonSubsampledImages, value);}
-    public java.lang.foreign.MemorySegment fragmentDensityMapNonSubsampledImages_ptr() {return this.ptr.asSlice(OFFSET$fragmentDensityMapNonSubsampledImages, LAYOUT$fragmentDensityMapNonSubsampledImages);}
+    public int fragmentDensityMapDynamic() {return this.ptr.get(LAYOUT__fragmentDensityMapDynamic, OFFSET__fragmentDensityMapDynamic);}
+    public void fragmentDensityMapDynamic(int value) {this.ptr.set(LAYOUT__fragmentDensityMapDynamic, OFFSET__fragmentDensityMapDynamic, value);}
+    public java.lang.foreign.MemorySegment $fragmentDensityMapDynamic() {return this.ptr.asSlice(OFFSET__fragmentDensityMapDynamic, LAYOUT__fragmentDensityMapDynamic);}
+
+    public int fragmentDensityMapNonSubsampledImages() {return this.ptr.get(LAYOUT__fragmentDensityMapNonSubsampledImages, OFFSET__fragmentDensityMapNonSubsampledImages);}
+    public void fragmentDensityMapNonSubsampledImages(int value) {this.ptr.set(LAYOUT__fragmentDensityMapNonSubsampledImages, OFFSET__fragmentDensityMapNonSubsampledImages, value);}
+    public java.lang.foreign.MemorySegment $fragmentDensityMapNonSubsampledImages() {return this.ptr.asSlice(OFFSET__fragmentDensityMapNonSubsampledImages, LAYOUT__fragmentDensityMapNonSubsampledImages);}
 }

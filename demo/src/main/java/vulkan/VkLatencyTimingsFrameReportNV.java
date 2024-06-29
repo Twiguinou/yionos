@@ -2,130 +2,135 @@ package vulkan;
 
 public record VkLatencyTimingsFrameReportNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$presentID = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$presentID = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$inputSampleTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$inputSampleTimeUs = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$simStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$simStartTimeUs = 32L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$simEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$simEndTimeUs = 40L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$renderSubmitStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$renderSubmitStartTimeUs = 48L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$renderSubmitEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$renderSubmitEndTimeUs = 56L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$presentStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$presentStartTimeUs = 64L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$presentEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$presentEndTimeUs = 72L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$driverStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$driverStartTimeUs = 80L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$driverEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$driverEndTimeUs = 88L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$osRenderQueueStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$osRenderQueueStartTimeUs = 96L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$osRenderQueueEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$osRenderQueueEndTimeUs = 104L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$gpuRenderStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$gpuRenderStartTimeUs = 112L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$gpuRenderEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$gpuRenderEndTimeUs = 120L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentID = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__presentID = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__inputSampleTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__inputSampleTimeUs = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__simStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__simStartTimeUs = 32;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__simEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__simEndTimeUs = 40;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderSubmitStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__renderSubmitStartTimeUs = 48;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderSubmitEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__renderSubmitEndTimeUs = 56;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__presentStartTimeUs = 64;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__presentEndTimeUs = 72;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__driverStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__driverStartTimeUs = 80;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__driverEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__driverEndTimeUs = 88;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__osRenderQueueStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__osRenderQueueStartTimeUs = 96;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__osRenderQueueEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__osRenderQueueEndTimeUs = 104;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__gpuRenderStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__gpuRenderStartTimeUs = 112;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__gpuRenderEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__gpuRenderEndTimeUs = 120;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$presentID,
-            LAYOUT$inputSampleTimeUs,
-            LAYOUT$simStartTimeUs,
-            LAYOUT$simEndTimeUs,
-            LAYOUT$renderSubmitStartTimeUs,
-            LAYOUT$renderSubmitEndTimeUs,
-            LAYOUT$presentStartTimeUs,
-            LAYOUT$presentEndTimeUs,
-            LAYOUT$driverStartTimeUs,
-            LAYOUT$driverEndTimeUs,
-            LAYOUT$osRenderQueueStartTimeUs,
-            LAYOUT$osRenderQueueEndTimeUs,
-            LAYOUT$gpuRenderStartTimeUs,
-            LAYOUT$gpuRenderEndTimeUs
-    ).withName("VkLatencyTimingsFrameReportNV");
+            LAYOUT__pNext,
+            LAYOUT__presentID,
+            LAYOUT__inputSampleTimeUs,
+            LAYOUT__simStartTimeUs,
+            LAYOUT__simEndTimeUs,
+            LAYOUT__renderSubmitStartTimeUs,
+            LAYOUT__renderSubmitEndTimeUs,
+            LAYOUT__presentStartTimeUs,
+            LAYOUT__presentEndTimeUs,
+            LAYOUT__driverStartTimeUs,
+            LAYOUT__driverEndTimeUs,
+            LAYOUT__osRenderQueueStartTimeUs,
+            LAYOUT__osRenderQueueEndTimeUs,
+            LAYOUT__gpuRenderStartTimeUs,
+            LAYOUT__gpuRenderEndTimeUs
+    ).withByteAlignment(8).withName("VkLatencyTimingsFrameReportNV");
 
     public VkLatencyTimingsFrameReportNV(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkLatencyTimingsFrameReportNV getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkLatencyTimingsFrameReportNV getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkLatencyTimingsFrameReportNV(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkLatencyTimingsFrameReportNV(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkLatencyTimingsFrameReportNV value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public long presentID() {return this.ptr.get(LAYOUT$presentID, OFFSET$presentID);}
-    public void presentID(long value) {this.ptr.set(LAYOUT$presentID, OFFSET$presentID, value);}
-    public java.lang.foreign.MemorySegment presentID_ptr() {return this.ptr.asSlice(OFFSET$presentID, LAYOUT$presentID);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long inputSampleTimeUs() {return this.ptr.get(LAYOUT$inputSampleTimeUs, OFFSET$inputSampleTimeUs);}
-    public void inputSampleTimeUs(long value) {this.ptr.set(LAYOUT$inputSampleTimeUs, OFFSET$inputSampleTimeUs, value);}
-    public java.lang.foreign.MemorySegment inputSampleTimeUs_ptr() {return this.ptr.asSlice(OFFSET$inputSampleTimeUs, LAYOUT$inputSampleTimeUs);}
+    public long presentID() {return this.ptr.get(LAYOUT__presentID, OFFSET__presentID);}
+    public void presentID(long value) {this.ptr.set(LAYOUT__presentID, OFFSET__presentID, value);}
+    public java.lang.foreign.MemorySegment $presentID() {return this.ptr.asSlice(OFFSET__presentID, LAYOUT__presentID);}
 
-    public long simStartTimeUs() {return this.ptr.get(LAYOUT$simStartTimeUs, OFFSET$simStartTimeUs);}
-    public void simStartTimeUs(long value) {this.ptr.set(LAYOUT$simStartTimeUs, OFFSET$simStartTimeUs, value);}
-    public java.lang.foreign.MemorySegment simStartTimeUs_ptr() {return this.ptr.asSlice(OFFSET$simStartTimeUs, LAYOUT$simStartTimeUs);}
+    public long inputSampleTimeUs() {return this.ptr.get(LAYOUT__inputSampleTimeUs, OFFSET__inputSampleTimeUs);}
+    public void inputSampleTimeUs(long value) {this.ptr.set(LAYOUT__inputSampleTimeUs, OFFSET__inputSampleTimeUs, value);}
+    public java.lang.foreign.MemorySegment $inputSampleTimeUs() {return this.ptr.asSlice(OFFSET__inputSampleTimeUs, LAYOUT__inputSampleTimeUs);}
 
-    public long simEndTimeUs() {return this.ptr.get(LAYOUT$simEndTimeUs, OFFSET$simEndTimeUs);}
-    public void simEndTimeUs(long value) {this.ptr.set(LAYOUT$simEndTimeUs, OFFSET$simEndTimeUs, value);}
-    public java.lang.foreign.MemorySegment simEndTimeUs_ptr() {return this.ptr.asSlice(OFFSET$simEndTimeUs, LAYOUT$simEndTimeUs);}
+    public long simStartTimeUs() {return this.ptr.get(LAYOUT__simStartTimeUs, OFFSET__simStartTimeUs);}
+    public void simStartTimeUs(long value) {this.ptr.set(LAYOUT__simStartTimeUs, OFFSET__simStartTimeUs, value);}
+    public java.lang.foreign.MemorySegment $simStartTimeUs() {return this.ptr.asSlice(OFFSET__simStartTimeUs, LAYOUT__simStartTimeUs);}
 
-    public long renderSubmitStartTimeUs() {return this.ptr.get(LAYOUT$renderSubmitStartTimeUs, OFFSET$renderSubmitStartTimeUs);}
-    public void renderSubmitStartTimeUs(long value) {this.ptr.set(LAYOUT$renderSubmitStartTimeUs, OFFSET$renderSubmitStartTimeUs, value);}
-    public java.lang.foreign.MemorySegment renderSubmitStartTimeUs_ptr() {return this.ptr.asSlice(OFFSET$renderSubmitStartTimeUs, LAYOUT$renderSubmitStartTimeUs);}
+    public long simEndTimeUs() {return this.ptr.get(LAYOUT__simEndTimeUs, OFFSET__simEndTimeUs);}
+    public void simEndTimeUs(long value) {this.ptr.set(LAYOUT__simEndTimeUs, OFFSET__simEndTimeUs, value);}
+    public java.lang.foreign.MemorySegment $simEndTimeUs() {return this.ptr.asSlice(OFFSET__simEndTimeUs, LAYOUT__simEndTimeUs);}
 
-    public long renderSubmitEndTimeUs() {return this.ptr.get(LAYOUT$renderSubmitEndTimeUs, OFFSET$renderSubmitEndTimeUs);}
-    public void renderSubmitEndTimeUs(long value) {this.ptr.set(LAYOUT$renderSubmitEndTimeUs, OFFSET$renderSubmitEndTimeUs, value);}
-    public java.lang.foreign.MemorySegment renderSubmitEndTimeUs_ptr() {return this.ptr.asSlice(OFFSET$renderSubmitEndTimeUs, LAYOUT$renderSubmitEndTimeUs);}
+    public long renderSubmitStartTimeUs() {return this.ptr.get(LAYOUT__renderSubmitStartTimeUs, OFFSET__renderSubmitStartTimeUs);}
+    public void renderSubmitStartTimeUs(long value) {this.ptr.set(LAYOUT__renderSubmitStartTimeUs, OFFSET__renderSubmitStartTimeUs, value);}
+    public java.lang.foreign.MemorySegment $renderSubmitStartTimeUs() {return this.ptr.asSlice(OFFSET__renderSubmitStartTimeUs, LAYOUT__renderSubmitStartTimeUs);}
 
-    public long presentStartTimeUs() {return this.ptr.get(LAYOUT$presentStartTimeUs, OFFSET$presentStartTimeUs);}
-    public void presentStartTimeUs(long value) {this.ptr.set(LAYOUT$presentStartTimeUs, OFFSET$presentStartTimeUs, value);}
-    public java.lang.foreign.MemorySegment presentStartTimeUs_ptr() {return this.ptr.asSlice(OFFSET$presentStartTimeUs, LAYOUT$presentStartTimeUs);}
+    public long renderSubmitEndTimeUs() {return this.ptr.get(LAYOUT__renderSubmitEndTimeUs, OFFSET__renderSubmitEndTimeUs);}
+    public void renderSubmitEndTimeUs(long value) {this.ptr.set(LAYOUT__renderSubmitEndTimeUs, OFFSET__renderSubmitEndTimeUs, value);}
+    public java.lang.foreign.MemorySegment $renderSubmitEndTimeUs() {return this.ptr.asSlice(OFFSET__renderSubmitEndTimeUs, LAYOUT__renderSubmitEndTimeUs);}
 
-    public long presentEndTimeUs() {return this.ptr.get(LAYOUT$presentEndTimeUs, OFFSET$presentEndTimeUs);}
-    public void presentEndTimeUs(long value) {this.ptr.set(LAYOUT$presentEndTimeUs, OFFSET$presentEndTimeUs, value);}
-    public java.lang.foreign.MemorySegment presentEndTimeUs_ptr() {return this.ptr.asSlice(OFFSET$presentEndTimeUs, LAYOUT$presentEndTimeUs);}
+    public long presentStartTimeUs() {return this.ptr.get(LAYOUT__presentStartTimeUs, OFFSET__presentStartTimeUs);}
+    public void presentStartTimeUs(long value) {this.ptr.set(LAYOUT__presentStartTimeUs, OFFSET__presentStartTimeUs, value);}
+    public java.lang.foreign.MemorySegment $presentStartTimeUs() {return this.ptr.asSlice(OFFSET__presentStartTimeUs, LAYOUT__presentStartTimeUs);}
 
-    public long driverStartTimeUs() {return this.ptr.get(LAYOUT$driverStartTimeUs, OFFSET$driverStartTimeUs);}
-    public void driverStartTimeUs(long value) {this.ptr.set(LAYOUT$driverStartTimeUs, OFFSET$driverStartTimeUs, value);}
-    public java.lang.foreign.MemorySegment driverStartTimeUs_ptr() {return this.ptr.asSlice(OFFSET$driverStartTimeUs, LAYOUT$driverStartTimeUs);}
+    public long presentEndTimeUs() {return this.ptr.get(LAYOUT__presentEndTimeUs, OFFSET__presentEndTimeUs);}
+    public void presentEndTimeUs(long value) {this.ptr.set(LAYOUT__presentEndTimeUs, OFFSET__presentEndTimeUs, value);}
+    public java.lang.foreign.MemorySegment $presentEndTimeUs() {return this.ptr.asSlice(OFFSET__presentEndTimeUs, LAYOUT__presentEndTimeUs);}
 
-    public long driverEndTimeUs() {return this.ptr.get(LAYOUT$driverEndTimeUs, OFFSET$driverEndTimeUs);}
-    public void driverEndTimeUs(long value) {this.ptr.set(LAYOUT$driverEndTimeUs, OFFSET$driverEndTimeUs, value);}
-    public java.lang.foreign.MemorySegment driverEndTimeUs_ptr() {return this.ptr.asSlice(OFFSET$driverEndTimeUs, LAYOUT$driverEndTimeUs);}
+    public long driverStartTimeUs() {return this.ptr.get(LAYOUT__driverStartTimeUs, OFFSET__driverStartTimeUs);}
+    public void driverStartTimeUs(long value) {this.ptr.set(LAYOUT__driverStartTimeUs, OFFSET__driverStartTimeUs, value);}
+    public java.lang.foreign.MemorySegment $driverStartTimeUs() {return this.ptr.asSlice(OFFSET__driverStartTimeUs, LAYOUT__driverStartTimeUs);}
 
-    public long osRenderQueueStartTimeUs() {return this.ptr.get(LAYOUT$osRenderQueueStartTimeUs, OFFSET$osRenderQueueStartTimeUs);}
-    public void osRenderQueueStartTimeUs(long value) {this.ptr.set(LAYOUT$osRenderQueueStartTimeUs, OFFSET$osRenderQueueStartTimeUs, value);}
-    public java.lang.foreign.MemorySegment osRenderQueueStartTimeUs_ptr() {return this.ptr.asSlice(OFFSET$osRenderQueueStartTimeUs, LAYOUT$osRenderQueueStartTimeUs);}
+    public long driverEndTimeUs() {return this.ptr.get(LAYOUT__driverEndTimeUs, OFFSET__driverEndTimeUs);}
+    public void driverEndTimeUs(long value) {this.ptr.set(LAYOUT__driverEndTimeUs, OFFSET__driverEndTimeUs, value);}
+    public java.lang.foreign.MemorySegment $driverEndTimeUs() {return this.ptr.asSlice(OFFSET__driverEndTimeUs, LAYOUT__driverEndTimeUs);}
 
-    public long osRenderQueueEndTimeUs() {return this.ptr.get(LAYOUT$osRenderQueueEndTimeUs, OFFSET$osRenderQueueEndTimeUs);}
-    public void osRenderQueueEndTimeUs(long value) {this.ptr.set(LAYOUT$osRenderQueueEndTimeUs, OFFSET$osRenderQueueEndTimeUs, value);}
-    public java.lang.foreign.MemorySegment osRenderQueueEndTimeUs_ptr() {return this.ptr.asSlice(OFFSET$osRenderQueueEndTimeUs, LAYOUT$osRenderQueueEndTimeUs);}
+    public long osRenderQueueStartTimeUs() {return this.ptr.get(LAYOUT__osRenderQueueStartTimeUs, OFFSET__osRenderQueueStartTimeUs);}
+    public void osRenderQueueStartTimeUs(long value) {this.ptr.set(LAYOUT__osRenderQueueStartTimeUs, OFFSET__osRenderQueueStartTimeUs, value);}
+    public java.lang.foreign.MemorySegment $osRenderQueueStartTimeUs() {return this.ptr.asSlice(OFFSET__osRenderQueueStartTimeUs, LAYOUT__osRenderQueueStartTimeUs);}
 
-    public long gpuRenderStartTimeUs() {return this.ptr.get(LAYOUT$gpuRenderStartTimeUs, OFFSET$gpuRenderStartTimeUs);}
-    public void gpuRenderStartTimeUs(long value) {this.ptr.set(LAYOUT$gpuRenderStartTimeUs, OFFSET$gpuRenderStartTimeUs, value);}
-    public java.lang.foreign.MemorySegment gpuRenderStartTimeUs_ptr() {return this.ptr.asSlice(OFFSET$gpuRenderStartTimeUs, LAYOUT$gpuRenderStartTimeUs);}
+    public long osRenderQueueEndTimeUs() {return this.ptr.get(LAYOUT__osRenderQueueEndTimeUs, OFFSET__osRenderQueueEndTimeUs);}
+    public void osRenderQueueEndTimeUs(long value) {this.ptr.set(LAYOUT__osRenderQueueEndTimeUs, OFFSET__osRenderQueueEndTimeUs, value);}
+    public java.lang.foreign.MemorySegment $osRenderQueueEndTimeUs() {return this.ptr.asSlice(OFFSET__osRenderQueueEndTimeUs, LAYOUT__osRenderQueueEndTimeUs);}
 
-    public long gpuRenderEndTimeUs() {return this.ptr.get(LAYOUT$gpuRenderEndTimeUs, OFFSET$gpuRenderEndTimeUs);}
-    public void gpuRenderEndTimeUs(long value) {this.ptr.set(LAYOUT$gpuRenderEndTimeUs, OFFSET$gpuRenderEndTimeUs, value);}
-    public java.lang.foreign.MemorySegment gpuRenderEndTimeUs_ptr() {return this.ptr.asSlice(OFFSET$gpuRenderEndTimeUs, LAYOUT$gpuRenderEndTimeUs);}
+    public long gpuRenderStartTimeUs() {return this.ptr.get(LAYOUT__gpuRenderStartTimeUs, OFFSET__gpuRenderStartTimeUs);}
+    public void gpuRenderStartTimeUs(long value) {this.ptr.set(LAYOUT__gpuRenderStartTimeUs, OFFSET__gpuRenderStartTimeUs, value);}
+    public java.lang.foreign.MemorySegment $gpuRenderStartTimeUs() {return this.ptr.asSlice(OFFSET__gpuRenderStartTimeUs, LAYOUT__gpuRenderStartTimeUs);}
+
+    public long gpuRenderEndTimeUs() {return this.ptr.get(LAYOUT__gpuRenderEndTimeUs, OFFSET__gpuRenderEndTimeUs);}
+    public void gpuRenderEndTimeUs(long value) {this.ptr.set(LAYOUT__gpuRenderEndTimeUs, OFFSET__gpuRenderEndTimeUs, value);}
+    public java.lang.foreign.MemorySegment $gpuRenderEndTimeUs() {return this.ptr.asSlice(OFFSET__gpuRenderEndTimeUs, LAYOUT__gpuRenderEndTimeUs);}
 }

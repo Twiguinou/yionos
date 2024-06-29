@@ -2,80 +2,85 @@ package vulkan;
 
 public record VkAttachmentDescription(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$flags = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$format = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$format = 4L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$samples = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$samples = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$loadOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$loadOp = 12L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$storeOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$storeOp = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stencilLoadOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stencilLoadOp = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$stencilStoreOp = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$stencilStoreOp = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$initialLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$initialLayout = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$finalLayout = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$finalLayout = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__format = 4;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__samples = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__loadOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__loadOp = 12;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storeOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__storeOp = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilLoadOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stencilLoadOp = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilStoreOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__stencilStoreOp = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__initialLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__initialLayout = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__finalLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__finalLayout = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
-            LAYOUT$format,
-            LAYOUT$samples,
-            LAYOUT$loadOp,
-            LAYOUT$storeOp,
-            LAYOUT$stencilLoadOp,
-            LAYOUT$stencilStoreOp,
-            LAYOUT$initialLayout,
-            LAYOUT$finalLayout
-    ).withName("VkAttachmentDescription");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
+            LAYOUT__format,
+            LAYOUT__samples,
+            LAYOUT__loadOp,
+            LAYOUT__storeOp,
+            LAYOUT__stencilLoadOp,
+            LAYOUT__stencilStoreOp,
+            LAYOUT__initialLayout,
+            LAYOUT__finalLayout
+    ).withByteAlignment(4).withName("VkAttachmentDescription");
 
     public VkAttachmentDescription(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkAttachmentDescription getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkAttachmentDescription getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkAttachmentDescription(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkAttachmentDescription(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int flags() {return this.ptr.get(LAYOUT$flags, OFFSET$flags);}
-    public void flags(int value) {this.ptr.set(LAYOUT$flags, OFFSET$flags, value);}
-    public java.lang.foreign.MemorySegment flags_ptr() {return this.ptr.asSlice(OFFSET$flags, LAYOUT$flags);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkAttachmentDescription value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public int format() {return this.ptr.get(LAYOUT$format, OFFSET$format);}
-    public void format(int value) {this.ptr.set(LAYOUT$format, OFFSET$format, value);}
-    public java.lang.foreign.MemorySegment format_ptr() {return this.ptr.asSlice(OFFSET$format, LAYOUT$format);}
+    public int flags() {return this.ptr.get(LAYOUT__flags, OFFSET__flags);}
+    public void flags(int value) {this.ptr.set(LAYOUT__flags, OFFSET__flags, value);}
+    public java.lang.foreign.MemorySegment $flags() {return this.ptr.asSlice(OFFSET__flags, LAYOUT__flags);}
 
-    public int samples() {return this.ptr.get(LAYOUT$samples, OFFSET$samples);}
-    public void samples(int value) {this.ptr.set(LAYOUT$samples, OFFSET$samples, value);}
-    public java.lang.foreign.MemorySegment samples_ptr() {return this.ptr.asSlice(OFFSET$samples, LAYOUT$samples);}
+    public int format() {return this.ptr.get(LAYOUT__format, OFFSET__format);}
+    public void format(int value) {this.ptr.set(LAYOUT__format, OFFSET__format, value);}
+    public java.lang.foreign.MemorySegment $format() {return this.ptr.asSlice(OFFSET__format, LAYOUT__format);}
 
-    public int loadOp() {return this.ptr.get(LAYOUT$loadOp, OFFSET$loadOp);}
-    public void loadOp(int value) {this.ptr.set(LAYOUT$loadOp, OFFSET$loadOp, value);}
-    public java.lang.foreign.MemorySegment loadOp_ptr() {return this.ptr.asSlice(OFFSET$loadOp, LAYOUT$loadOp);}
+    public int samples() {return this.ptr.get(LAYOUT__samples, OFFSET__samples);}
+    public void samples(int value) {this.ptr.set(LAYOUT__samples, OFFSET__samples, value);}
+    public java.lang.foreign.MemorySegment $samples() {return this.ptr.asSlice(OFFSET__samples, LAYOUT__samples);}
 
-    public int storeOp() {return this.ptr.get(LAYOUT$storeOp, OFFSET$storeOp);}
-    public void storeOp(int value) {this.ptr.set(LAYOUT$storeOp, OFFSET$storeOp, value);}
-    public java.lang.foreign.MemorySegment storeOp_ptr() {return this.ptr.asSlice(OFFSET$storeOp, LAYOUT$storeOp);}
+    public int loadOp() {return this.ptr.get(LAYOUT__loadOp, OFFSET__loadOp);}
+    public void loadOp(int value) {this.ptr.set(LAYOUT__loadOp, OFFSET__loadOp, value);}
+    public java.lang.foreign.MemorySegment $loadOp() {return this.ptr.asSlice(OFFSET__loadOp, LAYOUT__loadOp);}
 
-    public int stencilLoadOp() {return this.ptr.get(LAYOUT$stencilLoadOp, OFFSET$stencilLoadOp);}
-    public void stencilLoadOp(int value) {this.ptr.set(LAYOUT$stencilLoadOp, OFFSET$stencilLoadOp, value);}
-    public java.lang.foreign.MemorySegment stencilLoadOp_ptr() {return this.ptr.asSlice(OFFSET$stencilLoadOp, LAYOUT$stencilLoadOp);}
+    public int storeOp() {return this.ptr.get(LAYOUT__storeOp, OFFSET__storeOp);}
+    public void storeOp(int value) {this.ptr.set(LAYOUT__storeOp, OFFSET__storeOp, value);}
+    public java.lang.foreign.MemorySegment $storeOp() {return this.ptr.asSlice(OFFSET__storeOp, LAYOUT__storeOp);}
 
-    public int stencilStoreOp() {return this.ptr.get(LAYOUT$stencilStoreOp, OFFSET$stencilStoreOp);}
-    public void stencilStoreOp(int value) {this.ptr.set(LAYOUT$stencilStoreOp, OFFSET$stencilStoreOp, value);}
-    public java.lang.foreign.MemorySegment stencilStoreOp_ptr() {return this.ptr.asSlice(OFFSET$stencilStoreOp, LAYOUT$stencilStoreOp);}
+    public int stencilLoadOp() {return this.ptr.get(LAYOUT__stencilLoadOp, OFFSET__stencilLoadOp);}
+    public void stencilLoadOp(int value) {this.ptr.set(LAYOUT__stencilLoadOp, OFFSET__stencilLoadOp, value);}
+    public java.lang.foreign.MemorySegment $stencilLoadOp() {return this.ptr.asSlice(OFFSET__stencilLoadOp, LAYOUT__stencilLoadOp);}
 
-    public int initialLayout() {return this.ptr.get(LAYOUT$initialLayout, OFFSET$initialLayout);}
-    public void initialLayout(int value) {this.ptr.set(LAYOUT$initialLayout, OFFSET$initialLayout, value);}
-    public java.lang.foreign.MemorySegment initialLayout_ptr() {return this.ptr.asSlice(OFFSET$initialLayout, LAYOUT$initialLayout);}
+    public int stencilStoreOp() {return this.ptr.get(LAYOUT__stencilStoreOp, OFFSET__stencilStoreOp);}
+    public void stencilStoreOp(int value) {this.ptr.set(LAYOUT__stencilStoreOp, OFFSET__stencilStoreOp, value);}
+    public java.lang.foreign.MemorySegment $stencilStoreOp() {return this.ptr.asSlice(OFFSET__stencilStoreOp, LAYOUT__stencilStoreOp);}
 
-    public int finalLayout() {return this.ptr.get(LAYOUT$finalLayout, OFFSET$finalLayout);}
-    public void finalLayout(int value) {this.ptr.set(LAYOUT$finalLayout, OFFSET$finalLayout, value);}
-    public java.lang.foreign.MemorySegment finalLayout_ptr() {return this.ptr.asSlice(OFFSET$finalLayout, LAYOUT$finalLayout);}
+    public int initialLayout() {return this.ptr.get(LAYOUT__initialLayout, OFFSET__initialLayout);}
+    public void initialLayout(int value) {this.ptr.set(LAYOUT__initialLayout, OFFSET__initialLayout, value);}
+    public java.lang.foreign.MemorySegment $initialLayout() {return this.ptr.asSlice(OFFSET__initialLayout, LAYOUT__initialLayout);}
+
+    public int finalLayout() {return this.ptr.get(LAYOUT__finalLayout, OFFSET__finalLayout);}
+    public void finalLayout(int value) {this.ptr.set(LAYOUT__finalLayout, OFFSET__finalLayout, value);}
+    public java.lang.foreign.MemorySegment $finalLayout() {return this.ptr.asSlice(OFFSET__finalLayout, LAYOUT__finalLayout);}
 }

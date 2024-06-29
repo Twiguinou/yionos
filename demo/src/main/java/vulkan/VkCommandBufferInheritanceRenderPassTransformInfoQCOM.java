@@ -2,47 +2,52 @@ package vulkan;
 
 public record VkCommandBufferInheritanceRenderPassTransformInfoQCOM(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$transform = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$transform = 16L;
-    public static final java.lang.foreign.GroupLayout LAYOUT$renderArea = vulkan.VkRect2D.gStructLayout;
-    public static final long OFFSET$renderArea = 20L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transform = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__transform = 16;
+    public static final java.lang.foreign.StructLayout LAYOUT__renderArea = vulkan.VkRect2D.gRecordLayout;
+    public static final long OFFSET__renderArea = 20;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$transform,
-            LAYOUT$renderArea,
+            LAYOUT__pNext,
+            LAYOUT__transform,
+            LAYOUT__renderArea,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkCommandBufferInheritanceRenderPassTransformInfoQCOM");
+    ).withByteAlignment(8).withName("VkCommandBufferInheritanceRenderPassTransformInfoQCOM");
 
     public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkCommandBufferInheritanceRenderPassTransformInfoQCOM getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkCommandBufferInheritanceRenderPassTransformInfoQCOM getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkCommandBufferInheritanceRenderPassTransformInfoQCOM(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkCommandBufferInheritanceRenderPassTransformInfoQCOM(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkCommandBufferInheritanceRenderPassTransformInfoQCOM value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int transform() {return this.ptr.get(LAYOUT$transform, OFFSET$transform);}
-    public void transform(int value) {this.ptr.set(LAYOUT$transform, OFFSET$transform, value);}
-    public java.lang.foreign.MemorySegment transform_ptr() {return this.ptr.asSlice(OFFSET$transform, LAYOUT$transform);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public vulkan.VkRect2D renderArea() {return new vulkan.VkRect2D(this.ptr.asSlice(OFFSET$renderArea, LAYOUT$renderArea));}
+    public int transform() {return this.ptr.get(LAYOUT__transform, OFFSET__transform);}
+    public void transform(int value) {this.ptr.set(LAYOUT__transform, OFFSET__transform, value);}
+    public java.lang.foreign.MemorySegment $transform() {return this.ptr.asSlice(OFFSET__transform, LAYOUT__transform);}
+
+    public vulkan.VkRect2D renderArea() {return new vulkan.VkRect2D(this.ptr.asSlice(OFFSET__renderArea, LAYOUT__renderArea));}
     public void renderArea(java.util.function.Consumer<vulkan.VkRect2D> consumer) {consumer.accept(this.renderArea());}
-    public void renderArea(vulkan.VkRect2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$renderArea, LAYOUT$renderArea.byteSize());}
+    public void renderArea(vulkan.VkRect2D value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__renderArea, LAYOUT__renderArea.byteSize());}
 }

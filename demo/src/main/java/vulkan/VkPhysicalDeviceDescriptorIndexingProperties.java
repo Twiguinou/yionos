@@ -2,194 +2,199 @@ package vulkan;
 
 public record VkPhysicalDeviceDescriptorIndexingProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxUpdateAfterBindDescriptorsInAllPools = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxUpdateAfterBindDescriptorsInAllPools = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderUniformBufferArrayNonUniformIndexingNative = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderSampledImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderSampledImageArrayNonUniformIndexingNative = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageBufferArrayNonUniformIndexingNative = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderStorageImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderStorageImageArrayNonUniformIndexingNative = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative = 36L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$robustBufferAccessUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$robustBufferAccessUpdateAfterBind = 40L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$quadDivergentImplicitLod = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$quadDivergentImplicitLod = 44L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers = 48L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers = 52L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers = 56L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages = 60L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages = 64L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments = 68L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxPerStageUpdateAfterBindResources = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxPerStageUpdateAfterBindResources = 72L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindSamplers = 76L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers = 80L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = 84L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers = 88L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = 92L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindSampledImages = 96L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindStorageImages = 100L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments = 104L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxUpdateAfterBindDescriptorsInAllPools = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxUpdateAfterBindDescriptorsInAllPools = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderUniformBufferArrayNonUniformIndexingNative = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSampledImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderSampledImageArrayNonUniformIndexingNative = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageBufferArrayNonUniformIndexingNative = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStorageImageArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderStorageImageArrayNonUniformIndexingNative = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative = 36;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustBufferAccessUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__robustBufferAccessUpdateAfterBind = 40;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__quadDivergentImplicitLod = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__quadDivergentImplicitLod = 44;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers = 48;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers = 52;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers = 56;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages = 60;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages = 64;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments = 68;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageUpdateAfterBindResources = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxPerStageUpdateAfterBindResources = 72;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindSamplers = 76;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers = 80;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = 84;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers = 88;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = 92;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindSampledImages = 96;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindStorageImages = 100;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments = 104;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$maxUpdateAfterBindDescriptorsInAllPools,
-            LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative,
-            LAYOUT$shaderSampledImageArrayNonUniformIndexingNative,
-            LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative,
-            LAYOUT$shaderStorageImageArrayNonUniformIndexingNative,
-            LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative,
-            LAYOUT$robustBufferAccessUpdateAfterBind,
-            LAYOUT$quadDivergentImplicitLod,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages,
-            LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments,
-            LAYOUT$maxPerStageUpdateAfterBindResources,
-            LAYOUT$maxDescriptorSetUpdateAfterBindSamplers,
-            LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers,
-            LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic,
-            LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers,
-            LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic,
-            LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages,
-            LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages,
-            LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments,
+            LAYOUT__pNext,
+            LAYOUT__maxUpdateAfterBindDescriptorsInAllPools,
+            LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative,
+            LAYOUT__shaderSampledImageArrayNonUniformIndexingNative,
+            LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative,
+            LAYOUT__shaderStorageImageArrayNonUniformIndexingNative,
+            LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative,
+            LAYOUT__robustBufferAccessUpdateAfterBind,
+            LAYOUT__quadDivergentImplicitLod,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages,
+            LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments,
+            LAYOUT__maxPerStageUpdateAfterBindResources,
+            LAYOUT__maxDescriptorSetUpdateAfterBindSamplers,
+            LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers,
+            LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic,
+            LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers,
+            LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic,
+            LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages,
+            LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages,
+            LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPhysicalDeviceDescriptorIndexingProperties");
+    ).withByteAlignment(8).withName("VkPhysicalDeviceDescriptorIndexingProperties");
 
     public VkPhysicalDeviceDescriptorIndexingProperties(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceDescriptorIndexingProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceDescriptorIndexingProperties getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceDescriptorIndexingProperties(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceDescriptorIndexingProperties(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceDescriptorIndexingProperties value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int maxUpdateAfterBindDescriptorsInAllPools() {return this.ptr.get(LAYOUT$maxUpdateAfterBindDescriptorsInAllPools, OFFSET$maxUpdateAfterBindDescriptorsInAllPools);}
-    public void maxUpdateAfterBindDescriptorsInAllPools(int value) {this.ptr.set(LAYOUT$maxUpdateAfterBindDescriptorsInAllPools, OFFSET$maxUpdateAfterBindDescriptorsInAllPools, value);}
-    public java.lang.foreign.MemorySegment maxUpdateAfterBindDescriptorsInAllPools_ptr() {return this.ptr.asSlice(OFFSET$maxUpdateAfterBindDescriptorsInAllPools, LAYOUT$maxUpdateAfterBindDescriptorsInAllPools);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int shaderUniformBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative, OFFSET$shaderUniformBufferArrayNonUniformIndexingNative);}
-    public void shaderUniformBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative, OFFSET$shaderUniformBufferArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderUniformBufferArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderUniformBufferArrayNonUniformIndexingNative, LAYOUT$shaderUniformBufferArrayNonUniformIndexingNative);}
+    public int maxUpdateAfterBindDescriptorsInAllPools() {return this.ptr.get(LAYOUT__maxUpdateAfterBindDescriptorsInAllPools, OFFSET__maxUpdateAfterBindDescriptorsInAllPools);}
+    public void maxUpdateAfterBindDescriptorsInAllPools(int value) {this.ptr.set(LAYOUT__maxUpdateAfterBindDescriptorsInAllPools, OFFSET__maxUpdateAfterBindDescriptorsInAllPools, value);}
+    public java.lang.foreign.MemorySegment $maxUpdateAfterBindDescriptorsInAllPools() {return this.ptr.asSlice(OFFSET__maxUpdateAfterBindDescriptorsInAllPools, LAYOUT__maxUpdateAfterBindDescriptorsInAllPools);}
 
-    public int shaderSampledImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderSampledImageArrayNonUniformIndexingNative, OFFSET$shaderSampledImageArrayNonUniformIndexingNative);}
-    public void shaderSampledImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderSampledImageArrayNonUniformIndexingNative, OFFSET$shaderSampledImageArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderSampledImageArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderSampledImageArrayNonUniformIndexingNative, LAYOUT$shaderSampledImageArrayNonUniformIndexingNative);}
+    public int shaderUniformBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative, OFFSET__shaderUniformBufferArrayNonUniformIndexingNative);}
+    public void shaderUniformBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative, OFFSET__shaderUniformBufferArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderUniformBufferArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderUniformBufferArrayNonUniformIndexingNative, LAYOUT__shaderUniformBufferArrayNonUniformIndexingNative);}
 
-    public int shaderStorageBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative, OFFSET$shaderStorageBufferArrayNonUniformIndexingNative);}
-    public void shaderStorageBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative, OFFSET$shaderStorageBufferArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderStorageBufferArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageBufferArrayNonUniformIndexingNative, LAYOUT$shaderStorageBufferArrayNonUniformIndexingNative);}
+    public int shaderSampledImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderSampledImageArrayNonUniformIndexingNative, OFFSET__shaderSampledImageArrayNonUniformIndexingNative);}
+    public void shaderSampledImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderSampledImageArrayNonUniformIndexingNative, OFFSET__shaderSampledImageArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderSampledImageArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderSampledImageArrayNonUniformIndexingNative, LAYOUT__shaderSampledImageArrayNonUniformIndexingNative);}
 
-    public int shaderStorageImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderStorageImageArrayNonUniformIndexingNative, OFFSET$shaderStorageImageArrayNonUniformIndexingNative);}
-    public void shaderStorageImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderStorageImageArrayNonUniformIndexingNative, OFFSET$shaderStorageImageArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderStorageImageArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderStorageImageArrayNonUniformIndexingNative, LAYOUT$shaderStorageImageArrayNonUniformIndexingNative);}
+    public int shaderStorageBufferArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative, OFFSET__shaderStorageBufferArrayNonUniformIndexingNative);}
+    public void shaderStorageBufferArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative, OFFSET__shaderStorageBufferArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageBufferArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderStorageBufferArrayNonUniformIndexingNative, LAYOUT__shaderStorageBufferArrayNonUniformIndexingNative);}
 
-    public int shaderInputAttachmentArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative);}
-    public void shaderInputAttachmentArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative, value);}
-    public java.lang.foreign.MemorySegment shaderInputAttachmentArrayNonUniformIndexingNative_ptr() {return this.ptr.asSlice(OFFSET$shaderInputAttachmentArrayNonUniformIndexingNative, LAYOUT$shaderInputAttachmentArrayNonUniformIndexingNative);}
+    public int shaderStorageImageArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderStorageImageArrayNonUniformIndexingNative, OFFSET__shaderStorageImageArrayNonUniformIndexingNative);}
+    public void shaderStorageImageArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderStorageImageArrayNonUniformIndexingNative, OFFSET__shaderStorageImageArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderStorageImageArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderStorageImageArrayNonUniformIndexingNative, LAYOUT__shaderStorageImageArrayNonUniformIndexingNative);}
 
-    public int robustBufferAccessUpdateAfterBind() {return this.ptr.get(LAYOUT$robustBufferAccessUpdateAfterBind, OFFSET$robustBufferAccessUpdateAfterBind);}
-    public void robustBufferAccessUpdateAfterBind(int value) {this.ptr.set(LAYOUT$robustBufferAccessUpdateAfterBind, OFFSET$robustBufferAccessUpdateAfterBind, value);}
-    public java.lang.foreign.MemorySegment robustBufferAccessUpdateAfterBind_ptr() {return this.ptr.asSlice(OFFSET$robustBufferAccessUpdateAfterBind, LAYOUT$robustBufferAccessUpdateAfterBind);}
+    public int shaderInputAttachmentArrayNonUniformIndexingNative() {return this.ptr.get(LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative);}
+    public void shaderInputAttachmentArrayNonUniformIndexingNative(int value) {this.ptr.set(LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative, OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative, value);}
+    public java.lang.foreign.MemorySegment $shaderInputAttachmentArrayNonUniformIndexingNative() {return this.ptr.asSlice(OFFSET__shaderInputAttachmentArrayNonUniformIndexingNative, LAYOUT__shaderInputAttachmentArrayNonUniformIndexingNative);}
 
-    public int quadDivergentImplicitLod() {return this.ptr.get(LAYOUT$quadDivergentImplicitLod, OFFSET$quadDivergentImplicitLod);}
-    public void quadDivergentImplicitLod(int value) {this.ptr.set(LAYOUT$quadDivergentImplicitLod, OFFSET$quadDivergentImplicitLod, value);}
-    public java.lang.foreign.MemorySegment quadDivergentImplicitLod_ptr() {return this.ptr.asSlice(OFFSET$quadDivergentImplicitLod, LAYOUT$quadDivergentImplicitLod);}
+    public int robustBufferAccessUpdateAfterBind() {return this.ptr.get(LAYOUT__robustBufferAccessUpdateAfterBind, OFFSET__robustBufferAccessUpdateAfterBind);}
+    public void robustBufferAccessUpdateAfterBind(int value) {this.ptr.set(LAYOUT__robustBufferAccessUpdateAfterBind, OFFSET__robustBufferAccessUpdateAfterBind, value);}
+    public java.lang.foreign.MemorySegment $robustBufferAccessUpdateAfterBind() {return this.ptr.asSlice(OFFSET__robustBufferAccessUpdateAfterBind, LAYOUT__robustBufferAccessUpdateAfterBind);}
 
-    public int maxPerStageDescriptorUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers);}
-    public void maxPerStageDescriptorUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindSamplers_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindSamplers, LAYOUT$maxPerStageDescriptorUpdateAfterBindSamplers);}
+    public int quadDivergentImplicitLod() {return this.ptr.get(LAYOUT__quadDivergentImplicitLod, OFFSET__quadDivergentImplicitLod);}
+    public void quadDivergentImplicitLod(int value) {this.ptr.set(LAYOUT__quadDivergentImplicitLod, OFFSET__quadDivergentImplicitLod, value);}
+    public java.lang.foreign.MemorySegment $quadDivergentImplicitLod() {return this.ptr.asSlice(OFFSET__quadDivergentImplicitLod, LAYOUT__quadDivergentImplicitLod);}
 
-    public int maxPerStageDescriptorUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
-    public void maxPerStageDescriptorUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindUniformBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindUniformBuffers, LAYOUT$maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
+    public int maxPerStageDescriptorUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers);}
+    public void maxPerStageDescriptorUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers, OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindSamplers() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindSamplers, LAYOUT__maxPerStageDescriptorUpdateAfterBindSamplers);}
 
-    public int maxPerStageDescriptorUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
-    public void maxPerStageDescriptorUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindStorageBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindStorageBuffers, LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
+    public int maxPerStageDescriptorUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
+    public void maxPerStageDescriptorUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindUniformBuffers() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindUniformBuffers, LAYOUT__maxPerStageDescriptorUpdateAfterBindUniformBuffers);}
 
-    public int maxPerStageDescriptorUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages);}
-    public void maxPerStageDescriptorUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindSampledImages_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindSampledImages, LAYOUT$maxPerStageDescriptorUpdateAfterBindSampledImages);}
+    public int maxPerStageDescriptorUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
+    public void maxPerStageDescriptorUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindStorageBuffers() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindStorageBuffers, LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageBuffers);}
 
-    public int maxPerStageDescriptorUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages);}
-    public void maxPerStageDescriptorUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindStorageImages_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindStorageImages, LAYOUT$maxPerStageDescriptorUpdateAfterBindStorageImages);}
+    public int maxPerStageDescriptorUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages);}
+    public void maxPerStageDescriptorUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages, OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindSampledImages() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindSampledImages, LAYOUT__maxPerStageDescriptorUpdateAfterBindSampledImages);}
 
-    public int maxPerStageDescriptorUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments);}
-    public void maxPerStageDescriptorUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments, value);}
-    public java.lang.foreign.MemorySegment maxPerStageDescriptorUpdateAfterBindInputAttachments_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageDescriptorUpdateAfterBindInputAttachments, LAYOUT$maxPerStageDescriptorUpdateAfterBindInputAttachments);}
+    public int maxPerStageDescriptorUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages);}
+    public void maxPerStageDescriptorUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages, OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindStorageImages() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindStorageImages, LAYOUT__maxPerStageDescriptorUpdateAfterBindStorageImages);}
 
-    public int maxPerStageUpdateAfterBindResources() {return this.ptr.get(LAYOUT$maxPerStageUpdateAfterBindResources, OFFSET$maxPerStageUpdateAfterBindResources);}
-    public void maxPerStageUpdateAfterBindResources(int value) {this.ptr.set(LAYOUT$maxPerStageUpdateAfterBindResources, OFFSET$maxPerStageUpdateAfterBindResources, value);}
-    public java.lang.foreign.MemorySegment maxPerStageUpdateAfterBindResources_ptr() {return this.ptr.asSlice(OFFSET$maxPerStageUpdateAfterBindResources, LAYOUT$maxPerStageUpdateAfterBindResources);}
+    public int maxPerStageDescriptorUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments);}
+    public void maxPerStageDescriptorUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments, OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageDescriptorUpdateAfterBindInputAttachments() {return this.ptr.asSlice(OFFSET__maxPerStageDescriptorUpdateAfterBindInputAttachments, LAYOUT__maxPerStageDescriptorUpdateAfterBindInputAttachments);}
 
-    public int maxDescriptorSetUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindSamplers, OFFSET$maxDescriptorSetUpdateAfterBindSamplers);}
-    public void maxDescriptorSetUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindSamplers, OFFSET$maxDescriptorSetUpdateAfterBindSamplers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindSamplers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindSamplers, LAYOUT$maxDescriptorSetUpdateAfterBindSamplers);}
+    public int maxPerStageUpdateAfterBindResources() {return this.ptr.get(LAYOUT__maxPerStageUpdateAfterBindResources, OFFSET__maxPerStageUpdateAfterBindResources);}
+    public void maxPerStageUpdateAfterBindResources(int value) {this.ptr.set(LAYOUT__maxPerStageUpdateAfterBindResources, OFFSET__maxPerStageUpdateAfterBindResources, value);}
+    public java.lang.foreign.MemorySegment $maxPerStageUpdateAfterBindResources() {return this.ptr.asSlice(OFFSET__maxPerStageUpdateAfterBindResources, LAYOUT__maxPerStageUpdateAfterBindResources);}
 
-    public int maxDescriptorSetUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers);}
-    public void maxDescriptorSetUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindUniformBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffers, LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffers);}
+    public int maxDescriptorSetUpdateAfterBindSamplers() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindSamplers, OFFSET__maxDescriptorSetUpdateAfterBindSamplers);}
+    public void maxDescriptorSetUpdateAfterBindSamplers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindSamplers, OFFSET__maxDescriptorSetUpdateAfterBindSamplers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindSamplers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindSamplers, LAYOUT__maxDescriptorSetUpdateAfterBindSamplers);}
 
-    public int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
-    public void maxDescriptorSetUpdateAfterBindUniformBuffersDynamic(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindUniformBuffersDynamic_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, LAYOUT$maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
+    public int maxDescriptorSetUpdateAfterBindUniformBuffers() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers);}
+    public void maxDescriptorSetUpdateAfterBindUniformBuffers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindUniformBuffers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffers, LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffers);}
 
-    public int maxDescriptorSetUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers);}
-    public void maxDescriptorSetUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindStorageBuffers_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffers, LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffers);}
+    public int maxDescriptorSetUpdateAfterBindUniformBuffersDynamic() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
+    public void maxDescriptorSetUpdateAfterBindUniformBuffersDynamic(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindUniformBuffersDynamic() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic, LAYOUT__maxDescriptorSetUpdateAfterBindUniformBuffersDynamic);}
 
-    public int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
-    public void maxDescriptorSetUpdateAfterBindStorageBuffersDynamic(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindStorageBuffersDynamic_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, LAYOUT$maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
+    public int maxDescriptorSetUpdateAfterBindStorageBuffers() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers);}
+    public void maxDescriptorSetUpdateAfterBindStorageBuffers(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindStorageBuffers() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffers, LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffers);}
 
-    public int maxDescriptorSetUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages, OFFSET$maxDescriptorSetUpdateAfterBindSampledImages);}
-    public void maxDescriptorSetUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages, OFFSET$maxDescriptorSetUpdateAfterBindSampledImages, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindSampledImages_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindSampledImages, LAYOUT$maxDescriptorSetUpdateAfterBindSampledImages);}
+    public int maxDescriptorSetUpdateAfterBindStorageBuffersDynamic() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
+    public void maxDescriptorSetUpdateAfterBindStorageBuffersDynamic(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindStorageBuffersDynamic() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic, LAYOUT__maxDescriptorSetUpdateAfterBindStorageBuffersDynamic);}
 
-    public int maxDescriptorSetUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages, OFFSET$maxDescriptorSetUpdateAfterBindStorageImages);}
-    public void maxDescriptorSetUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages, OFFSET$maxDescriptorSetUpdateAfterBindStorageImages, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindStorageImages_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindStorageImages, LAYOUT$maxDescriptorSetUpdateAfterBindStorageImages);}
+    public int maxDescriptorSetUpdateAfterBindSampledImages() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages, OFFSET__maxDescriptorSetUpdateAfterBindSampledImages);}
+    public void maxDescriptorSetUpdateAfterBindSampledImages(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages, OFFSET__maxDescriptorSetUpdateAfterBindSampledImages, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindSampledImages() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindSampledImages, LAYOUT__maxDescriptorSetUpdateAfterBindSampledImages);}
 
-    public int maxDescriptorSetUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments);}
-    public void maxDescriptorSetUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments, value);}
-    public java.lang.foreign.MemorySegment maxDescriptorSetUpdateAfterBindInputAttachments_ptr() {return this.ptr.asSlice(OFFSET$maxDescriptorSetUpdateAfterBindInputAttachments, LAYOUT$maxDescriptorSetUpdateAfterBindInputAttachments);}
+    public int maxDescriptorSetUpdateAfterBindStorageImages() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages, OFFSET__maxDescriptorSetUpdateAfterBindStorageImages);}
+    public void maxDescriptorSetUpdateAfterBindStorageImages(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages, OFFSET__maxDescriptorSetUpdateAfterBindStorageImages, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindStorageImages() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindStorageImages, LAYOUT__maxDescriptorSetUpdateAfterBindStorageImages);}
+
+    public int maxDescriptorSetUpdateAfterBindInputAttachments() {return this.ptr.get(LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments);}
+    public void maxDescriptorSetUpdateAfterBindInputAttachments(int value) {this.ptr.set(LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments, OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments, value);}
+    public java.lang.foreign.MemorySegment $maxDescriptorSetUpdateAfterBindInputAttachments() {return this.ptr.asSlice(OFFSET__maxDescriptorSetUpdateAfterBindInputAttachments, LAYOUT__maxDescriptorSetUpdateAfterBindInputAttachments);}
 }

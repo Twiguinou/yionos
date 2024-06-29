@@ -2,115 +2,120 @@ package vulkan;
 
 public record StdVideoH265ShortTermRefPicSet(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.GroupLayout LAYOUT$flags = vulkan.StdVideoH265ShortTermRefPicSetFlags.gStructLayout;
-    public static final long OFFSET$flags = 0L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$delta_idx_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$delta_idx_minus1 = 4L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$use_delta_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$use_delta_flag = 8L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$abs_delta_rps_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$abs_delta_rps_minus1 = 10L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$used_by_curr_pic_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$used_by_curr_pic_flag = 12L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$used_by_curr_pic_s0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$used_by_curr_pic_s0_flag = 14L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$used_by_curr_pic_s1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$used_by_curr_pic_s1_flag = 16L;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT$reserved1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
-    public static final long OFFSET$reserved1 = 18L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$reserved2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$reserved2 = 20L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$reserved3 = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$reserved3 = 21L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$num_negative_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$num_negative_pics = 22L;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT$num_positive_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
-    public static final long OFFSET$num_positive_pics = 23L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$delta_poc_s0_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT);
-    public static final long OFFSET$delta_poc_s0_minus1 = 24L;
-    public static final java.lang.foreign.SequenceLayout LAYOUT$delta_poc_s1_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT);
-    public static final long OFFSET$delta_poc_s1_minus1 = 56L;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265ShortTermRefPicSetFlags.gRecordLayout;
+    public static final long OFFSET__flags = 0;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__delta_idx_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__delta_idx_minus1 = 4;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__use_delta_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__use_delta_flag = 8;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__abs_delta_rps_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__abs_delta_rps_minus1 = 10;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__used_by_curr_pic_flag = 12;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_s0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__used_by_curr_pic_s0_flag = 14;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_s1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__used_by_curr_pic_s1_flag = 16;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final long OFFSET__reserved1 = 18;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__reserved2 = 20;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved3 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__reserved3 = 21;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_negative_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__num_negative_pics = 22;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_positive_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final long OFFSET__num_positive_pics = 23;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_s0_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final long OFFSET__delta_poc_s0_minus1 = 24;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_s1_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final long OFFSET__delta_poc_s1_minus1 = 56;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$flags,
-            LAYOUT$delta_idx_minus1,
-            LAYOUT$use_delta_flag,
-            LAYOUT$abs_delta_rps_minus1,
-            LAYOUT$used_by_curr_pic_flag,
-            LAYOUT$used_by_curr_pic_s0_flag,
-            LAYOUT$used_by_curr_pic_s1_flag,
-            LAYOUT$reserved1,
-            LAYOUT$reserved2,
-            LAYOUT$reserved3,
-            LAYOUT$num_negative_pics,
-            LAYOUT$num_positive_pics,
-            LAYOUT$delta_poc_s0_minus1,
-            LAYOUT$delta_poc_s1_minus1
-    ).withName("StdVideoH265ShortTermRefPicSet");
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__flags,
+            LAYOUT__delta_idx_minus1,
+            LAYOUT__use_delta_flag,
+            LAYOUT__abs_delta_rps_minus1,
+            LAYOUT__used_by_curr_pic_flag,
+            LAYOUT__used_by_curr_pic_s0_flag,
+            LAYOUT__used_by_curr_pic_s1_flag,
+            LAYOUT__reserved1,
+            LAYOUT__reserved2,
+            LAYOUT__reserved3,
+            LAYOUT__num_negative_pics,
+            LAYOUT__num_positive_pics,
+            LAYOUT__delta_poc_s0_minus1,
+            LAYOUT__delta_poc_s1_minus1
+    ).withByteAlignment(4).withName("StdVideoH265ShortTermRefPicSet");
 
     public StdVideoH265ShortTermRefPicSet(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static StdVideoH265ShortTermRefPicSet getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static StdVideoH265ShortTermRefPicSet getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new StdVideoH265ShortTermRefPicSet(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new StdVideoH265ShortTermRefPicSet(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public vulkan.StdVideoH265ShortTermRefPicSetFlags flags() {return new vulkan.StdVideoH265ShortTermRefPicSetFlags(this.ptr.asSlice(OFFSET$flags, LAYOUT$flags));}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, StdVideoH265ShortTermRefPicSet value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
+
+    public vulkan.StdVideoH265ShortTermRefPicSetFlags flags() {return new vulkan.StdVideoH265ShortTermRefPicSetFlags(this.ptr.asSlice(OFFSET__flags, LAYOUT__flags));}
     public void flags(java.util.function.Consumer<vulkan.StdVideoH265ShortTermRefPicSetFlags> consumer) {consumer.accept(this.flags());}
-    public void flags(vulkan.StdVideoH265ShortTermRefPicSetFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET$flags, LAYOUT$flags.byteSize());}
+    public void flags(vulkan.StdVideoH265ShortTermRefPicSetFlags value) {java.lang.foreign.MemorySegment.copy(value.ptr(), 0, this.ptr, OFFSET__flags, LAYOUT__flags.byteSize());}
 
-    public int delta_idx_minus1() {return this.ptr.get(LAYOUT$delta_idx_minus1, OFFSET$delta_idx_minus1);}
-    public void delta_idx_minus1(int value) {this.ptr.set(LAYOUT$delta_idx_minus1, OFFSET$delta_idx_minus1, value);}
-    public java.lang.foreign.MemorySegment delta_idx_minus1_ptr() {return this.ptr.asSlice(OFFSET$delta_idx_minus1, LAYOUT$delta_idx_minus1);}
+    public int delta_idx_minus1() {return this.ptr.get(LAYOUT__delta_idx_minus1, OFFSET__delta_idx_minus1);}
+    public void delta_idx_minus1(int value) {this.ptr.set(LAYOUT__delta_idx_minus1, OFFSET__delta_idx_minus1, value);}
+    public java.lang.foreign.MemorySegment $delta_idx_minus1() {return this.ptr.asSlice(OFFSET__delta_idx_minus1, LAYOUT__delta_idx_minus1);}
 
-    public short use_delta_flag() {return this.ptr.get(LAYOUT$use_delta_flag, OFFSET$use_delta_flag);}
-    public void use_delta_flag(short value) {this.ptr.set(LAYOUT$use_delta_flag, OFFSET$use_delta_flag, value);}
-    public java.lang.foreign.MemorySegment use_delta_flag_ptr() {return this.ptr.asSlice(OFFSET$use_delta_flag, LAYOUT$use_delta_flag);}
+    public short use_delta_flag() {return this.ptr.get(LAYOUT__use_delta_flag, OFFSET__use_delta_flag);}
+    public void use_delta_flag(short value) {this.ptr.set(LAYOUT__use_delta_flag, OFFSET__use_delta_flag, value);}
+    public java.lang.foreign.MemorySegment $use_delta_flag() {return this.ptr.asSlice(OFFSET__use_delta_flag, LAYOUT__use_delta_flag);}
 
-    public short abs_delta_rps_minus1() {return this.ptr.get(LAYOUT$abs_delta_rps_minus1, OFFSET$abs_delta_rps_minus1);}
-    public void abs_delta_rps_minus1(short value) {this.ptr.set(LAYOUT$abs_delta_rps_minus1, OFFSET$abs_delta_rps_minus1, value);}
-    public java.lang.foreign.MemorySegment abs_delta_rps_minus1_ptr() {return this.ptr.asSlice(OFFSET$abs_delta_rps_minus1, LAYOUT$abs_delta_rps_minus1);}
+    public short abs_delta_rps_minus1() {return this.ptr.get(LAYOUT__abs_delta_rps_minus1, OFFSET__abs_delta_rps_minus1);}
+    public void abs_delta_rps_minus1(short value) {this.ptr.set(LAYOUT__abs_delta_rps_minus1, OFFSET__abs_delta_rps_minus1, value);}
+    public java.lang.foreign.MemorySegment $abs_delta_rps_minus1() {return this.ptr.asSlice(OFFSET__abs_delta_rps_minus1, LAYOUT__abs_delta_rps_minus1);}
 
-    public short used_by_curr_pic_flag() {return this.ptr.get(LAYOUT$used_by_curr_pic_flag, OFFSET$used_by_curr_pic_flag);}
-    public void used_by_curr_pic_flag(short value) {this.ptr.set(LAYOUT$used_by_curr_pic_flag, OFFSET$used_by_curr_pic_flag, value);}
-    public java.lang.foreign.MemorySegment used_by_curr_pic_flag_ptr() {return this.ptr.asSlice(OFFSET$used_by_curr_pic_flag, LAYOUT$used_by_curr_pic_flag);}
+    public short used_by_curr_pic_flag() {return this.ptr.get(LAYOUT__used_by_curr_pic_flag, OFFSET__used_by_curr_pic_flag);}
+    public void used_by_curr_pic_flag(short value) {this.ptr.set(LAYOUT__used_by_curr_pic_flag, OFFSET__used_by_curr_pic_flag, value);}
+    public java.lang.foreign.MemorySegment $used_by_curr_pic_flag() {return this.ptr.asSlice(OFFSET__used_by_curr_pic_flag, LAYOUT__used_by_curr_pic_flag);}
 
-    public short used_by_curr_pic_s0_flag() {return this.ptr.get(LAYOUT$used_by_curr_pic_s0_flag, OFFSET$used_by_curr_pic_s0_flag);}
-    public void used_by_curr_pic_s0_flag(short value) {this.ptr.set(LAYOUT$used_by_curr_pic_s0_flag, OFFSET$used_by_curr_pic_s0_flag, value);}
-    public java.lang.foreign.MemorySegment used_by_curr_pic_s0_flag_ptr() {return this.ptr.asSlice(OFFSET$used_by_curr_pic_s0_flag, LAYOUT$used_by_curr_pic_s0_flag);}
+    public short used_by_curr_pic_s0_flag() {return this.ptr.get(LAYOUT__used_by_curr_pic_s0_flag, OFFSET__used_by_curr_pic_s0_flag);}
+    public void used_by_curr_pic_s0_flag(short value) {this.ptr.set(LAYOUT__used_by_curr_pic_s0_flag, OFFSET__used_by_curr_pic_s0_flag, value);}
+    public java.lang.foreign.MemorySegment $used_by_curr_pic_s0_flag() {return this.ptr.asSlice(OFFSET__used_by_curr_pic_s0_flag, LAYOUT__used_by_curr_pic_s0_flag);}
 
-    public short used_by_curr_pic_s1_flag() {return this.ptr.get(LAYOUT$used_by_curr_pic_s1_flag, OFFSET$used_by_curr_pic_s1_flag);}
-    public void used_by_curr_pic_s1_flag(short value) {this.ptr.set(LAYOUT$used_by_curr_pic_s1_flag, OFFSET$used_by_curr_pic_s1_flag, value);}
-    public java.lang.foreign.MemorySegment used_by_curr_pic_s1_flag_ptr() {return this.ptr.asSlice(OFFSET$used_by_curr_pic_s1_flag, LAYOUT$used_by_curr_pic_s1_flag);}
+    public short used_by_curr_pic_s1_flag() {return this.ptr.get(LAYOUT__used_by_curr_pic_s1_flag, OFFSET__used_by_curr_pic_s1_flag);}
+    public void used_by_curr_pic_s1_flag(short value) {this.ptr.set(LAYOUT__used_by_curr_pic_s1_flag, OFFSET__used_by_curr_pic_s1_flag, value);}
+    public java.lang.foreign.MemorySegment $used_by_curr_pic_s1_flag() {return this.ptr.asSlice(OFFSET__used_by_curr_pic_s1_flag, LAYOUT__used_by_curr_pic_s1_flag);}
 
-    public short reserved1() {return this.ptr.get(LAYOUT$reserved1, OFFSET$reserved1);}
-    public void reserved1(short value) {this.ptr.set(LAYOUT$reserved1, OFFSET$reserved1, value);}
-    public java.lang.foreign.MemorySegment reserved1_ptr() {return this.ptr.asSlice(OFFSET$reserved1, LAYOUT$reserved1);}
+    public short reserved1() {return this.ptr.get(LAYOUT__reserved1, OFFSET__reserved1);}
+    public void reserved1(short value) {this.ptr.set(LAYOUT__reserved1, OFFSET__reserved1, value);}
+    public java.lang.foreign.MemorySegment $reserved1() {return this.ptr.asSlice(OFFSET__reserved1, LAYOUT__reserved1);}
 
-    public char reserved2() {return (char)this.ptr.get(LAYOUT$reserved2, OFFSET$reserved2);}
-    public void reserved2(char value) {this.ptr.set(LAYOUT$reserved2, OFFSET$reserved2, (byte)value);}
-    public java.lang.foreign.MemorySegment reserved2_ptr() {return this.ptr.asSlice(OFFSET$reserved2, LAYOUT$reserved2);}
+    public byte reserved2() {return this.ptr.get(LAYOUT__reserved2, OFFSET__reserved2);}
+    public void reserved2(byte value) {this.ptr.set(LAYOUT__reserved2, OFFSET__reserved2, value);}
+    public java.lang.foreign.MemorySegment $reserved2() {return this.ptr.asSlice(OFFSET__reserved2, LAYOUT__reserved2);}
 
-    public char reserved3() {return (char)this.ptr.get(LAYOUT$reserved3, OFFSET$reserved3);}
-    public void reserved3(char value) {this.ptr.set(LAYOUT$reserved3, OFFSET$reserved3, (byte)value);}
-    public java.lang.foreign.MemorySegment reserved3_ptr() {return this.ptr.asSlice(OFFSET$reserved3, LAYOUT$reserved3);}
+    public byte reserved3() {return this.ptr.get(LAYOUT__reserved3, OFFSET__reserved3);}
+    public void reserved3(byte value) {this.ptr.set(LAYOUT__reserved3, OFFSET__reserved3, value);}
+    public java.lang.foreign.MemorySegment $reserved3() {return this.ptr.asSlice(OFFSET__reserved3, LAYOUT__reserved3);}
 
-    public char num_negative_pics() {return (char)this.ptr.get(LAYOUT$num_negative_pics, OFFSET$num_negative_pics);}
-    public void num_negative_pics(char value) {this.ptr.set(LAYOUT$num_negative_pics, OFFSET$num_negative_pics, (byte)value);}
-    public java.lang.foreign.MemorySegment num_negative_pics_ptr() {return this.ptr.asSlice(OFFSET$num_negative_pics, LAYOUT$num_negative_pics);}
+    public byte num_negative_pics() {return this.ptr.get(LAYOUT__num_negative_pics, OFFSET__num_negative_pics);}
+    public void num_negative_pics(byte value) {this.ptr.set(LAYOUT__num_negative_pics, OFFSET__num_negative_pics, value);}
+    public java.lang.foreign.MemorySegment $num_negative_pics() {return this.ptr.asSlice(OFFSET__num_negative_pics, LAYOUT__num_negative_pics);}
 
-    public char num_positive_pics() {return (char)this.ptr.get(LAYOUT$num_positive_pics, OFFSET$num_positive_pics);}
-    public void num_positive_pics(char value) {this.ptr.set(LAYOUT$num_positive_pics, OFFSET$num_positive_pics, (byte)value);}
-    public java.lang.foreign.MemorySegment num_positive_pics_ptr() {return this.ptr.asSlice(OFFSET$num_positive_pics, LAYOUT$num_positive_pics);}
+    public byte num_positive_pics() {return this.ptr.get(LAYOUT__num_positive_pics, OFFSET__num_positive_pics);}
+    public void num_positive_pics(byte value) {this.ptr.set(LAYOUT__num_positive_pics, OFFSET__num_positive_pics, value);}
+    public java.lang.foreign.MemorySegment $num_positive_pics() {return this.ptr.asSlice(OFFSET__num_positive_pics, LAYOUT__num_positive_pics);}
 
-    public java.lang.foreign.MemorySegment delta_poc_s0_minus1() {return this.ptr.asSlice(OFFSET$delta_poc_s0_minus1, LAYOUT$delta_poc_s0_minus1);}
-    public short delta_poc_s0_minus1(int i) {return this.delta_poc_s0_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i);}
-    public void delta_poc_s0_minus1(int i, short value) {this.delta_poc_s0_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i, value);}
+    public java.lang.foreign.MemorySegment delta_poc_s0_minus1() {return this.ptr.asSlice(OFFSET__delta_poc_s0_minus1, LAYOUT__delta_poc_s0_minus1);}
+    public short delta_poc_s0_minus1(int index) {return this.delta_poc_s0_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index);}
+    public void delta_poc_s0_minus1(int index, short value) {this.delta_poc_s0_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index, value);}
 
-    public java.lang.foreign.MemorySegment delta_poc_s1_minus1() {return this.ptr.asSlice(OFFSET$delta_poc_s1_minus1, LAYOUT$delta_poc_s1_minus1);}
-    public short delta_poc_s1_minus1(int i) {return this.delta_poc_s1_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i);}
-    public void delta_poc_s1_minus1(int i, short value) {this.delta_poc_s1_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, i, value);}
+    public java.lang.foreign.MemorySegment delta_poc_s1_minus1() {return this.ptr.asSlice(OFFSET__delta_poc_s1_minus1, LAYOUT__delta_poc_s1_minus1);}
+    public short delta_poc_s1_minus1(int index) {return this.delta_poc_s1_minus1().getAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index);}
+    public void delta_poc_s1_minus1(int index, short value) {this.delta_poc_s1_minus1().setAtIndex(java.lang.foreign.ValueLayout.JAVA_SHORT, index, value);}
 }

@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkPipelineColorBlendAdvancedStateCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$srcPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$srcPremultiplied = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$dstPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$dstPremultiplied = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$blendOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$blendOverlap = 24L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__srcPremultiplied = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__dstPremultiplied = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__blendOverlap = 24;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$srcPremultiplied,
-            LAYOUT$dstPremultiplied,
-            LAYOUT$blendOverlap,
+            LAYOUT__pNext,
+            LAYOUT__srcPremultiplied,
+            LAYOUT__dstPremultiplied,
+            LAYOUT__blendOverlap,
             java.lang.foreign.MemoryLayout.paddingLayout(4)
-    ).withName("VkPipelineColorBlendAdvancedStateCreateInfoEXT");
+    ).withByteAlignment(8).withName("VkPipelineColorBlendAdvancedStateCreateInfoEXT");
 
     public VkPipelineColorBlendAdvancedStateCreateInfoEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPipelineColorBlendAdvancedStateCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPipelineColorBlendAdvancedStateCreateInfoEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPipelineColorBlendAdvancedStateCreateInfoEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPipelineColorBlendAdvancedStateCreateInfoEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPipelineColorBlendAdvancedStateCreateInfoEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int srcPremultiplied() {return this.ptr.get(LAYOUT$srcPremultiplied, OFFSET$srcPremultiplied);}
-    public void srcPremultiplied(int value) {this.ptr.set(LAYOUT$srcPremultiplied, OFFSET$srcPremultiplied, value);}
-    public java.lang.foreign.MemorySegment srcPremultiplied_ptr() {return this.ptr.asSlice(OFFSET$srcPremultiplied, LAYOUT$srcPremultiplied);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int dstPremultiplied() {return this.ptr.get(LAYOUT$dstPremultiplied, OFFSET$dstPremultiplied);}
-    public void dstPremultiplied(int value) {this.ptr.set(LAYOUT$dstPremultiplied, OFFSET$dstPremultiplied, value);}
-    public java.lang.foreign.MemorySegment dstPremultiplied_ptr() {return this.ptr.asSlice(OFFSET$dstPremultiplied, LAYOUT$dstPremultiplied);}
+    public int srcPremultiplied() {return this.ptr.get(LAYOUT__srcPremultiplied, OFFSET__srcPremultiplied);}
+    public void srcPremultiplied(int value) {this.ptr.set(LAYOUT__srcPremultiplied, OFFSET__srcPremultiplied, value);}
+    public java.lang.foreign.MemorySegment $srcPremultiplied() {return this.ptr.asSlice(OFFSET__srcPremultiplied, LAYOUT__srcPremultiplied);}
 
-    public int blendOverlap() {return this.ptr.get(LAYOUT$blendOverlap, OFFSET$blendOverlap);}
-    public void blendOverlap(int value) {this.ptr.set(LAYOUT$blendOverlap, OFFSET$blendOverlap, value);}
-    public java.lang.foreign.MemorySegment blendOverlap_ptr() {return this.ptr.asSlice(OFFSET$blendOverlap, LAYOUT$blendOverlap);}
+    public int dstPremultiplied() {return this.ptr.get(LAYOUT__dstPremultiplied, OFFSET__dstPremultiplied);}
+    public void dstPremultiplied(int value) {this.ptr.set(LAYOUT__dstPremultiplied, OFFSET__dstPremultiplied, value);}
+    public java.lang.foreign.MemorySegment $dstPremultiplied() {return this.ptr.asSlice(OFFSET__dstPremultiplied, LAYOUT__dstPremultiplied);}
+
+    public int blendOverlap() {return this.ptr.get(LAYOUT__blendOverlap, OFFSET__blendOverlap);}
+    public void blendOverlap(int value) {this.ptr.set(LAYOUT__blendOverlap, OFFSET__blendOverlap, value);}
+    public java.lang.foreign.MemorySegment $blendOverlap() {return this.ptr.asSlice(OFFSET__blendOverlap, LAYOUT__blendOverlap);}
 }

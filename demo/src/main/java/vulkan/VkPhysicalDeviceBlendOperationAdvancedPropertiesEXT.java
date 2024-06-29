@@ -2,74 +2,79 @@ package vulkan;
 
 public record VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$advancedBlendMaxColorAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$advancedBlendMaxColorAttachments = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$advancedBlendIndependentBlend = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$advancedBlendIndependentBlend = 20L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$advancedBlendNonPremultipliedSrcColor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$advancedBlendNonPremultipliedSrcColor = 24L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$advancedBlendNonPremultipliedDstColor = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$advancedBlendNonPremultipliedDstColor = 28L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$advancedBlendCorrelatedOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$advancedBlendCorrelatedOverlap = 32L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$advancedBlendAllOperations = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$advancedBlendAllOperations = 36L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendMaxColorAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__advancedBlendMaxColorAttachments = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendIndependentBlend = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__advancedBlendIndependentBlend = 20;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendNonPremultipliedSrcColor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__advancedBlendNonPremultipliedSrcColor = 24;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendNonPremultipliedDstColor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__advancedBlendNonPremultipliedDstColor = 28;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendCorrelatedOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__advancedBlendCorrelatedOverlap = 32;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendAllOperations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__advancedBlendAllOperations = 36;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$advancedBlendMaxColorAttachments,
-            LAYOUT$advancedBlendIndependentBlend,
-            LAYOUT$advancedBlendNonPremultipliedSrcColor,
-            LAYOUT$advancedBlendNonPremultipliedDstColor,
-            LAYOUT$advancedBlendCorrelatedOverlap,
-            LAYOUT$advancedBlendAllOperations
-    ).withName("VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT");
+            LAYOUT__pNext,
+            LAYOUT__advancedBlendMaxColorAttachments,
+            LAYOUT__advancedBlendIndependentBlend,
+            LAYOUT__advancedBlendNonPremultipliedSrcColor,
+            LAYOUT__advancedBlendNonPremultipliedDstColor,
+            LAYOUT__advancedBlendCorrelatedOverlap,
+            LAYOUT__advancedBlendAllOperations
+    ).withByteAlignment(8).withName("VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT");
 
     public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public int advancedBlendMaxColorAttachments() {return this.ptr.get(LAYOUT$advancedBlendMaxColorAttachments, OFFSET$advancedBlendMaxColorAttachments);}
-    public void advancedBlendMaxColorAttachments(int value) {this.ptr.set(LAYOUT$advancedBlendMaxColorAttachments, OFFSET$advancedBlendMaxColorAttachments, value);}
-    public java.lang.foreign.MemorySegment advancedBlendMaxColorAttachments_ptr() {return this.ptr.asSlice(OFFSET$advancedBlendMaxColorAttachments, LAYOUT$advancedBlendMaxColorAttachments);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int advancedBlendIndependentBlend() {return this.ptr.get(LAYOUT$advancedBlendIndependentBlend, OFFSET$advancedBlendIndependentBlend);}
-    public void advancedBlendIndependentBlend(int value) {this.ptr.set(LAYOUT$advancedBlendIndependentBlend, OFFSET$advancedBlendIndependentBlend, value);}
-    public java.lang.foreign.MemorySegment advancedBlendIndependentBlend_ptr() {return this.ptr.asSlice(OFFSET$advancedBlendIndependentBlend, LAYOUT$advancedBlendIndependentBlend);}
+    public int advancedBlendMaxColorAttachments() {return this.ptr.get(LAYOUT__advancedBlendMaxColorAttachments, OFFSET__advancedBlendMaxColorAttachments);}
+    public void advancedBlendMaxColorAttachments(int value) {this.ptr.set(LAYOUT__advancedBlendMaxColorAttachments, OFFSET__advancedBlendMaxColorAttachments, value);}
+    public java.lang.foreign.MemorySegment $advancedBlendMaxColorAttachments() {return this.ptr.asSlice(OFFSET__advancedBlendMaxColorAttachments, LAYOUT__advancedBlendMaxColorAttachments);}
 
-    public int advancedBlendNonPremultipliedSrcColor() {return this.ptr.get(LAYOUT$advancedBlendNonPremultipliedSrcColor, OFFSET$advancedBlendNonPremultipliedSrcColor);}
-    public void advancedBlendNonPremultipliedSrcColor(int value) {this.ptr.set(LAYOUT$advancedBlendNonPremultipliedSrcColor, OFFSET$advancedBlendNonPremultipliedSrcColor, value);}
-    public java.lang.foreign.MemorySegment advancedBlendNonPremultipliedSrcColor_ptr() {return this.ptr.asSlice(OFFSET$advancedBlendNonPremultipliedSrcColor, LAYOUT$advancedBlendNonPremultipliedSrcColor);}
+    public int advancedBlendIndependentBlend() {return this.ptr.get(LAYOUT__advancedBlendIndependentBlend, OFFSET__advancedBlendIndependentBlend);}
+    public void advancedBlendIndependentBlend(int value) {this.ptr.set(LAYOUT__advancedBlendIndependentBlend, OFFSET__advancedBlendIndependentBlend, value);}
+    public java.lang.foreign.MemorySegment $advancedBlendIndependentBlend() {return this.ptr.asSlice(OFFSET__advancedBlendIndependentBlend, LAYOUT__advancedBlendIndependentBlend);}
 
-    public int advancedBlendNonPremultipliedDstColor() {return this.ptr.get(LAYOUT$advancedBlendNonPremultipliedDstColor, OFFSET$advancedBlendNonPremultipliedDstColor);}
-    public void advancedBlendNonPremultipliedDstColor(int value) {this.ptr.set(LAYOUT$advancedBlendNonPremultipliedDstColor, OFFSET$advancedBlendNonPremultipliedDstColor, value);}
-    public java.lang.foreign.MemorySegment advancedBlendNonPremultipliedDstColor_ptr() {return this.ptr.asSlice(OFFSET$advancedBlendNonPremultipliedDstColor, LAYOUT$advancedBlendNonPremultipliedDstColor);}
+    public int advancedBlendNonPremultipliedSrcColor() {return this.ptr.get(LAYOUT__advancedBlendNonPremultipliedSrcColor, OFFSET__advancedBlendNonPremultipliedSrcColor);}
+    public void advancedBlendNonPremultipliedSrcColor(int value) {this.ptr.set(LAYOUT__advancedBlendNonPremultipliedSrcColor, OFFSET__advancedBlendNonPremultipliedSrcColor, value);}
+    public java.lang.foreign.MemorySegment $advancedBlendNonPremultipliedSrcColor() {return this.ptr.asSlice(OFFSET__advancedBlendNonPremultipliedSrcColor, LAYOUT__advancedBlendNonPremultipliedSrcColor);}
 
-    public int advancedBlendCorrelatedOverlap() {return this.ptr.get(LAYOUT$advancedBlendCorrelatedOverlap, OFFSET$advancedBlendCorrelatedOverlap);}
-    public void advancedBlendCorrelatedOverlap(int value) {this.ptr.set(LAYOUT$advancedBlendCorrelatedOverlap, OFFSET$advancedBlendCorrelatedOverlap, value);}
-    public java.lang.foreign.MemorySegment advancedBlendCorrelatedOverlap_ptr() {return this.ptr.asSlice(OFFSET$advancedBlendCorrelatedOverlap, LAYOUT$advancedBlendCorrelatedOverlap);}
+    public int advancedBlendNonPremultipliedDstColor() {return this.ptr.get(LAYOUT__advancedBlendNonPremultipliedDstColor, OFFSET__advancedBlendNonPremultipliedDstColor);}
+    public void advancedBlendNonPremultipliedDstColor(int value) {this.ptr.set(LAYOUT__advancedBlendNonPremultipliedDstColor, OFFSET__advancedBlendNonPremultipliedDstColor, value);}
+    public java.lang.foreign.MemorySegment $advancedBlendNonPremultipliedDstColor() {return this.ptr.asSlice(OFFSET__advancedBlendNonPremultipliedDstColor, LAYOUT__advancedBlendNonPremultipliedDstColor);}
 
-    public int advancedBlendAllOperations() {return this.ptr.get(LAYOUT$advancedBlendAllOperations, OFFSET$advancedBlendAllOperations);}
-    public void advancedBlendAllOperations(int value) {this.ptr.set(LAYOUT$advancedBlendAllOperations, OFFSET$advancedBlendAllOperations, value);}
-    public java.lang.foreign.MemorySegment advancedBlendAllOperations_ptr() {return this.ptr.asSlice(OFFSET$advancedBlendAllOperations, LAYOUT$advancedBlendAllOperations);}
+    public int advancedBlendCorrelatedOverlap() {return this.ptr.get(LAYOUT__advancedBlendCorrelatedOverlap, OFFSET__advancedBlendCorrelatedOverlap);}
+    public void advancedBlendCorrelatedOverlap(int value) {this.ptr.set(LAYOUT__advancedBlendCorrelatedOverlap, OFFSET__advancedBlendCorrelatedOverlap, value);}
+    public java.lang.foreign.MemorySegment $advancedBlendCorrelatedOverlap() {return this.ptr.asSlice(OFFSET__advancedBlendCorrelatedOverlap, LAYOUT__advancedBlendCorrelatedOverlap);}
+
+    public int advancedBlendAllOperations() {return this.ptr.get(LAYOUT__advancedBlendAllOperations, OFFSET__advancedBlendAllOperations);}
+    public void advancedBlendAllOperations(int value) {this.ptr.set(LAYOUT__advancedBlendAllOperations, OFFSET__advancedBlendAllOperations, value);}
+    public java.lang.foreign.MemorySegment $advancedBlendAllOperations() {return this.ptr.asSlice(OFFSET__advancedBlendAllOperations, LAYOUT__advancedBlendAllOperations);}
 }

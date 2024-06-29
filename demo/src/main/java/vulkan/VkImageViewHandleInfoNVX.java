@@ -2,54 +2,59 @@ package vulkan;
 
 public record VkImageViewHandleInfoNVX(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$imageView = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$imageView = 16L;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$descriptorType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$descriptorType = 24L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$sampler = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$sampler = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.AddressLayout LAYOUT__imageView = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__imageView = 16;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__descriptorType = 24;
+    public static final java.lang.foreign.AddressLayout LAYOUT__sampler = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__sampler = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$imageView,
-            LAYOUT$descriptorType,
+            LAYOUT__pNext,
+            LAYOUT__imageView,
+            LAYOUT__descriptorType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$sampler
-    ).withName("VkImageViewHandleInfoNVX");
+            LAYOUT__sampler
+    ).withByteAlignment(8).withName("VkImageViewHandleInfoNVX");
 
     public VkImageViewHandleInfoNVX(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkImageViewHandleInfoNVX getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkImageViewHandleInfoNVX getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkImageViewHandleInfoNVX(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkImageViewHandleInfoNVX(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkImageViewHandleInfoNVX value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public java.lang.foreign.MemorySegment imageView() {return this.ptr.get(LAYOUT$imageView, OFFSET$imageView);}
-    public void imageView(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$imageView, OFFSET$imageView, value);}
-    public java.lang.foreign.MemorySegment imageView_ptr() {return this.ptr.asSlice(OFFSET$imageView, LAYOUT$imageView);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public int descriptorType() {return this.ptr.get(LAYOUT$descriptorType, OFFSET$descriptorType);}
-    public void descriptorType(int value) {this.ptr.set(LAYOUT$descriptorType, OFFSET$descriptorType, value);}
-    public java.lang.foreign.MemorySegment descriptorType_ptr() {return this.ptr.asSlice(OFFSET$descriptorType, LAYOUT$descriptorType);}
+    public java.lang.foreign.MemorySegment imageView() {return this.ptr.get(LAYOUT__imageView, OFFSET__imageView);}
+    public void imageView(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__imageView, OFFSET__imageView, value);}
+    public java.lang.foreign.MemorySegment $imageView() {return this.ptr.asSlice(OFFSET__imageView, LAYOUT__imageView);}
 
-    public java.lang.foreign.MemorySegment sampler() {return this.ptr.get(LAYOUT$sampler, OFFSET$sampler);}
-    public void sampler(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$sampler, OFFSET$sampler, value);}
-    public java.lang.foreign.MemorySegment sampler_ptr() {return this.ptr.asSlice(OFFSET$sampler, LAYOUT$sampler);}
+    public int descriptorType() {return this.ptr.get(LAYOUT__descriptorType, OFFSET__descriptorType);}
+    public void descriptorType(int value) {this.ptr.set(LAYOUT__descriptorType, OFFSET__descriptorType, value);}
+    public java.lang.foreign.MemorySegment $descriptorType() {return this.ptr.asSlice(OFFSET__descriptorType, LAYOUT__descriptorType);}
+
+    public java.lang.foreign.MemorySegment sampler() {return this.ptr.get(LAYOUT__sampler, OFFSET__sampler);}
+    public void sampler(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__sampler, OFFSET__sampler, value);}
+    public java.lang.foreign.MemorySegment $sampler() {return this.ptr.asSlice(OFFSET__sampler, LAYOUT__sampler);}
 }

@@ -2,53 +2,58 @@ package vulkan;
 
 public record VkFormatProperties3(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT$sType = java.lang.foreign.ValueLayout.JAVA_INT;
-    public static final long OFFSET$sType = 0L;
-    public static final java.lang.foreign.AddressLayout LAYOUT$pNext = java.lang.foreign.ValueLayout.ADDRESS;
-    public static final long OFFSET$pNext = 8L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$linearTilingFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$linearTilingFeatures = 16L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$optimalTilingFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$optimalTilingFeatures = 24L;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT$bufferFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
-    public static final long OFFSET$bufferFeatures = 32L;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final long OFFSET__sType = 0;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final long OFFSET__pNext = 8;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__linearTilingFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__linearTilingFeatures = 16;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__optimalTilingFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__optimalTilingFeatures = 24;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bufferFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final long OFFSET__bufferFeatures = 32;
 
-    public static final java.lang.foreign.StructLayout gStructLayout = java.lang.foreign.MemoryLayout.structLayout(
-            LAYOUT$sType,
+    public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
+            LAYOUT__sType,
             java.lang.foreign.MemoryLayout.paddingLayout(4),
-            LAYOUT$pNext,
-            LAYOUT$linearTilingFeatures,
-            LAYOUT$optimalTilingFeatures,
-            LAYOUT$bufferFeatures
-    ).withName("VkFormatProperties3");
+            LAYOUT__pNext,
+            LAYOUT__linearTilingFeatures,
+            LAYOUT__optimalTilingFeatures,
+            LAYOUT__bufferFeatures
+    ).withByteAlignment(8).withName("VkFormatProperties3");
 
     public VkFormatProperties3(java.lang.foreign.SegmentAllocator allocator)
     {
-        this(allocator.allocate(gStructLayout));
+        this(allocator.allocate(gRecordLayout));
     }
 
-    public static VkFormatProperties3 getAtIndex(java.lang.foreign.MemorySegment buffer, int i)
+    public static VkFormatProperties3 getAtIndex(java.lang.foreign.MemorySegment buffer, int index)
     {
-        return new VkFormatProperties3(buffer.asSlice(i * gStructLayout.byteSize(), gStructLayout));
+        return new VkFormatProperties3(buffer.asSlice(index * gRecordLayout.byteSize(), gRecordLayout));
     }
 
-    public int sType() {return this.ptr.get(LAYOUT$sType, OFFSET$sType);}
-    public void sType(int value) {this.ptr.set(LAYOUT$sType, OFFSET$sType, value);}
-    public java.lang.foreign.MemorySegment sType_ptr() {return this.ptr.asSlice(OFFSET$sType, LAYOUT$sType);}
+    public static void setAtIndex(java.lang.foreign.MemorySegment buffer, int index, VkFormatProperties3 value)
+    {
+        java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
+    }
 
-    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT$pNext, OFFSET$pNext);}
-    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT$pNext, OFFSET$pNext, value);}
-    public java.lang.foreign.MemorySegment pNext_ptr() {return this.ptr.asSlice(OFFSET$pNext, LAYOUT$pNext);}
+    public int sType() {return this.ptr.get(LAYOUT__sType, OFFSET__sType);}
+    public void sType(int value) {this.ptr.set(LAYOUT__sType, OFFSET__sType, value);}
+    public java.lang.foreign.MemorySegment $sType() {return this.ptr.asSlice(OFFSET__sType, LAYOUT__sType);}
 
-    public long linearTilingFeatures() {return this.ptr.get(LAYOUT$linearTilingFeatures, OFFSET$linearTilingFeatures);}
-    public void linearTilingFeatures(long value) {this.ptr.set(LAYOUT$linearTilingFeatures, OFFSET$linearTilingFeatures, value);}
-    public java.lang.foreign.MemorySegment linearTilingFeatures_ptr() {return this.ptr.asSlice(OFFSET$linearTilingFeatures, LAYOUT$linearTilingFeatures);}
+    public java.lang.foreign.MemorySegment pNext() {return this.ptr.get(LAYOUT__pNext, OFFSET__pNext);}
+    public void pNext(java.lang.foreign.MemorySegment value) {this.ptr.set(LAYOUT__pNext, OFFSET__pNext, value);}
+    public java.lang.foreign.MemorySegment $pNext() {return this.ptr.asSlice(OFFSET__pNext, LAYOUT__pNext);}
 
-    public long optimalTilingFeatures() {return this.ptr.get(LAYOUT$optimalTilingFeatures, OFFSET$optimalTilingFeatures);}
-    public void optimalTilingFeatures(long value) {this.ptr.set(LAYOUT$optimalTilingFeatures, OFFSET$optimalTilingFeatures, value);}
-    public java.lang.foreign.MemorySegment optimalTilingFeatures_ptr() {return this.ptr.asSlice(OFFSET$optimalTilingFeatures, LAYOUT$optimalTilingFeatures);}
+    public long linearTilingFeatures() {return this.ptr.get(LAYOUT__linearTilingFeatures, OFFSET__linearTilingFeatures);}
+    public void linearTilingFeatures(long value) {this.ptr.set(LAYOUT__linearTilingFeatures, OFFSET__linearTilingFeatures, value);}
+    public java.lang.foreign.MemorySegment $linearTilingFeatures() {return this.ptr.asSlice(OFFSET__linearTilingFeatures, LAYOUT__linearTilingFeatures);}
 
-    public long bufferFeatures() {return this.ptr.get(LAYOUT$bufferFeatures, OFFSET$bufferFeatures);}
-    public void bufferFeatures(long value) {this.ptr.set(LAYOUT$bufferFeatures, OFFSET$bufferFeatures, value);}
-    public java.lang.foreign.MemorySegment bufferFeatures_ptr() {return this.ptr.asSlice(OFFSET$bufferFeatures, LAYOUT$bufferFeatures);}
+    public long optimalTilingFeatures() {return this.ptr.get(LAYOUT__optimalTilingFeatures, OFFSET__optimalTilingFeatures);}
+    public void optimalTilingFeatures(long value) {this.ptr.set(LAYOUT__optimalTilingFeatures, OFFSET__optimalTilingFeatures, value);}
+    public java.lang.foreign.MemorySegment $optimalTilingFeatures() {return this.ptr.asSlice(OFFSET__optimalTilingFeatures, LAYOUT__optimalTilingFeatures);}
+
+    public long bufferFeatures() {return this.ptr.get(LAYOUT__bufferFeatures, OFFSET__bufferFeatures);}
+    public void bufferFeatures(long value) {this.ptr.set(LAYOUT__bufferFeatures, OFFSET__bufferFeatures, value);}
+    public java.lang.foreign.MemorySegment $bufferFeatures() {return this.ptr.asSlice(OFFSET__bufferFeatures, LAYOUT__bufferFeatures);}
 }
