@@ -1,1 +1,0 @@
-# Building shared libraries
