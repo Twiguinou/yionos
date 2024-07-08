@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkImageViewCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("image");
     public static final long OFFSET__image = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewType = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewType");
     public static final long OFFSET__viewType = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT.withName("format");
     public static final long OFFSET__format = 36;
-    public static final java.lang.foreign.StructLayout LAYOUT__components = vulkan.VkComponentMapping.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__components = vulkan.VkComponentMapping.gRecordLayout.withName("components");
     public static final long OFFSET__components = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__subresourceRange = vulkan.VkImageSubresourceRange.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__subresourceRange = vulkan.VkImageSubresourceRange.gRecordLayout.withName("subresourceRange");
     public static final long OFFSET__subresourceRange = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

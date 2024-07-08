@@ -2,27 +2,27 @@ package vma;
 
 public record VmaAllocatorCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__physicalDevice = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__physicalDevice = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("physicalDevice");
     public static final long OFFSET__physicalDevice = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__device = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__device = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("device");
     public static final long OFFSET__device = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preferredLargeHeapBlockSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preferredLargeHeapBlockSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("preferredLargeHeapBlockSize");
     public static final long OFFSET__preferredLargeHeapBlockSize = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pAllocationCallbacks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAllocationCallbacks = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pAllocationCallbacks");
     public static final long OFFSET__pAllocationCallbacks = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceMemoryCallbacks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceMemoryCallbacks = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDeviceMemoryCallbacks");
     public static final long OFFSET__pDeviceMemoryCallbacks = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pHeapSizeLimit = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pHeapSizeLimit = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pHeapSizeLimit");
     public static final long OFFSET__pHeapSizeLimit = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVulkanFunctions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVulkanFunctions = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVulkanFunctions");
     public static final long OFFSET__pVulkanFunctions = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__instance = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__instance = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("instance");
     public static final long OFFSET__instance = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vulkanApiVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vulkanApiVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("vulkanApiVersion");
     public static final long OFFSET__vulkanApiVersion = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTypeExternalMemoryHandleTypes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTypeExternalMemoryHandleTypes = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTypeExternalMemoryHandleTypes");
     public static final long OFFSET__pTypeExternalMemoryHandleTypes = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package vulkan;
 
 public record StdVideoEncodeH265WeightTableFlags(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__luma_weight_l0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__luma_weight_l0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("luma_weight_l0_flag");
     public static final long OFFSET__luma_weight_l0_flag = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__chroma_weight_l0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__chroma_weight_l0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("chroma_weight_l0_flag");
     public static final long OFFSET__chroma_weight_l0_flag = 2;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__luma_weight_l1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__luma_weight_l1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("luma_weight_l1_flag");
     public static final long OFFSET__luma_weight_l1_flag = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__chroma_weight_l1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__chroma_weight_l1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("chroma_weight_l1_flag");
     public static final long OFFSET__chroma_weight_l1_flag = 6;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

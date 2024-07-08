@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkCommandBufferInheritanceInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__renderPass = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__renderPass = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("renderPass");
     public static final long OFFSET__renderPass = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpass = java.lang.foreign.ValueLayout.JAVA_INT.withName("subpass");
     public static final long OFFSET__subpass = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__framebuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__framebuffer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("framebuffer");
     public static final long OFFSET__framebuffer = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__occlusionQueryEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__occlusionQueryEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("occlusionQueryEnable");
     public static final long OFFSET__occlusionQueryEnable = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queryFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queryFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("queryFlags");
     public static final long OFFSET__queryFlags = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineStatistics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineStatistics = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineStatistics");
     public static final long OFFSET__pipelineStatistics = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

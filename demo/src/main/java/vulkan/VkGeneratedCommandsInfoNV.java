@@ -2,35 +2,35 @@ package vulkan;
 
 public record VkGeneratedCommandsInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineBindPoint");
     public static final long OFFSET__pipelineBindPoint = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pipeline = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pipeline = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pipeline");
     public static final long OFFSET__pipeline = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__indirectCommandsLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__indirectCommandsLayout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("indirectCommandsLayout");
     public static final long OFFSET__indirectCommandsLayout = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__streamCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__streamCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("streamCount");
     public static final long OFFSET__streamCount = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStreams = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStreams = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStreams");
     public static final long OFFSET__pStreams = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sequencesCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sequencesCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("sequencesCount");
     public static final long OFFSET__sequencesCount = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__preprocessBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__preprocessBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("preprocessBuffer");
     public static final long OFFSET__preprocessBuffer = 64;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preprocessOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preprocessOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("preprocessOffset");
     public static final long OFFSET__preprocessOffset = 72;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preprocessSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__preprocessSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("preprocessSize");
     public static final long OFFSET__preprocessSize = 80;
-    public static final java.lang.foreign.AddressLayout LAYOUT__sequencesCountBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__sequencesCountBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("sequencesCountBuffer");
     public static final long OFFSET__sequencesCountBuffer = 88;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__sequencesCountOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__sequencesCountOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("sequencesCountOffset");
     public static final long OFFSET__sequencesCountOffset = 96;
-    public static final java.lang.foreign.AddressLayout LAYOUT__sequencesIndexBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__sequencesIndexBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("sequencesIndexBuffer");
     public static final long OFFSET__sequencesIndexBuffer = 104;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__sequencesIndexOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__sequencesIndexOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("sequencesIndexOffset");
     public static final long OFFSET__sequencesIndexOffset = 112;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

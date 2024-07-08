@@ -2,37 +2,37 @@ package vulkan;
 
 public record StdVideoH264SequenceParameterSetVui(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH264SpsVuiFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH264SpsVuiFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspect_ratio_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspect_ratio_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("aspect_ratio_idc");
     public static final long OFFSET__aspect_ratio_idc = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__sar_width = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__sar_width = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("sar_width");
     public static final long OFFSET__sar_width = 8;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__sar_height = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__sar_height = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("sar_height");
     public static final long OFFSET__sar_height = 10;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__video_format = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__video_format = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("video_format");
     public static final long OFFSET__video_format = 12;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__colour_primaries = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__colour_primaries = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("colour_primaries");
     public static final long OFFSET__colour_primaries = 13;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__transfer_characteristics = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__transfer_characteristics = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("transfer_characteristics");
     public static final long OFFSET__transfer_characteristics = 14;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__matrix_coefficients = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__matrix_coefficients = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("matrix_coefficients");
     public static final long OFFSET__matrix_coefficients = 15;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__num_units_in_tick = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__num_units_in_tick = java.lang.foreign.ValueLayout.JAVA_INT.withName("num_units_in_tick");
     public static final long OFFSET__num_units_in_tick = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__time_scale = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__time_scale = java.lang.foreign.ValueLayout.JAVA_INT.withName("time_scale");
     public static final long OFFSET__time_scale = 20;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__max_num_reorder_frames = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__max_num_reorder_frames = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("max_num_reorder_frames");
     public static final long OFFSET__max_num_reorder_frames = 24;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__max_dec_frame_buffering = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__max_dec_frame_buffering = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("max_dec_frame_buffering");
     public static final long OFFSET__max_dec_frame_buffering = 25;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_sample_loc_type_top_field = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_sample_loc_type_top_field = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("chroma_sample_loc_type_top_field");
     public static final long OFFSET__chroma_sample_loc_type_top_field = 26;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_sample_loc_type_bottom_field = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_sample_loc_type_bottom_field = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("chroma_sample_loc_type_bottom_field");
     public static final long OFFSET__chroma_sample_loc_type_bottom_field = 27;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("reserved1");
     public static final long OFFSET__reserved1 = 28;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pHrdParameters = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pHrdParameters = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pHrdParameters");
     public static final long OFFSET__pHrdParameters = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

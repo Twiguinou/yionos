@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkDrmFormatModifierProperties2EXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__drmFormatModifier = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__drmFormatModifier = java.lang.foreign.ValueLayout.JAVA_LONG.withName("drmFormatModifier");
     public static final long OFFSET__drmFormatModifier = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__drmFormatModifierPlaneCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__drmFormatModifierPlaneCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("drmFormatModifierPlaneCount");
     public static final long OFFSET__drmFormatModifierPlaneCount = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__drmFormatModifierTilingFeatures = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__drmFormatModifierTilingFeatures = java.lang.foreign.ValueLayout.JAVA_LONG.withName("drmFormatModifierTilingFeatures");
     public static final long OFFSET__drmFormatModifierTilingFeatures = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

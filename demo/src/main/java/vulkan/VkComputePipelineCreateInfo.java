@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkComputePipelineCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__stage = vulkan.VkPipelineShaderStageCreateInfo.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__stage = vulkan.VkPipelineShaderStageCreateInfo.gRecordLayout.withName("stage");
     public static final long OFFSET__stage = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__layout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__layout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("layout");
     public static final long OFFSET__layout = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__basePipelineHandle = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__basePipelineHandle = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("basePipelineHandle");
     public static final long OFFSET__basePipelineHandle = 80;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__basePipelineIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__basePipelineIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("basePipelineIndex");
     public static final long OFFSET__basePipelineIndex = 88;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

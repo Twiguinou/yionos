@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkStencilOpState(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__failOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__failOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("failOp");
     public static final long OFFSET__failOp = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__passOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__passOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("passOp");
     public static final long OFFSET__passOp = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthFailOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthFailOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthFailOp");
     public static final long OFFSET__depthFailOp = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__compareOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__compareOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("compareOp");
     public static final long OFFSET__compareOp = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__compareMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__compareMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("compareMask");
     public static final long OFFSET__compareMask = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("writeMask");
     public static final long OFFSET__writeMask = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__reference = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__reference = java.lang.foreign.ValueLayout.JAVA_INT.withName("reference");
     public static final long OFFSET__reference = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

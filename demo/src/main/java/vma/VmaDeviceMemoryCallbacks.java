@@ -2,11 +2,11 @@ package vma;
 
 public record VmaDeviceMemoryCallbacks(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnAllocate = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnAllocate = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnAllocate");
     public static final long OFFSET__pfnAllocate = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnFree = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnFree = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnFree");
     public static final long OFFSET__pfnFree = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pUserData");
     public static final long OFFSET__pUserData = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

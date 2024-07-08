@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkAttachmentSampleLocationsEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("attachmentIndex");
     public static final long OFFSET__attachmentIndex = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__sampleLocationsInfo = vulkan.VkSampleLocationsInfoEXT.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__sampleLocationsInfo = vulkan.VkSampleLocationsInfoEXT.gRecordLayout.withName("sampleLocationsInfo");
     public static final long OFFSET__sampleLocationsInfo = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

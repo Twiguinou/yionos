@@ -2,15 +2,15 @@ package vulkan;
 
 public record StdVideoEncodeH264RefPicMarkingEntry(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memory_management_control_operation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memory_management_control_operation = java.lang.foreign.ValueLayout.JAVA_INT.withName("memory_management_control_operation");
     public static final long OFFSET__memory_management_control_operation = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__difference_of_pic_nums_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__difference_of_pic_nums_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("difference_of_pic_nums_minus1");
     public static final long OFFSET__difference_of_pic_nums_minus1 = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_pic_num = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_pic_num = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("long_term_pic_num");
     public static final long OFFSET__long_term_pic_num = 6;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_frame_idx = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_frame_idx = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("long_term_frame_idx");
     public static final long OFFSET__long_term_frame_idx = 8;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__max_long_term_frame_idx_plus1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__max_long_term_frame_idx_plus1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("max_long_term_frame_idx_plus1");
     public static final long OFFSET__max_long_term_frame_idx_plus1 = 10;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

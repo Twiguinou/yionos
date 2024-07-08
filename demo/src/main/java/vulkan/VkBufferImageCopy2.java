@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkBufferImageCopy2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bufferOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bufferOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("bufferOffset");
     public static final long OFFSET__bufferOffset = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferRowLength = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferRowLength = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferRowLength");
     public static final long OFFSET__bufferRowLength = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferImageHeight = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferImageHeight = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferImageHeight");
     public static final long OFFSET__bufferImageHeight = 28;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout.withName("imageSubresource");
     public static final long OFFSET__imageSubresource = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageOffset = vulkan.VkOffset3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageOffset = vulkan.VkOffset3D.gRecordLayout.withName("imageOffset");
     public static final long OFFSET__imageOffset = 48;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageExtent = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageExtent = vulkan.VkExtent3D.gRecordLayout.withName("imageExtent");
     public static final long OFFSET__imageExtent = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

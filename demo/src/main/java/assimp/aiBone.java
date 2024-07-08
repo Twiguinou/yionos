@@ -2,17 +2,17 @@ package assimp;
 
 public record aiBone(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumWeights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumWeights = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumWeights");
     public static final long OFFSET__mNumWeights = 1028;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mArmature = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mArmature = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mArmature");
     public static final long OFFSET__mArmature = 1032;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mNode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mNode = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mNode");
     public static final long OFFSET__mNode = 1040;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mWeights");
     public static final long OFFSET__mWeights = 1048;
-    public static final java.lang.foreign.StructLayout LAYOUT__mOffsetMatrix = assimp.aiMatrix4x4.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mOffsetMatrix = assimp.aiMatrix4x4.gRecordLayout.withName("mOffsetMatrix");
     public static final long OFFSET__mOffsetMatrix = 1056;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

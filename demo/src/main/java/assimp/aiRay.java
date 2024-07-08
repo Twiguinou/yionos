@@ -2,9 +2,9 @@ package assimp;
 
 public record aiRay(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__pos = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__pos = assimp.aiVector3D.gRecordLayout.withName("pos");
     public static final long OFFSET__pos = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__dir = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__dir = assimp.aiVector3D.gRecordLayout.withName("dir");
     public static final long OFFSET__dir = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

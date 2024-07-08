@@ -2,25 +2,25 @@ package nuklear;
 
 public record nk_popup_state(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__win = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__win = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("win");
     public static final long OFFSET__win = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__buf = nuklear.nk_popup_buffer.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__buf = nuklear.nk_popup_buffer.gRecordLayout.withName("buf");
     public static final long OFFSET__buf = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__name = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__name = java.lang.foreign.ValueLayout.JAVA_INT.withName("name");
     public static final long OFFSET__name = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT.withName("active");
     public static final long OFFSET__active = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__combo_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__combo_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("combo_count");
     public static final long OFFSET__combo_count = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__con_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__con_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("con_count");
     public static final long OFFSET__con_count = 68;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__con_old = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__con_old = java.lang.foreign.ValueLayout.JAVA_INT.withName("con_old");
     public static final long OFFSET__con_old = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active_con = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active_con = java.lang.foreign.ValueLayout.JAVA_INT.withName("active_con");
     public static final long OFFSET__active_con = 76;
-    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_rect.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_rect.gRecordLayout.withName("header");
     public static final long OFFSET__header = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

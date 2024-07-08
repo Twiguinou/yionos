@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkAccelerationStructureMotionInstanceNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 4;
-    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkAccelerationStructureMotionInstanceDataNV.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkAccelerationStructureMotionInstanceDataNV.gRecordLayout.withName("data");
     public static final long OFFSET__data = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

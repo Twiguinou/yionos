@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkDeviceFaultAddressInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__addressType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__addressType = java.lang.foreign.ValueLayout.JAVA_INT.withName("addressType");
     public static final long OFFSET__addressType = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__reportedAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__reportedAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("reportedAddress");
     public static final long OFFSET__reportedAddress = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__addressPrecision = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__addressPrecision = java.lang.foreign.ValueLayout.JAVA_LONG.withName("addressPrecision");
     public static final long OFFSET__addressPrecision = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

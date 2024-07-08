@@ -2,39 +2,39 @@ package vulkan;
 
 public record VkPhysicalDeviceVulkan13Features(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustImageAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__robustImageAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("robustImageAccess");
     public static final long OFFSET__robustImageAccess = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inlineUniformBlock = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inlineUniformBlock = java.lang.foreign.ValueLayout.JAVA_INT.withName("inlineUniformBlock");
     public static final long OFFSET__inlineUniformBlock = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingInlineUniformBlockUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT.withName("descriptorBindingInlineUniformBlockUpdateAfterBind");
     public static final long OFFSET__descriptorBindingInlineUniformBlockUpdateAfterBind = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineCreationCacheControl = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineCreationCacheControl = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineCreationCacheControl");
     public static final long OFFSET__pipelineCreationCacheControl = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__privateData = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__privateData = java.lang.foreign.ValueLayout.JAVA_INT.withName("privateData");
     public static final long OFFSET__privateData = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDemoteToHelperInvocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDemoteToHelperInvocation = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderDemoteToHelperInvocation");
     public static final long OFFSET__shaderDemoteToHelperInvocation = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderTerminateInvocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderTerminateInvocation = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderTerminateInvocation");
     public static final long OFFSET__shaderTerminateInvocation = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSizeControl = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSizeControl = java.lang.foreign.ValueLayout.JAVA_INT.withName("subgroupSizeControl");
     public static final long OFFSET__subgroupSizeControl = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeFullSubgroups = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeFullSubgroups = java.lang.foreign.ValueLayout.JAVA_INT.withName("computeFullSubgroups");
     public static final long OFFSET__computeFullSubgroups = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__synchronization2 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__synchronization2 = java.lang.foreign.ValueLayout.JAVA_INT.withName("synchronization2");
     public static final long OFFSET__synchronization2 = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureCompressionASTC_HDR = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textureCompressionASTC_HDR = java.lang.foreign.ValueLayout.JAVA_INT.withName("textureCompressionASTC_HDR");
     public static final long OFFSET__textureCompressionASTC_HDR = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderZeroInitializeWorkgroupMemory = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderZeroInitializeWorkgroupMemory = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderZeroInitializeWorkgroupMemory");
     public static final long OFFSET__shaderZeroInitializeWorkgroupMemory = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dynamicRendering = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dynamicRendering = java.lang.foreign.ValueLayout.JAVA_INT.withName("dynamicRendering");
     public static final long OFFSET__dynamicRendering = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderIntegerDotProduct = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderIntegerDotProduct = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderIntegerDotProduct");
     public static final long OFFSET__shaderIntegerDotProduct = 68;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maintenance4 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maintenance4 = java.lang.foreign.ValueLayout.JAVA_INT.withName("maintenance4");
     public static final long OFFSET__maintenance4 = 72;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

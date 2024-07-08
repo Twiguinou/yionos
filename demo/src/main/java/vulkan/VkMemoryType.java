@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkMemoryType(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__propertyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__propertyFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("propertyFlags");
     public static final long OFFSET__propertyFlags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__heapIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__heapIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("heapIndex");
     public static final long OFFSET__heapIndex = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

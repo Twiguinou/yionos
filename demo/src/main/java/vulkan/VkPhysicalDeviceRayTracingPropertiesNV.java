@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkPhysicalDeviceRayTracingPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderGroupHandleSize");
     public static final long OFFSET__shaderGroupHandleSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRecursionDepth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRecursionDepth = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxRecursionDepth");
     public static final long OFFSET__maxRecursionDepth = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxShaderGroupStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxShaderGroupStride = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxShaderGroupStride");
     public static final long OFFSET__maxShaderGroupStride = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupBaseAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupBaseAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderGroupBaseAlignment");
     public static final long OFFSET__shaderGroupBaseAlignment = 28;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxGeometryCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxGeometryCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxGeometryCount");
     public static final long OFFSET__maxGeometryCount = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxInstanceCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxInstanceCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxInstanceCount");
     public static final long OFFSET__maxInstanceCount = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxTriangleCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxTriangleCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxTriangleCount");
     public static final long OFFSET__maxTriangleCount = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDescriptorSetAccelerationStructures");
     public static final long OFFSET__maxDescriptorSetAccelerationStructures = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

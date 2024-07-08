@@ -2,17 +2,17 @@ package glfw3;
 
 public record GLFWvidmode(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT.withName("width");
     public static final long OFFSET__width = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT.withName("height");
     public static final long OFFSET__height = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__redBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__redBits = java.lang.foreign.ValueLayout.JAVA_INT.withName("redBits");
     public static final long OFFSET__redBits = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__greenBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__greenBits = java.lang.foreign.ValueLayout.JAVA_INT.withName("greenBits");
     public static final long OFFSET__greenBits = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blueBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blueBits = java.lang.foreign.ValueLayout.JAVA_INT.withName("blueBits");
     public static final long OFFSET__blueBits = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__refreshRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__refreshRate = java.lang.foreign.ValueLayout.JAVA_INT.withName("refreshRate");
     public static final long OFFSET__refreshRate = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

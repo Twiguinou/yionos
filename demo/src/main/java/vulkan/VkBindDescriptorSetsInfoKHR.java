@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkBindDescriptorSetsInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stageFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("stageFlags");
     public static final long OFFSET__stageFlags = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__layout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__layout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("layout");
     public static final long OFFSET__layout = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstSet = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstSet = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstSet");
     public static final long OFFSET__firstSet = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorSetCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorSetCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("descriptorSetCount");
     public static final long OFFSET__descriptorSetCount = 36;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorSets = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorSets = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDescriptorSets");
     public static final long OFFSET__pDescriptorSets = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dynamicOffsetCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dynamicOffsetCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("dynamicOffsetCount");
     public static final long OFFSET__dynamicOffsetCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDynamicOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDynamicOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDynamicOffsets");
     public static final long OFFSET__pDynamicOffsets = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkMicromapTriangleEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dataOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dataOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("dataOffset");
     public static final long OFFSET__dataOffset = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__subdivisionLevel = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__subdivisionLevel = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("subdivisionLevel");
     public static final long OFFSET__subdivisionLevel = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("format");
     public static final long OFFSET__format = 6;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

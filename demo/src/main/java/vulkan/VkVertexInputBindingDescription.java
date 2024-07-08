@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkVertexInputBindingDescription(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__binding = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__binding = java.lang.foreign.ValueLayout.JAVA_INT.withName("binding");
     public static final long OFFSET__binding = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stride = java.lang.foreign.ValueLayout.JAVA_INT.withName("stride");
     public static final long OFFSET__stride = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputRate = java.lang.foreign.ValueLayout.JAVA_INT.withName("inputRate");
     public static final long OFFSET__inputRate = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

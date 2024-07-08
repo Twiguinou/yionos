@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkRenderPassSubpassFeedbackInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassMergeStatus = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassMergeStatus = java.lang.foreign.ValueLayout.JAVA_INT.withName("subpassMergeStatus");
     public static final long OFFSET__subpassMergeStatus = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("description");
     public static final long OFFSET__description = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postMergeIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postMergeIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("postMergeIndex");
     public static final long OFFSET__postMergeIndex = 260;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

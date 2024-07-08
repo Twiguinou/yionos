@@ -2,11 +2,11 @@ package vma;
 
 public record VmaAllocationInfo2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__allocationInfo = vma.VmaAllocationInfo.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__allocationInfo = vma.VmaAllocationInfo.gRecordLayout.withName("allocationInfo");
     public static final long OFFSET__allocationInfo = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__blockSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__blockSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("blockSize");
     public static final long OFFSET__blockSize = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dedicatedMemory = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dedicatedMemory = java.lang.foreign.ValueLayout.JAVA_INT.withName("dedicatedMemory");
     public static final long OFFSET__dedicatedMemory = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

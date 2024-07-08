@@ -2,25 +2,25 @@ package nuklear;
 
 public record nk_chart_slot(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout.withName("color");
     public static final long OFFSET__color = 4;
-    public static final java.lang.foreign.StructLayout LAYOUT__highlight = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__highlight = nuklear.nk_color.gRecordLayout.withName("highlight");
     public static final long OFFSET__highlight = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__min = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__min = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("min");
     public static final long OFFSET__min = 12;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__max = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__max = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("max");
     public static final long OFFSET__max = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__range = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__range = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("range");
     public static final long OFFSET__range = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__count = java.lang.foreign.ValueLayout.JAVA_INT.withName("count");
     public static final long OFFSET__count = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__last = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__last = nuklear.nk_vec2.gRecordLayout.withName("last");
     public static final long OFFSET__last = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__index = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__index = java.lang.foreign.ValueLayout.JAVA_INT.withName("index");
     public static final long OFFSET__index = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__show_markers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__show_markers = java.lang.foreign.ValueLayout.JAVA_INT.withName("show_markers");
     public static final long OFFSET__show_markers = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

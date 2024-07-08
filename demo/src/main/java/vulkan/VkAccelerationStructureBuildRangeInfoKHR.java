@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkAccelerationStructureBuildRangeInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("primitiveCount");
     public static final long OFFSET__primitiveCount = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("primitiveOffset");
     public static final long OFFSET__primitiveOffset = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstVertex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstVertex = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstVertex");
     public static final long OFFSET__firstVertex = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("transformOffset");
     public static final long OFFSET__transformOffset = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

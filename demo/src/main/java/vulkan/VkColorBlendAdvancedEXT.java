@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkColorBlendAdvancedEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendOp");
     public static final long OFFSET__advancedBlendOp = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcPremultiplied");
     public static final long OFFSET__srcPremultiplied = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstPremultiplied");
     public static final long OFFSET__dstPremultiplied = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendOverlap = java.lang.foreign.ValueLayout.JAVA_INT.withName("blendOverlap");
     public static final long OFFSET__blendOverlap = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__clampResults = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__clampResults = java.lang.foreign.ValueLayout.JAVA_INT.withName("clampResults");
     public static final long OFFSET__clampResults = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

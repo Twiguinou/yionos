@@ -2,11 +2,11 @@ package vma;
 
 public record VmaDefragmentationMove(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__operation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__operation = java.lang.foreign.ValueLayout.JAVA_INT.withName("operation");
     public static final long OFFSET__operation = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__srcAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__srcAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("srcAllocation");
     public static final long OFFSET__srcAllocation = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__dstTmpAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__dstTmpAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("dstTmpAllocation");
     public static final long OFFSET__dstTmpAllocation = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

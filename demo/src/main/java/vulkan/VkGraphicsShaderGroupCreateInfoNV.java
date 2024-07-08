@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkGraphicsShaderGroupCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stageCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("stageCount");
     public static final long OFFSET__stageCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStages = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStages = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStages");
     public static final long OFFSET__pStages = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexInputState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexInputState = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVertexInputState");
     public static final long OFFSET__pVertexInputState = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTessellationState = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTessellationState = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTessellationState");
     public static final long OFFSET__pTessellationState = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

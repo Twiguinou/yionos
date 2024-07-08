@@ -2,27 +2,27 @@ package vulkan;
 
 public record StdVideoH264HrdParameters(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_cnt_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_cnt_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cpb_cnt_minus1");
     public static final long OFFSET__cpb_cnt_minus1 = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__bit_rate_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__bit_rate_scale = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("bit_rate_scale");
     public static final long OFFSET__bit_rate_scale = 1;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_scale = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cpb_size_scale");
     public static final long OFFSET__cpb_size_scale = 2;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved1");
     public static final long OFFSET__reserved1 = 3;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__bit_rate_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__bit_rate_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("bit_rate_value_minus1");
     public static final long OFFSET__bit_rate_value_minus1 = 4;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_size_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_size_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("cpb_size_value_minus1");
     public static final long OFFSET__cpb_size_value_minus1 = 132;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cbr_flag = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cbr_flag = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("cbr_flag");
     public static final long OFFSET__cbr_flag = 260;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__initial_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__initial_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("initial_cpb_removal_delay_length_minus1");
     public static final long OFFSET__initial_cpb_removal_delay_length_minus1 = 292;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("cpb_removal_delay_length_minus1");
     public static final long OFFSET__cpb_removal_delay_length_minus1 = 296;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dpb_output_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dpb_output_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("dpb_output_delay_length_minus1");
     public static final long OFFSET__dpb_output_delay_length_minus1 = 300;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__time_offset_length = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__time_offset_length = java.lang.foreign.ValueLayout.JAVA_INT.withName("time_offset_length");
     public static final long OFFSET__time_offset_length = 304;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

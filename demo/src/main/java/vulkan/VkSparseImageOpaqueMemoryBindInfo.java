@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkSparseImageOpaqueMemoryBindInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("image");
     public static final long OFFSET__image = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bindCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bindCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("bindCount");
     public static final long OFFSET__bindCount = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pBinds = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pBinds = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pBinds");
     public static final long OFFSET__pBinds = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

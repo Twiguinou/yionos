@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkDisplayPropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__display = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__display = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("display");
     public static final long OFFSET__display = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__displayName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__displayName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("displayName");
     public static final long OFFSET__displayName = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__physicalDimensions = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__physicalDimensions = vulkan.VkExtent2D.gRecordLayout.withName("physicalDimensions");
     public static final long OFFSET__physicalDimensions = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__physicalResolution = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__physicalResolution = vulkan.VkExtent2D.gRecordLayout.withName("physicalResolution");
     public static final long OFFSET__physicalResolution = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedTransforms");
     public static final long OFFSET__supportedTransforms = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeReorderPossible = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeReorderPossible = java.lang.foreign.ValueLayout.JAVA_INT.withName("planeReorderPossible");
     public static final long OFFSET__planeReorderPossible = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__persistentContent = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__persistentContent = java.lang.foreign.ValueLayout.JAVA_INT.withName("persistentContent");
     public static final long OFFSET__persistentContent = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

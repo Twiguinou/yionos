@@ -2,9 +2,9 @@ package assimp;
 
 public record aiMeshKey(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE.withName("mTime");
     public static final long OFFSET__mTime = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mValue = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mValue = java.lang.foreign.ValueLayout.JAVA_INT.withName("mValue");
     public static final long OFFSET__mValue = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

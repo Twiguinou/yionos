@@ -2,29 +2,29 @@ package vulkan;
 
 public record VkImageMemoryBarrier2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcStageMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcStageMask = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcStageMask");
     public static final long OFFSET__srcStageMask = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcAccessMask");
     public static final long OFFSET__srcAccessMask = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstStageMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstStageMask = java.lang.foreign.ValueLayout.JAVA_LONG.withName("dstStageMask");
     public static final long OFFSET__dstStageMask = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstAccessMask = java.lang.foreign.ValueLayout.JAVA_LONG.withName("dstAccessMask");
     public static final long OFFSET__dstAccessMask = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__oldLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__oldLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("oldLayout");
     public static final long OFFSET__oldLayout = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__newLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__newLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("newLayout");
     public static final long OFFSET__newLayout = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcQueueFamilyIndex");
     public static final long OFFSET__srcQueueFamilyIndex = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstQueueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstQueueFamilyIndex");
     public static final long OFFSET__dstQueueFamilyIndex = 60;
-    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__image = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("image");
     public static final long OFFSET__image = 64;
-    public static final java.lang.foreign.StructLayout LAYOUT__subresourceRange = vulkan.VkImageSubresourceRange.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__subresourceRange = vulkan.VkImageSubresourceRange.gRecordLayout.withName("subresourceRange");
     public static final long OFFSET__subresourceRange = 72;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendMaxColorAttachments = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendMaxColorAttachments = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendMaxColorAttachments");
     public static final long OFFSET__advancedBlendMaxColorAttachments = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendIndependentBlend = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendIndependentBlend = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendIndependentBlend");
     public static final long OFFSET__advancedBlendIndependentBlend = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendNonPremultipliedSrcColor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendNonPremultipliedSrcColor = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendNonPremultipliedSrcColor");
     public static final long OFFSET__advancedBlendNonPremultipliedSrcColor = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendNonPremultipliedDstColor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendNonPremultipliedDstColor = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendNonPremultipliedDstColor");
     public static final long OFFSET__advancedBlendNonPremultipliedDstColor = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendCorrelatedOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendCorrelatedOverlap = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendCorrelatedOverlap");
     public static final long OFFSET__advancedBlendCorrelatedOverlap = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendAllOperations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__advancedBlendAllOperations = java.lang.foreign.ValueLayout.JAVA_INT.withName("advancedBlendAllOperations");
     public static final long OFFSET__advancedBlendAllOperations = 36;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

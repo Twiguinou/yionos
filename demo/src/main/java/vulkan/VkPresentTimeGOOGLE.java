@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkPresentTimeGOOGLE(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__presentID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__presentID = java.lang.foreign.ValueLayout.JAVA_INT.withName("presentID");
     public static final long OFFSET__presentID = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__desiredPresentTime = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__desiredPresentTime = java.lang.foreign.ValueLayout.JAVA_LONG.withName("desiredPresentTime");
     public static final long OFFSET__desiredPresentTime = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

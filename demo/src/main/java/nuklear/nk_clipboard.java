@@ -2,11 +2,11 @@ package nuklear;
 
 public record nk_clipboard(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.UnionLayout LAYOUT__userdata = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__userdata = nuklear.nk_handle.gRecordLayout.withName("userdata");
     public static final long OFFSET__userdata = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__paste = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__paste = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("paste");
     public static final long OFFSET__paste = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__copy = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__copy = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("copy");
     public static final long OFFSET__copy = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

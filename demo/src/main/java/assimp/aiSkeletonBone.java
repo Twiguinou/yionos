@@ -2,21 +2,21 @@ package assimp;
 
 public record aiSkeletonBone(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mParent = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mParent = java.lang.foreign.ValueLayout.JAVA_INT.withName("mParent");
     public static final long OFFSET__mParent = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mArmature = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mArmature = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mArmature");
     public static final long OFFSET__mArmature = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mNode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mNode = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mNode");
     public static final long OFFSET__mNode = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumnWeights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumnWeights = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumnWeights");
     public static final long OFFSET__mNumnWeights = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshId = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshId = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mMeshId");
     public static final long OFFSET__mMeshId = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mWeights");
     public static final long OFFSET__mWeights = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__mOffsetMatrix = assimp.aiMatrix4x4.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mOffsetMatrix = assimp.aiMatrix4x4.gRecordLayout.withName("mOffsetMatrix");
     public static final long OFFSET__mOffsetMatrix = 48;
-    public static final java.lang.foreign.StructLayout LAYOUT__mLocalMatrix = assimp.aiMatrix4x4.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mLocalMatrix = assimp.aiMatrix4x4.gRecordLayout.withName("mLocalMatrix");
     public static final long OFFSET__mLocalMatrix = 112;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

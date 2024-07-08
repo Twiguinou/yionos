@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkRayTracingPipelineInterfaceCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPipelineRayPayloadSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPipelineRayPayloadSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPipelineRayPayloadSize");
     public static final long OFFSET__maxPipelineRayPayloadSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPipelineRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPipelineRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPipelineRayHitAttributeSize");
     public static final long OFFSET__maxPipelineRayHitAttributeSize = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

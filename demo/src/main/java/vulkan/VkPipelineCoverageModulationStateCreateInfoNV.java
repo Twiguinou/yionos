@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPipelineCoverageModulationStateCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageModulationMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageModulationMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("coverageModulationMode");
     public static final long OFFSET__coverageModulationMode = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageModulationTableEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageModulationTableEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("coverageModulationTableEnable");
     public static final long OFFSET__coverageModulationTableEnable = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageModulationTableCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageModulationTableCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("coverageModulationTableCount");
     public static final long OFFSET__coverageModulationTableCount = 28;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCoverageModulationTable = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCoverageModulationTable = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCoverageModulationTable");
     public static final long OFFSET__pCoverageModulationTable = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

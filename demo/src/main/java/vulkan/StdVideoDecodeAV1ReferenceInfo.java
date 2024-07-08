@@ -2,15 +2,15 @@ package vulkan;
 
 public record StdVideoDecodeAV1ReferenceInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoDecodeAV1ReferenceInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoDecodeAV1ReferenceInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__frame_type = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__frame_type = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("frame_type");
     public static final long OFFSET__frame_type = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__RefFrameSignBias = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__RefFrameSignBias = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("RefFrameSignBias");
     public static final long OFFSET__RefFrameSignBias = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__OrderHint = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__OrderHint = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("OrderHint");
     public static final long OFFSET__OrderHint = 6;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__SavedOrderHints = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__SavedOrderHints = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("SavedOrderHints");
     public static final long OFFSET__SavedOrderHints = 7;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

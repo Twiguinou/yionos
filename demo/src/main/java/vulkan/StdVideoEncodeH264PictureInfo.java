@@ -2,25 +2,25 @@ package vulkan;
 
 public record StdVideoEncodeH264PictureInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264PictureInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264PictureInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("seq_parameter_set_id");
     public static final long OFFSET__seq_parameter_set_id = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pic_parameter_set_id");
     public static final long OFFSET__pic_parameter_set_id = 5;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__idr_pic_id = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__idr_pic_id = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("idr_pic_id");
     public static final long OFFSET__idr_pic_id = 6;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primary_pic_type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primary_pic_type = java.lang.foreign.ValueLayout.JAVA_INT.withName("primary_pic_type");
     public static final long OFFSET__primary_pic_type = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frame_num = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frame_num = java.lang.foreign.ValueLayout.JAVA_INT.withName("frame_num");
     public static final long OFFSET__frame_num = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCnt = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCnt = java.lang.foreign.ValueLayout.JAVA_INT.withName("PicOrderCnt");
     public static final long OFFSET__PicOrderCnt = 16;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__temporal_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__temporal_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("temporal_id");
     public static final long OFFSET__temporal_id = 20;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("reserved1");
     public static final long OFFSET__reserved1 = 21;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pRefLists = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefLists = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pRefLists");
     public static final long OFFSET__pRefLists = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

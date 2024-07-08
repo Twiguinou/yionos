@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkDeviceGroupRenderPassBeginInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceMask");
     public static final long OFFSET__deviceMask = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceRenderAreaCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceRenderAreaCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceRenderAreaCount");
     public static final long OFFSET__deviceRenderAreaCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceRenderAreas = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceRenderAreas = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDeviceRenderAreas");
     public static final long OFFSET__pDeviceRenderAreas = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

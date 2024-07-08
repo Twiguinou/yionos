@@ -2,37 +2,37 @@ package nuklear;
 
 public record nk_style_tab(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__background = nuklear.nk_style_item.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__background = nuklear.nk_style_item.gRecordLayout.withName("background");
     public static final long OFFSET__background = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__border_color = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__border_color = nuklear.nk_color.gRecordLayout.withName("border_color");
     public static final long OFFSET__border_color = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__text = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__text = nuklear.nk_color.gRecordLayout.withName("text");
     public static final long OFFSET__text = 44;
-    public static final java.lang.foreign.StructLayout LAYOUT__tab_maximize_button = nuklear.nk_style_button.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__tab_maximize_button = nuklear.nk_style_button.gRecordLayout.withName("tab_maximize_button");
     public static final long OFFSET__tab_maximize_button = 48;
-    public static final java.lang.foreign.StructLayout LAYOUT__tab_minimize_button = nuklear.nk_style_button.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__tab_minimize_button = nuklear.nk_style_button.gRecordLayout.withName("tab_minimize_button");
     public static final long OFFSET__tab_minimize_button = 264;
-    public static final java.lang.foreign.StructLayout LAYOUT__node_maximize_button = nuklear.nk_style_button.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__node_maximize_button = nuklear.nk_style_button.gRecordLayout.withName("node_maximize_button");
     public static final long OFFSET__node_maximize_button = 480;
-    public static final java.lang.foreign.StructLayout LAYOUT__node_minimize_button = nuklear.nk_style_button.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__node_minimize_button = nuklear.nk_style_button.gRecordLayout.withName("node_minimize_button");
     public static final long OFFSET__node_minimize_button = 696;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sym_minimize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sym_minimize = java.lang.foreign.ValueLayout.JAVA_INT.withName("sym_minimize");
     public static final long OFFSET__sym_minimize = 912;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sym_maximize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sym_maximize = java.lang.foreign.ValueLayout.JAVA_INT.withName("sym_maximize");
     public static final long OFFSET__sym_maximize = 916;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__border = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__border = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("border");
     public static final long OFFSET__border = 920;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__rounding = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__rounding = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("rounding");
     public static final long OFFSET__rounding = 924;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__indent = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__indent = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("indent");
     public static final long OFFSET__indent = 928;
-    public static final java.lang.foreign.StructLayout LAYOUT__padding = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__padding = nuklear.nk_vec2.gRecordLayout.withName("padding");
     public static final long OFFSET__padding = 932;
-    public static final java.lang.foreign.StructLayout LAYOUT__spacing = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__spacing = nuklear.nk_vec2.gRecordLayout.withName("spacing");
     public static final long OFFSET__spacing = 940;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__color_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__color_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("color_factor");
     public static final long OFFSET__color_factor = 948;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__disabled_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__disabled_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("disabled_factor");
     public static final long OFFSET__disabled_factor = 952;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

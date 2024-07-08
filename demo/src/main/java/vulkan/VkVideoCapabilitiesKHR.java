@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkVideoCapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBitstreamBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBitstreamBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG.withName("minBitstreamBufferOffsetAlignment");
     public static final long OFFSET__minBitstreamBufferOffsetAlignment = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBitstreamBufferSizeAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBitstreamBufferSizeAlignment = java.lang.foreign.ValueLayout.JAVA_LONG.withName("minBitstreamBufferSizeAlignment");
     public static final long OFFSET__minBitstreamBufferSizeAlignment = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__pictureAccessGranularity = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__pictureAccessGranularity = vulkan.VkExtent2D.gRecordLayout.withName("pictureAccessGranularity");
     public static final long OFFSET__pictureAccessGranularity = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__minCodedExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minCodedExtent = vulkan.VkExtent2D.gRecordLayout.withName("minCodedExtent");
     public static final long OFFSET__minCodedExtent = 48;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxCodedExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxCodedExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxCodedExtent");
     public static final long OFFSET__maxCodedExtent = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDpbSlots = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDpbSlots = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDpbSlots");
     public static final long OFFSET__maxDpbSlots = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxActiveReferencePictures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxActiveReferencePictures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxActiveReferencePictures");
     public static final long OFFSET__maxActiveReferencePictures = 68;
-    public static final java.lang.foreign.StructLayout LAYOUT__stdHeaderVersion = vulkan.VkExtensionProperties.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__stdHeaderVersion = vulkan.VkExtensionProperties.gRecordLayout.withName("stdHeaderVersion");
     public static final long OFFSET__stdHeaderVersion = 72;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

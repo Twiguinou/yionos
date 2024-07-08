@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkTimelineSemaphoreSubmitInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("waitSemaphoreValueCount");
     public static final long OFFSET__waitSemaphoreValueCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphoreValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphoreValues = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pWaitSemaphoreValues");
     public static final long OFFSET__pWaitSemaphoreValues = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__signalSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__signalSemaphoreValueCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("signalSemaphoreValueCount");
     public static final long OFFSET__signalSemaphoreValueCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSignalSemaphoreValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSignalSemaphoreValues = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSignalSemaphoreValues");
     public static final long OFFSET__pSignalSemaphoreValues = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

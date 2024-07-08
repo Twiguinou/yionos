@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkCoarseSampleOrderCustomNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shadingRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shadingRate = java.lang.foreign.ValueLayout.JAVA_INT.withName("shadingRate");
     public static final long OFFSET__shadingRate = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("sampleCount");
     public static final long OFFSET__sampleCount = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleLocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleLocationCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("sampleLocationCount");
     public static final long OFFSET__sampleLocationCount = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSampleLocations");
     public static final long OFFSET__pSampleLocations = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

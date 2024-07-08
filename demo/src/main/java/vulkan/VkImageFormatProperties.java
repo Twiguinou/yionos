@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkImageFormatProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__maxExtent = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxExtent = vulkan.VkExtent3D.gRecordLayout.withName("maxExtent");
     public static final long OFFSET__maxExtent = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMipLevels = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMipLevels = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMipLevels");
     public static final long OFFSET__maxMipLevels = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxArrayLayers");
     public static final long OFFSET__maxArrayLayers = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleCounts = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleCounts = java.lang.foreign.ValueLayout.JAVA_INT.withName("sampleCounts");
     public static final long OFFSET__sampleCounts = 20;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxResourceSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxResourceSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxResourceSize");
     public static final long OFFSET__maxResourceSize = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

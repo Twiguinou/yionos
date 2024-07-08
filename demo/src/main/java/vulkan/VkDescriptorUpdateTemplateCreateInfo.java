@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkDescriptorUpdateTemplateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorUpdateEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorUpdateEntryCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("descriptorUpdateEntryCount");
     public static final long OFFSET__descriptorUpdateEntryCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorUpdateEntries = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorUpdateEntries = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDescriptorUpdateEntries");
     public static final long OFFSET__pDescriptorUpdateEntries = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__templateType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__templateType = java.lang.foreign.ValueLayout.JAVA_INT.withName("templateType");
     public static final long OFFSET__templateType = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__descriptorSetLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__descriptorSetLayout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("descriptorSetLayout");
     public static final long OFFSET__descriptorSetLayout = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineBindPoint");
     public static final long OFFSET__pipelineBindPoint = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pipelineLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pipelineLayout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pipelineLayout");
     public static final long OFFSET__pipelineLayout = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__set = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__set = java.lang.foreign.ValueLayout.JAVA_INT.withName("set");
     public static final long OFFSET__set = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

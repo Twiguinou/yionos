@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPhysicalDeviceInlineUniformBlockProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxInlineUniformBlockSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxInlineUniformBlockSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxInlineUniformBlockSize");
     public static final long OFFSET__maxInlineUniformBlockSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPerStageDescriptorInlineUniformBlocks");
     public static final long OFFSET__maxPerStageDescriptorInlineUniformBlocks = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks");
     public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDescriptorSetInlineUniformBlocks");
     public static final long OFFSET__maxDescriptorSetInlineUniformBlocks = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindInlineUniformBlocks = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks");
     public static final long OFFSET__maxDescriptorSetUpdateAfterBindInlineUniformBlocks = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

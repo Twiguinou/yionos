@@ -2,23 +2,23 @@ package assimp;
 
 public record aiAnimation(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mDuration = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mDuration = java.lang.foreign.ValueLayout.JAVA_DOUBLE.withName("mDuration");
     public static final long OFFSET__mDuration = 1032;
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTicksPerSecond = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTicksPerSecond = java.lang.foreign.ValueLayout.JAVA_DOUBLE.withName("mTicksPerSecond");
     public static final long OFFSET__mTicksPerSecond = 1040;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumChannels = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumChannels = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumChannels");
     public static final long OFFSET__mNumChannels = 1048;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mChannels = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mChannels = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mChannels");
     public static final long OFFSET__mChannels = 1056;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumMeshChannels = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumMeshChannels = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumMeshChannels");
     public static final long OFFSET__mNumMeshChannels = 1064;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshChannels = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshChannels = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mMeshChannels");
     public static final long OFFSET__mMeshChannels = 1072;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumMorphMeshChannels = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumMorphMeshChannels = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumMorphMeshChannels");
     public static final long OFFSET__mNumMorphMeshChannels = 1080;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mMorphMeshChannels = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMorphMeshChannels = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mMorphMeshChannels");
     public static final long OFFSET__mMorphMeshChannels = 1088;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

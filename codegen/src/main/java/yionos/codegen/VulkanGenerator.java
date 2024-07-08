@@ -13,7 +13,6 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 // diabolical
 public class VulkanGenerator implements Generator
@@ -35,10 +34,10 @@ public class VulkanGenerator implements Generator
 
     private record DispatchingHandle(SourceScopeScanner.TypeKey typeKey, String parentField, List<SourceScopeScanner.TypeKey> children, FunctionType.Decl addressProvider, List<FunctionType.Decl> functions, List<FunctionType.Decl> indirectFunctions)
     {
-        public DispatchingHandle(SourceScopeScanner.TypeKey typeKey, String parentField, List<SourceScopeScanner.TypeKey> children, FunctionType.Decl addressProvider, Iterable<Declaration> declarations)
+        public DispatchingHandle(SourceScopeScanner.TypeKey typeKey, String parentField, List<SourceScopeScanner.TypeKey> children, FunctionType.Decl addressProvider, SourceScopeScanner scanner)
         {
             this(typeKey, parentField, children, addressProvider,
-                    findFunctions(function -> function != addressProvider && isFunctionPrimary(function.descriptorType, typeKey), declarations),
+                    findFunctions(function -> function != addressProvider && isFunctionPrimary(function.descriptorType, typeKey), scanner),
                     findFunctions(function ->
                     {
                         if (function == addressProvider) return false;
@@ -56,7 +55,7 @@ public class VulkanGenerator implements Generator
                         }
 
                         return false;
-                    }, declarations));
+                    }, scanner));
         }
     }
 
@@ -76,18 +75,11 @@ public class VulkanGenerator implements Generator
                 .orElseThrow(() -> new IllegalStateException(String.format("Failed to resolve handle type for %s", name)));
     }
 
-    private static List<FunctionType.Decl> findFunctions(Predicate<FunctionType.Decl> predicate, Iterable<Declaration> declarations)
+    private static List<FunctionType.Decl> findFunctions(Predicate<FunctionType.Decl> predicate, SourceScopeScanner scanner)
     {
-        List<FunctionType.Decl> functions = new ArrayList<>();
-        for (Declaration declaration : declarations)
-        {
-            if (declaration instanceof FunctionType.Decl function && predicate.test(function))
-            {
-                functions.add(function);
-            }
-        }
-
-        return functions;
+        return scanner.functions().stream()
+                .filter(predicate)
+                .toList();
     }
 
     private static List<DispatchingHandle> createDispatchingHandles(SourceScopeScanner scanner)
@@ -95,11 +87,11 @@ public class VulkanGenerator implements Generator
         return List.of(
                 new DispatchingHandle(findHandleKey("VkInstance", scanner.getTypeTable()), "instance", List.of(
                         findHandleKey("VkPhysicalDevice", scanner.getTypeTable())
-                ), findFunctions(function -> function.name().equals("vkGetInstanceProcAddr"), scanner.declarations()).getFirst(), scanner.declarations()),
+                ), findFunctions(function -> function.name().equals("vkGetInstanceProcAddr"), scanner).getFirst(), scanner),
                 new DispatchingHandle(findHandleKey("VkDevice", scanner.getTypeTable()), "device", List.of(
                         findHandleKey("VkQueue", scanner.getTypeTable()),
                         findHandleKey("VkCommandBuffer", scanner.getTypeTable())
-                ), findFunctions(function -> function.name().equals("vkGetDeviceProcAddr"), scanner.declarations()).getFirst(), scanner.declarations())
+                ), findFunctions(function -> function.name().equals("vkGetDeviceProcAddr"), scanner).getFirst(), scanner)
         );
     }
 
@@ -129,13 +121,13 @@ public class VulkanGenerator implements Generator
             File vulkanOutput = new File(outputDirectory, VULKAN_DIRECTORY);
             if (vulkanOutput.exists() || vulkanOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner.declarations());
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner.declarations());
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner.getTypeTable().values(), VULKAN_PACKAGE).stream()
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner).stream()
                         .filter(callback -> AUTHORIZED_CALLBACKS.contains(callback.name()))
                         .toList();
 
-                List<Constant> constants = StreamSupport.stream(scanner.constants().spliterator(), false)
+                List<Constant> constants = scanner.constants().stream()
                         .filter(constant -> constant instanceof Constant.StringLiteral)
                         .collect(Collectors.toCollection(ArrayList::new));
                 constants.add(new Constant.Int("VK_ATTACHMENT_UNUSED", -1));
@@ -157,7 +149,7 @@ public class VulkanGenerator implements Generator
 
                 List<HeaderDeclaration.FunctionSpecifier> functions = findFunctions(
                         function -> handles.stream().allMatch(handle -> function != handle.addressProvider && !handle.functions.contains(function) && !handle.indirectFunctions.contains(function)),
-                        scanner.declarations()
+                        scanner
                 ).stream()
                         .map(HeaderDeclaration.FunctionSpecifier::of)
                         .collect(Collectors.toCollection(ArrayList::new));

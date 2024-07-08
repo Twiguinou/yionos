@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_table(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq = java.lang.foreign.ValueLayout.JAVA_INT.withName("seq");
     public static final long OFFSET__seq = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_INT.withName("size");
     public static final long OFFSET__size = 4;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__keys = java.lang.foreign.MemoryLayout.sequenceLayout(60, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__keys = java.lang.foreign.MemoryLayout.sequenceLayout(60, java.lang.foreign.ValueLayout.JAVA_INT).withName("keys");
     public static final long OFFSET__keys = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__values = java.lang.foreign.MemoryLayout.sequenceLayout(60, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__values = java.lang.foreign.MemoryLayout.sequenceLayout(60, java.lang.foreign.ValueLayout.JAVA_INT).withName("values");
     public static final long OFFSET__values = 248;
-    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("next");
     public static final long OFFSET__next = 488;
-    public static final java.lang.foreign.AddressLayout LAYOUT__prev = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__prev = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("prev");
     public static final long OFFSET__prev = 496;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

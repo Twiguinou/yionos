@@ -2,37 +2,37 @@ package vulkan;
 
 public record VkLatencyTimingsFrameReportNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentID = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentID = java.lang.foreign.ValueLayout.JAVA_LONG.withName("presentID");
     public static final long OFFSET__presentID = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__inputSampleTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__inputSampleTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("inputSampleTimeUs");
     public static final long OFFSET__inputSampleTimeUs = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__simStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__simStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("simStartTimeUs");
     public static final long OFFSET__simStartTimeUs = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__simEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__simEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("simEndTimeUs");
     public static final long OFFSET__simEndTimeUs = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderSubmitStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderSubmitStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("renderSubmitStartTimeUs");
     public static final long OFFSET__renderSubmitStartTimeUs = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderSubmitEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderSubmitEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("renderSubmitEndTimeUs");
     public static final long OFFSET__renderSubmitEndTimeUs = 56;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("presentStartTimeUs");
     public static final long OFFSET__presentStartTimeUs = 64;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__presentEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("presentEndTimeUs");
     public static final long OFFSET__presentEndTimeUs = 72;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__driverStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__driverStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("driverStartTimeUs");
     public static final long OFFSET__driverStartTimeUs = 80;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__driverEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__driverEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("driverEndTimeUs");
     public static final long OFFSET__driverEndTimeUs = 88;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__osRenderQueueStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__osRenderQueueStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("osRenderQueueStartTimeUs");
     public static final long OFFSET__osRenderQueueStartTimeUs = 96;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__osRenderQueueEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__osRenderQueueEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("osRenderQueueEndTimeUs");
     public static final long OFFSET__osRenderQueueEndTimeUs = 104;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__gpuRenderStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__gpuRenderStartTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("gpuRenderStartTimeUs");
     public static final long OFFSET__gpuRenderStartTimeUs = 112;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__gpuRenderEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__gpuRenderEndTimeUs = java.lang.foreign.ValueLayout.JAVA_LONG.withName("gpuRenderEndTimeUs");
     public static final long OFFSET__gpuRenderEndTimeUs = 120;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

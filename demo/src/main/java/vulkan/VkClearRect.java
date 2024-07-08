@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkClearRect(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__rect = vulkan.VkRect2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__rect = vulkan.VkRect2D.gRecordLayout.withName("rect");
     public static final long OFFSET__rect = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__baseArrayLayer = java.lang.foreign.ValueLayout.JAVA_INT.withName("baseArrayLayer");
     public static final long OFFSET__baseArrayLayer = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layerCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("layerCount");
     public static final long OFFSET__layerCount = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

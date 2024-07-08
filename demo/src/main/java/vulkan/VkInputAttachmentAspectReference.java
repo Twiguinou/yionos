@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkInputAttachmentAspectReference(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpass = java.lang.foreign.ValueLayout.JAVA_INT.withName("subpass");
     public static final long OFFSET__subpass = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputAttachmentIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputAttachmentIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("inputAttachmentIndex");
     public static final long OFFSET__inputAttachmentIndex = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("aspectMask");
     public static final long OFFSET__aspectMask = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

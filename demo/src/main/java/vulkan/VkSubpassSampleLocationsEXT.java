@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkSubpassSampleLocationsEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("subpassIndex");
     public static final long OFFSET__subpassIndex = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__sampleLocationsInfo = vulkan.VkSampleLocationsInfoEXT.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__sampleLocationsInfo = vulkan.VkSampleLocationsInfoEXT.gRecordLayout.withName("sampleLocationsInfo");
     public static final long OFFSET__sampleLocationsInfo = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

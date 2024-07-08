@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkSparseImageMemoryRequirements(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__formatProperties = vulkan.VkSparseImageFormatProperties.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__formatProperties = vulkan.VkSparseImageFormatProperties.gRecordLayout.withName("formatProperties");
     public static final long OFFSET__formatProperties = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageMipTailFirstLod = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageMipTailFirstLod = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageMipTailFirstLod");
     public static final long OFFSET__imageMipTailFirstLod = 20;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__imageMipTailSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__imageMipTailSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("imageMipTailSize");
     public static final long OFFSET__imageMipTailSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__imageMipTailOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__imageMipTailOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("imageMipTailOffset");
     public static final long OFFSET__imageMipTailOffset = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__imageMipTailStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__imageMipTailStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("imageMipTailStride");
     public static final long OFFSET__imageMipTailStride = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

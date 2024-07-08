@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkSurfaceFormatKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT.withName("format");
     public static final long OFFSET__format = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorSpace = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorSpace = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorSpace");
     public static final long OFFSET__colorSpace = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPresentInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("waitSemaphoreCount");
     public static final long OFFSET__waitSemaphoreCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pWaitSemaphores");
     public static final long OFFSET__pWaitSemaphores = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__swapchainCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__swapchainCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("swapchainCount");
     public static final long OFFSET__swapchainCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSwapchains = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSwapchains = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSwapchains");
     public static final long OFFSET__pSwapchains = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pImageIndices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pImageIndices = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pImageIndices");
     public static final long OFFSET__pImageIndices = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pResults = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pResults = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pResults");
     public static final long OFFSET__pResults = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

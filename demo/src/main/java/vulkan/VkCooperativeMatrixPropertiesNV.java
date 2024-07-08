@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkCooperativeMatrixPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__MSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__MSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("MSize");
     public static final long OFFSET__MSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__NSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__NSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("NSize");
     public static final long OFFSET__NSize = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__KSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__KSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("KSize");
     public static final long OFFSET__KSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__AType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__AType = java.lang.foreign.ValueLayout.JAVA_INT.withName("AType");
     public static final long OFFSET__AType = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__BType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__BType = java.lang.foreign.ValueLayout.JAVA_INT.withName("BType");
     public static final long OFFSET__BType = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__CType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__CType = java.lang.foreign.ValueLayout.JAVA_INT.withName("CType");
     public static final long OFFSET__CType = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__DType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__DType = java.lang.foreign.ValueLayout.JAVA_INT.withName("DType");
     public static final long OFFSET__DType = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scope = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scope = java.lang.foreign.ValueLayout.JAVA_INT.withName("scope");
     public static final long OFFSET__scope = 44;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkBlitImageInfo2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__srcImage = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__srcImage = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("srcImage");
     public static final long OFFSET__srcImage = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcImageLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcImageLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcImageLayout");
     public static final long OFFSET__srcImageLayout = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__dstImage = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__dstImage = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("dstImage");
     public static final long OFFSET__dstImage = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstImageLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstImageLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstImageLayout");
     public static final long OFFSET__dstImageLayout = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__regionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__regionCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("regionCount");
     public static final long OFFSET__regionCount = 44;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pRegions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRegions = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pRegions");
     public static final long OFFSET__pRegions = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filter = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__filter = java.lang.foreign.ValueLayout.JAVA_INT.withName("filter");
     public static final long OFFSET__filter = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkLayerProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__layerName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__layerName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("layerName");
     public static final long OFFSET__layerName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__specVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__specVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("specVersion");
     public static final long OFFSET__specVersion = 256;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__implementationVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__implementationVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("implementationVersion");
     public static final long OFFSET__implementationVersion = 260;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("description");
     public static final long OFFSET__description = 264;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

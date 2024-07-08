@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkVideoDecodeH264PictureInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdPictureInfo");
     public static final long OFFSET__pStdPictureInfo = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sliceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sliceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("sliceCount");
     public static final long OFFSET__sliceCount = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSliceOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSliceOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSliceOffsets");
     public static final long OFFSET__pSliceOffsets = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

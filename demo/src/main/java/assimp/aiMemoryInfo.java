@@ -2,21 +2,21 @@ package assimp;
 
 public record aiMemoryInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__textures = java.lang.foreign.ValueLayout.JAVA_INT.withName("textures");
     public static final long OFFSET__textures = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__materials = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__materials = java.lang.foreign.ValueLayout.JAVA_INT.withName("materials");
     public static final long OFFSET__materials = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshes = java.lang.foreign.ValueLayout.JAVA_INT.withName("meshes");
     public static final long OFFSET__meshes = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nodes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nodes = java.lang.foreign.ValueLayout.JAVA_INT.withName("nodes");
     public static final long OFFSET__nodes = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__animations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__animations = java.lang.foreign.ValueLayout.JAVA_INT.withName("animations");
     public static final long OFFSET__animations = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cameras = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cameras = java.lang.foreign.ValueLayout.JAVA_INT.withName("cameras");
     public static final long OFFSET__cameras = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lights = java.lang.foreign.ValueLayout.JAVA_INT.withName("lights");
     public static final long OFFSET__lights = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__total = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__total = java.lang.foreign.ValueLayout.JAVA_INT.withName("total");
     public static final long OFFSET__total = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

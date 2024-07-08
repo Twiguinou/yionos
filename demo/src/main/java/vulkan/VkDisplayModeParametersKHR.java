@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkDisplayModeParametersKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__visibleRegion = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__visibleRegion = vulkan.VkExtent2D.gRecordLayout.withName("visibleRegion");
     public static final long OFFSET__visibleRegion = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__refreshRate = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__refreshRate = java.lang.foreign.ValueLayout.JAVA_INT.withName("refreshRate");
     public static final long OFFSET__refreshRate = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

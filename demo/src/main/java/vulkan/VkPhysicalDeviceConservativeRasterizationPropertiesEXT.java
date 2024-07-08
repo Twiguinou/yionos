@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkPhysicalDeviceConservativeRasterizationPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__primitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__primitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("primitiveOverestimationSize");
     public static final long OFFSET__primitiveOverestimationSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxExtraPrimitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxExtraPrimitiveOverestimationSize = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxExtraPrimitiveOverestimationSize");
     public static final long OFFSET__maxExtraPrimitiveOverestimationSize = 20;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__extraPrimitiveOverestimationSizeGranularity = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__extraPrimitiveOverestimationSizeGranularity = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("extraPrimitiveOverestimationSizeGranularity");
     public static final long OFFSET__extraPrimitiveOverestimationSizeGranularity = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveUnderestimation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveUnderestimation = java.lang.foreign.ValueLayout.JAVA_INT.withName("primitiveUnderestimation");
     public static final long OFFSET__primitiveUnderestimation = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__conservativePointAndLineRasterization = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__conservativePointAndLineRasterization = java.lang.foreign.ValueLayout.JAVA_INT.withName("conservativePointAndLineRasterization");
     public static final long OFFSET__conservativePointAndLineRasterization = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__degenerateTrianglesRasterized = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__degenerateTrianglesRasterized = java.lang.foreign.ValueLayout.JAVA_INT.withName("degenerateTrianglesRasterized");
     public static final long OFFSET__degenerateTrianglesRasterized = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__degenerateLinesRasterized = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__degenerateLinesRasterized = java.lang.foreign.ValueLayout.JAVA_INT.withName("degenerateLinesRasterized");
     public static final long OFFSET__degenerateLinesRasterized = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fullyCoveredFragmentShaderInputVariable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fullyCoveredFragmentShaderInputVariable = java.lang.foreign.ValueLayout.JAVA_INT.withName("fullyCoveredFragmentShaderInputVariable");
     public static final long OFFSET__fullyCoveredFragmentShaderInputVariable = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__conservativeRasterizationPostDepthCoverage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__conservativeRasterizationPostDepthCoverage = java.lang.foreign.ValueLayout.JAVA_INT.withName("conservativeRasterizationPostDepthCoverage");
     public static final long OFFSET__conservativeRasterizationPostDepthCoverage = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

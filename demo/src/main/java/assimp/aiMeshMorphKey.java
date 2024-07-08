@@ -2,13 +2,13 @@ package assimp;
 
 public record aiMeshMorphKey(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE.withName("mTime");
     public static final long OFFSET__mTime = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mValues = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mValues");
     public static final long OFFSET__mValues = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mWeights = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mWeights");
     public static final long OFFSET__mWeights = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumValuesAndWeights = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumValuesAndWeights = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumValuesAndWeights");
     public static final long OFFSET__mNumValuesAndWeights = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

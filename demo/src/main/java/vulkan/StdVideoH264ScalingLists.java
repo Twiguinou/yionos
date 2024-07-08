@@ -2,13 +2,13 @@ package vulkan;
 
 public record StdVideoH264ScalingLists(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__scaling_list_present_mask = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__scaling_list_present_mask = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("scaling_list_present_mask");
     public static final long OFFSET__scaling_list_present_mask = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__use_default_scaling_matrix_mask = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__use_default_scaling_matrix_mask = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("use_default_scaling_matrix_mask");
     public static final long OFFSET__use_default_scaling_matrix_mask = 2;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList4x4 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList4x4 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("ScalingList4x4");
     public static final long OFFSET__ScalingList4x4 = 4;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList8x8 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList8x8 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("ScalingList8x8");
     public static final long OFFSET__ScalingList8x8 = 100;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

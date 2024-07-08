@@ -2,33 +2,33 @@ package vulkan;
 
 public record StdVideoH265ShortTermRefPicSet(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265ShortTermRefPicSetFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265ShortTermRefPicSetFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__delta_idx_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__delta_idx_minus1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("delta_idx_minus1");
     public static final long OFFSET__delta_idx_minus1 = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__use_delta_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__use_delta_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("use_delta_flag");
     public static final long OFFSET__use_delta_flag = 8;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__abs_delta_rps_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__abs_delta_rps_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("abs_delta_rps_minus1");
     public static final long OFFSET__abs_delta_rps_minus1 = 10;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("used_by_curr_pic_flag");
     public static final long OFFSET__used_by_curr_pic_flag = 12;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_s0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_s0_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("used_by_curr_pic_s0_flag");
     public static final long OFFSET__used_by_curr_pic_s0_flag = 14;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_s1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_s1_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("used_by_curr_pic_s1_flag");
     public static final long OFFSET__used_by_curr_pic_s1_flag = 16;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("reserved1");
     public static final long OFFSET__reserved1 = 18;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved2 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved2");
     public static final long OFFSET__reserved2 = 20;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved3 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved3 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved3");
     public static final long OFFSET__reserved3 = 21;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_negative_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_negative_pics = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_negative_pics");
     public static final long OFFSET__num_negative_pics = 22;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_positive_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_positive_pics = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_positive_pics");
     public static final long OFFSET__num_positive_pics = 23;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_s0_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_s0_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT).withName("delta_poc_s0_minus1");
     public static final long OFFSET__delta_poc_s0_minus1 = 24;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_s1_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_s1_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_SHORT).withName("delta_poc_s1_minus1");
     public static final long OFFSET__delta_poc_s1_minus1 = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

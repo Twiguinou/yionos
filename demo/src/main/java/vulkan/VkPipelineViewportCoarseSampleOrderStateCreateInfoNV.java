@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleOrderType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleOrderType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sampleOrderType");
     public static final long OFFSET__sampleOrderType = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__customSampleOrderCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__customSampleOrderCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("customSampleOrderCount");
     public static final long OFFSET__customSampleOrderCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCustomSampleOrders = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCustomSampleOrders = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCustomSampleOrders");
     public static final long OFFSET__pCustomSampleOrders = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

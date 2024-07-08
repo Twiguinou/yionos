@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceSubgroupSizeControlProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSubgroupSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSubgroupSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("minSubgroupSize");
     public static final long OFFSET__minSubgroupSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSubgroupSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSubgroupSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxSubgroupSize");
     public static final long OFFSET__maxSubgroupSize = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxComputeWorkgroupSubgroups = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxComputeWorkgroupSubgroups = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxComputeWorkgroupSubgroups");
     public static final long OFFSET__maxComputeWorkgroupSubgroups = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__requiredSubgroupSizeStages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__requiredSubgroupSizeStages = java.lang.foreign.ValueLayout.JAVA_INT.withName("requiredSubgroupSizeStages");
     public static final long OFFSET__requiredSubgroupSizeStages = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

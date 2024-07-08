@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceSparseProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard2DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard2DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT.withName("residencyStandard2DBlockShape");
     public static final long OFFSET__residencyStandard2DBlockShape = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard2DMultisampleBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard2DMultisampleBlockShape = java.lang.foreign.ValueLayout.JAVA_INT.withName("residencyStandard2DMultisampleBlockShape");
     public static final long OFFSET__residencyStandard2DMultisampleBlockShape = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard3DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyStandard3DBlockShape = java.lang.foreign.ValueLayout.JAVA_INT.withName("residencyStandard3DBlockShape");
     public static final long OFFSET__residencyStandard3DBlockShape = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyAlignedMipSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyAlignedMipSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("residencyAlignedMipSize");
     public static final long OFFSET__residencyAlignedMipSize = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyNonResidentStrict = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__residencyNonResidentStrict = java.lang.foreign.ValueLayout.JAVA_INT.withName("residencyNonResidentStrict");
     public static final long OFFSET__residencyNonResidentStrict = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

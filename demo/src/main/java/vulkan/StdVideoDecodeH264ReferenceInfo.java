@@ -2,13 +2,13 @@ package vulkan;
 
 public record StdVideoDecodeH264ReferenceInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoDecodeH264ReferenceInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoDecodeH264ReferenceInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__FrameNum = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__FrameNum = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("FrameNum");
     public static final long OFFSET__FrameNum = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("reserved");
     public static final long OFFSET__reserved = 6;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__PicOrderCnt = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__PicOrderCnt = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_INT).withName("PicOrderCnt");
     public static final long OFFSET__PicOrderCnt = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

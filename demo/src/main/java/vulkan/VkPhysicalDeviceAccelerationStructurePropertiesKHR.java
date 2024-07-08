@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkPhysicalDeviceAccelerationStructurePropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxGeometryCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxGeometryCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxGeometryCount");
     public static final long OFFSET__maxGeometryCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxInstanceCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxInstanceCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxInstanceCount");
     public static final long OFFSET__maxInstanceCount = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxPrimitiveCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxPrimitiveCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxPrimitiveCount");
     public static final long OFFSET__maxPrimitiveCount = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPerStageDescriptorAccelerationStructures");
     public static final long OFFSET__maxPerStageDescriptorAccelerationStructures = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerStageDescriptorUpdateAfterBindAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindAccelerationStructures");
     public static final long OFFSET__maxPerStageDescriptorUpdateAfterBindAccelerationStructures = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDescriptorSetAccelerationStructures");
     public static final long OFFSET__maxDescriptorSetAccelerationStructures = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetUpdateAfterBindAccelerationStructures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDescriptorSetUpdateAfterBindAccelerationStructures");
     public static final long OFFSET__maxDescriptorSetUpdateAfterBindAccelerationStructures = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minAccelerationStructureScratchOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minAccelerationStructureScratchOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("minAccelerationStructureScratchOffsetAlignment");
     public static final long OFFSET__minAccelerationStructureScratchOffsetAlignment = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

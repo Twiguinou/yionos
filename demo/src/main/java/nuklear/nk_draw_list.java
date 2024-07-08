@@ -2,33 +2,33 @@ package nuklear;
 
 public record nk_draw_list(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__clip_rect = nuklear.nk_rect.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__clip_rect = nuklear.nk_rect.gRecordLayout.withName("clip_rect");
     public static final long OFFSET__clip_rect = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__circle_vtx = java.lang.foreign.MemoryLayout.sequenceLayout(12, nuklear.nk_vec2.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__circle_vtx = java.lang.foreign.MemoryLayout.sequenceLayout(12, nuklear.nk_vec2.gRecordLayout).withName("circle_vtx");
     public static final long OFFSET__circle_vtx = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__config = nuklear.nk_convert_config.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__config = nuklear.nk_convert_config.gRecordLayout.withName("config");
     public static final long OFFSET__config = 112;
-    public static final java.lang.foreign.AddressLayout LAYOUT__buffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__buffer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("buffer");
     public static final long OFFSET__buffer = 176;
-    public static final java.lang.foreign.AddressLayout LAYOUT__vertices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vertices = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("vertices");
     public static final long OFFSET__vertices = 184;
-    public static final java.lang.foreign.AddressLayout LAYOUT__elements = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__elements = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("elements");
     public static final long OFFSET__elements = 192;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__element_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__element_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("element_count");
     public static final long OFFSET__element_count = 200;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertex_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertex_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertex_count");
     public static final long OFFSET__vertex_count = 204;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cmd_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cmd_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("cmd_count");
     public static final long OFFSET__cmd_count = 208;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__cmd_offset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__cmd_offset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("cmd_offset");
     public static final long OFFSET__cmd_offset = 216;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__path_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__path_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("path_count");
     public static final long OFFSET__path_count = 224;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__path_offset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__path_offset = java.lang.foreign.ValueLayout.JAVA_INT.withName("path_offset");
     public static final long OFFSET__path_offset = 228;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__line_AA = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__line_AA = java.lang.foreign.ValueLayout.JAVA_INT.withName("line_AA");
     public static final long OFFSET__line_AA = 232;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shape_AA = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shape_AA = java.lang.foreign.ValueLayout.JAVA_INT.withName("shape_AA");
     public static final long OFFSET__shape_AA = 236;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

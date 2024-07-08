@@ -2,13 +2,13 @@ package nuklear;
 
 public record nk_image(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.UnionLayout LAYOUT__handle = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__handle = nuklear.nk_handle.gRecordLayout.withName("handle");
     public static final long OFFSET__handle = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("w");
     public static final long OFFSET__w = 8;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("h");
     public static final long OFFSET__h = 10;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__region = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__region = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_SHORT).withName("region");
     public static final long OFFSET__region = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

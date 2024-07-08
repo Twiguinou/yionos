@@ -2,23 +2,23 @@ package nuklear;
 
 public record nk_buffer(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__marker = java.lang.foreign.MemoryLayout.sequenceLayout(2, nuklear.nk_buffer_marker.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__marker = java.lang.foreign.MemoryLayout.sequenceLayout(2, nuklear.nk_buffer_marker.gRecordLayout).withName("marker");
     public static final long OFFSET__marker = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__pool = nuklear.nk_allocator.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__pool = nuklear.nk_allocator.gRecordLayout.withName("pool");
     public static final long OFFSET__pool = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 56;
-    public static final java.lang.foreign.StructLayout LAYOUT__memory = nuklear.nk_memory.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__memory = nuklear.nk_memory.gRecordLayout.withName("memory");
     public static final long OFFSET__memory = 64;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__grow_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__grow_factor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("grow_factor");
     public static final long OFFSET__grow_factor = 80;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocated = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocated = java.lang.foreign.ValueLayout.JAVA_LONG.withName("allocated");
     public static final long OFFSET__allocated = 88;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__needed = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__needed = java.lang.foreign.ValueLayout.JAVA_LONG.withName("needed");
     public static final long OFFSET__needed = 96;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__calls = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__calls = java.lang.foreign.ValueLayout.JAVA_LONG.withName("calls");
     public static final long OFFSET__calls = 104;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("size");
     public static final long OFFSET__size = 112;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

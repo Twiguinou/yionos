@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkExtensionProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__extensionName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__extensionName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("extensionName");
     public static final long OFFSET__extensionName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__specVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__specVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("specVersion");
     public static final long OFFSET__specVersion = 256;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

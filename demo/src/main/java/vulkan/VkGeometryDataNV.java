@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkGeometryDataNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__triangles = vulkan.VkGeometryTrianglesNV.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__triangles = vulkan.VkGeometryTrianglesNV.gRecordLayout.withName("triangles");
     public static final long OFFSET__triangles = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__aabbs = vulkan.VkGeometryAABBNV.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__aabbs = vulkan.VkGeometryAABBNV.gRecordLayout.withName("aabbs");
     public static final long OFFSET__aabbs = 96;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

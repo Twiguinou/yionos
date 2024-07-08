@@ -2,27 +2,27 @@ package vulkan;
 
 public record StdVideoEncodeH264WeightTable(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264WeightTableFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264WeightTableFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__luma_log2_weight_denom = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__luma_log2_weight_denom = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("luma_log2_weight_denom");
     public static final long OFFSET__luma_log2_weight_denom = 16;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_log2_weight_denom = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_log2_weight_denom = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("chroma_log2_weight_denom");
     public static final long OFFSET__chroma_log2_weight_denom = 17;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_weight_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_weight_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("luma_weight_l0");
     public static final long OFFSET__luma_weight_l0 = 18;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_offset_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_offset_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("luma_offset_l0");
     public static final long OFFSET__luma_offset_l0 = 50;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_weight_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_weight_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("chroma_weight_l0");
     public static final long OFFSET__chroma_weight_l0 = 82;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_offset_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_offset_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("chroma_offset_l0");
     public static final long OFFSET__chroma_offset_l0 = 146;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_weight_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_weight_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("luma_weight_l1");
     public static final long OFFSET__luma_weight_l1 = 210;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_offset_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__luma_offset_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("luma_offset_l1");
     public static final long OFFSET__luma_offset_l1 = 242;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_weight_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_weight_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("chroma_weight_l1");
     public static final long OFFSET__chroma_weight_l1 = 274;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_offset_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__chroma_offset_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("chroma_offset_l1");
     public static final long OFFSET__chroma_offset_l1 = 338;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

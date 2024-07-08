@@ -45,7 +45,7 @@ public class StbImageGenerator implements Generator
                         .flatMap(type -> Arrays.stream(((EnumType)type).constants.toArray(EnumType.Constant[]::new)))
                         .map(constant -> (Constant) new Constant.Int(constant.name(), (int)constant.value()))
                         .toList();
-                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner.declarations()).stream()
+                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner).stream()
                         .filter(spec -> !spec.function().name().endsWith("_from_callbacks"))
                         .toList();
 

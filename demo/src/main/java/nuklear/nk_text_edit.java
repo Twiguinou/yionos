@@ -2,37 +2,37 @@ package nuklear;
 
 public record nk_text_edit(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__clip = nuklear.nk_clipboard.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__clip = nuklear.nk_clipboard.gRecordLayout.withName("clip");
     public static final long OFFSET__clip = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__string = nuklear.nk_str.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__string = nuklear.nk_str.gRecordLayout.withName("string");
     public static final long OFFSET__string = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__filter = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__filter = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("filter");
     public static final long OFFSET__filter = 152;
-    public static final java.lang.foreign.StructLayout LAYOUT__scrollbar = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__scrollbar = nuklear.nk_vec2.gRecordLayout.withName("scrollbar");
     public static final long OFFSET__scrollbar = 160;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cursor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cursor = java.lang.foreign.ValueLayout.JAVA_INT.withName("cursor");
     public static final long OFFSET__cursor = 168;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_start = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_start = java.lang.foreign.ValueLayout.JAVA_INT.withName("select_start");
     public static final long OFFSET__select_start = 172;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_end = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_end = java.lang.foreign.ValueLayout.JAVA_INT.withName("select_end");
     public static final long OFFSET__select_end = 176;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__mode = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__mode = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("mode");
     public static final long OFFSET__mode = 180;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cursor_at_end_of_line = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cursor_at_end_of_line = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cursor_at_end_of_line");
     public static final long OFFSET__cursor_at_end_of_line = 181;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__initialized = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__initialized = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("initialized");
     public static final long OFFSET__initialized = 182;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__has_preferred_x = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__has_preferred_x = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("has_preferred_x");
     public static final long OFFSET__has_preferred_x = 183;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__single_line = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__single_line = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("single_line");
     public static final long OFFSET__single_line = 184;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("active");
     public static final long OFFSET__active = 185;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__padding1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__padding1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("padding1");
     public static final long OFFSET__padding1 = 186;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__preferred_x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__preferred_x = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("preferred_x");
     public static final long OFFSET__preferred_x = 188;
-    public static final java.lang.foreign.StructLayout LAYOUT__undo = nuklear.nk_text_undo_state.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__undo = nuklear.nk_text_undo_state.gRecordLayout.withName("undo");
     public static final long OFFSET__undo = 192;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

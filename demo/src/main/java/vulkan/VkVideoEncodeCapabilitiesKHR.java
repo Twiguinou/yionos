@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkVideoEncodeCapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rateControlModes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rateControlModes = java.lang.foreign.ValueLayout.JAVA_INT.withName("rateControlModes");
     public static final long OFFSET__rateControlModes = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRateControlLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRateControlLayers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxRateControlLayers");
     public static final long OFFSET__maxRateControlLayers = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBitrate = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBitrate = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxBitrate");
     public static final long OFFSET__maxBitrate = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxQualityLevels = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxQualityLevels = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxQualityLevels");
     public static final long OFFSET__maxQualityLevels = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__encodeInputPictureGranularity = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__encodeInputPictureGranularity = vulkan.VkExtent2D.gRecordLayout.withName("encodeInputPictureGranularity");
     public static final long OFFSET__encodeInputPictureGranularity = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedEncodeFeedbackFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedEncodeFeedbackFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedEncodeFeedbackFlags");
     public static final long OFFSET__supportedEncodeFeedbackFlags = 52;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,23 +2,23 @@ package assimp;
 
 public record aiNodeAnim(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mNodeName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mNodeName = assimp.aiString.gRecordLayout.withName("mNodeName");
     public static final long OFFSET__mNodeName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumPositionKeys = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumPositionKeys = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumPositionKeys");
     public static final long OFFSET__mNumPositionKeys = 1028;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mPositionKeys = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mPositionKeys = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mPositionKeys");
     public static final long OFFSET__mPositionKeys = 1032;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumRotationKeys = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumRotationKeys = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumRotationKeys");
     public static final long OFFSET__mNumRotationKeys = 1040;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mRotationKeys = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mRotationKeys = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mRotationKeys");
     public static final long OFFSET__mRotationKeys = 1048;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumScalingKeys = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumScalingKeys = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumScalingKeys");
     public static final long OFFSET__mNumScalingKeys = 1056;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mScalingKeys = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mScalingKeys = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mScalingKeys");
     public static final long OFFSET__mScalingKeys = 1064;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mPreState = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mPreState = java.lang.foreign.ValueLayout.JAVA_INT.withName("mPreState");
     public static final long OFFSET__mPreState = 1072;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mPostState = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mPostState = java.lang.foreign.ValueLayout.JAVA_INT.withName("mPostState");
     public static final long OFFSET__mPostState = 1076;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

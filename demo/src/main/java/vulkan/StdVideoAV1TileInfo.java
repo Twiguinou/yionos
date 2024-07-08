@@ -2,25 +2,25 @@ package vulkan;
 
 public record StdVideoAV1TileInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1TileInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1TileInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TileCols = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TileCols = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("TileCols");
     public static final long OFFSET__TileCols = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TileRows = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TileRows = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("TileRows");
     public static final long OFFSET__TileRows = 5;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__context_update_tile_id = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__context_update_tile_id = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("context_update_tile_id");
     public static final long OFFSET__context_update_tile_id = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__tile_size_bytes_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__tile_size_bytes_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("tile_size_bytes_minus_1");
     public static final long OFFSET__tile_size_bytes_minus_1 = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("reserved1");
     public static final long OFFSET__reserved1 = 9;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMiColStarts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMiColStarts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMiColStarts");
     public static final long OFFSET__pMiColStarts = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMiRowStarts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMiRowStarts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMiRowStarts");
     public static final long OFFSET__pMiRowStarts = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pWidthInSbsMinus1 = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWidthInSbsMinus1 = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pWidthInSbsMinus1");
     public static final long OFFSET__pWidthInSbsMinus1 = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pHeightInSbsMinus1 = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pHeightInSbsMinus1 = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pHeightInSbsMinus1");
     public static final long OFFSET__pHeightInSbsMinus1 = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

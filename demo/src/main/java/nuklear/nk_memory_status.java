@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_memory_status(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("memory");
     public static final long OFFSET__memory = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("size");
     public static final long OFFSET__size = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocated = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocated = java.lang.foreign.ValueLayout.JAVA_LONG.withName("allocated");
     public static final long OFFSET__allocated = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__needed = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__needed = java.lang.foreign.ValueLayout.JAVA_LONG.withName("needed");
     public static final long OFFSET__needed = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__calls = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__calls = java.lang.foreign.ValueLayout.JAVA_LONG.withName("calls");
     public static final long OFFSET__calls = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

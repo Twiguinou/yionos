@@ -2,11 +2,11 @@ package nuklear;
 
 public record nk_keyboard(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__keys = java.lang.foreign.MemoryLayout.sequenceLayout(30, nuklear.nk_key.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__keys = java.lang.foreign.MemoryLayout.sequenceLayout(30, nuklear.nk_key.gRecordLayout).withName("keys");
     public static final long OFFSET__keys = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__text = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__text = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("text");
     public static final long OFFSET__text = 240;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__text_len = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__text_len = java.lang.foreign.ValueLayout.JAVA_INT.withName("text_len");
     public static final long OFFSET__text_len = 256;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

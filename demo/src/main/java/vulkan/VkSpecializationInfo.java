@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkSpecializationInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mapEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mapEntryCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("mapEntryCount");
     public static final long OFFSET__mapEntryCount = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMapEntries = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMapEntries = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMapEntries");
     public static final long OFFSET__pMapEntries = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dataSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dataSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("dataSize");
     public static final long OFFSET__dataSize = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pData");
     public static final long OFFSET__pData = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

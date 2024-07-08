@@ -2,17 +2,17 @@ package vma;
 
 public record VmaDefragmentationInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pool = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pool = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pool");
     public static final long OFFSET__pool = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBytesPerPass = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBytesPerPass = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxBytesPerPass");
     public static final long OFFSET__maxBytesPerPass = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxAllocationsPerPass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxAllocationsPerPass = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxAllocationsPerPass");
     public static final long OFFSET__maxAllocationsPerPass = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnBreakCallback = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnBreakCallback = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnBreakCallback");
     public static final long OFFSET__pfnBreakCallback = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pBreakCallbackUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pBreakCallbackUserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pBreakCallbackUserData");
     public static final long OFFSET__pBreakCallbackUserData = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,29 +2,29 @@ package nuklear;
 
 public record nk_font_glyph(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__codepoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__codepoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("codepoint");
     public static final long OFFSET__codepoint = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__xadvance = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__xadvance = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("xadvance");
     public static final long OFFSET__xadvance = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x0 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x0 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("x0");
     public static final long OFFSET__x0 = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y0 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y0 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("y0");
     public static final long OFFSET__y0 = 12;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("x1");
     public static final long OFFSET__x1 = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("y1");
     public static final long OFFSET__y1 = 20;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("w");
     public static final long OFFSET__w = 24;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("h");
     public static final long OFFSET__h = 28;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__u0 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__u0 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("u0");
     public static final long OFFSET__u0 = 32;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__v0 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__v0 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("v0");
     public static final long OFFSET__v0 = 36;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__u1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__u1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("u1");
     public static final long OFFSET__u1 = 40;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__v1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__v1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("v1");
     public static final long OFFSET__v1 = 44;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

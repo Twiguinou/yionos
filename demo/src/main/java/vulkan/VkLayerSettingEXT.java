@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkLayerSettingEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__pLayerName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pLayerName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pLayerName");
     public static final long OFFSET__pLayerName = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSettingName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSettingName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSettingName");
     public static final long OFFSET__pSettingName = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__valueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__valueCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("valueCount");
     public static final long OFFSET__valueCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pValues = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pValues");
     public static final long OFFSET__pValues = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

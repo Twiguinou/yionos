@@ -2,11 +2,11 @@ package assimp;
 
 public record aiUVTransform(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mTranslation = assimp.aiVector2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mTranslation = assimp.aiVector2D.gRecordLayout.withName("mTranslation");
     public static final long OFFSET__mTranslation = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__mScaling = assimp.aiVector2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mScaling = assimp.aiVector2D.gRecordLayout.withName("mScaling");
     public static final long OFFSET__mScaling = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mRotation = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mRotation = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mRotation");
     public static final long OFFSET__mRotation = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

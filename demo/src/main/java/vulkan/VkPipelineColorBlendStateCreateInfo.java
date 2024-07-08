@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPipelineColorBlendStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__logicOpEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__logicOpEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("logicOpEnable");
     public static final long OFFSET__logicOpEnable = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__logicOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__logicOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("logicOp");
     public static final long OFFSET__logicOp = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("attachmentCount");
     public static final long OFFSET__attachmentCount = 28;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pAttachments");
     public static final long OFFSET__pAttachments = 32;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__blendConstants = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_FLOAT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__blendConstants = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_FLOAT).withName("blendConstants");
     public static final long OFFSET__blendConstants = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

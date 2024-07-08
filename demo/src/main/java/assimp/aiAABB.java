@@ -2,9 +2,9 @@ package assimp;
 
 public record aiAABB(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mMin = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mMin = assimp.aiVector3D.gRecordLayout.withName("mMin");
     public static final long OFFSET__mMin = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__mMax = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mMax = assimp.aiVector3D.gRecordLayout.withName("mMax");
     public static final long OFFSET__mMax = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

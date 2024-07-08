@@ -2,33 +2,33 @@ package vulkan;
 
 public record VkTraceRaysIndirectCommand2KHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__raygenShaderRecordAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__raygenShaderRecordAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("raygenShaderRecordAddress");
     public static final long OFFSET__raygenShaderRecordAddress = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__raygenShaderRecordSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__raygenShaderRecordSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("raygenShaderRecordSize");
     public static final long OFFSET__raygenShaderRecordSize = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("missShaderBindingTableAddress");
     public static final long OFFSET__missShaderBindingTableAddress = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("missShaderBindingTableSize");
     public static final long OFFSET__missShaderBindingTableSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__missShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("missShaderBindingTableStride");
     public static final long OFFSET__missShaderBindingTableStride = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("hitShaderBindingTableAddress");
     public static final long OFFSET__hitShaderBindingTableAddress = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("hitShaderBindingTableSize");
     public static final long OFFSET__hitShaderBindingTableSize = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__hitShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("hitShaderBindingTableStride");
     public static final long OFFSET__hitShaderBindingTableStride = 56;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("callableShaderBindingTableAddress");
     public static final long OFFSET__callableShaderBindingTableAddress = 64;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("callableShaderBindingTableSize");
     public static final long OFFSET__callableShaderBindingTableSize = 72;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__callableShaderBindingTableStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("callableShaderBindingTableStride");
     public static final long OFFSET__callableShaderBindingTableStride = 80;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT.withName("width");
     public static final long OFFSET__width = 88;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT.withName("height");
     public static final long OFFSET__height = 92;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depth = java.lang.foreign.ValueLayout.JAVA_INT.withName("depth");
     public static final long OFFSET__depth = 96;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

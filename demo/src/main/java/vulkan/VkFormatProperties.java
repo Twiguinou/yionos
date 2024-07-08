@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkFormatProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__linearTilingFeatures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__linearTilingFeatures = java.lang.foreign.ValueLayout.JAVA_INT.withName("linearTilingFeatures");
     public static final long OFFSET__linearTilingFeatures = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__optimalTilingFeatures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__optimalTilingFeatures = java.lang.foreign.ValueLayout.JAVA_INT.withName("optimalTilingFeatures");
     public static final long OFFSET__optimalTilingFeatures = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferFeatures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferFeatures = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferFeatures");
     public static final long OFFSET__bufferFeatures = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

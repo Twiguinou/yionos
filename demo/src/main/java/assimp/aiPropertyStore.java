@@ -2,7 +2,7 @@ package assimp;
 
 public record aiPropertyStore(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__sentinel = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__sentinel = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("sentinel");
     public static final long OFFSET__sentinel = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

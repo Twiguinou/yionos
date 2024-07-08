@@ -48,7 +48,6 @@ public final class Main
 
         Path vulkanInclude = resolvePath(args, "vulkan_include");
         Path glfwInclude = resolvePath(args, "glfw_include");
-        Path shadercInclude = resolvePath(args, "shaderc_include");
         Path vmaInclude = resolvePath(args, "vma_include");
         Path stbInclude = resolvePath(args, "stb_include");
         Path nuklearInclude = resolvePath(args, "nuklear_include");
@@ -62,7 +61,6 @@ public final class Main
 
         List<Generator> generators = List.of(
                 new GlfwGenerator(glfwInclude, vulkanInclude),
-                new ShadercGenerator(shadercInclude),
                 new VmaGenerator(vmaInclude, vulkanInclude),
                 new StbImageGenerator(stbInclude),
                 new NuklearGenerator(nuklearInclude),

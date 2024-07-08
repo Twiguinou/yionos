@@ -2,31 +2,31 @@ package nuklear;
 
 public record nk_row_layout(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__index = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__index = java.lang.foreign.ValueLayout.JAVA_INT.withName("index");
     public static final long OFFSET__index = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("height");
     public static final long OFFSET__height = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__min_height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__min_height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("min_height");
     public static final long OFFSET__min_height = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__columns = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__columns = java.lang.foreign.ValueLayout.JAVA_INT.withName("columns");
     public static final long OFFSET__columns = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ratio = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ratio = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ratio");
     public static final long OFFSET__ratio = 24;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__item_width = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__item_width = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("item_width");
     public static final long OFFSET__item_width = 32;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__item_height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__item_height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("item_height");
     public static final long OFFSET__item_height = 36;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__item_offset = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__item_offset = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("item_offset");
     public static final long OFFSET__item_offset = 40;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__filled = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__filled = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("filled");
     public static final long OFFSET__filled = 44;
-    public static final java.lang.foreign.StructLayout LAYOUT__item = nuklear.nk_rect.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__item = nuklear.nk_rect.gRecordLayout.withName("item");
     public static final long OFFSET__item = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tree_depth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tree_depth = java.lang.foreign.ValueLayout.JAVA_INT.withName("tree_depth");
     public static final long OFFSET__tree_depth = 64;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__templates = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_FLOAT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__templates = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_FLOAT).withName("templates");
     public static final long OFFSET__templates = 68;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

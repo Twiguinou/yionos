@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkGeneratedCommandsMemoryRequirementsInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineBindPoint");
     public static final long OFFSET__pipelineBindPoint = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pipeline = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pipeline = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pipeline");
     public static final long OFFSET__pipeline = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__indirectCommandsLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__indirectCommandsLayout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("indirectCommandsLayout");
     public static final long OFFSET__indirectCommandsLayout = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSequencesCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSequencesCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxSequencesCount");
     public static final long OFFSET__maxSequencesCount = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

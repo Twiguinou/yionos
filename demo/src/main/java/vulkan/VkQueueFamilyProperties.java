@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkQueueFamilyProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("queueFlags");
     public static final long OFFSET__queueFlags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("queueCount");
     public static final long OFFSET__queueCount = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__timestampValidBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__timestampValidBits = java.lang.foreign.ValueLayout.JAVA_INT.withName("timestampValidBits");
     public static final long OFFSET__timestampValidBits = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__minImageTransferGranularity = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minImageTransferGranularity = vulkan.VkExtent3D.gRecordLayout.withName("minImageTransferGranularity");
     public static final long OFFSET__minImageTransferGranularity = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

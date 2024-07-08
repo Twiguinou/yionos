@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkShaderStatisticsInfoAMD(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderStageMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderStageMask");
     public static final long OFFSET__shaderStageMask = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__resourceUsage = vulkan.VkShaderResourceUsageAMD.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__resourceUsage = vulkan.VkShaderResourceUsageAMD.gRecordLayout.withName("resourceUsage");
     public static final long OFFSET__resourceUsage = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numPhysicalVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numPhysicalVgprs = java.lang.foreign.ValueLayout.JAVA_INT.withName("numPhysicalVgprs");
     public static final long OFFSET__numPhysicalVgprs = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numPhysicalSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numPhysicalSgprs = java.lang.foreign.ValueLayout.JAVA_INT.withName("numPhysicalSgprs");
     public static final long OFFSET__numPhysicalSgprs = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numAvailableVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numAvailableVgprs = java.lang.foreign.ValueLayout.JAVA_INT.withName("numAvailableVgprs");
     public static final long OFFSET__numAvailableVgprs = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numAvailableSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numAvailableSgprs = java.lang.foreign.ValueLayout.JAVA_INT.withName("numAvailableSgprs");
     public static final long OFFSET__numAvailableSgprs = 52;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__computeWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__computeWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT).withName("computeWorkGroupSize");
     public static final long OFFSET__computeWorkGroupSize = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

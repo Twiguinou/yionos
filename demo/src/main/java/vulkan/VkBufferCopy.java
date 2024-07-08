@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkBufferCopy(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcOffset");
     public static final long OFFSET__srcOffset = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("dstOffset");
     public static final long OFFSET__dstOffset = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("size");
     public static final long OFFSET__size = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

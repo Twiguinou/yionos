@@ -2,27 +2,27 @@ package vulkan;
 
 public record StdVideoH264PictureParameterSet(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH264PpsFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH264PpsFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("seq_parameter_set_id");
     public static final long OFFSET__seq_parameter_set_id = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pic_parameter_set_id");
     public static final long OFFSET__pic_parameter_set_id = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_default_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_default_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_ref_idx_l0_default_active_minus1");
     public static final long OFFSET__num_ref_idx_l0_default_active_minus1 = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_default_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_default_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_ref_idx_l1_default_active_minus1");
     public static final long OFFSET__num_ref_idx_l1_default_active_minus1 = 7;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__weighted_bipred_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__weighted_bipred_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("weighted_bipred_idc");
     public static final long OFFSET__weighted_bipred_idc = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_init_qp_minus26 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_init_qp_minus26 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pic_init_qp_minus26");
     public static final long OFFSET__pic_init_qp_minus26 = 12;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_init_qs_minus26 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pic_init_qs_minus26 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pic_init_qs_minus26");
     public static final long OFFSET__pic_init_qs_minus26 = 13;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_qp_index_offset = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__chroma_qp_index_offset = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("chroma_qp_index_offset");
     public static final long OFFSET__chroma_qp_index_offset = 14;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__second_chroma_qp_index_offset = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__second_chroma_qp_index_offset = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("second_chroma_qp_index_offset");
     public static final long OFFSET__second_chroma_qp_index_offset = 15;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pScalingLists = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pScalingLists = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pScalingLists");
     public static final long OFFSET__pScalingLists = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

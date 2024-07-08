@@ -2,9 +2,9 @@ package nuklear;
 
 public record nk_scroll(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_INT.withName("x");
     public static final long OFFSET__x = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_INT.withName("y");
     public static final long OFFSET__y = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

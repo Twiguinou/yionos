@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkBindAccelerationStructureMemoryInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__accelerationStructure = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__accelerationStructure = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("accelerationStructure");
     public static final long OFFSET__accelerationStructure = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("memory");
     public static final long OFFSET__memory = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memoryOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memoryOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("memoryOffset");
     public static final long OFFSET__memoryOffset = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceIndexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceIndexCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceIndexCount");
     public static final long OFFSET__deviceIndexCount = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceIndices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDeviceIndices = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDeviceIndices");
     public static final long OFFSET__pDeviceIndices = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

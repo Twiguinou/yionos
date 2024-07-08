@@ -2,29 +2,29 @@ package vulkan;
 
 public record VkPipelineDepthStencilStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthTestEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthTestEnable");
     public static final long OFFSET__depthTestEnable = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthWriteEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthWriteEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthWriteEnable");
     public static final long OFFSET__depthWriteEnable = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthCompareOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthCompareOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthCompareOp");
     public static final long OFFSET__depthCompareOp = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBoundsTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBoundsTestEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthBoundsTestEnable");
     public static final long OFFSET__depthBoundsTestEnable = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilTestEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilTestEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("stencilTestEnable");
     public static final long OFFSET__stencilTestEnable = 36;
-    public static final java.lang.foreign.StructLayout LAYOUT__front = vulkan.VkStencilOpState.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__front = vulkan.VkStencilOpState.gRecordLayout.withName("front");
     public static final long OFFSET__front = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__back = vulkan.VkStencilOpState.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__back = vulkan.VkStencilOpState.gRecordLayout.withName("back");
     public static final long OFFSET__back = 68;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minDepthBounds");
     public static final long OFFSET__minDepthBounds = 96;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxDepthBounds = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxDepthBounds");
     public static final long OFFSET__maxDepthBounds = 100;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

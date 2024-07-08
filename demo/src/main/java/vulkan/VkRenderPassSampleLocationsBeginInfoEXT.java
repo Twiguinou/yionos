@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkRenderPassSampleLocationsBeginInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentInitialSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentInitialSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("attachmentInitialSampleLocationsCount");
     public static final long OFFSET__attachmentInitialSampleLocationsCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachmentInitialSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachmentInitialSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pAttachmentInitialSampleLocations");
     public static final long OFFSET__pAttachmentInitialSampleLocations = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postSubpassSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postSubpassSampleLocationsCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("postSubpassSampleLocationsCount");
     public static final long OFFSET__postSubpassSampleLocationsCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pPostSubpassSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPostSubpassSampleLocations = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pPostSubpassSampleLocations");
     public static final long OFFSET__pPostSubpassSampleLocations = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

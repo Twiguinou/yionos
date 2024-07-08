@@ -2,23 +2,23 @@ package assimp;
 
 public record aiAnimMesh(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mVertices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mVertices = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mVertices");
     public static final long OFFSET__mVertices = 1032;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mNormals = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mNormals = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mNormals");
     public static final long OFFSET__mNormals = 1040;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mTangents = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mTangents = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mTangents");
     public static final long OFFSET__mTangents = 1048;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mBitangents = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mBitangents = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mBitangents");
     public static final long OFFSET__mBitangents = 1056;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__mColors = java.lang.foreign.MemoryLayout.sequenceLayout(8, jpgen.NativeTypes.UNBOUNDED_POINTER);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__mColors = java.lang.foreign.MemoryLayout.sequenceLayout(8, jpgen.NativeTypes.UNBOUNDED_POINTER).withName("mColors");
     public static final long OFFSET__mColors = 1064;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__mTextureCoords = java.lang.foreign.MemoryLayout.sequenceLayout(8, jpgen.NativeTypes.UNBOUNDED_POINTER);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__mTextureCoords = java.lang.foreign.MemoryLayout.sequenceLayout(8, jpgen.NativeTypes.UNBOUNDED_POINTER).withName("mTextureCoords");
     public static final long OFFSET__mTextureCoords = 1128;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumVertices = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumVertices = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumVertices");
     public static final long OFFSET__mNumVertices = 1192;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mWeight = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mWeight = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mWeight");
     public static final long OFFSET__mWeight = 1196;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,9 +2,9 @@ package nuklear;
 
 public record nk_input(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__keyboard = nuklear.nk_keyboard.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__keyboard = nuklear.nk_keyboard.gRecordLayout.withName("keyboard");
     public static final long OFFSET__keyboard = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__mouse = nuklear.nk_mouse.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mouse = nuklear.nk_mouse.gRecordLayout.withName("mouse");
     public static final long OFFSET__mouse = 260;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,33 +2,33 @@ package vulkan;
 
 public record VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat16Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat16Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat16Atomics");
     public static final long OFFSET__shaderBufferFloat16Atomics = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat16AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat16AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat16AtomicAdd");
     public static final long OFFSET__shaderBufferFloat16AtomicAdd = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat16AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat16AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat16AtomicMinMax");
     public static final long OFFSET__shaderBufferFloat16AtomicMinMax = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat32AtomicMinMax");
     public static final long OFFSET__shaderBufferFloat32AtomicMinMax = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat64AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat64AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat64AtomicMinMax");
     public static final long OFFSET__shaderBufferFloat64AtomicMinMax = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat16Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat16Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat16Atomics");
     public static final long OFFSET__shaderSharedFloat16Atomics = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat16AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat16AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat16AtomicAdd");
     public static final long OFFSET__shaderSharedFloat16AtomicAdd = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat16AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat16AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat16AtomicMinMax");
     public static final long OFFSET__shaderSharedFloat16AtomicMinMax = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat32AtomicMinMax");
     public static final long OFFSET__shaderSharedFloat32AtomicMinMax = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat64AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat64AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat64AtomicMinMax");
     public static final long OFFSET__shaderSharedFloat64AtomicMinMax = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderImageFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderImageFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderImageFloat32AtomicMinMax");
     public static final long OFFSET__shaderImageFloat32AtomicMinMax = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sparseImageFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sparseImageFloat32AtomicMinMax = java.lang.foreign.ValueLayout.JAVA_INT.withName("sparseImageFloat32AtomicMinMax");
     public static final long OFFSET__sparseImageFloat32AtomicMinMax = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

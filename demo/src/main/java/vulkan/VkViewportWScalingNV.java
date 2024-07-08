@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkViewportWScalingNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__xcoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__xcoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("xcoeff");
     public static final long OFFSET__xcoeff = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__ycoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__ycoeff = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("ycoeff");
     public static final long OFFSET__ycoeff = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkRenderPassCreateInfo2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("attachmentCount");
     public static final long OFFSET__attachmentCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pAttachments");
     public static final long OFFSET__pAttachments = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("subpassCount");
     public static final long OFFSET__subpassCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSubpasses = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSubpasses = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSubpasses");
     public static final long OFFSET__pSubpasses = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("dependencyCount");
     public static final long OFFSET__dependencyCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDependencies = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDependencies = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDependencies");
     public static final long OFFSET__pDependencies = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__correlatedViewMaskCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__correlatedViewMaskCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("correlatedViewMaskCount");
     public static final long OFFSET__correlatedViewMaskCount = 64;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCorrelatedViewMasks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCorrelatedViewMasks = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCorrelatedViewMasks");
     public static final long OFFSET__pCorrelatedViewMasks = 72;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceDepthStencilResolveProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedDepthResolveModes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedDepthResolveModes = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedDepthResolveModes");
     public static final long OFFSET__supportedDepthResolveModes = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedStencilResolveModes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedStencilResolveModes = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedStencilResolveModes");
     public static final long OFFSET__supportedStencilResolveModes = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__independentResolveNone = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__independentResolveNone = java.lang.foreign.ValueLayout.JAVA_INT.withName("independentResolveNone");
     public static final long OFFSET__independentResolveNone = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__independentResolve = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__independentResolve = java.lang.foreign.ValueLayout.JAVA_INT.withName("independentResolve");
     public static final long OFFSET__independentResolve = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

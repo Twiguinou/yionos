@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPhysicalDeviceIDProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("deviceUUID");
     public static final long OFFSET__deviceUUID = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__driverUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("driverUUID");
     public static final long OFFSET__driverUUID = 32;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceLUID = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceLUID = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("deviceLUID");
     public static final long OFFSET__deviceLUID = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceNodeMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceNodeMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceNodeMask");
     public static final long OFFSET__deviceNodeMask = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceLUIDValid = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceLUIDValid = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceLUIDValid");
     public static final long OFFSET__deviceLUIDValid = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPipelineColorBlendAttachmentState(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("blendEnable");
     public static final long OFFSET__blendEnable = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcColorBlendFactor");
     public static final long OFFSET__srcColorBlendFactor = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstColorBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstColorBlendFactor");
     public static final long OFFSET__dstColorBlendFactor = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorBlendOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorBlendOp");
     public static final long OFFSET__colorBlendOp = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcAlphaBlendFactor");
     public static final long OFFSET__srcAlphaBlendFactor = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstAlphaBlendFactor = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstAlphaBlendFactor");
     public static final long OFFSET__dstAlphaBlendFactor = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaBlendOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaBlendOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("alphaBlendOp");
     public static final long OFFSET__alphaBlendOp = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorWriteMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorWriteMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorWriteMask");
     public static final long OFFSET__colorWriteMask = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

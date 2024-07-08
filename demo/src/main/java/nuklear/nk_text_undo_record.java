@@ -2,13 +2,13 @@ package nuklear;
 
 public record nk_text_undo_record(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__where = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__where = java.lang.foreign.ValueLayout.JAVA_INT.withName("where");
     public static final long OFFSET__where = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__insert_length = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__insert_length = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("insert_length");
     public static final long OFFSET__insert_length = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__delete_length = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__delete_length = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("delete_length");
     public static final long OFFSET__delete_length = 6;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__char_storage = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__char_storage = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("char_storage");
     public static final long OFFSET__char_storage = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

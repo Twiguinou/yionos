@@ -2,19 +2,19 @@ package vulkan;
 
 public record StdVideoEncodeH265LongTermRefPics(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_long_term_sps = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_long_term_sps = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_long_term_sps");
     public static final long OFFSET__num_long_term_sps = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_long_term_pics = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_long_term_pics = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_long_term_pics");
     public static final long OFFSET__num_long_term_pics = 1;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__lt_idx_sps = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__lt_idx_sps = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("lt_idx_sps");
     public static final long OFFSET__lt_idx_sps = 2;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__poc_lsb_lt = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__poc_lsb_lt = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("poc_lsb_lt");
     public static final long OFFSET__poc_lsb_lt = 34;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_lt_flag = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__used_by_curr_pic_lt_flag = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("used_by_curr_pic_lt_flag");
     public static final long OFFSET__used_by_curr_pic_lt_flag = 50;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_msb_present_flag = java.lang.foreign.MemoryLayout.sequenceLayout(48, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_msb_present_flag = java.lang.foreign.MemoryLayout.sequenceLayout(48, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("delta_poc_msb_present_flag");
     public static final long OFFSET__delta_poc_msb_present_flag = 52;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_msb_cycle_lt = java.lang.foreign.MemoryLayout.sequenceLayout(48, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__delta_poc_msb_cycle_lt = java.lang.foreign.MemoryLayout.sequenceLayout(48, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("delta_poc_msb_cycle_lt");
     public static final long OFFSET__delta_poc_msb_cycle_lt = 100;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

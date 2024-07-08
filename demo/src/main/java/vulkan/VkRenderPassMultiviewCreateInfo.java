@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkRenderPassMultiviewCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subpassCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("subpassCount");
     public static final long OFFSET__subpassCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pViewMasks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pViewMasks = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pViewMasks");
     public static final long OFFSET__pViewMasks = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("dependencyCount");
     public static final long OFFSET__dependencyCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pViewOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pViewOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pViewOffsets");
     public static final long OFFSET__pViewOffsets = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__correlationMaskCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__correlationMaskCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("correlationMaskCount");
     public static final long OFFSET__correlationMaskCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCorrelationMasks = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCorrelationMasks = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCorrelationMasks");
     public static final long OFFSET__pCorrelationMasks = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

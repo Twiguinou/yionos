@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkVideoDecodeInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__srcBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__srcBuffer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("srcBuffer");
     public static final long OFFSET__srcBuffer = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcBufferOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcBufferOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcBufferOffset");
     public static final long OFFSET__srcBufferOffset = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcBufferRange = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcBufferRange = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcBufferRange");
     public static final long OFFSET__srcBufferRange = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__dstPictureResource = vulkan.VkVideoPictureResourceInfoKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstPictureResource = vulkan.VkVideoPictureResourceInfoKHR.gRecordLayout.withName("dstPictureResource");
     public static final long OFFSET__dstPictureResource = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSetupReferenceSlot = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSetupReferenceSlot = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSetupReferenceSlot");
     public static final long OFFSET__pSetupReferenceSlot = 96;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__referenceSlotCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__referenceSlotCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("referenceSlotCount");
     public static final long OFFSET__referenceSlotCount = 104;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pReferenceSlots = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pReferenceSlots = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pReferenceSlots");
     public static final long OFFSET__pReferenceSlots = 112;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

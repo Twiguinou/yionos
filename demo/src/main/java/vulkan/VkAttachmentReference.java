@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkAttachmentReference(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__attachment = java.lang.foreign.ValueLayout.JAVA_INT.withName("attachment");
     public static final long OFFSET__attachment = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layout = java.lang.foreign.ValueLayout.JAVA_INT.withName("layout");
     public static final long OFFSET__layout = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkDrawIndexedIndirectCommand(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("indexCount");
     public static final long OFFSET__indexCount = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__instanceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__instanceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("instanceCount");
     public static final long OFFSET__instanceCount = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstIndex");
     public static final long OFFSET__firstIndex = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexOffset");
     public static final long OFFSET__vertexOffset = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstInstance = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstInstance = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstInstance");
     public static final long OFFSET__firstInstance = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

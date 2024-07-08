@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkDeviceFaultInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("description");
     public static final long OFFSET__description = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pAddressInfos = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pAddressInfos = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pAddressInfos");
     public static final long OFFSET__pAddressInfos = 272;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVendorInfos = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVendorInfos = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVendorInfos");
     public static final long OFFSET__pVendorInfos = 280;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVendorBinaryData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVendorBinaryData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVendorBinaryData");
     public static final long OFFSET__pVendorBinaryData = 288;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

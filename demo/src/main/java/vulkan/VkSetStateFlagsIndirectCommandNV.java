@@ -2,7 +2,7 @@ package vulkan;
 
 public record VkSetStateFlagsIndirectCommandNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__data = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__data = java.lang.foreign.ValueLayout.JAVA_INT.withName("data");
     public static final long OFFSET__data = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

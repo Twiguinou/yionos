@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkImageResolve2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__srcSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__srcSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout.withName("srcSubresource");
     public static final long OFFSET__srcSubresource = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__srcOffset = vulkan.VkOffset3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__srcOffset = vulkan.VkOffset3D.gRecordLayout.withName("srcOffset");
     public static final long OFFSET__srcOffset = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__dstSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout.withName("dstSubresource");
     public static final long OFFSET__dstSubresource = 44;
-    public static final java.lang.foreign.StructLayout LAYOUT__dstOffset = vulkan.VkOffset3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstOffset = vulkan.VkOffset3D.gRecordLayout.withName("dstOffset");
     public static final long OFFSET__dstOffset = 60;
-    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent3D.gRecordLayout.withName("extent");
     public static final long OFFSET__extent = 72;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

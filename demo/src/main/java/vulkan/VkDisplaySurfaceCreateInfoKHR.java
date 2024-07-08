@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkDisplaySurfaceCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__displayMode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__displayMode = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("displayMode");
     public static final long OFFSET__displayMode = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("planeIndex");
     public static final long OFFSET__planeIndex = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeStackIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__planeStackIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("planeStackIndex");
     public static final long OFFSET__planeStackIndex = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transform = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transform = java.lang.foreign.ValueLayout.JAVA_INT.withName("transform");
     public static final long OFFSET__transform = 40;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__globalAlpha = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__globalAlpha = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("globalAlpha");
     public static final long OFFSET__globalAlpha = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("alphaMode");
     public static final long OFFSET__alphaMode = 48;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageExtent = vulkan.VkExtent2D.gRecordLayout.withName("imageExtent");
     public static final long OFFSET__imageExtent = 52;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

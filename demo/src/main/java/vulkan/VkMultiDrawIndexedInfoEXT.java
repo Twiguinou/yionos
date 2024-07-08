@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkMultiDrawIndexedInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstIndex");
     public static final long OFFSET__firstIndex = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("indexCount");
     public static final long OFFSET__indexCount = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexOffset");
     public static final long OFFSET__vertexOffset = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

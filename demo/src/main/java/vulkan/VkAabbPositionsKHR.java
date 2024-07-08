@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkAabbPositionsKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minX = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minX = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minX");
     public static final long OFFSET__minX = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minY = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minY = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minY");
     public static final long OFFSET__minY = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minZ = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minZ = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minZ");
     public static final long OFFSET__minZ = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxX = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxX = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxX");
     public static final long OFFSET__maxX = 12;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxY = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxY = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxY");
     public static final long OFFSET__maxY = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxZ = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxZ = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxZ");
     public static final long OFFSET__maxZ = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

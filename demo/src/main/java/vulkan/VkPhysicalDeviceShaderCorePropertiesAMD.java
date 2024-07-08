@@ -2,37 +2,37 @@ package vulkan;
 
 public record VkPhysicalDeviceShaderCorePropertiesAMD(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderEngineCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderEngineCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderEngineCount");
     public static final long OFFSET__shaderEngineCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderArraysPerEngineCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderArraysPerEngineCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderArraysPerEngineCount");
     public static final long OFFSET__shaderArraysPerEngineCount = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeUnitsPerShaderArray = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__computeUnitsPerShaderArray = java.lang.foreign.ValueLayout.JAVA_INT.withName("computeUnitsPerShaderArray");
     public static final long OFFSET__computeUnitsPerShaderArray = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__simdPerComputeUnit = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__simdPerComputeUnit = java.lang.foreign.ValueLayout.JAVA_INT.withName("simdPerComputeUnit");
     public static final long OFFSET__simdPerComputeUnit = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__wavefrontsPerSimd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__wavefrontsPerSimd = java.lang.foreign.ValueLayout.JAVA_INT.withName("wavefrontsPerSimd");
     public static final long OFFSET__wavefrontsPerSimd = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__wavefrontSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__wavefrontSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("wavefrontSize");
     public static final long OFFSET__wavefrontSize = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sgprsPerSimd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sgprsPerSimd = java.lang.foreign.ValueLayout.JAVA_INT.withName("sgprsPerSimd");
     public static final long OFFSET__sgprsPerSimd = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT.withName("minSgprAllocation");
     public static final long OFFSET__minSgprAllocation = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxSgprAllocation");
     public static final long OFFSET__maxSgprAllocation = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sgprAllocationGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sgprAllocationGranularity = java.lang.foreign.ValueLayout.JAVA_INT.withName("sgprAllocationGranularity");
     public static final long OFFSET__sgprAllocationGranularity = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vgprsPerSimd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vgprsPerSimd = java.lang.foreign.ValueLayout.JAVA_INT.withName("vgprsPerSimd");
     public static final long OFFSET__vgprsPerSimd = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minVgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minVgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT.withName("minVgprAllocation");
     public static final long OFFSET__minVgprAllocation = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxVgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxVgprAllocation = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxVgprAllocation");
     public static final long OFFSET__maxVgprAllocation = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vgprAllocationGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vgprAllocationGranularity = java.lang.foreign.ValueLayout.JAVA_INT.withName("vgprAllocationGranularity");
     public static final long OFFSET__vgprAllocationGranularity = 68;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

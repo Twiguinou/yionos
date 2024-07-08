@@ -2,33 +2,33 @@ package assimp;
 
 public record aiLight(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mType = java.lang.foreign.ValueLayout.JAVA_INT.withName("mType");
     public static final long OFFSET__mType = 1028;
-    public static final java.lang.foreign.StructLayout LAYOUT__mPosition = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mPosition = assimp.aiVector3D.gRecordLayout.withName("mPosition");
     public static final long OFFSET__mPosition = 1032;
-    public static final java.lang.foreign.StructLayout LAYOUT__mDirection = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mDirection = assimp.aiVector3D.gRecordLayout.withName("mDirection");
     public static final long OFFSET__mDirection = 1044;
-    public static final java.lang.foreign.StructLayout LAYOUT__mUp = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mUp = assimp.aiVector3D.gRecordLayout.withName("mUp");
     public static final long OFFSET__mUp = 1056;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAttenuationConstant = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAttenuationConstant = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mAttenuationConstant");
     public static final long OFFSET__mAttenuationConstant = 1068;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAttenuationLinear = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAttenuationLinear = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mAttenuationLinear");
     public static final long OFFSET__mAttenuationLinear = 1072;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAttenuationQuadratic = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAttenuationQuadratic = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mAttenuationQuadratic");
     public static final long OFFSET__mAttenuationQuadratic = 1076;
-    public static final java.lang.foreign.StructLayout LAYOUT__mColorDiffuse = assimp.aiColor3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mColorDiffuse = assimp.aiColor3D.gRecordLayout.withName("mColorDiffuse");
     public static final long OFFSET__mColorDiffuse = 1080;
-    public static final java.lang.foreign.StructLayout LAYOUT__mColorSpecular = assimp.aiColor3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mColorSpecular = assimp.aiColor3D.gRecordLayout.withName("mColorSpecular");
     public static final long OFFSET__mColorSpecular = 1092;
-    public static final java.lang.foreign.StructLayout LAYOUT__mColorAmbient = assimp.aiColor3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mColorAmbient = assimp.aiColor3D.gRecordLayout.withName("mColorAmbient");
     public static final long OFFSET__mColorAmbient = 1104;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAngleInnerCone = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAngleInnerCone = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mAngleInnerCone");
     public static final long OFFSET__mAngleInnerCone = 1116;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAngleOuterCone = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAngleOuterCone = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mAngleOuterCone");
     public static final long OFFSET__mAngleOuterCone = 1120;
-    public static final java.lang.foreign.StructLayout LAYOUT__mSize = assimp.aiVector2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mSize = assimp.aiVector2D.gRecordLayout.withName("mSize");
     public static final long OFFSET__mSize = 1124;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

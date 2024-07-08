@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkDisplayPlaneCapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedAlpha = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedAlpha = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedAlpha");
     public static final long OFFSET__supportedAlpha = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__minSrcPosition = vulkan.VkOffset2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minSrcPosition = vulkan.VkOffset2D.gRecordLayout.withName("minSrcPosition");
     public static final long OFFSET__minSrcPosition = 4;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxSrcPosition = vulkan.VkOffset2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxSrcPosition = vulkan.VkOffset2D.gRecordLayout.withName("maxSrcPosition");
     public static final long OFFSET__maxSrcPosition = 12;
-    public static final java.lang.foreign.StructLayout LAYOUT__minSrcExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minSrcExtent = vulkan.VkExtent2D.gRecordLayout.withName("minSrcExtent");
     public static final long OFFSET__minSrcExtent = 20;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxSrcExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxSrcExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxSrcExtent");
     public static final long OFFSET__maxSrcExtent = 28;
-    public static final java.lang.foreign.StructLayout LAYOUT__minDstPosition = vulkan.VkOffset2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minDstPosition = vulkan.VkOffset2D.gRecordLayout.withName("minDstPosition");
     public static final long OFFSET__minDstPosition = 36;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxDstPosition = vulkan.VkOffset2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxDstPosition = vulkan.VkOffset2D.gRecordLayout.withName("maxDstPosition");
     public static final long OFFSET__maxDstPosition = 44;
-    public static final java.lang.foreign.StructLayout LAYOUT__minDstExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minDstExtent = vulkan.VkExtent2D.gRecordLayout.withName("minDstExtent");
     public static final long OFFSET__minDstExtent = 52;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxDstExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxDstExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxDstExtent");
     public static final long OFFSET__maxDstExtent = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,7 +2,7 @@ package vulkan;
 
 public record StdVideoH265PredictorPaletteEntries(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__PredictorPaletteEntries = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.MemoryLayout.sequenceLayout(128, java.lang.foreign.ValueLayout.JAVA_SHORT));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__PredictorPaletteEntries = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.MemoryLayout.sequenceLayout(128, java.lang.foreign.ValueLayout.JAVA_SHORT)).withName("PredictorPaletteEntries");
     public static final long OFFSET__PredictorPaletteEntries = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

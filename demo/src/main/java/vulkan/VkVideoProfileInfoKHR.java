@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkVideoProfileInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__videoCodecOperation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__videoCodecOperation = java.lang.foreign.ValueLayout.JAVA_INT.withName("videoCodecOperation");
     public static final long OFFSET__videoCodecOperation = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chromaSubsampling = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chromaSubsampling = java.lang.foreign.ValueLayout.JAVA_INT.withName("chromaSubsampling");
     public static final long OFFSET__chromaSubsampling = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lumaBitDepth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lumaBitDepth = java.lang.foreign.ValueLayout.JAVA_INT.withName("lumaBitDepth");
     public static final long OFFSET__lumaBitDepth = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chromaBitDepth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chromaBitDepth = java.lang.foreign.ValueLayout.JAVA_INT.withName("chromaBitDepth");
     public static final long OFFSET__chromaBitDepth = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

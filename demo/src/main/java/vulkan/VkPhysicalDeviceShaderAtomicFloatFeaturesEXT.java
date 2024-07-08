@@ -2,33 +2,33 @@ package vulkan;
 
 public record VkPhysicalDeviceShaderAtomicFloatFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat32Atomics");
     public static final long OFFSET__shaderBufferFloat32Atomics = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat32AtomicAdd");
     public static final long OFFSET__shaderBufferFloat32AtomicAdd = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat64Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat64Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat64Atomics");
     public static final long OFFSET__shaderBufferFloat64Atomics = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat64AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderBufferFloat64AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderBufferFloat64AtomicAdd");
     public static final long OFFSET__shaderBufferFloat64AtomicAdd = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat32Atomics");
     public static final long OFFSET__shaderSharedFloat32Atomics = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat32AtomicAdd");
     public static final long OFFSET__shaderSharedFloat32AtomicAdd = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat64Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat64Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat64Atomics");
     public static final long OFFSET__shaderSharedFloat64Atomics = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat64AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderSharedFloat64AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderSharedFloat64AtomicAdd");
     public static final long OFFSET__shaderSharedFloat64AtomicAdd = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderImageFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderImageFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderImageFloat32Atomics");
     public static final long OFFSET__shaderImageFloat32Atomics = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderImageFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderImageFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderImageFloat32AtomicAdd");
     public static final long OFFSET__shaderImageFloat32AtomicAdd = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sparseImageFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sparseImageFloat32Atomics = java.lang.foreign.ValueLayout.JAVA_INT.withName("sparseImageFloat32Atomics");
     public static final long OFFSET__sparseImageFloat32Atomics = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sparseImageFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sparseImageFloat32AtomicAdd = java.lang.foreign.ValueLayout.JAVA_INT.withName("sparseImageFloat32AtomicAdd");
     public static final long OFFSET__sparseImageFloat32AtomicAdd = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

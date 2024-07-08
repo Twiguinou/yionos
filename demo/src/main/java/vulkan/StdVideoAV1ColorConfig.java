@@ -2,23 +2,23 @@ package vulkan;
 
 public record StdVideoAV1ColorConfig(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1ColorConfigFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1ColorConfigFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__BitDepth = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__BitDepth = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("BitDepth");
     public static final long OFFSET__BitDepth = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__subsampling_x = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__subsampling_x = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("subsampling_x");
     public static final long OFFSET__subsampling_x = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__subsampling_y = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__subsampling_y = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("subsampling_y");
     public static final long OFFSET__subsampling_y = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved1");
     public static final long OFFSET__reserved1 = 7;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__color_primaries = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__color_primaries = java.lang.foreign.ValueLayout.JAVA_INT.withName("color_primaries");
     public static final long OFFSET__color_primaries = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transfer_characteristics = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transfer_characteristics = java.lang.foreign.ValueLayout.JAVA_INT.withName("transfer_characteristics");
     public static final long OFFSET__transfer_characteristics = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__matrix_coefficients = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__matrix_coefficients = java.lang.foreign.ValueLayout.JAVA_INT.withName("matrix_coefficients");
     public static final long OFFSET__matrix_coefficients = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chroma_sample_position = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chroma_sample_position = java.lang.foreign.ValueLayout.JAVA_INT.withName("chroma_sample_position");
     public static final long OFFSET__chroma_sample_position = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

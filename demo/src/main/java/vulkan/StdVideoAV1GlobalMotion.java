@@ -2,9 +2,9 @@ package vulkan;
 
 public record StdVideoAV1GlobalMotion(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__GmType = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__GmType = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("GmType");
     public static final long OFFSET__GmType = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__gm_params = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.ValueLayout.JAVA_INT));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__gm_params = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.ValueLayout.JAVA_INT)).withName("gm_params");
     public static final long OFFSET__gm_params = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPhysicalDeviceAccelerationStructureFeaturesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructure = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructure = java.lang.foreign.ValueLayout.JAVA_INT.withName("accelerationStructure");
     public static final long OFFSET__accelerationStructure = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructureCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructureCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT.withName("accelerationStructureCaptureReplay");
     public static final long OFFSET__accelerationStructureCaptureReplay = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructureIndirectBuild = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructureIndirectBuild = java.lang.foreign.ValueLayout.JAVA_INT.withName("accelerationStructureIndirectBuild");
     public static final long OFFSET__accelerationStructureIndirectBuild = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructureHostCommands = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__accelerationStructureHostCommands = java.lang.foreign.ValueLayout.JAVA_INT.withName("accelerationStructureHostCommands");
     public static final long OFFSET__accelerationStructureHostCommands = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingAccelerationStructureUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorBindingAccelerationStructureUpdateAfterBind = java.lang.foreign.ValueLayout.JAVA_INT.withName("descriptorBindingAccelerationStructureUpdateAfterBind");
     public static final long OFFSET__descriptorBindingAccelerationStructureUpdateAfterBind = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

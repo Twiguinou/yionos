@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkAccelerationStructureMatrixMotionInstanceNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__transformT0 = vulkan.VkTransformMatrixKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__transformT0 = vulkan.VkTransformMatrixKHR.gRecordLayout.withName("transformT0");
     public static final long OFFSET__transformT0 = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__transformT1 = vulkan.VkTransformMatrixKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__transformT1 = vulkan.VkTransformMatrixKHR.gRecordLayout.withName("transformT1");
     public static final long OFFSET__transformT1 = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__accelerationStructureReference = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__accelerationStructureReference = java.lang.foreign.ValueLayout.JAVA_LONG.withName("accelerationStructureReference");
     public static final long OFFSET__accelerationStructureReference = 104;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

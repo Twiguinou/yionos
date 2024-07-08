@@ -2,19 +2,19 @@ package vulkan;
 
 public record StdVideoEncodeH264ReferenceInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264ReferenceInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264ReferenceInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primary_pic_type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primary_pic_type = java.lang.foreign.ValueLayout.JAVA_INT.withName("primary_pic_type");
     public static final long OFFSET__primary_pic_type = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__FrameNum = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__FrameNum = java.lang.foreign.ValueLayout.JAVA_INT.withName("FrameNum");
     public static final long OFFSET__FrameNum = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCnt = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCnt = java.lang.foreign.ValueLayout.JAVA_INT.withName("PicOrderCnt");
     public static final long OFFSET__PicOrderCnt = 12;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_pic_num = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_pic_num = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("long_term_pic_num");
     public static final long OFFSET__long_term_pic_num = 16;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_frame_idx = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_frame_idx = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("long_term_frame_idx");
     public static final long OFFSET__long_term_frame_idx = 18;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__temporal_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__temporal_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("temporal_id");
     public static final long OFFSET__temporal_id = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

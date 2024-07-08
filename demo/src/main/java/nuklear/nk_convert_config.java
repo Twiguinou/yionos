@@ -2,25 +2,25 @@ package nuklear;
 
 public record nk_convert_config(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__global_alpha = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__global_alpha = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("global_alpha");
     public static final long OFFSET__global_alpha = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__line_AA = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__line_AA = java.lang.foreign.ValueLayout.JAVA_INT.withName("line_AA");
     public static final long OFFSET__line_AA = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shape_AA = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shape_AA = java.lang.foreign.ValueLayout.JAVA_INT.withName("shape_AA");
     public static final long OFFSET__shape_AA = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__circle_segment_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__circle_segment_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("circle_segment_count");
     public static final long OFFSET__circle_segment_count = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__arc_segment_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__arc_segment_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("arc_segment_count");
     public static final long OFFSET__arc_segment_count = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__curve_segment_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__curve_segment_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("curve_segment_count");
     public static final long OFFSET__curve_segment_count = 20;
-    public static final java.lang.foreign.StructLayout LAYOUT__tex_null = nuklear.nk_draw_null_texture.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__tex_null = nuklear.nk_draw_null_texture.gRecordLayout.withName("tex_null");
     public static final long OFFSET__tex_null = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__vertex_layout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vertex_layout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("vertex_layout");
     public static final long OFFSET__vertex_layout = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertex_size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertex_size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vertex_size");
     public static final long OFFSET__vertex_size = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertex_alignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertex_alignment = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vertex_alignment");
     public static final long OFFSET__vertex_alignment = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

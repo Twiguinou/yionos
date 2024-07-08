@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkAccelerationStructureGeometryAabbsDataKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout.withName("data");
     public static final long OFFSET__data = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__stride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__stride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("stride");
     public static final long OFFSET__stride = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

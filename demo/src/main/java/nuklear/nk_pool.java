@@ -2,21 +2,21 @@ package nuklear;
 
 public record nk_pool(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__alloc = nuklear.nk_allocator.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__alloc = nuklear.nk_allocator.gRecordLayout.withName("alloc");
     public static final long OFFSET__alloc = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__page_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__page_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("page_count");
     public static final long OFFSET__page_count = 28;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pages = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pages = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pages");
     public static final long OFFSET__pages = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__freelist = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__freelist = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("freelist");
     public static final long OFFSET__freelist = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__capacity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__capacity = java.lang.foreign.ValueLayout.JAVA_INT.withName("capacity");
     public static final long OFFSET__capacity = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("size");
     public static final long OFFSET__size = 56;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__cap = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__cap = java.lang.foreign.ValueLayout.JAVA_LONG.withName("cap");
     public static final long OFFSET__cap = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

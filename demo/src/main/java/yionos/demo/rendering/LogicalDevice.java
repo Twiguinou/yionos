@@ -52,9 +52,9 @@ public class LogicalDevice implements Disposable
             deviceCreateInfo.queueCreateInfoCount(arrangedDescriptors.size());
             deviceCreateInfo.pQueueCreateInfos(queueCreateInfos);
             deviceCreateInfo.enabledLayerCount(enabledLayers.length);
-            deviceCreateInfo.ppEnabledLayerNames(ForeignUtils.allocateUtf8Array(arena, enabledLayers));
+            deviceCreateInfo.ppEnabledLayerNames(ForeignUtils.allocateStringArray(arena, enabledLayers));
             deviceCreateInfo.enabledExtensionCount(enabledExtensions.length);
-            deviceCreateInfo.ppEnabledExtensionNames(ForeignUtils.allocateUtf8Array(arena, enabledExtensions));
+            deviceCreateInfo.ppEnabledExtensionNames(ForeignUtils.allocateStringArray(arena, enabledExtensions));
             deviceCreateInfo.pEnabledFeatures(pEnabledFeatures);
 
             MemorySegment pDevice = arena.allocate(ADDRESS);

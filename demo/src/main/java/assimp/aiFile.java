@@ -2,19 +2,19 @@ package assimp;
 
 public record aiFile(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__ReadProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ReadProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ReadProc");
     public static final long OFFSET__ReadProc = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__WriteProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__WriteProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("WriteProc");
     public static final long OFFSET__WriteProc = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__TellProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__TellProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("TellProc");
     public static final long OFFSET__TellProc = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__FileSizeProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__FileSizeProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("FileSizeProc");
     public static final long OFFSET__FileSizeProc = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__SeekProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__SeekProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("SeekProc");
     public static final long OFFSET__SeekProc = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__FlushProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__FlushProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("FlushProc");
     public static final long OFFSET__FlushProc = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__UserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__UserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("UserData");
     public static final long OFFSET__UserData = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

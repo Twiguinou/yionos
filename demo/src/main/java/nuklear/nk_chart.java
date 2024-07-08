@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_chart(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__slot = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__slot = java.lang.foreign.ValueLayout.JAVA_INT.withName("slot");
     public static final long OFFSET__slot = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("x");
     public static final long OFFSET__x = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("y");
     public static final long OFFSET__y = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("w");
     public static final long OFFSET__w = 12;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("h");
     public static final long OFFSET__h = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__slots = java.lang.foreign.MemoryLayout.sequenceLayout(4, nuklear.nk_chart_slot.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__slots = java.lang.foreign.MemoryLayout.sequenceLayout(4, nuklear.nk_chart_slot.gRecordLayout).withName("slots");
     public static final long OFFSET__slots = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkDrawIndirectCommand(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexCount");
     public static final long OFFSET__vertexCount = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__instanceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__instanceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("instanceCount");
     public static final long OFFSET__instanceCount = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstVertex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstVertex = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstVertex");
     public static final long OFFSET__firstVertex = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstInstance = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstInstance = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstInstance");
     public static final long OFFSET__firstInstance = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

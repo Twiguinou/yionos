@@ -2,21 +2,21 @@ package vma;
 
 public record VmaPoolCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryTypeIndex");
     public static final long OFFSET__memoryTypeIndex = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 4;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__blockSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__blockSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("blockSize");
     public static final long OFFSET__blockSize = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBlockCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minBlockCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("minBlockCount");
     public static final long OFFSET__minBlockCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBlockCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBlockCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxBlockCount");
     public static final long OFFSET__maxBlockCount = 24;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__priority = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__priority = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("priority");
     public static final long OFFSET__priority = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minAllocationAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__minAllocationAlignment = java.lang.foreign.ValueLayout.JAVA_LONG.withName("minAllocationAlignment");
     public static final long OFFSET__minAllocationAlignment = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMemoryAllocateNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMemoryAllocateNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMemoryAllocateNext");
     public static final long OFFSET__pMemoryAllocateNext = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

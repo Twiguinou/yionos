@@ -2,7 +2,7 @@ package vulkan;
 
 public record VkRefreshCycleDurationGOOGLE(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__refreshDuration = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__refreshDuration = java.lang.foreign.ValueLayout.JAVA_LONG.withName("refreshDuration");
     public static final long OFFSET__refreshDuration = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

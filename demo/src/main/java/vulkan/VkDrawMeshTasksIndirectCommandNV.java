@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkDrawMeshTasksIndirectCommandNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__taskCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__taskCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("taskCount");
     public static final long OFFSET__taskCount = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstTask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__firstTask = java.lang.foreign.ValueLayout.JAVA_INT.withName("firstTask");
     public static final long OFFSET__firstTask = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

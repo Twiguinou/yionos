@@ -2,31 +2,31 @@ package vulkan;
 
 public record VkMicromapBuildInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mode = java.lang.foreign.ValueLayout.JAVA_INT.withName("mode");
     public static final long OFFSET__mode = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__dstMicromap = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__dstMicromap = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("dstMicromap");
     public static final long OFFSET__dstMicromap = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__usageCountsCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__usageCountsCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("usageCountsCount");
     public static final long OFFSET__usageCountsCount = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pUsageCounts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pUsageCounts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pUsageCounts");
     public static final long OFFSET__pUsageCounts = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ppUsageCounts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ppUsageCounts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ppUsageCounts");
     public static final long OFFSET__ppUsageCounts = 56;
-    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout.withName("data");
     public static final long OFFSET__data = 64;
-    public static final java.lang.foreign.UnionLayout LAYOUT__scratchData = vulkan.VkDeviceOrHostAddressKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__scratchData = vulkan.VkDeviceOrHostAddressKHR.gRecordLayout.withName("scratchData");
     public static final long OFFSET__scratchData = 72;
-    public static final java.lang.foreign.UnionLayout LAYOUT__triangleArray = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__triangleArray = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout.withName("triangleArray");
     public static final long OFFSET__triangleArray = 80;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__triangleArrayStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__triangleArrayStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("triangleArrayStride");
     public static final long OFFSET__triangleArrayStride = 88;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

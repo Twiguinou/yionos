@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkSparseImageFormatProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("aspectMask");
     public static final long OFFSET__aspectMask = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageGranularity = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageGranularity = vulkan.VkExtent3D.gRecordLayout.withName("imageGranularity");
     public static final long OFFSET__imageGranularity = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

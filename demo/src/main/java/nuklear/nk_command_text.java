@@ -2,27 +2,27 @@ package nuklear;
 
 public record nk_command_text(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout.withName("header");
     public static final long OFFSET__header = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__font = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__font = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("font");
     public static final long OFFSET__font = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__background = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__background = nuklear.nk_color.gRecordLayout.withName("background");
     public static final long OFFSET__background = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__foreground = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__foreground = nuklear.nk_color.gRecordLayout.withName("foreground");
     public static final long OFFSET__foreground = 28;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("x");
     public static final long OFFSET__x = 32;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("y");
     public static final long OFFSET__y = 34;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("w");
     public static final long OFFSET__w = 36;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__h = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("h");
     public static final long OFFSET__h = 38;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("height");
     public static final long OFFSET__height = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__length = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__length = java.lang.foreign.ValueLayout.JAVA_INT.withName("length");
     public static final long OFFSET__length = 44;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__string = java.lang.foreign.MemoryLayout.sequenceLayout(1, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__string = java.lang.foreign.MemoryLayout.sequenceLayout(1, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("string");
     public static final long OFFSET__string = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

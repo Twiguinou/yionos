@@ -1,10 +1,8 @@
 .idea
 .gradle
-gradle
 build/
 out/
 generated-bindings
 *.dll
 *.so
 *.dylib
-physics/native/cmake-build-debug

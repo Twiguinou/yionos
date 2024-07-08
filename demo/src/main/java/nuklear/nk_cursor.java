@@ -2,11 +2,11 @@ package nuklear;
 
 public record nk_cursor(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__img = nuklear.nk_image.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__img = nuklear.nk_image.gRecordLayout.withName("img");
     public static final long OFFSET__img = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__size = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__size = nuklear.nk_vec2.gRecordLayout.withName("size");
     public static final long OFFSET__size = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__offset = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__offset = nuklear.nk_vec2.gRecordLayout.withName("offset");
     public static final long OFFSET__offset = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

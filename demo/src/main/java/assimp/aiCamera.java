@@ -2,23 +2,23 @@ package assimp;
 
 public record aiCamera(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__mPosition = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mPosition = assimp.aiVector3D.gRecordLayout.withName("mPosition");
     public static final long OFFSET__mPosition = 1028;
-    public static final java.lang.foreign.StructLayout LAYOUT__mUp = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mUp = assimp.aiVector3D.gRecordLayout.withName("mUp");
     public static final long OFFSET__mUp = 1040;
-    public static final java.lang.foreign.StructLayout LAYOUT__mLookAt = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mLookAt = assimp.aiVector3D.gRecordLayout.withName("mLookAt");
     public static final long OFFSET__mLookAt = 1052;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mHorizontalFOV = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mHorizontalFOV = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mHorizontalFOV");
     public static final long OFFSET__mHorizontalFOV = 1064;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mClipPlaneNear = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mClipPlaneNear = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mClipPlaneNear");
     public static final long OFFSET__mClipPlaneNear = 1068;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mClipPlaneFar = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mClipPlaneFar = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mClipPlaneFar");
     public static final long OFFSET__mClipPlaneFar = 1072;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAspect = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mAspect = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mAspect");
     public static final long OFFSET__mAspect = 1076;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mOrthographicWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mOrthographicWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mOrthographicWidth");
     public static final long OFFSET__mOrthographicWidth = 1080;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

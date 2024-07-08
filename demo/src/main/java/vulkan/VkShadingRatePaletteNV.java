@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkShadingRatePaletteNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shadingRatePaletteEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shadingRatePaletteEntryCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("shadingRatePaletteEntryCount");
     public static final long OFFSET__shadingRatePaletteEntryCount = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pShadingRatePaletteEntries = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pShadingRatePaletteEntries = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pShadingRatePaletteEntries");
     public static final long OFFSET__pShadingRatePaletteEntries = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

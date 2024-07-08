@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPipelineColorBlendAdvancedStateCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcPremultiplied");
     public static final long OFFSET__srcPremultiplied = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstPremultiplied = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstPremultiplied");
     public static final long OFFSET__dstPremultiplied = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendOverlap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blendOverlap = java.lang.foreign.ValueLayout.JAVA_INT.withName("blendOverlap");
     public static final long OFFSET__blendOverlap = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

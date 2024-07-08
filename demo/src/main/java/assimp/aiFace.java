@@ -2,9 +2,9 @@ package assimp;
 
 public record aiFace(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumIndices = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumIndices = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumIndices");
     public static final long OFFSET__mNumIndices = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mIndices = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mIndices = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mIndices");
     public static final long OFFSET__mIndices = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

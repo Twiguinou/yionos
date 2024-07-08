@@ -2,9 +2,12 @@ package nuklear;
 
 public record nk_page_data(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__tbl = nuklear.nk_table.gRecordLayout;
-    public static final java.lang.foreign.StructLayout LAYOUT__pan = nuklear.nk_panel.gRecordLayout;
-    public static final java.lang.foreign.StructLayout LAYOUT__win = nuklear.nk_window.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__tbl = nuklear.nk_table.gRecordLayout.withName("tbl");
+    public static final long OFFSET__tbl = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__pan = nuklear.nk_panel.gRecordLayout.withName("pan");
+    public static final long OFFSET__pan = 0;
+    public static final java.lang.foreign.StructLayout LAYOUT__win = nuklear.nk_window.gRecordLayout.withName("win");
+    public static final long OFFSET__win = 0;
 
     public static final java.lang.foreign.UnionLayout gRecordLayout = java.lang.foreign.MemoryLayout.unionLayout(
             LAYOUT__tbl,
@@ -27,15 +30,15 @@ public record nk_page_data(java.lang.foreign.MemorySegment _ptr)
         java.lang.foreign.MemorySegment.copy(value._ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
     }
 
-    public nuklear.nk_table tbl() {return new nuklear.nk_table(this._ptr.asSlice(0, LAYOUT__tbl));}
+    public nuklear.nk_table tbl() {return new nuklear.nk_table(this._ptr.asSlice(OFFSET__tbl, LAYOUT__tbl));}
     public void tbl(java.util.function.Consumer<nuklear.nk_table> consumer) {consumer.accept(this.tbl());}
-    public void tbl(nuklear.nk_table value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, 0, LAYOUT__tbl.byteSize());}
+    public void tbl(nuklear.nk_table value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__tbl, LAYOUT__tbl.byteSize());}
 
-    public nuklear.nk_panel pan() {return new nuklear.nk_panel(this._ptr.asSlice(0, LAYOUT__pan));}
+    public nuklear.nk_panel pan() {return new nuklear.nk_panel(this._ptr.asSlice(OFFSET__pan, LAYOUT__pan));}
     public void pan(java.util.function.Consumer<nuklear.nk_panel> consumer) {consumer.accept(this.pan());}
-    public void pan(nuklear.nk_panel value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, 0, LAYOUT__pan.byteSize());}
+    public void pan(nuklear.nk_panel value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__pan, LAYOUT__pan.byteSize());}
 
-    public nuklear.nk_window win() {return new nuklear.nk_window(this._ptr.asSlice(0, LAYOUT__win));}
+    public nuklear.nk_window win() {return new nuklear.nk_window(this._ptr.asSlice(OFFSET__win, LAYOUT__win));}
     public void win(java.util.function.Consumer<nuklear.nk_window> consumer) {consumer.accept(this.win());}
-    public void win(nuklear.nk_window value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, 0, LAYOUT__win.byteSize());}
+    public void win(nuklear.nk_window value) {java.lang.foreign.MemorySegment.copy(value._ptr(), 0, this._ptr, OFFSET__win, LAYOUT__win.byteSize());}
 }

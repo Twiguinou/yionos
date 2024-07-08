@@ -17,10 +17,10 @@ public final class Main
 
     static
     {
+        System.loadLibrary("vulkan-1");
+
         System.loadLibrary("libassimp-5");
         System.loadLibrary("glfw3");
-        System.loadLibrary("shaderc_shared");
-        System.loadLibrary("vulkan-1");
         System.loadLibrary("libnuklear");
         System.loadLibrary("libstb_image");
         System.loadLibrary("libvma");

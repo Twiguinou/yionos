@@ -2,9 +2,9 @@ package vulkan;
 
 public record StdVideoAV1LoopRestoration(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__FrameRestorationType = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__FrameRestorationType = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT).withName("FrameRestorationType");
     public static final long OFFSET__FrameRestorationType = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__LoopRestorationSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__LoopRestorationSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_SHORT).withName("LoopRestorationSize");
     public static final long OFFSET__LoopRestorationSize = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkComponentMapping(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_INT.withName("r");
     public static final long OFFSET__r = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_INT.withName("g");
     public static final long OFFSET__g = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_INT.withName("b");
     public static final long OFFSET__b = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_INT.withName("a");
     public static final long OFFSET__a = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

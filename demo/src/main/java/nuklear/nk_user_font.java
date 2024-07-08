@@ -2,15 +2,15 @@ package nuklear;
 
 public record nk_user_font(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.UnionLayout LAYOUT__userdata = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__userdata = nuklear.nk_handle.gRecordLayout.withName("userdata");
     public static final long OFFSET__userdata = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("height");
     public static final long OFFSET__height = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__width = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__width = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("width");
     public static final long OFFSET__width = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__query = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__query = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("query");
     public static final long OFFSET__query = 24;
-    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout.withName("texture");
     public static final long OFFSET__texture = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

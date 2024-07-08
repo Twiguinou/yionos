@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceMultiviewFeatures(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiview = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiview = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiview");
     public static final long OFFSET__multiview = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewGeometryShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewGeometryShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiviewGeometryShader");
     public static final long OFFSET__multiviewGeometryShader = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewTessellationShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewTessellationShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiviewTessellationShader");
     public static final long OFFSET__multiviewTessellationShader = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

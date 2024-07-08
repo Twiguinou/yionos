@@ -2,19 +2,19 @@ package vma;
 
 public record VmaAllocationInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryType = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryType");
     public static final long OFFSET__memoryType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__deviceMemory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__deviceMemory = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("deviceMemory");
     public static final long OFFSET__deviceMemory = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("offset");
     public static final long OFFSET__offset = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("size");
     public static final long OFFSET__size = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMappedData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMappedData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMappedData");
     public static final long OFFSET__pMappedData = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pUserData");
     public static final long OFFSET__pUserData = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pName");
     public static final long OFFSET__pName = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

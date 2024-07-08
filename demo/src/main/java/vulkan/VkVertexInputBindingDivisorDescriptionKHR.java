@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkVertexInputBindingDivisorDescriptionKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__binding = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__binding = java.lang.foreign.ValueLayout.JAVA_INT.withName("binding");
     public static final long OFFSET__binding = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__divisor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__divisor = java.lang.foreign.ValueLayout.JAVA_INT.withName("divisor");
     public static final long OFFSET__divisor = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

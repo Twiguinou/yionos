@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkCoarseSampleLocationNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pixelX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pixelX = java.lang.foreign.ValueLayout.JAVA_INT.withName("pixelX");
     public static final long OFFSET__pixelX = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pixelY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pixelY = java.lang.foreign.ValueLayout.JAVA_INT.withName("pixelY");
     public static final long OFFSET__pixelY = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sample = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sample = java.lang.foreign.ValueLayout.JAVA_INT.withName("sample");
     public static final long OFFSET__sample = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

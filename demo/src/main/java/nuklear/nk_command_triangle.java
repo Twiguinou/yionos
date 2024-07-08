@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_command_triangle(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout.withName("header");
     public static final long OFFSET__header = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("line_thickness");
     public static final long OFFSET__line_thickness = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__a = nuklear.nk_vec2i.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__a = nuklear.nk_vec2i.gRecordLayout.withName("a");
     public static final long OFFSET__a = 18;
-    public static final java.lang.foreign.StructLayout LAYOUT__b = nuklear.nk_vec2i.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__b = nuklear.nk_vec2i.gRecordLayout.withName("b");
     public static final long OFFSET__b = 22;
-    public static final java.lang.foreign.StructLayout LAYOUT__c = nuklear.nk_vec2i.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__c = nuklear.nk_vec2i.gRecordLayout.withName("c");
     public static final long OFFSET__c = 26;
-    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout.withName("color");
     public static final long OFFSET__color = 30;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

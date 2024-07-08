@@ -2,9 +2,12 @@ package vulkan;
 
 public record VkClearColorValue(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__float32 = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_FLOAT);
-    public static final java.lang.foreign.SequenceLayout LAYOUT__int32 = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_INT);
-    public static final java.lang.foreign.SequenceLayout LAYOUT__uint32 = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__float32 = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_FLOAT).withName("float32");
+    public static final long OFFSET__float32 = 0;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__int32 = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_INT).withName("int32");
+    public static final long OFFSET__int32 = 0;
+    public static final java.lang.foreign.SequenceLayout LAYOUT__uint32 = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_INT).withName("uint32");
+    public static final long OFFSET__uint32 = 0;
 
     public static final java.lang.foreign.UnionLayout gRecordLayout = java.lang.foreign.MemoryLayout.unionLayout(
             LAYOUT__float32,
@@ -27,15 +30,15 @@ public record VkClearColorValue(java.lang.foreign.MemorySegment ptr)
         java.lang.foreign.MemorySegment.copy(value.ptr, 0, buffer, index * gRecordLayout.byteSize(), gRecordLayout.byteSize());
     }
 
-    public java.lang.foreign.MemorySegment float32() {return this.ptr.asSlice(0, LAYOUT__float32);}
+    public java.lang.foreign.MemorySegment float32() {return this.ptr.asSlice(OFFSET__float32, LAYOUT__float32);}
     public float float32(int index) {return this.float32().getAtIndex(java.lang.foreign.ValueLayout.JAVA_FLOAT, index);}
     public void float32(int index, float value) {this.float32().setAtIndex(java.lang.foreign.ValueLayout.JAVA_FLOAT, index, value);}
 
-    public java.lang.foreign.MemorySegment int32() {return this.ptr.asSlice(0, LAYOUT__int32);}
+    public java.lang.foreign.MemorySegment int32() {return this.ptr.asSlice(OFFSET__int32, LAYOUT__int32);}
     public int int32(int index) {return this.int32().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
     public void int32(int index, int value) {this.int32().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 
-    public java.lang.foreign.MemorySegment uint32() {return this.ptr.asSlice(0, LAYOUT__uint32);}
+    public java.lang.foreign.MemorySegment uint32() {return this.ptr.asSlice(OFFSET__uint32, LAYOUT__uint32);}
     public int uint32(int index) {return this.uint32().getAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index);}
     public void uint32(int index, int value) {this.uint32().setAtIndex(java.lang.foreign.ValueLayout.JAVA_INT, index, value);}
 }

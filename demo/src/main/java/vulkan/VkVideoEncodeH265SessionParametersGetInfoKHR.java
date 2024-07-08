@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkVideoEncodeH265SessionParametersGetInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeStdVPS = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeStdVPS = java.lang.foreign.ValueLayout.JAVA_INT.withName("writeStdVPS");
     public static final long OFFSET__writeStdVPS = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeStdSPS = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeStdSPS = java.lang.foreign.ValueLayout.JAVA_INT.withName("writeStdSPS");
     public static final long OFFSET__writeStdSPS = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeStdPPS = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__writeStdPPS = java.lang.foreign.ValueLayout.JAVA_INT.withName("writeStdPPS");
     public static final long OFFSET__writeStdPPS = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdVPSId = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdVPSId = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdVPSId");
     public static final long OFFSET__stdVPSId = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSPSId = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSPSId = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdSPSId");
     public static final long OFFSET__stdSPSId = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdPPSId = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdPPSId = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdPPSId");
     public static final long OFFSET__stdPPSId = 36;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

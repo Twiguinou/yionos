@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subsampledLoads = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subsampledLoads = java.lang.foreign.ValueLayout.JAVA_INT.withName("subsampledLoads");
     public static final long OFFSET__subsampledLoads = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subsampledCoarseReconstructionEarlyAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subsampledCoarseReconstructionEarlyAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("subsampledCoarseReconstructionEarlyAccess");
     public static final long OFFSET__subsampledCoarseReconstructionEarlyAccess = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSubsampledArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSubsampledArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxSubsampledArrayLayers");
     public static final long OFFSET__maxSubsampledArrayLayers = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetSubsampledSamplers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDescriptorSetSubsampledSamplers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDescriptorSetSubsampledSamplers");
     public static final long OFFSET__maxDescriptorSetSubsampledSamplers = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

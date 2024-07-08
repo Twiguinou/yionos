@@ -2,11 +2,11 @@ package assimp;
 
 public record aiMeshMorphAnim(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumKeys = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumKeys = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumKeys");
     public static final long OFFSET__mNumKeys = 1028;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mKeys = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mKeys = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mKeys");
     public static final long OFFSET__mKeys = 1032;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

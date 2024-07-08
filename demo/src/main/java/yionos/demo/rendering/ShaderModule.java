@@ -4,111 +4,38 @@ import vulkan.VkDevice;
 import vulkan.VkShaderModuleCreateInfo;
 import yionos.demo.Disposable;
 
-import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 import static vulkan.VulkanCore.*;
-import static shaderc.Shaderc.*;
-import static shaderc.shaderc_shader_kind.*;
-import static shaderc.shaderc_optimization_level.*;
-import static shaderc.shaderc_compilation_status.*;
-import static vulkan.VkShaderStageFlagBits.*;
 import static vulkan.VkStructureType.*;
 import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
 public class ShaderModule implements Disposable
 {
-    public record CompilationTask(String filename, boolean optimize) {}
-
     private final MemorySegment m_handle;
     private final int m_stage;
     public final VkDevice device;
     private final String m_entryPoint;
 
-    public ShaderModule(VkDevice device, int stage, String entryPoint, MemorySegment dataBytes, @Nullable CompilationTask compilation) throws VulkanException
+    public ShaderModule(VkDevice device, int stage, String entryPoint, MemorySegment dataBytes) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
-            MemorySegment pCode, shadercResult;
-            if (compilation != null)
-            {
-                MemorySegment compiler = shaderc_compiler_initialize();
-                if (compiler.equals(NULL))
-                {
-                    throw new VulkanException("Failed to create shaderc compiler");
-                }
-
-                MemorySegment options = shaderc_compile_options_initialize();
-                if (options.equals(NULL))
-                {
-                    shaderc_compiler_release(compiler);
-                    throw new VulkanException("Failed to create shaderc options");
-                }
-
-                int shaderc_stage = mapShaderStage(stage);
-                if (shaderc_stage == shaderc_vertex_shader) shaderc_compile_options_set_invert_y(options, true);
-                if (compilation.optimize)
-                {
-                    shaderc_compile_options_set_optimization_level(options, shaderc_optimization_level_performance);
-                }
-
-                shadercResult = shaderc_compile_into_spv(compiler, dataBytes, dataBytes.byteSize(), shaderc_stage, arena.allocateFrom(compilation.filename),
-                        arena.allocateFrom(entryPoint), options);
-                shaderc_compile_options_release(options);
-                shaderc_compiler_release(compiler);
-                if (shadercResult.equals(NULL))
-                {
-                    throw new VulkanException(String.format("Failed to compile shader: %s", compilation.filename));
-                }
-
-                if (shaderc_result_get_compilation_status(shadercResult) != shaderc_compilation_status_success)
-                {
-                    String errorLog = shaderc_result_get_error_message(shadercResult).getString(0);
-                    throw new VulkanException(String.format("Failed to compile shader {%s} -> %s", compilation.filename, errorLog));
-                }
-
-                pCode = shaderc_result_get_bytes(shadercResult).reinterpret(shaderc_result_get_length(shadercResult));
-            }
-            else
-            {
-                pCode = dataBytes;
-                shadercResult = NULL;
-            }
-
             VkShaderModuleCreateInfo shaderModuleCreateInfo = new VkShaderModuleCreateInfo(arena);
             shaderModuleCreateInfo.sType(VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO);
-            shaderModuleCreateInfo.codeSize(pCode.byteSize());
-            shaderModuleCreateInfo.pCode(pCode);
+            shaderModuleCreateInfo.codeSize(dataBytes.byteSize());
+            shaderModuleCreateInfo.pCode(dataBytes);
 
             MemorySegment pModule = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateShaderModule(device, shaderModuleCreateInfo.ptr(), NULL, pModule), "Unable to create shader module");
             this.m_handle = pModule.get(ADDRESS, 0);
 
-            if (!shadercResult.equals(NULL))
-            {
-                shaderc_result_release(shadercResult);
-            }
-
             this.m_stage = stage;
             this.device = device;
             this.m_entryPoint = entryPoint;
         }
-    }
-
-    private static int mapShaderStage(int stage) throws VulkanException
-    {
-        return switch (stage)
-        {
-            case VK_SHADER_STAGE_VERTEX_BIT -> shaderc_vertex_shader;
-            case VK_SHADER_STAGE_FRAGMENT_BIT -> shaderc_fragment_shader;
-            case VK_SHADER_STAGE_GEOMETRY_BIT -> shaderc_geometry_shader;
-            case VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT -> shaderc_tess_control_shader;
-            case VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT -> shaderc_tess_evaluation_shader;
-            case VK_SHADER_STAGE_COMPUTE_BIT -> shaderc_compute_shader;
-            default -> throw new VulkanException(String.format("Unsupported shader stage: %d", stage));
-        };
     }
 
     public MemorySegment handle()

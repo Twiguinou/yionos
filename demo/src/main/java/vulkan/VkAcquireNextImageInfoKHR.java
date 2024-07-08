@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkAcquireNextImageInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__swapchain = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__swapchain = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("swapchain");
     public static final long OFFSET__swapchain = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__timeout = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__timeout = java.lang.foreign.ValueLayout.JAVA_LONG.withName("timeout");
     public static final long OFFSET__timeout = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__semaphore = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__semaphore = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("semaphore");
     public static final long OFFSET__semaphore = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__fence = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__fence = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("fence");
     public static final long OFFSET__fence = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceMask");
     public static final long OFFSET__deviceMask = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

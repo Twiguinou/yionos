@@ -2,25 +2,25 @@ package assimp;
 
 public record aiImporterDesc(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__mName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mAuthor = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mAuthor = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mAuthor");
     public static final long OFFSET__mAuthor = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mMaintainer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMaintainer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mMaintainer");
     public static final long OFFSET__mMaintainer = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mComments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mComments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mComments");
     public static final long OFFSET__mComments = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("mFlags");
     public static final long OFFSET__mFlags = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMinMajor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMinMajor = java.lang.foreign.ValueLayout.JAVA_INT.withName("mMinMajor");
     public static final long OFFSET__mMinMajor = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMinMinor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMinMinor = java.lang.foreign.ValueLayout.JAVA_INT.withName("mMinMinor");
     public static final long OFFSET__mMinMinor = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMaxMajor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMaxMajor = java.lang.foreign.ValueLayout.JAVA_INT.withName("mMaxMajor");
     public static final long OFFSET__mMaxMajor = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMaxMinor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mMaxMinor = java.lang.foreign.ValueLayout.JAVA_INT.withName("mMaxMinor");
     public static final long OFFSET__mMaxMinor = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mFileExtensions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mFileExtensions = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mFileExtensions");
     public static final long OFFSET__mFileExtensions = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkSubpassDescriptionDepthStencilResolve(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthResolveMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthResolveMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthResolveMode");
     public static final long OFFSET__depthResolveMode = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilResolveMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilResolveMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("stencilResolveMode");
     public static final long OFFSET__stencilResolveMode = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthStencilResolveAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthStencilResolveAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDepthStencilResolveAttachment");
     public static final long OFFSET__pDepthStencilResolveAttachment = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

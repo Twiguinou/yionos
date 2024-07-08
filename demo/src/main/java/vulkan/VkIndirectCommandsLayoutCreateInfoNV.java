@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkIndirectCommandsLayoutCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineBindPoint");
     public static final long OFFSET__pipelineBindPoint = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tokenCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tokenCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("tokenCount");
     public static final long OFFSET__tokenCount = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTokens = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTokens = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTokens");
     public static final long OFFSET__pTokens = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__streamCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__streamCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("streamCount");
     public static final long OFFSET__streamCount = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStreamStrides = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStreamStrides = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStreamStrides");
     public static final long OFFSET__pStreamStrides = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

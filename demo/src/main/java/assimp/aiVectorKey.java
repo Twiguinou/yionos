@@ -2,9 +2,9 @@ package assimp;
 
 public record aiVectorKey(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+    public static final java.lang.foreign.ValueLayout.OfDouble LAYOUT__mTime = java.lang.foreign.ValueLayout.JAVA_DOUBLE.withName("mTime");
     public static final long OFFSET__mTime = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__mValue = assimp.aiVector3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mValue = assimp.aiVector3D.gRecordLayout.withName("mValue");
     public static final long OFFSET__mValue = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

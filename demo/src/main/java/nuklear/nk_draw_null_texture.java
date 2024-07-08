@@ -2,9 +2,9 @@ package nuklear;
 
 public record nk_draw_null_texture(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout.withName("texture");
     public static final long OFFSET__texture = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__uv = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__uv = nuklear.nk_vec2.gRecordLayout.withName("uv");
     public static final long OFFSET__uv = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

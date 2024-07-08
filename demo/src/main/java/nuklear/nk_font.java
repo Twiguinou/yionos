@@ -2,23 +2,23 @@ package nuklear;
 
 public record nk_font(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("next");
     public static final long OFFSET__next = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__handle = nuklear.nk_user_font.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__handle = nuklear.nk_user_font.gRecordLayout.withName("handle");
     public static final long OFFSET__handle = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__info = nuklear.nk_baked_font.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__info = nuklear.nk_baked_font.gRecordLayout.withName("info");
     public static final long OFFSET__info = 48;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__scale = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__scale = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("scale");
     public static final long OFFSET__scale = 80;
-    public static final java.lang.foreign.AddressLayout LAYOUT__glyphs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__glyphs = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("glyphs");
     public static final long OFFSET__glyphs = 88;
-    public static final java.lang.foreign.AddressLayout LAYOUT__fallback = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__fallback = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("fallback");
     public static final long OFFSET__fallback = 96;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fallback_codepoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fallback_codepoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("fallback_codepoint");
     public static final long OFFSET__fallback_codepoint = 104;
-    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout.withName("texture");
     public static final long OFFSET__texture = 112;
-    public static final java.lang.foreign.AddressLayout LAYOUT__config = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__config = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("config");
     public static final long OFFSET__config = 120;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

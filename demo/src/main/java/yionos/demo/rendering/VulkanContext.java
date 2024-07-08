@@ -74,9 +74,9 @@ public class VulkanContext implements Disposable
 
             instanceCreateInfo.pApplicationInfo(applicationInfo.ptr());
             instanceCreateInfo.enabledLayerCount(enabledLayers.length);
-            instanceCreateInfo.ppEnabledLayerNames(ForeignUtils.allocateUtf8Array(arena, enabledLayers));
+            instanceCreateInfo.ppEnabledLayerNames(ForeignUtils.allocateStringArray(arena, enabledLayers));
             instanceCreateInfo.enabledExtensionCount(enabledExtensions.length);
-            instanceCreateInfo.ppEnabledExtensionNames(ForeignUtils.allocateUtf8Array(arena, enabledExtensions));
+            instanceCreateInfo.ppEnabledExtensionNames(ForeignUtils.allocateStringArray(arena, enabledExtensions));
 
             MemorySegment pInstance = arena.allocate(ADDRESS);
             VulkanException.check(vkCreateInstance(instanceCreateInfo.ptr(), NULL, pInstance), "Unable to create vulkan instance");

@@ -2,15 +2,15 @@ package vulkan;
 
 public record StdVideoH265SubLayerHrdParameters(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__bit_rate_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__bit_rate_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("bit_rate_value_minus1");
     public static final long OFFSET__bit_rate_value_minus1 = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_size_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_size_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("cpb_size_value_minus1");
     public static final long OFFSET__cpb_size_value_minus1 = 128;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_size_du_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_size_du_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("cpb_size_du_value_minus1");
     public static final long OFFSET__cpb_size_du_value_minus1 = 256;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__bit_rate_du_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__bit_rate_du_value_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("bit_rate_du_value_minus1");
     public static final long OFFSET__bit_rate_du_value_minus1 = 384;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cbr_flag = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cbr_flag = java.lang.foreign.ValueLayout.JAVA_INT.withName("cbr_flag");
     public static final long OFFSET__cbr_flag = 512;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

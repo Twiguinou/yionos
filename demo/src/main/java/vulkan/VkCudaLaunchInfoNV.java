@@ -2,33 +2,33 @@ package vulkan;
 
 public record VkCudaLaunchInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__function = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__function = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("function");
     public static final long OFFSET__function = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimX = java.lang.foreign.ValueLayout.JAVA_INT.withName("gridDimX");
     public static final long OFFSET__gridDimX = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimY = java.lang.foreign.ValueLayout.JAVA_INT.withName("gridDimY");
     public static final long OFFSET__gridDimY = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimZ = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gridDimZ = java.lang.foreign.ValueLayout.JAVA_INT.withName("gridDimZ");
     public static final long OFFSET__gridDimZ = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimX = java.lang.foreign.ValueLayout.JAVA_INT.withName("blockDimX");
     public static final long OFFSET__blockDimX = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimY = java.lang.foreign.ValueLayout.JAVA_INT.withName("blockDimY");
     public static final long OFFSET__blockDimY = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimZ = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockDimZ = java.lang.foreign.ValueLayout.JAVA_INT.withName("blockDimZ");
     public static final long OFFSET__blockDimZ = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sharedMemBytes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sharedMemBytes = java.lang.foreign.ValueLayout.JAVA_INT.withName("sharedMemBytes");
     public static final long OFFSET__sharedMemBytes = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__paramCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__paramCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("paramCount");
     public static final long OFFSET__paramCount = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pParams = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pParams = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pParams");
     public static final long OFFSET__pParams = 64;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__extraCount = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__extraCount = java.lang.foreign.ValueLayout.JAVA_LONG.withName("extraCount");
     public static final long OFFSET__extraCount = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pExtras = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pExtras = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pExtras");
     public static final long OFFSET__pExtras = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

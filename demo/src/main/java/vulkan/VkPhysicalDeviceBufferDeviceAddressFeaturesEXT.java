@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceBufferDeviceAddressFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddress = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddress = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferDeviceAddress");
     public static final long OFFSET__bufferDeviceAddress = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferDeviceAddressCaptureReplay");
     public static final long OFFSET__bufferDeviceAddressCaptureReplay = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressMultiDevice = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferDeviceAddressMultiDevice = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferDeviceAddressMultiDevice");
     public static final long OFFSET__bufferDeviceAddressMultiDevice = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

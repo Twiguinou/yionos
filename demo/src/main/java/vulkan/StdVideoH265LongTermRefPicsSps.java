@@ -2,9 +2,9 @@ package vulkan;
 
 public record StdVideoH265LongTermRefPicsSps(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__used_by_curr_pic_lt_sps_flag = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__used_by_curr_pic_lt_sps_flag = java.lang.foreign.ValueLayout.JAVA_INT.withName("used_by_curr_pic_lt_sps_flag");
     public static final long OFFSET__used_by_curr_pic_lt_sps_flag = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__lt_ref_pic_poc_lsb_sps = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__lt_ref_pic_poc_lsb_sps = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_INT).withName("lt_ref_pic_poc_lsb_sps");
     public static final long OFFSET__lt_ref_pic_poc_lsb_sps = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

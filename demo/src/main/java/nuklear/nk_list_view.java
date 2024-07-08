@@ -2,19 +2,19 @@ package nuklear;
 
 public record nk_list_view(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_INT.withName("begin");
     public static final long OFFSET__begin = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_INT.withName("end");
     public static final long OFFSET__end = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__count = java.lang.foreign.ValueLayout.JAVA_INT.withName("count");
     public static final long OFFSET__count = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__total_height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__total_height = java.lang.foreign.ValueLayout.JAVA_INT.withName("total_height");
     public static final long OFFSET__total_height = 12;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ctx = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ctx = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ctx");
     public static final long OFFSET__ctx = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__scroll_pointer = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__scroll_pointer = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("scroll_pointer");
     public static final long OFFSET__scroll_pointer = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scroll_value = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scroll_value = java.lang.foreign.ValueLayout.JAVA_INT.withName("scroll_value");
     public static final long OFFSET__scroll_value = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

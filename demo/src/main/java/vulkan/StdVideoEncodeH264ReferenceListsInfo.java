@@ -2,29 +2,29 @@ package vulkan;
 
 public record StdVideoEncodeH264ReferenceListsInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264ReferenceListsInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264ReferenceListsInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_ref_idx_l0_active_minus1");
     public static final long OFFSET__num_ref_idx_l0_active_minus1 = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_ref_idx_l1_active_minus1");
     public static final long OFFSET__num_ref_idx_l1_active_minus1 = 5;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList0 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicList0");
     public static final long OFFSET__RefPicList0 = 6;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList1 = java.lang.foreign.MemoryLayout.sequenceLayout(32, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicList1");
     public static final long OFFSET__RefPicList1 = 38;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refList0ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refList0ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("refList0ModOpCount");
     public static final long OFFSET__refList0ModOpCount = 70;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refList1ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refList1ModOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("refList1ModOpCount");
     public static final long OFFSET__refList1ModOpCount = 71;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refPicMarkingOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__refPicMarkingOpCount = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("refPicMarkingOpCount");
     public static final long OFFSET__refPicMarkingOpCount = 72;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("reserved1");
     public static final long OFFSET__reserved1 = 73;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pRefList0ModOperations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefList0ModOperations = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pRefList0ModOperations");
     public static final long OFFSET__pRefList0ModOperations = 80;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pRefList1ModOperations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefList1ModOperations = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pRefList1ModOperations");
     public static final long OFFSET__pRefList1ModOperations = 88;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pRefPicMarkingOperations = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRefPicMarkingOperations = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pRefPicMarkingOperations");
     public static final long OFFSET__pRefPicMarkingOperations = 96;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

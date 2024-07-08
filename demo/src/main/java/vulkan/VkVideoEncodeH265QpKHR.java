@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkVideoEncodeH265QpKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpI = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpI = java.lang.foreign.ValueLayout.JAVA_INT.withName("qpI");
     public static final long OFFSET__qpI = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpP = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpP = java.lang.foreign.ValueLayout.JAVA_INT.withName("qpP");
     public static final long OFFSET__qpP = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpB = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__qpB = java.lang.foreign.ValueLayout.JAVA_INT.withName("qpB");
     public static final long OFFSET__qpB = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

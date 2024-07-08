@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkSparseImageMemoryBind(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__subresource = vulkan.VkImageSubresource.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__subresource = vulkan.VkImageSubresource.gRecordLayout.withName("subresource");
     public static final long OFFSET__subresource = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__offset = vulkan.VkOffset3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__offset = vulkan.VkOffset3D.gRecordLayout.withName("offset");
     public static final long OFFSET__offset = 12;
-    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent3D.gRecordLayout.withName("extent");
     public static final long OFFSET__extent = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__memory = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("memory");
     public static final long OFFSET__memory = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memoryOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__memoryOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("memoryOffset");
     public static final long OFFSET__memoryOffset = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

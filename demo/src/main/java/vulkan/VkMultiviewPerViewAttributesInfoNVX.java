@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkMultiviewPerViewAttributesInfoNVX(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__perViewAttributes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__perViewAttributes = java.lang.foreign.ValueLayout.JAVA_INT.withName("perViewAttributes");
     public static final long OFFSET__perViewAttributes = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__perViewAttributesPositionXOnly = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__perViewAttributesPositionXOnly = java.lang.foreign.ValueLayout.JAVA_INT.withName("perViewAttributesPositionXOnly");
     public static final long OFFSET__perViewAttributesPositionXOnly = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

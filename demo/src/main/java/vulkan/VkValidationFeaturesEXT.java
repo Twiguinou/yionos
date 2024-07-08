@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkValidationFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__enabledValidationFeatureCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__enabledValidationFeatureCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("enabledValidationFeatureCount");
     public static final long OFFSET__enabledValidationFeatureCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pEnabledValidationFeatures = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pEnabledValidationFeatures = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pEnabledValidationFeatures");
     public static final long OFFSET__pEnabledValidationFeatures = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__disabledValidationFeatureCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__disabledValidationFeatureCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("disabledValidationFeatureCount");
     public static final long OFFSET__disabledValidationFeatureCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDisabledValidationFeatures = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDisabledValidationFeatures = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDisabledValidationFeatures");
     public static final long OFFSET__pDisabledValidationFeatures = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

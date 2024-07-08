@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkAccelerationStructureGeometryTrianglesDataKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexFormat");
     public static final long OFFSET__vertexFormat = 16;
-    public static final java.lang.foreign.UnionLayout LAYOUT__vertexData = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__vertexData = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout.withName("vertexData");
     public static final long OFFSET__vertexData = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertexStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertexStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vertexStride");
     public static final long OFFSET__vertexStride = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxVertex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxVertex = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxVertex");
     public static final long OFFSET__maxVertex = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexType = java.lang.foreign.ValueLayout.JAVA_INT.withName("indexType");
     public static final long OFFSET__indexType = 44;
-    public static final java.lang.foreign.UnionLayout LAYOUT__indexData = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__indexData = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout.withName("indexData");
     public static final long OFFSET__indexData = 48;
-    public static final java.lang.foreign.UnionLayout LAYOUT__transformData = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__transformData = vulkan.VkDeviceOrHostAddressConstKHR.gRecordLayout.withName("transformData");
     public static final long OFFSET__transformData = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

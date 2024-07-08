@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceMaintenance6PropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockTexelViewCompatibleMultipleLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockTexelViewCompatibleMultipleLayers = java.lang.foreign.ValueLayout.JAVA_INT.withName("blockTexelViewCompatibleMultipleLayers");
     public static final long OFFSET__blockTexelViewCompatibleMultipleLayers = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxCombinedImageSamplerDescriptorCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxCombinedImageSamplerDescriptorCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxCombinedImageSamplerDescriptorCount");
     public static final long OFFSET__maxCombinedImageSamplerDescriptorCount = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateClampCombinerInputs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentShadingRateClampCombinerInputs = java.lang.foreign.ValueLayout.JAVA_INT.withName("fragmentShadingRateClampCombinerInputs");
     public static final long OFFSET__fragmentShadingRateClampCombinerInputs = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

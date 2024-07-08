@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPhysicalDeviceMaintenance5PropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__earlyFragmentMultisampleCoverageAfterSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT.withName("earlyFragmentMultisampleCoverageAfterSampleCounting");
     public static final long OFFSET__earlyFragmentMultisampleCoverageAfterSampleCounting = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__earlyFragmentSampleMaskTestBeforeSampleCounting = java.lang.foreign.ValueLayout.JAVA_INT.withName("earlyFragmentSampleMaskTestBeforeSampleCounting");
     public static final long OFFSET__earlyFragmentSampleMaskTestBeforeSampleCounting = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilSwizzleOneSupport = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilSwizzleOneSupport = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthStencilSwizzleOneSupport");
     public static final long OFFSET__depthStencilSwizzleOneSupport = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__polygonModePointSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__polygonModePointSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("polygonModePointSize");
     public static final long OFFSET__polygonModePointSize = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nonStrictSinglePixelWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT.withName("nonStrictSinglePixelWideLinesUseParallelogram");
     public static final long OFFSET__nonStrictSinglePixelWideLinesUseParallelogram = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nonStrictWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nonStrictWideLinesUseParallelogram = java.lang.foreign.ValueLayout.JAVA_INT.withName("nonStrictWideLinesUseParallelogram");
     public static final long OFFSET__nonStrictWideLinesUseParallelogram = 36;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

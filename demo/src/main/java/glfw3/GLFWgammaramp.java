@@ -2,13 +2,13 @@ package glfw3;
 
 public record GLFWgammaramp(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__red = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__red = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("red");
     public static final long OFFSET__red = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__green = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__green = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("green");
     public static final long OFFSET__green = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__blue = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__blue = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("blue");
     public static final long OFFSET__blue = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_INT.withName("size");
     public static final long OFFSET__size = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

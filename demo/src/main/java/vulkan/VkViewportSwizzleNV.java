@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkViewportSwizzleNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_INT.withName("x");
     public static final long OFFSET__x = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_INT.withName("y");
     public static final long OFFSET__y = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__z = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__z = java.lang.foreign.ValueLayout.JAVA_INT.withName("z");
     public static final long OFFSET__z = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__w = java.lang.foreign.ValueLayout.JAVA_INT.withName("w");
     public static final long OFFSET__w = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

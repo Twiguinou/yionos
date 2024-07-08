@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkDecompressMemoryRegionNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcAddress");
     public static final long OFFSET__srcAddress = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__dstAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("dstAddress");
     public static final long OFFSET__dstAddress = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__compressedSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__compressedSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("compressedSize");
     public static final long OFFSET__compressedSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressedSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressedSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("decompressedSize");
     public static final long OFFSET__decompressedSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressionMethod = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__decompressionMethod = java.lang.foreign.ValueLayout.JAVA_LONG.withName("decompressionMethod");
     public static final long OFFSET__decompressionMethod = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

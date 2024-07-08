@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkDisplayPlanePropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__currentDisplay = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__currentDisplay = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("currentDisplay");
     public static final long OFFSET__currentDisplay = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentStackIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentStackIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("currentStackIndex");
     public static final long OFFSET__currentStackIndex = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

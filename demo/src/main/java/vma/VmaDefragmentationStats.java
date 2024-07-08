@@ -2,13 +2,13 @@ package vma;
 
 public record VmaDefragmentationStats(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bytesMoved = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bytesMoved = java.lang.foreign.ValueLayout.JAVA_LONG.withName("bytesMoved");
     public static final long OFFSET__bytesMoved = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bytesFreed = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__bytesFreed = java.lang.foreign.ValueLayout.JAVA_LONG.withName("bytesFreed");
     public static final long OFFSET__bytesFreed = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__allocationsMoved = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__allocationsMoved = java.lang.foreign.ValueLayout.JAVA_INT.withName("allocationsMoved");
     public static final long OFFSET__allocationsMoved = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceMemoryBlocksFreed = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceMemoryBlocksFreed = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceMemoryBlocksFreed");
     public static final long OFFSET__deviceMemoryBlocksFreed = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

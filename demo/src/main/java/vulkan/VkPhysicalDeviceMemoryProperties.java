@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkPhysicalDeviceMemoryProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryTypeCount");
     public static final long OFFSET__memoryTypeCount = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryTypes = java.lang.foreign.MemoryLayout.sequenceLayout(32, vulkan.VkMemoryType.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryTypes = java.lang.foreign.MemoryLayout.sequenceLayout(32, vulkan.VkMemoryType.gRecordLayout).withName("memoryTypes");
     public static final long OFFSET__memoryTypes = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryHeapCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryHeapCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryHeapCount");
     public static final long OFFSET__memoryHeapCount = 260;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryHeaps = java.lang.foreign.MemoryLayout.sequenceLayout(16, vulkan.VkMemoryHeap.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryHeaps = java.lang.foreign.MemoryLayout.sequenceLayout(16, vulkan.VkMemoryHeap.gRecordLayout).withName("memoryHeaps");
     public static final long OFFSET__memoryHeaps = 264;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

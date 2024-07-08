@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkFramebufferMixedSamplesCombinationNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageReductionMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coverageReductionMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("coverageReductionMode");
     public static final long OFFSET__coverageReductionMode = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT.withName("rasterizationSamples");
     public static final long OFFSET__rasterizationSamples = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilSamples = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthStencilSamples");
     public static final long OFFSET__depthStencilSamples = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorSamples = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorSamples");
     public static final long OFFSET__colorSamples = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

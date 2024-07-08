@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkDeviceFaultCountsEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__addressInfoCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__addressInfoCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("addressInfoCount");
     public static final long OFFSET__addressInfoCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vendorInfoCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vendorInfoCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("vendorInfoCount");
     public static final long OFFSET__vendorInfoCount = 20;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vendorBinarySize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vendorBinarySize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vendorBinarySize");
     public static final long OFFSET__vendorBinarySize = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

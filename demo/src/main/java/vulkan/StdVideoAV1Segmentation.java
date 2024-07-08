@@ -2,9 +2,9 @@ package vulkan;
 
 public record StdVideoAV1Segmentation(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__FeatureEnabled = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__FeatureEnabled = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("FeatureEnabled");
     public static final long OFFSET__FeatureEnabled = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__FeatureData = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_SHORT));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__FeatureData = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_SHORT)).withName("FeatureData");
     public static final long OFFSET__FeatureData = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

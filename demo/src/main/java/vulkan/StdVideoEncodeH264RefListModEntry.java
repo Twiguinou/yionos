@@ -2,11 +2,11 @@ package vulkan;
 
 public record StdVideoEncodeH264RefListModEntry(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__modification_of_pic_nums_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__modification_of_pic_nums_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("modification_of_pic_nums_idc");
     public static final long OFFSET__modification_of_pic_nums_idc = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__abs_diff_pic_num_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__abs_diff_pic_num_minus1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("abs_diff_pic_num_minus1");
     public static final long OFFSET__abs_diff_pic_num_minus1 = 4;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_pic_num = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__long_term_pic_num = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("long_term_pic_num");
     public static final long OFFSET__long_term_pic_num = 6;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

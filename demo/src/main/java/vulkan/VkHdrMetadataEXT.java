@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkHdrMetadataEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__displayPrimaryRed = vulkan.VkXYColorEXT.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__displayPrimaryRed = vulkan.VkXYColorEXT.gRecordLayout.withName("displayPrimaryRed");
     public static final long OFFSET__displayPrimaryRed = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__displayPrimaryGreen = vulkan.VkXYColorEXT.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__displayPrimaryGreen = vulkan.VkXYColorEXT.gRecordLayout.withName("displayPrimaryGreen");
     public static final long OFFSET__displayPrimaryGreen = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__displayPrimaryBlue = vulkan.VkXYColorEXT.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__displayPrimaryBlue = vulkan.VkXYColorEXT.gRecordLayout.withName("displayPrimaryBlue");
     public static final long OFFSET__displayPrimaryBlue = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__whitePoint = vulkan.VkXYColorEXT.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__whitePoint = vulkan.VkXYColorEXT.gRecordLayout.withName("whitePoint");
     public static final long OFFSET__whitePoint = 40;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxLuminance = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxLuminance = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxLuminance");
     public static final long OFFSET__maxLuminance = 48;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minLuminance = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minLuminance = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minLuminance");
     public static final long OFFSET__minLuminance = 52;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxContentLightLevel = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxContentLightLevel = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxContentLightLevel");
     public static final long OFFSET__maxContentLightLevel = 56;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxFrameAverageLightLevel = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxFrameAverageLightLevel = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxFrameAverageLightLevel");
     public static final long OFFSET__maxFrameAverageLightLevel = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

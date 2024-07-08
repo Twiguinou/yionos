@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkViewport(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__x = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("x");
     public static final long OFFSET__x = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__y = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("y");
     public static final long OFFSET__y = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("width");
     public static final long OFFSET__width = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("height");
     public static final long OFFSET__height = 12;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minDepth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minDepth = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minDepth");
     public static final long OFFSET__minDepth = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxDepth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__maxDepth = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("maxDepth");
     public static final long OFFSET__maxDepth = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkSurfaceCapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minImageCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("minImageCount");
     public static final long OFFSET__minImageCount = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxImageCount");
     public static final long OFFSET__maxImageCount = 4;
-    public static final java.lang.foreign.StructLayout LAYOUT__currentExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__currentExtent = vulkan.VkExtent2D.gRecordLayout.withName("currentExtent");
     public static final long OFFSET__currentExtent = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__minImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minImageExtent = vulkan.VkExtent2D.gRecordLayout.withName("minImageExtent");
     public static final long OFFSET__minImageExtent = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxImageExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxImageExtent");
     public static final long OFFSET__maxImageExtent = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxImageArrayLayers");
     public static final long OFFSET__maxImageArrayLayers = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedTransforms");
     public static final long OFFSET__supportedTransforms = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentTransform = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentTransform = java.lang.foreign.ValueLayout.JAVA_INT.withName("currentTransform");
     public static final long OFFSET__currentTransform = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedCompositeAlpha = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedCompositeAlpha = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedCompositeAlpha");
     public static final long OFFSET__supportedCompositeAlpha = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedUsageFlags");
     public static final long OFFSET__supportedUsageFlags = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

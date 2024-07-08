@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkSubresourceLayout(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("offset");
     public static final long OFFSET__offset = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("size");
     public static final long OFFSET__size = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__rowPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__rowPitch = java.lang.foreign.ValueLayout.JAVA_LONG.withName("rowPitch");
     public static final long OFFSET__rowPitch = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__arrayPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__arrayPitch = java.lang.foreign.ValueLayout.JAVA_LONG.withName("arrayPitch");
     public static final long OFFSET__arrayPitch = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__depthPitch = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__depthPitch = java.lang.foreign.ValueLayout.JAVA_LONG.withName("depthPitch");
     public static final long OFFSET__depthPitch = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

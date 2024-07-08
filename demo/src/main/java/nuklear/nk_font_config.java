@@ -2,39 +2,39 @@ package nuklear;
 
 public record nk_font_config(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("next");
     public static final long OFFSET__next = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ttf_blob = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ttf_blob = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ttf_blob");
     public static final long OFFSET__ttf_blob = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__ttf_size = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__ttf_size = java.lang.foreign.ValueLayout.JAVA_LONG.withName("ttf_size");
     public static final long OFFSET__ttf_size = 16;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__ttf_data_owned_by_atlas = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__ttf_data_owned_by_atlas = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("ttf_data_owned_by_atlas");
     public static final long OFFSET__ttf_data_owned_by_atlas = 24;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__merge_mode = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__merge_mode = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("merge_mode");
     public static final long OFFSET__merge_mode = 25;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pixel_snap = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pixel_snap = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pixel_snap");
     public static final long OFFSET__pixel_snap = 26;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__oversample_v = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__oversample_v = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("oversample_v");
     public static final long OFFSET__oversample_v = 27;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__oversample_h = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__oversample_h = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("oversample_h");
     public static final long OFFSET__oversample_h = 28;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__padding = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__padding = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("padding");
     public static final long OFFSET__padding = 29;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("size");
     public static final long OFFSET__size = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coord_type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__coord_type = java.lang.foreign.ValueLayout.JAVA_INT.withName("coord_type");
     public static final long OFFSET__coord_type = 36;
-    public static final java.lang.foreign.StructLayout LAYOUT__spacing = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__spacing = nuklear.nk_vec2.gRecordLayout.withName("spacing");
     public static final long OFFSET__spacing = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__range = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__range = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("range");
     public static final long OFFSET__range = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__font = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__font = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("font");
     public static final long OFFSET__font = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fallback_glyph = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fallback_glyph = java.lang.foreign.ValueLayout.JAVA_INT.withName("fallback_glyph");
     public static final long OFFSET__fallback_glyph = 64;
-    public static final java.lang.foreign.AddressLayout LAYOUT__n = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__n = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("n");
     public static final long OFFSET__n = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__p = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__p = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("p");
     public static final long OFFSET__p = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

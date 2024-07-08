@@ -2,33 +2,33 @@ package vulkan;
 
 public record VkShaderCreateInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stage = java.lang.foreign.ValueLayout.JAVA_INT.withName("stage");
     public static final long OFFSET__stage = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nextStage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nextStage = java.lang.foreign.ValueLayout.JAVA_INT.withName("nextStage");
     public static final long OFFSET__nextStage = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__codeType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__codeType = java.lang.foreign.ValueLayout.JAVA_INT.withName("codeType");
     public static final long OFFSET__codeType = 28;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__codeSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__codeSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("codeSize");
     public static final long OFFSET__codeSize = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCode = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCode");
     public static final long OFFSET__pCode = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pName");
     public static final long OFFSET__pName = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__setLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__setLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("setLayoutCount");
     public static final long OFFSET__setLayoutCount = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSetLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSetLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSetLayouts");
     public static final long OFFSET__pSetLayouts = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushConstantRangeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushConstantRangeCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("pushConstantRangeCount");
     public static final long OFFSET__pushConstantRangeCount = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pPushConstantRanges = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPushConstantRanges = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pPushConstantRanges");
     public static final long OFFSET__pPushConstantRanges = 80;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSpecializationInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSpecializationInfo = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSpecializationInfo");
     public static final long OFFSET__pSpecializationInfo = 88;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,29 +2,29 @@ package vulkan;
 
 public record VkDebugUtilsMessengerCallbackDataEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMessageIdName = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMessageIdName = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMessageIdName");
     public static final long OFFSET__pMessageIdName = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__messageIdNumber = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__messageIdNumber = java.lang.foreign.ValueLayout.JAVA_INT.withName("messageIdNumber");
     public static final long OFFSET__messageIdNumber = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMessage = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMessage = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMessage");
     public static final long OFFSET__pMessage = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueLabelCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueLabelCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("queueLabelCount");
     public static final long OFFSET__queueLabelCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pQueueLabels = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pQueueLabels = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pQueueLabels");
     public static final long OFFSET__pQueueLabels = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cmdBufLabelCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cmdBufLabelCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("cmdBufLabelCount");
     public static final long OFFSET__cmdBufLabelCount = 64;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCmdBufLabels = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCmdBufLabels = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCmdBufLabels");
     public static final long OFFSET__pCmdBufLabels = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__objectCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__objectCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("objectCount");
     public static final long OFFSET__objectCount = 80;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pObjects = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pObjects = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pObjects");
     public static final long OFFSET__pObjects = 88;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

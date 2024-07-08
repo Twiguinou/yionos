@@ -2,33 +2,33 @@ package vulkan;
 
 public record StdVideoAV1SequenceHeader(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1SequenceHeaderFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1SequenceHeaderFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq_profile = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq_profile = java.lang.foreign.ValueLayout.JAVA_INT.withName("seq_profile");
     public static final long OFFSET__seq_profile = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__frame_width_bits_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__frame_width_bits_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("frame_width_bits_minus_1");
     public static final long OFFSET__frame_width_bits_minus_1 = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__frame_height_bits_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__frame_height_bits_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("frame_height_bits_minus_1");
     public static final long OFFSET__frame_height_bits_minus_1 = 9;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__max_frame_width_minus_1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__max_frame_width_minus_1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("max_frame_width_minus_1");
     public static final long OFFSET__max_frame_width_minus_1 = 10;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__max_frame_height_minus_1 = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__max_frame_height_minus_1 = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("max_frame_height_minus_1");
     public static final long OFFSET__max_frame_height_minus_1 = 12;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__delta_frame_id_length_minus_2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__delta_frame_id_length_minus_2 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("delta_frame_id_length_minus_2");
     public static final long OFFSET__delta_frame_id_length_minus_2 = 14;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__additional_frame_id_length_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__additional_frame_id_length_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("additional_frame_id_length_minus_1");
     public static final long OFFSET__additional_frame_id_length_minus_1 = 15;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__order_hint_bits_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__order_hint_bits_minus_1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("order_hint_bits_minus_1");
     public static final long OFFSET__order_hint_bits_minus_1 = 16;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_force_integer_mv = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_force_integer_mv = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("seq_force_integer_mv");
     public static final long OFFSET__seq_force_integer_mv = 17;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_force_screen_content_tools = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__seq_force_screen_content_tools = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("seq_force_screen_content_tools");
     public static final long OFFSET__seq_force_screen_content_tools = 18;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(5, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved1 = java.lang.foreign.MemoryLayout.sequenceLayout(5, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("reserved1");
     public static final long OFFSET__reserved1 = 19;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pColorConfig = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pColorConfig = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pColorConfig");
     public static final long OFFSET__pColorConfig = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTimingInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTimingInfo = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTimingInfo");
     public static final long OFFSET__pTimingInfo = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

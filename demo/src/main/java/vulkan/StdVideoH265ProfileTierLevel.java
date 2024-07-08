@@ -2,11 +2,11 @@ package vulkan;
 
 public record StdVideoH265ProfileTierLevel(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265ProfileTierLevelFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265ProfileTierLevelFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__general_profile_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__general_profile_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("general_profile_idc");
     public static final long OFFSET__general_profile_idc = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__general_level_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__general_level_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("general_level_idc");
     public static final long OFFSET__general_level_idc = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

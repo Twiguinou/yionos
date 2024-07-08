@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkMutableDescriptorTypeListEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__descriptorTypeCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("descriptorTypeCount");
     public static final long OFFSET__descriptorTypeCount = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorTypes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDescriptorTypes = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDescriptorTypes");
     public static final long OFFSET__pDescriptorTypes = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

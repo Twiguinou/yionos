@@ -13,7 +13,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
-import java.util.stream.StreamSupport;
 
 public class GlfwGenerator implements Generator
 {
@@ -48,10 +47,10 @@ public class GlfwGenerator implements Generator
             File glfwOutput = new File(outputDirectory, GLFW_DIRECTORY);
             if (glfwOutput.exists() || glfwOutput.mkdirs())
             {
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner.declarations());
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner.getTypeTable().values(), GLFW_PACKAGE);
-                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner.declarations());
-                List<Constant> sortedConstants = StreamSupport.stream(scanner.constants().spliterator(), false)
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner);
+                List<Constant> sortedConstants = scanner.constants().stream()
                         .sorted(Comparator.comparing(Constant::name))
                         .toList();
 

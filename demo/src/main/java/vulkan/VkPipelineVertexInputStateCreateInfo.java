@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPipelineVertexInputStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexBindingDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexBindingDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexBindingDescriptionCount");
     public static final long OFFSET__vertexBindingDescriptionCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexBindingDescriptions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexBindingDescriptions = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVertexBindingDescriptions");
     public static final long OFFSET__pVertexBindingDescriptions = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexAttributeDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexAttributeDescriptionCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexAttributeDescriptionCount");
     public static final long OFFSET__vertexAttributeDescriptionCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexAttributeDescriptions = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVertexAttributeDescriptions = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVertexAttributeDescriptions");
     public static final long OFFSET__pVertexAttributeDescriptions = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

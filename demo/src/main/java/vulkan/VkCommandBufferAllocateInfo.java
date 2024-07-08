@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkCommandBufferAllocateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__commandPool = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__commandPool = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("commandPool");
     public static final long OFFSET__commandPool = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__level = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__level = java.lang.foreign.ValueLayout.JAVA_INT.withName("level");
     public static final long OFFSET__level = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__commandBufferCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__commandBufferCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("commandBufferCount");
     public static final long OFFSET__commandBufferCount = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

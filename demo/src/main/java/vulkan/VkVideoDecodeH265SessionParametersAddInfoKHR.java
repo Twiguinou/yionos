@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkVideoDecodeH265SessionParametersAddInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdVPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdVPSCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdVPSCount");
     public static final long OFFSET__stdVPSCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdVPSs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdVPSs = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdVPSs");
     public static final long OFFSET__pStdVPSs = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSPSCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdSPSCount");
     public static final long OFFSET__stdSPSCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdSPSs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdSPSs = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdSPSs");
     public static final long OFFSET__pStdSPSs = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdPPSCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdPPSCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdPPSCount");
     public static final long OFFSET__stdPPSCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPPSs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPPSs = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdPPSs");
     public static final long OFFSET__pStdPPSs = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

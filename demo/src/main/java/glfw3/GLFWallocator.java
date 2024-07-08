@@ -2,13 +2,13 @@ package glfw3;
 
 public record GLFWallocator(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__allocate = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__allocate = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("allocate");
     public static final long OFFSET__allocate = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__reallocate = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__reallocate = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("reallocate");
     public static final long OFFSET__reallocate = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__deallocate = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__deallocate = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("deallocate");
     public static final long OFFSET__deallocate = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__user = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__user = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("user");
     public static final long OFFSET__user = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkVideoEncodeH264RateControlLayerInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMinQp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMinQp = java.lang.foreign.ValueLayout.JAVA_INT.withName("useMinQp");
     public static final long OFFSET__useMinQp = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__minQp = vulkan.VkVideoEncodeH264QpKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minQp = vulkan.VkVideoEncodeH264QpKHR.gRecordLayout.withName("minQp");
     public static final long OFFSET__minQp = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMaxQp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMaxQp = java.lang.foreign.ValueLayout.JAVA_INT.withName("useMaxQp");
     public static final long OFFSET__useMaxQp = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxQp = vulkan.VkVideoEncodeH264QpKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxQp = vulkan.VkVideoEncodeH264QpKHR.gRecordLayout.withName("maxQp");
     public static final long OFFSET__maxQp = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMaxFrameSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useMaxFrameSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("useMaxFrameSize");
     public static final long OFFSET__useMaxFrameSize = 48;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxFrameSize = vulkan.VkVideoEncodeH264FrameSizeKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxFrameSize = vulkan.VkVideoEncodeH264FrameSizeKHR.gRecordLayout.withName("maxFrameSize");
     public static final long OFFSET__maxFrameSize = 52;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

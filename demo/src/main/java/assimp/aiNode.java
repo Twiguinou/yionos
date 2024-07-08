@@ -2,21 +2,21 @@ package assimp;
 
 public record aiNode(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__mTransformation = assimp.aiMatrix4x4.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mTransformation = assimp.aiMatrix4x4.gRecordLayout.withName("mTransformation");
     public static final long OFFSET__mTransformation = 1028;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mParent = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mParent = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mParent");
     public static final long OFFSET__mParent = 1096;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumChildren = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumChildren = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumChildren");
     public static final long OFFSET__mNumChildren = 1104;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mChildren = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mChildren = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mChildren");
     public static final long OFFSET__mChildren = 1112;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumMeshes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumMeshes = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumMeshes");
     public static final long OFFSET__mNumMeshes = 1120;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMeshes = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mMeshes");
     public static final long OFFSET__mMeshes = 1128;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mMetaData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mMetaData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mMetaData");
     public static final long OFFSET__mMetaData = 1136;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

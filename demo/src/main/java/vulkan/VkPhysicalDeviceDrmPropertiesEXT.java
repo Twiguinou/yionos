@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPhysicalDeviceDrmPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hasPrimary = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hasPrimary = java.lang.foreign.ValueLayout.JAVA_INT.withName("hasPrimary");
     public static final long OFFSET__hasPrimary = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hasRender = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hasRender = java.lang.foreign.ValueLayout.JAVA_INT.withName("hasRender");
     public static final long OFFSET__hasRender = 20;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__primaryMajor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__primaryMajor = java.lang.foreign.ValueLayout.JAVA_LONG.withName("primaryMajor");
     public static final long OFFSET__primaryMajor = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__primaryMinor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__primaryMinor = java.lang.foreign.ValueLayout.JAVA_LONG.withName("primaryMinor");
     public static final long OFFSET__primaryMinor = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderMajor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderMajor = java.lang.foreign.ValueLayout.JAVA_LONG.withName("renderMajor");
     public static final long OFFSET__renderMajor = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderMinor = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__renderMinor = java.lang.foreign.ValueLayout.JAVA_LONG.withName("renderMinor");
     public static final long OFFSET__renderMinor = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

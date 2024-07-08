@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkAttachmentSampleCountInfoAMD(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorAttachmentCount");
     public static final long OFFSET__colorAttachmentCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachmentSamples = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachmentSamples = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pColorAttachmentSamples");
     public static final long OFFSET__pColorAttachmentSamples = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilAttachmentSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthStencilAttachmentSamples = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthStencilAttachmentSamples");
     public static final long OFFSET__depthStencilAttachmentSamples = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

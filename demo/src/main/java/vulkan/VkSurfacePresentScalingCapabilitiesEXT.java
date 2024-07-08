@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkSurfacePresentScalingCapabilitiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedPresentScaling = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedPresentScaling = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedPresentScaling");
     public static final long OFFSET__supportedPresentScaling = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedPresentGravityX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedPresentGravityX = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedPresentGravityX");
     public static final long OFFSET__supportedPresentGravityX = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedPresentGravityY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedPresentGravityY = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedPresentGravityY");
     public static final long OFFSET__supportedPresentGravityY = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__minScaledImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minScaledImageExtent = vulkan.VkExtent2D.gRecordLayout.withName("minScaledImageExtent");
     public static final long OFFSET__minScaledImageExtent = 28;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxScaledImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxScaledImageExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxScaledImageExtent");
     public static final long OFFSET__maxScaledImageExtent = 36;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkDeviceFaultVendorInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__description = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("description");
     public static final long OFFSET__description = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vendorFaultCode = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vendorFaultCode = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vendorFaultCode");
     public static final long OFFSET__vendorFaultCode = 256;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vendorFaultData = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vendorFaultData = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vendorFaultData");
     public static final long OFFSET__vendorFaultData = 264;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

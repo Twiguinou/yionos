@@ -2,11 +2,11 @@ package vma;
 
 public record VmaAllocatorInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__instance = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__instance = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("instance");
     public static final long OFFSET__instance = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__physicalDevice = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__physicalDevice = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("physicalDevice");
     public static final long OFFSET__physicalDevice = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__device = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__device = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("device");
     public static final long OFFSET__device = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

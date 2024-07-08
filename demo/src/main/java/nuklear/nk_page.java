@@ -2,11 +2,11 @@ package nuklear;
 
 public record nk_page(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__size = java.lang.foreign.ValueLayout.JAVA_INT.withName("size");
     public static final long OFFSET__size = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__next = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("next");
     public static final long OFFSET__next = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__win = java.lang.foreign.MemoryLayout.sequenceLayout(1, nuklear.nk_page_element.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__win = java.lang.foreign.MemoryLayout.sequenceLayout(1, nuklear.nk_page_element.gRecordLayout).withName("win");
     public static final long OFFSET__win = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

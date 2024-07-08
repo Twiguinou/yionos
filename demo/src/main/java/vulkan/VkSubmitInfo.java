@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkSubmitInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__waitSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("waitSemaphoreCount");
     public static final long OFFSET__waitSemaphoreCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pWaitSemaphores");
     public static final long OFFSET__pWaitSemaphores = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitDstStageMask = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWaitDstStageMask = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pWaitDstStageMask");
     public static final long OFFSET__pWaitDstStageMask = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__commandBufferCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__commandBufferCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("commandBufferCount");
     public static final long OFFSET__commandBufferCount = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCommandBuffers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCommandBuffers = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCommandBuffers");
     public static final long OFFSET__pCommandBuffers = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__signalSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__signalSemaphoreCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("signalSemaphoreCount");
     public static final long OFFSET__signalSemaphoreCount = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSignalSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSignalSemaphores = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSignalSemaphores");
     public static final long OFFSET__pSignalSemaphores = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

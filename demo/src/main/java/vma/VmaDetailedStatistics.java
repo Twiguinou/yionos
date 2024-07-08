@@ -2,17 +2,17 @@ package vma;
 
 public record VmaDetailedStatistics(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__statistics = vma.VmaStatistics.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__statistics = vma.VmaStatistics.gRecordLayout.withName("statistics");
     public static final long OFFSET__statistics = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__unusedRangeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__unusedRangeCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("unusedRangeCount");
     public static final long OFFSET__unusedRangeCount = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocationSizeMin = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocationSizeMin = java.lang.foreign.ValueLayout.JAVA_LONG.withName("allocationSizeMin");
     public static final long OFFSET__allocationSizeMin = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocationSizeMax = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocationSizeMax = java.lang.foreign.ValueLayout.JAVA_LONG.withName("allocationSizeMax");
     public static final long OFFSET__allocationSizeMax = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__unusedRangeSizeMin = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__unusedRangeSizeMin = java.lang.foreign.ValueLayout.JAVA_LONG.withName("unusedRangeSizeMin");
     public static final long OFFSET__unusedRangeSizeMin = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__unusedRangeSizeMax = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__unusedRangeSizeMax = java.lang.foreign.ValueLayout.JAVA_LONG.withName("unusedRangeSizeMax");
     public static final long OFFSET__unusedRangeSizeMax = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

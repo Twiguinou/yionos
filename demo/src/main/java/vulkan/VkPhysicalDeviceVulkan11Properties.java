@@ -2,39 +2,39 @@ package vulkan;
 
 public record VkPhysicalDeviceVulkan11Properties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("deviceUUID");
     public static final long OFFSET__deviceUUID = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__driverUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("driverUUID");
     public static final long OFFSET__driverUUID = 32;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceLUID = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceLUID = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("deviceLUID");
     public static final long OFFSET__deviceLUID = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceNodeMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceNodeMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceNodeMask");
     public static final long OFFSET__deviceNodeMask = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceLUIDValid = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceLUIDValid = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceLUIDValid");
     public static final long OFFSET__deviceLUIDValid = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("subgroupSize");
     public static final long OFFSET__subgroupSize = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSupportedStages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSupportedStages = java.lang.foreign.ValueLayout.JAVA_INT.withName("subgroupSupportedStages");
     public static final long OFFSET__subgroupSupportedStages = 68;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSupportedOperations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSupportedOperations = java.lang.foreign.ValueLayout.JAVA_INT.withName("subgroupSupportedOperations");
     public static final long OFFSET__subgroupSupportedOperations = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupQuadOperationsInAllStages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupQuadOperationsInAllStages = java.lang.foreign.ValueLayout.JAVA_INT.withName("subgroupQuadOperationsInAllStages");
     public static final long OFFSET__subgroupQuadOperationsInAllStages = 76;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pointClippingBehavior = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pointClippingBehavior = java.lang.foreign.ValueLayout.JAVA_INT.withName("pointClippingBehavior");
     public static final long OFFSET__pointClippingBehavior = 80;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMultiviewViewCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMultiviewViewCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMultiviewViewCount");
     public static final long OFFSET__maxMultiviewViewCount = 84;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMultiviewInstanceIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMultiviewInstanceIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMultiviewInstanceIndex");
     public static final long OFFSET__maxMultiviewInstanceIndex = 88;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__protectedNoFault = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__protectedNoFault = java.lang.foreign.ValueLayout.JAVA_INT.withName("protectedNoFault");
     public static final long OFFSET__protectedNoFault = 92;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerSetDescriptors = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPerSetDescriptors = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPerSetDescriptors");
     public static final long OFFSET__maxPerSetDescriptors = 96;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxMemoryAllocationSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxMemoryAllocationSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxMemoryAllocationSize");
     public static final long OFFSET__maxMemoryAllocationSize = 104;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,7 +2,7 @@ package vulkan;
 
 public record VkBindPipelineIndirectCommandNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__pipelineAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__pipelineAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("pipelineAddress");
     public static final long OFFSET__pipelineAddress = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

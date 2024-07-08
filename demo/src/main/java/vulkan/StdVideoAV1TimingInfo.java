@@ -2,13 +2,13 @@ package vulkan;
 
 public record StdVideoAV1TimingInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1TimingInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1TimingInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__num_units_in_display_tick = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__num_units_in_display_tick = java.lang.foreign.ValueLayout.JAVA_INT.withName("num_units_in_display_tick");
     public static final long OFFSET__num_units_in_display_tick = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__time_scale = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__time_scale = java.lang.foreign.ValueLayout.JAVA_INT.withName("time_scale");
     public static final long OFFSET__time_scale = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__num_ticks_per_picture_minus_1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__num_ticks_per_picture_minus_1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("num_ticks_per_picture_minus_1");
     public static final long OFFSET__num_ticks_per_picture_minus_1 = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

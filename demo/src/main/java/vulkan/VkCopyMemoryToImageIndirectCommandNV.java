@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkCopyMemoryToImageIndirectCommandNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAddress = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__srcAddress = java.lang.foreign.ValueLayout.JAVA_LONG.withName("srcAddress");
     public static final long OFFSET__srcAddress = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferRowLength = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferRowLength = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferRowLength");
     public static final long OFFSET__bufferRowLength = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferImageHeight = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferImageHeight = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferImageHeight");
     public static final long OFFSET__bufferImageHeight = 12;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout.withName("imageSubresource");
     public static final long OFFSET__imageSubresource = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageOffset = vulkan.VkOffset3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageOffset = vulkan.VkOffset3D.gRecordLayout.withName("imageOffset");
     public static final long OFFSET__imageOffset = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__imageExtent = vulkan.VkExtent3D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__imageExtent = vulkan.VkExtent3D.gRecordLayout.withName("imageExtent");
     public static final long OFFSET__imageExtent = 44;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,11 +2,11 @@ package vulkan;
 
 public record StdVideoH265DecPicBufMgr(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__max_latency_increase_plus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__max_latency_increase_plus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_INT).withName("max_latency_increase_plus1");
     public static final long OFFSET__max_latency_increase_plus1 = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__max_dec_pic_buffering_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__max_dec_pic_buffering_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("max_dec_pic_buffering_minus1");
     public static final long OFFSET__max_dec_pic_buffering_minus1 = 28;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__max_num_reorder_pics = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__max_num_reorder_pics = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("max_num_reorder_pics");
     public static final long OFFSET__max_num_reorder_pics = 35;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

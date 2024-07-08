@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__maxWorkGroupCount = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxWorkGroupCount = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT).withName("maxWorkGroupCount");
     public static final long OFFSET__maxWorkGroupCount = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__maxWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT).withName("maxWorkGroupSize");
     public static final long OFFSET__maxWorkGroupSize = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxOutputClusterCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxOutputClusterCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxOutputClusterCount");
     public static final long OFFSET__maxOutputClusterCount = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__indirectBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__indirectBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_LONG.withName("indirectBufferOffsetAlignment");
     public static final long OFFSET__indirectBufferOffsetAlignment = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

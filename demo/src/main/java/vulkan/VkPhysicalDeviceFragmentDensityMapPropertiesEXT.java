@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceFragmentDensityMapPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.StructLayout LAYOUT__minFragmentDensityTexelSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minFragmentDensityTexelSize = vulkan.VkExtent2D.gRecordLayout.withName("minFragmentDensityTexelSize");
     public static final long OFFSET__minFragmentDensityTexelSize = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxFragmentDensityTexelSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxFragmentDensityTexelSize = vulkan.VkExtent2D.gRecordLayout.withName("maxFragmentDensityTexelSize");
     public static final long OFFSET__maxFragmentDensityTexelSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentDensityInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__fragmentDensityInvocations = java.lang.foreign.ValueLayout.JAVA_INT.withName("fragmentDensityInvocations");
     public static final long OFFSET__fragmentDensityInvocations = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

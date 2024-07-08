@@ -2,13 +2,13 @@ package vulkan;
 
 public record StdVideoEncodeH265ReferenceInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH265ReferenceInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH265ReferenceInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pic_type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pic_type = java.lang.foreign.ValueLayout.JAVA_INT.withName("pic_type");
     public static final long OFFSET__pic_type = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCntVal = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCntVal = java.lang.foreign.ValueLayout.JAVA_INT.withName("PicOrderCntVal");
     public static final long OFFSET__PicOrderCntVal = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TemporalId = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__TemporalId = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("TemporalId");
     public static final long OFFSET__TemporalId = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkDescriptorImageInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__sampler = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__sampler = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("sampler");
     public static final long OFFSET__sampler = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__imageView = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__imageView = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("imageView");
     public static final long OFFSET__imageView = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageLayout");
     public static final long OFFSET__imageLayout = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

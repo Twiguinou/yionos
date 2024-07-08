@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkVideoEncodeH265FrameSizeKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameISize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameISize = java.lang.foreign.ValueLayout.JAVA_INT.withName("frameISize");
     public static final long OFFSET__frameISize = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__framePSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__framePSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("framePSize");
     public static final long OFFSET__framePSize = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameBSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameBSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("frameBSize");
     public static final long OFFSET__frameBSize = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,9 +2,9 @@ package nuklear;
 
 public record nk_style_item(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 0;
-    public static final java.lang.foreign.UnionLayout LAYOUT__data = nuklear.nk_style_item_data.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__data = nuklear.nk_style_item_data.gRecordLayout.withName("data");
     public static final long OFFSET__data = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,33 +2,33 @@ package vulkan;
 
 public record VkPhysicalDeviceVulkan11Features(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("storageBuffer16BitAccess");
     public static final long OFFSET__storageBuffer16BitAccess = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformAndStorageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformAndStorageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("uniformAndStorageBuffer16BitAccess");
     public static final long OFFSET__uniformAndStorageBuffer16BitAccess = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storagePushConstant16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storagePushConstant16 = java.lang.foreign.ValueLayout.JAVA_INT.withName("storagePushConstant16");
     public static final long OFFSET__storagePushConstant16 = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageInputOutput16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageInputOutput16 = java.lang.foreign.ValueLayout.JAVA_INT.withName("storageInputOutput16");
     public static final long OFFSET__storageInputOutput16 = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiview = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiview = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiview");
     public static final long OFFSET__multiview = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewGeometryShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewGeometryShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiviewGeometryShader");
     public static final long OFFSET__multiviewGeometryShader = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewTessellationShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewTessellationShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiviewTessellationShader");
     public static final long OFFSET__multiviewTessellationShader = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__variablePointersStorageBuffer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__variablePointersStorageBuffer = java.lang.foreign.ValueLayout.JAVA_INT.withName("variablePointersStorageBuffer");
     public static final long OFFSET__variablePointersStorageBuffer = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__variablePointers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__variablePointers = java.lang.foreign.ValueLayout.JAVA_INT.withName("variablePointers");
     public static final long OFFSET__variablePointers = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__protectedMemory = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__protectedMemory = java.lang.foreign.ValueLayout.JAVA_INT.withName("protectedMemory");
     public static final long OFFSET__protectedMemory = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samplerYcbcrConversion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samplerYcbcrConversion = java.lang.foreign.ValueLayout.JAVA_INT.withName("samplerYcbcrConversion");
     public static final long OFFSET__samplerYcbcrConversion = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDrawParameters = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderDrawParameters = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderDrawParameters");
     public static final long OFFSET__shaderDrawParameters = 60;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

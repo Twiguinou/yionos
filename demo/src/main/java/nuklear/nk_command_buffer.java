@@ -2,19 +2,19 @@ package nuklear;
 
 public record nk_command_buffer(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__base = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__base = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("base");
     public static final long OFFSET__base = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__clip = nuklear.nk_rect.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__clip = nuklear.nk_rect.gRecordLayout.withName("clip");
     public static final long OFFSET__clip = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__use_clipping = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__use_clipping = java.lang.foreign.ValueLayout.JAVA_INT.withName("use_clipping");
     public static final long OFFSET__use_clipping = 24;
-    public static final java.lang.foreign.UnionLayout LAYOUT__userdata = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__userdata = nuklear.nk_handle.gRecordLayout.withName("userdata");
     public static final long OFFSET__userdata = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_LONG.withName("begin");
     public static final long OFFSET__begin = 40;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_LONG.withName("end");
     public static final long OFFSET__end = 48;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__last = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__last = java.lang.foreign.ValueLayout.JAVA_LONG.withName("last");
     public static final long OFFSET__last = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

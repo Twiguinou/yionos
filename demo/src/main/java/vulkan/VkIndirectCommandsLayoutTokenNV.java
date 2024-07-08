@@ -2,35 +2,35 @@ package vulkan;
 
 public record VkIndirectCommandsLayoutTokenNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tokenType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tokenType = java.lang.foreign.ValueLayout.JAVA_INT.withName("tokenType");
     public static final long OFFSET__tokenType = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stream = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stream = java.lang.foreign.ValueLayout.JAVA_INT.withName("stream");
     public static final long OFFSET__stream = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__offset = java.lang.foreign.ValueLayout.JAVA_INT.withName("offset");
     public static final long OFFSET__offset = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexBindingUnit = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexBindingUnit = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexBindingUnit");
     public static final long OFFSET__vertexBindingUnit = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexDynamicStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexDynamicStride = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexDynamicStride");
     public static final long OFFSET__vertexDynamicStride = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pushconstantPipelineLayout = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pushconstantPipelineLayout = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pushconstantPipelineLayout");
     public static final long OFFSET__pushconstantPipelineLayout = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantShaderStageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantShaderStageFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("pushconstantShaderStageFlags");
     public static final long OFFSET__pushconstantShaderStageFlags = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("pushconstantOffset");
     public static final long OFFSET__pushconstantOffset = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pushconstantSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("pushconstantSize");
     public static final long OFFSET__pushconstantSize = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indirectStateFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indirectStateFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("indirectStateFlags");
     public static final long OFFSET__indirectStateFlags = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexTypeCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexTypeCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("indexTypeCount");
     public static final long OFFSET__indexTypeCount = 64;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pIndexTypes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pIndexTypes = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pIndexTypes");
     public static final long OFFSET__pIndexTypes = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pIndexTypeValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pIndexTypeValues = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pIndexTypeValues");
     public static final long OFFSET__pIndexTypeValues = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,31 +2,31 @@ package vulkan;
 
 public record VkPhysicalDeviceOpticalFlowPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedOutputGridSizes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedOutputGridSizes = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedOutputGridSizes");
     public static final long OFFSET__supportedOutputGridSizes = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedHintGridSizes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedHintGridSizes = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedHintGridSizes");
     public static final long OFFSET__supportedHintGridSizes = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hintSupported = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hintSupported = java.lang.foreign.ValueLayout.JAVA_INT.withName("hintSupported");
     public static final long OFFSET__hintSupported = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__costSupported = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__costSupported = java.lang.foreign.ValueLayout.JAVA_INT.withName("costSupported");
     public static final long OFFSET__costSupported = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bidirectionalFlowSupported = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bidirectionalFlowSupported = java.lang.foreign.ValueLayout.JAVA_INT.withName("bidirectionalFlowSupported");
     public static final long OFFSET__bidirectionalFlowSupported = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__globalFlowSupported = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__globalFlowSupported = java.lang.foreign.ValueLayout.JAVA_INT.withName("globalFlowSupported");
     public static final long OFFSET__globalFlowSupported = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minWidth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minWidth = java.lang.foreign.ValueLayout.JAVA_INT.withName("minWidth");
     public static final long OFFSET__minWidth = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minHeight = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minHeight = java.lang.foreign.ValueLayout.JAVA_INT.withName("minHeight");
     public static final long OFFSET__minHeight = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxWidth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxWidth = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxWidth");
     public static final long OFFSET__maxWidth = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxHeight = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxHeight = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxHeight");
     public static final long OFFSET__maxHeight = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxNumRegionsOfInterest = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxNumRegionsOfInterest = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxNumRegionsOfInterest");
     public static final long OFFSET__maxNumRegionsOfInterest = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

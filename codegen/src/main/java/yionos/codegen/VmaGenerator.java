@@ -42,10 +42,10 @@ public class VmaGenerator implements Generator
             File vmaOutput = new File(outputDirectory, VMA_DIRECTORY);
             if (vmaOutput.exists() || vmaOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner.declarations());
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner.declarations());
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner.getTypeTable().values(), VMA_PACKAGE);
-                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner.declarations());
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner);
 
                 enums.forEach(enumDeclaration -> Generator.writeDeclaration(enumDeclaration, vmaOutput));
                 records.forEach(record -> Generator.writeDeclaration(record, vmaOutput));

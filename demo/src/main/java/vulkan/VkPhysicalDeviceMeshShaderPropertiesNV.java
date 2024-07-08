@@ -2,35 +2,35 @@ package vulkan;
 
 public record VkPhysicalDeviceMeshShaderPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDrawMeshTasksCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDrawMeshTasksCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDrawMeshTasksCount");
     public static final long OFFSET__maxDrawMeshTasksCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTaskWorkGroupInvocations");
     public static final long OFFSET__maxTaskWorkGroupInvocations = 20;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__maxTaskWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxTaskWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT).withName("maxTaskWorkGroupSize");
     public static final long OFFSET__maxTaskWorkGroupSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTaskTotalMemorySize");
     public static final long OFFSET__maxTaskTotalMemorySize = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskOutputCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTaskOutputCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTaskOutputCount");
     public static final long OFFSET__maxTaskOutputCount = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshWorkGroupInvocations = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMeshWorkGroupInvocations");
     public static final long OFFSET__maxMeshWorkGroupInvocations = 44;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__maxMeshWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__maxMeshWorkGroupSize = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_INT).withName("maxMeshWorkGroupSize");
     public static final long OFFSET__maxMeshWorkGroupSize = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshTotalMemorySize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMeshTotalMemorySize");
     public static final long OFFSET__maxMeshTotalMemorySize = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshOutputVertices = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshOutputVertices = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMeshOutputVertices");
     public static final long OFFSET__maxMeshOutputVertices = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshOutputPrimitives = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshOutputPrimitives = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMeshOutputPrimitives");
     public static final long OFFSET__maxMeshOutputPrimitives = 68;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshMultiviewViewCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxMeshMultiviewViewCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxMeshMultiviewViewCount");
     public static final long OFFSET__maxMeshMultiviewViewCount = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshOutputPerVertexGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshOutputPerVertexGranularity = java.lang.foreign.ValueLayout.JAVA_INT.withName("meshOutputPerVertexGranularity");
     public static final long OFFSET__meshOutputPerVertexGranularity = 76;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshOutputPerPrimitiveGranularity = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshOutputPerPrimitiveGranularity = java.lang.foreign.ValueLayout.JAVA_INT.withName("meshOutputPerPrimitiveGranularity");
     public static final long OFFSET__meshOutputPerPrimitiveGranularity = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

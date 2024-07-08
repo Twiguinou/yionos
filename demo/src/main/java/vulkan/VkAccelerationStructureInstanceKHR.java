@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkAccelerationStructureInstanceKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__transform = vulkan.VkTransformMatrixKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__transform = vulkan.VkTransformMatrixKHR.gRecordLayout.withName("transform");
     public static final long OFFSET__transform = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__accelerationStructureReference = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__accelerationStructureReference = java.lang.foreign.ValueLayout.JAVA_LONG.withName("accelerationStructureReference");
     public static final long OFFSET__accelerationStructureReference = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

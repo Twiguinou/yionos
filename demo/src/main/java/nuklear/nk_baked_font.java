@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_baked_font(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("height");
     public static final long OFFSET__height = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__ascent = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__ascent = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("ascent");
     public static final long OFFSET__ascent = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__descent = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__descent = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("descent");
     public static final long OFFSET__descent = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_offset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_offset = java.lang.foreign.ValueLayout.JAVA_INT.withName("glyph_offset");
     public static final long OFFSET__glyph_offset = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("glyph_count");
     public static final long OFFSET__glyph_count = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ranges = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ranges = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ranges");
     public static final long OFFSET__ranges = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

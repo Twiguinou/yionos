@@ -2,15 +2,15 @@ package assimp;
 
 public record aiTexture(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mWidth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mWidth = java.lang.foreign.ValueLayout.JAVA_INT.withName("mWidth");
     public static final long OFFSET__mWidth = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mHeight = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mHeight = java.lang.foreign.ValueLayout.JAVA_INT.withName("mHeight");
     public static final long OFFSET__mHeight = 4;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__achFormatHint = java.lang.foreign.MemoryLayout.sequenceLayout(9, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__achFormatHint = java.lang.foreign.MemoryLayout.sequenceLayout(9, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("achFormatHint");
     public static final long OFFSET__achFormatHint = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pcData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pcData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pcData");
     public static final long OFFSET__pcData = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__mFilename = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mFilename = assimp.aiString.gRecordLayout.withName("mFilename");
     public static final long OFFSET__mFilename = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

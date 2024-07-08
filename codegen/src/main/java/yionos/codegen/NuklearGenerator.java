@@ -66,10 +66,10 @@ public class NuklearGenerator implements Generator
             File nuklearOutput = new File(outputDirectory, NUKLEAR_DIRECTORY);
             if (nuklearOutput.exists() || nuklearOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner.declarations());
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner.declarations());
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner.getTypeTable().values(), NUKLEAR_PACKAGE);
-                List<HeaderDeclaration.FunctionSpecifier> functions = incompatibilityFix__1(Generator.gatherFunctions(scanner.declarations()));
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<HeaderDeclaration.FunctionSpecifier> functions = incompatibilityFix__1(Generator.gatherFunctions(scanner));
 
                 List<Constant> constants = List.of(
                         new Constant.Int("nk_false", 0),

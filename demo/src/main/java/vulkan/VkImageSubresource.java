@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkImageSubresource(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("aspectMask");
     public static final long OFFSET__aspectMask = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mipLevel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mipLevel = java.lang.foreign.ValueLayout.JAVA_INT.withName("mipLevel");
     public static final long OFFSET__mipLevel = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__arrayLayer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__arrayLayer = java.lang.foreign.ValueLayout.JAVA_INT.withName("arrayLayer");
     public static final long OFFSET__arrayLayer = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

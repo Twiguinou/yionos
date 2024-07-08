@@ -2,17 +2,17 @@ package vulkan;
 
 public record StdVideoH265ScalingLists(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList4x4 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList4x4 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("ScalingList4x4");
     public static final long OFFSET__ScalingList4x4 = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList8x8 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList8x8 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("ScalingList8x8");
     public static final long OFFSET__ScalingList8x8 = 96;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList16x16 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList16x16 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("ScalingList16x16");
     public static final long OFFSET__ScalingList16x16 = 480;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList32x32 = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE));
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingList32x32 = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE)).withName("ScalingList32x32");
     public static final long OFFSET__ScalingList32x32 = 864;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingListDCCoef16x16 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingListDCCoef16x16 = java.lang.foreign.MemoryLayout.sequenceLayout(6, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("ScalingListDCCoef16x16");
     public static final long OFFSET__ScalingListDCCoef16x16 = 992;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingListDCCoef32x32 = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ScalingListDCCoef32x32 = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("ScalingListDCCoef32x32");
     public static final long OFFSET__ScalingListDCCoef32x32 = 998;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

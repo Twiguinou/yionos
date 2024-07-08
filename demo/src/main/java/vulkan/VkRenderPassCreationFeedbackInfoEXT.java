@@ -2,7 +2,7 @@ package vulkan;
 
 public record VkRenderPassCreationFeedbackInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postMergeSubpassCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__postMergeSubpassCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("postMergeSubpassCount");
     public static final long OFFSET__postMergeSubpassCount = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

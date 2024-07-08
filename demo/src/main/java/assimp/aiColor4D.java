@@ -2,13 +2,13 @@ package assimp;
 
 public record aiColor4D(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("r");
     public static final long OFFSET__r = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("g");
     public static final long OFFSET__g = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("b");
     public static final long OFFSET__b = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("a");
     public static final long OFFSET__a = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

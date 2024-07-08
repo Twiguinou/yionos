@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceNestedCommandBufferFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nestedCommandBuffer = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nestedCommandBuffer = java.lang.foreign.ValueLayout.JAVA_INT.withName("nestedCommandBuffer");
     public static final long OFFSET__nestedCommandBuffer = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nestedCommandBufferRendering = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nestedCommandBufferRendering = java.lang.foreign.ValueLayout.JAVA_INT.withName("nestedCommandBufferRendering");
     public static final long OFFSET__nestedCommandBufferRendering = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nestedCommandBufferSimultaneousUse = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__nestedCommandBufferSimultaneousUse = java.lang.foreign.ValueLayout.JAVA_INT.withName("nestedCommandBufferSimultaneousUse");
     public static final long OFFSET__nestedCommandBufferSimultaneousUse = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

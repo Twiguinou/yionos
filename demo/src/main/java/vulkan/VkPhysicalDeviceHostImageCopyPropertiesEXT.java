@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPhysicalDeviceHostImageCopyPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__copySrcLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__copySrcLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("copySrcLayoutCount");
     public static final long OFFSET__copySrcLayoutCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCopySrcLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCopySrcLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCopySrcLayouts");
     public static final long OFFSET__pCopySrcLayouts = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__copyDstLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__copyDstLayoutCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("copyDstLayoutCount");
     public static final long OFFSET__copyDstLayoutCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pCopyDstLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pCopyDstLayouts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pCopyDstLayouts");
     public static final long OFFSET__pCopyDstLayouts = 40;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__optimalTilingLayoutUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__optimalTilingLayoutUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("optimalTilingLayoutUUID");
     public static final long OFFSET__optimalTilingLayoutUUID = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__identicalMemoryTypeRequirements = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__identicalMemoryTypeRequirements = java.lang.foreign.ValueLayout.JAVA_INT.withName("identicalMemoryTypeRequirements");
     public static final long OFFSET__identicalMemoryTypeRequirements = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

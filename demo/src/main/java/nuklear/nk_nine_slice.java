@@ -2,15 +2,15 @@ package nuklear;
 
 public record nk_nine_slice(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__img = nuklear.nk_image.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__img = nuklear.nk_image.gRecordLayout.withName("img");
     public static final long OFFSET__img = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__l = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__l = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("l");
     public static final long OFFSET__l = 24;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__t = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__t = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("t");
     public static final long OFFSET__t = 26;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("r");
     public static final long OFFSET__r = 28;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("b");
     public static final long OFFSET__b = 30;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

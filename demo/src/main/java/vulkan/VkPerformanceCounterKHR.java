@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPerformanceCounterKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__unit = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__unit = java.lang.foreign.ValueLayout.JAVA_INT.withName("unit");
     public static final long OFFSET__unit = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scope = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__scope = java.lang.foreign.ValueLayout.JAVA_INT.withName("scope");
     public static final long OFFSET__scope = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storage = java.lang.foreign.ValueLayout.JAVA_INT.withName("storage");
     public static final long OFFSET__storage = 24;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__uuid = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__uuid = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("uuid");
     public static final long OFFSET__uuid = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

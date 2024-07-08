@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_text_undo_state(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__undo_rec = java.lang.foreign.MemoryLayout.sequenceLayout(99, nuklear.nk_text_undo_record.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__undo_rec = java.lang.foreign.MemoryLayout.sequenceLayout(99, nuklear.nk_text_undo_record.gRecordLayout).withName("undo_rec");
     public static final long OFFSET__undo_rec = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__undo_char = java.lang.foreign.MemoryLayout.sequenceLayout(999, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__undo_char = java.lang.foreign.MemoryLayout.sequenceLayout(999, java.lang.foreign.ValueLayout.JAVA_INT).withName("undo_char");
     public static final long OFFSET__undo_char = 1188;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__undo_point = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__undo_point = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("undo_point");
     public static final long OFFSET__undo_point = 5184;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__redo_point = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__redo_point = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("redo_point");
     public static final long OFFSET__redo_point = 5186;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__undo_char_point = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__undo_char_point = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("undo_char_point");
     public static final long OFFSET__undo_char_point = 5188;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__redo_char_point = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__redo_char_point = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("redo_char_point");
     public static final long OFFSET__redo_char_point = 5190;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

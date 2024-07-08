@@ -2,9 +2,9 @@ package assimp;
 
 public record aiVertexWeight(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mVertexId = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mVertexId = java.lang.foreign.ValueLayout.JAVA_INT.withName("mVertexId");
     public static final long OFFSET__mVertexId = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mWeight = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__mWeight = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("mWeight");
     public static final long OFFSET__mWeight = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkPhysicalDevicePerformanceQueryFeaturesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceCounterQueryPools = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceCounterQueryPools = java.lang.foreign.ValueLayout.JAVA_INT.withName("performanceCounterQueryPools");
     public static final long OFFSET__performanceCounterQueryPools = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceCounterMultipleQueryPools = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceCounterMultipleQueryPools = java.lang.foreign.ValueLayout.JAVA_INT.withName("performanceCounterMultipleQueryPools");
     public static final long OFFSET__performanceCounterMultipleQueryPools = 20;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

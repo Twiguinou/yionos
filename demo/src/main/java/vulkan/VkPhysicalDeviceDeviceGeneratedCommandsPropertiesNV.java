@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxGraphicsShaderGroupCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxGraphicsShaderGroupCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxGraphicsShaderGroupCount");
     public static final long OFFSET__maxGraphicsShaderGroupCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectSequenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectSequenceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxIndirectSequenceCount");
     public static final long OFFSET__maxIndirectSequenceCount = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsTokenCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsTokenCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxIndirectCommandsTokenCount");
     public static final long OFFSET__maxIndirectCommandsTokenCount = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsStreamCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsStreamCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxIndirectCommandsStreamCount");
     public static final long OFFSET__maxIndirectCommandsStreamCount = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsTokenOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsTokenOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxIndirectCommandsTokenOffset");
     public static final long OFFSET__maxIndirectCommandsTokenOffset = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsStreamStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxIndirectCommandsStreamStride = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxIndirectCommandsStreamStride");
     public static final long OFFSET__maxIndirectCommandsStreamStride = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSequencesCountBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSequencesCountBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("minSequencesCountBufferOffsetAlignment");
     public static final long OFFSET__minSequencesCountBufferOffsetAlignment = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSequencesIndexBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minSequencesIndexBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("minSequencesIndexBufferOffsetAlignment");
     public static final long OFFSET__minSequencesIndexBufferOffsetAlignment = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minIndirectCommandsBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minIndirectCommandsBufferOffsetAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("minIndirectCommandsBufferOffsetAlignment");
     public static final long OFFSET__minIndirectCommandsBufferOffsetAlignment = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkDependencyInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("dependencyFlags");
     public static final long OFFSET__dependencyFlags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryBarrierCount");
     public static final long OFFSET__memoryBarrierCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pMemoryBarriers");
     public static final long OFFSET__pMemoryBarriers = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferMemoryBarrierCount");
     public static final long OFFSET__bufferMemoryBarrierCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pBufferMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pBufferMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pBufferMemoryBarriers");
     public static final long OFFSET__pBufferMemoryBarriers = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageMemoryBarrierCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageMemoryBarrierCount");
     public static final long OFFSET__imageMemoryBarrierCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pImageMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pImageMemoryBarriers = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pImageMemoryBarriers");
     public static final long OFFSET__pImageMemoryBarriers = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

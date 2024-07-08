@@ -2,23 +2,23 @@ package assimp;
 
 public record aiMatrix3x3(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("a1");
     public static final long OFFSET__a1 = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a2 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a2 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("a2");
     public static final long OFFSET__a2 = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a3 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a3 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("a3");
     public static final long OFFSET__a3 = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("b1");
     public static final long OFFSET__b1 = 12;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b2 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b2 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("b2");
     public static final long OFFSET__b2 = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b3 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b3 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("b3");
     public static final long OFFSET__b3 = 20;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c1 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c1 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("c1");
     public static final long OFFSET__c1 = 24;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c2 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c2 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("c2");
     public static final long OFFSET__c2 = 28;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c3 = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c3 = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("c3");
     public static final long OFFSET__c3 = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

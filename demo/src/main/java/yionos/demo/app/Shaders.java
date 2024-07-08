@@ -20,6 +20,11 @@ public record Shaders(Graphics grid, Graphics objectDebug, Graphics objectDebugI
             this(loadShader(device, vertexPath, VK_SHADER_STAGE_VERTEX_BIT), loadShader(device, fragmentPath, VK_SHADER_STAGE_FRAGMENT_BIT));
         }
 
+        public Graphics(VkDevice device, String name)
+        {
+            this(device, String.format("%s.vert.spv", name), String.format("%s.frag.spv", name));
+        }
+
         @Override
         public void dispose()
         {
@@ -37,7 +42,7 @@ public record Shaders(Graphics grid, Graphics objectDebug, Graphics objectDebugI
                 throw new FileNotFoundException(filename);
             }
 
-            return loadShaderFromStream(device, filename, input, stage);
+            return loadShaderFromStream(device, input, stage);
         }
         catch (IOException e)
         {
@@ -47,10 +52,10 @@ public record Shaders(Graphics grid, Graphics objectDebug, Graphics objectDebugI
 
     public static Shaders create(VkDevice device)
     {
-        Graphics gridShaders = new Graphics(device, "grid-vs.glsl", "grid-fs.glsl");
-        Graphics objectDebugShaders = new Graphics(device, "object-debug-vs.glsl", "object-debug-fs.glsl");
-        Graphics objectDebugInstancedShaders = new Graphics(device, "object-debug-instanced-vs.glsl", "object-debug-instanced-fs.glsl");
-        Graphics nuklearOverlayShaders = new Graphics(device, "nuklear-overlay-vs.glsl", "nuklear-overlay-fs.glsl");
+        Graphics gridShaders = new Graphics(device, "grid");
+        Graphics objectDebugShaders = new Graphics(device, "object-debug");
+        Graphics objectDebugInstancedShaders = new Graphics(device, "object-debug-instanced");
+        Graphics nuklearOverlayShaders = new Graphics(device, "nuklear-overlay");
 
         return new Shaders(gridShaders, objectDebugShaders, objectDebugInstancedShaders, nuklearOverlayShaders);
     }

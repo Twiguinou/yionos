@@ -2,11 +2,11 @@ package assimp;
 
 public record aiMetadata(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumProperties = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumProperties = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumProperties");
     public static final long OFFSET__mNumProperties = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mKeys = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mKeys = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mKeys");
     public static final long OFFSET__mKeys = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mValues = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mValues = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mValues");
     public static final long OFFSET__mValues = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

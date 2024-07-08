@@ -2,11 +2,11 @@ package assimp;
 
 public record aiFileIO(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__OpenProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__OpenProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("OpenProc");
     public static final long OFFSET__OpenProc = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__CloseProc = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__CloseProc = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("CloseProc");
     public static final long OFFSET__CloseProc = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__UserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__UserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("UserData");
     public static final long OFFSET__UserData = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

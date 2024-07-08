@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkClearAttachment(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__aspectMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("aspectMask");
     public static final long OFFSET__aspectMask = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachment = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorAttachment");
     public static final long OFFSET__colorAttachment = 4;
-    public static final java.lang.foreign.UnionLayout LAYOUT__clearValue = vulkan.VkClearValue.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__clearValue = vulkan.VkClearValue.gRecordLayout.withName("clearValue");
     public static final long OFFSET__clearValue = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkConformanceVersion(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__major = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__major = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("major");
     public static final long OFFSET__major = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__minor = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__minor = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("minor");
     public static final long OFFSET__minor = 1;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__subminor = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__subminor = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("subminor");
     public static final long OFFSET__subminor = 2;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__patch = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__patch = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("patch");
     public static final long OFFSET__patch = 3;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

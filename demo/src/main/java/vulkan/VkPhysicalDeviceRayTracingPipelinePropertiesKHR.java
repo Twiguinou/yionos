@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkPhysicalDeviceRayTracingPipelinePropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderGroupHandleSize");
     public static final long OFFSET__shaderGroupHandleSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayRecursionDepth = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayRecursionDepth = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxRayRecursionDepth");
     public static final long OFFSET__maxRayRecursionDepth = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxShaderGroupStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxShaderGroupStride = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxShaderGroupStride");
     public static final long OFFSET__maxShaderGroupStride = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupBaseAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupBaseAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderGroupBaseAlignment");
     public static final long OFFSET__shaderGroupBaseAlignment = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleCaptureReplaySize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleCaptureReplaySize = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderGroupHandleCaptureReplaySize");
     public static final long OFFSET__shaderGroupHandleCaptureReplaySize = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayDispatchInvocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayDispatchInvocationCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxRayDispatchInvocationCount");
     public static final long OFFSET__maxRayDispatchInvocationCount = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleAlignment = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__shaderGroupHandleAlignment = java.lang.foreign.ValueLayout.JAVA_INT.withName("shaderGroupHandleAlignment");
     public static final long OFFSET__shaderGroupHandleAlignment = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxRayHitAttributeSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxRayHitAttributeSize");
     public static final long OFFSET__maxRayHitAttributeSize = 44;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

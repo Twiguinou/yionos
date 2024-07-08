@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceOpacityMicromapFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromap = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromap = java.lang.foreign.ValueLayout.JAVA_INT.withName("micromap");
     public static final long OFFSET__micromap = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromapCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromapCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT.withName("micromapCaptureReplay");
     public static final long OFFSET__micromapCaptureReplay = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromapHostCommands = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__micromapHostCommands = java.lang.foreign.ValueLayout.JAVA_INT.withName("micromapHostCommands");
     public static final long OFFSET__micromapHostCommands = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkVideoEncodeH264PictureInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__naluSliceEntryCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__naluSliceEntryCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("naluSliceEntryCount");
     public static final long OFFSET__naluSliceEntryCount = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNaluSliceEntries = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNaluSliceEntries = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNaluSliceEntries");
     public static final long OFFSET__pNaluSliceEntries = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdPictureInfo");
     public static final long OFFSET__pStdPictureInfo = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__generatePrefixNalu = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__generatePrefixNalu = java.lang.foreign.ValueLayout.JAVA_INT.withName("generatePrefixNalu");
     public static final long OFFSET__generatePrefixNalu = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

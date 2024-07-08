@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkOpticalFlowSessionCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__width = java.lang.foreign.ValueLayout.JAVA_INT.withName("width");
     public static final long OFFSET__width = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__height = java.lang.foreign.ValueLayout.JAVA_INT.withName("height");
     public static final long OFFSET__height = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageFormat");
     public static final long OFFSET__imageFormat = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flowVectorFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flowVectorFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("flowVectorFormat");
     public static final long OFFSET__flowVectorFormat = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__costFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__costFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("costFormat");
     public static final long OFFSET__costFormat = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__outputGridSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__outputGridSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("outputGridSize");
     public static final long OFFSET__outputGridSize = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hintGridSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__hintGridSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("hintGridSize");
     public static final long OFFSET__hintGridSize = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceLevel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__performanceLevel = java.lang.foreign.ValueLayout.JAVA_INT.withName("performanceLevel");
     public static final long OFFSET__performanceLevel = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

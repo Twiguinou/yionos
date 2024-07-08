@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPipelineCacheHeaderVersionOne(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__headerSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__headerSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("headerSize");
     public static final long OFFSET__headerSize = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__headerVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__headerVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("headerVersion");
     public static final long OFFSET__headerVersion = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vendorID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vendorID = java.lang.foreign.ValueLayout.JAVA_INT.withName("vendorID");
     public static final long OFFSET__vendorID = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceID = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceID");
     public static final long OFFSET__deviceID = 12;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__pipelineCacheUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__pipelineCacheUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("pipelineCacheUUID");
     public static final long OFFSET__pipelineCacheUUID = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

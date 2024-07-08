@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkRenderingInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__renderArea = vulkan.VkRect2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__renderArea = vulkan.VkRect2D.gRecordLayout.withName("renderArea");
     public static final long OFFSET__renderArea = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__layerCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("layerCount");
     public static final long OFFSET__layerCount = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewMask");
     public static final long OFFSET__viewMask = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorAttachmentCount");
     public static final long OFFSET__colorAttachmentCount = 44;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pColorAttachments");
     public static final long OFFSET__pColorAttachments = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDepthAttachment");
     public static final long OFFSET__pDepthAttachment = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStencilAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStencilAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStencilAttachment");
     public static final long OFFSET__pStencilAttachment = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

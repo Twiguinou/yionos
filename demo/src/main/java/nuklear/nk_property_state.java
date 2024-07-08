@@ -2,27 +2,27 @@ package nuklear;
 
 public record nk_property_state(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT.withName("active");
     public static final long OFFSET__active = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__prev = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__prev = java.lang.foreign.ValueLayout.JAVA_INT.withName("prev");
     public static final long OFFSET__prev = 4;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__buffer = java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__buffer = java.lang.foreign.MemoryLayout.sequenceLayout(64, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("buffer");
     public static final long OFFSET__buffer = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__length = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__length = java.lang.foreign.ValueLayout.JAVA_INT.withName("length");
     public static final long OFFSET__length = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cursor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cursor = java.lang.foreign.ValueLayout.JAVA_INT.withName("cursor");
     public static final long OFFSET__cursor = 76;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_start = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_start = java.lang.foreign.ValueLayout.JAVA_INT.withName("select_start");
     public static final long OFFSET__select_start = 80;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_end = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__select_end = java.lang.foreign.ValueLayout.JAVA_INT.withName("select_end");
     public static final long OFFSET__select_end = 84;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__name = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__name = java.lang.foreign.ValueLayout.JAVA_INT.withName("name");
     public static final long OFFSET__name = 88;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__seq = java.lang.foreign.ValueLayout.JAVA_INT.withName("seq");
     public static final long OFFSET__seq = 92;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__old = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__old = java.lang.foreign.ValueLayout.JAVA_INT.withName("old");
     public static final long OFFSET__old = 96;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__state = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__state = java.lang.foreign.ValueLayout.JAVA_INT.withName("state");
     public static final long OFFSET__state = 100;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkVideoEncodeRateControlLayerInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__averageBitrate = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__averageBitrate = java.lang.foreign.ValueLayout.JAVA_LONG.withName("averageBitrate");
     public static final long OFFSET__averageBitrate = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBitrate = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxBitrate = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxBitrate");
     public static final long OFFSET__maxBitrate = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameRateNumerator = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameRateNumerator = java.lang.foreign.ValueLayout.JAVA_INT.withName("frameRateNumerator");
     public static final long OFFSET__frameRateNumerator = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameRateDenominator = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameRateDenominator = java.lang.foreign.ValueLayout.JAVA_INT.withName("frameRateDenominator");
     public static final long OFFSET__frameRateDenominator = 36;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

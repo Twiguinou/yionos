@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkFrameBoundaryEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__frameID = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__frameID = java.lang.foreign.ValueLayout.JAVA_LONG.withName("frameID");
     public static final long OFFSET__frameID = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageCount");
     public static final long OFFSET__imageCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pImages = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pImages = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pImages");
     public static final long OFFSET__pImages = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bufferCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("bufferCount");
     public static final long OFFSET__bufferCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pBuffers = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pBuffers = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pBuffers");
     public static final long OFFSET__pBuffers = 56;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__tagName = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__tagName = java.lang.foreign.ValueLayout.JAVA_LONG.withName("tagName");
     public static final long OFFSET__tagName = 64;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__tagSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__tagSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("tagSize");
     public static final long OFFSET__tagSize = 72;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTag = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTag = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTag");
     public static final long OFFSET__pTag = 80;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

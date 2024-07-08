@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkSamplerYcbcrConversionCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT.withName("format");
     public static final long OFFSET__format = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ycbcrModel = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ycbcrModel = java.lang.foreign.ValueLayout.JAVA_INT.withName("ycbcrModel");
     public static final long OFFSET__ycbcrModel = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ycbcrRange = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ycbcrRange = java.lang.foreign.ValueLayout.JAVA_INT.withName("ycbcrRange");
     public static final long OFFSET__ycbcrRange = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__components = vulkan.VkComponentMapping.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__components = vulkan.VkComponentMapping.gRecordLayout.withName("components");
     public static final long OFFSET__components = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__xChromaOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__xChromaOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("xChromaOffset");
     public static final long OFFSET__xChromaOffset = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__yChromaOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__yChromaOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("yChromaOffset");
     public static final long OFFSET__yChromaOffset = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chromaFilter = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__chromaFilter = java.lang.foreign.ValueLayout.JAVA_INT.withName("chromaFilter");
     public static final long OFFSET__chromaFilter = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__forceExplicitReconstruction = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__forceExplicitReconstruction = java.lang.foreign.ValueLayout.JAVA_INT.withName("forceExplicitReconstruction");
     public static final long OFFSET__forceExplicitReconstruction = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

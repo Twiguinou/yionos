@@ -2,17 +2,17 @@ package assimp;
 
 public record aiMaterialProperty(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mKey = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mKey = assimp.aiString.gRecordLayout.withName("mKey");
     public static final long OFFSET__mKey = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mSemantic = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mSemantic = java.lang.foreign.ValueLayout.JAVA_INT.withName("mSemantic");
     public static final long OFFSET__mSemantic = 1028;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("mIndex");
     public static final long OFFSET__mIndex = 1032;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mDataLength = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mDataLength = java.lang.foreign.ValueLayout.JAVA_INT.withName("mDataLength");
     public static final long OFFSET__mDataLength = 1036;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mType = java.lang.foreign.ValueLayout.JAVA_INT.withName("mType");
     public static final long OFFSET__mType = 1040;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mData");
     public static final long OFFSET__mData = 1048;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

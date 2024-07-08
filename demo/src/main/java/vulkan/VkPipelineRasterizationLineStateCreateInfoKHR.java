@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPipelineRasterizationLineStateCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lineRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lineRasterizationMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("lineRasterizationMode");
     public static final long OFFSET__lineRasterizationMode = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledLineEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledLineEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("stippledLineEnable");
     public static final long OFFSET__stippledLineEnable = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lineStippleFactor = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__lineStippleFactor = java.lang.foreign.ValueLayout.JAVA_INT.withName("lineStippleFactor");
     public static final long OFFSET__lineStippleFactor = 24;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__lineStipplePattern = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__lineStipplePattern = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("lineStipplePattern");
     public static final long OFFSET__lineStipplePattern = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

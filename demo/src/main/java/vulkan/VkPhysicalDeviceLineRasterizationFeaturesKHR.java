@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkPhysicalDeviceLineRasterizationFeaturesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rectangularLines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rectangularLines = java.lang.foreign.ValueLayout.JAVA_INT.withName("rectangularLines");
     public static final long OFFSET__rectangularLines = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bresenhamLines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__bresenhamLines = java.lang.foreign.ValueLayout.JAVA_INT.withName("bresenhamLines");
     public static final long OFFSET__bresenhamLines = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__smoothLines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__smoothLines = java.lang.foreign.ValueLayout.JAVA_INT.withName("smoothLines");
     public static final long OFFSET__smoothLines = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledRectangularLines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledRectangularLines = java.lang.foreign.ValueLayout.JAVA_INT.withName("stippledRectangularLines");
     public static final long OFFSET__stippledRectangularLines = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledBresenhamLines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledBresenhamLines = java.lang.foreign.ValueLayout.JAVA_INT.withName("stippledBresenhamLines");
     public static final long OFFSET__stippledBresenhamLines = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledSmoothLines = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stippledSmoothLines = java.lang.foreign.ValueLayout.JAVA_INT.withName("stippledSmoothLines");
     public static final long OFFSET__stippledSmoothLines = 36;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

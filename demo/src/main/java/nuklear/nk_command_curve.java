@@ -2,17 +2,17 @@ package nuklear;
 
 public record nk_command_curve(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout.withName("header");
     public static final long OFFSET__header = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("line_thickness");
     public static final long OFFSET__line_thickness = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__begin = nuklear.nk_vec2i.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__begin = nuklear.nk_vec2i.gRecordLayout.withName("begin");
     public static final long OFFSET__begin = 18;
-    public static final java.lang.foreign.StructLayout LAYOUT__end = nuklear.nk_vec2i.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__end = nuklear.nk_vec2i.gRecordLayout.withName("end");
     public static final long OFFSET__end = 22;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__ctrl = java.lang.foreign.MemoryLayout.sequenceLayout(2, nuklear.nk_vec2i.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__ctrl = java.lang.foreign.MemoryLayout.sequenceLayout(2, nuklear.nk_vec2i.gRecordLayout).withName("ctrl");
     public static final long OFFSET__ctrl = 26;
-    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout.withName("color");
     public static final long OFFSET__color = 34;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

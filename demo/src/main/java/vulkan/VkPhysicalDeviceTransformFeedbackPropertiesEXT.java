@@ -2,29 +2,29 @@ package vulkan;
 
 public record VkPhysicalDeviceTransformFeedbackPropertiesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackStreams = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackStreams = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTransformFeedbackStreams");
     public static final long OFFSET__maxTransformFeedbackStreams = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackBuffers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackBuffers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTransformFeedbackBuffers");
     public static final long OFFSET__maxTransformFeedbackBuffers = 20;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxTransformFeedbackBufferSize = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__maxTransformFeedbackBufferSize = java.lang.foreign.ValueLayout.JAVA_LONG.withName("maxTransformFeedbackBufferSize");
     public static final long OFFSET__maxTransformFeedbackBufferSize = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackStreamDataSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackStreamDataSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTransformFeedbackStreamDataSize");
     public static final long OFFSET__maxTransformFeedbackStreamDataSize = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackBufferDataSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackBufferDataSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTransformFeedbackBufferDataSize");
     public static final long OFFSET__maxTransformFeedbackBufferDataSize = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackBufferDataStride = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTransformFeedbackBufferDataStride = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTransformFeedbackBufferDataStride");
     public static final long OFFSET__maxTransformFeedbackBufferDataStride = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackQueries = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackQueries = java.lang.foreign.ValueLayout.JAVA_INT.withName("transformFeedbackQueries");
     public static final long OFFSET__transformFeedbackQueries = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackStreamsLinesTriangles = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackStreamsLinesTriangles = java.lang.foreign.ValueLayout.JAVA_INT.withName("transformFeedbackStreamsLinesTriangles");
     public static final long OFFSET__transformFeedbackStreamsLinesTriangles = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackRasterizationStreamSelect = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackRasterizationStreamSelect = java.lang.foreign.ValueLayout.JAVA_INT.withName("transformFeedbackRasterizationStreamSelect");
     public static final long OFFSET__transformFeedbackRasterizationStreamSelect = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackDraw = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__transformFeedbackDraw = java.lang.foreign.ValueLayout.JAVA_INT.withName("transformFeedbackDraw");
     public static final long OFFSET__transformFeedbackDraw = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

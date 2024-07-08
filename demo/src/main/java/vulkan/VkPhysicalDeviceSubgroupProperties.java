@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceSubgroupProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSize = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__subgroupSize = java.lang.foreign.ValueLayout.JAVA_INT.withName("subgroupSize");
     public static final long OFFSET__subgroupSize = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedStages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedStages = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedStages");
     public static final long OFFSET__supportedStages = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedOperations = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedOperations = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedOperations");
     public static final long OFFSET__supportedOperations = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__quadOperationsInAllStages = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__quadOperationsInAllStages = java.lang.foreign.ValueLayout.JAVA_INT.withName("quadOperationsInAllStages");
     public static final long OFFSET__quadOperationsInAllStages = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

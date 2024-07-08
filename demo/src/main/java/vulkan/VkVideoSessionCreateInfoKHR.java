@@ -2,27 +2,27 @@ package vulkan;
 
 public record VkVideoSessionCreateInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__queueFamilyIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("queueFamilyIndex");
     public static final long OFFSET__queueFamilyIndex = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pVideoProfile = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pVideoProfile = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pVideoProfile");
     public static final long OFFSET__pVideoProfile = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pictureFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pictureFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("pictureFormat");
     public static final long OFFSET__pictureFormat = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxCodedExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxCodedExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxCodedExtent");
     public static final long OFFSET__maxCodedExtent = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__referencePictureFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__referencePictureFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("referencePictureFormat");
     public static final long OFFSET__referencePictureFormat = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDpbSlots = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxDpbSlots = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxDpbSlots");
     public static final long OFFSET__maxDpbSlots = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxActiveReferencePictures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxActiveReferencePictures = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxActiveReferencePictures");
     public static final long OFFSET__maxActiveReferencePictures = 52;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdHeaderVersion = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdHeaderVersion = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdHeaderVersion");
     public static final long OFFSET__pStdHeaderVersion = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,11 +2,11 @@ package nuklear;
 
 public record nk_draw_command(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__elem_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__elem_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("elem_count");
     public static final long OFFSET__elem_count = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__clip_rect = nuklear.nk_rect.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__clip_rect = nuklear.nk_rect.gRecordLayout.withName("clip_rect");
     public static final long OFFSET__clip_rect = 4;
-    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__texture = nuklear.nk_handle.gRecordLayout.withName("texture");
     public static final long OFFSET__texture = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

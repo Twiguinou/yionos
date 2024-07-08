@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkVideoEncodeH264GopRemainingFrameInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__useGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT.withName("useGopRemainingFrames");
     public static final long OFFSET__useGopRemainingFrames = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingI = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingI = java.lang.foreign.ValueLayout.JAVA_INT.withName("gopRemainingI");
     public static final long OFFSET__gopRemainingI = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingP = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingP = java.lang.foreign.ValueLayout.JAVA_INT.withName("gopRemainingP");
     public static final long OFFSET__gopRemainingP = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingB = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__gopRemainingB = java.lang.foreign.ValueLayout.JAVA_INT.withName("gopRemainingB");
     public static final long OFFSET__gopRemainingB = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

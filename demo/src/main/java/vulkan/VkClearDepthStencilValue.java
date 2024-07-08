@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkClearDepthStencilValue(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depth = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depth");
     public static final long OFFSET__depth = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencil = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencil = java.lang.foreign.ValueLayout.JAVA_INT.withName("stencil");
     public static final long OFFSET__stencil = 4;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

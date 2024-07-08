@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceDriverProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__driverID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__driverID = java.lang.foreign.ValueLayout.JAVA_INT.withName("driverID");
     public static final long OFFSET__driverID = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__driverName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("driverName");
     public static final long OFFSET__driverName = 20;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__driverInfo = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__driverInfo = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("driverInfo");
     public static final long OFFSET__driverInfo = 276;
-    public static final java.lang.foreign.StructLayout LAYOUT__conformanceVersion = vulkan.VkConformanceVersion.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__conformanceVersion = vulkan.VkConformanceVersion.gRecordLayout.withName("conformanceVersion");
     public static final long OFFSET__conformanceVersion = 532;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

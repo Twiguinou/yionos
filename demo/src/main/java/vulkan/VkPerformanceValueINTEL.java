@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkPerformanceValueINTEL(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__type = java.lang.foreign.ValueLayout.JAVA_INT.withName("type");
     public static final long OFFSET__type = 0;
-    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkPerformanceValueDataINTEL.gRecordLayout;
+    public static final java.lang.foreign.UnionLayout LAYOUT__data = vulkan.VkPerformanceValueDataINTEL.gRecordLayout.withName("data");
     public static final long OFFSET__data = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,25 +2,25 @@ package vulkan;
 
 public record StdVideoEncodeH264SliceHeader(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264SliceHeaderFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH264SliceHeaderFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__first_mb_in_slice = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__first_mb_in_slice = java.lang.foreign.ValueLayout.JAVA_INT.withName("first_mb_in_slice");
     public static final long OFFSET__first_mb_in_slice = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__slice_type = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__slice_type = java.lang.foreign.ValueLayout.JAVA_INT.withName("slice_type");
     public static final long OFFSET__slice_type = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__slice_alpha_c0_offset_div2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__slice_alpha_c0_offset_div2 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("slice_alpha_c0_offset_div2");
     public static final long OFFSET__slice_alpha_c0_offset_div2 = 12;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__slice_beta_offset_div2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__slice_beta_offset_div2 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("slice_beta_offset_div2");
     public static final long OFFSET__slice_beta_offset_div2 = 13;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__slice_qp_delta = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__slice_qp_delta = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("slice_qp_delta");
     public static final long OFFSET__slice_qp_delta = 14;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved1");
     public static final long OFFSET__reserved1 = 15;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cabac_init_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cabac_init_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("cabac_init_idc");
     public static final long OFFSET__cabac_init_idc = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__disable_deblocking_filter_idc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__disable_deblocking_filter_idc = java.lang.foreign.ValueLayout.JAVA_INT.withName("disable_deblocking_filter_idc");
     public static final long OFFSET__disable_deblocking_filter_idc = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pWeightTable = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pWeightTable = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pWeightTable");
     public static final long OFFSET__pWeightTable = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

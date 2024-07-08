@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationOrderColorAttachmentAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationOrderColorAttachmentAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("rasterizationOrderColorAttachmentAccess");
     public static final long OFFSET__rasterizationOrderColorAttachmentAccess = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationOrderDepthAttachmentAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationOrderDepthAttachmentAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("rasterizationOrderDepthAttachmentAccess");
     public static final long OFFSET__rasterizationOrderDepthAttachmentAccess = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationOrderStencilAttachmentAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationOrderStencilAttachmentAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("rasterizationOrderStencilAttachmentAccess");
     public static final long OFFSET__rasterizationOrderStencilAttachmentAccess = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

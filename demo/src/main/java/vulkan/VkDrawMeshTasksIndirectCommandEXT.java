@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkDrawMeshTasksIndirectCommandEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupCountX = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupCountX = java.lang.foreign.ValueLayout.JAVA_INT.withName("groupCountX");
     public static final long OFFSET__groupCountX = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupCountY = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupCountY = java.lang.foreign.ValueLayout.JAVA_INT.withName("groupCountY");
     public static final long OFFSET__groupCountY = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupCountZ = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupCountZ = java.lang.foreign.ValueLayout.JAVA_INT.withName("groupCountZ");
     public static final long OFFSET__groupCountZ = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,31 +2,31 @@ package nuklear;
 
 public record nk_font_atlas(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__pixel = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pixel = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pixel");
     public static final long OFFSET__pixel = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tex_width = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tex_width = java.lang.foreign.ValueLayout.JAVA_INT.withName("tex_width");
     public static final long OFFSET__tex_width = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tex_height = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tex_height = java.lang.foreign.ValueLayout.JAVA_INT.withName("tex_height");
     public static final long OFFSET__tex_height = 12;
-    public static final java.lang.foreign.StructLayout LAYOUT__permanent = nuklear.nk_allocator.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__permanent = nuklear.nk_allocator.gRecordLayout.withName("permanent");
     public static final long OFFSET__permanent = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__temporary = nuklear.nk_allocator.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__temporary = nuklear.nk_allocator.gRecordLayout.withName("temporary");
     public static final long OFFSET__temporary = 40;
-    public static final java.lang.foreign.StructLayout LAYOUT__custom = nuklear.nk_recti.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__custom = nuklear.nk_recti.gRecordLayout.withName("custom");
     public static final long OFFSET__custom = 64;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cursors = java.lang.foreign.MemoryLayout.sequenceLayout(7, nuklear.nk_cursor.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cursors = java.lang.foreign.MemoryLayout.sequenceLayout(7, nuklear.nk_cursor.gRecordLayout).withName("cursors");
     public static final long OFFSET__cursors = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_count = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__glyph_count = java.lang.foreign.ValueLayout.JAVA_INT.withName("glyph_count");
     public static final long OFFSET__glyph_count = 352;
-    public static final java.lang.foreign.AddressLayout LAYOUT__glyphs = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__glyphs = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("glyphs");
     public static final long OFFSET__glyphs = 360;
-    public static final java.lang.foreign.AddressLayout LAYOUT__default_font = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__default_font = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("default_font");
     public static final long OFFSET__default_font = 368;
-    public static final java.lang.foreign.AddressLayout LAYOUT__fonts = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__fonts = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("fonts");
     public static final long OFFSET__fonts = 376;
-    public static final java.lang.foreign.AddressLayout LAYOUT__config = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__config = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("config");
     public static final long OFFSET__config = 384;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__font_num = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__font_num = java.lang.foreign.ValueLayout.JAVA_INT.withName("font_num");
     public static final long OFFSET__font_num = 392;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

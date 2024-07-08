@@ -2,13 +2,13 @@ package vma;
 
 public record VmaStatistics(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__blockCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("blockCount");
     public static final long OFFSET__blockCount = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__allocationCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__allocationCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("allocationCount");
     public static final long OFFSET__allocationCount = 4;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__blockBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__blockBytes = java.lang.foreign.ValueLayout.JAVA_LONG.withName("blockBytes");
     public static final long OFFSET__blockBytes = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocationBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__allocationBytes = java.lang.foreign.ValueLayout.JAVA_LONG.withName("allocationBytes");
     public static final long OFFSET__allocationBytes = 16;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

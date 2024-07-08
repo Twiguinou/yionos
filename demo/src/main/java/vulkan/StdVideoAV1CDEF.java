@@ -2,17 +2,17 @@ package vulkan;
 
 public record StdVideoAV1CDEF(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cdef_damping_minus_3 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cdef_damping_minus_3 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cdef_damping_minus_3");
     public static final long OFFSET__cdef_damping_minus_3 = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cdef_bits = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cdef_bits = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cdef_bits");
     public static final long OFFSET__cdef_bits = 1;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_y_pri_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_y_pri_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("cdef_y_pri_strength");
     public static final long OFFSET__cdef_y_pri_strength = 2;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_y_sec_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_y_sec_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("cdef_y_sec_strength");
     public static final long OFFSET__cdef_y_sec_strength = 10;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_uv_pri_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_uv_pri_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("cdef_uv_pri_strength");
     public static final long OFFSET__cdef_uv_pri_strength = 18;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_uv_sec_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cdef_uv_sec_strength = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("cdef_uv_sec_strength");
     public static final long OFFSET__cdef_uv_sec_strength = 26;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkVideoDecodeAV1PictureInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pStdPictureInfo = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pStdPictureInfo");
     public static final long OFFSET__pStdPictureInfo = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__referenceNameSlotIndices = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_INT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__referenceNameSlotIndices = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_INT).withName("referenceNameSlotIndices");
     public static final long OFFSET__referenceNameSlotIndices = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameHeaderOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frameHeaderOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("frameHeaderOffset");
     public static final long OFFSET__frameHeaderOffset = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tileCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__tileCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("tileCount");
     public static final long OFFSET__tileCount = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTileOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTileOffsets = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTileOffsets");
     public static final long OFFSET__pTileOffsets = 64;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pTileSizes = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pTileSizes = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pTileSizes");
     public static final long OFFSET__pTileSizes = 72;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

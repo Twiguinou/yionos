@@ -2,27 +2,27 @@ package vulkan;
 
 public record StdVideoDecodeH265PictureInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoDecodeH265PictureInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoDecodeH265PictureInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__sps_video_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__sps_video_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("sps_video_parameter_set_id");
     public static final long OFFSET__sps_video_parameter_set_id = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pps_seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pps_seq_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pps_seq_parameter_set_id");
     public static final long OFFSET__pps_seq_parameter_set_id = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pps_pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__pps_pic_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("pps_pic_parameter_set_id");
     public static final long OFFSET__pps_pic_parameter_set_id = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__NumDeltaPocsOfRefRpsIdx = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__NumDeltaPocsOfRefRpsIdx = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("NumDeltaPocsOfRefRpsIdx");
     public static final long OFFSET__NumDeltaPocsOfRefRpsIdx = 7;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCntVal = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__PicOrderCntVal = java.lang.foreign.ValueLayout.JAVA_INT.withName("PicOrderCntVal");
     public static final long OFFSET__PicOrderCntVal = 8;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__NumBitsForSTRefPicSetInSlice = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__NumBitsForSTRefPicSetInSlice = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("NumBitsForSTRefPicSetInSlice");
     public static final long OFFSET__NumBitsForSTRefPicSetInSlice = 12;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__reserved = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("reserved");
     public static final long OFFSET__reserved = 14;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicSetStCurrBefore = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicSetStCurrBefore = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicSetStCurrBefore");
     public static final long OFFSET__RefPicSetStCurrBefore = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicSetStCurrAfter = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicSetStCurrAfter = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicSetStCurrAfter");
     public static final long OFFSET__RefPicSetStCurrAfter = 24;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicSetLtCurr = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicSetLtCurr = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicSetLtCurr");
     public static final long OFFSET__RefPicSetLtCurr = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

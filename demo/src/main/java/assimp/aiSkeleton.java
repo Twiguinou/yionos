@@ -2,11 +2,11 @@ package assimp;
 
 public record aiSkeleton(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__mName = assimp.aiString.gRecordLayout.withName("mName");
     public static final long OFFSET__mName = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumBones = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__mNumBones = java.lang.foreign.ValueLayout.JAVA_INT.withName("mNumBones");
     public static final long OFFSET__mNumBones = 1028;
-    public static final java.lang.foreign.AddressLayout LAYOUT__mBones = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__mBones = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("mBones");
     public static final long OFFSET__mBones = 1032;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

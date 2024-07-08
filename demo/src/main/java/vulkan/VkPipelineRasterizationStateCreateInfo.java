@@ -2,31 +2,31 @@ package vulkan;
 
 public record VkPipelineRasterizationStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthClampEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthClampEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthClampEnable");
     public static final long OFFSET__depthClampEnable = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizerDiscardEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizerDiscardEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("rasterizerDiscardEnable");
     public static final long OFFSET__rasterizerDiscardEnable = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__polygonMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__polygonMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("polygonMode");
     public static final long OFFSET__polygonMode = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cullMode = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__cullMode = java.lang.foreign.ValueLayout.JAVA_INT.withName("cullMode");
     public static final long OFFSET__cullMode = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frontFace = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__frontFace = java.lang.foreign.ValueLayout.JAVA_INT.withName("frontFace");
     public static final long OFFSET__frontFace = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthBiasEnable");
     public static final long OFFSET__depthBiasEnable = 40;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depthBiasConstantFactor");
     public static final long OFFSET__depthBiasConstantFactor = 44;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depthBiasClamp");
     public static final long OFFSET__depthBiasClamp = 48;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depthBiasSlopeFactor");
     public static final long OFFSET__depthBiasSlopeFactor = 52;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__lineWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__lineWidth = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("lineWidth");
     public static final long OFFSET__lineWidth = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

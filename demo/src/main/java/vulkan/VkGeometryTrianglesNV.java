@@ -2,31 +2,31 @@ package vulkan;
 
 public record VkGeometryTrianglesNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__vertexData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__vertexData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("vertexData");
     public static final long OFFSET__vertexData = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertexOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertexOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vertexOffset");
     public static final long OFFSET__vertexOffset = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexCount");
     public static final long OFFSET__vertexCount = 32;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertexStride = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__vertexStride = java.lang.foreign.ValueLayout.JAVA_LONG.withName("vertexStride");
     public static final long OFFSET__vertexStride = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexFormat = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vertexFormat = java.lang.foreign.ValueLayout.JAVA_INT.withName("vertexFormat");
     public static final long OFFSET__vertexFormat = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__indexData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__indexData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("indexData");
     public static final long OFFSET__indexData = 56;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__indexOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__indexOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("indexOffset");
     public static final long OFFSET__indexOffset = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("indexCount");
     public static final long OFFSET__indexCount = 72;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__indexType = java.lang.foreign.ValueLayout.JAVA_INT.withName("indexType");
     public static final long OFFSET__indexType = 76;
-    public static final java.lang.foreign.AddressLayout LAYOUT__transformData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__transformData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("transformData");
     public static final long OFFSET__transformData = 80;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__transformOffset = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__transformOffset = java.lang.foreign.ValueLayout.JAVA_LONG.withName("transformOffset");
     public static final long OFFSET__transformOffset = 88;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

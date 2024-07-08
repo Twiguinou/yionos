@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkSubpassDescription(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__pipelineBindPoint = java.lang.foreign.ValueLayout.JAVA_INT.withName("pipelineBindPoint");
     public static final long OFFSET__pipelineBindPoint = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__inputAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("inputAttachmentCount");
     public static final long OFFSET__inputAttachmentCount = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pInputAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pInputAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pInputAttachments");
     public static final long OFFSET__pInputAttachments = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__colorAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("colorAttachmentCount");
     public static final long OFFSET__colorAttachmentCount = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pColorAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pColorAttachments");
     public static final long OFFSET__pColorAttachments = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pResolveAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pResolveAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pResolveAttachments");
     public static final long OFFSET__pResolveAttachments = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthStencilAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDepthStencilAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDepthStencilAttachment");
     public static final long OFFSET__pDepthStencilAttachment = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preserveAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preserveAttachmentCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("preserveAttachmentCount");
     public static final long OFFSET__preserveAttachmentCount = 56;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pPreserveAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pPreserveAttachments = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pPreserveAttachments");
     public static final long OFFSET__pPreserveAttachments = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

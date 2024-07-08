@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkInstanceCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pApplicationInfo = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pApplicationInfo = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pApplicationInfo");
     public static final long OFFSET__pApplicationInfo = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__enabledLayerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__enabledLayerCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("enabledLayerCount");
     public static final long OFFSET__enabledLayerCount = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ppEnabledLayerNames = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ppEnabledLayerNames = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ppEnabledLayerNames");
     public static final long OFFSET__ppEnabledLayerNames = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__enabledExtensionCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__enabledExtensionCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("enabledExtensionCount");
     public static final long OFFSET__enabledExtensionCount = 48;
-    public static final java.lang.foreign.AddressLayout LAYOUT__ppEnabledExtensionNames = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__ppEnabledExtensionNames = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("ppEnabledExtensionNames");
     public static final long OFFSET__ppEnabledExtensionNames = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

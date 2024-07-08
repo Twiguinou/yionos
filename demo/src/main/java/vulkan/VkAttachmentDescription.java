@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkAttachmentDescription(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT.withName("format");
     public static final long OFFSET__format = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__samples = java.lang.foreign.ValueLayout.JAVA_INT.withName("samples");
     public static final long OFFSET__samples = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__loadOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__loadOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("loadOp");
     public static final long OFFSET__loadOp = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storeOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storeOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("storeOp");
     public static final long OFFSET__storeOp = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilLoadOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilLoadOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("stencilLoadOp");
     public static final long OFFSET__stencilLoadOp = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilStoreOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stencilStoreOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("stencilStoreOp");
     public static final long OFFSET__stencilStoreOp = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__initialLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__initialLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("initialLayout");
     public static final long OFFSET__initialLayout = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__finalLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__finalLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("finalLayout");
     public static final long OFFSET__finalLayout = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

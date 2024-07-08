@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkAllocationCallbacks(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pUserData");
     public static final long OFFSET__pUserData = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnAllocation");
     public static final long OFFSET__pfnAllocation = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnReallocation = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnReallocation = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnReallocation");
     public static final long OFFSET__pfnReallocation = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnFree = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnFree = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnFree");
     public static final long OFFSET__pfnFree = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnInternalAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnInternalAllocation = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnInternalAllocation");
     public static final long OFFSET__pfnInternalAllocation = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pfnInternalFree = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pfnInternalFree = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pfnInternalFree");
     public static final long OFFSET__pfnInternalFree = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkPresentRegionKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rectangleCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rectangleCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("rectangleCount");
     public static final long OFFSET__rectangleCount = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pRectangles = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pRectangles = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pRectangles");
     public static final long OFFSET__pRectangles = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

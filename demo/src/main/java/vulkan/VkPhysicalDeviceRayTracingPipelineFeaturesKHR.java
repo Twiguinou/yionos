@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPhysicalDeviceRayTracingPipelineFeaturesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipeline = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipeline = java.lang.foreign.ValueLayout.JAVA_INT.withName("rayTracingPipeline");
     public static final long OFFSET__rayTracingPipeline = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipelineShaderGroupHandleCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipelineShaderGroupHandleCaptureReplay = java.lang.foreign.ValueLayout.JAVA_INT.withName("rayTracingPipelineShaderGroupHandleCaptureReplay");
     public static final long OFFSET__rayTracingPipelineShaderGroupHandleCaptureReplay = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipelineShaderGroupHandleCaptureReplayMixed = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipelineShaderGroupHandleCaptureReplayMixed = java.lang.foreign.ValueLayout.JAVA_INT.withName("rayTracingPipelineShaderGroupHandleCaptureReplayMixed");
     public static final long OFFSET__rayTracingPipelineShaderGroupHandleCaptureReplayMixed = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipelineTraceRaysIndirect = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTracingPipelineTraceRaysIndirect = java.lang.foreign.ValueLayout.JAVA_INT.withName("rayTracingPipelineTraceRaysIndirect");
     public static final long OFFSET__rayTracingPipelineTraceRaysIndirect = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTraversalPrimitiveCulling = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rayTraversalPrimitiveCulling = java.lang.foreign.ValueLayout.JAVA_INT.withName("rayTraversalPrimitiveCulling");
     public static final long OFFSET__rayTraversalPrimitiveCulling = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

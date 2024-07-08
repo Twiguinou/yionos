@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2 = java.lang.foreign.ValueLayout.JAVA_INT.withName("extendedDynamicState2");
     public static final long OFFSET__extendedDynamicState2 = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2LogicOp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2LogicOp = java.lang.foreign.ValueLayout.JAVA_INT.withName("extendedDynamicState2LogicOp");
     public static final long OFFSET__extendedDynamicState2LogicOp = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2PatchControlPoints = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__extendedDynamicState2PatchControlPoints = java.lang.foreign.ValueLayout.JAVA_INT.withName("extendedDynamicState2PatchControlPoints");
     public static final long OFFSET__extendedDynamicState2PatchControlPoints = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

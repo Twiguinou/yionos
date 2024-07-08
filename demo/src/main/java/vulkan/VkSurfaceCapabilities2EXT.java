@@ -2,31 +2,31 @@ package vulkan;
 
 public record VkSurfaceCapabilities2EXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minImageCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("minImageCount");
     public static final long OFFSET__minImageCount = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxImageCount");
     public static final long OFFSET__maxImageCount = 20;
-    public static final java.lang.foreign.StructLayout LAYOUT__currentExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__currentExtent = vulkan.VkExtent2D.gRecordLayout.withName("currentExtent");
     public static final long OFFSET__currentExtent = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__minImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__minImageExtent = vulkan.VkExtent2D.gRecordLayout.withName("minImageExtent");
     public static final long OFFSET__minImageExtent = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__maxImageExtent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__maxImageExtent = vulkan.VkExtent2D.gRecordLayout.withName("maxImageExtent");
     public static final long OFFSET__maxImageExtent = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxImageArrayLayers = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxImageArrayLayers");
     public static final long OFFSET__maxImageArrayLayers = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedTransforms = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedTransforms");
     public static final long OFFSET__supportedTransforms = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentTransform = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__currentTransform = java.lang.foreign.ValueLayout.JAVA_INT.withName("currentTransform");
     public static final long OFFSET__currentTransform = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedCompositeAlpha = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedCompositeAlpha = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedCompositeAlpha");
     public static final long OFFSET__supportedCompositeAlpha = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedUsageFlags");
     public static final long OFFSET__supportedUsageFlags = 64;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedSurfaceCounters = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__supportedSurfaceCounters = java.lang.foreign.ValueLayout.JAVA_INT.withName("supportedSurfaceCounters");
     public static final long OFFSET__supportedSurfaceCounters = 68;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

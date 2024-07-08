@@ -2,15 +2,15 @@ package nuklear;
 
 public record nk_command_polyline(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout.withName("header");
     public static final long OFFSET__header = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout.withName("color");
     public static final long OFFSET__color = 16;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("line_thickness");
     public static final long OFFSET__line_thickness = 20;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__point_count = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__point_count = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("point_count");
     public static final long OFFSET__point_count = 22;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__points = java.lang.foreign.MemoryLayout.sequenceLayout(1, nuklear.nk_vec2i.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__points = java.lang.foreign.MemoryLayout.sequenceLayout(1, nuklear.nk_vec2i.gRecordLayout).withName("points");
     public static final long OFFSET__points = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

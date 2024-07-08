@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkCommandBufferInheritanceViewportScissorInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportScissor2D = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportScissor2D = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewportScissor2D");
     public static final long OFFSET__viewportScissor2D = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportDepthCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportDepthCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewportDepthCount");
     public static final long OFFSET__viewportDepthCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pViewportDepths = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pViewportDepths = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pViewportDepths");
     public static final long OFFSET__pViewportDepths = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

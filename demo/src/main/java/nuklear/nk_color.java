@@ -2,13 +2,13 @@ package nuklear;
 
 public record nk_color(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("r");
     public static final long OFFSET__r = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__g = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("g");
     public static final long OFFSET__g = 1;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("b");
     public static final long OFFSET__b = 2;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("a");
     public static final long OFFSET__a = 3;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

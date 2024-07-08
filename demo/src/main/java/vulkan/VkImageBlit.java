@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkImageBlit(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__srcSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__srcSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout.withName("srcSubresource");
     public static final long OFFSET__srcSubresource = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__srcOffsets = java.lang.foreign.MemoryLayout.sequenceLayout(2, vulkan.VkOffset3D.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__srcOffsets = java.lang.foreign.MemoryLayout.sequenceLayout(2, vulkan.VkOffset3D.gRecordLayout).withName("srcOffsets");
     public static final long OFFSET__srcOffsets = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__dstSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__dstSubresource = vulkan.VkImageSubresourceLayers.gRecordLayout.withName("dstSubresource");
     public static final long OFFSET__dstSubresource = 40;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__dstOffsets = java.lang.foreign.MemoryLayout.sequenceLayout(2, vulkan.VkOffset3D.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__dstOffsets = java.lang.foreign.MemoryLayout.sequenceLayout(2, vulkan.VkOffset3D.gRecordLayout).withName("dstOffsets");
     public static final long OFFSET__dstOffsets = 56;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

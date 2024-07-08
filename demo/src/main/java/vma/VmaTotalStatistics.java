@@ -2,11 +2,11 @@ package vma;
 
 public record VmaTotalStatistics(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryType = java.lang.foreign.MemoryLayout.sequenceLayout(32, vma.VmaDetailedStatistics.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryType = java.lang.foreign.MemoryLayout.sequenceLayout(32, vma.VmaDetailedStatistics.gRecordLayout).withName("memoryType");
     public static final long OFFSET__memoryType = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryHeap = java.lang.foreign.MemoryLayout.sequenceLayout(16, vma.VmaDetailedStatistics.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__memoryHeap = java.lang.foreign.MemoryLayout.sequenceLayout(16, vma.VmaDetailedStatistics.gRecordLayout).withName("memoryHeap");
     public static final long OFFSET__memoryHeap = 2048;
-    public static final java.lang.foreign.StructLayout LAYOUT__total = vma.VmaDetailedStatistics.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__total = vma.VmaDetailedStatistics.gRecordLayout.withName("total");
     public static final long OFFSET__total = 3072;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

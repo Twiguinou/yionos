@@ -2,11 +2,11 @@ package vma;
 
 public record VmaBudget(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__statistics = vma.VmaStatistics.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__statistics = vma.VmaStatistics.gRecordLayout.withName("statistics");
     public static final long OFFSET__statistics = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__usage = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__usage = java.lang.foreign.ValueLayout.JAVA_LONG.withName("usage");
     public static final long OFFSET__usage = 24;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__budget = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__budget = java.lang.foreign.ValueLayout.JAVA_LONG.withName("budget");
     public static final long OFFSET__budget = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

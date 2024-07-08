@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPipelineViewportWScalingStateCreateInfoNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportWScalingEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportWScalingEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewportWScalingEnable");
     public static final long OFFSET__viewportWScalingEnable = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewportCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewportCount");
     public static final long OFFSET__viewportCount = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pViewportWScalings = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pViewportWScalings = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pViewportWScalings");
     public static final long OFFSET__pViewportWScalings = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

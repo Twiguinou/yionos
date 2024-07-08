@@ -2,21 +2,21 @@ package vma;
 
 public record VmaAllocationCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__usage = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__usage = java.lang.foreign.ValueLayout.JAVA_INT.withName("usage");
     public static final long OFFSET__usage = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__requiredFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__requiredFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("requiredFlags");
     public static final long OFFSET__requiredFlags = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredFlags");
     public static final long OFFSET__preferredFlags = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeBits = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryTypeBits = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryTypeBits");
     public static final long OFFSET__memoryTypeBits = 16;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pool = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pool = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pool");
     public static final long OFFSET__pool = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pUserData = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pUserData");
     public static final long OFFSET__pUserData = 32;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__priority = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__priority = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("priority");
     public static final long OFFSET__priority = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

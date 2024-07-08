@@ -38,27 +38,13 @@ public final class VulkanHelpers
         return Integer.highestOneBit(counts);
     }
 
-    public static ShaderModule loadShaderFromFile(VkDevice device, File file, int stage) throws VulkanException
-    {
-        try (Arena arena = Arena.ofConfined(); InputStream input = new FileInputStream(file))
-        {
-            byte[] bytes = input.readAllBytes();
-            MemorySegment data = arena.allocateFrom(JAVA_BYTE, bytes);
-            return new ShaderModule(device, stage, "main", data, new ShaderModule.CompilationTask(file.getName(), true));
-        }
-        catch (IOException e)
-        {
-            throw new VulkanException(e.toString());
-        }
-    }
-
-    public static ShaderModule loadShaderFromStream(VkDevice device, String filename, InputStream inputStream, int stage) throws VulkanException
+    public static ShaderModule loadShaderFromStream(VkDevice device, InputStream inputStream, int stage) throws VulkanException
     {
         try (Arena arena = Arena.ofConfined())
         {
             byte[] bytes = inputStream.readAllBytes();
             MemorySegment data = arena.allocateFrom(JAVA_BYTE, bytes);
-            return new ShaderModule(device, stage, "main", data, new ShaderModule.CompilationTask(filename, true));
+            return new ShaderModule(device, stage, "main", data);
         }
         catch (IOException e)
         {

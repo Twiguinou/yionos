@@ -2,21 +2,21 @@ package nuklear;
 
 public record nk_mouse(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.SequenceLayout LAYOUT__buttons = java.lang.foreign.MemoryLayout.sequenceLayout(4, nuklear.nk_mouse_button.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__buttons = java.lang.foreign.MemoryLayout.sequenceLayout(4, nuklear.nk_mouse_button.gRecordLayout).withName("buttons");
     public static final long OFFSET__buttons = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__pos = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__pos = nuklear.nk_vec2.gRecordLayout.withName("pos");
     public static final long OFFSET__pos = 64;
-    public static final java.lang.foreign.StructLayout LAYOUT__prev = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__prev = nuklear.nk_vec2.gRecordLayout.withName("prev");
     public static final long OFFSET__prev = 72;
-    public static final java.lang.foreign.StructLayout LAYOUT__delta = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__delta = nuklear.nk_vec2.gRecordLayout.withName("delta");
     public static final long OFFSET__delta = 80;
-    public static final java.lang.foreign.StructLayout LAYOUT__scroll_delta = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__scroll_delta = nuklear.nk_vec2.gRecordLayout.withName("scroll_delta");
     public static final long OFFSET__scroll_delta = 88;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__grab = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__grab = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("grab");
     public static final long OFFSET__grab = 96;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__grabbed = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__grabbed = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("grabbed");
     public static final long OFFSET__grabbed = 97;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__ungrab = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__ungrab = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("ungrab");
     public static final long OFFSET__ungrab = 98;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

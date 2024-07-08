@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkDepthBiasInfoEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasConstantFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depthBiasConstantFactor");
     public static final long OFFSET__depthBiasConstantFactor = 16;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasClamp = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depthBiasClamp");
     public static final long OFFSET__depthBiasClamp = 20;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__depthBiasSlopeFactor = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("depthBiasSlopeFactor");
     public static final long OFFSET__depthBiasSlopeFactor = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

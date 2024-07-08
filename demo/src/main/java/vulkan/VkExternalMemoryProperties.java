@@ -2,11 +2,11 @@ package vulkan;
 
 public record VkExternalMemoryProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__externalMemoryFeatures = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__externalMemoryFeatures = java.lang.foreign.ValueLayout.JAVA_INT.withName("externalMemoryFeatures");
     public static final long OFFSET__externalMemoryFeatures = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__exportFromImportedHandleTypes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__exportFromImportedHandleTypes = java.lang.foreign.ValueLayout.JAVA_INT.withName("exportFromImportedHandleTypes");
     public static final long OFFSET__exportFromImportedHandleTypes = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__compatibleHandleTypes = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__compatibleHandleTypes = java.lang.foreign.ValueLayout.JAVA_INT.withName("compatibleHandleTypes");
     public static final long OFFSET__compatibleHandleTypes = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

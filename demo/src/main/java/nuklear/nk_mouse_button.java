@@ -2,11 +2,11 @@ package nuklear;
 
 public record nk_mouse_button(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__down = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__down = java.lang.foreign.ValueLayout.JAVA_INT.withName("down");
     public static final long OFFSET__down = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__clicked = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__clicked = java.lang.foreign.ValueLayout.JAVA_INT.withName("clicked");
     public static final long OFFSET__clicked = 4;
-    public static final java.lang.foreign.StructLayout LAYOUT__clicked_pos = nuklear.nk_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__clicked_pos = nuklear.nk_vec2.gRecordLayout.withName("clicked_pos");
     public static final long OFFSET__clicked_pos = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

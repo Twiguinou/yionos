@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkDisplayModePropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__displayMode = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__displayMode = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("displayMode");
     public static final long OFFSET__displayMode = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__parameters = vulkan.VkDisplayModeParametersKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__parameters = vulkan.VkDisplayModeParametersKHR.gRecordLayout.withName("parameters");
     public static final long OFFSET__parameters = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

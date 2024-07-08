@@ -2,19 +2,19 @@ package nuklear;
 
 public record nk_command_arc(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__header = nuklear.nk_command.gRecordLayout.withName("header");
     public static final long OFFSET__header = 0;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__cx = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__cx = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("cx");
     public static final long OFFSET__cx = 16;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__cy = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__cy = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("cy");
     public static final long OFFSET__cy = 18;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__r = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("r");
     public static final long OFFSET__r = 20;
-    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT;
+    public static final java.lang.foreign.ValueLayout.OfShort LAYOUT__line_thickness = java.lang.foreign.ValueLayout.JAVA_SHORT.withName("line_thickness");
     public static final long OFFSET__line_thickness = 22;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__a = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_FLOAT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__a = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_FLOAT).withName("a");
     public static final long OFFSET__a = 24;
-    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__color = nuklear.nk_color.gRecordLayout.withName("color");
     public static final long OFFSET__color = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

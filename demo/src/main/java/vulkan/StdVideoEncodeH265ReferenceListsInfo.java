@@ -2,19 +2,19 @@ package vulkan;
 
 public record StdVideoEncodeH265ReferenceListsInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH265ReferenceListsInfoFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoEncodeH265ReferenceListsInfoFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l0_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_ref_idx_l0_active_minus1");
     public static final long OFFSET__num_ref_idx_l0_active_minus1 = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__num_ref_idx_l1_active_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("num_ref_idx_l1_active_minus1");
     public static final long OFFSET__num_ref_idx_l1_active_minus1 = 5;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList0 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList0 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicList0");
     public static final long OFFSET__RefPicList0 = 6;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList1 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__RefPicList1 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("RefPicList1");
     public static final long OFFSET__RefPicList1 = 21;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__list_entry_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__list_entry_l0 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("list_entry_l0");
     public static final long OFFSET__list_entry_l0 = 36;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__list_entry_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__list_entry_l1 = java.lang.foreign.MemoryLayout.sequenceLayout(15, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("list_entry_l1");
     public static final long OFFSET__list_entry_l1 = 51;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

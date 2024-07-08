@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkPhysicalDeviceProperties(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__apiVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__apiVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("apiVersion");
     public static final long OFFSET__apiVersion = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__driverVersion = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__driverVersion = java.lang.foreign.ValueLayout.JAVA_INT.withName("driverVersion");
     public static final long OFFSET__driverVersion = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vendorID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vendorID = java.lang.foreign.ValueLayout.JAVA_INT.withName("vendorID");
     public static final long OFFSET__vendorID = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceID = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceID = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceID");
     public static final long OFFSET__deviceID = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__deviceType = java.lang.foreign.ValueLayout.JAVA_INT.withName("deviceType");
     public static final long OFFSET__deviceType = 16;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__deviceName = java.lang.foreign.MemoryLayout.sequenceLayout(256, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("deviceName");
     public static final long OFFSET__deviceName = 20;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__pipelineCacheUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__pipelineCacheUUID = java.lang.foreign.MemoryLayout.sequenceLayout(16, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("pipelineCacheUUID");
     public static final long OFFSET__pipelineCacheUUID = 276;
-    public static final java.lang.foreign.StructLayout LAYOUT__limits = vulkan.VkPhysicalDeviceLimits.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__limits = vulkan.VkPhysicalDeviceLimits.gRecordLayout.withName("limits");
     public static final long OFFSET__limits = 296;
-    public static final java.lang.foreign.StructLayout LAYOUT__sparseProperties = vulkan.VkPhysicalDeviceSparseProperties.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__sparseProperties = vulkan.VkPhysicalDeviceSparseProperties.gRecordLayout.withName("sparseProperties");
     public static final long OFFSET__sparseProperties = 800;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

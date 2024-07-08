@@ -2,9 +2,9 @@ package nuklear;
 
 public record nk_config_stack_flags_element(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.AddressLayout LAYOUT__address = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__address = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("address");
     public static final long OFFSET__address = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__old_value = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__old_value = java.lang.foreign.ValueLayout.JAVA_INT.withName("old_value");
     public static final long OFFSET__old_value = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

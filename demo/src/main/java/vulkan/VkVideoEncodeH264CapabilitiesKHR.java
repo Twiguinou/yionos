@@ -2,35 +2,35 @@ package vulkan;
 
 public record VkVideoEncodeH264CapabilitiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxLevelIdc = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxLevelIdc = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxLevelIdc");
     public static final long OFFSET__maxLevelIdc = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSliceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxSliceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxSliceCount");
     public static final long OFFSET__maxSliceCount = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPPictureL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxPPictureL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxPPictureL0ReferenceCount");
     public static final long OFFSET__maxPPictureL0ReferenceCount = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxBPictureL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxBPictureL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxBPictureL0ReferenceCount");
     public static final long OFFSET__maxBPictureL0ReferenceCount = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxL1ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxL1ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxL1ReferenceCount");
     public static final long OFFSET__maxL1ReferenceCount = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTemporalLayerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxTemporalLayerCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxTemporalLayerCount");
     public static final long OFFSET__maxTemporalLayerCount = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__expectDyadicTemporalLayerPattern = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__expectDyadicTemporalLayerPattern = java.lang.foreign.ValueLayout.JAVA_INT.withName("expectDyadicTemporalLayerPattern");
     public static final long OFFSET__expectDyadicTemporalLayerPattern = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minQp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__minQp = java.lang.foreign.ValueLayout.JAVA_INT.withName("minQp");
     public static final long OFFSET__minQp = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxQp = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__maxQp = java.lang.foreign.ValueLayout.JAVA_INT.withName("maxQp");
     public static final long OFFSET__maxQp = 52;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__prefersGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__prefersGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT.withName("prefersGopRemainingFrames");
     public static final long OFFSET__prefersGopRemainingFrames = 56;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__requiresGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__requiresGopRemainingFrames = java.lang.foreign.ValueLayout.JAVA_INT.withName("requiresGopRemainingFrames");
     public static final long OFFSET__requiresGopRemainingFrames = 60;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSyntaxFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__stdSyntaxFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("stdSyntaxFlags");
     public static final long OFFSET__stdSyntaxFlags = 64;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

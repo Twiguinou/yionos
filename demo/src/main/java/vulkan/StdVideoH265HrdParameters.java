@@ -2,35 +2,35 @@ package vulkan;
 
 public record StdVideoH265HrdParameters(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265HrdFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265HrdFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__tick_divisor_minus2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__tick_divisor_minus2 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("tick_divisor_minus2");
     public static final long OFFSET__tick_divisor_minus2 = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__du_cpb_removal_delay_increment_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__du_cpb_removal_delay_increment_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("du_cpb_removal_delay_increment_length_minus1");
     public static final long OFFSET__du_cpb_removal_delay_increment_length_minus1 = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__dpb_output_delay_du_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__dpb_output_delay_du_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("dpb_output_delay_du_length_minus1");
     public static final long OFFSET__dpb_output_delay_du_length_minus1 = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__bit_rate_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__bit_rate_scale = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("bit_rate_scale");
     public static final long OFFSET__bit_rate_scale = 7;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_scale = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cpb_size_scale");
     public static final long OFFSET__cpb_size_scale = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_du_scale = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__cpb_size_du_scale = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("cpb_size_du_scale");
     public static final long OFFSET__cpb_size_du_scale = 9;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__initial_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__initial_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("initial_cpb_removal_delay_length_minus1");
     public static final long OFFSET__initial_cpb_removal_delay_length_minus1 = 10;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__au_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__au_cpb_removal_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("au_cpb_removal_delay_length_minus1");
     public static final long OFFSET__au_cpb_removal_delay_length_minus1 = 11;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__dpb_output_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__dpb_output_delay_length_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("dpb_output_delay_length_minus1");
     public static final long OFFSET__dpb_output_delay_length_minus1 = 12;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_cnt_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__cpb_cnt_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("cpb_cnt_minus1");
     public static final long OFFSET__cpb_cnt_minus1 = 13;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__elemental_duration_in_tc_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__elemental_duration_in_tc_minus1 = java.lang.foreign.MemoryLayout.sequenceLayout(7, java.lang.foreign.ValueLayout.JAVA_SHORT).withName("elemental_duration_in_tc_minus1");
     public static final long OFFSET__elemental_duration_in_tc_minus1 = 20;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_SHORT);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__reserved = java.lang.foreign.MemoryLayout.sequenceLayout(3, java.lang.foreign.ValueLayout.JAVA_SHORT).withName("reserved");
     public static final long OFFSET__reserved = 34;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSubLayerHrdParametersNal = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSubLayerHrdParametersNal = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSubLayerHrdParametersNal");
     public static final long OFFSET__pSubLayerHrdParametersNal = 40;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSubLayerHrdParametersVcl = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSubLayerHrdParametersVcl = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSubLayerHrdParametersVcl");
     public static final long OFFSET__pSubLayerHrdParametersVcl = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

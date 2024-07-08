@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkPhysicalDeviceMapMemoryPlacedFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryMapPlaced = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryMapPlaced = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryMapPlaced");
     public static final long OFFSET__memoryMapPlaced = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryMapRangePlaced = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryMapRangePlaced = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryMapRangePlaced");
     public static final long OFFSET__memoryMapRangePlaced = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryUnmapReserve = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__memoryUnmapReserve = java.lang.foreign.ValueLayout.JAVA_INT.withName("memoryUnmapReserve");
     public static final long OFFSET__memoryUnmapReserve = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

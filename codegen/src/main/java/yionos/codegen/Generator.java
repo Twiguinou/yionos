@@ -3,13 +3,13 @@ package yionos.codegen;
 import jpgen.ClassMaker;
 import jpgen.PrintingContext;
 import jpgen.SizedIterable;
+import jpgen.SourceScopeScanner;
 import jpgen.data.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface Generator
@@ -26,65 +26,45 @@ public interface Generator
         }
     }
 
-    static List<RecordType.Decl> gatherRecordDeclarations(Iterable<Declaration> declarations)
+    static List<RecordType.Decl> gatherRecordDeclarations(SourceScopeScanner scanner)
     {
-        List<RecordType.Decl> records = new ArrayList<>();
-        for (Declaration declaration : declarations)
-        {
-            if (declaration instanceof RecordType.Decl record && !record.isIncomplete())
-            {
-                records.add(record);
-            }
-        }
-
-        return records;
+        return scanner.getTypeTable().values().stream()
+                .filter(type -> type instanceof RecordType.Decl record && !record.isIncomplete())
+                .map(type -> (RecordType.Decl) type)
+                .toList();
     }
 
-    static List<EnumType.Decl> gatherEnumDeclarations(Iterable<Declaration> declarations)
+    static List<EnumType.Decl> gatherEnumDeclarations(SourceScopeScanner scanner)
     {
-        List<EnumType.Decl> enums = new ArrayList<>();
-        for (Declaration declaration : declarations)
-        {
-            if (declaration instanceof EnumType.Decl enumDeclaration)
-            {
-                enums.add(enumDeclaration);
-            }
-        }
-
-        return enums;
+        return scanner.getTypeTable().values().stream()
+                .filter(type -> type instanceof EnumType.Decl)
+                .map(type -> (EnumType.Decl) type)
+                .toList();
     }
 
-    static List<HeaderDeclaration.FunctionSpecifier> gatherFunctions(Iterable<Declaration> declarations)
+    static List<HeaderDeclaration.FunctionSpecifier> gatherFunctions(SourceScopeScanner scanner)
     {
-        List<HeaderDeclaration.FunctionSpecifier> functions = new ArrayList<>();
-        for (Declaration declaration : declarations)
-        {
-            if (declaration instanceof FunctionType.Decl function && function.linkage == Linkage.EXTERNAL)
-            {
-                functions.add(HeaderDeclaration.FunctionSpecifier.of(function));
-            }
-        }
-
-        return functions;
+        return scanner.functions().stream()
+                .filter(function -> function.linkage == Linkage.EXTERNAL && !function.descriptorType.variadic())
+                .map(HeaderDeclaration.FunctionSpecifier::of)
+                .toList();
     }
 
-    static List<CallbackDeclaration> makeCallbacks(Iterable<Type> types, String declsPackage)
+    static List<CallbackDeclaration> makeCallbacks(SourceScopeScanner scanner)
     {
-        List<CallbackDeclaration> callbacks = new ArrayList<>();
-        for (Type type : types)
-        {
-            if (type instanceof Type.Alias(Type underlying, String identifier) &&
-                    underlying.flatten() instanceof Type.Pointer pointer &&
-                    pointer.referencedType.flatten() instanceof FunctionType functionType)
-            {
-                String[] argsNames = new String[functionType.parameterTypes().size()];
-                for (int i = 0; i < argsNames.length; i++) argsNames[i] = String.format("arg%d", i);
+        return scanner.getTypeTable().values().stream()
+                .filter(type -> type instanceof Type.Alias(Type underlying, _) && underlying.flatten() instanceof Type.Pointer pointer &&
+                        pointer.referencedType.flatten() instanceof FunctionType functionType && !functionType.variadic())
+                .map(type ->
+                {
+                    Type.Alias alias = (Type.Alias) type;
+                    FunctionType functionType = (FunctionType) ((Type.Pointer)alias.flatten()).referencedType.flatten();
+                    String[] argsNames = new String[functionType.parameterTypes().size()];
+                    for (int i = 0; i < argsNames.length; i++) argsNames[i] = String.format("arg%d", i);
 
-                callbacks.add(new CallbackDeclaration(functionType, declsPackage, identifier, SizedIterable.ofArray(argsNames)));
-            }
-        }
-
-        return callbacks;
+                    return new CallbackDeclaration(functionType, scanner.canonicalPackage, alias.identifier(), SizedIterable.ofArray(argsNames));
+                })
+                .toList();
     }
 
     static void writeDeclaration(Declaration declaration, File directory)

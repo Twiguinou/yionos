@@ -2,19 +2,19 @@ package nuklear;
 
 public record nk_configuration_stacks(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__style_items = nuklear.nk_config_stack_style_item.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__style_items = nuklear.nk_config_stack_style_item.gRecordLayout.withName("style_items");
     public static final long OFFSET__style_items = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__floats = nuklear.nk_config_stack_float.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__floats = nuklear.nk_config_stack_float.gRecordLayout.withName("floats");
     public static final long OFFSET__floats = 776;
-    public static final java.lang.foreign.StructLayout LAYOUT__vectors = nuklear.nk_config_stack_vec2.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__vectors = nuklear.nk_config_stack_vec2.gRecordLayout.withName("vectors");
     public static final long OFFSET__vectors = 1296;
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = nuklear.nk_config_stack_flags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = nuklear.nk_config_stack_flags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 1560;
-    public static final java.lang.foreign.StructLayout LAYOUT__colors = nuklear.nk_config_stack_color.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__colors = nuklear.nk_config_stack_color.gRecordLayout.withName("colors");
     public static final long OFFSET__colors = 2080;
-    public static final java.lang.foreign.StructLayout LAYOUT__fonts = nuklear.nk_config_stack_user_font.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__fonts = nuklear.nk_config_stack_user_font.gRecordLayout.withName("fonts");
     public static final long OFFSET__fonts = 2600;
-    public static final java.lang.foreign.StructLayout LAYOUT__button_behaviors = nuklear.nk_config_stack_button_behavior.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__button_behaviors = nuklear.nk_config_stack_button_behavior.gRecordLayout.withName("button_behaviors");
     public static final long OFFSET__button_behaviors = 2736;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

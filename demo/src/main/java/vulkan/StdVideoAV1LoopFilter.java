@@ -2,19 +2,19 @@ package vulkan;
 
 public record StdVideoAV1LoopFilter(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1LoopFilterFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1LoopFilterFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__loop_filter_level = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__loop_filter_level = java.lang.foreign.MemoryLayout.sequenceLayout(4, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("loop_filter_level");
     public static final long OFFSET__loop_filter_level = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__loop_filter_sharpness = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__loop_filter_sharpness = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("loop_filter_sharpness");
     public static final long OFFSET__loop_filter_sharpness = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__update_ref_delta = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__update_ref_delta = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("update_ref_delta");
     public static final long OFFSET__update_ref_delta = 9;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__loop_filter_ref_deltas = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__loop_filter_ref_deltas = java.lang.foreign.MemoryLayout.sequenceLayout(8, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("loop_filter_ref_deltas");
     public static final long OFFSET__loop_filter_ref_deltas = 10;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__update_mode_delta = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__update_mode_delta = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("update_mode_delta");
     public static final long OFFSET__update_mode_delta = 18;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__loop_filter_mode_deltas = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__loop_filter_mode_deltas = java.lang.foreign.MemoryLayout.sequenceLayout(2, java.lang.foreign.ValueLayout.JAVA_BYTE).withName("loop_filter_mode_deltas");
     public static final long OFFSET__loop_filter_mode_deltas = 19;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

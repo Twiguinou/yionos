@@ -2,29 +2,29 @@ package vulkan;
 
 public record StdVideoH265VideoParameterSet(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265VpsFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoH265VpsFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__vps_video_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__vps_video_parameter_set_id = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("vps_video_parameter_set_id");
     public static final long OFFSET__vps_video_parameter_set_id = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__vps_max_sub_layers_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__vps_max_sub_layers_minus1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("vps_max_sub_layers_minus1");
     public static final long OFFSET__vps_max_sub_layers_minus1 = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved1 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved1");
     public static final long OFFSET__reserved1 = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved2 = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__reserved2 = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("reserved2");
     public static final long OFFSET__reserved2 = 7;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vps_num_units_in_tick = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vps_num_units_in_tick = java.lang.foreign.ValueLayout.JAVA_INT.withName("vps_num_units_in_tick");
     public static final long OFFSET__vps_num_units_in_tick = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vps_time_scale = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vps_time_scale = java.lang.foreign.ValueLayout.JAVA_INT.withName("vps_time_scale");
     public static final long OFFSET__vps_time_scale = 12;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vps_num_ticks_poc_diff_one_minus1 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__vps_num_ticks_poc_diff_one_minus1 = java.lang.foreign.ValueLayout.JAVA_INT.withName("vps_num_ticks_poc_diff_one_minus1");
     public static final long OFFSET__vps_num_ticks_poc_diff_one_minus1 = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__reserved3 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__reserved3 = java.lang.foreign.ValueLayout.JAVA_INT.withName("reserved3");
     public static final long OFFSET__reserved3 = 20;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pDecPicBufMgr = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pDecPicBufMgr = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pDecPicBufMgr");
     public static final long OFFSET__pDecPicBufMgr = 24;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pHrdParameters = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pHrdParameters = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pHrdParameters");
     public static final long OFFSET__pHrdParameters = 32;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pProfileTierLevel = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pProfileTierLevel = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pProfileTierLevel");
     public static final long OFFSET__pProfileTierLevel = 40;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

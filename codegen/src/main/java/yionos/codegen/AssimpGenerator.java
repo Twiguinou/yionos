@@ -14,7 +14,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
-import java.util.stream.StreamSupport;
 
 public class AssimpGenerator implements Generator
 {
@@ -71,11 +70,11 @@ public class AssimpGenerator implements Generator
             File assimpOutput = new File(outputDirectory, ASSIMP_DIRECTORY);
             if (assimpOutput.exists() || assimpOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner.declarations());
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner.declarations());
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner.getTypeTable().values(), ASSIMP_PACKAGE);
-                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner.declarations());
-                List<Constant> constants = StreamSupport.stream(scanner.constants().spliterator(), false)
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner);
+                List<Constant> constants = scanner.constants().stream()
                         .sorted(Comparator.comparing(Constant::name))
                         .toList();
 

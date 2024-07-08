@@ -2,9 +2,9 @@ package nuklear;
 
 public record nk_config_stack_vec2(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__head = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__head = java.lang.foreign.ValueLayout.JAVA_INT.withName("head");
     public static final long OFFSET__head = 0;
-    public static final java.lang.foreign.SequenceLayout LAYOUT__elements = java.lang.foreign.MemoryLayout.sequenceLayout(16, nuklear.nk_config_stack_vec2_element.gRecordLayout);
+    public static final java.lang.foreign.SequenceLayout LAYOUT__elements = java.lang.foreign.MemoryLayout.sequenceLayout(16, nuklear.nk_config_stack_vec2_element.gRecordLayout).withName("elements");
     public static final long OFFSET__elements = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

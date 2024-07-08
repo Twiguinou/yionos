@@ -2,19 +2,19 @@ package vulkan;
 
 public record VkPhysicalDeviceMeshShaderFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__taskShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__taskShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("taskShader");
     public static final long OFFSET__taskShader = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("meshShader");
     public static final long OFFSET__meshShader = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewMeshShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__multiviewMeshShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("multiviewMeshShader");
     public static final long OFFSET__multiviewMeshShader = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveFragmentShadingRateMeshShader = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__primitiveFragmentShadingRateMeshShader = java.lang.foreign.ValueLayout.JAVA_INT.withName("primitiveFragmentShadingRateMeshShader");
     public static final long OFFSET__primitiveFragmentShadingRateMeshShader = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshShaderQueries = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__meshShaderQueries = java.lang.foreign.ValueLayout.JAVA_INT.withName("meshShaderQueries");
     public static final long OFFSET__meshShaderQueries = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

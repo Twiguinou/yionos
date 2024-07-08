@@ -2,13 +2,13 @@ package vulkan;
 
 public record VkFragmentShadingRateAttachmentInfoKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pFragmentShadingRateAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pFragmentShadingRateAttachment = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pFragmentShadingRateAttachment");
     public static final long OFFSET__pFragmentShadingRateAttachment = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__shadingRateAttachmentTexelSize = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__shadingRateAttachmentTexelSize = vulkan.VkExtent2D.gRecordLayout.withName("shadingRateAttachmentTexelSize");
     public static final long OFFSET__shadingRateAttachmentTexelSize = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

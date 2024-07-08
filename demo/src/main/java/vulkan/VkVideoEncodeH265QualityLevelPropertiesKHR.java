@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkVideoEncodeH265QualityLevelPropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredRateControlFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredRateControlFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredRateControlFlags");
     public static final long OFFSET__preferredRateControlFlags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredGopFrameCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredGopFrameCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredGopFrameCount");
     public static final long OFFSET__preferredGopFrameCount = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredIdrPeriod = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredIdrPeriod = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredIdrPeriod");
     public static final long OFFSET__preferredIdrPeriod = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredConsecutiveBFrameCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredConsecutiveBFrameCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredConsecutiveBFrameCount");
     public static final long OFFSET__preferredConsecutiveBFrameCount = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredSubLayerCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredSubLayerCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredSubLayerCount");
     public static final long OFFSET__preferredSubLayerCount = 32;
-    public static final java.lang.foreign.StructLayout LAYOUT__preferredConstantQp = vulkan.VkVideoEncodeH265QpKHR.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__preferredConstantQp = vulkan.VkVideoEncodeH265QpKHR.gRecordLayout.withName("preferredConstantQp");
     public static final long OFFSET__preferredConstantQp = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredMaxL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredMaxL0ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredMaxL0ReferenceCount");
     public static final long OFFSET__preferredMaxL0ReferenceCount = 48;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredMaxL1ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__preferredMaxL1ReferenceCount = java.lang.foreign.ValueLayout.JAVA_INT.withName("preferredMaxL1ReferenceCount");
     public static final long OFFSET__preferredMaxL1ReferenceCount = 52;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

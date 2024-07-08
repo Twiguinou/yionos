@@ -2,9 +2,9 @@ package vulkan;
 
 public record VkRect2D(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__offset = vulkan.VkOffset2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__offset = vulkan.VkOffset2D.gRecordLayout.withName("offset");
     public static final long OFFSET__offset = 0;
-    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent2D.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__extent = vulkan.VkExtent2D.gRecordLayout.withName("extent");
     public static final long OFFSET__extent = 8;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,13 +2,13 @@ package assimp;
 
 public record aiPlane(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__a = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("a");
     public static final long OFFSET__a = 0;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__b = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("b");
     public static final long OFFSET__b = 4;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__c = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("c");
     public static final long OFFSET__c = 8;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__d = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__d = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("d");
     public static final long OFFSET__d = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

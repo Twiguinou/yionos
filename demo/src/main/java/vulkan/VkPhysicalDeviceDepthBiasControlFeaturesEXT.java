@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceDepthBiasControlFeaturesEXT(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasControl = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasControl = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthBiasControl");
     public static final long OFFSET__depthBiasControl = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__leastRepresentableValueForceUnormRepresentation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__leastRepresentableValueForceUnormRepresentation = java.lang.foreign.ValueLayout.JAVA_INT.withName("leastRepresentableValueForceUnormRepresentation");
     public static final long OFFSET__leastRepresentableValueForceUnormRepresentation = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__floatRepresentation = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__floatRepresentation = java.lang.foreign.ValueLayout.JAVA_INT.withName("floatRepresentation");
     public static final long OFFSET__floatRepresentation = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasExact = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__depthBiasExact = java.lang.foreign.ValueLayout.JAVA_INT.withName("depthBiasExact");
     public static final long OFFSET__depthBiasExact = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

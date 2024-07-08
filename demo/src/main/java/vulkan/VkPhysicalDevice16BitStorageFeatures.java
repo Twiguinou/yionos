@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDevice16BitStorageFeatures(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("storageBuffer16BitAccess");
     public static final long OFFSET__storageBuffer16BitAccess = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformAndStorageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__uniformAndStorageBuffer16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("uniformAndStorageBuffer16BitAccess");
     public static final long OFFSET__uniformAndStorageBuffer16BitAccess = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storagePushConstant16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storagePushConstant16 = java.lang.foreign.ValueLayout.JAVA_INT.withName("storagePushConstant16");
     public static final long OFFSET__storagePushConstant16 = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageInputOutput16 = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__storageInputOutput16 = java.lang.foreign.ValueLayout.JAVA_INT.withName("storageInputOutput16");
     public static final long OFFSET__storageInputOutput16 = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

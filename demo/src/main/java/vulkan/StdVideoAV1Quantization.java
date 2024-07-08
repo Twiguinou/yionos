@@ -2,25 +2,25 @@ package vulkan;
 
 public record StdVideoAV1Quantization(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1QuantizationFlags.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__flags = vulkan.StdVideoAV1QuantizationFlags.gRecordLayout.withName("flags");
     public static final long OFFSET__flags = 0;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__base_q_idx = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__base_q_idx = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("base_q_idx");
     public static final long OFFSET__base_q_idx = 4;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQYDc = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQYDc = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("DeltaQYDc");
     public static final long OFFSET__DeltaQYDc = 5;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQUDc = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQUDc = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("DeltaQUDc");
     public static final long OFFSET__DeltaQUDc = 6;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQUAc = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQUAc = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("DeltaQUAc");
     public static final long OFFSET__DeltaQUAc = 7;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQVDc = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQVDc = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("DeltaQVDc");
     public static final long OFFSET__DeltaQVDc = 8;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQVAc = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__DeltaQVAc = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("DeltaQVAc");
     public static final long OFFSET__DeltaQVAc = 9;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__qm_y = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__qm_y = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("qm_y");
     public static final long OFFSET__qm_y = 10;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__qm_u = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__qm_u = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("qm_u");
     public static final long OFFSET__qm_u = 11;
-    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__qm_v = java.lang.foreign.ValueLayout.JAVA_BYTE;
+    public static final java.lang.foreign.ValueLayout.OfByte LAYOUT__qm_v = java.lang.foreign.ValueLayout.JAVA_BYTE.withName("qm_v");
     public static final long OFFSET__qm_v = 12;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

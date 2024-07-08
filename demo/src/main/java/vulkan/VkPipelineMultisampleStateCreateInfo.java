@@ -2,23 +2,23 @@ package vulkan;
 
 public record VkPipelineMultisampleStateCreateInfo(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__flags = java.lang.foreign.ValueLayout.JAVA_INT.withName("flags");
     public static final long OFFSET__flags = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__rasterizationSamples = java.lang.foreign.ValueLayout.JAVA_INT.withName("rasterizationSamples");
     public static final long OFFSET__rasterizationSamples = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleShadingEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sampleShadingEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("sampleShadingEnable");
     public static final long OFFSET__sampleShadingEnable = 24;
-    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minSampleShading = java.lang.foreign.ValueLayout.JAVA_FLOAT;
+    public static final java.lang.foreign.ValueLayout.OfFloat LAYOUT__minSampleShading = java.lang.foreign.ValueLayout.JAVA_FLOAT.withName("minSampleShading");
     public static final long OFFSET__minSampleShading = 28;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pSampleMask = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pSampleMask = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pSampleMask");
     public static final long OFFSET__pSampleMask = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaToCoverageEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaToCoverageEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("alphaToCoverageEnable");
     public static final long OFFSET__alphaToCoverageEnable = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaToOneEnable = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__alphaToOneEnable = java.lang.foreign.ValueLayout.JAVA_INT.withName("alphaToOneEnable");
     public static final long OFFSET__alphaToOneEnable = 44;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

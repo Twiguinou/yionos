@@ -2,15 +2,15 @@ package nuklear;
 
 public record nk_popup_buffer(java.lang.foreign.MemorySegment _ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__begin = java.lang.foreign.ValueLayout.JAVA_LONG.withName("begin");
     public static final long OFFSET__begin = 0;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__parent = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__parent = java.lang.foreign.ValueLayout.JAVA_LONG.withName("parent");
     public static final long OFFSET__parent = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__last = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__last = java.lang.foreign.ValueLayout.JAVA_LONG.withName("last");
     public static final long OFFSET__last = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__end = java.lang.foreign.ValueLayout.JAVA_LONG.withName("end");
     public static final long OFFSET__end = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__active = java.lang.foreign.ValueLayout.JAVA_INT.withName("active");
     public static final long OFFSET__active = 32;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

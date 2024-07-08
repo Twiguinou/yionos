@@ -2,21 +2,21 @@ package vulkan;
 
 public record VkVideoFormatPropertiesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__format = java.lang.foreign.ValueLayout.JAVA_INT.withName("format");
     public static final long OFFSET__format = 16;
-    public static final java.lang.foreign.StructLayout LAYOUT__componentMapping = vulkan.VkComponentMapping.gRecordLayout;
+    public static final java.lang.foreign.StructLayout LAYOUT__componentMapping = vulkan.VkComponentMapping.gRecordLayout.withName("componentMapping");
     public static final long OFFSET__componentMapping = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageCreateFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageCreateFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageCreateFlags");
     public static final long OFFSET__imageCreateFlags = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageType = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageType");
     public static final long OFFSET__imageType = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageTiling = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageTiling = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageTiling");
     public static final long OFFSET__imageTiling = 44;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__imageUsageFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("imageUsageFlags");
     public static final long OFFSET__imageUsageFlags = 48;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

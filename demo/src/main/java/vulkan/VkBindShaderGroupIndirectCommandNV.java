@@ -2,7 +2,7 @@ package vulkan;
 
 public record VkBindShaderGroupIndirectCommandNV(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupIndex = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__groupIndex = java.lang.foreign.ValueLayout.JAVA_INT.withName("groupIndex");
     public static final long OFFSET__groupIndex = 0;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

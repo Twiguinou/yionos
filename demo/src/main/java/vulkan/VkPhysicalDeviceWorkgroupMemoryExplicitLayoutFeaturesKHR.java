@@ -2,17 +2,17 @@ package vulkan;
 
 public record VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("workgroupMemoryExplicitLayout");
     public static final long OFFSET__workgroupMemoryExplicitLayout = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayoutScalarBlockLayout = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayoutScalarBlockLayout = java.lang.foreign.ValueLayout.JAVA_INT.withName("workgroupMemoryExplicitLayoutScalarBlockLayout");
     public static final long OFFSET__workgroupMemoryExplicitLayoutScalarBlockLayout = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayout8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayout8BitAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("workgroupMemoryExplicitLayout8BitAccess");
     public static final long OFFSET__workgroupMemoryExplicitLayout8BitAccess = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayout16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__workgroupMemoryExplicitLayout16BitAccess = java.lang.foreign.ValueLayout.JAVA_INT.withName("workgroupMemoryExplicitLayout16BitAccess");
     public static final long OFFSET__workgroupMemoryExplicitLayout16BitAccess = 28;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

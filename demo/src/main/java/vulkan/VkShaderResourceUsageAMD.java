@@ -2,15 +2,15 @@ package vulkan;
 
 public record VkShaderResourceUsageAMD(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numUsedVgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numUsedVgprs = java.lang.foreign.ValueLayout.JAVA_INT.withName("numUsedVgprs");
     public static final long OFFSET__numUsedVgprs = 0;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numUsedSgprs = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__numUsedSgprs = java.lang.foreign.ValueLayout.JAVA_INT.withName("numUsedSgprs");
     public static final long OFFSET__numUsedSgprs = 4;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ldsSizePerLocalWorkGroup = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__ldsSizePerLocalWorkGroup = java.lang.foreign.ValueLayout.JAVA_INT.withName("ldsSizePerLocalWorkGroup");
     public static final long OFFSET__ldsSizePerLocalWorkGroup = 8;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__ldsUsageSizeInBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__ldsUsageSizeInBytes = java.lang.foreign.ValueLayout.JAVA_LONG.withName("ldsUsageSizeInBytes");
     public static final long OFFSET__ldsUsageSizeInBytes = 16;
-    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__scratchMemUsageInBytes = java.lang.foreign.ValueLayout.JAVA_LONG;
+    public static final java.lang.foreign.ValueLayout.OfLong LAYOUT__scratchMemUsageInBytes = java.lang.foreign.ValueLayout.JAVA_LONG.withName("scratchMemUsageInBytes");
     public static final long OFFSET__scratchMemUsageInBytes = 24;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(

@@ -2,25 +2,25 @@ package vulkan;
 
 public record VkSubpassDependency2(java.lang.foreign.MemorySegment ptr)
 {
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__sType = java.lang.foreign.ValueLayout.JAVA_INT.withName("sType");
     public static final long OFFSET__sType = 0;
-    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER;
+    public static final java.lang.foreign.AddressLayout LAYOUT__pNext = jpgen.NativeTypes.UNBOUNDED_POINTER.withName("pNext");
     public static final long OFFSET__pNext = 8;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcSubpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcSubpass = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcSubpass");
     public static final long OFFSET__srcSubpass = 16;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstSubpass = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstSubpass = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstSubpass");
     public static final long OFFSET__dstSubpass = 20;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcStageMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcStageMask");
     public static final long OFFSET__srcStageMask = 24;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstStageMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstStageMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstStageMask");
     public static final long OFFSET__dstStageMask = 28;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcAccessMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__srcAccessMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("srcAccessMask");
     public static final long OFFSET__srcAccessMask = 32;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstAccessMask = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dstAccessMask = java.lang.foreign.ValueLayout.JAVA_INT.withName("dstAccessMask");
     public static final long OFFSET__dstAccessMask = 36;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__dependencyFlags = java.lang.foreign.ValueLayout.JAVA_INT.withName("dependencyFlags");
     public static final long OFFSET__dependencyFlags = 40;
-    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewOffset = java.lang.foreign.ValueLayout.JAVA_INT;
+    public static final java.lang.foreign.ValueLayout.OfInt LAYOUT__viewOffset = java.lang.foreign.ValueLayout.JAVA_INT.withName("viewOffset");
     public static final long OFFSET__viewOffset = 44;
 
     public static final java.lang.foreign.StructLayout gRecordLayout = java.lang.foreign.MemoryLayout.structLayout(
