@@ -1,15 +1,20 @@
 [submodule "native-libs/extern/glfw"]
 	path = native-libs/extern/glfw
 	url = https://github.com/glfw/glfw.git
+	ignore = dirty
 [submodule "native-libs/extern/stb"]
 	path = native-libs/extern/stb
 	url = https://github.com/nothings/stb.git
+	ignore = dirty
 [submodule "native-libs/extern/Nuklear"]
 	path = native-libs/extern/Nuklear
 	url = https://github.com/Immediate-Mode-UI/Nuklear.git
+	ignore = dirty
 [submodule "native-libs/extern/VulkanMemoryAllocator"]
 	path = native-libs/extern/VulkanMemoryAllocator
 	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+	ignore = dirty
 [submodule "native-libs/extern/assimp"]
 	path = native-libs/extern/assimp
 	url = https://github.com/assimp/assimp.git
+	ignore = dirty

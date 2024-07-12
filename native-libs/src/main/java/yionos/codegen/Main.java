@@ -52,6 +52,11 @@ public final class Main
         Path stbInclude = resolvePath(args, "stb_include");
         Path nuklearInclude = resolvePath(args, "nuklear_include");
         Path assimpInclude = resolvePath(args, "assimp_include");
+        Path assimpConfigInclude = args.getArgValueIndexed("assimp_config_include", 0)
+                .map(Paths::get)
+                .orElse(assimpInclude);
+
+        boolean debug = args.getArgValueIndexed("debug", 0).map(Boolean::parseBoolean).orElse(false);
 
         String[] optionalArgs = args.getArgValues("optional_args").orElse(new String[0]);
         File outputDirectory = args.getArgValueIndexed("output_directory", 0)
@@ -64,7 +69,7 @@ public final class Main
                 new VmaGenerator(vmaInclude, vulkanInclude),
                 new StbImageGenerator(stbInclude),
                 new NuklearGenerator(nuklearInclude),
-                new AssimpGenerator(assimpInclude),
+                new AssimpGenerator(assimpInclude, assimpConfigInclude),
                 new VulkanGenerator(vulkanInclude)
         );
 
@@ -75,7 +80,7 @@ public final class Main
             generators.forEach(generator ->
             {
                 globalLogger.info(String.format("Generating bindings for %s", generator.name()));
-                generator.generate(outputDirectory, optionalArgs);
+                generator.generate(outputDirectory, optionalArgs, debug);
                 globalLogger.info(String.format("Done generating bindings for %s%n", generator.name()));
             });
         }

@@ -16,5 +16,9 @@ public final class nk_symbol_type
     public static final int NK_SYMBOL_TRIANGLE_RIGHT = 10;
     public static final int NK_SYMBOL_PLUS = 11;
     public static final int NK_SYMBOL_MINUS = 12;
-    public static final int NK_SYMBOL_MAX = 13;
+    public static final int NK_SYMBOL_TRIANGLE_UP_OUTLINE = 13;
+    public static final int NK_SYMBOL_TRIANGLE_DOWN_OUTLINE = 14;
+    public static final int NK_SYMBOL_TRIANGLE_LEFT_OUTLINE = 15;
+    public static final int NK_SYMBOL_TRIANGLE_RIGHT_OUTLINE = 16;
+    public static final int NK_SYMBOL_MAX = 17;
 }

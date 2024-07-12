@@ -31,9 +31,9 @@ public class StbImageGenerator implements Generator
     }
 
     @Override
-    public void generate(File outputDirectory, String[] clangArgs)
+    public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("stb_image Generator"), false, STB_IMAGE_PACKAGE))
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("stb_image Generator"), debug, STB_IMAGE_PACKAGE))
         {
             scanner.process(this.m_stbInclude.resolve("stb_image.h"), clangArgs, this.m_stbInclude);
 

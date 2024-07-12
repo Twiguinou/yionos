@@ -19,11 +19,11 @@ public final class Main
     {
         System.loadLibrary("vulkan-1");
 
-        System.loadLibrary("libassimp-5");
+        System.loadLibrary("assimp-5");
         System.loadLibrary("glfw3");
-        System.loadLibrary("libnuklear");
-        System.loadLibrary("libstb_image");
-        System.loadLibrary("libvma");
+        System.loadLibrary("nuklear");
+        System.loadLibrary("stb_image");
+        System.loadLibrary("vma");
 
         configureLog4j();
     }

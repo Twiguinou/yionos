@@ -31,9 +31,9 @@ public class VmaGenerator implements Generator
     }
 
     @Override
-    public void generate(File outputDirectory, String[] clangArgs)
+    public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("VMA Generator"), false, VMA_PACKAGE))
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("VMA Generator"), debug, VMA_PACKAGE))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add(String.format("-I%s", this.m_vulkanInclude.toAbsolutePath()));

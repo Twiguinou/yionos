@@ -1,185 +1,108 @@
 import org.gradle.internal.os.OperatingSystem
 import java.lang.IllegalStateException
 
-/**
- * TODO: Fix all this.
- */
-
-data class Platform(val name: String, val extension: String, val buildArgs: List<String>, val target: String)
-val platforms = listOf(
-    Platform("Windows-x86_64", "dll", listOf(
-        "-DCMAKE_SYSTEM_NAME=Windows", "-DCMAKE_SYSTEM_ARCH=x86_64"
-    ), "x86_64-pc-windows-msvc"),
-    Platform("Windows-arm64", "dll", listOf(
-        "-DCMAKE_SYSTEM_NAME=Windows", "-DCMAKE_SYSTEM_ARCH=arm64"
-    ), "arm64-pc-windows-msvc"),
-    Platform("Windows-aarch64", "dll", listOf(
-        "-DCMAKE_SYSTEM_NAME=Windows", "-DCMAKE_SYSTEM_ARCH=arm64"
-    ), "aarch64-pc-windows-msvc")
-)
+plugins {
+    id("application")
+}
 
 val os: OperatingSystem = OperatingSystem.current()
 
-val outputDirectory = layout.buildDirectory.map { it.file("native-gen") }.get().asFile
-val externDirectory = File(projectDir, "extern")
+val cmakeBuildDirectory = layout.buildDirectory.map { it.file("cmake") }.get().asFile
+val nativesOutputDirectory = layout.buildDirectory.map { it.file("native-gen") }.get().asFile
 val makeGenerator = if (os.isWindows) "MinGW Makefiles" else "Unix Makefiles"
 val make = if (os.isWindows) "mingw32-make" else "make"
+val sharedLibraryExtension = when {
+    os.isWindows -> "dll"
+    os.isMacOsX -> "dylib"
+    else -> "so"
+}
 
-fun makeDirectory(directory: File) {
-    if (!directory.exists() && !directory.mkdirs()) {
-        throw IllegalStateException("Could not create output directory.")
+val bindingsOutputDirectory = layout.buildDirectory.map { it.file("code-gen") }.get().asFile
+val externDirectory = File(projectDir, "extern")
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_22
+    targetCompatibility = JavaVersion.VERSION_22
+}
+
+dependencies {
+    implementation("jpgen:generator:0")
+    implementation("jpgen:api:0")
+}
+
+tasks.create("generateCMakeConfig") {
+    group = "yionos"
+
+    doFirst {
+        exec {
+            executable("cmake")
+            args(listOf(
+                "-S", ".", "-B", cmakeBuildDirectory,
+                "-G", makeGenerator
+            ))
+        }
     }
 }
 
-platforms.forEach { platform ->
+tasks.create("compileNativeLibraries") {
+    group = "yionos"
 
-    val platformOutputDirectory = File(outputDirectory, platform.name)
-    val buildDirectoryName = "build_${platform.name}"
+    dependsOn("generateCMakeConfig")
 
-    tasks.register("${platform.name}_generateGlfw") {
-        group = "yionos"
-
-        val glfwDirectory = File(externDirectory, "glfw")
-        val glfwBuildDirectory = File(glfwDirectory, buildDirectoryName)
-
-        doFirst {
-            makeDirectory(platformOutputDirectory)
-
-            exec {
-                workingDir(glfwDirectory)
-                executable("cmake")
-                args(listOf(
-                    "-S", ".", "-B", buildDirectoryName,
-                    "-DCMAKE_C_COMPILER=clang", "-DCMAKE_BUILD_TYPE=Release",
-                    "-DBUILD_SHARED_LIBS=ON", "-DGLFW_BUILD_EXAMPLES=OFF", "-DGLFW_BUILD_TESTS=OFF", "-DGLFW_BUILD_DOCS=OFF", "-DGLFW_INSTALL=OFF",
-                    "-G", makeGenerator
-                ).plus(platform.buildArgs))
-            }
-
-            exec {
-                workingDir(glfwBuildDirectory)
-                executable(make)
-            }
-        }
-
-        doLast {
-            copy {
-                from("$glfwBuildDirectory/src/glfw3.${platform.extension}")
-                into(platformOutputDirectory)
-            }
+    doFirst {
+        exec {
+            workingDir(cmakeBuildDirectory)
+            executable(make)
         }
     }
 
-    tasks.register("${platform.name}_generateStbImage") {
-        group = "yionos"
-
-        doFirst {
-            makeDirectory(platformOutputDirectory)
+    doLast {
+        if (!nativesOutputDirectory.exists() && !nativesOutputDirectory.mkdirs()) {
+            throw IllegalStateException("Failed to create output directory.")
         }
 
-        doLast {
-            exec {
-                executable("clang")
-                args(listOf(
-                    "-shared", "-O2", "-Wno-everything", "--target=${platform.target}", "-v",
-                    "-I$externDirectory/stb/",
-                    "-o", "${platformOutputDirectory.path}/stb_image.${platform.extension}",
-                    "STB_IMAGE_IMPL.c"
-                ))
+        copy {
+            from(cmakeBuildDirectory)
+            include("**/*.$sharedLibraryExtension")
+            into(nativesOutputDirectory)
+            rename { filename ->
+                if (filename.startsWith("lib")) filename.substring(3)
+                else filename
             }
+
+            includeEmptyDirs = false
+            eachFile { path = name }
         }
     }
+}
 
-    tasks.register("${platform.name}_generateNuklear") {
-        group = "yionos"
+application {
+    mainClass = "yionos.codegen.Main"
+    applicationDefaultJvmArgs = listOf(
+        "--enable-native-access=ALL-UNNAMED"
+    )
+}
 
-        doFirst {
-            makeDirectory(platformOutputDirectory)
-        }
+tasks.named<JavaExec>("run") {
+    dependsOn("generateCMakeConfig")
 
-        doLast {
-            exec {
-                executable("clang")
-                args(listOf(
-                    "-shared", "-O2", "-Wno-everything",
-                    "-I$externDirectory/Nuklear/",
-                    "-o", "${outputDirectory.path}/nuklear.${platform.extension}",
-                    "NUKLEAR_IMPL.c"
-                ))
-            }
-        }
-    }
+    mainClass = "yionos.codegen.Main"
 
-    tasks.register("${platform.name}_generateVma") {
-        group = "yionos"
+    val vulkanSdkDirectory: String = System.getenv("VULKAN_SDK")
+        ?: throw IllegalStateException("Vulkan SDK is either not installed or its path is missing from environment variables.")
 
-        val vulkanSdkDirectory: String = System.getenv("VULKAN_SDK")
-            ?: throw IllegalStateException("Vulkan SDK is either not installed or its path is missing from environment variables.")
+    val debugMode = System.getProperty("DEBUG", "true").toBoolean()
+    val programArgs = (project.property("programArgs") ?: "").toString().split(';')
 
-        doFirst {
-            makeDirectory(platformOutputDirectory)
-        }
-
-        doLast {
-            exec {
-                executable("clang++")
-                args(listOf(
-                    "-shared", "-O2", "-Wno-everything",
-                    "-I$externDirectory/VulkanMemoryAllocator/include/", "-I$vulkanSdkDirectory/Include/",
-                    "-o", "${outputDirectory.path}/vma.${platform.extension}",
-                    "VMA_IMPL.c"
-                ))
-            }
-        }
-    }
-
-    tasks.register("${platform.name}_generateAssimp") {
-        group = "yionos"
-
-        doFirst {
-            makeDirectory(platformOutputDirectory)
-
-            exec {
-                workingDir("${externDirectory}/assimp/")
-                executable("cmake")
-                args(listOf(
-                    "--build", "build", "--target", "clean"
-                ))
-            }
-
-            exec {
-                workingDir("${externDirectory}/assimp/")
-                executable("cmake")
-                args(listOf(
-                    "-S", ".", "-B", "build",
-                    "-DCMAKE_BUILD_TYPE=Release",
-                    "-DASSIMP_BUILD_FRAMEWORK=OFF", "-DASSIMP_BUILD_TESTS=OFF", "-DASSIMP_INSTALL=OFF", "-DASSIMP_BUILD_ASSIMP_VIEW=OFF",
-                    "-DASSIMP_BUILD_ALL_IMPORTERS_BY_DEFAULT=OFF", "-DASSIMP_BUILD_OBJ_IMPORTER=ON",
-                    "-DASSIMP_BUILD_ALL_EXPORTERS_BY_DEFAULT=OFF"
-                ).plus(platform.buildArgs))
-            }
-
-            exec {
-                workingDir("${externDirectory}/assimp/build/")
-                executable("make")
-            }
-        }
-
-        doLast {
-            copy {
-                from("${externDirectory}/assimp/build/bin/assimp-5.${platform.extension}")
-                into(outputDirectory)
-            }
-        }
-    }
-
-    tasks.register("${platform.name}_generateAll") {
-        group = "yionos"
-
-        dependsOn("${platform.name}_generateGlfw")
-        dependsOn("${platform.name}_generateStbImage")
-        dependsOn("${platform.name}_generateNuklear")
-        dependsOn("${platform.name}_generateVma")
-        dependsOn("${platform.name}_generateAssimp")
-    }
+    args = listOf(
+        "--debug=$debugMode",
+        "--output_directory=$bindingsOutputDirectory",
+        "--vulkan_include=$vulkanSdkDirectory/Include",
+        "--glfw_include=$externDirectory/glfw/include/GLFW",
+        "--vma_include=$externDirectory/VulkanMemoryAllocator/include",
+        "--stb_include=$externDirectory/stb",
+        "--nuklear_include=$externDirectory/Nuklear",
+        "--assimp_include=$externDirectory/assimp/include",
+        "--assimp_config_include=$cmakeBuildDirectory/extern/assimp/include"
+    ).plus(programArgs)
 }

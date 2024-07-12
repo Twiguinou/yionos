@@ -16,7 +16,7 @@ public interface Generator
 {
     String name();
 
-    void generate(File outputDirectory, String[] clangArgs);
+    void generate(File outputDirectory, String[] clangArgs, boolean debug);
 
     static void writeToFile(File file, byte[] content) throws IOException
     {

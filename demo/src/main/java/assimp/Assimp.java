@@ -4,31 +4,22 @@ public final class Assimp
 {private Assimp() {}
 
     public static final int AI_FALSE = 0;
-    public static final int AI_IMPORT_IFC_DEFAULT_CYLINDRICAL_TESSELLATION = 32;
-    public static final int AI_LMW_MAX_WEIGHTS = 4;
+    public static final int AI_MAXLEN = 1024;
     public static final int AI_MAX_BONE_WEIGHTS = 2147483647;
     public static final int AI_MAX_FACES = 2147483647;
     public static final int AI_MAX_FACE_INDICES = 32767;
     public static final int AI_MAX_NUMBER_OF_COLOR_SETS = 8;
     public static final int AI_MAX_NUMBER_OF_TEXTURECOORDS = 8;
     public static final int AI_MAX_VERTICES = 2147483647;
-    public static final int AI_SBBC_DEFAULT_MAX_BONES = 60;
     public static final int AI_SCENE_FLAGS_ALLOW_SHARED = 32;
     public static final int AI_SCENE_FLAGS_INCOMPLETE = 1;
     public static final int AI_SCENE_FLAGS_NON_VERBOSE_FORMAT = 8;
     public static final int AI_SCENE_FLAGS_TERRAIN = 16;
     public static final int AI_SCENE_FLAGS_VALIDATED = 2;
     public static final int AI_SCENE_FLAGS_VALIDATION_WARNING = 4;
-    public static final int AI_SLM_DEFAULT_MAX_TRIANGLES = 1000000;
-    public static final int AI_SLM_DEFAULT_MAX_VERTICES = 1000000;
     public static final int AI_TRUE = 1;
-    public static final int AI_UVTRAFO_ROTATION = 2;
-    public static final int AI_UVTRAFO_SCALING = 1;
-    public static final int AI_UVTRAFO_TRANSLATION = 4;
     public static final int ASSIMP_AI_REAL_TEXT_PRECISION = 9;
     public static final int HINTMAXTEXTURELEN = 9;
-    public static final int MAXLEN = 1024;
-    public static final int PP_ICL_PTCACHE_SIZE = 12;
 
     public static final java.lang.foreign.MemorySegment MTD_ADDRESS__aiGetImporterDesc;
     public static final java.lang.invoke.MethodHandle MTD__aiGetImporterDesc;

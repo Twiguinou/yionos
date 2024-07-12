@@ -21,10 +21,12 @@ public class AssimpGenerator implements Generator
     private static final String ASSIMP_DIRECTORY = ASSIMP_PACKAGE.replaceAll("\\.", "/");
 
     private final Path m_assimpInclude;
+    private final Path m_assimpConfigInclude;
 
-    public AssimpGenerator(Path assimpInclude)
+    public AssimpGenerator(Path assimpInclude, Path assimpConfigInclude)
     {
         this.m_assimpInclude = assimpInclude;
+        this.m_assimpConfigInclude = assimpConfigInclude;
     }
 
     private static Path createGlobalIncludeFile()
@@ -37,10 +39,10 @@ public class AssimpGenerator implements Generator
             StringBuilder code = new StringBuilder();
             PrintingContext context = new PrintingContext(code);
 
-            context.breakLine("#include <cimport.h>");
-            context.breakLine("#include <postprocess.h>");
-            context.breakLine("#include <scene.h>");
-            context.breakLine("#include <cfileio.h>");
+            context.breakLine("#include <assimp/cimport.h>");
+            context.breakLine("#include <assimp/postprocess.h>");
+            context.breakLine("#include <assimp/scene.h>");
+            context.breakLine("#include <assimp/cfileio.h>");
 
             Generator.writeToFile(file, code.toString().getBytes(StandardCharsets.UTF_8));
 
@@ -59,12 +61,17 @@ public class AssimpGenerator implements Generator
     }
 
     @Override
-    public void generate(File outputDirectory, String[] clangArgs)
+    public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Assimp Generator"), false, ASSIMP_PACKAGE))
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Assimp Generator"), debug, ASSIMP_PACKAGE))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add(String.format("-I%s", this.m_assimpInclude.toAbsolutePath()));
+            if (!this.m_assimpConfigInclude.equals(this.m_assimpInclude))
+            {
+                args.add(String.format("-I%s", this.m_assimpConfigInclude.toAbsolutePath()));
+            }
+
             scanner.process(createGlobalIncludeFile(), args.toArray(String[]::new), this.m_assimpInclude);
 
             File assimpOutput = new File(outputDirectory, ASSIMP_DIRECTORY);

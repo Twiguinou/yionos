@@ -110,9 +110,9 @@ public class VulkanGenerator implements Generator
     }
 
     @Override
-    public void generate(File outputDirectory, String[] clangArgs)
+    public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Vulkan Generator"), false, VULKAN_PACKAGE))
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Vulkan Generator"), debug, VULKAN_PACKAGE))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add(String.format("-I%s", this.m_vulkanInclude.toAbsolutePath()));

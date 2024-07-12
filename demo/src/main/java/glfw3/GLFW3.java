@@ -298,8 +298,9 @@ public final class GLFW3
     public static final int GLFW_STICKY_MOUSE_BUTTONS = 208899;
     public static final int GLFW_TRANSPARENT_FRAMEBUFFER = 131082;
     public static final int GLFW_TRUE = 1;
+    public static final int GLFW_UNLIMITED_MOUSE_BUTTONS = 208902;
     public static final int GLFW_VERSION_MAJOR = 3;
-    public static final int GLFW_VERSION_MINOR = 4;
+    public static final int GLFW_VERSION_MINOR = 5;
     public static final int GLFW_VERSION_REVISION = 0;
     public static final int GLFW_VERSION_UNAVAILABLE = 65543;
     public static final int GLFW_VISIBLE = 131076;

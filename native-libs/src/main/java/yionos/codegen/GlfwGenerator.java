@@ -35,9 +35,9 @@ public class GlfwGenerator implements Generator
     }
 
     @Override
-    public void generate(File outputDirectory, String[] clangArgs)
+    public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("GLFW Generator"), false, GLFW_PACKAGE))
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("GLFW Generator"), debug, GLFW_PACKAGE))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add("-DGLFW_INCLUDE_VULKAN");

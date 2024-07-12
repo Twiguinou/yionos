@@ -50,9 +50,9 @@ public class NuklearGenerator implements Generator
     }
 
     @Override
-    public void generate(File outputDirectory, String[] clangArgs)
+    public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Nuklear Generator"), false, NUKLEAR_PACKAGE, "_ptr", "gRecordLayout"))
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Nuklear Generator"), debug, NUKLEAR_PACKAGE, "_ptr", "gRecordLayout"))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add("-DNK_INCLUDE_FIXED_TYPES");
