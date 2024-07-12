@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joml.Matrix4d;
 import vulkan.*;
-import yionos.demo.StackAllocator;
+import yionos.demo.Disposable;
 import yionos.demo.WindowProcessor;
 import yionos.demo.app.scene.ObjectRenderer;
 import yionos.demo.app.scene.StaticGridRenderer;
@@ -51,7 +51,7 @@ import static vma.VmaMemoryUsage.*;
 import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemorySegment.NULL;
 
-public class VulkanRenderer
+public class VulkanRenderer implements Disposable
 {
     private static final Logger gRendererLogger = LogManager.getLogger("Vulkan Renderer");
     public static final int gFrameCount = 2;
@@ -106,13 +106,15 @@ public class VulkanRenderer
         this.m_context = new VulkanRenderContext(appInfo, instanceLayers, instanceExtensions.toArray(String[]::new), validationFeatures, windowProc);
         if (debug) this.m_context.attachDebugMessenger(VulkanContext::defaultDebugMessenger);
         this.m_context.findSuitableDevice((first, second) -> first.isDedicated() ? first : second);
-        gRendererLogger.info("Selected physical device : {}", this.m_context.physicalDevice().name());
 
-        this.m_depthFormat = selectDepthFormat(this.m_context.physicalDevice().handle());
+        VulkanContext.PhysicalDevice physicalDevice = this.m_context.physicalDevice().orElseThrow();
+        gRendererLogger.info("Selected physical device : {}", physicalDevice.name());
+
+        this.m_depthFormat = selectDepthFormat(physicalDevice.handle());
 
         try (Arena arena = Arena.ofConfined())
         {
-            LogicalDevice.QueueDescriptor[] queueDescriptors = selectQueueFamilies(this.m_context.physicalDevice().handle(), this.m_context.surface());
+            LogicalDevice.QueueDescriptor[] queueDescriptors = selectQueueFamilies(physicalDevice.handle(), this.m_context.surface());
 
             VkPhysicalDeviceShaderDrawParametersFeatures shaderDrawParametersFeatures = new VkPhysicalDeviceShaderDrawParametersFeatures(arena);
             shaderDrawParametersFeatures.sType(VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETERS_FEATURES);
@@ -123,15 +125,15 @@ public class VulkanRenderer
             features2.pNext(shaderDrawParametersFeatures.ptr());
             features2.features(f ->
             {
-                f.fillModeNonSolid(this.m_context.physicalDevice().features().fillModeNonSolid());
-                f.wideLines(this.m_context.physicalDevice().features().wideLines());
+                f.fillModeNonSolid(physicalDevice.features().fillModeNonSolid());
+                f.wideLines(physicalDevice.features().wideLines());
                 f.shaderStorageImageMultisample(VK_TRUE);
                 f.samplerAnisotropy(VK_TRUE);
                 f.sampleRateShading(VK_TRUE);
                 f.depthClamp(VK_TRUE);
             });
 
-            this.m_logicalDevice = new LogicalDevice(this.m_context.physicalDevice(), queueDescriptors, new String[0], deviceExtensions, features2.ptr(), NULL);
+            this.m_logicalDevice = new LogicalDevice(physicalDevice, queueDescriptors, new String[0], deviceExtensions, features2.ptr(), NULL);
 
             this.m_graphicsQueue = this.m_logicalDevice.queue(0);
             this.m_presentQueue = this.m_logicalDevice.queue(1);
@@ -144,11 +146,11 @@ public class VulkanRenderer
         this.m_swapchain = new Swapchain(this.m_logicalDevice.handle());
         this.initSwapchain();
 
-        this.m_renderPass = new RenderPass(this.m_logicalDevice.handle(), this.m_swapchain.surfaceFormat().format(), this.m_depthFormat, this.m_sampleCount);
+        this.m_renderPass = new RenderPass(this.m_logicalDevice.handle(), this.m_swapchain.surfaceFormat().orElseThrow().format(), this.m_depthFormat, this.m_sampleCount);
         this.initRenderingResources();
 
         this.m_renderingCommandBuffers = new CommandBufferFlow(this.m_logicalDevice.handle(), this.m_graphicsQueue.family(), gFrameCount);
-        this.m_syncObjects = VulkanSync.create(this.m_logicalDevice.handle(), gFrameCount);
+        this.m_syncObjects = new VulkanSync(this.m_logicalDevice.handle(), gFrameCount);
         this.m_uploadCommandPool = new CommandPool(this.m_logicalDevice.handle(), 0, this.m_graphicsQueue.family());
 
         this.m_descriptorPool = new DescriptorPool(this.m_logicalDevice.handle(), VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT, new DescriptorPool.Size[] {
@@ -176,6 +178,8 @@ public class VulkanRenderer
 
         try (Arena arena = Arena.ofConfined())
         {
+            int swapchainFormat = this.m_swapchain.surfaceFormat().orElseThrow().format();
+
             VkImageCreateInfo imageCreateInfo = new VkImageCreateInfo(arena);
             imageCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO);
             imageCreateInfo.imageType(VK_IMAGE_TYPE_2D);
@@ -186,7 +190,7 @@ public class VulkanRenderer
                 e.depth(1);
             });
             imageCreateInfo.mipLevels(1);
-            imageCreateInfo.format(this.m_swapchain.surfaceFormat().format());
+            imageCreateInfo.format(swapchainFormat);
             imageCreateInfo.tiling(VK_IMAGE_TILING_OPTIMAL);
             imageCreateInfo.initialLayout(VK_IMAGE_LAYOUT_UNDEFINED);
             imageCreateInfo.usage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_STORAGE_BIT);
@@ -196,7 +200,7 @@ public class VulkanRenderer
 
             VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(arena);
             imageViewCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
-            imageViewCreateInfo.format(this.m_swapchain.surfaceFormat().format());
+            imageViewCreateInfo.format(swapchainFormat);
             imageViewCreateInfo.components(c ->
             {
                 c.r(VK_COMPONENT_SWIZZLE_IDENTITY);
@@ -365,7 +369,7 @@ public class VulkanRenderer
         this.m_msaaImage = this.createMsaaImage();
         this.m_depthImage = this.createDepthImage();
 
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             MemorySegment pImageViews = arena.allocate(ADDRESS, this.m_swapchain.images().length);
             for (int i = 0; i < this.m_swapchain.images().length; i++)
@@ -429,7 +433,7 @@ public class VulkanRenderer
 
     public void beginRenderFrame()
     {
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             MemorySegment pFrameIndex = arena.allocate(JAVA_INT);
             int swapchainMessage = this.m_swapchain.acquireNextImage(this.m_syncObjects.imageAcquiredSemaphore(this.m_currentFrame), pFrameIndex);
@@ -500,7 +504,7 @@ public class VulkanRenderer
     public void endRenderFrame()
     {
         this.assertRenderContext();
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             vkCmdEndRenderPass(this.m_frameCommandBuffer);
 
@@ -631,7 +635,8 @@ public class VulkanRenderer
         VulkanException.check(vkDeviceWaitIdle(this.m_logicalDevice.handle()));
     }
 
-    public void destroy()
+    @Override
+    public void dispose()
     {
         this.deviceWaitIdle();
 

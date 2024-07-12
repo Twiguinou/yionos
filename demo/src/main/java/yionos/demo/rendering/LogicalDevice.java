@@ -5,7 +5,7 @@ import vma.VmaAllocatorCreateInfo;
 import vma.VmaVulkanFunctions;
 import vulkan.*;
 import yionos.demo.Disposable;
-import yionos.demo.SequenceInitializer;
+import yionos.demo.SequencedDisposer;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -31,12 +31,11 @@ public class LogicalDevice implements Disposable
 
     public LogicalDevice(VulkanContext.PhysicalDevice physicalDevice, QueueDescriptor[] queueDescriptors, String[] enabledLayers, String[] enabledExtensions, MemorySegment pNext, MemorySegment pEnabledFeatures) throws VulkanException
     {
+        SequencedDisposer disposer = new SequencedDisposer();
         try (Arena arena = Arena.ofConfined())
         {
             enabledLayers = filterDeviceLayers(physicalDevice.handle(), enabledLayers);
             enabledExtensions = filterDeviceExtensions(physicalDevice.handle(), enabledExtensions);
-
-            SequenceInitializer initializer = new SequenceInitializer();
 
             Map<Integer, List<Integer>> arrangedDescriptors = new HashMap<>();
             for (int i = 0; i < queueDescriptors.length; i++)
@@ -58,14 +57,14 @@ public class LogicalDevice implements Disposable
             deviceCreateInfo.pEnabledFeatures(pEnabledFeatures);
 
             MemorySegment pDevice = arena.allocate(ADDRESS);
-            VulkanException.check(vkCreateDevice(physicalDevice.handle(), deviceCreateInfo.ptr(), NULL, pDevice), "Unable to create vulkan device", initializer);
+            VulkanException.check(vkCreateDevice(physicalDevice.handle(), deviceCreateInfo.ptr(), NULL, pDevice), "Unable to create vulkan device");
             this.m_device = new VkDevice(pDevice.get(ADDRESS, 0));
-            initializer.push(this::destroyHandle);
+            disposer.push(this::destroyHandle);
 
             MemorySegment pAllocator = arena.allocate(ADDRESS);
-            VulkanException.check(createVmaAllocator(physicalDevice.handle(), this.m_device, pAllocator), "Unable to create VMA allocator.", initializer);
+            VulkanException.check(createVmaAllocator(physicalDevice.handle(), this.m_device, pAllocator), "Unable to create VMA allocator.");
             this.m_allocator = pAllocator.get(ADDRESS, 0);
-            initializer.push(this::destroyAllocator);
+            disposer.push(this::destroyAllocator);
 
             this.m_queues = new Queue[queueDescriptors.length];
             MemorySegment pQueue = arena.allocate(ADDRESS);
@@ -78,6 +77,11 @@ public class LogicalDevice implements Disposable
             }
 
             this.physicalDevice = physicalDevice;
+        }
+        catch (Throwable t)
+        {
+            disposer.close();
+            throw t;
         }
     }
 

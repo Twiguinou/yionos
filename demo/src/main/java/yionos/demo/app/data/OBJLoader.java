@@ -43,6 +43,11 @@ public record OBJLoader(String workingDirectory, int flags)
             String path = cPath.getString(0);
             try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(String.format("%s/%s", this.workingDirectory, path)))
             {
+                if (inputStream == null)
+                {
+                    throw new RuntimeException(String.format("Failed to access resource: %s", path));
+                }
+
                 MemorySegment data = fileArena.allocateFrom(JAVA_BYTE, inputStream.readAllBytes());
                 AtomicLong filePosition = new AtomicLong(0);
 

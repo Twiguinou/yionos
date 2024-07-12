@@ -3,7 +3,6 @@ package yionos.demo.app.samples;
 import org.joml.Matrix4d;
 import org.joml.Vector3d;
 import org.joml.Vector4d;
-import yionos.demo.StackAllocator;
 import yionos.demo.app.*;
 import yionos.demo.app.scene.ObjectRenderer;
 import yionos.detection.CollisionDispatcher;
@@ -155,7 +154,7 @@ public class CollisionDispatcherSample implements DemoSample
     @Override
     public void arrangeOverlay(NuklearContext context)
     {
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             SegmentAllocator textAllocator = SegmentAllocator.prefixAllocator(arena.allocate(JAVA_CHAR, 128));
 

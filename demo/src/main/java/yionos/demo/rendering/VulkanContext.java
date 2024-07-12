@@ -12,6 +12,7 @@ import java.lang.foreign.MemorySegment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BinaryOperator;
 
 import static vulkan.VulkanCore.*;
@@ -202,9 +203,9 @@ public class VulkanContext implements Disposable
         }
     }
 
-    public @Nullable PhysicalDevice physicalDevice()
+    public Optional<PhysicalDevice> physicalDevice()
     {
-        return this.m_physicalDevice;
+        return Optional.ofNullable(this.m_physicalDevice);
     }
 
     public void disposeMessenger()

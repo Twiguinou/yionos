@@ -6,7 +6,7 @@ import vulkan.VkBufferCreateInfo;
 import vulkan.VkCommandBuffer;
 import vulkan.VkSubmitInfo;
 import yionos.demo.Disposable;
-import yionos.demo.SequenceInitializer;
+import yionos.demo.SequencedDisposer;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -100,18 +100,17 @@ public class VulkanBuffer implements Disposable
 
     public void upload(CommandPool commandPool, LogicalDevice.Queue queue, MemorySegment data) throws VulkanException
     {
-        SequenceInitializer initializer = new SequenceInitializer();
-        try (Arena arena = Arena.ofConfined())
+        try (Arena arena = Arena.ofConfined(); SequencedDisposer disposer = new SequencedDisposer())
         {
             VulkanBuffer stagingBuffer = new VulkanBuffer(this.allocator, data.byteSize(), VK_IMAGE_USAGE_TRANSFER_SRC_BIT, new int[] {queue.family()}, VMA_MEMORY_USAGE_CPU_TO_GPU);
-            initializer.push(stagingBuffer);
+            disposer.push(stagingBuffer);
             stagingBuffer.put(data);
 
             VkBufferCopy region = new VkBufferCopy(arena);
             region.size(data.byteSize());
 
             VkCommandBuffer commandBuffer = commandPool.allocate(VK_COMMAND_BUFFER_LEVEL_PRIMARY, 1)[0];
-            initializer.push(() -> commandPool.free(new VkCommandBuffer[] {commandBuffer}));
+            disposer.push(() -> commandPool.free(new VkCommandBuffer[] {commandBuffer}));
             beginCommandBuffer(arena, commandBuffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
 
             vkCmdCopyBuffer(commandBuffer, stagingBuffer.m_handle, this.m_handle, 1, region.ptr());
@@ -125,10 +124,6 @@ public class VulkanBuffer implements Disposable
 
             VulkanException.check(vkQueueSubmit(queue.handle(), 1, submitInfo.ptr(), NULL));
             VulkanException.check(vkQueueWaitIdle(queue.handle()));
-        }
-        finally
-        {
-            initializer.empty();
         }
     }
 

@@ -7,11 +7,13 @@ import vulkan.VkSurfaceCapabilitiesKHR;
 import vulkan.VkSurfaceFormatKHR;
 import vulkan.VkSwapchainCreateInfoKHR;
 import yionos.demo.Disposable;
-import yionos.demo.SequenceInitializer;
+import yionos.demo.SequencedDisposer;
 
 import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
+import java.util.Optional;
 
 import static vulkan.VulkanCore.*;
 import static vulkan.VkFormat.*;
@@ -106,116 +108,122 @@ public class Swapchain implements Disposable
         return extent;
     }
 
-    private void createImages(Arena arena, SequenceInitializer initializer) throws VulkanException
+    private void createImages(SegmentAllocator allocator) throws VulkanException
     {
-        MemorySegment pImageCount = arena.allocate(JAVA_INT);
-        VulkanException.check(vkGetSwapchainImagesKHR(this.device, this.m_handle, pImageCount, NULL), initializer);
-        int swapchainImageCount = pImageCount.get(JAVA_INT, 0);
-        MemorySegment pImages = arena.allocate(ADDRESS, swapchainImageCount);
-        VulkanException.check(vkGetSwapchainImagesKHR(this.device, this.m_handle, pImageCount, pImages), initializer);
+        SequencedDisposer.wrap(disposer ->
+        {
+            MemorySegment pImageCount = allocator.allocate(JAVA_INT);
+            VulkanException.check(vkGetSwapchainImagesKHR(this.device, this.m_handle, pImageCount, NULL));
+            int swapchainImageCount = pImageCount.get(JAVA_INT, 0);
+            MemorySegment pImages = allocator.allocate(ADDRESS, swapchainImageCount);
+            VulkanException.check(vkGetSwapchainImagesKHR(this.device, this.m_handle, pImageCount, pImages));
 
-        VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(arena);
-        imageViewCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
-        imageViewCreateInfo.pNext(NULL);
-        imageViewCreateInfo.flags(0);
-        imageViewCreateInfo.viewType(VK_IMAGE_VIEW_TYPE_2D);
-        imageViewCreateInfo.format(this.m_surfaceFormat.format);
-        imageViewCreateInfo.components(components ->
-        {
-            components.r(VK_COMPONENT_SWIZZLE_R);
-            components.g(VK_COMPONENT_SWIZZLE_G);
-            components.b(VK_COMPONENT_SWIZZLE_B);
-            components.a(VK_COMPONENT_SWIZZLE_A);
-        });
-        imageViewCreateInfo.subresourceRange(range ->
-        {
-            range.aspectMask(VK_IMAGE_ASPECT_COLOR_BIT);
-            range.baseMipLevel(0);
-            range.levelCount(1);
-            range.baseArrayLayer(0);
-            range.layerCount(1);
-        });
-
-        MemorySegment pImageView = arena.allocate(ADDRESS);
-        this.m_images = new VulkanImage[swapchainImageCount];
-        for (int i = 0; i < this.m_images.length; i++)
-        {
-            MemorySegment image = pImages.getAtIndex(ADDRESS, i);
-            imageViewCreateInfo.image(image);
-            VulkanException.check(vkCreateImageView(this.device, imageViewCreateInfo.ptr(), NULL, pImageView), "Unable to create image view", initializer);
-            MemorySegment imageView = pImageView.get(ADDRESS, 0);
-            this.m_images[i] = new VulkanImage()
+            VkImageViewCreateInfo imageViewCreateInfo = new VkImageViewCreateInfo(allocator);
+            imageViewCreateInfo.sType(VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
+            imageViewCreateInfo.pNext(NULL);
+            imageViewCreateInfo.flags(0);
+            imageViewCreateInfo.viewType(VK_IMAGE_VIEW_TYPE_2D);
+            imageViewCreateInfo.format(this.surfaceFormat().orElseThrow().format);
+            imageViewCreateInfo.components(components ->
             {
-                @Override
-                public MemorySegment handle()
-                {
-                    return image;
-                }
+                components.r(VK_COMPONENT_SWIZZLE_R);
+                components.g(VK_COMPONENT_SWIZZLE_G);
+                components.b(VK_COMPONENT_SWIZZLE_B);
+                components.a(VK_COMPONENT_SWIZZLE_A);
+            });
+            imageViewCreateInfo.subresourceRange(range ->
+            {
+                range.aspectMask(VK_IMAGE_ASPECT_COLOR_BIT);
+                range.baseMipLevel(0);
+                range.levelCount(1);
+                range.baseArrayLayer(0);
+                range.layerCount(1);
+            });
 
-                @Override
-                public MemorySegment view()
+            MemorySegment pImageView = allocator.allocate(ADDRESS);
+            this.m_images = new VulkanImage[swapchainImageCount];
+            for (int i = 0; i < this.m_images.length; i++)
+            {
+                MemorySegment image = pImages.getAtIndex(ADDRESS, i);
+                imageViewCreateInfo.image(image);
+                VulkanException.check(vkCreateImageView(this.device, imageViewCreateInfo.ptr(), NULL, pImageView), "Unable to create image view");
+                MemorySegment imageView = pImageView.get(ADDRESS, 0);
+                this.m_images[i] = new VulkanImage()
                 {
-                    return imageView;
-                }
+                    @Override
+                    public MemorySegment handle()
+                    {
+                        return image;
+                    }
 
-                @Override
-                public void dispose()
-                {
-                    vkDestroyImageView(Swapchain.this.device, this.view(), NULL);
-                }
-            };
-            initializer.push(this.m_images[i]);
-        }
+                    @Override
+                    public MemorySegment view()
+                    {
+                        return imageView;
+                    }
+
+                    @Override
+                    public void dispose()
+                    {
+                        vkDestroyImageView(Swapchain.this.device, this.view(), NULL);
+                    }
+                };
+                disposer.push(this.m_images[i]);
+            }
+        });
     }
 
     public void initialize(VulkanRenderContext context, int graphicsQueueFamily, int presentQueueFamily, boolean vsync) throws VulkanException
     {
-        try (Arena arena = Arena.ofConfined())
+        SequencedDisposer.wrap(disposer ->
         {
-            SequenceInitializer initializer = new SequenceInitializer();
-
-            this.m_surfaceFormat = selectSurfaceFormat(context.surfaceProperties().formats());
-            int minImageCount = Math.max(context.surfaceProperties().capabilities().minImageCount() + 1, context.surfaceProperties().capabilities().maxImageCount());
-            int presentMode = selectPresentMode(context.surfaceProperties().presentModes(), vsync);
-            VkExtent2D extent = selectExtent(arena, context.surfaceProperties().capabilities(), context.window.width(), context.window.height());
-
-            VkSwapchainCreateInfoKHR swapchainCreateInfo = new VkSwapchainCreateInfoKHR(arena);
-            swapchainCreateInfo.sType(VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR);
-            swapchainCreateInfo.surface(context.surface());
-            swapchainCreateInfo.minImageCount(minImageCount);
-            swapchainCreateInfo.imageFormat(this.m_surfaceFormat.format);
-            swapchainCreateInfo.imageColorSpace(this.m_surfaceFormat.colorSpace);
-            swapchainCreateInfo.imageExtent(extent);
-            swapchainCreateInfo.imageArrayLayers(1);
-            swapchainCreateInfo.imageUsage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT);
-            swapchainCreateInfo.preTransform(VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR);
-            swapchainCreateInfo.compositeAlpha(VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR);
-            swapchainCreateInfo.presentMode(presentMode);
-            swapchainCreateInfo.clipped(VK_TRUE);
-            swapchainCreateInfo.oldSwapchain(this.m_handle);
-
-            if (graphicsQueueFamily == presentQueueFamily)
+            try (Arena arena = Arena.ofConfined())
             {
-                swapchainCreateInfo.imageSharingMode(VK_SHARING_MODE_EXCLUSIVE);
+                VulkanRenderContext.PhysicalDeviceSurfaceProperties surfaceProperties = context.surfaceProperties().orElseThrow();
+
+                this.m_surfaceFormat = selectSurfaceFormat(surfaceProperties.formats());
+                int minImageCount = Math.max(surfaceProperties.capabilities().minImageCount() + 1, surfaceProperties.capabilities().maxImageCount());
+                int presentMode = selectPresentMode(surfaceProperties.presentModes(), vsync);
+                VkExtent2D extent = selectExtent(arena, surfaceProperties.capabilities(), context.window.width(), context.window.height());
+
+                VkSwapchainCreateInfoKHR swapchainCreateInfo = new VkSwapchainCreateInfoKHR(arena);
+                swapchainCreateInfo.sType(VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR);
+                swapchainCreateInfo.surface(context.surface());
+                swapchainCreateInfo.minImageCount(minImageCount);
+                swapchainCreateInfo.imageFormat(this.m_surfaceFormat.format);
+                swapchainCreateInfo.imageColorSpace(this.m_surfaceFormat.colorSpace);
+                swapchainCreateInfo.imageExtent(extent);
+                swapchainCreateInfo.imageArrayLayers(1);
+                swapchainCreateInfo.imageUsage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT);
+                swapchainCreateInfo.preTransform(VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR);
+                swapchainCreateInfo.compositeAlpha(VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR);
+                swapchainCreateInfo.presentMode(presentMode);
+                swapchainCreateInfo.clipped(VK_TRUE);
+                swapchainCreateInfo.oldSwapchain(this.m_handle);
+
+                if (graphicsQueueFamily == presentQueueFamily)
+                {
+                    swapchainCreateInfo.imageSharingMode(VK_SHARING_MODE_EXCLUSIVE);
+                }
+                else
+                {
+                    swapchainCreateInfo.imageSharingMode(VK_SHARING_MODE_CONCURRENT);
+                    swapchainCreateInfo.queueFamilyIndexCount(2);
+                    swapchainCreateInfo.pQueueFamilyIndices(arena.allocateFrom(JAVA_INT, graphicsQueueFamily, presentMode));
+                }
+
+                MemorySegment pSwapchain = arena.allocate(ADDRESS);
+                VulkanException.check(vkCreateSwapchainKHR(this.device, swapchainCreateInfo.ptr(), NULL, pSwapchain), "Unable to create Vulkan swapchain");
+                this.dispose();
+                this.m_handle = pSwapchain.get(ADDRESS, 0);
+                disposer.push(this::destroyHandle);
+
+                this.createImages(arena);
+
+                this.m_width = extent.width();
+                this.m_height = extent.height();
             }
-            else
-            {
-                swapchainCreateInfo.imageSharingMode(VK_SHARING_MODE_CONCURRENT);
-                swapchainCreateInfo.queueFamilyIndexCount(2);
-                swapchainCreateInfo.pQueueFamilyIndices(arena.allocateFrom(JAVA_INT, graphicsQueueFamily, presentMode));
-            }
-
-            MemorySegment pSwapchain = arena.allocate(ADDRESS);
-            VulkanException.check(vkCreateSwapchainKHR(this.device, swapchainCreateInfo.ptr(), NULL, pSwapchain), "Unable to create Vulkan swapchain", initializer);
-            this.dispose();
-            this.m_handle = pSwapchain.get(ADDRESS, 0);
-            initializer.push(this::destroyHandle);
-
-            this.createImages(arena, initializer);
-
-            this.m_width = extent.width();
-            this.m_height = extent.height();
-        }
+        });
     }
 
     public MemorySegment handle()
@@ -228,9 +236,9 @@ public class Swapchain implements Disposable
         return this.m_images;
     }
 
-    public @Nullable SurfaceFormat surfaceFormat()
+    public Optional<SurfaceFormat> surfaceFormat()
     {
-        return this.m_surfaceFormat;
+        return Optional.ofNullable(this.m_surfaceFormat);
     }
 
     public int width()

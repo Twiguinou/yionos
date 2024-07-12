@@ -5,7 +5,7 @@ import vulkan.VkDevice;
 import vulkan.VkImageCreateInfo;
 import vulkan.VkImageViewCreateInfo;
 import yionos.demo.Disposable;
-import yionos.demo.SequenceInitializer;
+import yionos.demo.SequencedDisposer;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -23,49 +23,50 @@ public interface VulkanImage extends Disposable
 
     static VulkanImage allocate(VkDevice device, MemorySegment vmaAllocator, VkImageCreateInfo imageCreateInfo, VkImageViewCreateInfo imageViewCreateInfo, int memoryUsage) throws VulkanException
     {
-        try (Arena arena = Arena.ofConfined())
+        return SequencedDisposer.wrap(disposer ->
         {
-            SequenceInitializer initializer = new SequenceInitializer();
-
-            VmaAllocationCreateInfo allocationCreateInfo = new VmaAllocationCreateInfo(arena);
-            allocationCreateInfo.usage(memoryUsage);
-
-            MemorySegment pImage = arena.allocate(ADDRESS);
-            MemorySegment pAllocation = arena.allocate(ADDRESS);
-            VulkanException.check(vmaCreateImage(vmaAllocator, imageCreateInfo.ptr(), allocationCreateInfo.ptr(), pImage, pAllocation, NULL), "Vma image creation/allocation failed", initializer);
-
-            MemorySegment image = pImage.get(ADDRESS, 0);
-            MemorySegment allocation = pAllocation.get(ADDRESS, 0);
-            initializer.push(() -> vmaDestroyImage(vmaAllocator, image, allocation));
-
-            imageViewCreateInfo.image(image);
-
-            MemorySegment pImageView = arena.allocate(ADDRESS);
-            VulkanException.check(vkCreateImageView(device, imageViewCreateInfo.ptr(), NULL, pImageView), "Unable to create image view", initializer);
-            MemorySegment imageView = pImageView.get(ADDRESS, 0);
-            initializer.push(() -> vkDestroyImageView(device, imageView, NULL));
-
-            return new VulkanImage()
+            try (Arena arena = Arena.ofConfined())
             {
-                @Override
-                public MemorySegment handle()
-                {
-                    return image;
-                }
+                VmaAllocationCreateInfo allocationCreateInfo = new VmaAllocationCreateInfo(arena);
+                allocationCreateInfo.usage(memoryUsage);
 
-                @Override
-                public MemorySegment view()
-                {
-                    return imageView;
-                }
+                MemorySegment pImage = arena.allocate(ADDRESS);
+                MemorySegment pAllocation = arena.allocate(ADDRESS);
+                VulkanException.check(vmaCreateImage(vmaAllocator, imageCreateInfo.ptr(), allocationCreateInfo.ptr(), pImage, pAllocation, NULL), "Vma image creation/allocation failed");
 
-                @Override
-                public void dispose()
+                MemorySegment image = pImage.get(ADDRESS, 0);
+                MemorySegment allocation = pAllocation.get(ADDRESS, 0);
+                disposer.push(() -> vmaDestroyImage(vmaAllocator, image, allocation));
+
+                imageViewCreateInfo.image(image);
+
+                MemorySegment pImageView = arena.allocate(ADDRESS);
+                VulkanException.check(vkCreateImageView(device, imageViewCreateInfo.ptr(), NULL, pImageView), "Unable to create image view");
+                MemorySegment imageView = pImageView.get(ADDRESS, 0);
+                disposer.push(() -> vkDestroyImageView(device, imageView, NULL));
+
+                return new VulkanImage()
                 {
-                    vkDestroyImageView(device, imageView, NULL);
-                    vmaDestroyImage(vmaAllocator, image, allocation);
-                }
-            };
-        }
+                    @Override
+                    public MemorySegment handle()
+                    {
+                        return image;
+                    }
+
+                    @Override
+                    public MemorySegment view()
+                    {
+                        return imageView;
+                    }
+
+                    @Override
+                    public void dispose()
+                    {
+                        vkDestroyImageView(device, imageView, NULL);
+                        vmaDestroyImage(vmaAllocator, image, allocation);
+                    }
+                };
+            }
+        });
     }
 }

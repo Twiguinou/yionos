@@ -4,7 +4,6 @@ import nuklear.*;
 import org.joml.Matrix4d;
 import vulkan.*;
 import yionos.demo.Disposable;
-import yionos.demo.StackAllocator;
 import yionos.demo.rendering.VulkanBuffer;
 import yionos.demo.rendering.VulkanException;
 import yionos.demo.rendering.VulkanImage;
@@ -292,7 +291,7 @@ public class NuklearContext implements Disposable
 
     private void updateTexture(MemorySegment descriptorSet)
     {
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             VkDescriptorImageInfo descriptorImageInfo = new VkDescriptorImageInfo(arena);
             descriptorImageInfo.sampler(this.m_sampler);
@@ -319,7 +318,7 @@ public class NuklearContext implements Disposable
 
     public void render(int windowWidth, int windowHeight)
     {
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             MemorySegment ppVertexData = arena.allocate(ADDRESS);
             this.m_vertexBuffer.map(ppVertexData);

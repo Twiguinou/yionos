@@ -6,8 +6,6 @@ import vulkan.VkDevice;
 import vulkan.VkPhysicalDeviceLimits;
 import vulkan.VkPhysicalDeviceProperties;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.foreign.Arena;

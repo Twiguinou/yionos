@@ -7,9 +7,10 @@ import vulkan.VkFramebufferCreateInfo;
 import vulkan.VkRenderPassCreateInfo;
 import vulkan.VkSubpassDescription;
 import yionos.demo.Disposable;
-import yionos.demo.SequenceInitializer;
+import yionos.demo.SequencedDisposer;
 import yionos.demo.rendering.VulkanException;
 
+import javax.annotation.Nullable;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
@@ -28,6 +29,7 @@ public class RenderPass implements Disposable
     private final MemorySegment m_handle;
     private int m_framebufferCount = 0;
     private MemorySegment m_framebuffers = NULL;
+    private @Nullable Arena m_framebuffersArena = null;
     public final VkDevice device;
 
     public RenderPass(VkDevice device, int swapchainFormat, int depthFormat, int sampleCount) throws VulkanException
@@ -111,40 +113,44 @@ public class RenderPass implements Disposable
 
     public void createFramebuffers(int imageViewCount, MemorySegment pImageViews, int width, int height, MemorySegment msaaImageView, MemorySegment depthImageView) throws VulkanException
     {
-        try (Arena arena = Arena.ofConfined())
+        this.destroyFramebuffers();
+        SequencedDisposer.wrap(disposer ->
         {
-            SequenceInitializer initializer = new SequenceInitializer();
-
-            MemorySegment pFramebufferAttachments = arena.allocate(ADDRESS, 3);
-            pFramebufferAttachments.setAtIndex(ADDRESS, 1, depthImageView);
-            if (!msaaImageView.equals(NULL))
+            try (Arena arena = Arena.ofConfined())
             {
-                pFramebufferAttachments.setAtIndex(ADDRESS, 2, msaaImageView);
+                MemorySegment pFramebufferAttachments = arena.allocate(ADDRESS, 3);
+                pFramebufferAttachments.setAtIndex(ADDRESS, 1, depthImageView);
+                if (!msaaImageView.equals(NULL))
+                {
+                    pFramebufferAttachments.setAtIndex(ADDRESS, 2, msaaImageView);
+                }
+
+                VkFramebufferCreateInfo framebufferCreateInfo = new VkFramebufferCreateInfo(arena);
+                framebufferCreateInfo.sType(VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO);
+                framebufferCreateInfo.renderPass(this.m_handle);
+                framebufferCreateInfo.attachmentCount(!msaaImageView.equals(NULL) ? 3 : 2);
+                framebufferCreateInfo.pAttachments(pFramebufferAttachments);
+                framebufferCreateInfo.width(width);
+                framebufferCreateInfo.height(height);
+                framebufferCreateInfo.layers(1);
+
+                this.m_framebuffersArena = Arena.ofShared();
+
+                MemorySegment pFramebuffers = this.m_framebuffersArena.allocate(ADDRESS, imageViewCount);
+                for (int i = 0; i < imageViewCount; i++)
+                {
+                    pFramebufferAttachments.setAtIndex(ADDRESS, 0, pImageViews.getAtIndex(ADDRESS, i));
+                    MemorySegment pFramebuffer = pFramebuffers.asSlice(ADDRESS.byteSize() * i, ADDRESS);
+
+                    VulkanException.check(vkCreateFramebuffer(this.device, framebufferCreateInfo.ptr(), NULL, pFramebuffer), "Unable to create framebuffer");
+                    MemorySegment framebuffer = pFramebuffer.get(ADDRESS, 0);
+                    disposer.push(() -> vkDestroyFramebuffer(this.device, framebuffer, NULL));
+                }
+
+                this.m_framebufferCount = imageViewCount;
+                this.m_framebuffers = pFramebuffers;
             }
-
-            VkFramebufferCreateInfo framebufferCreateInfo = new VkFramebufferCreateInfo(arena);
-            framebufferCreateInfo.sType(VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO);
-            framebufferCreateInfo.renderPass(this.m_handle);
-            framebufferCreateInfo.attachmentCount(!msaaImageView.equals(NULL) ? 3 : 2);
-            framebufferCreateInfo.pAttachments(pFramebufferAttachments);
-            framebufferCreateInfo.width(width);
-            framebufferCreateInfo.height(height);
-            framebufferCreateInfo.layers(1);
-
-            MemorySegment pFramebuffers = Arena.ofAuto().allocate(ADDRESS, imageViewCount);
-            for (int i = 0; i < imageViewCount; i++)
-            {
-                pFramebufferAttachments.setAtIndex(ADDRESS, 0, pImageViews.getAtIndex(ADDRESS, i));
-                MemorySegment pFramebuffer = pFramebuffers.asSlice(ADDRESS.byteSize() * i, ADDRESS);
-
-                VulkanException.check(vkCreateFramebuffer(this.device, framebufferCreateInfo.ptr(), NULL, pFramebuffer), "Unable to create framebuffer", initializer);
-                MemorySegment framebuffer = pFramebuffer.get(ADDRESS, 0);
-                initializer.push(() -> vkDestroyFramebuffer(this.device, framebuffer, NULL));
-            }
-
-            this.m_framebufferCount = imageViewCount;
-            this.m_framebuffers = pFramebuffers;
-        }
+        });
     }
 
     public MemorySegment handle()
@@ -169,6 +175,8 @@ public class RenderPass implements Disposable
 
     public void destroyFramebuffers()
     {
+        if (this.m_framebuffersArena == null) return;
+
         for (int i = 0; i < this.m_framebufferCount; i++)
         {
             vkDestroyFramebuffer(this.device, this.m_framebuffers.getAtIndex(ADDRESS, i), NULL);
@@ -176,6 +184,8 @@ public class RenderPass implements Disposable
 
         this.m_framebufferCount = 0;
         this.m_framebuffers = NULL;
+        this.m_framebuffersArena.close();
+        this.m_framebuffersArena = null;
     }
 
     @Override

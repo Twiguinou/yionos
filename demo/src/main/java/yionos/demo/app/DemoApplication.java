@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joml.Matrix4d;
 import org.joml.Vector3d;
-import yionos.demo.StackAllocator;
 import yionos.demo.WindowProcessor;
 import yionos.demo.app.samples.DemoSample;
 
@@ -92,7 +91,7 @@ public class DemoApplication
 
     private void arrangeSamplesOverlay()
     {
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             if (nk_begin(this.m_overlayContext.pContext(), arena.allocateFrom("Available samples"), nk_rect(arena, 20, 20, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE) != 0)
@@ -199,7 +198,7 @@ public class DemoApplication
 
         this.m_overlayContext.dispose();
 
-        this.m_renderer.destroy();
+        this.m_renderer.dispose();
         this.windowProc.dispose();
     }
 }

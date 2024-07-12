@@ -38,6 +38,7 @@ tasks.create("generateCMakeConfig") {
             executable("cmake")
             args(listOf(
                 "-S", ".", "-B", cmakeBuildDirectory,
+                "-DCMAKE_BUILD_TYPE=Release",
                 "-G", makeGenerator
             ))
         }

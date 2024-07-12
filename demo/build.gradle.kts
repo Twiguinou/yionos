@@ -26,13 +26,13 @@ dependencies {
     compileOnly("com.google.code.findbugs:jsr305:3.0.2")
 }
 
-val shadersDirectory = "$projectDir/shaders"
-val spvOutputDirectory = layout.buildDirectory.map { it.file("shaders-spv/") }.get().asFile
+val shadersDirectory = File(projectDir, "shaders")
+val spvOutputDirectory = layout.buildDirectory.map { it.file("shaders-spv") }.get().asFile
 task("compileShaders") {
     group = "yionos"
 
     doFirst {
-        if (!(spvOutputDirectory.exists() || spvOutputDirectory.mkdir())) {
+        if (!spvOutputDirectory.exists() && !spvOutputDirectory.mkdirs()) {
             throw IllegalStateException("Unable to create shaders output directory.")
         }
     }

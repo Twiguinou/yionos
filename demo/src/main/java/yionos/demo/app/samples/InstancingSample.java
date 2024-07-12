@@ -3,7 +3,6 @@ package yionos.demo.app.samples;
 import org.joml.Matrix4d;
 import vulkan.VkDescriptorBufferInfo;
 import vulkan.VkWriteDescriptorSet;
-import yionos.demo.StackAllocator;
 import yionos.demo.app.*;
 import yionos.demo.app.scene.ObjectRenderer;
 import yionos.demo.rendering.VulkanBuffer;
@@ -88,7 +87,7 @@ public class InstancingSample implements DemoSample
         int frame = this.renderer.currentFrame();
         VulkanBuffer buffer = this.m_objectBuffers[frame];
 
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             MemorySegment ppData = arena.allocate(ADDRESS);
             buffer.map(ppData);
@@ -129,7 +128,7 @@ public class InstancingSample implements DemoSample
     @Override
     public void arrangeOverlay(NuklearContext context)
     {
-        try (Arena arena = StackAllocator.stackPush())
+        try (Arena arena = Arena.ofConfined())
         {
             if (nk_begin(context.pContext(), arena.allocateFrom("Scene configuration"), nk_rect(arena, 20, 300, 230, 250),
                     NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_TITLE | NK_WINDOW_MINIMIZABLE) != 0)
