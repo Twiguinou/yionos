@@ -5,7 +5,7 @@ public interface aiLogStreamCallback
     java.lang.foreign.FunctionDescriptor gDescriptor = java.lang.foreign.FunctionDescriptor.ofVoid(jpgen.NativeTypes.UNBOUNDED_POINTER, jpgen.NativeTypes.UNBOUNDED_POINTER);
     java.lang.invoke.MethodHandle gUpcallStub = jpgen.NativeTypes.initUpcallStub(gDescriptor, "invoke", aiLogStreamCallback.class);
 
-    void invoke(java.lang.foreign.MemorySegment arg0, java.lang.foreign.MemorySegment arg1);
+    void invoke(java.lang.foreign.MemorySegment arg1, java.lang.foreign.MemorySegment arg2);
 
     default java.lang.foreign.MemorySegment makeHandle(java.lang.foreign.Arena arena)
     {

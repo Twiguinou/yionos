@@ -1,13 +1,18 @@
 package yionos.codegen;
 
 import jpgen.*;
+import jpgen.clang.CXCursor;
 import jpgen.data.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.foreign.Arena;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Optional;
+
+import static jpgen.clang.Index_h.*;
 
 public interface Generator
 {
@@ -49,18 +54,18 @@ public interface Generator
 
     static List<CallbackDeclaration> makeCallbacks(SourceScopeScanner scanner, CanonicalPackage location)
     {
-        return scanner.getTypeTable().values().stream()
-                .filter(type -> type instanceof Type.Alias(Type underlying, CanonicalPackage aliasLocation, _) && location.isPrefix(aliasLocation) &&
-                        underlying.flatten() instanceof Type.Pointer pointer && pointer.referencedType.flatten() instanceof FunctionType functionType && !functionType.variadic())
-                .map(type ->
+        return scanner.getTypeTable().entrySet().stream()
+                .filter(entry -> entry.getValue() instanceof Type.Alias(_, CanonicalPackage aliasLocation, _) && location.isPrefix(aliasLocation))
+                .map(entry ->
                 {
-                    Type.Alias alias = (Type.Alias) type;
-                    FunctionType functionType = (FunctionType) ((Type.Pointer)alias.flatten()).referencedType.flatten();
-                    String[] argsNames = new String[functionType.parameterTypes().size()];
-                    for (int i = 0; i < argsNames.length; i++) argsNames[i] = String.format("arg%d", i);
-
-                    return new CallbackDeclaration(functionType, location, alias.identifier(), SizedIterable.ofArray(argsNames));
+                    try (Arena arena = Arena.ofConfined())
+                    {
+                        CXCursor declarationCursor = clang_getTypeDeclaration(arena, entry.getKey().internal);
+                        return ((Type.Alias)entry.getValue()).toCallback(declarationCursor);
+                    }
                 })
+                .filter(Optional::isPresent)
+                .map(Optional::get)
                 .toList();
     }
 
