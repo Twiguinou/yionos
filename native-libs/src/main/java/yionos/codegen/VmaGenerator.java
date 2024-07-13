@@ -1,5 +1,6 @@
 package yionos.codegen;
 
+import jpgen.LocationProvider;
 import jpgen.SourceScopeScanner;
 import jpgen.data.*;
 
@@ -7,13 +8,12 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 
 public class VmaGenerator implements Generator
 {
-    private static final String VMA_PACKAGE = "vma";
-    private static final String VMA_DIRECTORY = VMA_PACKAGE.replaceAll("\\.", "/");
+    private static final String VMA_DIRECTORY = "vma";
+    private static final CanonicalPackage VMA_PACKAGE = CanonicalPackage.of(VMA_DIRECTORY.replaceAll("/", "."));
 
     private final Path m_vmaInclude;
     private final Path m_vulkanInclude;
@@ -33,7 +33,10 @@ public class VmaGenerator implements Generator
     @Override
     public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("VMA Generator"), debug, VMA_PACKAGE))
+        LocationProvider.ModuleTree moduleTree = LocationProvider.ModuleTree.of(this.m_vmaInclude, VMA_PACKAGE,
+                LocationProvider.ModuleTree.of(this.m_vulkanInclude, VulkanGenerator.VULKAN_PACKAGE));
+
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("VMA Generator"), debug, LocationProvider.of(moduleTree)))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add(String.format("-I%s", this.m_vulkanInclude.toAbsolutePath()));
@@ -42,9 +45,9 @@ public class VmaGenerator implements Generator
             File vmaOutput = new File(outputDirectory, VMA_DIRECTORY);
             if (vmaOutput.exists() || vmaOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner, VMA_PACKAGE);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner, VMA_PACKAGE);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner, VMA_PACKAGE);
                 List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner);
 
                 enums.forEach(enumDeclaration -> Generator.writeDeclaration(enumDeclaration, vmaOutput));
@@ -72,9 +75,9 @@ public class VmaGenerator implements Generator
                     }
 
                     @Override
-                    public Optional<String> canonicalPackage()
+                    public CanonicalPackage location()
                     {
-                        return Optional.of(VMA_PACKAGE);
+                        return VMA_PACKAGE;
                     }
                 };
 

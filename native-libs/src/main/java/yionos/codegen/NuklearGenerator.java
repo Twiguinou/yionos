@@ -1,5 +1,6 @@
 package yionos.codegen;
 
+import jpgen.LocationProvider;
 import jpgen.SourceScopeScanner;
 import jpgen.data.*;
 
@@ -7,13 +8,12 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 
 public class NuklearGenerator implements Generator
 {
-    private static final String NUKLEAR_PACKAGE = "nuklear";
-    private static final String NUKLEAR_DIRECTORY = NUKLEAR_PACKAGE.replaceAll("\\.", "/");
+    private static final String NUKLEAR_DIRECTORY = "nuklear";
+    private static final CanonicalPackage NUKLEAR_PACKAGE = CanonicalPackage.of(NUKLEAR_DIRECTORY.replaceAll("/", "."));
 
     private final Path m_nuklearInclude;
 
@@ -52,7 +52,9 @@ public class NuklearGenerator implements Generator
     @Override
     public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Nuklear Generator"), debug, NUKLEAR_PACKAGE, "_ptr", "gRecordLayout"))
+        LocationProvider.ModuleTree moduleTree = LocationProvider.ModuleTree.of(this.m_nuklearInclude, NUKLEAR_PACKAGE);
+
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Nuklear Generator"), debug, "_ptr", "gRecordLayout", LocationProvider.of(moduleTree)))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add("-DNK_INCLUDE_FIXED_TYPES");
@@ -66,9 +68,9 @@ public class NuklearGenerator implements Generator
             File nuklearOutput = new File(outputDirectory, NUKLEAR_DIRECTORY);
             if (nuklearOutput.exists() || nuklearOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner, NUKLEAR_PACKAGE);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner, NUKLEAR_PACKAGE);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner, NUKLEAR_PACKAGE);
                 List<HeaderDeclaration.FunctionSpecifier> functions = incompatibilityFix__1(Generator.gatherFunctions(scanner));
 
                 List<Constant> constants = List.of(
@@ -101,9 +103,9 @@ public class NuklearGenerator implements Generator
                     }
 
                     @Override
-                    public Optional<String> canonicalPackage()
+                    public CanonicalPackage location()
                     {
-                        return Optional.of(NUKLEAR_PACKAGE);
+                        return NUKLEAR_PACKAGE;
                     }
                 };
 

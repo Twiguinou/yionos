@@ -1,9 +1,6 @@
 package yionos.codegen;
 
-import jpgen.ClassMaker;
-import jpgen.PrintingContext;
-import jpgen.SizedIterable;
-import jpgen.SourceScopeScanner;
+import jpgen.*;
 import jpgen.data.*;
 
 import java.io.File;
@@ -26,18 +23,18 @@ public interface Generator
         }
     }
 
-    static List<RecordType.Decl> gatherRecordDeclarations(SourceScopeScanner scanner)
+    static List<RecordType.Decl> gatherRecordDeclarations(SourceScopeScanner scanner, CanonicalPackage location)
     {
         return scanner.getTypeTable().values().stream()
-                .filter(type -> type instanceof RecordType.Decl record && !record.isIncomplete())
+                .filter(type -> type instanceof RecordType.Decl record && !record.isIncomplete() && location.isPrefix(record.location()))
                 .map(type -> (RecordType.Decl) type)
                 .toList();
     }
 
-    static List<EnumType.Decl> gatherEnumDeclarations(SourceScopeScanner scanner)
+    static List<EnumType.Decl> gatherEnumDeclarations(SourceScopeScanner scanner, CanonicalPackage location)
     {
         return scanner.getTypeTable().values().stream()
-                .filter(type -> type instanceof EnumType.Decl)
+                .filter(type -> type instanceof EnumType.Decl enumDecl && location.isPrefix(enumDecl.location()))
                 .map(type -> (EnumType.Decl) type)
                 .toList();
     }
@@ -50,11 +47,11 @@ public interface Generator
                 .toList();
     }
 
-    static List<CallbackDeclaration> makeCallbacks(SourceScopeScanner scanner)
+    static List<CallbackDeclaration> makeCallbacks(SourceScopeScanner scanner, CanonicalPackage location)
     {
         return scanner.getTypeTable().values().stream()
-                .filter(type -> type instanceof Type.Alias(Type underlying, _) && underlying.flatten() instanceof Type.Pointer pointer &&
-                        pointer.referencedType.flatten() instanceof FunctionType functionType && !functionType.variadic())
+                .filter(type -> type instanceof Type.Alias(Type underlying, CanonicalPackage aliasLocation, _) && location.isPrefix(aliasLocation) &&
+                        underlying.flatten() instanceof Type.Pointer pointer && pointer.referencedType.flatten() instanceof FunctionType functionType && !functionType.variadic())
                 .map(type ->
                 {
                     Type.Alias alias = (Type.Alias) type;
@@ -62,7 +59,7 @@ public interface Generator
                     String[] argsNames = new String[functionType.parameterTypes().size()];
                     for (int i = 0; i < argsNames.length; i++) argsNames[i] = String.format("arg%d", i);
 
-                    return new CallbackDeclaration(functionType, scanner.canonicalPackage, alias.identifier(), SizedIterable.ofArray(argsNames));
+                    return new CallbackDeclaration(functionType, location, alias.identifier(), SizedIterable.ofArray(argsNames));
                 })
                 .toList();
     }

@@ -1,6 +1,7 @@
 package yionos.codegen;
 
 import jpgen.ClassMaker;
+import jpgen.LocationProvider;
 import jpgen.PrintingContext;
 import jpgen.SourceScopeScanner;
 import jpgen.data.*;
@@ -17,8 +18,9 @@ import java.util.stream.Collectors;
 // diabolical
 public class VulkanGenerator implements Generator
 {
-    private static final String VULKAN_PACKAGE = "vulkan";
-    private static final String VULKAN_DIRECTORY = VULKAN_PACKAGE.replaceAll("\\.", "/");
+    private static final String VULKAN_DIRECTORY = "vulkan";
+    private static final String VULKAN_PACKAGE_STRING = VULKAN_DIRECTORY.replaceAll("/", ".");
+    public static final CanonicalPackage VULKAN_PACKAGE = CanonicalPackage.of(VULKAN_PACKAGE_STRING);
 
     private static final Set<String> AUTHORIZED_CALLBACKS = Set.of(
             "PFN_vkAllocationFunction",
@@ -69,7 +71,7 @@ public class VulkanGenerator implements Generator
     private static SourceScopeScanner.TypeKey findHandleKey(String name, Map<SourceScopeScanner.TypeKey, Type> typeTable)
     {
         return typeTable.entrySet().stream()
-                .filter(entry -> entry.getValue() instanceof Type.Alias(_, String identifier) && identifier.equals(name))
+                .filter(entry -> entry.getValue() instanceof Type.Alias(_, _, String identifier) && identifier.equals(name))
                 .map(Map.Entry::getKey)
                 .findAny()
                 .orElseThrow(() -> new IllegalStateException(String.format("Failed to resolve handle type for %s", name)));
@@ -112,7 +114,9 @@ public class VulkanGenerator implements Generator
     @Override
     public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Vulkan Generator"), debug, VULKAN_PACKAGE))
+        LocationProvider.ModuleTree moduleTree = LocationProvider.ModuleTree.of(this.m_vulkanInclude, VULKAN_PACKAGE);
+
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Vulkan Generator"), debug, LocationProvider.of(moduleTree)))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add(String.format("-I%s", this.m_vulkanInclude.toAbsolutePath()));
@@ -121,9 +125,9 @@ public class VulkanGenerator implements Generator
             File vulkanOutput = new File(outputDirectory, VULKAN_DIRECTORY);
             if (vulkanOutput.exists() || vulkanOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner).stream()
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner, VULKAN_PACKAGE);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner, VULKAN_PACKAGE);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner, VULKAN_PACKAGE).stream()
                         .filter(callback -> AUTHORIZED_CALLBACKS.contains(callback.name()))
                         .toList();
 
@@ -165,7 +169,7 @@ public class VulkanGenerator implements Generator
                         StringBuilder code = new StringBuilder();
                         PrintingContext context = new PrintingContext(code);
 
-                        context.append("package ").append(VULKAN_PACKAGE).breakLine(';');
+                        context.append("package ").append(VULKAN_PACKAGE_STRING).breakLine(';');
                         context.breakLine();
 
                         context.append("public final class ").breakLine(handleName);
@@ -189,7 +193,7 @@ public class VulkanGenerator implements Generator
                         context.pushControlFlow();
                         for (FunctionType.Decl function : allFunctions)
                         {
-                            context.append("this.MTD_ADDRESS__").append(function.name()).append(" = ").append(VULKAN_PACKAGE).append(".VulkanCore.").append(handle.addressProvider.name()).append("(this.handle, arena.allocateFrom(\"").append(function.name()).breakLine("\"));");
+                            context.append("this.MTD_ADDRESS__").append(function.name()).append(" = ").append(VULKAN_PACKAGE_STRING).append(".VulkanCore.").append(handle.addressProvider.name()).append("(this.handle, arena.allocateFrom(\"").append(function.name()).breakLine("\"));");
                             context.append("this.MTD__").append(function.name()).append(" = this.MTD_ADDRESS__").append(function.name()).append(".equals(java.lang.foreign.MemorySegment.NULL) ? null : jpgen.NativeTypes.SYSTEM_LINKER.downcallHandle(MTD_ADDRESS__").append(function.name()).append(", ").append(ClassMaker.getFunctionDescriptor(function.descriptorType)).breakLine(");");
                         }
                         context.popControlFlow();
@@ -222,10 +226,10 @@ public class VulkanGenerator implements Generator
                             StringBuilder code = new StringBuilder();
                             PrintingContext context = new PrintingContext(code);
 
-                            context.append("package ").append(VULKAN_PACKAGE).breakLine(';');
+                            context.append("package ").append(VULKAN_PACKAGE_STRING).breakLine(';');
                             context.breakLine();
 
-                            context.append("public record ").append(handleName).append("(java.lang.foreign.MemorySegment handle, ").append(VULKAN_PACKAGE).append('.').append(mainHandleName).append(' ').append(handle.parentField).breakLine(") {}");
+                            context.append("public record ").append(handleName).append("(java.lang.foreign.MemorySegment handle, ").append(VULKAN_PACKAGE_STRING).append('.').append(mainHandleName).append(' ').append(handle.parentField).breakLine(") {}");
 
                             Generator.writeToFile(new File(vulkanOutput, String.format("%s.java", handleName)), code.toString().getBytes(StandardCharsets.UTF_8));
                         }
@@ -252,7 +256,7 @@ public class VulkanGenerator implements Generator
 
                 handles.forEach(handle ->
                 {
-                    String mainHandlePath = String.format("%s.%s", VULKAN_PACKAGE, ((Type.Alias)handle.typeKey.discover()).identifier());
+                    String mainHandlePath = String.format("%s.%s", VULKAN_PACKAGE_STRING, ((Type.Alias)handle.typeKey.discover()).identifier());
                     scanner.getTypeTable().put(handle.typeKey, new Type.Pointer(Type.VOID)
                     {
                         @Override
@@ -270,7 +274,7 @@ public class VulkanGenerator implements Generator
 
                     for (SourceScopeScanner.TypeKey child : handle.children)
                     {
-                        String handlePath = String.format("%s.%s", VULKAN_PACKAGE, ((Type.Alias)child.discover()).identifier());
+                        String handlePath = String.format("%s.%s", VULKAN_PACKAGE_STRING, ((Type.Alias)child.discover()).identifier());
                         scanner.getTypeTable().put(child, new Type.Pointer(Type.VOID)
                         {
                             @Override
@@ -354,9 +358,9 @@ public class VulkanGenerator implements Generator
                     }
 
                     @Override
-                    public Optional<String> canonicalPackage()
+                    public CanonicalPackage location()
                     {
-                        return Optional.of(VULKAN_PACKAGE);
+                        return VULKAN_PACKAGE;
                     }
                 };
 

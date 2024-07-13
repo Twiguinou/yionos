@@ -1,6 +1,8 @@
 package yionos.codegen;
 
+import jpgen.LocationProvider;
 import jpgen.SourceScopeScanner;
+import jpgen.data.CanonicalPackage;
 import jpgen.data.Constant;
 import jpgen.data.EnumType;
 import jpgen.data.HeaderDeclaration;
@@ -9,13 +11,12 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 
 public class StbImageGenerator implements Generator
 {
-    private static final String STB_IMAGE_PACKAGE = "stb.image";
-    private static final String STB_IMAGE_DIRECTORY = STB_IMAGE_PACKAGE.replaceAll("\\.", "/");
+    private static final String STB_IMAGE_DIRECTORY = "stb/image";
+    private static final CanonicalPackage STB_IMAGE_PACKAGE = CanonicalPackage.of(STB_IMAGE_DIRECTORY.replaceAll("/", "."));
 
     private final Path m_stbInclude;
 
@@ -33,7 +34,9 @@ public class StbImageGenerator implements Generator
     @Override
     public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("stb_image Generator"), debug, STB_IMAGE_PACKAGE))
+        LocationProvider.ModuleTree moduleTree = LocationProvider.ModuleTree.of(this.m_stbInclude, STB_IMAGE_PACKAGE);
+
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("stb_image Generator"), debug, LocationProvider.of(moduleTree)))
         {
             scanner.process(this.m_stbInclude.resolve("stb_image.h"), clangArgs, this.m_stbInclude);
 
@@ -70,9 +73,9 @@ public class StbImageGenerator implements Generator
                     }
 
                     @Override
-                    public Optional<String> canonicalPackage()
+                    public CanonicalPackage location()
                     {
-                        return Optional.of(STB_IMAGE_PACKAGE);
+                        return STB_IMAGE_PACKAGE;
                     }
                 };
 

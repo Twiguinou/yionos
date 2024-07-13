@@ -1,5 +1,6 @@
 package yionos.codegen;
 
+import jpgen.LocationProvider;
 import jpgen.PrintingContext;
 import jpgen.SourceScopeScanner;
 import jpgen.data.*;
@@ -12,13 +13,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 
 public class AssimpGenerator implements Generator
 {
-    private static final String ASSIMP_PACKAGE = "assimp";
-    private static final String ASSIMP_DIRECTORY = ASSIMP_PACKAGE.replaceAll("\\.", "/");
+    private static final String ASSIMP_DIRECTORY = "assimp";
+    private static final CanonicalPackage ASSIMP_PACKAGE = CanonicalPackage.of(ASSIMP_DIRECTORY.replaceAll("/", "."));
 
     private final Path m_assimpInclude;
     private final Path m_assimpConfigInclude;
@@ -63,7 +63,9 @@ public class AssimpGenerator implements Generator
     @Override
     public void generate(File outputDirectory, String[] clangArgs, boolean debug)
     {
-        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Assimp Generator"), debug, ASSIMP_PACKAGE))
+        LocationProvider.ModuleTree moduleTree = LocationProvider.ModuleTree.of(this.m_assimpInclude, ASSIMP_PACKAGE);
+
+        try (SourceScopeScanner scanner = new SourceScopeScanner(Logger.getLogger("Assimp Generator"), debug, LocationProvider.of(moduleTree)))
         {
             List<String> args = new ArrayList<>(List.of(clangArgs));
             args.add(String.format("-I%s", this.m_assimpInclude.toAbsolutePath()));
@@ -77,9 +79,9 @@ public class AssimpGenerator implements Generator
             File assimpOutput = new File(outputDirectory, ASSIMP_DIRECTORY);
             if (assimpOutput.exists() || assimpOutput.mkdirs())
             {
-                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner);
-                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner);
-                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner);
+                List<EnumType.Decl> enums = Generator.gatherEnumDeclarations(scanner, ASSIMP_PACKAGE);
+                List<RecordType.Decl> records = Generator.gatherRecordDeclarations(scanner, ASSIMP_PACKAGE);
+                List<CallbackDeclaration> callbacks = Generator.makeCallbacks(scanner, ASSIMP_PACKAGE);
                 List<HeaderDeclaration.FunctionSpecifier> functions = Generator.gatherFunctions(scanner);
                 List<Constant> constants = scanner.constants().stream()
                         .sorted(Comparator.comparing(Constant::name))
@@ -110,9 +112,9 @@ public class AssimpGenerator implements Generator
                     }
 
                     @Override
-                    public Optional<String> canonicalPackage()
+                    public CanonicalPackage location()
                     {
-                        return Optional.of(ASSIMP_PACKAGE);
+                        return ASSIMP_PACKAGE;
                     }
                 };
 
